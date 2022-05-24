@@ -4,6 +4,10 @@
     MOVE_DOWN: 83 || 40,
     MOVE_LEFT: 65 || 37,
     MOVE_RIGHT: 68 || 39,
+    MOVE_UP2: 38,
+    MOVE_DOWN2: 40,
+    MOVE_LEFT2: 37,
+    MOVE_RIGHT2: 39,
     CHAT: 13,
     QUICK_FOOD: 81,
     
@@ -789,6 +793,18 @@ setInterval(() => {
           moveLeft = 1;
           break;
         case keycodes.MOVE_RIGHT:
+          moveRight = 1;
+          break;
+        case keycodes.MOVE_UP2:
+          moveUp = 1;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 1;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 1;
+          break;
+        case keycodes.MOVE_RIGHT2:
           moveRight = 1;
           break;
         case keycodes.CHAT:

@@ -178,6 +178,7 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
+var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
   let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -434,8 +435,6 @@ setInterval(() => {
     if (player && player.spawned) {
       
       // player velocity
-      
-      var playerSpeed = 1;
       
       if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
         player.xVel += .5;
@@ -752,6 +751,9 @@ wsServer.on("connection", (socket, request) => {
         }
         if(msg[1][0] == "/godmode" && socket.player.admin == true){
           socket.player.health = Number.MAX_VALUE;
+        }
+        if(msg[1][0] == "/speedmode" && socket.player.admin == true){
+          playerSpeed = 5;
         }
         if(msg[1][0] == "/sandbox" && socket.player.admin == true){
           socket.player.resources.food = 999;
