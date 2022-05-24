@@ -1,185 +1,854 @@
-/**
- * This is the main server script that provides the API endpoints
- * The script uses the database helper in /src
- * The endpoints retrieve, update, and return data to the page handlebars files
- *
- * The API returns the front-end UI handlebars pages, or
- * Raw json if the client requests it with a query parameter ?raw=json
- */
-
-// Utilities we need
+const express = require("express");
+const bodyParser = require("body-parser");
+const ws = require("ws");
+const app = express();
+const msgpack = require("msgpack-lite");
 const fs = require("fs");
-const path = require("path");
+const fetch = require("node-fetch");
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+app.use(bodyParser.json());
 
-// Require the fastify framework and instantiate it
-const fastify = require("fastify")({
-  // Set this to true for detailed logging:
-  logger: false
+app.use(express.static("public"));
+
+var users = [];
+/*
+
+      DATABASE
+      
+*/
+
+const dbFile = "./.data/sqlite.db";
+const exists = fs.existsSync(dbFile);
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database(dbFile);
+
+db.on("error", function(error) {
+  console.log("Getting an error: ", error);
 });
 
-// Setup our static files
-fastify.register(require("fastify-static"), {
-  root: path.join(__dirname, "public"),
-  prefix: "/" // optional: default '/'
-});
-
-// fastify-formbody lets us parse incoming forms
-fastify.register(require("fastify-formbody"));
-
-// point-of-view is a templating manager for fastify
-fastify.register(require("point-of-view"), {
-  engine: {
-    handlebars: require("handlebars")
+db.serialize(() => {
+  if (!exists) {
+    db.run(
+      "CREATE TABLE Users (username TEXT PRIMARY KEY, email TEXT, password TEXT)"
+    );
+    db.run(
+      "CREATE TABLE Ruby (username TEXT PRIMARY KEY, ruby INTEGER)"
+    );
+  } else {
+    console.log("Databases ready!");
+    db.each("SELECT * from Users", (err, row) => {
+      if (row) {
+        console.log(row)
+        users.push(row);
+      }
+    });
   }
 });
 
-// Load and parse SEO data
-const seo = require("./src/seo.json");
-if (seo.url === "glitch-default") {
-  seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
+
+
+app.post("/login", (request, response) => {
+  var body = request.body;
+  var username = body.username.toLowerCase();
+  var password = body.password;
+
+  db.all(
+    `SELECT * from Users WHERE username="${body.username.toLowerCase()}" AND password="${
+      body.password
+    }"`,
+    async (err, rows) => {
+      if (rows.length > 0) {
+        response.json({
+          status: 200
+        })
+      } else {
+        response.json({
+          status: 403,
+          error: "Invalid username or password"
+        });
+      }
+    }
+  );
+});
+
+
+
+
+app.post("/register", (request, response) => {
+  var body = request.body;
+  const emailRegExp = new RegExp(
+    /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i
+  );
+  var email = body.email.toLowerCase();
+  var username = body.username.toLowerCase();
+  var password = body.password;
+  body.email = body.email.toLowerCase();
+  if (emailRegExp.test(email)) {
+    if (new RegExp(/^[a-zA-Z0-9_]*$/).test(username)) {
+      if (username.length < 4 || username.length > 15) {
+        response.json({
+          status: 401,
+          error: "Username must be long 4-15 characters"
+        });
+        return;
+      }
+      if (password.length < 6 || password.length > 50) {
+        response.json({
+          status: 401,
+          error: "Password must be long 6-50 characters"
+        });
+        return;
+      }
+    } else {
+      response.json({
+        status: 401,
+        error: "Invalid characters are not allowed"
+      });
+      return;
+    }
+  } else {
+    response.json({
+      status: 401,
+      error: "Invalid email"
+    });
+    return;
+  }
+
+  db.all(
+    `SELECT * from Users WHERE username="${body.username.toLowerCase()}"`,
+    async (err, rows) => {
+      if (rows.length > 0) {
+        response.json({
+          status: 402,
+          error: "This username is already in use."
+        });
+      } else {
+        db.all(
+          `SELECT * from Users WHERE email="${body.email.toLowerCase()}"`,
+          async (err, rows) => {
+            if (rows.length > 0) {
+              response.json({
+                status: 402,
+                error: "This email was already used."
+              });
+            } else {
+              db.serialize(() => {
+                db.run(
+                  'INSERT INTO Users (username, email, password) VALUES ("' +
+                    body.username.toLowerCase() +
+                    '", "' +
+                    body.email.toLowerCase() +
+                    '", "' +
+                    body.password +
+                    '")'
+                );
+                users.push({
+                  username: username.toLowerCase(),
+                  email: email.toLowerCase(),
+                  pasword: password,
+                });
+              });
+              response.json({ status: 200 });
+            }
+          }
+        );
+      }
+    }
+  );
+});
+/*
+
+      DATABASE
+      
+      
+*/
+
+
+function radToDeg(radians){
+    var pi = Math.PI;
+    return radians * (180/pi);
+}
+var leaderboard = [];
+
+var mapSize = 10000;
+var moltenHeight = 1000;
+var moltenRiverHeight = 1000;
+var beachHeight = 500;
+
+function isfacing(p1, p2, angle, addition = 25) {
+  let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+  exact = radToDeg(exact);
+  let add = addition / 2;
+  let maxplus = exact + add;
+  let maxminus = exact - add;
+  if (angle > maxminus && angle < maxplus) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-// We use a module for handling database operations in /src
-const data = require("./src/data.json");
-const db = require("./src/" + data.database);
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-/**
- * Home route for the app
- *
- * Return the poll options from the database helper script
- * The home route may be called on remix in which case the db needs setup
- *
- * Client can request raw data using a query parameter
- */
-fastify.get("/", async (request, reply) => {
-  /* 
-  Params is the data we pass to the client
-  - SEO values for front-end UI but not for raw data
-  */
-  let params = request.query.raw ? {} : { seo: seo };
-
-  // Get the available choices from the database
-  const options = await db.getOptions();
-  if (options) {
-    params.optionNames = options.map(choice => choice.language);
-    params.optionCounts = options.map(choice => choice.picks);
+Array.prototype.removeItem = function(value) {
+  var index = this.indexOf(value);
+  if (index > -1) {
+    this.splice(index, 1);
   }
-  // Let the user know if there was a db error
-  else params.error = data.errorMessage;
+  return this;
+};
 
-  // Check in case the data is empty or not setup yet
-  if (options && params.optionNames.length < 1)
-    params.setup = data.setupMessage;
+var animals = [
+  {
+    id: 0,
+    count: 100,
+    aggresive: false,
+    name: "Cow",
+    speed: 3,
+    health: 100,
+    maxHealth: 100,
+  }
+]
 
-  // ADD PARAMS FROM TODO HERE
+var animalsCache = [];
+var treesCache = [];
+var objCache = [];
 
-  // Send the page options or raw JSON data if the client requested it
-  request.query.raw
-    ? reply.send(params)
-    : reply.view("/src/pages/index.hbs", params);
-});
-
-/**
- * Post route to process user vote
- *
- * Retrieve vote from body data
- * Send vote to database helper
- * Return updated list of votes
- */
-fastify.post("/", async (request, reply) => { 
-  // We only send seo if the client is requesting the front-end ui
-  let params = request.query.raw ? {} : { seo: seo };
-
-  // Flag to indicate we want to show the poll results instead of the poll form
-  params.results = true;
-  let options;
-
-  // We have a vote - send to the db helper to process and return results
-  if (request.body.language) {
-    options = await db.processVote(request.body.language);
-    if (options) {
-      // We send the choices and numbers in parallel arrays
-      params.optionNames = options.map(choice => choice.language);
-      params.optionCounts = options.map(choice => choice.picks);
+for (let j = 0; j < 4; j++){
+  for (let i = 0; i < mapSize/100; i++) {
+    var randomx = randomInt(0, mapSize);
+    var randomy = randomInt(0, mapSize);
+    if(randomy > mapSize - moltenHeight - moltenRiverHeight - 100 && randomy < mapSize - moltenHeight + 100){
+      if(j == 0 || j == 1 || j == 3)continue;
     }
+    if(randomy > mapSize - moltenHeight - 100){
+      if(j == 0 || j == 1)continue;
+    }
+    if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
+      if(j == 0 || j == 3)continue;
+    }
+    var object = { x: randomx, y: randomy, dir: Math.random(), id: j, xWiggle: 0, yWiggle: 0 };
+    if(treesCache.filter(x => x && dist(object, x) < 200).length > 0)continue;
+    treesCache.push(object);
   }
-  params.error = options ? null : data.errorMessage;
+}
 
-  // Return the info to the client
-  request.query.raw
-    ? reply.send(params)
-    : reply.view("/src/pages/index.hbs", params);
-});
-
-/**
- * Admin endpoint returns log of votes
- *
- * Send raw json or the admin handlebars page
- */
-fastify.get("/logs", async (request, reply) => {
-  let params = request.query.raw ? {} : { seo: seo };
-
-  // Get the log history from the db
-  params.optionHistory = await db.getLogs();
-
-  // Let the user know if there's an error
-  params.error = params.optionHistory ? null : data.errorMessage;
-
-  // Send the log list
-  request.query.raw
-    ? reply.send(params)
-    : reply.view("/src/pages/admin.hbs", params);
-});
-
-/**
- * Admin endpoint to empty all logs
- *
- * Requires authorization (see setup instructions in README)
- * If auth fails, return a 401 and the log list
- * If auth is successful, empty the history
- */
-fastify.post("/reset", async (request, reply) => {
-  let params = request.query.raw ? {} : { seo: seo };
-
-  /* 
-  Authenticate the user request by checking against the env key variable
-  - make sure we have a key in the env and body, and that they match
-  */
-  if (
-    !request.body.key ||
-    request.body.key.length < 1 ||
-    !process.env.ADMIN_KEY ||
-    request.body.key !== process.env.ADMIN_KEY
-  ) {
-    console.error("Auth fail");
-
-    // Auth failed, return the log data plus a failed flag
-    params.failed = "You entered invalid credentials!";
-
-    // Get the log list
-    params.optionHistory = await db.getLogs();
-  } else {
-    // We have a valid key and can clear the log
-    params.optionHistory = await db.clearHistory();
-
-    // Check for errors - method would return false value
-    params.error = params.optionHistory ? null : data.errorMessage;
+animals.forEach((a) => {
+  for(let i = 0; i < a.count; i++){
+    var animal = {
+      id: a.id,
+      speed: a.speed,
+      x: randomInt(0, mapSize),
+      y: randomInt(0, mapSize),
+      dir: 0,
+      health: 100,
+      xVel: 0,
+      yVel: 0,
+    }
+    animalsCache.push(animal);
   }
+})
+console.log(animalsCache);
 
-  // Send a 401 if auth failed, 200 otherwise
-  const status = params.failed ? 401 : 200;
-  // Send an unauthorized status code if the user credentials failed
-  request.query.raw
-    ? reply.status(status).send(params)
-    : reply.status(status).view("/src/pages/admin.hbs", params);
-});
-
-// Run the server and report out to the logs
-fastify.listen(process.env.PORT, '0.0.0.0', function(err, address) {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
+var defaultReload = 500;
+var weapons = [
+  {
+    id: 0,
+    isWeapon: true,
+    name: "hammer",
+    reload: 450,
+    damage: 25,
+    range: 85,
+    fov: 150,
+    gather: 1,
+  },
+  {
+    id: 1,
+    isWeapon: false,
+    name: "Apple",
+    cost: {
+      food: 10,
+    },
+    heal: 20,
+  },
+  {
+    id: 2,
+    isWeapon: false,
+    placeable: true,
+    name: "Spike",
+    cost: {
+      wood: 5,
+      stone: 5,
+    },
+    damage: 20,
+    velocity: 20,
+    health: 300,
+    maxHealth: 300,
   }
-  console.log(`Your app is listening on ${address}`);
-  fastify.log.info(`server listening on ${address}`);
+];
+
+app.get("/", (req, res) => {
+  console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
+  res.sendFile(__dirname + "/views/index.html");
 });
+
+app.get("/api/players", (req, res) => {
+  res.json({
+    players: players.length,
+  })
+})
+
+function dist(p1, p2) {
+  return Math.sqrt(Math.pow(p1.y - p2.y, 2) + Math.pow(p1.x - p2.x, 2));
+}
+
+const wsServer = new ws.Server({ noServer: true });
+
+var players = [];
+var ids = 0;
+
+function respawn(player, name) {
+  player.noHurtTime = 200;
+  player.skin = 0;
+  player.name = name;
+  player.sid = player.sid || ++ids;
+  player.spawned = true;
+  player.x = randomInt(0, mapSize);
+  player.y = randomInt(0, mapSize);
+  player.health = 100;
+  player.weapons = [0, 1, 2, 3]
+  player.resources = {
+      food: 0,
+      wood: 0,
+      stone: 0,
+      gold: 100,
+      spyllis: 0,
+    }
+}
+
+var renderDistance = 1300;
+
+function reaching(player, enemy, max) {
+  return (
+    Math.sqrt(
+      Math.pow(enemy.y - player.y - player.yVel * 5, 2) +
+        Math.pow(enemy.x - player.x - player.xVel * 5, 2)
+    ) < max
+  );
+}
+
+function collides(p1, p2, hitbox = 60) {
+  return dist(p1, p2) < hitbox + 1;
+}
+
+function broadcast(data, origin) {
+  wsServer.clients.forEach(client => {
+    let player = client.player;
+    if (player) {
+      if (dist(player, origin) < renderDistance) {
+        client.send(msgpack.encode(data));
+      }
+    }
+  });
+}
+
+setInterval(() => {
+  wsServer.clients.forEach((client) => {
+    let player = client.player;
+    if(player){
+      var formattedLeaderboard = [];
+      leaderboard.forEach((player) => {
+        formattedLeaderboard.push({name: player.name, gold: player.resources.spyllis});
+      })
+      client.send(msgpack.encode(["b", [formattedLeaderboard]]))
+    }
+  })
+}, 500)
+
+setInterval(() => {
+  wsServer.clients.forEach(client => {
+    let player = client.player;
+    if (player) {
+      var playersNear = players.filter(
+        x => x && x.spawned && dist(player, x) < renderDistance
+      );
+      client.send(msgpack.encode(["33", [playersNear]]));
+
+      var treesNear = treesCache.filter(
+        x => x && dist(player, x) < renderDistance
+      );
+      client.send(msgpack.encode(["o", [treesNear]]));
+      
+      var objNear = objCache.filter(
+        x => x && dist(player, x) < renderDistance
+      );
+      client.send(msgpack.encode(["x", [objNear]]));
+      
+      var animalNear = animalsCache.filter(
+        x => x && dist(player, x) < renderDistance*3
+      );
+      client.send(msgpack.encode(["a", [animalNear]]));
+    }
+  });
+}, 20);
+
+setInterval(() => {
+  wsServer.clients.forEach(client => {
+    let player = client.player;
+    if (player) {
+      player.noHurtTime = Math.max(0, player.noHurtTime - 1);
+    }
+  });
+}, 50);
+function toRad(angle) {
+    return angle * 0.01745329251;
+}
+setInterval(() => {
+  
+  animalsCache.forEach((animal) => {
+    
+    // animal velocity
+    animal.x += animal.xVel * animal.speed / 10;
+    animal.y += animal.yVel * animal.speed / 10;
+    
+    
+    animal.xVel *= .93;
+    animal.yVel *= .93;
+    
+    animal.xVel += Math.cos(animal.dir);
+    animal.yVel += Math.sin(animal.dir);
+    
+    animal.dir += toRad(randomInt(radToDeg(animal.dir) - 3, radToDeg(animal.dir + 3)));
+    
+    
+  }, 100)
+  
+  wsServer.clients.forEach(client => {
+    let player = client.player;
+    if (player && player.spawned) {
+      
+      // player velocity
+      
+      var playerSpeed = 1;
+      
+      if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
+        player.xVel += .5;
+        playerSpeed *= 0.3;
+      }
+      if(!weapons.find(x => x.id == player.weapon).isWeapon){
+        playerSpeed *= 0.4;
+      }
+      
+      if (player.movedir != null) {
+        let xv = Math.cos(player.movedir);
+        let yv = Math.sin(player.movedir);
+        player.xVel += (xv) * playerSpeed;
+        player.yVel += yv * playerSpeed * -1;
+      }
+      player.x += player.xVel * 0.3;
+      player.y += player.yVel * 0.3;
+      player.xVel *= 0.93;
+      player.yVel *= 0.93;
+      if (Math.abs(player.xVel) < 0.005) {
+        player.xVel = 0;
+      }
+      if (Math.abs(player.yVel) < 0.005) {
+        player.yVel = 0;
+      }
+      
+      // trees, stones etc. wiggle
+      treesCache.forEach((tree) => {
+        tree.xWiggle *= .9;
+        tree.yWiggle *= .9;
+        if(Math.abs(tree.xWiggle) < 0.005){
+          tree.xWiggle = 0;
+        }
+        if(Math.abs(tree.yWiggle) < 0.005){
+          tree.yWiggle = 0;
+        }
+      })
+      
+      // traps and stuff wiggle
+      objCache.forEach((obj) => {
+        obj.xWiggle *= .9;
+        obj.yWiggle *= .9;
+        if(Math.abs(obj.xWiggle) < 0.005){
+          obj.xWiggle = 0;
+        }
+        if(Math.abs(obj.yWiggle) < 0.005){
+          obj.yWiggle = 0;
+        }
+      })
+      
+      
+      // player collision
+      var playersNear = players.filter(
+        x => x && dist(player, x) < renderDistance
+      );
+      if (playersNear) {
+        playersNear.forEach(player2 => {
+          if (
+            player2.spawned &&
+            collides(player, player2) &&
+            player.sid != player2.sid
+          ) {
+            var pushDir = Math.atan2(
+              player.y - player2.y,
+              player.x - player2.x
+            );
+            var pushVelX = Math.cos(pushDir);
+            var pushVelY = Math.sin(pushDir);
+            player.xVel += pushVelX;
+            player.yVel += pushVelY;
+          }
+        });
+      }
+      
+      // tree, stones etc. collision
+      var treesNear = treesCache.filter(
+        x => x && dist(player, x) < renderDistance
+      );
+      if (treesNear) {
+        treesNear.forEach(tree => {
+          if (dist(player, {x: tree.x, y: tree.y}) < (tree.id == 0 ? 70 : tree.id == 3 ? 50 : 100)
+          ) {
+            var pushDir = Math.atan2(
+              player.y - tree.y,
+              player.x - tree.x
+            );
+            var pushVelX = Math.cos(pushDir);
+            var pushVelY = Math.sin(pushDir);
+            player.xVel += pushVelX;
+            player.yVel += pushVelY;
+          }
+        });
+      }
+      
+      
+      //traps and stuff collision
+      var objNear = objCache.filter(
+        x => x && dist(player, x) < renderDistance
+      );
+      if (objNear) {
+        objNear.forEach(obj => {
+          if(obj.health <= 0){
+            for(let resource in weapons.find(x => x.id == obj.id).cost){
+              player.resources[resource] += weapons.find(x => x.id == obj.id).cost[resource];
+            }
+            objCache.removeItem(obj);
+          }
+          if (dist(player, {x: obj.x, y: obj.y}) < 60
+          ) {
+            var pushDir = Math.atan2(
+              player.y - obj.y,
+              player.x - obj.x
+            );
+            var aObj = weapons.find(x => x.id == obj.id);
+            var pushVelX = Math.cos(pushDir)*aObj.velocity||1;
+            var pushVelY = Math.sin(pushDir)*aObj.velocity||1;
+            if(aObj.damage && player.noHurtTime == 0){
+              player.health -= aObj.damage;
+              player.noHurtTime += 2;
+            }
+            player.xVel += pushVelX;
+            player.yVel += pushVelY;
+          }
+        });
+      }
+
+      if (player.attacking) {
+        var weapon = weapons.find(x => x.id == player.weapon);
+        if (weapon) {
+          if (weapon.isWeapon && player.reloaded) {
+            player.reloaded = false;
+            
+            
+            // check for players hit
+            var playersNear = players.filter(
+              x => x && dist(player, x) < renderDistance
+            );
+            playersNear.forEach(enemy => {
+              if (
+                enemy.sid != player.sid &&
+                reaching(player, enemy, weapon.range) &&
+                isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov)
+              ) {
+                var knockDir = Math.atan2(
+                  enemy.y - player.y,
+                  enemy.x - player.x
+                );
+                enemy.xVel += Math.cos(knockDir) * 10;
+                enemy.yVel += Math.sin(knockDir) * 10;
+                enemy.health -= weapon.damage;
+                client.send(
+                  msgpack.encode([
+                    "t",
+                    [
+                      enemy.x + randomInt(-20, 20),
+                      enemy.y + randomInt(-20, 20),
+                      true,
+                      weapon.damage
+                    ]
+                  ])
+                );
+              }
+            });
+            
+            
+            // check for trees, stones etc. hit
+            var treesNear = treesCache.filter(
+              x => x && dist(player, x) < renderDistance
+            );
+            treesNear.forEach(tree => {
+              if (
+                reaching(player, tree, weapon.range + (tree.id == 3 ? 40 : 65)) &&
+                isfacing(player, tree, radToDeg(player.aimdir), weapon.fov)
+              ) {
+                player.resources[tree.id == 0 ? "food" : tree.id == 1 ? "wood" : tree.id == 2 ? "stone" : tree.id == 3 ? "spyllis" : test] += weapon.gather;
+                player.xp += weapon.gather;
+                var wiggleDir = Math.atan2(
+                  tree.y - player.y,
+                  tree.x - player.x
+                );
+                tree.xWiggle += Math.cos(wiggleDir) * 10;
+                tree.yWiggle += Math.sin(wiggleDir) * 10;
+              }
+            });
+            
+            
+            // check for traps and stuff hit
+            var objNear = objCache.filter(
+              x => x && dist(player, x) < renderDistance
+            );
+            objNear.forEach(obj => {
+              if (
+                reaching(player, obj, weapon.range + 10) &&
+                isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
+              ) {
+                obj.health -= weapon.damage;
+                var wiggleDir = Math.atan2(
+                  obj.y - player.y,
+                  obj.x - player.x
+                );
+                obj.xWiggle += Math.cos(wiggleDir) * 10;
+                obj.yWiggle += Math.sin(wiggleDir) * 10;
+              }
+            });
+            
+
+            broadcast(["7", [player.sid]], player);
+            setTimeout(() => {
+              player.reloaded = true;
+            }, weapon.reload);
+          }
+        }
+      }
+      if (player.x > mapSize - 30) {
+        player.xVel += (mapSize - 30 - player.x) * 0.05;
+      }
+      if (player.y > mapSize - 30) {
+        player.yVel += (mapSize - 30 - player.y) * 0.05;
+      }
+      if (player.x < 30) {
+        player.xVel += (30 - player.x) * 0.05;
+      }
+      if (player.y < 30) {
+        player.yVel += (30 - player.y) * 0.05;
+      }
+      //player.x = Math.max(30, player.x);
+      //player.x = Math.min(mapSize - 30, player.x);
+      //player.y = Math.max(30, player.y);
+      //player.y = Math.min(mapSize - 30, player.y);
+
+      if (player.health <= 0) {
+        client.send(msgpack.encode(["d", []]));
+        player.spawned = false;
+      }
+    }
+  });
+  leaderboard = players.sort((a, b) => b.resources.gold - a.resources.gold).filter(x => x.spawned).slice(0, 10);
+}, 10);
+
+wsServer.on("connection", (socket, request) => {
+  socket.send(msgpack.encode(["init", []]));
+  socket.player = {
+    socketLimit: 0,
+    noHurtTime: 0,
+    skin: 0,
+    sid: null,
+    xVel: 0,
+    yVel: 0,
+    movedir: null,
+    attacking: false,
+    chat: null,
+    reloaded: true,
+    weapon: 0,
+    health: 100,
+    weapons: [0, 1, 2, 3],
+    xp: 0,
+    age: 0,
+    resources: {
+      food: 100,
+      wood: 100,
+      stone: 100,
+      gold: 100,
+      spyllis: 0,
+    }
+  };
+  socket.player.spawned = false;
+  socket.on("message", message => {
+    socket.player.socketLimit++;
+    setTimeout(() => {
+      socket.player.socketLimit--;
+    }, 1000)
+    if(socket.player.socketLimit > 100){
+      socket.close(1012, "Buffer large");
+      return;
+    }
+    var msg;
+    try{msg = msgpack.decode(new Uint8Array(message));}catch(err){socket.close(1012, "Buffer missing");return;}
+    if(!msg || !msg[0]){
+      socket.close(1012, "Buffer missing");
+      return;
+    }
+    switch (msg[0]) {
+      case "j":
+        if(!msg[1][0]){
+          socket.close(1012, "Buffer missing");
+        }
+        var name;
+        try{
+        name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "chux.io";
+        }catch(err){
+          socket.close(1012, "Buffer missing");
+        }
+        respawn(
+          socket.player,
+          name
+        );
+        if (!players.find(x => x.sid == socket.player.sid))
+          players.push(socket.player);
+        socket.send(msgpack.encode(["1", [socket.player.sid]]));
+        socket.send(msgpack.encode(["w", [socket.player.weapons]]));
+        break;
+      case "33":
+        socket.player.movedir = msg[1][0];
+        break;
+      case "p":
+        socket.send(msgpack.encode(["p", []]));
+        break;
+      case "2":
+        socket.player.aimdir = msg[1][0];
+        break;
+      case "ch":
+        if(msg[1][0] == "/admin"){ // quick admin command
+          socket.player.admin = true;
+        }
+        if(msg[1][0] == "/godmode" && socket.player.admin == true){
+          socket.player.health = Number.MAX_VALUE;
+        }
+        if(msg[1][0] == "/respawn" && socket.player.admin == true){
+          socket.send(msgpack.encode(["d", []]));
+          socket.player.spawned = false;
+        }
+        socket.player.chat = msg[1][0].slice(0, 30);
+        setTimeout(() => {
+          socket.player.chat = null;
+        }, 3000);
+        break;
+      case "c":
+        var twp = weapons.find(x => x.id == socket.player.weapon);
+        if(twp && twp.isWeapon){
+          socket.player.attacking = msg[1][0] == true ? true : false;
+        }else if((msg[1][0] == true ? true : false) == true){
+          var obj = weapons.find(x => x.id == socket.player.weapon);
+          if(!obj)return;
+          
+          var reqFood = obj.cost.food || 0;
+          var reqWood = obj.cost.wood || 0;
+          var reqStone = obj.cost.stone || 0;
+          var reqSpyllis = obj.cost.spyllis || 0;
+          
+          var haveFood = socket.player.resources.food >= reqFood;
+          var haveWood = socket.player.resources.wood >= reqWood;
+          var haveStone = socket.player.resources.stone >= reqStone;
+          var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
+          
+          if(haveFood && haveWood && haveStone && haveSpyllis){
+            if(obj.heal && socket.player.health < 100){
+              
+              socket.player.resources.food -= reqFood;
+              socket.player.resources.wood -= reqWood;
+              socket.player.resources.stone -= reqStone;
+              socket.player.resources.spyllis -= reqSpyllis;
+              
+              socket.player.health = Math.min(100, socket.player.health + obj.heal);
+              var playerWeaponObjects = [];
+              socket.player.weapons.forEach((w) => {
+                playerWeaponObjects.push(weapons.find(x => x.id == w));
+              })
+              socket.player.weapon = playerWeaponObjects.filter(x => x && x.isWeapon)[0].id;
+            }
+            if(obj.placeable){
+
+              socket.player.resources.food -= reqFood;
+              socket.player.resources.wood -= reqWood;
+              socket.player.resources.stone -= reqStone;
+              socket.player.resources.spyllis -= reqSpyllis;
+              
+              objCache.push({
+                id: 2,
+                x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                health: obj.health,
+                maxHealth: obj.maxHealth,
+                xWiggle: 0,
+                yWiggle: 0,
+              });
+              var playerWeaponObjects = [];
+              socket.player.weapons.forEach((w) => {
+                playerWeaponObjects.push(weapons.find(x => x.id == w));
+              })
+              socket.player.weapon = playerWeaponObjects.filter(x => x && x.isWeapon)[0].id;
+            }
+          }
+        }
+        break;
+      case "s":
+        var id = msg[1][0]-1;
+        if(socket.player.weapons.indexOf(id) != -1){
+          socket.player.weapon = id;
+        }
+        break;
+      default:
+        socket.close(1012, "Buffer missing");
+    }
+  });
+
+  socket.on("close", () => {
+    players.removeItem(players.find(x => x.sid == socket.player.sid));
+  });
+});
+
+var server = app.listen(3000, () => {
+  console.clear();
+  console.log("server started");
+});
+
+server.on("upgrade", (request, socket, head) => {
+  if (request.url == "/websocket") {
+    wsServer.handleUpgrade(request, socket, head, socket => {
+      wsServer.emit("connection", socket, request);
+   });
+  }
+});
+
+//
+
+console.clear();

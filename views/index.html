@@ -1,0 +1,158 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Chux.io is a multiplayer game including Building and Battling join now to play.">
+      <title>Chux.io</title>
+      <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+      <link rel="stylesheet" href="/style.css">
+      <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer></script>
+      <script src="/script.js" defer></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css">
+   </head>
+   <body>
+      <canvas id="gameCanvas"></canvas>
+      <div id="interface">
+         <div id="hotbar">
+            <div id="h-item-0" class="hotbarItem" style="background-image:url(https://images-ext-1.discordapp.net/external/IJcPsty8TLGP4HRbZCu4PyTy8zFD1T_64_I4bLMlYkA/https/i.imgur.com/mQMJm7l.png)"></div>
+            <div id="h-item-1" class="hotbarItem" style="background-image:url(http://moomoo.io/img/resources/food_ico.png)"></div>
+            <div id="h-item-2" class="hotbarItem" style="background-image:url(https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676)"></div>
+            <div id="h-item-3" class="hotbarItem"></div>
+            <div id="h-item-4" class="hotbarItem"></div>
+            <div id="h-item-5" class="hotbarItem"></div>
+            <div id="h-item-6" class="hotbarItem"></div>
+            <div id="h-item-7" class="hotbarItem"></div>
+            <div id="h-item-8" class="hotbarItem"></div>
+            <div id="h-item-9" class="hotbarItem"></div>
+            <div id="h-item-10" class="hotbarItem"></div>
+         </div>
+         <input id="chatbox" type="text" maxlength="30">
+      </div>
+      <!--div id="mainMenu" style="display: none">
+         <div id="container">
+         <div id="accounts">
+           <div id="box">This is a box.</div>
+         </div>
+         <div id="game">
+           <br>
+           <input type="text" id="nameInput" placeholder="ur name" maxlength="15">
+           <button id="enterGame">enter this game</button>
+         </div>
+           <div id="ad">
+             
+           </div>
+         </div>
+         </div-->
+      <!-- gae -->
+      <div id="mainMenu">
+         <div id="menuContainer">
+            <!-- GAME NAME -->
+            <div id="gameName">Chux.io</div>
+            <!-- LOADING TEXT -->
+            <div id="loadingText" style="display: none;">Loading...</div>
+            <!-- MENU CARDS -->
+            <div id="menuCardHolder" style="display: block;">
+               <!--div class="menuCard" id="adCard">
+                  <div align="center" id="moomooio_300x250_1" name="moomooio_300x250_1" data-google-query-id="CPHA8q2asPACFZlI4AodLFwAIQ">
+                     <div id="google_ads_iframe_/15184186/moomooio_300x250_1_0__container__" style="border: 0pt none; width: 300px; height: 250px;">
+                        
+                     </div>
+                  </div>
+               </div-->
+               <div style="display:inline-block;">
+                  <div class="menuCard" id="setupCard">
+                     <input type="text" id="nameInput" placeholder="Enter Name" maxlength="15">
+                     <div id="enterGame" class="menuButton"><span>Enter Game</span></div>
+                     <div id="mobileDownloadButtonContainer">
+                        <a class="downloadBadge" href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&amp;mt=8" target="_blank"><img src="./img/badges/ios.svg"></a>
+                        <a class="downloadBadge" href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile" target="_blank"><img src="./img/badges/android.png"></a>
+                     </div>
+                  </div>
+                  <div id="promoImgHolder" class="menuCard" style="display:block;margin-top:16px;padding-bottom:12px;">
+                     <i class="fa fa-discord" style="font-size:50px;color:#8F9ED3" aria-hidden="true"></i>
+                  </div>
+               </div>
+               <div id="rightCardHolder">
+                  <div class="menuCard" id="guideCard">
+                     <div class="menuHeader">Servers</div>
+                     <select id="serverBrowser">
+                        <option disabled="">Comming soon</option>
+                     </select>
+                     <!--div class="menuHeader" style="margin-top:10px">Select Color</div>
+                     <div id="skinColorHolder">
+                        <div class="skinColorItem activeSkin" style="background-color:#bf8f54" onclick="selectSkinColor(0)"></div>
+                        <div class="skinColorItem" style="background-color:#cbb091" onclick="selectSkinColor(1)"></div>
+                        <div class="skinColorItem" style="background-color:#896c4b" onclick="selectSkinColor(2)"></div>
+                        <div class="skinColorItem" style="background-color:#fadadc" onclick="selectSkinColor(3)"></div>
+                        <div class="skinColorItem" style="background-color:#ececec" onclick="selectSkinColor(4)"></div>
+                        <div class="skinColorItem" style="background-color:#c37373" onclick="selectSkinColor(5)"></div>
+                        <div class="skinColorItem" style="background-color:#4c4c4c" onclick="selectSkinColor(6)"></div>
+                        <div class="skinColorItem" style="background-color:#ecaff7" onclick="selectSkinColor(7)"></div>
+                        <div class="skinColorItem" style="background-color:#738cc3" onclick="selectSkinColor(8)"></div>
+                        <div class="skinColorItem" style="background-color:#8bc373" onclick="selectSkinColor(9)"></div>
+                     </div-->
+                     <div class="menuHeader" style="margin-top:10px">How To Play</div>
+                     <div class="menuText">
+                       Gather resources and build your base or fight with other players to get higher on leaderboard!
+                     </div>
+                     <div class="menuHeader">Controls</div>
+                     <div id="desktopInstructions" class="menuText">
+                        Movement: W, A, S, D<br>
+                        Look: Mouse<br>
+                        Gather/Attack: Mouse or Space<br>
+                        Select Item: 1-9 or Click<br>
+                        Quick Select Food: Q<br>
+                        Chat: Enter Key<br>
+                     </div>
+                     <div id="mobileInstructions" class="menuText">
+                     </div>
+                     <div id="smallLinks">
+                        <div class="menuHeader">Links</div>
+                        <div class="menuText">
+                           <a href="./docs/versions.txt" target="_blank" class="menuLink">v1.6.9</a> |
+                           <a href="https://discordapp.com/invite/0yK1A2IFj6h3fz8U" target="_blank" class="menuLink">Discord</a> |
+                           <a href="./docs/terms.txt" target="_blank" class="menuLink">Terms</a> |
+                           <a href="./docs/privacy.txt" target="_blank" class="menuLink">Privacy</a> |
+                           <a href="http://iogames.space" target="_blank" class="menuLink">More Games</a>
+                        </div>
+                     </div>
+                     <!--div class="menuText">
+                        Coded by <a href="#" target="" class="menuLink">Azari</a>
+                     </div-->
+                  </div>
+                  <!-- <div id="downloadButtonContainer" class="menuCard">
+                     <a class="downloadBadge" href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&mt=8" target="_blank"><img src="./img/badges/ios.svg"></a></img>
+                     <a class="downloadBadge" href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile" target="_blank"><img src="./img/badges/android.png"></img></a>
+                     </div> -->
+               </div>
+            </div>
+            <!-- NEW AD -->
+            <div class="menuCard" style="width:728px;display:inline-block;margin-top:10px;padding:10px;">
+               <div align="center" id="moomooio_728x90_home" name="moomooio_728x90_home" data-google-query-id="CM-E-a2asPACFZlI4AodLFwAIQ">
+                  <div id="google_ads_iframe_/15184186/moomooio_728x90_home_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;">
+                     <iframe frameborder="0" src="https://f9e5ed626cac5f2753033b29a08437de.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html" id="google_ads_iframe_/15184186/moomooio_728x90_home_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="2" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe>
+                     <div class="__fs-ancillary" style="--childWidth:728px; visibility: visible;"> 
+                       <div class="__fs-branding"><a href="" target="_blank" rel="noreferrer"></a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="youtuberOf">
+          <!--div class="spanLink" id="featuredYoutube"><a style="display:inline;" target="_blank" class="ytLink" href=""><i class="fa fa-youtube-play" style="vertical-align:top;display:inline;font-size:25px;color:red"></i> <p style="display:inline;" id="featuredYoutubeName">Zari</p></a></div>
+           <div class="spanLink" id="featuredTwitch"><a style="display:inline;" target="_blank" class="ytLink" href=""><i class="fa fa-youtube-play" style="vertical-align:top;display:inline;font-size:25px;color:red"></i> <p style="display:inline;" id="featuredTwitchName">Zari</p></a></div-->
+         </div>
+         <!-- LINKS CONTAINERS -->
+         <div id="linksContainer2">
+            <a href="/docs/versions.txt" target="_blank" class="menuLink">Beta 1.0.1</a> |
+            <a href="/docs/terms.txt" target="_blank" class="menuLink">Terms</a> |
+            <a href="/docs/privacy.txt" target="_blank" class="menuLink">Privacy</a>
+         </div>
+      </div>
+   </body>
+</html>
