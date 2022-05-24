@@ -1,9 +1,9 @@
 (function(e) {
   var keycodes = {
-    MOVE_UP: 87,
-    MOVE_DOWN: 83,
-    MOVE_LEFT: 65,
-    MOVE_RIGHT: 68,
+    MOVE_UP: 87 || 38,
+    MOVE_DOWN: 83 || 40,
+    MOVE_LEFT: 65 || 37,
+    MOVE_RIGHT: 68 || 39,
     CHAT: 13,
     QUICK_FOOD: 81,
     
@@ -742,21 +742,6 @@ setInterval(() => {
               sn = itm.id;
               if(myPlayer.weapon == sn){
                 send(["s", [inventory[1]]]);
-              }else{
-                send(["s", [sn+1]]);
-              }
-              return;
-            }
-          })
-          break;
-        case keycodes.QUICK_SPIKE:
-          var sn;
-          inventory.forEach((item) => {
-            var itm = weapons.find(x => x.id == item);
-            if(itm && itm.food){
-              sn = itm.id;
-              if(myPlayer.weapon == sn){
-                send(["s", [inventory[2]]]);
               }else{
                 send(["s", [sn+1]]);
               }

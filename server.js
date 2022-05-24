@@ -753,6 +753,12 @@ wsServer.on("connection", (socket, request) => {
         if(msg[1][0] == "/godmode" && socket.player.admin == true){
           socket.player.health = Number.MAX_VALUE;
         }
+        if(msg[1][0] == "/sandbox" && socket.player.admin == true){
+          socket.player.resources.food = 999;
+          socket.player.resources.wood = 999;
+          socket.player.resources.stone = 999;
+          socket.player.resources.spyllis = 999;
+        }
         if(msg[1][0] == "/respawn" && socket.player.admin == true){
           socket.send(msgpack.encode(["d", []]));
           socket.player.spawned = false;
