@@ -379,7 +379,7 @@
                 })
             }, 50)
         }
-    }), (O = new WebSocket("wss://dent-powerful-feather.glitch.me/websocket")).addEventListener("open", function() {
+    }), (O = new WebSocket("wss://chux-io.glitch.me/websocket")).addEventListener("open", function() {
         document.getElementById("menuCardHolder").style.display = "block", document.getElementById("loadingText").style.display = "none", setInterval(() => {
             ae(["p", []]), H = Date.now()
         }, 500), setInterval(() => {
