@@ -351,8 +351,8 @@ setInterval(() => {
     ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
-    ctx.strokeText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 50);
-    ctx.fillText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 50);
+    ctx.strokeText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100);
+    ctx.fillText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100); // og 50
     ctx.filStyle = lastColor;
     ctx.textAlign = "center";
     if(player.sid != myPlayer.sid){

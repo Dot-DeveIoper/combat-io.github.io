@@ -1,0 +1,6 @@
+  -Version 1.0.2-
+
+-Added Player Body.
+-Added Player Speed.
+-Added Player Movement [W, A, S, D].
+-Added Hitting Features [E, Space, Click].

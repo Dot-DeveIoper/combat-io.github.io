@@ -434,6 +434,7 @@ setInterval(() => {
     let player = client.player;
     if (player && player.spawned) {
       
+      var playerSpeed = 1
       // player velocity
       
       if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
@@ -751,9 +752,6 @@ wsServer.on("connection", (socket, request) => {
         }
         if(msg[1][0] == "/godmode" && socket.player.admin == true){
           socket.player.health = Number.MAX_VALUE;
-        }
-        if(msg[1][0] == "/speedmode" && socket.player.admin == true){
-          playerSpeed = 5;
         }
         if(msg[1][0] == "/sandbox" && socket.player.admin == true){
           socket.player.resources.food = 999;
