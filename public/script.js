@@ -749,6 +749,21 @@ setInterval(() => {
             }
           })
           break;
+        case keycodes.QUICK_SPIKE:
+          var sn;
+          inventory.forEach((item) => {
+            var itm = weapons.find(x => x.id == item);
+            if(itm && itm.food){
+              sn = itm.id;
+              if(myPlayer.weapon == sn){
+                send(["s", [inventory[2]]]);
+              }else{
+                send(["s", [sn+1]]);
+              }
+              return;
+            }
+          })
+          break;
         case keycodes.HOTBAR_1:
           send(["s", [inventory[1]]]);
           break;
