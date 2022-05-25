@@ -223,20 +223,20 @@ setInterval(() => {
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
       scale: 100,
       img: new Image(),
-      xOffset: -50,
+      xOffset: 0,
       yOffset: -50,
     }
-  ]
+  ];
   
-  var animals = [
+  var objects = [
     {
-      id: 0,
-      name: "Cow",
+      id: 2,
+      name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 200,
+      scale: 100,
       img: new Image(),
-      xOffset: 0,
-      yOffset: 0,
+      xOffset: -50,
+      yOffset: -50,
     }
   ]
   
