@@ -147,10 +147,10 @@
             id: 2,
             name: "Spike",
             src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
-            scale: 100,
+            scale: 50,
             img: new Image,
-            xOffset: -50,
-            yOffset: -50
+            xOffset: 5,
+            yOffset: 5
         }],
         te = [{
             id: 2,
