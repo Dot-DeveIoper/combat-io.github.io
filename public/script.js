@@ -343,6 +343,7 @@ setInterval(() => {
       send(["33", [move]]);
     }
   }
+  localStorage.name = player.name;
   function drawPlayer(x, y, player) {
     var lastColor = ctx.fillStyle;
     ctx.font = "25px Georgia";
