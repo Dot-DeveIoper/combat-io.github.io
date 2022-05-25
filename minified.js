@@ -146,7 +146,7 @@
         }, {
             id: 2,
             name: "Spike",
-            src: "https://static.wikia.nocookie.net/moom/images/d/d6/Small_spike.png/revision/latest?cb=20190220105231",
+            src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
             scale: 100,
             img: new Image,
             xOffset: 0,
@@ -155,7 +155,7 @@
         te = [{
             id: 2,
             name: "Spike",
-            src: "https://static.wikia.nocookie.net/moom/images/d/d6/Small_spike.png/revision/latest?cb=20190220105231",
+            src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
             scale: 100,
             img: new Image,
             xOffset: -50,

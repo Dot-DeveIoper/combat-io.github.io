@@ -220,7 +220,7 @@ setInterval(() => {
     {
       id: 2,
       name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
       scale: 100,
       img: new Image(),
       xOffset: 0,
@@ -232,7 +232,7 @@ setInterval(() => {
     {
       id: 2,
       name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
       scale: 100,
       img: new Image(),
       xOffset: -50,
