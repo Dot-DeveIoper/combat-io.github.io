@@ -146,7 +146,7 @@
         }, {
             id: 2,
             name: "Spike",
-            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+            src: "https://static.wikia.nocookie.net/moom/images/d/d6/Small_spike.png/revision/latest?cb=20190220105231",
             scale: 100,
             img: new Image,
             xOffset: 0,
@@ -155,7 +155,7 @@
         te = [{
             id: 2,
             name: "Spike",
-            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+            src: "https://static.wikia.nocookie.net/moom/images/d/d6/Small_spike.png/revision/latest?cb=20190220105231",
             scale: 100,
             img: new Image,
             xOffset: -50,

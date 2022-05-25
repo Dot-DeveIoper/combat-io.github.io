@@ -747,7 +747,7 @@ wsServer.on("connection", (socket, request) => {
         socket.player.aimdir = msg[1][0];
         break;
       case "ch":
-        if(msg[1][0] == "/admin"){ // quick admin command
+        if(msg[1][0] == "/"+process.env.ADMINPASS){ // quick admin command
           socket.player.admin = true;
         }
         if(msg[1][0] == "/godmode" && socket.player.admin == true){
