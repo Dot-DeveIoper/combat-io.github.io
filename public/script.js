@@ -221,18 +221,9 @@ setInterval(() => {
       id: 2,
       name: "Spike",
       src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
-      scale: 70,
+      scale: 100,
       img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
-    {
-      id: 3,
-      name: "Wood Wall",
-      src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/wood wall?v=1653466155804",
-      scale: 70,
-      img: new Image(),
-      xOffset: -50,
+      xOffset: 0,
       yOffset: -50,
     }
   ];
@@ -242,16 +233,7 @@ setInterval(() => {
       id: 2,
       name: "Spike",
       src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
-      scale: 70,
-      img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
-    {
-      id: 3,
-      name: "Wood Wall",
-      src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/wood wall?v=1653466155804",
-      scale: 70,
+      scale: 100,
       img: new Image(),
       xOffset: -50,
       yOffset: -50,
@@ -361,10 +343,10 @@ setInterval(() => {
       send(["33", [move]]);
     }
   }
+  localStorage.name = player.name;
   function drawPlayer(x, y, player) {
-    localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
-    ctx.font = "25px Hammersmith One";
+    ctx.font = "25px Georgia";
     ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
@@ -373,6 +355,7 @@ setInterval(() => {
     ctx.strokeText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100);
     ctx.fillText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100); // og 50
     ctx.filStyle = lastColor;
+    ctx.textAlign = "center";
     if(player.sid != myPlayer.sid){
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     }else{
@@ -631,7 +614,6 @@ setInterval(() => {
 
   }
   function connect() {
-    document.getElementById("nameInput").value = localStorage.name;
     ws = new WebSocket("wss://chux-io.glitch.me/websocket");
     ws.addEventListener("open", function() {
       document.getElementById("menuCardHolder").style.display = "block";

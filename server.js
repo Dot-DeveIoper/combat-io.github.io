@@ -291,19 +291,6 @@ var weapons = [
     velocity: 20,
     health: 300,
     maxHealth: 300,
-  },
-  {
-    id: 3,
-    isWeapon: false,
-    placeable: true,
-    name: "Wood Wall",
-    cost: {
-      wood: 5,
-    },
-    damage: 0,
-    velocity: 0,
-    health: 200,
-    maxHealth: 200,
   }
 ];
 
