@@ -155,19 +155,19 @@
             id: 3,
             name: "Wood Wall",
             src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/wood wall?v=1653466155804",
-            scale: 50,
+            scale: 70,
             img: new Image,
-            xOffset: -20,
-            yOffset: -20
+            xOffset: -50,
+            yOffset: -50
         }],
         te = [{
             id: 2,
             name: "Spike",
             src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
-            scale: 50,
+            scale: 70,
             img: new Image,
-            xOffset: -20,
-            yOffset: -20
+            xOffset: -50,
+            yOffset: -50
         }];
 
     function ie(e) {
