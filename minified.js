@@ -149,8 +149,8 @@
             src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
             scale: 100,
             img: new Image,
-            xOffset: 0,
-            yOffset: -50
+            xOffset: -20,
+            yOffset: -20
         }],
         te = [{
             id: 2,
@@ -158,8 +158,8 @@
             src: "https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/Small Spike?v=1653441690396",
             scale: 100,
             img: new Image,
-            xOffset: -50,
-            yOffset: -50
+            xOffset: -20,
+            yOffset: -20
         }];
 
     function ie(e) {
