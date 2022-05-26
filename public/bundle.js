@@ -832,8 +832,7 @@ if(SpawnedOnce == 1){
           }else{
             chatbox.style.display = "none";
             if(chatbox.value){
-              var e = prompt("chat message");
-              e && sn(e);
+              send(["ch", [chatbox.value]]);
               chatbox.value = "";
             }
           }
@@ -841,9 +840,6 @@ if(SpawnedOnce == 1){
       }
     }
   });
-  function sn(e) {
-    send(["ch", [e.slice(0, 30)]]);
-  }
   document.addEventListener("keyup", function(e) {
     if (e.isTrusted) {
       switch (e.keyCode) {
