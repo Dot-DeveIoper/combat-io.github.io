@@ -270,9 +270,19 @@ var weapons = [
     gather: 1,
   },
   {
+    id: 5,
+    isWeapon: true,
+    name: "Sword",
+    reload: 600,
+    damage: 45,
+    range: 100,
+    fov: 150,
+    gather: 1,
+  },
+  {
     id: 1,
     isWeapon: false,
-    name: "Apple",
+    name: "Orange",
     cost: {
       food: 10,
     },
@@ -284,7 +294,7 @@ var weapons = [
     placeable: true,
     name: "Spike",
     cost: {
-      wood: 5,
+      wood: 20,
       stone: 5,
     },
     damage: 20,

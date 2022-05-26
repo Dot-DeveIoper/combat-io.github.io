@@ -203,18 +203,27 @@ setInterval(() => {
   var weapons = [
     {
       id: 0,
-      name: "Axe",
-      src: "https://images-ext-1.discordapp.net/external/IJcPsty8TLGP4HRbZCu4PyTy8zFD1T_64_I4bLMlYkA/https/i.imgur.com/mQMJm7l.png",
+      name: "Tool Hammer",
+      src: "https://moomoo.io/img/weapons/hammer_1.png",
       scale: 100,
-      img: new Image(),
+      img: new Image,
       xOffset: -25,
-      yOffset: -30,
+      yOffset: -30
+    },
+    {
+      id: 5,
+      name: "Short Sword",
+      src: "https://moomoo.io/img/weapons/sword_1.png",
+      scale: 100,
+      img: new Image,
+      xOffset: -25,
+      yOffset: -30
     },
     {
       id: 1,
-      name: "Apple",
+      name: "Orange",
       food: true,
-      src: "http://moomoo.io/img/resources/food_ico.png",
+      src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
       scale: 50,
       img: new Image(),
       xOffset: 5,
