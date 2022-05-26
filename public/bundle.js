@@ -225,7 +225,7 @@ setInterval(() => {
       id: 2,
       name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
-      scale: 100,
+      scale: 80,
       img: new Image(),
       xOffset: 0,
       yOffset: -50,
@@ -246,7 +246,7 @@ setInterval(() => {
       id: 2,
       name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 100,
+      scale: 80,
       img: new Image(),
       xOffset: -50,
       yOffset: -50,
@@ -799,8 +799,7 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[3]]]);
           break;
         case keycodes.HOTBAR_4:
-          send(["ch", ['Hey']])
-          send(["s", [inventory[4]]]);
+          send(["s", [4]]);
           break;
         case keycodes.HOTBAR_5:
           send(["s", [inventory[5]]]);
