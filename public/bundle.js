@@ -713,13 +713,19 @@ setInterval(() => {
       send(["c", [0]]);
     }
   })
+  var autohittingwason = false;
   document.addEventListener("keydown", function(e) {
     if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
+      if(autohitting == true){
+        autohitting = false;
+        autohittingwason = true;
+      }
     e.isTrusted && (!0, send(["c", [1]]))
-    }
+      }
   })
   document.addEventListener("keyup", function(e) {
     if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
+      if(autohitting == true) return send(["c", [1]]);
       e.isTrusted && (!1, send(["c", [0]]))
     }
   })
