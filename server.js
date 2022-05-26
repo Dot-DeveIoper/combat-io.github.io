@@ -270,7 +270,7 @@ var weapons = [
     gather: 1,
   },
   {
-    id: 2,
+    id: 1,
     isWeapon: true,
     name: "Sword",
     reload: 600,
@@ -280,7 +280,7 @@ var weapons = [
     gather: 1,
   },
   {
-    id: 3,
+    id: 2,
     isWeapon: false,
     name: "Orange",
     cost: {
@@ -289,7 +289,7 @@ var weapons = [
     heal: 20,
   },
   {
-    id: 4,
+    id: 3,
     isWeapon: false,
     placeable: true,
     name: "Spike",

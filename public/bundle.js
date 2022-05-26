@@ -211,7 +211,7 @@ setInterval(() => {
       yOffset: -30
     },
     {
-      id: 2,
+      id: 5,
       name: "Short Sword",
       src: "https://moomoo.io/img/weapons/sword_1.png",
       scale: 100,
@@ -220,7 +220,7 @@ setInterval(() => {
       yOffset: -30
     },
     {
-      id: 3,
+      id: 1,
       name: "Orange",
       food: true,
       src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
@@ -231,7 +231,7 @@ setInterval(() => {
       angleOffset: -toRad(40),
     },
     {
-      id: 4,
+      id: 2,
       name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
       scale: 100,
@@ -243,7 +243,7 @@ setInterval(() => {
   
   var objects = [
     {
-      id: 4,
+      id: 2,
       name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
       scale: 100,
@@ -772,7 +772,7 @@ if(SpawnedOnce == 1){
             if(itm && itm.food){
               sn = itm.id;
               if(myPlayer.weapon == sn){
-                send(["s", [inventory[3]]]);
+                send(["s", [inventory[1]]]);
               }else{
                 send(["s", [sn+1]]);
               }
@@ -784,13 +784,13 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[1]]]);
           break;
         case keycodes.HOTBAR_2:
-          send(["s", [inventory[2]]]);
+          send(["s", [inventory[5]]]);
           break;
         case keycodes.HOTBAR_3:
-          send(["s", [inventory[3]]]);
+          send(["s", [inventory[2]]]);
           break;
         case keycodes.HOTBAR_4:
-          send(["s", [inventory[4]]]);
+          send(["s", [inventory[3]]]);
           break;
         case keycodes.HOTBAR_5:
           send(["s", [inventory[5]]]);
