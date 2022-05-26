@@ -588,6 +588,10 @@ setInterval(() => {
     ctx.beginPath();
     ctx.arc(minimapOffset + xOnMinimap, + canvas.height - minimapOffset - minimapSize + yOnMinimap, 3, 0, 2 * Math.PI);
     ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(minimapOffset + myPlayer.PlayerOldX, + canvas.height - minimapOffset - minimapSize + myPlayer.PlayerOldY, "x");
+    ctx.fill();
     
 
     // resources display
@@ -730,10 +734,10 @@ setInterval(() => {
     }
   })
   document.addEventListener("keypress", function(e) {
+  if(document.activeElement.id.toLowerCase() !== 'chatbox'){
     if(e.key == "x"){
       lockDir = !lockDir;
     }
-  if(document.activeElement.id.toLowerCase() !== 'chatbox'){
     if(e.key == "e"){
     AutoHit = !AutoHit;
       if(AutoHit){
@@ -848,6 +852,18 @@ setInterval(() => {
         case keycodes.MOVE_RIGHT:
           moveRight = 0;
           break;
+        case keycodes.MOVE_UP2:
+          moveUp = 0;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 0;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 0;
+          break;
+        case keycodes.MOVE_RIGHT2:
+          moveRight = 0;
+          break;
       }
     }
   });
@@ -859,7 +875,7 @@ setInterval(() => {
   });
 
   canvas.addEventListener("mousemove", function(e) {
-    if (e.isTrusted) {
+    if (e.isTrusted && !lockDir) {
       mouseX = e.clientX;
       mouseY = e.clientY;
       aim = Math.atan2(

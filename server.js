@@ -315,6 +315,8 @@ var players = [];
 var ids = 0;
 
 function respawn(player, name) {
+  player.PlayerOldX = player.x;
+  player.PlayerOldY = player.y
   player.noHurtTime = 200;
   player.skin = 0;
   player.name = name;
