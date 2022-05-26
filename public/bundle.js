@@ -33,6 +33,9 @@
   var moveDown = 0;
   var moveLeft = 0;
   var moveRight = 0;
+  var SpawnedOnce = 0;
+  var deathLocX = 0;
+  var deathLocY = 0;
  
 /*
 setInterval(() => {
@@ -353,8 +356,8 @@ setInterval(() => {
     ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
-    ctx.strokeText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100);
-    ctx.fillText(`${player.admin ? "[DEV]" : ""}${player.name}`, x - -27, y - 50, 100); // og 50
+    ctx.strokeText(`${player.admin ? "[DEV]" : ""} {${player.sid}} ${player.name}`, x - -27, y - 50, 100);
+    ctx.fillText(`${player.admin ? "[DEV]" : ""} {${player.sid}} ${player.name}`, x - -27, y - 50, 100); // og 50
     ctx.filStyle = lastColor;
     if(player.sid != myPlayer.sid){
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
@@ -584,13 +587,14 @@ setInterval(() => {
     
     var xOnMinimap = (myPlayer.x) * (minimapSize/mapSize);
     var yOnMinimap = (myPlayer.y) * (minimapSize/mapSize);
-    
+    var deathLocX = [];
+    var deathLocY = [];
     ctx.beginPath();
     ctx.arc(minimapOffset + xOnMinimap, + canvas.height - minimapOffset - minimapSize + yOnMinimap, 3, 0, 2 * Math.PI);
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(minimapOffset + myPlayer.PlayerOldX, + canvas.height - minimapOffset - minimapSize + myPlayer.PlayerOldY, "x");
+    ctx.arc(minimapOffset + deathLocX, + canvas.height - minimapOffset - minimapSize + deathLocY, 3, 0, 2 * Math.PI);
     ctx.fill();
     
 
@@ -890,10 +894,16 @@ setInterval(() => {
       e.preventDefault();
     }
   })
-
+enterGame.addEventListener("click", function(e) {
+  if(SpawnedOnce == 1){
+    deathLocX = myPlayer.x;
+    deathLocY = myPlayer.y;
+  }
+})
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       mainMenu.style.display = "none";
+      SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
       setInterval(() => {
         window.requestAnimFrame(update);
