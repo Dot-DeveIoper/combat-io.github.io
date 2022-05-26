@@ -799,6 +799,7 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[3]]]);
           break;
         case keycodes.HOTBAR_4:
+          send(["ch", ['Hey']])
           send(["s", [inventory[4]]]);
           break;
         case keycodes.HOTBAR_5:
