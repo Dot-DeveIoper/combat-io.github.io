@@ -639,7 +639,7 @@ if(SpawnedOnce == 1){
 
   }
   function connect() {
-    document.getElementById("nameInput").value = localStorage.name;
+  document.getElementById("nameInput").value = "undefined" ? document.getElementById("nameInput").value = [] : document.getElementById("nameInput").value = localStorage.name;
     ws = new WebSocket("wss://chux-io.glitch.me/websocket");
     ws.addEventListener("open", function() {
       document.getElementById("menuCardHolder").style.display = "block";
