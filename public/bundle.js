@@ -341,10 +341,10 @@ setInterval(() => {
     };
   }
   function sendMove() {
-    if(document.activeElement == chatbox){
-      
-    }else{
+    if(document.activeElement.id.toLowerCase() !== 'chatbox'){
       send(["33", [move]]);
+    }else{
+      send(["33", [null]]);
     }
   }
   function drawPlayer(x, y, player) {
@@ -587,15 +587,14 @@ setInterval(() => {
     
     var xOnMinimap = (myPlayer.x) * (minimapSize/mapSize);
     var yOnMinimap = (myPlayer.y) * (minimapSize/mapSize);
-    var deathLocX = [];
-    var deathLocY = [];
     ctx.beginPath();
     ctx.arc(minimapOffset + xOnMinimap, + canvas.height - minimapOffset - minimapSize + yOnMinimap, 3, 0, 2 * Math.PI);
     ctx.fill();
-
+if(SpawnedOnce == 1){
     ctx.beginPath();
     ctx.arc(minimapOffset + deathLocX, + canvas.height - minimapOffset - minimapSize + deathLocY, 3, 0, 2 * Math.PI);
     ctx.fill();
+}
     
 
     // resources display
@@ -896,8 +895,10 @@ setInterval(() => {
   })
 enterGame.addEventListener("click", function(e) {
   if(SpawnedOnce == 1){
-    deathLocX = myPlayer.x;
-    deathLocY = myPlayer.y;
+    var minimapOffset = 20;
+    var minimapSize = 200;
+    deathLocX = (myPlayer.y) * (minimapSize/mapSize)
+    deathLocY = (myPlayer.y) * (minimapSize/mapSize)
   }
 })
   enterGame.addEventListener("click", function(e) {
