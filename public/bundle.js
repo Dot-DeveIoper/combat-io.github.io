@@ -206,18 +206,9 @@ setInterval(() => {
       name: "Tool Hammer",
       src: "https://moomoo.io/img/weapons/hammer_1.png",
       scale: 100,
-      img: new Image,
+      img: new Image(),
       xOffset: -25,
-      yOffset: -30
-    },
-    {
-      id: 5,
-      name: "Short Sword",
-      src: "https://moomoo.io/img/weapons/sword_1.png",
-      scale: 100,
-      img: new Image,
-      xOffset: -25,
-      yOffset: -30
+      yOffset: -30,
     },
     {
       id: 1,
@@ -784,13 +775,13 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[1]]]);
           break;
         case keycodes.HOTBAR_2:
-          send(["s", [inventory[5]]]);
-          break;
-        case keycodes.HOTBAR_3:
           send(["s", [inventory[2]]]);
           break;
-        case keycodes.HOTBAR_4:
+        case keycodes.HOTBAR_3:
           send(["s", [inventory[3]]]);
+          break;
+        case keycodes.HOTBAR_4:
+          send(["s", [inventory[4]]]);
           break;
         case keycodes.HOTBAR_5:
           send(["s", [inventory[5]]]);

@@ -127,7 +127,7 @@
         }],
         ee = [{
             id: 0,
-            name: "Tool Hammer",
+            name: "Axe",
             src: "https://moomoo.io/img/weapons/hammer_1.png",
             scale: 100,
             img: new Image,
@@ -135,24 +135,16 @@
             yOffset: -30
         }, {
             id: 1,
-            name: "Short Sword",
-            src: "https://moomoo.io/img/weapons/sword_1.png",
-            scale: 100,
-            img: new Image,
-            xOffset: -25,
-            yOffset: -30
-        }, {
-            id: 2,
             name: "Orange",
             food: !0,
             src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
-            scale: 50,
+            scale: 70,
             img: new Image,
             xOffset: 5,
             yOffset: 5,
             angleOffset: -E(40)
         }, {
-            id: 3,
+            id: 2,
             name: "Spike",
             src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,
@@ -161,7 +153,7 @@
             yOffset: -50
         }],
         te = [{
-            id: 3,
+            id: 2,
             name: "Spike",
             src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,

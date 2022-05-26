@@ -270,9 +270,9 @@ var weapons = [
     gather: 1,
   },
   {
-    id: 1,
+    id: 5,
     isWeapon: true,
-    name: "Sword",
+    name: "Short Sword",
     reload: 600,
     damage: 45,
     range: 100,
