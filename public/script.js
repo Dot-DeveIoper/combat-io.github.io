@@ -25,7 +25,7 @@
   var swingAngle = {};
   
   var inventory = [];
-  
+  var autohitting = false;
   var AutoHit = false;
   
   var moveUp = 0;
@@ -696,31 +696,30 @@ setInterval(() => {
       });
     });
     ws.addEventListener("close", function(v) {
-      alert("disconnected: " + v);
       kick(v.reason);
     });
   }
   
   canvas.addEventListener("mousedown", function(e){
-    if (e.isTrusted){
+    if (e.isTrusted && !autohitting){
       attacking = true;
       send(["c", [1]]);
     }
   })
   
   canvas.addEventListener("mouseup", function(e){
-    if (e.isTrusted){
+    if (e.isTrusted && !autohitting){
       attacking = false;
       send(["c", [0]]);
     }
   })
   document.addEventListener("keydown", function(e) {
-    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox'){
+    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
     e.isTrusted && (!0, send(["c", [1]]))
     }
   })
   document.addEventListener("keyup", function(e) {
-    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox'){
+    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
       e.isTrusted && (!1, send(["c", [0]]))
     }
   })
@@ -729,8 +728,10 @@ setInterval(() => {
     if(e.key == "e"){
     AutoHit = !AutoHit;
       if(AutoHit){
+        autohitting = true
          e.isTrusted && (!0, send(["c", [1]]))
       }else if(!AutoHit){
+        autohitting = false;
          e.isTrusted && (!1, send(["c", [0]]))
       }
     }
