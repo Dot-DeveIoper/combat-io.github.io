@@ -100,6 +100,9 @@ setInterval(() => {
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+  function sn(e) {
+    send(["ch", [e]])
+  }
   var nausea = false;
   var attacking = false;
   let ws;
@@ -639,8 +642,10 @@ if(SpawnedOnce == 1){
 
   }
   function connect() {
-  document.getElementById("nameInput").value = "undefined" ? document.getElementById("nameInput").value = [] : document.getElementById("nameInput").value = localStorage.name;
     ws = new WebSocket("wss://chux-io.glitch.me/websocket");
+    setTimeout(() => {
+      document.getElementById("nameInput").value = "undefined" ? document.getElementById("nameInput").value = [] : document.getElementById("nameInput").value = localStorage.name;
+    },500)
     ws.addEventListener("open", function() {
       document.getElementById("menuCardHolder").style.display = "block";
       document.getElementById("loadingText").style.display = "none";
