@@ -27,7 +27,8 @@
   var inventory = [];
   var autohitting = false;
   var AutoHit = false;
-  
+  var autohittingwason = false;
+  var lockDir = false;
   var moveUp = 0;
   var moveDown = 0;
   var moveLeft = 0;
@@ -713,23 +714,25 @@ setInterval(() => {
       send(["c", [0]]);
     }
   })
-  var autohittingwason = false;
   document.addEventListener("keydown", function(e) {
-    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
+    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox'){
       if(autohitting == true){
-        autohitting = false;
+        AutoHit = false;
         autohittingwason = true;
       }
     e.isTrusted && (!0, send(["c", [1]]))
       }
   })
   document.addEventListener("keyup", function(e) {
-    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox' && !autohitting){
-      if(autohitting == true) return send(["c", [1]]);
+    if(e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox'){
+      if(autohittingwason == true) return autohittingwason = false, AutoHit = true;
       e.isTrusted && (!1, send(["c", [0]]))
     }
   })
   document.addEventListener("keypress", function(e) {
+    if(e.key == "x"){
+      lockDir = !lockDir;
+    }
   if(document.activeElement.id.toLowerCase() !== 'chatbox'){
     if(e.key == "e"){
     AutoHit = !AutoHit;
