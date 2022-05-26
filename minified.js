@@ -134,7 +134,7 @@
             xOffset: -25,
             yOffset: -30
         }, {
-            id: 5,
+            id: 2,
             name: "Short Sword",
             src: "https://moomoo.io/img/weapons/sword_1.png",
             scale: 100,
@@ -142,7 +142,7 @@
             xOffset: -25,
             yOffset: -30
         }, {
-            id: 1,
+            id: 3,
             name: "Orange",
             food: !0,
             src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
@@ -152,7 +152,7 @@
             yOffset: 5,
             angleOffset: -E(40)
         }, {
-            id: 2,
+            id: 4,
             name: "Spike",
             src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,
@@ -161,7 +161,7 @@
             yOffset: -50
         }],
         te = [{
-            id: 2,
+            id: 4,
             name: "Spike",
             src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,
