@@ -1,15 +1,4 @@
--Version 1.1.2-
-
--Added Player Movement
--Added Tool-Hammer
--Added Wood Wall
--Added Small Spike
--Added Orange(Healable)
--Added sand biome
--Improved Player Autohit
--Patched Movement Glitch
-
--Version 1.0.2-
+  -Version 1.0.2-
 
 -Added Player Body.
 -Added Player Speed.
