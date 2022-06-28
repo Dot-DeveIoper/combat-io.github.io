@@ -127,7 +127,7 @@
         }],
         ee = [{
             id: 0,
-            name: "Tool Hammer",
+            name: "Axe",
             src: "https://moomoo.io/img/weapons/hammer_1.png",
             scale: 100,
             img: new Image,
@@ -137,7 +137,7 @@
             id: 1,
             name: "Orange",
             food: !0,
-            src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=500&height=500",
+            src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
             scale: 70,
             img: new Image,
             xOffset: 5,
@@ -146,15 +146,7 @@
         }, {
             id: 2,
             name: "Spike",
-            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
-            scale: 80,
-            img: new Image,
-            xOffset: 0,
-            yOffset: -50
-        }, {
-            id: 3,
-            name: "Wall",
-            src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,
             img: new Image,
             xOffset: 0,
@@ -163,15 +155,7 @@
         te = [{
             id: 2,
             name: "Spike",
-            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
-            scale: 80,
-            img: new Image,
-            xOffset: -50,
-            yOffset: -50
-        }, {
-            id: 3,
-            name: "Wall",
-            src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+            src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
             scale: 100,
             img: new Image,
             xOffset: -50,
@@ -395,7 +379,7 @@
                 })
             }, 50)
         }
-    }), (O = new WebSocket("wss://chux-io2.glitch.me/websocket")).addEventListener("open", function() {
+    }), (O = new WebSocket("wss://chux-io.glitch.me/websocket")).addEventListener("open", function() {
         document.getElementById("menuCardHolder").style.display = "block", document.getElementById("loadingText").style.display = "none", setInterval(() => {
             ae(["p", []]), H = Date.now()
         }, 500), setInterval(() => {

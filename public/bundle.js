@@ -100,9 +100,6 @@ setInterval(() => {
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  function sn(e) {
-    send(["ch", [e]])
-  }
   var nausea = false;
   var attacking = false;
   let ws;
@@ -217,7 +214,7 @@ setInterval(() => {
       id: 1,
       name: "Orange",
       food: true,
-      src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=500&height=500",
+      src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=499&height=499",
       scale: 50,
       img: new Image(),
       xOffset: 5,
@@ -227,16 +224,7 @@ setInterval(() => {
     {
       id: 2,
       name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
-      scale: 80,
-      img: new Image(),
-      xOffset: 0,
-      yOffset: -50,
-    },
-    {
-      id: 3,
-      name: "Wall",
-      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
       scale: 100,
       img: new Image(),
       xOffset: 0,
@@ -249,15 +237,6 @@ setInterval(() => {
       id: 2,
       name: "Spike",
       src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 80,
-      img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
-    {
-      id: 3,
-      name: "Wall",
-      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
       scale: 100,
       img: new Image(),
       xOffset: -50,
@@ -642,10 +621,8 @@ if(SpawnedOnce == 1){
 
   }
   function connect() {
-    ws = new WebSocket("wss://chux-io2.glitch.me/websocket");
-    setTimeout(() => {
-      document.getElementById("nameInput").value = "undefined" ? document.getElementById("nameInput").value = [] : document.getElementById("nameInput").value = localStorage.name;
-    },500)
+    document.getElementById("nameInput").value = localStorage.name;
+    ws = new WebSocket("wss://chux-io.glitch.me/websocket");
     ws.addEventListener("open", function() {
       document.getElementById("menuCardHolder").style.display = "block";
       document.getElementById("loadingText").style.display = "none";
@@ -804,7 +781,7 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[3]]]);
           break;
         case keycodes.HOTBAR_4:
-          send(["s", [4]]);
+          send(["s", [inventory[4]]]);
           break;
         case keycodes.HOTBAR_5:
           send(["s", [inventory[5]]]);
