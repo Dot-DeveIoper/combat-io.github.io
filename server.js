@@ -262,7 +262,7 @@ var weapons = [
   {
     id: 0,
     isWeapon: true,
-    name: "hammer",
+    name: "Tool Hammer",
     reload: 450,
     damage: 25,
     range: 85,
@@ -270,17 +270,7 @@ var weapons = [
     gather: 1,
   },
   {
-    id: 5,
-    isWeapon: true,
-    name: "Short Sword",
-    reload: 600,
-    damage: 45,
-    range: 100,
-    fov: 150,
-    gather: 1,
-  },
-  {
-    id: 2,
+    id: 1,
     isWeapon: false,
     name: "Orange",
     cost: {
@@ -289,7 +279,7 @@ var weapons = [
     heal: 20,
   },
   {
-    id: 3,
+    id: 2,
     isWeapon: false,
     placeable: true,
     name: "Spike",
@@ -301,6 +291,19 @@ var weapons = [
     velocity: 20,
     health: 300,
     maxHealth: 300,
+  },
+  {
+    id: 3,
+    isWeapon: false,
+    placeable: true,
+    name: "Wall",
+    cost: {
+      wood: 20,
+    },
+    damage: 0,
+    velocity: 0,
+    health: 250,
+    maxHealth: 250,
   }
 ];
 
