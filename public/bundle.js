@@ -622,7 +622,7 @@ if(SpawnedOnce == 1){
   }
   function connect() {
     document.getElementById("nameInput").value = localStorage.name;
-    ws = new WebSocket("wss://chux-io.glitch.me/websocket");
+    ws = new WebSocket("wss://chux-io2.glitch.me/websocket");
     ws.addEventListener("open", function() {
       document.getElementById("menuCardHolder").style.display = "block";
       document.getElementById("loadingText").style.display = "none";
