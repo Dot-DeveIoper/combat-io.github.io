@@ -308,7 +308,8 @@ var weapons = [
 ];
 
 app.get("/", (req, res) => {
-  console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
+  console.log('New User Appeared!')
+  //console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
   res.sendFile(__dirname + "/views/index.html");
 });
 
@@ -344,7 +345,7 @@ function respawn(player, name) {
       wood: 100,
       stone: 100,
       gold: 100,
-      spyllis: 1,
+      spyllis: 100,
     }
 }
 
@@ -567,7 +568,7 @@ setInterval(() => {
             var aObj = weapons.find(x => x.id == obj.id);
             var pushVelX = Math.cos(pushDir)*aObj.velocity||1;
             var pushVelY = Math.sin(pushDir)*aObj.velocity||1;
-            if(aObj.damage && player.noHurtTime == 0){
+            if(aObj.damage && player.noHurtTime == 0 && obj.id != player.sid){
               player.health -= aObj.damage;
               player.noHurtTime += 2;
             }
