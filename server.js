@@ -567,7 +567,7 @@ setInterval(() => {
             var aObj = weapons.find(x => x.id == obj.id);
             var pushVelX = Math.cos(pushDir)*aObj.velocity||1;
             var pushVelY = Math.sin(pushDir)*aObj.velocity||1;
-            if(aObj.damage && player.noHurtTime == 0){
+            if(aObj.damage && player.noHurtTime == 0 && aObj.id == !player.sid){
               player.health -= aObj.damage;
               player.noHurtTime += 2;
             }
