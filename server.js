@@ -567,7 +567,7 @@ setInterval(() => {
             var aObj = weapons.find(x => x.id == obj.id);
             var pushVelX = Math.cos(pushDir)*aObj.velocity||1;
             var pushVelY = Math.sin(pushDir)*aObj.velocity||1;
-            if(aObj.damage && player.noHurtTime == 0 && aObj.id == !player.sid){
+            if(aObj.damage && player.noHurtTime == 0){
               player.health -= aObj.damage;
               player.noHurtTime += 2;
             }
@@ -713,7 +713,7 @@ wsServer.on("connection", (socket, request) => {
       wood: 100,
       stone: 100,
       gold: 100,
-      spyllis: 0,
+      spyllis: 100,
     }
   };
   socket.player.spawned = false;
