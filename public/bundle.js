@@ -207,7 +207,7 @@ setInterval(() => {
     {
       id: 0,
       name: "Tool Hammer",
-      src: "https://moomoo.io/img/weapons/hammer_1.png",
+      src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
       scale: 100,
       img: new Image(),
       xOffset: -25,
