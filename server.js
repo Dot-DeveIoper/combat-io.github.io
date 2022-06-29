@@ -266,7 +266,7 @@ var weapons = [
     name: "Tool Hammer",
     reload: 450,
     damage: 25,
-    range: 85,
+    range: 95,
     fov: 150,
     gather: 1,
   },
@@ -342,11 +342,11 @@ function respawn(player, name) {
   player.health = 100;
   player.weapons = [0, 1, 2, 3]
   player.resources = {
-      food: 100,
-      wood: 100,
-      stone: 100,
-      gold: 100,
-      spyllis: 100,
+      food: 1000,
+      wood: 1000,
+      stone: 1000,
+      gold: 1000,
+      spyllis: 1000,
     }
 }
 
@@ -445,7 +445,7 @@ setInterval(() => {
     animal.dir += toRad(randomInt(radToDeg(animal.dir) - 3, radToDeg(animal.dir + 3)));
     
     
-  }, 100)
+  }, 100);
   
   wsServer.clients.forEach(client => {
     let player = client.player;
@@ -633,8 +633,8 @@ setInterval(() => {
                   tree.y - player.y,
                   tree.x - player.x
                 );
-                tree.xWiggle += Math.cos(wiggleDir) * 10;
-                tree.yWiggle += Math.sin(wiggleDir) * 10;
+                tree.xWiggle += Math.cos(wiggleDir) * 14;
+                tree.yWiggle += Math.sin(wiggleDir) * 14;
               }
             });
             
@@ -707,7 +707,7 @@ wsServer.on("connection", (socket, request) => {
     reloaded: true,
     weapon: 0,
     health: 100,
-    weapons: [0, 1, 2, 3],
+    weapons: [0, 1, 2, 3, 4],
     xp: 0,
     age: 0,
     resources: {
@@ -724,10 +724,12 @@ wsServer.on("connection", (socket, request) => {
     setTimeout(() => {
       socket.player.socketLimit--;
     }, 1000)
+    /*
+    may need to change back
     if(socket.player.socketLimit > 100){
       socket.close(1012, "Buffer large");
       return;
-    }
+    }*/
     var msg;
     try{msg = msgpack.decode(new Uint8Array(message));}catch(err){socket.close(1012, "Buffer missing");return;}
     if(!msg || !msg[0]){

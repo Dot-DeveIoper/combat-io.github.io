@@ -154,7 +154,7 @@
         }, {
             id: 3,
             name: "Wall",
-            src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+            src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
             scale: 100,
             img: new Image,
             xOffset: 0,
@@ -171,8 +171,8 @@
         }, {
             id: 3,
             name: "Wall",
-            src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
-            scale: 100,
+            src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
+            scale: 80,
             img: new Image,
             xOffset: -50,
             yOffset: -50
