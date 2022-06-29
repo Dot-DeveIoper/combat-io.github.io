@@ -269,7 +269,7 @@ setInterval(() => {
     {
       id: 0,
       name: "Cow",
-      src: "",
+      src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
       scale: 200,
       img: new Image(),
       xOffset: 0,
