@@ -294,7 +294,7 @@ var weapons = [
     maxHealth: 300,
   },
   {
-    id: 3,
+    id: 5,
     isWeapon: false,
     placeable: true,
     name: "Wall",

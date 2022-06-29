@@ -234,7 +234,7 @@ setInterval(() => {
       yOffset: -50,
     },
     {
-      id: 3,
+      id: 5,
       name: "Wall",
       src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
       scale: 100,
@@ -255,7 +255,7 @@ setInterval(() => {
       yOffset: -50,
     },
     {
-      id: 3,
+      id: 5,
       name: "Wall",
       src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
       scale: 100,
@@ -802,7 +802,7 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[3]]]);
           break;
         case keycodes.HOTBAR_4:
-          send(["s", [4]]);
+          send(["s", [inventory[4]]]);
           break;
         case keycodes.HOTBAR_5:
           send(["s", [inventory[5]]]);
@@ -820,7 +820,7 @@ if(SpawnedOnce == 1){
           send(["s", [inventory[9]]]);
           break;
         case 82:
-          //nausea = !nausea;
+          nausea = !nausea;
           break;
         case keycodes.MOVE_UP:
           moveUp = 1;

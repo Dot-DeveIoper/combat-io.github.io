@@ -152,7 +152,7 @@
             xOffset: 0,
             yOffset: -50
         }, {
-            id: 3,
+            id: 5,
             name: "Wall",
             src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
             scale: 100,
@@ -164,15 +164,15 @@
             id: 2,
             name: "Spike",
             src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
-            scale: 80,
+            scale: 65,
             img: new Image,
-            xOffset: -50,
+            xOffset: -0,
             yOffset: -50
         }, {
-            id: 3,
+            id: 5,
             name: "Wall",
             src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
-            scale: 80,
+            scale: 50,
             img: new Image,
             xOffset: -50,
             yOffset: -50
