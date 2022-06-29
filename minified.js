@@ -152,7 +152,7 @@
             xOffset: 0,
             yOffset: -50
         }, {
-            id: 5,
+            id: 3,
             name: "Wall",
             src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
             scale: 100,
@@ -169,12 +169,12 @@
             xOffset: -0,
             yOffset: -50
         }, {
-            id: 5,
+            id: 3,
             name: "Wall",
             src: "https://static.wikia.nocookie.net/moom/images/5/5f/Woodwall.png/revision/latest?cb=20190225171003",
             scale: 50,
             img: new Image,
-            xOffset: -50,
+            xOffset: -0,
             yOffset: -50
         }];
 
