@@ -269,7 +269,7 @@ setInterval(() => {
     {
       id: 0,
       name: "Cow",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      src: "",
       scale: 200,
       img: new Image(),
       xOffset: 0,
@@ -316,7 +316,7 @@ setInterval(() => {
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    /*var scaling = 1;
+    var scaling = 1;//edit lmao
 
     var V = window.devicePixelRatio || 1
     var oe = maxScreenWidth, ce = maxScreenHeight;
@@ -324,7 +324,7 @@ setInterval(() => {
     var e = Math.max(F / oe, z / ce) * V;
     canvas.width = F * V * e, canvas.height = z * V * e, canvas.style.width = F + "px", canvas.style.height = z + "px";
     ctx.setTransform(e, 0, 0, e, (F * V - oe * e) / 2, (z * V - ce * e) / 2);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);*/
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     if(canvas.width > maxScreenWidth){
       canvas.width = maxScreenWidth;
@@ -440,13 +440,11 @@ setInterval(() => {
   function drawAnimal(x, y, rot, id) {
     var ob = animals.find(x => x.id == id);
     var img = ob.img;
-    if(img){
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(0);
       ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
       ctx.restore();
-    }
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find(x => x.id == id);
