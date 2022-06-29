@@ -241,7 +241,7 @@ for (let j = 0; j < 4; j++){
 }
 
 animals.forEach((a) => {
-  for(let i = 0; i < 5; i++){
+  for(let i = 0; i < a.count; i++){
     var animal = {
       id: a.id,
       speed: a.speed,
@@ -253,7 +253,7 @@ animals.forEach((a) => {
       yVel: 0,
     }
     animalsCache.push(animal);
-    console.log('an animal has spawned '+animal)
+    console.log(a.count+' animal has spawned'+animal)
   }
 })
 console.log(animalsCache);

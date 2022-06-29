@@ -1,3 +1,10 @@
+-Version 1.1.4-
+
+-Decreased Sizes Of Stones
+-Added Movement Stop
+-Added River Position Fix
+-Added Val To River Walk
+
 -Version 1.1.2-
 
 -Added Player Movement

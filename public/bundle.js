@@ -166,11 +166,11 @@ setInterval(() => {
     {
       name: "food",
       id: 0,
-      src: "https://media.discordapp.net/attachments/812730676326563850/820704195816587304/image0.png?width=675&height=675", //bush
+      src: "https://media.discordapp.net/attachments/812730676326563850/820704195816587304/image0.png?width=673&height=675", //bush
       img: new Image(),
-      xOffset: -75,
+      xOffset: -68,
       yOffset: -75,
-      scale: 150,
+      scale: 120,
     },
     {
       name: "wood",
@@ -188,9 +188,9 @@ setInterval(() => {
       id: 2,
       src: "https://i.imgur.com/kqAdvEZ.png", //stone
       img: new Image(),
-      xOffset: -100,
-      yOffset: -100,
-      scale: 200,
+      xOffset: -70,
+      yOffset: -70,
+      scale: 150,
     },
     {
       name: "spyllis",
