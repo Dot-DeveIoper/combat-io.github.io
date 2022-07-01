@@ -790,10 +790,10 @@ wsServer.on("connection", (socket, request) => {
           socket.send(msgpack.encode(["d", []]));
           socket.player.spawned = false;
         }
-        socket.player.chat = msg[1][0].slice(0, 30);
+        socket.player.chat = msg[1][0].slice(0, 35);
         setTimeout(() => {
           socket.player.chat = null;
-        }, 3000);
+        }, 3500);
         break;
       case "c":
         var twp = weapons.find(x => x.id == socket.player.weapon);

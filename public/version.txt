@@ -3,6 +3,7 @@
 -Added Snow Biome
 -Added More Movement Features
 -Decreased Sizes Of Resources
+-Increased Chat Length 30 > 35
 Game name changing to ComBat.io?
 Coming Soon (More Styling)
 
