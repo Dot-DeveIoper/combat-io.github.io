@@ -15,9 +15,12 @@
 }
 
 body {
+  font-family: Sans-Serif;
+  background-color: #77c44c;
   margin: 0;
   padding: 0;
-  overflow: hid
+}
+
 
 #gameCanvas {
   z-index: -999;
@@ -28,8 +31,50 @@ body {
   
 }
 
+.game-title {
+  color: #fff;
+  font-size: 4rem;
+  text-align: center;
+  user-select: none;
+}
+.shadow {
+  text-shadow: 0 4px 0 #c0c1c2;
+  user-select: none;
+}
 
-
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.game-container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.background {
+  background-color: white;
+  border-bottom: 6px solid #c0c1c2;
+  border-radius: 2px;
+  padding: 20px;
+}
+.text-input {
+  background-color: #e0e0e0;
+  color: #373839;
+  border: 0;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px;
+}
+.input::placeholder {
+  color: #373839;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 
 .termsBtn {
 	display: inline-block;
@@ -204,7 +249,7 @@ body {
 	text-align: center;
 	margin-top: 10px;
 }
-
+ 
 #gameName {
 	font-size: 170px;
 	margin-bottom: -25px;
