@@ -178,6 +178,7 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
+var snowHeight = 1500;
 var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
@@ -225,6 +226,9 @@ for (let j = 0; j < 4; j++){
   for (let i = 0; i < mapSize/100; i++) {
     var randomx = randomInt(0, mapSize);
     var randomy = randomInt(0, mapSize);
+    if(randomy > mapSize - snowHeight - 100){
+      if(j == 0 || j == 1)continue;
+    }
     if(randomy > mapSize - moltenHeight - moltenRiverHeight - 100 && randomy < mapSize - moltenHeight + 100){
       if(j == 0 || j == 1 || j == 3)continue;
     }

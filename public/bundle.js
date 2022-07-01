@@ -140,6 +140,7 @@ setInterval(() => {
   var leaderboard = [];
   
   var mapSize = 10000;
+  var snowHeight = 2000
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 500;
@@ -493,8 +494,7 @@ setInterval(() => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
-    
-    // molten biome Og color : c34d32
+
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
     ctx.fillStyle = "#c3ab32";
@@ -519,6 +519,12 @@ setInterval(() => {
       ctx.fill();
       ctx.globalAlpha = lastGlobalAlpha;
     })
+    
+    // beach
+    var lastStyle3 = ctx.fillStyle;
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - moltenRiverHeight - snowHeight, canvas.width, beachHeight);
+    ctx.fillStyle = lastStyle3;
     
     // beach
     var lastStyle3 = ctx.fillStyle;
