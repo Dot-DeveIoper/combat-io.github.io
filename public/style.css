@@ -75,6 +75,35 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
 }
+.input:focus {
+
+  outline: none;
+
+}
+
+.start-btn {
+
+  display: inline-block;
+
+  background-color: #48e346;
+
+  color: #fff;
+
+  border: 0;
+
+  border-radius: 2px;
+
+  font-size: 1.1rem;
+
+  font-weight: 600;
+
+  padding: 10px 90.5px 10px 90.5px;
+
+  /* padding: 10px 83.35px 10px 83.35px; */
+
+  user-select: none;
+
+}
 
 .termsBtn {
 	display: inline-block;
