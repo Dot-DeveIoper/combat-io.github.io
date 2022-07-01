@@ -178,7 +178,7 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
-var snowHeight = 3000;
+var snowHeight = 6000;
 var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
@@ -462,7 +462,7 @@ setInterval(() => {
         player.xVel += .5;
         playerSpeed *= 0.3;
       }
-      if (mapSize - player.y - snowHeight && player.y < snowHeight - 3000 - 1500){
+      if (mapSize - player.y - snowHeight && player.y < snowHeight - 2000 - 3000){
         //mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500
         playerSpeed *= 0.4;
       }

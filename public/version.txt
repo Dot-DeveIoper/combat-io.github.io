@@ -1,3 +1,12 @@
+-Version 1.1.5-
+
+-Added Snow Biome
+-Added More Movement Features
+-Decreased Sizes Of Resources
+Game name changing to ComBat.io?
+Coming Soon (More Styling)
+
+
 -Version 1.1.4-
 
 -Decreased Sizes Of Stones
