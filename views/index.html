@@ -33,6 +33,63 @@
          </div>
          <input id="chatbox" type="text" maxlength="35">
       </div>
+     <h1 class="game-title shadow">ComBat.io</h1>
+
+<!-- <div class="settings-overlay show"></div> -->
+<div class="settings-center">
+<div class="settings-background show">
+<div class="small-settings-text">
+Settings:
+</div>
+<!-- <p style="text-align: left;">Choose Server</p> -->
+<h3 class="h3-settings-text">
+<label for="servers" style="float: left;">Servers</label>
+</h3>
+<br><br>
+<div class="servers-list" id="serverList" style="text-align: left;">
+<select id="servers" class="servers-style">
+<option region="SCA2">USA#2 California</option>
+<option region="SCA">USA#1 California</option>
+<option region="SGP">AS#1 Singapore</option>
+<option region="SFRA">EU#1 Frankfurt</option>
+<option region="SFRA">EU#1 Frankfurt</option>
+</select>
+</div>
+<br>
+<h3 class="h3-settings-text" style="float: left;">
+Select Skin
+</h3>
+<div class="skins-list" id="skinList" style="text-align: left;">
+<div class="skin color-brown"></div>
+<div class="skin color-tan"></div>
+<div class="skin color-white"></div>
+<div class="skin color-black"></div>
+</div>
+</div>
+</div>
+
+<div class="center" id="gameContainer">
+<div class="game-container">
+<div class="background">
+<input type="text" placeholder="Username" maxlength="12" class="text-input" onclick="username()" id="input" />
+<br><br>
+<button class="start-btn">Start Game</button>
+<br><br>
+<a class="a-link" onclick="changeGamemodeToNormal();" id="normal">Normal</a>
+<a class="a-link" onclick="changeGamemodeToSandbox();" id="sandbox">Sandbox</a>
+</div>
+</div>
+</div>
+<br><br>
+<div class=""></div>
+
+<div class="settings">
+<a class="settings-link" id="toggle-settings">Open/Close Settings</a>
+</div>
+
+<noscript>
+Sorry, your browser does not support JavaScript!
+</noscript>
       <!--div id="mainMenu" style="display: none">
          <div id="container">
          <div id="accounts">
