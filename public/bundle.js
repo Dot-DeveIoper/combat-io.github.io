@@ -1,3 +1,55 @@
+function changeGamemodeToNormal() {
+
+  // buttons settings
+
+  document.getElementById('sandbox').style.opacity = '1.0';
+
+  document.getElementById('sandbox').style.cursor = 'pointer';
+
+  document.getElementById('sandbox').disabled = false;
+
+  document.getElementById('normal').style.opacity = '0.6';
+
+  document.getElementById('normal').style.cursor = 'not-allowed';
+
+  document.getElementById('normal').disabled = true;
+
+  console.log('[i] Changed the gamemode to Normal.');
+
+}
+
+/* const gameContainer = document.getElementById("gameContainer");
+
+gameContainer.style.zIndex = "-2"; */
+
+const targetDiv = document.querySelector(".show");
+
+const btn = document.getElementById("toggle-settings");
+
+targetDiv.style.display = "none";
+
+btn.onclick = function () {
+
+  if (targetDiv.style.display !== "none") {
+
+    targetDiv.style.display = "none";
+
+    btn.innerHtml = "Open Settings";
+
+  } else {
+
+    targetDiv.style.display = "block";
+
+    // targetDiv.style.zIndex = "-1";
+
+    btn.innerHtml = "Close Settings";
+
+    btn.style.zIndex = "1";
+
+  }
+
+}; 
+
 (function(e) {
   var keycodes = {
     MOVE_UP: 87 || 38,

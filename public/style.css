@@ -104,6 +104,32 @@ body {
   user-select: none;
 
 }
+.a-link {
+
+  display: inline-block;
+
+  position: relative;
+
+  text-decoration: none;
+
+  background-color: #99e51f;
+
+  color: #fff;
+
+  border: 0;
+
+  border-radius: 2px;
+
+  font-size: 1.1rem;
+
+  font-weight: 600;
+
+  padding: 10px 34.7px 10px 34.7px;
+
+  user-select: none;
+
+}
+
 
 .settings {
   text-align: center;
