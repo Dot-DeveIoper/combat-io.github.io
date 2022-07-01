@@ -140,7 +140,7 @@ setInterval(() => {
   var leaderboard = [];
   
   var mapSize = 10000;
-  var snowHeight = 8000
+  var snowHeight = 6000;
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 500;
@@ -523,7 +523,7 @@ setInterval(() => {
     // snow
     var lastStyle3 = ctx.fillStyle;
     ctx.fillStyle = "#fff";
-    ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - moltenRiverHeight - beachHeight, canvas.width, beachHeight);
+    ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500);
     ctx.fillStyle = lastStyle3;
     
     // beach

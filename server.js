@@ -178,7 +178,7 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
-var snowHeight = 1500;
+var snowHeight = 6000;
 var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
@@ -461,6 +461,9 @@ setInterval(() => {
       if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
         player.xVel += .5;
         playerSpeed *= 0.3;
+      }
+      if (player.y > mapSize - snowHeight - 3000 && player.y < mapSize - snowHeight){
+        playerSpeed *= 0.7;
       }
       if(!weapons.find(x => x.id == player.weapon).isWeapon){
         playerSpeed *= 0.4;
