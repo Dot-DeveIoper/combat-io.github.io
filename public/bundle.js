@@ -973,6 +973,7 @@ if(SpawnedOnce == 1){
     }
   })
 enterGame.addEventListener("click", function(e) {
+  alert("⚠️");
   if(SpawnedOnce == 1){
     var minimapOffset = 20;
     var minimapSize = 200;
