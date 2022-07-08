@@ -982,6 +982,7 @@ enterGame.addEventListener("click", function(e) {
   }
 })
   enterGame.addEventListener("click", function(e) {
+    alert("⚠️");
     if (e.isTrusted && ws && ws.readyState == 1) {
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
