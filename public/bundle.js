@@ -18,9 +18,9 @@ function changeGamemodeToNormal() {
 
 }
 
-/* const gameContainer = document.getElementById("gameContainer");
+const gameContainer = document.getElementById("gameContainer");
 
-gameContainer.style.zIndex = "-2"; */
+gameContainer.style.zIndex = "-2";
 
 const targetDiv = document.querySelector(".show");
 
