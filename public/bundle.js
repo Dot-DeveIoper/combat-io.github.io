@@ -50,6 +50,14 @@ btn.onclick = function () {
 
 }; 
 
+//Add a small script to log the width and height of the user's screen.
+
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+console.log("Browser width: " + w + ", height: " + h + "."); 
+
+
 (function(e) {
   var keycodes = {
     MOVE_UP: 87 || 38,
