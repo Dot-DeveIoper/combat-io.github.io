@@ -356,12 +356,12 @@ div.settings-center {
 	padding: 8px;
 }
 
-#linksContainer2 {
+#linksContainer {
 	border-radius: 4px;
 	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	background-color: #fff;
+	bottom: 0;
+	right: 0;
+	background: rgb(0, 0, 0, 0.9);
 	text-align: right;
 	font-size: 20px;
 	padding: 8px;
