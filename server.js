@@ -342,11 +342,11 @@ function respawn(player, name) {
   player.health = 100;
   player.weapons = [0, 1, 2, 3]
   player.resources = {
-      food: 1000,
-      wood: 1000,
-      stone: 1000,
-      gold: 1000,
-      spyllis: 1000,
+      food: 0,
+      wood: 0,
+      stone: 0,
+      gold: 0,
+      spyllis: 0,
     }
 }
 
