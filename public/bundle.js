@@ -377,8 +377,8 @@ setInterval(() => {
     ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
-    ctx.strokeText(`${player.admin ? "[DEV]" : ""} {${player.sid}} ${player.name}`, x - -27, y - 50, 100);
-    ctx.fillText(`${player.admin ? "[DEV]" : ""} {${player.sid}} ${player.name}`, x - -27, y - 50, 100); // og 50
+    ctx.strokeText(`${player.admin ? "[DEV]" : ""}  ${player.name}`, x - -27, y - 50, 100);
+    ctx.fillText(`${player.admin ? "[DEV]" : ""} ${player.name}`, x - -27, y - 50, 100); // og 50 fuck ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if(player.sid != myPlayer.sid){
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
