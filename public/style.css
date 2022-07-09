@@ -20,6 +20,7 @@ body {
   overflow: hidden;
   background-color: #77c44c;
   
+  font-family: 'HammersmithOne', sans-serif;
   width: 100vh;
   height: 100%;
 }
