@@ -19,13 +19,17 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #77c44c;
+  
+  width: 100vh;
+  height: 100%;
+  
+  overflow: hidden;
 }
 
 #gameCanvas {
   z-index: -999;
   margin: 0;
   position: absolute;
-  
 }
 
 
@@ -75,19 +79,30 @@ body {
 	font-size: 24px;
 	text-decoration: none;
 }
-
 .ytLink:hover {
 	color: #5c96c9;
 }
 
+/* .spanLink {
+  text-decoration: none;
+  color: #1466f4;
+  font-weight: 600;
+  margin-bottom: 4px;
+  vertical-align: super;
+  font-size: 0.5rem;
+}
+.spanLink:hover {
+  color: #1466f4;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+} */
+
 #featuredYoutube {
 	margin-top: 5px;
 }
-
 #featuredYoutube a {
 	color: #6eb3ef !important;
 }
-
 #featuredYoutube a:hover {
 	color: #5c96c9 !important;
 }
@@ -199,6 +214,8 @@ body {
 	text-align: right;
 	font-size: 20px;
 	padding: 8px;
+	
+	transform: translate(-14px, 44px);
 }
 
 #loadingText {
@@ -223,6 +240,9 @@ body {
 	background-color: #fff;
 	border-radius: 4px;
 	overflow: hidden;
+	
+	color: #666666;
+	border-bottom: 6px solid #c0c1c2;
 }
 
 .menuHeader {
@@ -237,6 +257,34 @@ body {
 	margin-bottom: 10px;
 }
 
+.menuLink {
+  text-decoration: none;
+  color: #1466f4;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.menuLink:hover {
+  color: #1466f4;
+  border-bottom: 2px solid #1466f4;
+  /* text-decoration: underline;
+  text-decoration-thickness: 2px; */
+}
+.discordLink {
+  text-decoration: none;
+  color: #5865F2;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.discordLink:hover {
+  color: #5865F2;
+  border-bottom: 2px solid #5865F2;
+}
+.vertical-line:before {
+  content: "|";
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 #serverBrowser {
 	width: 100%;
 	height: 24px;
@@ -249,7 +297,7 @@ body {
 }
 
 #gameName {
-	font-size: 170px;
+	/* font-size: 170px;
 	margin-bottom: -25px;
   top: 50px;
 	text-shadow:
@@ -262,7 +310,30 @@ body {
 			0 7px 0 #c4c4c4,
 			0 8px 0 #c4c4c4,
 			0 9px 0 #c4c4c4;
-	color: #ffffff;
+	color: #ffffff; */
+	
+	/* position: relative; */
+	text-shadow:
+			0 1px 0 #c0c1c2,
+			0 2px 0 #c0c1c2,
+			0 3px 0 #c0c1c2,
+			0 4px 0 #c0c1c2,
+			0 5px 0 #c0c1c2,
+			0 6px 0 #c0c1c2,
+			0 7px 0 #c0c1c2,
+			0 8px 0 #c0c1c2;
+  color: #ffffff;
+  font-size: 10rem;
+  font-weight: 500;
+  text-align: center;
+  user-select: none;
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  #gameName {
+    font-size: 8rem;
+  }
 }
 
 #guideCard {
@@ -338,7 +409,7 @@ body {
 }
 
 #nameInput {
-	text-align: center;
+	/* text-align: center;
 	font-size: 26px;
 	margin-bottom: 16px;
 	padding: 6px;
@@ -350,11 +421,30 @@ body {
 	width: 100%;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	border-radius: 4px;
+	border-radius: 4px; */
+	
+	box-sizing: border-box;
+	background-color: #e0e0e0;
+  color: #373839;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 16px;
+  outline: none;
+  caret-color: #48e346;
+  user-select: text;
+}
+
+#nameInput:hover {
+  background-color: #dadada;
 }
 
 .menuButton {
-	text-align: center;
+	/* text-align: center;
 	font-size: 23px;
 	padding: 6px;
 	box-sizing: border-box;
@@ -364,16 +454,35 @@ body {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	cursor: pointer;
+	cursor: pointer; */
+	
+	display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #48e346;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 6px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .menuButton:hover {
-	background-color: #6fc94e;
+	/* background-color: #6fc94e; */
+	
+	background-color: #32db2e;
 }
 
 
 #mainMenu {
-  width: 100%;
+  /* width: 100%;
+  height: 100%; */
+  
+  width: 100vh;
   height: 100%;
   color: white;
   position: absolute;
@@ -385,15 +494,18 @@ body {
   width: 200px;
   border: 1px solid #afafaf;
   border-radius: 10px;
-  padding: 10px; 10px;
+  padding: 10px 10px;
 }
 
-#chatbox {
+#interface #chatbox {
   position: fixed;
   top: 70%;
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
+  
+  /* display: none; */
+  /* switch display to block with js to fix it */
 }
 #chatbox {
 	padding: 6px;
@@ -436,7 +548,7 @@ body {
   border-radius: 15px;
    float: left;
    display: block;
-   margin: 0px;
+   margin: 0;
    padding: 0;
    width: 500px;
   height: 300px;
@@ -483,4 +595,7 @@ body {
 	background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
+  
+  /* display: none; */
+  /* switch display to block with js to fix it */
 }
