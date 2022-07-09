@@ -18,9 +18,9 @@ function changeGamemodeToNormal() {
 
 }
 
-const gameContainer = document.getElementById("gameContainer");
+/* const gameContainer = document.getElementById("gameContainer");
 
-gameContainer.style.zIndex = "-2";
+gameContainer.style.zIndex = "-2"; */
 
 const targetDiv = document.querySelector(".show");
 
@@ -49,14 +49,6 @@ btn.onclick = function () {
   }
 
 }; 
-
-//Add a small script to log the width and height of the user's screen.
-
-var w = window.innerWidth;
-var h = window.innerHeight;
-
-console.log("Browser width: " + w + ", height: " + h + "."); 
-
 
 (function(e) {
   var keycodes = {
