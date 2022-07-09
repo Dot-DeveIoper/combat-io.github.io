@@ -70,13 +70,13 @@ setInterval(() => {
         kick("unfair advantage")
       },
       info: function(e){
-        kick("unfair advantage")
+        // kick("unfair advantage")
       },
       warn: function(e){
-        kick("unfair advantage")
+        // kick("unfair advantage")
       },
       error: function(e){
-        kick("unfair advantage")
+       // kick("unfair advantage")
       }
     }
     if(isFuncNative(WebSocket.prototype.send)) {
