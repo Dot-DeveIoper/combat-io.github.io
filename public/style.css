@@ -45,7 +45,7 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 25px !important;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
 }
 .termsBtn:hover {
@@ -71,7 +71,7 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 24px;
 }
 
@@ -101,19 +101,11 @@ body {
 #featuredYoutube {
   margin-top: 5px;
 }
-#featuredYoutube a {
+#featuredYoutube, a {
   color: #6eb3ef !important;
 }
-#featuredYoutube a:hover {
+#featuredYoutube, a:hover {
   color: #5c96c9 !important;
-}
-
-#mainMenu {
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
 }
 
 #menuContainer {
@@ -180,7 +172,7 @@ body {
   position: absolute;
   bottom: 40px;
   left: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 22px;
 }
 
@@ -201,7 +193,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #ffffff;
   font-size: 20px;
   padding: 8px;
 }
@@ -211,7 +203,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #fff;
+  background-color: #ffffff;
   text-align: right;
   font-size: 20px;
   padding: 8px;
@@ -221,11 +213,11 @@ body {
 
 #loadingText {
   font-size: 45px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
 }
 
-#loadingText a {
+#loadingText, a {
   display: block;
 }
 
@@ -238,7 +230,7 @@ body {
   display: inline-block;
   width: 300px;
   padding: 18px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 4px;
   overflow: hidden;
 
@@ -460,7 +452,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   background-color: #48e346;
-  color: #fff;
+  color: #ffffff;
   border: 0;
   border-radius: 4px;
   font-size: 1.5rem;
@@ -476,13 +468,20 @@ body {
   background-color: #32db2e;
 }
 
+body, #mainMenu {
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
 
 #mainMenu {
   /* width: 100%;
   height: 100%; */
 
   width: 100vh;
-  height: 200%;
+  height: 225%;
   color: white;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
@@ -496,7 +495,7 @@ body {
   padding: 10px 10px;
 }
 
-#interface #chatbox {
+#interface, #chatbox {
   position: fixed;
   top: 70%;
   left: 50%;
