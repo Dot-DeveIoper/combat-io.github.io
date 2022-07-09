@@ -640,7 +640,7 @@ if(SpawnedOnce == 1){
 
   }
   function connect() {
-    ws = new WebSocket("wss://chux-io2.glitch.me/websocket");
+    ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined" ? document.getElementById("nameInput").value = [] : document.getElementById("nameInput").value = localStorage.name;
     },500)

@@ -18,6 +18,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #77c44c;
 }
 
 #gameCanvas {
@@ -471,6 +472,7 @@ body {
 	height: 66px;
 	margin-left: 5px;
 	margin-right: 5px;
+  border-radius: 5px;
 	background-color: rgba(0, 0, 0, 0.25);
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -478,7 +480,7 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	pointer-events: all;
-	background-size: 60px 60px;
+	background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
 }
