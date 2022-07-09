@@ -178,7 +178,6 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
-var snowHeight = 6000;
 var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
@@ -226,9 +225,6 @@ for (let j = 0; j < 4; j++){
   for (let i = 0; i < mapSize/100; i++) {
     var randomx = randomInt(0, mapSize);
     var randomy = randomInt(0, mapSize);
-    if(randomy > mapSize - snowHeight - 100){
-      if(j == 0 || j == 1)continue;
-    }
     if(randomy > mapSize - moltenHeight - moltenRiverHeight - 100 && randomy < mapSize - moltenHeight + 100){
       if(j == 0 || j == 1 || j == 3)continue;
     }
@@ -461,10 +457,6 @@ setInterval(() => {
       if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
         player.xVel += .5;
         playerSpeed *= 0.3;
-      }
-      if (mapSize - player.y - snowHeight && player.y < snowHeight - 2000 - 3000){
-        //mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500
-        playerSpeed *= 0.4;
       }
       if(!weapons.find(x => x.id == player.weapon).isWeapon){
         playerSpeed *= 0.4;
@@ -790,10 +782,10 @@ wsServer.on("connection", (socket, request) => {
           socket.send(msgpack.encode(["d", []]));
           socket.player.spawned = false;
         }
-        socket.player.chat = msg[1][0].slice(0, 35);
+        socket.player.chat = msg[1][0].slice(0, 30);
         setTimeout(() => {
           socket.player.chat = null;
-        }, 3500);
+        }, 3000);
         break;
       case "c":
         var twp = weapons.find(x => x.id == socket.player.weapon);

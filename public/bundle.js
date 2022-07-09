@@ -1,55 +1,3 @@
-function changeGamemodeToNormal() {
-
-  // buttons settings
-
-  document.getElementById('sandbox').style.opacity = '1.0';
-
-  document.getElementById('sandbox').style.cursor = 'pointer';
-
-  document.getElementById('sandbox').disabled = false;
-
-  document.getElementById('normal').style.opacity = '0.6';
-
-  document.getElementById('normal').style.cursor = 'not-allowed';
-
-  document.getElementById('normal').disabled = true;
-
-  console.log('[i] Changed the gamemode to Normal.');
-
-}
-
-/* const gameContainer = document.getElementById("gameContainer");
-
-gameContainer.style.zIndex = "-2"; */
-
-const targetDiv = document.querySelector(".show");
-
-const btn = document.getElementById("toggle-settings");
-
-targetDiv.style.display = "none";
-
-btn.onclick = function () {
-
-  if (targetDiv.style.display !== "none") {
-
-    targetDiv.style.display = "none";
-
-    btn.innerHtml = "Open Settings";
-
-  } else {
-
-    targetDiv.style.display = "block";
-
-    // targetDiv.style.zIndex = "-1";
-
-    btn.innerHtml = "Close Settings";
-
-    btn.style.zIndex = "1";
-
-  }
-
-}; 
-
 (function(e) {
   var keycodes = {
     MOVE_UP: 87 || 38,
@@ -192,7 +140,6 @@ setInterval(() => {
   var leaderboard = [];
   
   var mapSize = 10000;
-  var snowHeight = 6000;
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 500;
@@ -546,7 +493,8 @@ setInterval(() => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
-
+    
+    // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
     ctx.fillStyle = "#c3ab32";
@@ -571,12 +519,6 @@ setInterval(() => {
       ctx.fill();
       ctx.globalAlpha = lastGlobalAlpha;
     })
-    
-    // snow
-    var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500);
-    ctx.fillStyle = lastStyle3;
     
     // beach
     var lastStyle3 = ctx.fillStyle;
