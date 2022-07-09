@@ -7,7 +7,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Gather resources and build your base or fight with other players to get higher on leaderboard!">
-      <title>ComBat.io</title>
+      <title>Chux.io</title>
       <link id="favicon" rel="icon" href="https://cdn.glitch.global/6b51efe1-7fd7-48e4-a089-a9576ece05ca/chuxICON?v=1653427161082" type="image/x-icon">
       <link rel="stylesheet" href="/style.css">
       <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer></script>
@@ -33,63 +33,6 @@
          </div>
          <input id="chatbox" type="text" maxlength="35">
       </div>
-     <h1 class="game-title shadow">ComBat.io</h1>
-
-<!-- <div class="settings-overlay show"></div> -->
-<div class="settings-center">
-<div class="settings-background show">
-<div class="small-settings-text">
-Settings:
-</div>
-<!-- <p style="text-align: left;">Choose Server</p> -->
-<h3 class="h3-settings-text">
-<label for="servers" style="float: left;">Servers</label>
-</h3>
-<br><br>
-<div class="servers-list" id="serverList" style="text-align: left;">
-<select id="servers" class="servers-style">
-<option region="SCA2">USA#2 California</option>
-<option region="SCA">USA#1 California</option>
-<option region="SGP">AS#1 Singapore</option>
-<option region="SFRA">EU#1 Frankfurt</option>
-<option region="SFRA">EU#1 Frankfurt</option>
-</select>
-</div>
-<br>
-<h3 class="h3-settings-text" style="float: left;">
-Select Skin
-</h3>
-<div class="skins-list" id="skinList" style="text-align: left;">
-<div class="skin color-brown"></div>
-<div class="skin color-tan"></div>
-<div class="skin color-white"></div>
-<div class="skin color-black"></div>
-</div>
-</div>
-</div>
-
-<div class="center" id="gameContainer">
-<div class="game-container">
-<div class="background">
-<input type="text" placeholder="Username" maxlength="12" class="text-input" onclick="username()" id="input" />
-<br><br>
-<button class="start-btn">Start Game</button>
-<br><br>
-<a class="a-link" onclick="changeGamemodeToNormal();" id="normal">Normal</a>
-<a class="a-link" onclick="changeGamemodeToSandbox();" id="sandbox">Sandbox</a>
-</div>
-</div>
-</div>
-<br><br>
-<div class=""></div>
-
-<div class="settings">
-<a class="settings-link" id="toggle-settings">Open/Close Settings</a>
-</div>
-
-<noscript>
-Sorry, your browser does not support JavaScript!
-</noscript>
       <!--div id="mainMenu" style="display: none">
          <div id="container">
          <div id="accounts">
@@ -104,12 +47,15 @@ Sorry, your browser does not support JavaScript!
              
            </div>
          </div>
-         </div
-      <!-- gae
+         </div-->
+      <!-- gae -->
       <div id="mainMenu">
          <div id="menuContainer">
+            <!-- GAME NAME -->
             <div id="gameName">ComBat.io</div>
+            <!-- LOADING TEXT -->
             <div id="loadingText" style="display: none;">Connecting..</div>
+            <!-- MENU CARDS -->
             <div id="menuCardHolder" style="display: block;">
                <!--div class="menuCard" id="adCard">
                   <div align="center" id="moomooio_300x250_1" name="moomooio_300x250_1" data-google-query-id="CPHA8q2asPACFZlI4AodLFwAIQ">
@@ -118,7 +64,7 @@ Sorry, your browser does not support JavaScript!
                      </div>
                   </div>
                </div-->
-              <!-- <div style="display:inline-block;">
+               <div style="display:inline-block;">
                   <div class="menuCard" id="setupCard">
                      <input type="text" id="nameInput" placeholder="Enter Name" maxlength="15">
                      <div id="enterGame" class="menuButton"><span>Enter Game</span></div>
@@ -135,7 +81,7 @@ Sorry, your browser does not support JavaScript!
                   <div class="menuCard" id="guideCard">
                      <div class="menuHeader">Servers</div>
                      <select id="serverBrowser">
-                        <option>[BETA] Server 1</option>
+                        <option>Server 1</option>
                      </select>
                      <!--div class="menuHeader" style="margin-top:10px">Select Color</div>
                      <div id="skinColorHolder">
@@ -149,7 +95,7 @@ Sorry, your browser does not support JavaScript!
                         <div class="skinColorItem" style="background-color:#ecaff7" onclick="selectSkinColor(7)"></div>
                         <div class="skinColorItem" style="background-color:#738cc3" onclick="selectSkinColor(8)"></div>
                         <div class="skinColorItem" style="background-color:#8bc373" onclick="selectSkinColor(9)"></div>
-                     </div
+                     </div-->
                      <div class="menuHeader" style="margin-top:10px">How To Play</div>
                      <div class="menuText">
                        Gather resources and build your base or fight with other players to get higher on leaderboard!
@@ -169,11 +115,11 @@ Sorry, your browser does not support JavaScript!
                         <div class="menuHeader">Links</div>
                         <div class="menuText">
                      </div>
-                  </div>-->
+                  </div>
                   <!-- <div id="downloadButtonContainer" class="menuCard">
                      <a class="downloadBadge" href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&mt=8" target="_blank"><img src="./img/badges/ios.svg"></a></img>
                      <a class="downloadBadge" href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile" target="_blank"><img src="./img/badges/android.png"></img></a>
-                     </div>
+                     </div> -->
                </div>
             <div>
             <div id="youtuberOf">
@@ -182,10 +128,10 @@ Sorry, your browser does not support JavaScript!
          </div>
      </div>
   </div>
-</div>-->
+</div>
          <div id="linksContainer2" style="background-color: grey;">
             <a href="https://discord.gg/fpafRSRDuN" target="_blank" class="menuLink">Discord</a> |
-            <a href="/version.txt" target="_blank" class="menuLink">1.1.5 BETA</a> |
+            <a href="/version.txt" target="_blank" class="menuLink">1.1.5</a> |
             <a href="/terms.txt" target="_blank" class="menuLink">Terms</a> |
             <a href="/privacy.txt" target="_blank" class="menuLink">Privacy</a>
          </div>
