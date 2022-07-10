@@ -65,6 +65,7 @@ setInterval(() => {
        || /^\s*function\s*(\b[a-z$_][a-z0-9$_]*\b)*\s*\((|([a-z$_][a-z0-9$_]*)(\s*,[a-z$_][a-z0-9$_]*)*)\)\s*{\s*\[native code\]\s*}\s*$/i.test(String(f)));
      }
   setInterval(() => {
+    // bruh this is disablable on client side
     window.console = {
       log: function(e){
         kick("unfair advantage")

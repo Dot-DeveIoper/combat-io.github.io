@@ -34,6 +34,7 @@ body {
   z-index: -999;
   margin: 0;
   position: absolute;
+  user-select: none;
 }
 
 .termsBtn {
@@ -624,4 +625,13 @@ body > #mainMenu {
 
   /* display: none; */
   /* switch display to block with js to fix it */
+}
+
+canvas {
+  display: block;
+  /* background-color: #f8f8f8; */
+  padding: 0;
+  margin: 0 auto;
+  /* margin-bottom: 1rem; */
+  user-select: none;
 }
