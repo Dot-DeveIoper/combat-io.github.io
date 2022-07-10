@@ -6,6 +6,7 @@
 /*
   rotator patch notes 14:27 EST on 7/10/2022
 - change e.keyCode to e.code (Done I think)
+  U BROKE IT DO NOT EDIT KEYCODES
 */
 
 (function(e) {
