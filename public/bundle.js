@@ -65,7 +65,6 @@ setInterval(() => {
        || /^\s*function\s*(\b[a-z$_][a-z0-9$_]*\b)*\s*\((|([a-z$_][a-z0-9$_]*)(\s*,[a-z$_][a-z0-9$_]*)*)\)\s*{\s*\[native code\]\s*}\s*$/i.test(String(f)));
      }
   setInterval(() => {
-    // bruh this is disablable on client side
     window.console = {
       log: function(e){
         kick("unfair advantage")
@@ -80,11 +79,8 @@ setInterval(() => {
         kick("unfair advantage")
       }
     }
-    if(isFuncNative(WebSocket.prototype.send)) {
-        
-    }else if(ws){
-      ws.close(1000, "unfair advantage");
-      ws = null;
+    if ((!isFuncNative(WebSocket.prototype.send)) && (ws)) {
+      ws.close(1000, "unfair advantage")
     }
   }, 1000)
   
