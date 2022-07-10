@@ -773,9 +773,12 @@ wsServer.on("connection", (socket, request) => {
           socket.player.resources.food = 99999;
           socket.player.resources.wood = 99999;
           socket.player.resources.stone = 99999;
-          //socket.player.resources.spyllis = 99999;
+          socket.player.resources.spyllis = 99999;
         }
-        socket.player.chat = msg[1][0].slice(0, 30);
+        if ((socket.player.lastChatTimestamp == undefined) || (Date.now() - socket.player.lastChatTimestamp > 500)) { // you can only chat every 0.5 seconds
+          socket.player.chat = msg[1][0].slice(0, 30);
+          socket.player.lastChatTimestamp = Date.now();
+        }
         setTimeout(() => {
           socket.player.chat = null;
         }, 3000);
