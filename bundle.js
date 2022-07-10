@@ -5,10 +5,13 @@
 
 /*
   rotator patch notes 14:27 EST on 7/10/2022
-- change e.keyCode to e.code (WIP)
+- change e.keyCode to e.code (Done I think)
 */
 
 (function(e) {
+  
+  window.onbeforeunload = (e) => {return 'Are you sure?';}
+  
   var keycodes = {
     MOVE_UP: "KeyW",
     MOVE_DOWN: "KeyS",
