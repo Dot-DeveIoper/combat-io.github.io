@@ -188,13 +188,13 @@ setInterval(() => {
     {
       name: "wood",
       id: 1,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488261975", //tree
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488261975",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
+      src2: "https://media.discordapp.net/attachments/796483767560437820/839052641212301332/unknowntree.png",
       img: new Image(),
       img2: new Image(),
-      xOffset: -155,
-      yOffset: -157,
-      scale: 300,
+      xOffset: 0,
+      yOffset: 0,
+      scale: 350,
     },
     {
       name: "stone",
