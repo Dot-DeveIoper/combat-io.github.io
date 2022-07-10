@@ -744,7 +744,7 @@ wsServer.on("connection", (socket, request) => {
         }
         var name;
         try{
-        name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "chux.io";
+        name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "ComBat.io";
         }catch(err){
           socket.close(1012, "Buffer missing");
         }
@@ -769,19 +769,11 @@ wsServer.on("connection", (socket, request) => {
       case "ch":
         if(msg[1][0] == "/"+process.env.ADMINPASS){ // quick admin command
           socket.player.admin = true;
-        }
-        if(msg[1][0] == "/godmode" && socket.player.admin == true){
           socket.player.health = Number.MAX_VALUE;
-        }
-        if(msg[1][0] == "/sandbox" && socket.player.admin == true){
           socket.player.resources.food = 999;
           socket.player.resources.wood = 999;
           socket.player.resources.stone = 999;
           socket.player.resources.spyllis = 999;
-        }
-        if(msg[1][0] == "/respawn" && socket.player.admin == true){
-          socket.send(msgpack.encode(["d", []]));
-          socket.player.spawned = false;
         }
         socket.player.chat = msg[1][0].slice(0, 30);
         setTimeout(() => {
