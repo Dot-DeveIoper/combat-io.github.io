@@ -294,6 +294,15 @@ setInterval(() => {
   document.getElementById("menuCardHolder").style.display = "none";
   document.getElementById("loadingText").style.display = "block";
   
+  // update the nameInput
+  setTimeout(() => {
+    if (!(['ComBat.io', undefined].includes(localStorage.name))) document.querySelector('#nameInput').value = localStorage.name;
+    // automatically update the localStorage.name
+    setInterval(() => {
+      localStorage.name = document.querySelector('#nameInput').value;
+    }, 50)
+  }, 1000)
+  
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   
@@ -957,3 +966,8 @@ enterGame.addEventListener("click", function(e) {
   });
   connect();
 })();
+
+
+console = function(e) {
+  e = console.log;
+};
