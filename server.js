@@ -770,10 +770,10 @@ wsServer.on("connection", (socket, request) => {
         if(msg[1][0] == "/"+process.env.ADMINPASS){ // quick admin command
           socket.player.admin = true;
           socket.player.health = Number.MAX_VALUE;
-          socket.player.resources.food = 999;
-          socket.player.resources.wood = 999;
-          socket.player.resources.stone = 999;
-          socket.player.resources.spyllis = 999;
+          socket.player.resources.food = 99999;
+          socket.player.resources.wood = 99999;
+          socket.player.resources.stone = 99999;
+          //socket.player.resources.spyllis = 99999;
         }
         socket.player.chat = msg[1][0].slice(0, 30);
         setTimeout(() => {
