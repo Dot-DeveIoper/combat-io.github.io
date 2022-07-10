@@ -192,9 +192,9 @@ setInterval(() => {
       src2: "https://media.discordapp.net/attachments/796483767560437820/839052641212301332/unknowntree.png",
       img: new Image(),
       img2: new Image(),
-      xOffset: 0,
-      yOffset: 0,
-      scale: 350,
+      xOffset: -155,
+      yOffset: -157,
+      scale: 300,
     },
     {
       name: "stone",

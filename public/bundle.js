@@ -192,8 +192,8 @@ setInterval(() => {
       src2: "https://media.discordapp.net/attachments/796483767560437820/839052641212301332/unknowntree.png",
       img: new Image(),
       img2: new Image(),
-      xOffset: -150,
-      yOffset: 150,
+      xOffset: -158,
+      yOffset: -160,
       scale: 350,
     },
     {
@@ -471,7 +471,7 @@ setInterval(() => {
   function drawTree(x, y, rot, id) {
     var tree = trees.find(x => x.id == id);
     var img = tree.img;
-    if(id == 1 && y > ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight) && y < ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight)){
+    if(id == 1 && y > ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight - snowHeight) && y < ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - snowHeight)){
       img = tree.img2;
     }
     if(tree){
