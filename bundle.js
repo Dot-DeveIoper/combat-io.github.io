@@ -610,6 +610,7 @@ setInterval(() => {
     var lastFont = ctx.font;
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
+    ctx.borderRadius = "4px";
     ctx.font = "italic bold 17pt Courier";
     ctx.textAlign = "center";
     ctx.fillText("Leaderboard", canvas.width - leaderboardOffset - leaderboardWidth/2, leaderboardOffset + 40);
