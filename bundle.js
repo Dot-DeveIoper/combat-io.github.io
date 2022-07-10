@@ -568,7 +568,7 @@ setInterval(() => {
     ctx.fillStyle = prvStyle;
     
     info = `${ping}ms`;
-    drawText(200, 100, 0, info);
+    drawText(20, 50, 50, info);
     window.players = players;
     players.forEach(player => {
       if (player.sid != myPlayer.sid) {
@@ -611,9 +611,7 @@ setInterval(() => {
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
     ctx.borderRadius = "4px";
-    c.roundRect(50, 100, 50, 100, {upperLeft:10,upperRight:10}, true, true);
-
-    ctx.font = "italic bold 17pt Courier";
+    ctx.font = "17pt Courier";
     ctx.textAlign = "center";
     ctx.fillText("Leaderboard", canvas.width - leaderboardOffset - leaderboardWidth/2, leaderboardOffset + 40);
     ctx.font = lastFont;
