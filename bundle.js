@@ -188,8 +188,8 @@ setInterval(() => {
     {
       name: "wood",
       id: 1,
-      src: "https://media.discordapp.net/attachments/812730676326563850/819254435581657138/unknown.png", //tree
-      src2: "https://media.discordapp.net/attachments/796483767560437820/839052641212301332/unknowntree.png",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488261975", //tree
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488261975",
       img: new Image(),
       img2: new Image(),
       xOffset: -155,
