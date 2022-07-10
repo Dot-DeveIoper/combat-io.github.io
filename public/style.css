@@ -604,6 +604,7 @@ body > #mainMenu {
   bottom: 17px;
   width: 100%;
   text-align: center;
+  user-select: none;
 }
 
 .hotbarItem {
@@ -622,6 +623,7 @@ body > #mainMenu {
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
+  user-select: none;
 
   /* display: none; */
   /* switch display to block with js to fix it */
