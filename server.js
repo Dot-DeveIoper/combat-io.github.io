@@ -463,6 +463,10 @@ setInterval(() => {
         player.xVel += .5;
         playerSpeed *= 0.3;
       }
+      if (mapSize - player.y - snowHeight && player.y < snowHeight - 2000 - 3000){
+        //mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500
+        playerSpeed *= 0.4;
+      }
       if(!weapons.find(x => x.id == player.weapon).isWeapon){
         playerSpeed *= 0.4;
       }
