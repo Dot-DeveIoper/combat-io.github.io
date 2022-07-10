@@ -177,6 +177,7 @@ var leaderboard = [];
 
 var mapSize = 10000;
 var moltenHeight = 1000;
+var snowHeight = 6000;
 var moltenRiverHeight = 1000;
 var beachHeight = 500;
 var playerSpeed = 1;
