@@ -212,7 +212,24 @@ body {
   font-size: 20px;
   padding: 8px;
 
-  transform: translate(-14px, 44px);
+  transform: translate(-14px, 100px);
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  #linksContainer2 {
+    transform: translate(-14px, 100px);
+  }
+}
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  #linksContainer2 {
+    transform: translate(0px, 44px);
+  }
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  #linksContainer2 {
+    transform: translate(-14px, 150px);
+  }
 }
 
 #loadingText {
