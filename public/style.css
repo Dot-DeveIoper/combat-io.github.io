@@ -101,10 +101,10 @@ body {
 #featuredYoutube {
   margin-top: 5px;
 }
-#featuredYoutube, a {
+#featuredYoutube > a {
   color: #6eb3ef !important;
 }
-#featuredYoutube, a:hover {
+#featuredYoutube > a:hover {
   color: #5c96c9 !important;
 }
 
@@ -217,7 +217,7 @@ body {
   text-align: center;
 }
 
-#loadingText, a {
+#loadingText > a {
   display: block;
 }
 
@@ -278,6 +278,8 @@ body {
   margin-right: 4px;
 }
 
+.settingsCard {}
+
 #serverBrowser {
   width: 100%;
   height: 24px;
@@ -325,7 +327,12 @@ body {
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   #gameName {
-    font-size: 8rem;
+    text-shadow:
+    0 1px 0 #c0c1c2,
+    0 2px 0 #c0c1c2,
+    0 3px 0 #c0c1c2,
+    0 4px 0 #c0c1c2;
+    font-size: 4.5rem;
   }
 }
 
@@ -357,15 +364,37 @@ body {
 
 #promoImgHolder {
   text-align: center;
+  display: block;
+  margin-top: 10px;
+  padding-bottom: 12px;
 }
-
-#promoImg:hover {
+#promoImgHolder:hover {
   opacity: 0.9;
+}
+/* #promoImgHolder > .menuCard {
+  display: inline-block;
+} */
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  #promoImgHolder {
+    display: none;
+  }
+  /* #promoImgHolder > .menuCard {
+    display: none;
+  } */
 }
 
 #rightCardHolder {
   display: inline-block;
   vertical-align: top;
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  #rightCardHolder {
+    display: none;
+  }
 }
 
 #downloadButtonContainer {
@@ -468,7 +497,7 @@ body {
   background-color: #32db2e;
 }
 
-body, #mainMenu {
+body > #mainMenu {
   background-color: rgba(0,0,0,0.5);
   position: absolute;
   width: 100%;
@@ -495,7 +524,7 @@ body, #mainMenu {
   padding: 10px 10px;
 }
 
-#interface, #chatbox {
+#interface > #chatbox {
   position: fixed;
   top: 70%;
   left: 50%;
