@@ -6,7 +6,6 @@
 /*
   rotator patch notes 14:27 EST on 7/10/2022
 - change e.keyCode to e.code (Done I think)
-  U BROKE IT DO NOT EDIT KEYCODES
 */
 
 (function(e) {
@@ -14,7 +13,7 @@
   window.onbeforeunload = (e) => {return 'Are you sure?';}
   
   var keycodes = {
-    MOVE_UP: "KeyW",
+   MOVE_UP: "KeyW",
     MOVE_DOWN: "KeyS",
     MOVE_LEFT: "KeyA",
     MOVE_RIGHT: "KeyD",
@@ -33,7 +32,7 @@
     HOTBAR_6: "Digit6",
     HOTBAR_7: "Digit7",
     HOTBAR_8: "Digit8",
-    HOTBAR_9: "Digit9",
+    HOTBAR_9: "Digit9", //sorry 
     
     // localStorage will also contain hotbar slots
   };
@@ -569,7 +568,7 @@ setInterval(() => {
     ctx.fillStyle = prvStyle;
     
     info = `${ping}ms`;
-    drawText(80, 20, 0, info);
+    drawText(20, 50, 50, info);
     window.players = players;
     players.forEach(player => {
       if (player.sid != myPlayer.sid) {

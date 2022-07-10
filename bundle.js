@@ -13,7 +13,7 @@
   window.onbeforeunload = (e) => {return 'Are you sure?';}
   
   var keycodes = {
-    MOVE_UP: "KeyW",
+   MOVE_UP: "KeyW",
     MOVE_DOWN: "KeyS",
     MOVE_LEFT: "KeyA",
     MOVE_RIGHT: "KeyD",
@@ -32,7 +32,7 @@
     HOTBAR_6: "Digit6",
     HOTBAR_7: "Digit7",
     HOTBAR_8: "Digit8",
-    HOTBAR_9: "Digit9",
+    HOTBAR_9: "Digit9", //sorry 
     
     // localStorage will also contain hotbar slots
   };
