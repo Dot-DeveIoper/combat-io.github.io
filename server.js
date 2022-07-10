@@ -788,6 +788,8 @@ wsServer.on("connection", (socket, request) => {
           setTimeout(() => {
             socket.player.chat = null;
           }, 3000);
+          
+          // Admin commands because why not (WIP)
         }
         break;
       case "c":
