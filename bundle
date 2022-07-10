@@ -220,7 +220,7 @@ setInterval(() => {
       id: 1,
       name: "Orange",
       food: true,
-      src: "https://media.discordapp.net/attachments/974248776082542602/979248699899252766/unknown.png?width=500&height=500",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358",
       scale: 50,
       img: new Image(),
       xOffset: 5,

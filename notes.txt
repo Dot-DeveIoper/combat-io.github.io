@@ -1,0 +1,1 @@
+For making img, when making shadow, use black and make the transparenticy 77%, Y off set -10 , X off set +10.
