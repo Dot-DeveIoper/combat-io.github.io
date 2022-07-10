@@ -140,6 +140,7 @@ setInterval(() => {
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 500;
+  var snowHeight = 6000;
   
   var maxScreenWidth = 1920;
   var maxScreenHeight = 1080;
@@ -525,6 +526,11 @@ setInterval(() => {
       ctx.fill();
       ctx.globalAlpha = lastGlobalAlpha;
     })
+    
+    var lastStyle3 = ctx.fillStyle;
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500);
+    ctx.fillStyle = lastStyle3;
     
     // beach
     var lastStyle3 = ctx.fillStyle;
