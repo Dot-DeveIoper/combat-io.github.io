@@ -891,7 +891,7 @@ if(SpawnedOnce == 1){
   });
   document.addEventListener("keyup", function(e) {
     if (e.isTrusted) {
-      switch (e.keyCode) {
+      switch (e.code) {
         case keycodes.MOVE_UP:
           moveUp = 0;
           break;
