@@ -189,7 +189,7 @@ setInterval(() => {
       name: "wood",
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
-      src2: "https://media.discordapp.net/attachments/796483767560437820/839052641212301332/unknowntree.png",
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
       img: new Image(),
       img2: new Image(),
       xOffset: -158,
@@ -471,7 +471,7 @@ setInterval(() => {
   function drawTree(x, y, rot, id) {
     var tree = trees.find(x => x.id == id);
     var img = tree.img;
-    if(id == 1 && y > ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight) && y < ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight)){
+    if(id == 1 && y > ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight - snowHeight) && y < ((mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - snowHeight)){
       img = tree.img2;
     }
     if(tree){
