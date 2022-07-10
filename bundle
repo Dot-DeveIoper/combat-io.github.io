@@ -169,7 +169,7 @@ setInterval(() => {
     {
       name: "food",
       id: 0,
-      src: "https://media.discordapp.net/attachments/812730676326563850/820704195816587304/image0.png?width=673&height=675", //bush
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/bush.png?v=1657467779751", //bush
       img: new Image(),
       xOffset: -68,
       yOffset: -75,
@@ -189,11 +189,11 @@ setInterval(() => {
     {
       name: "stone",
       id: 2,
-      src: "https://i.imgur.com/kqAdvEZ.png", //stone
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
       img: new Image(),
       xOffset: -70,
       yOffset: -70,
-      scale: 150,
+      scale: 200,
     },
     {
       name: "spyllis",
