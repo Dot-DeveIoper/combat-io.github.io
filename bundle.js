@@ -3,28 +3,35 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
+/*
+  rotator patch notes 14:27 EST on 7/10/2022
+- change e.keyCode to e.code (WIP)
+*/
+
 (function(e) {
   var keycodes = {
-    MOVE_UP: 87 || 38,
-    MOVE_DOWN: 83 || 40,
-    MOVE_LEFT: 65 || 37,
-    MOVE_RIGHT: 68 || 39,
-    MOVE_UP2: 38,
-    MOVE_DOWN2: 40,
-    MOVE_LEFT2: 37,
-    MOVE_RIGHT2: 39,
-    CHAT: 13,
-    QUICK_FOOD: 81,
+    MOVE_UP: "KeyW",
+    MOVE_DOWN: "KeyS",
+    MOVE_LEFT: "KeyA",
+    MOVE_RIGHT: "KeyD",
+    MOVE_UP2: "ArrowUp",
+    MOVE_DOWN2: "ArrowDown",
+    MOVE_LEFT2: "ArrowLeft",
+    MOVE_RIGHT2: "ArrowRight",
+    CHAT: "Enter",
+    QUICK_FOOD: "KeyQ",
     
-    HOTBAR_1: 49,
-    HOTBAR_2: 50,
-    HOTBAR_3: 51,
-    HOTBAR_4: 52,
-    HOTBAR_5: 53,
-    HOTBAR_6: 54,
-    HOTBAR_7: 55,
-    HOTBAR_8: 56,
-    HOTBAR_9: 57,
+    HOTBAR_1: "Digit1",
+    HOTBAR_2: "Digit2",
+    HOTBAR_3: "Digit3",
+    HOTBAR_4: "Digit4",
+    HOTBAR_5: "Digit5",
+    HOTBAR_6: "Digit6",
+    HOTBAR_7: "Digit7",
+    HOTBAR_8: "Digit8",
+    HOTBAR_9: "Digit9",
+    
+    // localStorage will also contain hotbar slots
   };
 
   var swingAngle = {};
@@ -390,7 +397,7 @@ setInterval(() => {
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(`${player.admin ? "[DEV]" : ""}  ${player.name}`, x - -27, y - 50, 100);
-    ctx.fillText(`${player.admin ? "[DEV]" : ""} ${player.name}`, x - -27, y - 50, 100); // og 50 fuck ids: {${player.sid}}
+    ctx.fillText(`${player.admin ? "[DEV]" : ""} ${player.name}`, x - -27, y - 50, 100); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if(player.sid != myPlayer.sid){
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
@@ -793,7 +800,7 @@ if(SpawnedOnce == 1){
   })
   document.addEventListener("keydown", function(e) {
     if (e.isTrusted) {
-      switch (e.keyCode) {
+      switch (e.code) {
         case keycodes.QUICK_FOOD:
           var sn;
           inventory.forEach((item) => {
@@ -976,4 +983,4 @@ enterGame.addEventListener("click", function(e) {
     }
   });
   connect();
-})();
+})(
