@@ -966,8 +966,3 @@ enterGame.addEventListener("click", function(e) {
   });
   connect();
 })();
-
-
-console = function(e) {
-  e = console.log;
-};
