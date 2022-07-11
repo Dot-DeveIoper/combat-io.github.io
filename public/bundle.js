@@ -992,10 +992,10 @@ enterGame.addEventListener("click", function(e) {
         })
       }, 50)
     }
-    audio1.pause();
-    audio2.pause();
-    audio3.pause();
-    audio4.pause();
+    // audio1.pause();
+    // audio2.pause();
+    // audio3.pause();
+    // audio4.pause();
   });
   connect();
 })();
@@ -1008,6 +1008,9 @@ var audio4 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0
 
 audio1.play();
 // audio1.loop = Infinity;
+/* window.addEventListener("audio", function(e) {
+  e.audio1.play();
+}); */
 
 // loop audio
 audio1.addEventListener("ended", (event) => {
