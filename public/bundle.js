@@ -393,14 +393,14 @@ setInterval(() => {
   function drawPlayer(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
-    ctx.font = "Hammersmith One";
+    ctx.font = "24px Hammersmith One";
     // ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
-    ctx.strokeText(`${player.admin ? "[DEV]" : ""}  ${player.name}`, x - -30, y, 100);
-    ctx.fillText(`${player.admin ? "[DEV]" : ""} ${player.name}`, x - -30, y, 100); // og 50 ids: {${player.sid}}
+    ctx.strokeText(`${player.admin ? "[DEV]" : ""}  ${player.name}`, x - -27, y - 50, 100);
+    ctx.fillText(`${player.admin ? "[DEV]" : ""} ${player.name}`, x - -27, y - 50, 100); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if(player.sid != myPlayer.sid){
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
