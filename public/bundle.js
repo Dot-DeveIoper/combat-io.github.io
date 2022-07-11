@@ -599,9 +599,6 @@ Grid.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.
     treesCache.forEach((object) => {
       var rel = relative({ x: object.x, y: object.y });
       drawTree(rel.x + object.xWiggle, rel.y + object.yWiggle, object.dir, object.id);
-      var pattern = ctx.createPattern(Grid, 'repeat');
-      ctx.fillStyle = pattern;
-      ctx.fillRect(rel.x, rel.y, mapSize, mapSize);
     })
     
     // animals
