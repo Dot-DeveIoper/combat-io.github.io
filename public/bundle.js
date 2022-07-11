@@ -9,7 +9,7 @@
 */
 
 (function(e) {
-  
+
   window.onbeforeunload = (e) => {return 'Are you sure?';}
   
   var keycodes = {
@@ -299,6 +299,10 @@ setInterval(() => {
     }
   ]
   
+const Grid = new Image();
+Grid.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966';
+Grid.onload = function() {
+  
  // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach(w => {
     w.img.src = w.src;
@@ -490,6 +494,7 @@ setInterval(() => {
     function(e) {
       window.setTimeout(e, 1000 / 60);
     };
+  
   function update() {
     var moveX = 0;
     var moveY = 0;
@@ -555,14 +560,6 @@ setInterval(() => {
     ctx.fillStyle = "#c3ab32";
     ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight, canvas.width, beachHeight);
     ctx.fillStyle = lastStyle3;
-    
-    const Grid = new Image();
-Grid.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966';
-Grid.onload = function() {
-  const pattern = ctx.createPattern(Grid, 'repeat');
-  ctx.fillStyle = pattern;
-  ctx.fillRect(0, 0, 300, 300);
-};
     
     // map borders
     var prvStyle = ctx.fillStyle;
@@ -676,6 +673,10 @@ if(SpawnedOnce == 1){
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
+    
+  const pattern = ctx.createPattern(Grid, 'repeat');
+  ctx.fillStyle = pattern;
+  ctx.fillRect(0, 0, mapSize, mapSize);
 
   }
   function connect() {
