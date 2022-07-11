@@ -219,8 +219,8 @@ setInterval(() => {
       id: 4,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
       img: new Image(),
-      xOffset: 0,
-      yOffset: 0,
+      xOffset: -25,
+      yOffset: -30,
       scale: 100,
     },
   ]
@@ -543,15 +543,23 @@ setInterval(() => {
       ctx.globalAlpha = lastGlobalAlpha;
     })
     
+    /// snow
     var lastStyle3 = ctx.fillStyle;
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - snowHeight - 3000 - 1500, canvas.width, 1500);
     ctx.fillStyle = lastStyle3;
+  
     
     // beach
     var lastStyle3 = ctx.fillStyle;
     ctx.fillStyle = "#c3ab32";
     ctx.fillRect(0, (mapSize - myPlayer.y + canvas.height / 2) - moltenHeight - moltenRiverHeight - beachHeight, canvas.width, beachHeight);
+    ctx.fillStyle = lastStyle3;
+    
+    const pattern = ctx.createPatttern("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966", 'repeat');
+    ctx.fillStyle = pattern;
+    ctx.fillRect(0, 0, mapSize, mapSize);
+    ctx.fillRect(0,0, mapSize, mapSize);
     ctx.fillStyle = lastStyle3;
     
     // map borders
@@ -566,7 +574,7 @@ setInterval(() => {
     ctx.fillRect(mapSize - myPlayer.x + canvas.width / 2, 0, canvas.width, canvas.height);
     // bottom border
     ctx.fillRect(0, mapSize - myPlayer.y + canvas.height / 2, canvas.width, canvas.height);
-    ctx.fillStyle = prvStyle;
+    ctx.fillStyle = "#000";
     
     info = `${ping}ms`;
     drawText(100, 50, 30, info);
