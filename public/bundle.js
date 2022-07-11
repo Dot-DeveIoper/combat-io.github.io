@@ -301,7 +301,6 @@ setInterval(() => {
   
 const Grid = new Image();
 Grid.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966';
-Grid.onload = function() {
   
  // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach(w => {
@@ -600,6 +599,9 @@ Grid.onload = function() {
     treesCache.forEach((object) => {
       var rel = relative({ x: object.x, y: object.y });
       drawTree(rel.x + object.xWiggle, rel.y + object.yWiggle, object.dir, object.id);
+      var pattern = ctx.createPattern(Grid, 'repeat');
+      ctx.fillStyle = pattern;
+      ctx.fillRect(rel.x, rel.y, mapSize, mapSize);
     })
     
     // animals
@@ -673,10 +675,6 @@ if(SpawnedOnce == 1){
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
-    
-  const pattern = ctx.createPattern(Grid, 'repeat');
-  ctx.fillStyle = pattern;
-  ctx.fillRect(0, 0, mapSize, mapSize);
 
   }
   function connect() {
