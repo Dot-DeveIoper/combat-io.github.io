@@ -215,13 +215,13 @@ setInterval(() => {
       scale: 150,
     },
     {
-      id: 6,
       name: "Grid",
+      id: 4,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
-      scale: 100,
       img: new Image(),
       xOffset: 0,
       yOffset: 0,
+      scale: 100,
     },
   ]
 
@@ -653,7 +653,7 @@ if(SpawnedOnce == 1){
     
     
     if(myPlayer.resources)
-    for(let v = 0; v < trees.length; v++){
+    for(let v = 0; v < trees.length - 1; v++){
       var res = trees[v];
       var last3Style = ctx.fillStyle;
       ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
