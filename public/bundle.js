@@ -368,7 +368,7 @@ setInterval(() => {
   }
   function drawText(x, y, size, text, color = "#000") {
     var lastColor = ctx.fillStyle;
-    ctx.font = "20px Georgia";
+    //ctx.font = "20px Georgia";
     ctx.fillStyle = color;
     ctx.fillText(text, x, y);
     ctx.filStyle = lastColor;
@@ -424,15 +424,7 @@ setInterval(() => {
       ctx.translate(x, y);
       ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
       ctx.restore();
-    
-    
-    ctx.textAlign = "center"
-      drawCircle(
-        0,
-        0,
-        80,
-        player.sid == myPlayer.sid ? "#8f4e14" : "#000"
-      ).fill();
+
    
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
@@ -568,7 +560,7 @@ setInterval(() => {
     ctx.fillStyle = prvStyle;
     
     info = `${ping}ms`;
-    drawText(20, 50, 50, info);
+    drawText(100, 50, 30, info);
     window.players = players;
     players.forEach(player => {
       if (player.sid != myPlayer.sid) {
