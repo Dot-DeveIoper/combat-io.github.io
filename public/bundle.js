@@ -425,15 +425,15 @@ setInterval(() => {
       ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
       ctx.restore();
     
-    /*
+    
     ctx.textAlign = "center"
       drawCircle(
-        x,
-        y,
-        playerSize,
+        0,
+        0,
+        80,
         player.sid == myPlayer.sid ? "#8f4e14" : "#000"
       ).fill();
-    */
+   
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
