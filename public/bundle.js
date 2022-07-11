@@ -992,10 +992,10 @@ enterGame.addEventListener("click", function(e) {
         })
       }, 50)
     }
-    // audio1.pause();
-    // audio2.pause();
-    // audio3.pause();
-    // audio4.pause();
+    audio1.pause();
+    audio2.pause();
+    audio3.pause();
+    audio4.pause();
   });
   connect();
 })();
