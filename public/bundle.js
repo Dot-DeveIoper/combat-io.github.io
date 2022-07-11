@@ -603,7 +603,7 @@ setInterval(() => {
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
     ctx.borderRadius = "4px";
-    ctx.font = "17pt Courier";
+    ctx.font = "bold 28px Hammersmith One";
     ctx.textAlign = "center";
     ctx.fillText("Leaderboard", canvas.width - leaderboardOffset - leaderboardWidth/2, leaderboardOffset + 40);
     ctx.font = lastFont;
