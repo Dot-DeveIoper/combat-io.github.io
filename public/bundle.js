@@ -213,7 +213,16 @@ setInterval(() => {
       xOffset: -68,
       yOffset: -70,
       scale: 150,
-    }
+    },
+    {
+      id: 6,
+      name: "Grid",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
+      scale: 100,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: 0,
+    },
   ]
 
   var weapons = [
@@ -504,9 +513,6 @@ setInterval(() => {
     if(!nausea){
       var prevStyle = ctx.fillStyle;
       ctx.fillStyle = "#789b50"; // #768f5a
-      var grid =new Image();
-      grid.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/water1.jpg";
-      ctx.createPattern(grid,'repeat');
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }

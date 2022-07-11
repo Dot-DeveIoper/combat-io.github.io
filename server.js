@@ -310,7 +310,7 @@ var weapons = [
     velocity: 0,
     health: 250,
     maxHealth: 250,
-  }
+  },
 ];
 
 app.get("/", (req, res) => {
