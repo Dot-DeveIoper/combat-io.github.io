@@ -504,6 +504,9 @@ setInterval(() => {
     if(!nausea){
       var prevStyle = ctx.fillStyle;
       ctx.fillStyle = "#789b50"; // #768f5a
+      var grid =new Image();
+      grid.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/water1.jpg";
+      ctx.createPattern(grid,'repeat');
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
