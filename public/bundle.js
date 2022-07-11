@@ -10,7 +10,7 @@
 
 (function(e) {
 
-  window.onbeforeunload = (e) => {return 'Are you sure?';}
+  window.onbeforeunload = (e) => { return "Are you sure?"; }
   
   var keycodes = {
    MOVE_UP: "KeyW",
@@ -1000,25 +1000,25 @@ enterGame.addEventListener("click", function(e) {
   connect();
 })();
 
-var audio1 = new Audio('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818');
-var audio2 = new Audio('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio2.mp3?v=1657579196395');
-var audio3 = new Audio('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio3.mp3?v=1657579246292');
-var audio4 = new Audio('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio4.mp3?v=1657579308738');
+var audio1 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818");
+var audio2 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio2.mp3?v=1657579196395");
+var audio3 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio3.mp3?v=1657579246292");
+var audio4 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio4.mp3?v=1657579308738");
 // var audioArray = [audio1, audio2, audio3, audio4];
 
 audio1.play();
 // audio1.loop = Infinity;
 
 // loop audio
-audio1.addEventListener('ended', (event) => {
+audio1.addEventListener("ended", (event) => {
   audio2.play();
 });
-audio2.addEventListener('ended', (event) => {
+audio2.addEventListener("ended", (event) => {
   audio3.play();
 });
-audio3.addEventListener('ended', (event) => {
+audio3.addEventListener("ended", (event) => {
   audio4.play();
 });
-audio4.addEventListener('ended', (event) => {
+audio4.addEventListener("ended", (event) => {
   audio1.play();
 });
