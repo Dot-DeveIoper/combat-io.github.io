@@ -220,6 +220,7 @@ setInterval(() => {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
       src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
+      src23: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
       img: new Image(),
       img2: new Image(),
       xOffset: -158,
@@ -247,7 +248,7 @@ setInterval(() => {
     // {
     //   name: "Grid",
     //   id: 4,
-    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
+    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
     //   img: new Image(),
     //   xOffset: -25,
     //   yOffset: -30,
@@ -637,16 +638,6 @@ setInterval(() => {
       canvas.width,
       1500
     );
-
-var image = new Image();
-image.addEventListener('load', DrawGrid());
-image.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966';
-
-    function DrawGrid() {
-      const ptrn = ctx.createPattern(image.src, "repeat"); // Create a pattern with this image, and set it to "repeat".
-      ctx.fillStyle = ptrn;
-      ctx.fillRect(0, 0, canvas.height, canvas.width);
-    }
     ctx.fillStyle = lastStyle3;
 
     // beach
