@@ -112,15 +112,14 @@ setInterval(() => {
     document.getElementById("mainMenu").style.display = "block";
     audio1.play();
      const fadeAudio = setInterval(() => {
-  const fadePoint = audio1.duration - 5;
   if (audio1.volume !== 1) {
-    audio1.volume += 0.1
+    audio1.volume += 0.01
   }
 
   if (audio1.volume > 0.9) {
     clearInterval(fadeAudio);
   }
-}, 500);
+}, 10);
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML = msg + "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>"
   }
@@ -760,15 +759,14 @@ if(SpawnedOnce == 1){
             mainMenu.style.display = "block";
             audio1.play();
      const fadeAudio = setInterval(() => {
-  const fadePoint = audio1.duration - 5;
   if (audio1.volume !== 1) {
-    audio1.volume += 0.1
+    audio1.volume += 0.01
   }
 
   if (audio1.volume > 0.9) {
     clearInterval(fadeAudio);
   }
-}, 500);
+}, 10);
             for(let i = 0; i < 11; i++){
               document.getElementById("h-item-"+i).style.display = "none";
             }
@@ -990,16 +988,15 @@ enterGame.addEventListener("click", function(e) {
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
  const fadeAudio = setInterval(() => {
-  const fadePoint = audio1.duration - 5;
   if (audio1.volume !== 0) {
-    audio1.volume -= 0.1
+    audio1.volume -= 0.05
   }
 
-  if (audio1.volume < 0.003) {
+  if (audio1.volume =< 0) {
     clearInterval(fadeAudio);
     audio1.pause();
   }
-}, 500);
+}, 10);
 
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
@@ -1037,12 +1034,3 @@ enterGame.addEventListener("click", function(e) {
   });
   connect();
 })();
-
-// var audioArray = [audio1, audio2, audio3, audio4];
-
-// audio1.loop = Infinity;
-/* window.addEventListener("audio", function(e) {
-  e.audio1.play();
-}); */
-
-// loop audio
