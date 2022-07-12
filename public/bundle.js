@@ -329,7 +329,6 @@ setInterval(() => {
     },
   ];
 
-
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach((w) => {
     w.img.src = w.src;
@@ -638,14 +637,16 @@ setInterval(() => {
       canvas.width,
       1500
     );
-    ctx.drawImage(
-      "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966", 
-      0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
-      canvas.width,
-      1500
-    );
+    var img = new Image();
 
+    img.src =
+      "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png";
+
+    img.addEventListener("load", () => {
+      const ptrn = ctx.createPattern(img, "repeat"); // Create a pattern with this image, and set it to "repeat".
+      ctx.fillStyle = ptrn;
+      ctx.fillRect(0, 0, canvas.height, canvas.width);
+    });
     ctx.fillStyle = lastStyle3;
 
     // beach
