@@ -223,6 +223,7 @@ var animalsCache = [];
 var treesCache = [];
 var objCache = [];
 
+// ID: 0 == bush, 1 == tree, 2 == stone, 3 == spylilly
 for (let j = 0; j < 4; j++){
   for (let i = 0; i < mapSize/100; i++) {
     var randomx = randomInt(0, mapSize);
@@ -234,7 +235,7 @@ for (let j = 0; j < 4; j++){
       if(j == 0 || j == 1 || j == 3)continue;
     }
     if(randomy > mapSize - moltenHeight - 100){
-      if(j == 0 || j == 1)continue;
+      if(j == 0 || j == 1 || j == 1)continue;
     }
     if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
       if(j == 0 || j == 3)continue;
