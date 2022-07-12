@@ -1144,6 +1144,16 @@ setInterval(() => {
   });
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
+      var fadeOutAudio = setInterval(() => {
+        if (audio1.volume >= 0.009) {
+          audio1.volume -= 0.01111111111111111111111111111111111111;
+        }
+
+        if (audio1.volume <= 0.1) {
+          audio1.pause();
+          clearInterval(fadeOutAudio);
+        }
+      }, 10);
       var minimapOffset = 20;
       var minimapSize = 200;
       deathLocX = myPlayer.y * (minimapSize / mapSize);
