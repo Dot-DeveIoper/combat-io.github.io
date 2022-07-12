@@ -969,8 +969,10 @@ enterGame.addEventListener("click", function(e) {
 })
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
-      audio1.volume =
-      audio1.pause();
+      for (var i = audio1.volume; i > 0; i++) {
+        audio1.volume - 1;
+      }
+      
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
