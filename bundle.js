@@ -63,27 +63,27 @@
   var deathLocX = 0;
   var deathLocY = 0;
 
-setInterval(() => {
-    Function.constructor('debugger').apply('stateObject')
-  }, 10)
- document.addEventListener("keydown", function(e) {
-        if(e.which==123){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 73){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 75){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 67){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 74){
-            e.preventDefault();
-        }
-});
-  
+  setInterval(() => {
+    Function.constructor("debugger").apply("stateObject");
+  }, 10);
+  document.addEventListener("keydown", function (e) {
+    if (e.which == 123) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 73) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 75) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 67) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 74) {
+      e.preventDefault();
+    }
+  });
+
   function isFuncNative(f) {
     return (
       !!f &&
@@ -94,7 +94,7 @@ setInterval(() => {
         ))
     );
   }
- /* setInterval(() => {
+  /* setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -246,14 +246,14 @@ setInterval(() => {
       scale: 150,
     },
     {
-     name: "Grid",
+      name: "Grid",
       id: 4,
-       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
-       img: new Image(),
-       xOffset: -25,
-       yOffset: -30,
-       scale: 100,
-     },
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
+      img: new Image(),
+      xOffset: -25,
+      yOffset: -30,
+      scale: 100,
+    },
   ];
 
   var weapons = [
@@ -261,10 +261,10 @@ setInterval(() => {
       id: 0,
       name: "Tool Hammer",
       src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
-      scale: 100,
       img: new Image(),
       xOffset: -25,
       yOffset: -30,
+      scale: 5000,
     },
     {
       id: 1,
@@ -527,10 +527,10 @@ setInterval(() => {
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = '';
-    if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+    var img = "";
+    if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
       img = tree.img2;
-    } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
+    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
       img = tree.img3;
     } else {
       img = tree.img;

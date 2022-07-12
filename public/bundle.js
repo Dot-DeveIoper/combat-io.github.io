@@ -245,15 +245,15 @@ setInterval(() => {
       yOffset: -70,
       scale: 150,
     },
-    // {
-    //   name: "Grid",
-    //   id: 4,
-    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
-    //   img: new Image(),
-    //   xOffset: -25,
-    //   yOffset: -30,
-    //   scale: 100,
-    // },
+   // {
+  // name: "Grid",
+    //  id: 4,
+    //  src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
+     // img: new Image(),
+    //  xOffset: -25,
+      yOffset: -30,
+      scale: 100,
+   },
   ];
 
   var weapons = [
