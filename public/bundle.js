@@ -637,16 +637,16 @@ setInterval(() => {
       canvas.width,
       1500
     );
-    var img = new Image();
 
-    img.src =
-      "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png";
+var image = new Image();
+image.addEventListener('load', DrawGrid());
+image.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966';
 
-    img.addEventListener("load", () => {
-      const ptrn = ctx.createPattern(img, "repeat"); // Create a pattern with this image, and set it to "repeat".
+    function DrawGrid() {
+      const ptrn = ctx.createPattern(image.src, "repeat"); // Create a pattern with this image, and set it to "repeat".
       ctx.fillStyle = ptrn;
       ctx.fillRect(0, 0, canvas.height, canvas.width);
-    });
+    }
     ctx.fillStyle = lastStyle3;
 
     // beach
