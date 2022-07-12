@@ -528,9 +528,8 @@ setInterval(() => {
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
     var img = tree.img;
-    if (id === 1 && y > 8000) {
+    if (( id == 1 && y > mapSize - myPlayer.y + canvas.height / 2 - moltenHeight - moltenRiverHeight - beachHeight && y < mapSize - myPlayer.y + canvas.height / 2 - moltenHeight - moltenRiverHeight )) {
       img = tree.img2;
-      alert("snow tree");
     }
     if (tree) {
       ctx.save();
