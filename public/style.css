@@ -1,6 +1,6 @@
 /* this file is loaded by index.html and styles the page */
 
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One');
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One");
 
 * {
   box-sizing: border-box;
@@ -27,7 +27,7 @@ body {
   overflow: hidden;
   background-color: #77c44c;
 
-  font-family: 'Hammersmith One', sans-serif;
+  font-family: "Hammersmith One", sans-serif;
   width: 100vh;
   height: 100%;
 }
@@ -647,6 +647,47 @@ body > #mainMenu {
 
   /* display: none; */
   /* switch display to block with js to fix it */
+}
+
+/* checkbox styles */
+label.checkbox {
+  margin-right: 1rem;
+  padding-left: 1.75rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+label.checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+label.checkbox input[type=checkbox]:focus ~ span {
+  border: 2px solid #aab0b9;
+}
+label.checkbox input[type=checkbox]:focus:checked ~ span {
+  border: 2px solid #20644c;
+}
+label.checkbox input[type=checkbox]:checked ~ span {
+  color: #FFFFFF;
+  background: #329E78 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+") 50% 40% no-repeat;
+  border: 2px solid #329E78;
+}
+label.checkbox span {
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 1rem;
+  height: 1rem;
+  background-color: #d4d7dc;
+  border: 2px solid #d4d7dc;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 canvas {
