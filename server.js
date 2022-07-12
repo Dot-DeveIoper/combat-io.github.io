@@ -228,13 +228,13 @@ for (let j = 0; j < 4; j++){
     var randomx = randomInt(0, mapSize);
     var randomy = randomInt(0, mapSize);
     if(randomy > mapSize - snowHeight - 100){
-      if(j == 1)continue;
+      if(j == 0 /*|| j == 1*/)continue;
     }
     if(randomy > mapSize - moltenHeight - moltenRiverHeight - 100 && randomy < mapSize - moltenHeight + 100){
       if(j == 0 || j == 1 || j == 3)continue;
     }
     if(randomy > mapSize - moltenHeight - 100){
-      if(j == 1)continue;
+      if(j == 0 || j == 1)continue;
     }
     if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
       if(j == 0 || j == 3)continue;
