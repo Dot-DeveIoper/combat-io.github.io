@@ -63,7 +63,6 @@
   var deathLocX = 0;
   var deathLocY = 0;
 
-  /*
 setInterval(() => {
     Function.constructor('debugger').apply('stateObject')
   }, 10)
@@ -84,7 +83,7 @@ setInterval(() => {
             e.preventDefault();
         }
 });
-  */
+  
   function isFuncNative(f) {
     return (
       !!f &&
@@ -553,7 +552,6 @@ setInterval(() => {
     };
 
   function update() {
-    console.log(myPlayer.y);
     var moveX = 0;
     var moveY = 0;
     moveY += moveUp;

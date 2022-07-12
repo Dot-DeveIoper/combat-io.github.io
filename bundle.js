@@ -63,7 +63,6 @@
   var deathLocX = 0;
   var deathLocY = 0;
 
-  /*
 setInterval(() => {
     Function.constructor('debugger').apply('stateObject')
   }, 10)
@@ -84,7 +83,7 @@ setInterval(() => {
             e.preventDefault();
         }
 });
-  */
+  
   function isFuncNative(f) {
     return (
       !!f &&
@@ -246,15 +245,15 @@ setInterval(() => {
       yOffset: -70,
       scale: 150,
     },
-    // {
-    //   name: "Grid",
-    //   id: 4,
-    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
-    //   img: new Image(),
-    //   xOffset: -25,
-    //   yOffset: -30,
-    //   scale: 100,
-    // },
+    {
+     name: "Grid",
+      id: 4,
+       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
+       img: new Image(),
+       xOffset: -25,
+       yOffset: -30,
+       scale: 100,
+     },
   ];
 
   var weapons = [
@@ -531,7 +530,7 @@ setInterval(() => {
     var img = '';
     if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
-    } else if ((id === 1 && myPlayer.y >= 9025 && myPlayer.y <= mapSize)) {
+    } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
       img = tree.img3;
     } else {
       img = tree.img;
@@ -553,7 +552,6 @@ setInterval(() => {
     };
 
   function update() {
-    console.log(myPlayer.y);
     var moveX = 0;
     var moveY = 0;
     moveY += moveUp;
