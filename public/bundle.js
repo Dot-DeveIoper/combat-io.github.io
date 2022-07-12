@@ -223,6 +223,7 @@ setInterval(() => {
       src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
       img: new Image(),
       img2: new Image(),
+      img3: new Image(),
       xOffset: -158,
       yOffset: -160,
       scale: 350,
