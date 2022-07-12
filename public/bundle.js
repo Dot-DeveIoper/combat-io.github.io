@@ -8,25 +8,11 @@
 - change e.keyCode to e.code (Done I think)
 */
 
-(function(e) {
   var audio1 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818");
-  var audio2 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio2.mp3?v=1657579196395");
-  var audio3 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio3.mp3?v=1657579246292");
-  var audio4 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio4.mp3?v=1657579308738");
-  audio1.addEventListener("ended", (event) => {
-  audio2.play();
-  });
-  audio2.addEventListener("ended", (event) => {
-  audio3.play();
-  });
-  audio3.addEventListener("ended", (event) => {
-  audio4.play();
-  });
-  audio4.addEventListener("ended", (event) => {
+  audio1.muted = false;
   audio1.play();
-  });
-  
-  audio1.play();
+
+(function(e) {
   window.onbeforeunload = (e) => { return "Are you sure?"; }
   
   var keycodes = {
@@ -756,6 +742,7 @@ if(SpawnedOnce == 1){
             break;
           case "d":
             mainMenu.style.display = "block";
+            audio1.play();
             for(let i = 0; i < 11; i++){
               document.getElementById("h-item-"+i).style.display = "none";
             }
@@ -976,6 +963,7 @@ enterGame.addEventListener("click", function(e) {
 })
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
+        audio1.pause();
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
@@ -1009,10 +997,6 @@ enterGame.addEventListener("click", function(e) {
         })
       }, 50)
     }
-    audio1.pause();
-    audio2.pause();
-    audio3.pause();
-    audio4.pause();
   });
   connect();
 })();
