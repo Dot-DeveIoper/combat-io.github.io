@@ -95,7 +95,7 @@ setInterval(() => {
         ))
     );
   }
-  setInterval(() => {
+ /* setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -113,7 +113,7 @@ setInterval(() => {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  }, 1000);*/
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
@@ -531,7 +531,7 @@ setInterval(() => {
     var img = '';
     if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
-    } else if ((id === 1 && myPlayer.y >= 9025 && myPlayer.y <= mapSize)) {
+    } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
       img = tree.img3;
     } else {
       img = tree.img;
@@ -553,6 +553,7 @@ setInterval(() => {
     };
 
   function update() {
+    console.log(myPlayer.y);
     var moveX = 0;
     var moveY = 0;
     moveY += moveUp;
@@ -806,7 +807,7 @@ setInterval(() => {
     var resourcesHeight = 40;
 
     if (myPlayer.resources)
-      for (let v = 0; v < trees.length - 1; v++) {
+      for (let v = 0; v < trees.length; v++) {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou

@@ -95,7 +95,7 @@ setInterval(() => {
         ))
     );
   }
-  setInterval(() => {
+ /* setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -113,7 +113,7 @@ setInterval(() => {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  }, 1000);*/
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
@@ -209,7 +209,7 @@ setInterval(() => {
     {
       name: "food",
       id: 0,
-      src: "", //bush
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/bush.png?v=1657467779751", //bush
       img: new Image(),
       xOffset: -68,
       yOffset: -75,
@@ -220,8 +220,10 @@ setInterval(() => {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
       src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
       img: new Image(),
       img2: new Image(),
+      img3: new Image(),
       xOffset: -158,
       yOffset: -160,
       scale: 350,
@@ -229,7 +231,7 @@ setInterval(() => {
     {
       name: "stone",
       id: 2,
-      src: "", //stone
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
       img: new Image(),
       xOffset: -70,
       yOffset: -70,
@@ -247,7 +249,7 @@ setInterval(() => {
     // {
     //   name: "Grid",
     //   id: 4,
-    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
+    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
     //   img: new Image(),
     //   xOffset: -25,
     //   yOffset: -30,
@@ -329,7 +331,6 @@ setInterval(() => {
     },
   ];
 
-
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach((w) => {
     w.img.src = w.src;
@@ -344,6 +345,9 @@ setInterval(() => {
     w.img.src = w.src;
     if (w.img2 && w.src2) {
       w.img2.src = w.src2;
+    }
+    if (w.img3 && w.src3) {
+      w.img3.src = w.src3;
     }
   });
 
@@ -524,24 +528,13 @@ setInterval(() => {
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = tree.img;
-    if (
-      id == 1 &&
-      y >
-        mapSize -
-          myPlayer.y +
-          canvas.height / 2 -
-          moltenHeight -
-          moltenRiverHeight -
-          beachHeight &&
-      y <
-        mapSize -
-          myPlayer.y +
-          canvas.height / 2 -
-          moltenHeight -
-          moltenRiverHeight
-    ) {
+    var img = '';
+    if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
+    } else if ((id === 1 && myPlayer.y >= 9025 && myPlayer.y <= mapSize)) {
+      img = tree.img3;
+    } else {
+      img = tree.img;
     }
     if (tree) {
       ctx.save();
@@ -560,6 +553,7 @@ setInterval(() => {
     };
 
   function update() {
+    console.log(myPlayer.y);
     var moveX = 0;
     var moveY = 0;
     moveY += moveUp;
@@ -638,11 +632,6 @@ setInterval(() => {
       canvas.width,
       1500
     );
-    ctx.drawImage("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966", 0, 0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
-      canvas.width,
-      1500);
-
     ctx.fillStyle = lastStyle3;
 
     // beach
@@ -818,7 +807,7 @@ setInterval(() => {
     var resourcesHeight = 40;
 
     if (myPlayer.resources)
-      for (let v = 0; v < trees.length - 1; v++) {
+      for (let v = 0; v < trees.length; v++) {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
