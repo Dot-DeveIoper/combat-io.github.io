@@ -95,7 +95,7 @@ setInterval(() => {
         ))
     );
   }
-  setInterval(() => {
+  /*setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -113,7 +113,7 @@ setInterval(() => {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  }, 1000);*/
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
@@ -528,8 +528,10 @@ setInterval(() => {
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
     var img = tree.img;
-    if (( id == 1 && y > mapSize - myPlayer.y + canvas.height / 2 - moltenHeight - moltenRiverHeight - beachHeight && y < mapSize - myPlayer.y + canvas.height / 2 - moltenHeight - moltenRiverHeight )) {
+    if ((id == 1 && y >= 185 && y <= 22)) {
       img = tree.img2;
+    } else {
+      img = tree.img;
     }
     if (tree) {
       ctx.save();
@@ -559,6 +561,7 @@ setInterval(() => {
     if (move != lastMove) {
       sendMove();
     }
+    console.log(myPlayer.y, myPlayer.x);
     if (!nausea) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.globalAlpha = 1;
