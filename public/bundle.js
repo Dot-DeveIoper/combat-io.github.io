@@ -987,17 +987,17 @@ enterGame.addEventListener("click", function(e) {
 })
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
- const fadeAudio = setInterval(() => {
-  if (audio1.volume !== 0) {
-    audio1.volume -= 0.05
+  var fadeInAudio = setInterval(() => {
+  if (audio1.volume >= 0.009) {
+    audio1.volume -= 0.01;
+    // alert(audio1.volume)
   }
 
-  if (audio1.volume =< 0) {
-    clearInterval(fadeAudio);
+  if (audio1.volume <= 0) {
     audio1.pause();
+    clearInterval(fadeInAudio);
   }
 }, 10);
-
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
