@@ -8,11 +8,16 @@
 - change e.keyCode to e.code (Done I think)
 */
 
+(function(e) {
+  
   var audio1 = new Audio("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818");
   audio1.muted = false;
   audio1.play();
 
-(function(e) {
+  audio1.addEventListener("ended", (event) => {
+    audio1.play();
+  });
+  
   window.onbeforeunload = (e) => { return "Are you sure?"; }
   
   var keycodes = {
@@ -105,6 +110,7 @@ setInterval(() => {
   function kick(msg){
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
+    audio1.play();
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML = msg + "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>"
   }
@@ -963,7 +969,8 @@ enterGame.addEventListener("click", function(e) {
 })
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
-        audio1.pause();
+      audio1.volume =
+      audio1.pause();
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
