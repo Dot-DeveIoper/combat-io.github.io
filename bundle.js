@@ -244,15 +244,15 @@ setInterval(() => {
       yOffset: -70,
       scale: 150,
     },
-    {
-      name: "Grid",
-      id: 4,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
-      img: new Image(),
-      xOffset: -25,
-      yOffset: -30,
-      scale: 100,
-    },
+    // {
+    //   name: "Grid",
+    //   id: 4,
+    //   src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966",
+    //   img: new Image(),
+    //   xOffset: -25,
+    //   yOffset: -30,
+    //   scale: 100,
+    // },
   ];
 
   var weapons = [
@@ -329,9 +329,6 @@ setInterval(() => {
     },
   ];
 
-  const Grid = new Image();
-  Grid.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966";
 
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach((w) => {
@@ -641,6 +638,11 @@ setInterval(() => {
       canvas.width,
       1500
     );
+    ctx.drawImage("https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png?v=1657505860966", 0, 0,
+      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
+      canvas.width,
+      1500);
+
     ctx.fillStyle = lastStyle3;
 
     // beach
