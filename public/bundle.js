@@ -111,6 +111,16 @@ setInterval(() => {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     audio1.play();
+     const fadeAudio = setInterval(() => {
+  const fadePoint = audio1.duration - 5;
+  if (audio1.volume !== 1) {
+    audio1.volume += 0.1
+  }
+
+  if (audio1.volume > 0.9) {
+    clearInterval(fadeAudio);
+  }
+}, 500);
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML = msg + "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>"
   }
@@ -749,6 +759,16 @@ if(SpawnedOnce == 1){
           case "d":
             mainMenu.style.display = "block";
             audio1.play();
+     const fadeAudio = setInterval(() => {
+  const fadePoint = audio1.duration - 5;
+  if (audio1.volume !== 1) {
+    audio1.volume += 0.1
+  }
+
+  if (audio1.volume > 0.9) {
+    clearInterval(fadeAudio);
+  }
+}, 500);
             for(let i = 0; i < 11; i++){
               document.getElementById("h-item-"+i).style.display = "none";
             }
@@ -969,17 +989,18 @@ enterGame.addEventListener("click", function(e) {
 })
   enterGame.addEventListener("click", function(e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
-      iaojsdi();
-      function iaojsdi() { 
-      if (audio1.volume > 0) {
-        setTimeout(() => {
-           audio1.volume - 0.1; 
-            iaojsdi();
-        }, 100);
-      } else {
-        return false;
-      }
-      }
+ const fadeAudio = setInterval(() => {
+  const fadePoint = audio1.duration - 5;
+  if (audio1.volume !== 0) {
+    audio1.volume -= 0.1
+  }
+
+  if (audio1.volume < 0.003) {
+    clearInterval(fadeAudio);
+    audio1.pause();
+  }
+}, 500);
+
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
