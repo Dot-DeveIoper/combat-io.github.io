@@ -236,9 +236,9 @@ for (let j = 0; j < 4; j++){
     if(randomy > mapSize - moltenHeight - 100){
       if(j == 0 || j == 1)continue;
     }
-    if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
-      if(j == 0 || j == 3)continue;
-    }
+    // if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
+    //   if(j == 0 || j == 1 || j == 3)continue;
+    // }
     var object = { x: randomx, y: randomy, dir: Math.random(), id: j, xWiggle: 0, yWiggle: 0 };
     if(treesCache.filter(x => x && dist(object, x) < 200).length > 0)continue;
     treesCache.push(object);

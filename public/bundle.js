@@ -530,8 +530,8 @@ setInterval(() => {
     var img = '';
     if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
-    }     if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
-      img = tree.img2;
+    } else if ((id === 1 && myPlayer.y >= 9025 && myPlayer.y <= mapSize)) {
+      img = tree.img3;
     } else {
       img = tree.img;
     }
