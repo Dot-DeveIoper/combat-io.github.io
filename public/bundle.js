@@ -220,7 +220,7 @@ setInterval(() => {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
       src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
-      src23: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
       img: new Image(),
       img2: new Image(),
       xOffset: -158,
@@ -344,6 +344,9 @@ setInterval(() => {
     w.img.src = w.src;
     if (w.img2 && w.src2) {
       w.img2.src = w.src2;
+    }
+    if (w.img3 && w.src3) {
+      w.img3.src = w.src3;
     }
   });
 
@@ -525,23 +528,9 @@ setInterval(() => {
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
     var img = tree.img;
-    if (
-      id == 1 &&
-      y >
-        mapSize -
-          myPlayer.y +
-          canvas.height / 2 -
-          moltenHeight -
-          moltenRiverHeight -
-          beachHeight &&
-      y <
-        mapSize -
-          myPlayer.y +
-          canvas.height / 2 -
-          moltenHeight -
-          moltenRiverHeight
-    ) {
+    if (id === 1 && y > 8000) {
       img = tree.img2;
+      alert("snow tree");
     }
     if (tree) {
       ctx.save();
