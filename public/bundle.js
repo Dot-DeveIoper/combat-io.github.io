@@ -86,6 +86,7 @@ function setSkin(num) {
   var SpawnedOnce = 0;
   var deathLocX = 0;
   var deathLocY = 0;
+  var soundOn = true;
 
 setInterval(() => {
     Function.constructor('debugger').apply('stateObject')
@@ -175,7 +176,7 @@ setInterval(() => {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
-  let enterGame = document.getElementById("enterGame");
+  let sound = document.getElementById("sound");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -1156,8 +1157,14 @@ setInterval(() => {
       e.preventDefault();
     }
   });
-  enterGame.addEventListener("click", function (e) {
-    
+  sound.addEventListener("click", function (e) {
+    soundOn ? a() : b();
+    function a() {
+      soundOn = false;
+    }
+    function b() {
+      soundOn = true;
+    }    
   });
 
   enterGame.addEventListener("click", function (e) {
