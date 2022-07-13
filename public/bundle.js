@@ -137,7 +137,7 @@ setInterval(() => {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);*/
+  }, 1000); */
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
