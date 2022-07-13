@@ -238,8 +238,8 @@ setInterval(() => {
       src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
       img: new Image(),
       img2: new Image(),
-      xOffset: -68,
-      yOffset: -75,
+      xOffset: -60,
+      yOffset: -63,
       scale: 120,
     },
     {
