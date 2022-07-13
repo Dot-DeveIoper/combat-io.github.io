@@ -8,6 +8,30 @@
 - change e.keyCode to e.code (Done I think)
 */
 
+function setSkin(num) {
+  if (num === 1) {
+    document.getElementById("skin1").style.borderRadius = "25%";
+    document.getElementById("skin2").style.borderRadius = "50%";
+    document.getElementById("skin3").style.borderRadius = "50%";
+    document.getElementById("skin4").style.borderRadius = "50%";
+  } else if (num === 2) {
+    document.getElementById("skin2").style.borderRadius = "25%";
+    document.getElementById("skin1").style.borderRadius = "50%";
+    document.getElementById("skin3").style.borderRadius = "50%";
+    document.getElementById("skin4").style.borderRadius = "50%";
+  } else if (num === 3) {
+    document.getElementById("skin3").style.borderRadius = "25%";
+    document.getElementById("skin1").style.borderRadius = "50%";
+    document.getElementById("skin2").style.borderRadius = "50%";
+    document.getElementById("skin4").style.borderRadius = "50%";
+  } else if (num === 4) {
+    document.getElementById("skin4").style.borderRadius = "25%";
+    document.getElementById("skin1").style.borderRadius = "50%";
+    document.getElementById("skin2").style.borderRadius = "50%";
+    document.getElementById("skin3").style.borderRadius = "50%";
+  }
+}
+
 (function (e) {
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
@@ -62,28 +86,29 @@
   var SpawnedOnce = 0;
   var deathLocX = 0;
   var deathLocY = 0;
+  var soundOn = true;
 
-  setInterval(() => {
-    Function.constructor("debugger").apply("stateObject");
-  }, 10);
-  document.addEventListener("keydown", function (e) {
-    if (e.which == 123) {
-      e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.which == 73) {
-      e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.which == 75) {
-      e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.which == 67) {
-      e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.which == 74) {
-      e.preventDefault();
-    }
-  });
-
+setInterval(() => {
+    Function.constructor('debugger').apply('stateObject')
+  }, 10)
+ document.addEventListener("keydown", function(e) {
+        if(e.which==123){
+            e.preventDefault();
+        }
+        if(e.ctrlKey && e.shiftKey && e.which == 73){
+            e.preventDefault();
+        }
+        if(e.ctrlKey && e.shiftKey && e.which == 75){
+            e.preventDefault();
+        }
+        if(e.ctrlKey && e.shiftKey && e.which == 67){
+            e.preventDefault();
+        }
+        if(e.ctrlKey && e.shiftKey && e.which == 74){
+            e.preventDefault();
+        }
+});
+  
   function isFuncNative(f) {
     return (
       !!f &&
@@ -94,7 +119,7 @@
         ))
     );
   }
-  /* setInterval(() => {
+ /* setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -112,7 +137,7 @@
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);*/
+  }, 1000); */
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
@@ -151,6 +176,7 @@
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
+  let sound = document.getElementById("sound");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -208,7 +234,7 @@
     {
       name: "food",
       id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/bush.png?v=1657467779751", //bush
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
       img: new Image(),
       xOffset: -68,
       yOffset: -75,
@@ -245,15 +271,6 @@
       yOffset: -70,
       scale: 150,
     },
-    {
-      name: "Grid",
-      id: 4,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
-      img: new Image(),
-      xOffset: -25,
-      yOffset: -30,
-      scale: 100,
-    },
   ];
 
   var weapons = [
@@ -261,10 +278,10 @@
       id: 0,
       name: "Tool Hammer",
       src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
+      scale: 100,
       img: new Image(),
       xOffset: -25,
       yOffset: -30,
-      scale: 5000,
     },
     {
       id: 1,
@@ -527,10 +544,10 @@
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = "";
-    if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
+    var img = '';
+    if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
+    } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
       img = tree.img3;
     } else {
       img = tree.img;
@@ -1131,6 +1148,18 @@
       e.preventDefault();
     }
   });
+  sound.addEventListener("click", function (e) {
+    soundOn ? b() : a();
+    function a() {
+      soundOn = false;
+      audio1.muted = false;
+    }
+    function b() {
+      soundOn = true;
+      audio1.muted = true;
+    }    
+  });
+
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       var fadeOutAudio = setInterval(() => {
