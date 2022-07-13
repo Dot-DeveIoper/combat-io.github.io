@@ -649,6 +649,37 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 
+/* skins */
+.skins-list {
+  display: flex;
+  width: 100%;
+}
+.skin {
+  border: 3px solid #4c4c4c;
+  border-radius: 50%;
+  padding: 15px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.skin:hover {
+  border-radius: 25%;
+}
+.color-brown {
+  background-color: #a26b47;
+}
+.color-tan {
+  background-color: #c9a87d;
+}
+.color-white {
+  background-color: #f6f6f6;
+}
+.color-black {
+  background-color: #3b3b3b;
+}
+.selected {
+  border-radius: 25%;
+}
+
 /* checkbox styles */
 label.checkbox {
   margin-right: 1rem;
