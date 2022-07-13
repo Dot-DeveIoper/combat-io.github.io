@@ -271,15 +271,6 @@ setInterval(() => {
       yOffset: -70,
       scale: 150,
     },
-   {
-  name: "Grid",
-      id: 4,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Grid.png",
-    img: new Image(),
-     xOffset: -25,
-   yOffset: -30,
-   style: 100,
-  },
   ];
 
   var weapons = [
@@ -1158,12 +1149,14 @@ setInterval(() => {
     }
   });
   sound.addEventListener("click", function (e) {
-    soundOn ? a() : b();
+    soundOn ? b() : a();
     function a() {
       soundOn = false;
+      audio1.muted = false;
     }
     function b() {
       soundOn = true;
+      audio1.muted = true;
     }    
   });
 
