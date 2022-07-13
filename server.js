@@ -178,7 +178,7 @@ var leaderboard = [];
 var mapSize = 10000;
 var moltenHeight = 1000;
 var snowHeight = 6000;
-var moltenRiverHeight = 1000;
+var riverHeight = 1000;
 var beachHeight = 1000;
 var playerSpeed = 1;
 
@@ -234,13 +234,13 @@ for (let j = 0; j < 4; j++){
     if(randomy > mapSize - snowHeight - 100){
       if(j == 0)continue;
     }
-    if(randomy > mapSize - moltenHeight - moltenRiverHeight - 100 && randomy < mapSize - moltenHeight + 100){
+    if(randomy > mapSize - moltenHeight - riverHeight - 100 && randomy < mapSize - moltenHeight + 100){
       if(j == 0 || j == 1 || j == 3)continue;
     }
     if(randomy > mapSize - moltenHeight - 100){
       if(j == 0)continue;
     }
-    if(randomy > mapSize - moltenHeight - moltenRiverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - moltenRiverHeight + 100){
+    if(randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 && randomy < mapSize - moltenHeight - riverHeight + 100){
       if(j == 0 || j == 3)continue;
     }
     var object = { x: randomx, y: randomy, dir: Math.random(), id: j, xWiggle: 0, yWiggle: 0 };
@@ -463,7 +463,7 @@ setInterval(() => {
       var playerSpeed = 1
       // player velocity
       
-      if (player.y > mapSize - moltenHeight - moltenRiverHeight && player.y < mapSize - moltenHeight){
+      if (player.y > mapSize - moltenHeight - riverHeight && player.y < mapSize - moltenHeight){
         player.xVel += .5;
         playerSpeed *= 0.3;
       }
