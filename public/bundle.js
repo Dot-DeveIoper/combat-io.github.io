@@ -175,6 +175,7 @@ setInterval(() => {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
+  let enterGame = document.getElementById("enterGame");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -1155,6 +1156,10 @@ setInterval(() => {
       e.preventDefault();
     }
   });
+  enterGame.addEventListener("click", function (e) {
+    
+  });
+
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       var fadeOutAudio = setInterval(() => {

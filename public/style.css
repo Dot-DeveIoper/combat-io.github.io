@@ -662,11 +662,11 @@ body > #mainMenu {
   padding: 15px;
   margin-right: 8px;
   cursor: pointer;
-  transition: ease 0.5s all;
+  transition: ease 0.2s all;
 }
 .skin:hover {
   border-radius: 25%;
-  transition: ease 0.5s all;
+  transition: ease 0.2s all;
 }
 .color-brown {
   background-color: #a26b47;
