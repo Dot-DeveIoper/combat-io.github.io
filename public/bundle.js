@@ -235,7 +235,9 @@ setInterval(() => {
       name: "food",
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
       img: new Image(),
+      img2: new Image(),
       xOffset: -68,
       yOffset: -75,
       scale: 120,
@@ -544,8 +546,10 @@ setInterval(() => {
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = '';
-    if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+    var img = '';    
+    if ((id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+      img = tree.img2;
+    } else if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
     } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
       img = tree.img3;
