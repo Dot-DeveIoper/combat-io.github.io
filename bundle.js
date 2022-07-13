@@ -142,6 +142,7 @@ setInterval(() => {
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
+    if (soundOn) {
     audio1.play();
     const fadeInAudio = setInterval(() => {
       if (audio1.volume <= 1) {
@@ -152,6 +153,7 @@ setInterval(() => {
         clearInterval(fadeInAudio);
       }
     }, 10);
+    }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
       msg +
@@ -235,17 +237,19 @@ setInterval(() => {
       name: "food",
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
       img: new Image(),
-      xOffset: -75,
-      yOffset: -82,
-      scale: 125,
+      img2: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
     },
     {
       name: "wood",
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446",
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446", // desert tree
       img: new Image(),
       img2: new Image(),
       img3: new Image(),
@@ -544,8 +548,10 @@ setInterval(() => {
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = '';
-    if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+    var img = '';    
+    if ((id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+      img = tree.img2;
+    } else if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
       img = tree.img2;
     } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
       img = tree.img3;
@@ -921,6 +927,7 @@ setInterval(() => {
             break;
           case "d":
             mainMenu.style.display = "block";
+            if (soundOn) {
             audio1.play();
             const fadeInAudio = setInterval(() => {
               if (audio1.volume <= 1) {
@@ -931,6 +938,7 @@ setInterval(() => {
                 clearInterval(fadeInAudio);
               }
             }, 10);
+            }
             for (let i = 0; i < 11; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
             }
@@ -1148,20 +1156,20 @@ setInterval(() => {
       e.preventDefault();
     }
   });
+  
   sound.addEventListener("click", function (e) {
-    soundOn ? b() : a();
-    function a() {
+    if (sound.checked) {
       soundOn = false;
-      audio1.muted = false;
-    }
-    function b() {
+      audio1.pause();
+    } else {
       soundOn = true;
-      audio1.muted = true;
-    }    
+      audio1.play();
+    }
   });
 
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
+      if (soundOn) {
       var fadeOutAudio = setInterval(() => {
         if (audio1.volume >= 0.009) {
           audio1.volume -= 0.01111111111111111111111111111111111111;
@@ -1172,6 +1180,7 @@ setInterval(() => {
           clearInterval(fadeOutAudio);
         }
       }, 10);
+      }
       var minimapOffset = 20;
       var minimapSize = 200;
       deathLocX = myPlayer.y * (minimapSize / mapSize);
@@ -1180,6 +1189,7 @@ setInterval(() => {
   });
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
+      if (soundOn) {
       var fadeOutAudio = setInterval(() => {
         if (audio1.volume >= 0.009) {
           audio1.volume -= 0.01111111111111111111111111111111111111;
@@ -1190,6 +1200,7 @@ setInterval(() => {
           clearInterval(fadeOutAudio);
         }
       }, 10);
+      }
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
       send(["j", [{ name: document.getElementById("nameInput").value }]]);
