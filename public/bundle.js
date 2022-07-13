@@ -211,7 +211,7 @@ function setSkin(num) {
   var mapSize = 10000;
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
-  var beachHeight = 500;
+  var beachHeight = 1000;
   var snowHeight = 6000;
 
   var maxScreenWidth = 1920;

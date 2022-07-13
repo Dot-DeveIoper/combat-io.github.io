@@ -179,7 +179,7 @@ var mapSize = 10000;
 var moltenHeight = 1000;
 var snowHeight = 6000;
 var moltenRiverHeight = 1000;
-var beachHeight = 500;
+var beachHeight = 1000;
 var playerSpeed = 1;
 
 function isfacing(p1, p2, angle, addition = 25) {
