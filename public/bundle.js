@@ -553,7 +553,7 @@ function setSkin(num) {
       img = tree.img2;
     } else if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
       img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
+    } else if (id === 1 && myPlayer.y >= 6994 && myPlayer.y <= mapSize) {
       img = tree.img3;
     } else {
       img = tree.img;
