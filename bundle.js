@@ -236,9 +236,9 @@ setInterval(() => {
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
       img: new Image(),
-      xOffset: -68,
-      yOffset: -75,
-      scale: 120,
+      xOffset: -75,
+      yOffset: -82,
+      scale: 125,
     },
     {
       name: "wood",
