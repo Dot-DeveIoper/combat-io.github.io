@@ -88,27 +88,27 @@ function setSkin(num) {
   var deathLocY = 0;
   var soundOn = true;
 
-setInterval(() => {
-    Function.constructor('debugger').apply('stateObject')
-  }, 10)
- document.addEventListener("keydown", function(e) {
-        if(e.which==123){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 73){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 75){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 67){
-            e.preventDefault();
-        }
-        if(e.ctrlKey && e.shiftKey && e.which == 74){
-            e.preventDefault();
-        }
-});
-  
+  setInterval(() => {
+    Function.constructor("debugger").apply("stateObject");
+  }, 10);
+  document.addEventListener("keydown", function (e) {
+    if (e.which == 123) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 73) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 75) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 67) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 74) {
+      e.preventDefault();
+    }
+  });
+
   function isFuncNative(f) {
     return (
       !!f &&
@@ -119,7 +119,7 @@ setInterval(() => {
         ))
     );
   }
- /* setInterval(() => {
+  setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -137,22 +137,22 @@ setInterval(() => {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000); */
+  }, 1000);
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
-    audio1.play();
-    const fadeInAudio = setInterval(() => {
-      if (audio1.volume <= 1) {
-        audio1.volume += 0.01111111111111111111111111111111111111;
-      }
+      audio1.play();
+      const fadeInAudio = setInterval(() => {
+        if (audio1.volume <= 1) {
+          audio1.volume += 0.01111111111111111111111111111111111111;
+        }
 
-      if (audio1.volume > 1) {
-        clearInterval(fadeInAudio);
-      }
-    }, 10);
+        if (audio1.volume > 1) {
+          clearInterval(fadeInAudio);
+        }
+      }, 10);
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
@@ -548,12 +548,12 @@ setInterval(() => {
   }
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = '';    
-    if ((id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+    var img = "";
+    if (id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955) {
       img = tree.img2;
-    } else if ((id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955)) {
+    } else if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
       img = tree.img2;
-    } else if ((id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize)) {
+    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
       img = tree.img3;
     } else {
       img = tree.img;
@@ -928,16 +928,16 @@ setInterval(() => {
           case "d":
             mainMenu.style.display = "block";
             if (soundOn) {
-            audio1.play();
-            const fadeInAudio = setInterval(() => {
-              if (audio1.volume <= 1) {
-                audio1.volume += 0.01111111111111111111111111111111111111;
-              }
+              audio1.play();
+              const fadeInAudio = setInterval(() => {
+                if (audio1.volume <= 1) {
+                  audio1.volume += 0.01111111111111111111111111111111111111;
+                }
 
-              if (audio1.volume > 1) {
-                clearInterval(fadeInAudio);
-              }
-            }, 10);
+                if (audio1.volume > 1) {
+                  clearInterval(fadeInAudio);
+                }
+              }, 10);
             }
             for (let i = 0; i < 11; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
@@ -1156,7 +1156,7 @@ setInterval(() => {
       e.preventDefault();
     }
   });
-  
+
   sound.addEventListener("click", function (e) {
     if (sound.checked) {
       soundOn = false;
@@ -1170,16 +1170,16 @@ setInterval(() => {
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
-      var fadeOutAudio = setInterval(() => {
-        if (audio1.volume >= 0.009) {
-          audio1.volume -= 0.01111111111111111111111111111111111111;
-        }
+        var fadeOutAudio = setInterval(() => {
+          if (audio1.volume >= 0.009) {
+            audio1.volume -= 0.01111111111111111111111111111111111111;
+          }
 
-        if (audio1.volume <= 0.1) {
-          audio1.pause();
-          clearInterval(fadeOutAudio);
-        }
-      }, 10);
+          if (audio1.volume <= 0.1) {
+            audio1.pause();
+            clearInterval(fadeOutAudio);
+          }
+        }, 10);
       }
       var minimapOffset = 20;
       var minimapSize = 200;
@@ -1190,16 +1190,16 @@ setInterval(() => {
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {
-      var fadeOutAudio = setInterval(() => {
-        if (audio1.volume >= 0.009) {
-          audio1.volume -= 0.01111111111111111111111111111111111111;
-        }
+        var fadeOutAudio = setInterval(() => {
+          if (audio1.volume >= 0.009) {
+            audio1.volume -= 0.01111111111111111111111111111111111111;
+          }
 
-        if (audio1.volume <= 0.1) {
-          audio1.pause();
-          clearInterval(fadeOutAudio);
-        }
-      }, 10);
+          if (audio1.volume <= 0.1) {
+            audio1.pause();
+            clearInterval(fadeOutAudio);
+          }
+        }, 10);
       }
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
