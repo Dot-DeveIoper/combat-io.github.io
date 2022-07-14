@@ -213,12 +213,14 @@ body {
   text-align: right;
   font-size: 20px;
   padding: 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
 
-  transform: translate(-14px, 100px);
+  /* transform: translate(-14px, 100px); */
 }
 
 /* MOBILE VIEW */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   #linksContainer2 {
     transform: translate(-14px, 100px);
   }
@@ -232,7 +234,7 @@ body {
   #linksContainer2 {
     transform: translate(-14px, 150px);
   }
-}
+} */
 
 #loadingText {
   font-size: 45px;
