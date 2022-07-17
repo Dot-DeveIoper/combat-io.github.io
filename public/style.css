@@ -681,6 +681,18 @@ body > #mainMenu {
 .color-black {
   background-color: #3b3b3b;
 }
+.color-carnation-pink {
+  background-color: #ffa6c9;
+}
+.color-emerald-green {
+  background-color: #50c878;
+}
+.color-witch-haze {
+  background-color: #ffec82;
+}
+.color-malibu {
+  background-color: #5feaff;
+}
 .selected {
   border-radius: 25%;
 }
@@ -695,18 +707,18 @@ label.checkbox {
   -ms-user-select: none;
   user-select: none;
 }
-label.checkbox input[type=checkbox] {
+label.checkbox input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
-label.checkbox input[type=checkbox]:focus ~ span {
+label.checkbox input[type="checkbox"]:focus ~ span {
   border: 2px solid #d4d7dc;
 }
-label.checkbox input[type=checkbox]:focus:checked ~ span {
+label.checkbox input[type="checkbox"]:focus:checked ~ span {
   border: 2px solid #329E78;
 }
-label.checkbox input[type=checkbox]:checked ~ span {
-  color: #FFFFFF;
+label.checkbox input[type="checkbox"]:checked ~ span {
+  color: #ffffff;
   background: #329E78 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+") 50% 40% no-repeat;
   border: 2px solid #329E78;
 }
@@ -731,12 +743,12 @@ label.checkbox span {
   position: relative;
 }
 .itemTitle:hover::after {
+  content: "", attr(item-title);
   display: -webkit-flex;
   display: flex;
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   color: #ffffff;
-  content: attr(item-title);
   width: 200px;
   height: auto;
   margin: -120px auto 0;
