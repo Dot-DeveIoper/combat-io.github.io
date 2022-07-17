@@ -9,27 +9,35 @@
 */
 
 function setSkin(num) {
+  resetSkin();
   if (num === 1) {
     document.getElementById("skin1").style.borderRadius = "25%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
   } else if (num === 2) {
     document.getElementById("skin2").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
   } else if (num === 3) {
     document.getElementById("skin3").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
   } else if (num === 4) {
     document.getElementById("skin4").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
+  } else if (num === 5) {
+    document.getElementById("skin5").style.borderRadius = "25%";
+  } else if (num === 6) {
+    document.getElementById("skin6").style.borderRadius = "25%";
+  } else if (num === 7) {
+    document.getElementById("skin7").style.borderRadius = "25%";
+  } else if (num === 8) {
+    document.getElementById("skin8").style.borderRadius = "25%";
   }
+}
+
+function resetSkin() {
+  document.getElementById("skin1").style.borderRadius = "50%";
+  document.getElementById("skin2").style.borderRadius = "50%";
+  document.getElementById("skin3").style.borderRadius = "50%";
+  document.getElementById("skin4").style.borderRadius = "50%";
+  document.getElementById("skin5").style.borderRadius = "50%";
+  document.getElementById("skin6").style.borderRadius = "50%";
+  document.getElementById("skin7").style.borderRadius = "50%";
+  document.getElementById("skin8").style.borderRadius = "50%";
 }
 
 (function (e) {
