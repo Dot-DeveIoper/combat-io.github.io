@@ -8,27 +8,12 @@
 - change e.keyCode to e.code (Done I think)
 */
 
+var skinLimit = 4; /* Change this after adding new skins */
+
 function setSkin(num) {
-  if (num === 1) {
-    document.getElementById("skin1").style.borderRadius = "25%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
-  } else if (num === 2) {
-    document.getElementById("skin2").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
-  } else if (num === 3) {
-    document.getElementById("skin3").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin4").style.borderRadius = "50%";
-  } else if (num === 4) {
-    document.getElementById("skin4").style.borderRadius = "25%";
-    document.getElementById("skin1").style.borderRadius = "50%";
-    document.getElementById("skin2").style.borderRadius = "50%";
-    document.getElementById("skin3").style.borderRadius = "50%";
+  for (let i = 1; i <= skinLimit; i++) {
+    if (i == num) document.getElementById("skin" + i).style.borderRadius = "25%";
+    document.getElementById("skin" + i).style.borderRadius = "50%";
   }
 }
 
@@ -67,7 +52,7 @@ function setSkin(num) {
     HOTBAR_6: "Digit6",
     HOTBAR_7: "Digit7",
     HOTBAR_8: "Digit8",
-    HOTBAR_9: "Digit9", //sorry
+    HOTBAR_9: "Digit9",
 
     // localStorage will also contain hotbar slots
   };
