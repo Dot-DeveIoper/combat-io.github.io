@@ -304,9 +304,46 @@ body {
 
 .settingsCard {}
 
+.gamemodes {
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.gamemodesLink {
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #a8a8a8;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 2px solid #c4c4c4;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 400;
+  /* width: 100%; */
+  /* width: 6px; */
+  padding: 3px 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.separator-dot:before {
+  content: "•";
+  vertical-align: middle;
+  text-align: center;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 #serverBrowser {
   width: 100%;
   height: 24px;
+}
+/* select {
+  border: 1px solid #48e346;
+} */
+select:focus {
+  outline-color: #1d9300;
 }
 
 #altServer {
@@ -662,6 +699,8 @@ body > #mainMenu {
   hyphens: auto;
   /* display: flex;
   width: 100%; */
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
 }
 .skin {
   border: 3px solid #4c4c4c;
@@ -670,6 +709,20 @@ body > #mainMenu {
   margin-right: 8px;
   margin-bottom: 8px;
   cursor: pointer;
+  /* white-space: pre-wrap; */
+  /* display: block; */
+  /* inline-size: auto;
+  overflow-wrap: break-word; */
+  /* display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden; */
+  /* word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  display: flex;
+  flex-wrap: wrap; */
   transition: ease 0.2s all;
 }
 .skin:hover {
