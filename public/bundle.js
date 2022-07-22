@@ -1,1 +1,1223 @@
-(function(_0x30e661,_0x1903c4){var _0x48e8e2=_0x48aa,_0x372d49=_0x30e661();while(!![]){try{var _0x363ce2=parseInt(_0x48e8e2(0x114))/0x1+parseInt(_0x48e8e2(0x158))/0x2+parseInt(_0x48e8e2(0x12b))/0x3*(-parseInt(_0x48e8e2(0x113))/0x4)+parseInt(_0x48e8e2(0x181))/0x5*(parseInt(_0x48e8e2(0x193))/0x6)+parseInt(_0x48e8e2(0xd2))/0x7*(-parseInt(_0x48e8e2(0x13d))/0x8)+parseInt(_0x48e8e2(0xcd))/0x9+parseInt(_0x48e8e2(0x15a))/0xa*(parseInt(_0x48e8e2(0xe7))/0xb);if(_0x363ce2===_0x1903c4)break;else _0x372d49['push'](_0x372d49['shift']());}catch(_0x13e113){_0x372d49['push'](_0x372d49['shift']());}}}(_0x2773,0xcbb35));function setSkin(_0x25c2d3){var _0x106f21=_0x48aa;resetSkin();if(_0x25c2d3===0x1)document[_0x106f21(0x17f)](_0x106f21(0x171))[_0x106f21(0xf4)]['borderRadius']=_0x106f21(0x19f);else{if(_0x25c2d3===0x2)document[_0x106f21(0x17f)]('skin2')[_0x106f21(0xf4)][_0x106f21(0x174)]='25%';else{if(_0x25c2d3===0x3)document[_0x106f21(0x17f)](_0x106f21(0x159))[_0x106f21(0xf4)][_0x106f21(0x174)]=_0x106f21(0x19f);else{if(_0x25c2d3===0x4)document[_0x106f21(0x17f)](_0x106f21(0xed))[_0x106f21(0xf4)][_0x106f21(0x174)]=_0x106f21(0x19f);else{if(_0x25c2d3===0x5)document[_0x106f21(0x17f)](_0x106f21(0x127))[_0x106f21(0xf4)]['borderRadius']=_0x106f21(0x19f);else{if(_0x25c2d3===0x6)document['getElementById'](_0x106f21(0xca))[_0x106f21(0xf4)]['borderRadius']=_0x106f21(0x19f);else{if(_0x25c2d3===0x7)document[_0x106f21(0x17f)](_0x106f21(0x126))[_0x106f21(0xf4)]['borderRadius']=_0x106f21(0x19f);else _0x25c2d3===0x8&&(document[_0x106f21(0x17f)](_0x106f21(0x125))['style']['borderRadius']=_0x106f21(0x19f));}}}}}}}function resetSkin(){var _0x1d36d1=_0x48aa;document['getElementById'](_0x1d36d1(0x171))['style'][_0x1d36d1(0x174)]=_0x1d36d1(0x197),document['getElementById'](_0x1d36d1(0xf0))['style'][_0x1d36d1(0x174)]=_0x1d36d1(0x197),document['getElementById'](_0x1d36d1(0x159))[_0x1d36d1(0xf4)]['borderRadius']=_0x1d36d1(0x197),document[_0x1d36d1(0x17f)](_0x1d36d1(0xed))[_0x1d36d1(0xf4)]['borderRadius']='50%',document[_0x1d36d1(0x17f)](_0x1d36d1(0x127))[_0x1d36d1(0xf4)][_0x1d36d1(0x174)]=_0x1d36d1(0x197),document[_0x1d36d1(0x17f)](_0x1d36d1(0xca))[_0x1d36d1(0xf4)]['borderRadius']='50%',document[_0x1d36d1(0x17f)](_0x1d36d1(0x126))[_0x1d36d1(0xf4)][_0x1d36d1(0x174)]=_0x1d36d1(0x197),document[_0x1d36d1(0x17f)](_0x1d36d1(0x125))[_0x1d36d1(0xf4)][_0x1d36d1(0x174)]='50%';}function _0x48aa(_0x1bc97e,_0x30e3c1){var _0x277321=_0x2773();return _0x48aa=function(_0x48aaec,_0x2de923){_0x48aaec=_0x48aaec-0xbe;var _0x522c93=_0x277321[_0x48aaec];return _0x522c93;},_0x48aa(_0x1bc97e,_0x30e3c1);}function _0x2773(){var _0x36de3a=['MOVE_RIGHT2','innerWidth','132eprAKY','addEventListener','font','send','50%','rotate','open','mousemove','function','center','dir','ended','25%','clearRect','arrayBuffer','click','play','activeElement','lineJoin','reason','food','HOTBAR_4','constructor','null','#276496','requestAnimationFrame','isTrusted','skin6','random','HOTBAR_7','6868449CtUZpn','img3','chat','admin','clientY','7FKzhZL','Spike','max','textAlign','key','keyup','img2','#11da07','skin','KeyW','left','[DEV]','spyllis','drawImage','readyState','from','grow','length','MOVE_DOWN2','forEach','Are\x20you\x20sure?','205447sEgQul','globalAlpha','MOVE_DOWN','none','KeyA','xWiggle','skin4','stateObject','getContext','skin2','requestAnimFrame','wood','sound','style','angleOffset','undefined','Orange','Digit2','https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446','yWiggle','https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230','floor','ceil','https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884','keypress','yOffset','toLowerCase','ArrowUp','src','prototype','HOTBAR_6','shiftKey','Digit7','innerHeight','players','https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500','https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676','MOVE_LEFT2','HOTBAR_8','Digit9','mousedown','xOffset','bold\x2028px\x20Hammersmith\x20One','encode','4OXTCij','137259tRmdbO','src2','Tool\x20Hammer','resize','splice','HOTBAR_1','https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675','decode','code','ArrowDown','src3','ArrowRight','opacity','4px','#c3ab32','keydown','arc','skin8','skin7','skin5','includes','MOVE_RIGHT','MOVE_UP2','1544901tBeJFo','ctrlKey','size','right','nameInput','beginPath','Digit5','menuCardHolder','https://sploop.io/img/entity/player_body.png','Cow','https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614','gold','KeyD','test','aimdir','onbeforeunload','loadingText','#789b50','11927128wNfmOH','close','which','enterGame','https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500','rgba(0,\x200,\x200,\x200.3)','https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978','muted','sid','contextmenu','fill','msgpack','save','block','Digit8','display','filStyle','CHAT','chatbox','now','<a\x20href=\x27javascript:window.location.href=window.location.href\x27\x20class=\x27ytLink\x27>reload</a>','removeItem','mouseup','#nameInput','ArrowLeft','weapon','img','1057356mTUKMH','skin3','70rBVwdL','clientX','preventDefault','apply','height','fillStyle','pause','unfair\x20advantage','KeyS','#ffffff','MOVE_LEFT','Wall','name','resources','Digit4','Leaderboard','h-item-','fillRect','https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503','restore','strokeRect','checked','#fff','skin1','find','animals','borderRadius','volume','MOVE_UP','width','querySelector','console','lineWidth','Digit3','health','mozRequestAnimationFrame','#000','getElementById','HOTBAR_2','290995RkVoLj','strokeStyle','Digit6','mainMenu','indexOf','HOTBAR_9','translate','debugger','scale','value','fillText','HOTBAR_5','inline-block','push','keyCode','atan2'];_0x2773=function(){return _0x36de3a;};return _0x2773();}(function(_0x578a6){var _0x3858dc=_0x48aa,_0x481b39=new Audio('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818');_0x481b39[_0x3858dc(0x144)]=![],_0x481b39[_0x3858dc(0xbf)](),_0x481b39[_0x3858dc(0x194)](_0x3858dc(0x19e),_0x7e00a2=>{var _0x4017c2=_0x3858dc;_0x481b39[_0x4017c2(0xbf)]();}),window[_0x3858dc(0x13a)]=_0x4f890c=>{var _0x1b87d5=_0x3858dc;return _0x1b87d5(0xe6);};var _0x247115={'MOVE_UP':_0x3858dc(0xdb),'MOVE_DOWN':_0x3858dc(0x162),'MOVE_LEFT':_0x3858dc(0xeb),'MOVE_RIGHT':_0x3858dc(0x137),'MOVE_UP2':_0x3858dc(0x102),'MOVE_DOWN2':_0x3858dc(0x11d),'MOVE_LEFT2':_0x3858dc(0x155),'MOVE_RIGHT2':_0x3858dc(0x11f),'CHAT':'Enter','QUICK_FOOD':'KeyQ','HOTBAR_1':'Digit1','HOTBAR_2':_0x3858dc(0xf8),'HOTBAR_3':_0x3858dc(0x17b),'HOTBAR_4':_0x3858dc(0x168),'HOTBAR_5':_0x3858dc(0x131),'HOTBAR_6':_0x3858dc(0x183),'HOTBAR_7':_0x3858dc(0x107),'HOTBAR_8':_0x3858dc(0x14b),'HOTBAR_9':_0x3858dc(0x10e)},_0x30054f={},_0x34d666=[],_0x54b817=![],_0x4365f1=![],_0x59dc5f=![],_0x1a3746=![],_0x52989c=0x0,_0x305f5f=0x0,_0xa29c56=0x0,_0x4cc76f=0x0,_0x42e5a8=0x0,_0x2c64d2=0x0,_0x58c884=0x0,_0x2a4c02=!![];setInterval(()=>{var _0x4f25ba=_0x3858dc;Function[_0x4f25ba(0xc5)](_0x4f25ba(0x188))[_0x4f25ba(0x15d)](_0x4f25ba(0xee));},0xa),document[_0x3858dc(0x194)](_0x3858dc(0x123),function(_0x24313b){var _0x23911e=_0x3858dc;_0x24313b[_0x23911e(0x13f)]==0x7b&&_0x24313b[_0x23911e(0x15c)](),_0x24313b['ctrlKey']&&_0x24313b[_0x23911e(0x106)]&&_0x24313b[_0x23911e(0x13f)]==0x49&&_0x24313b[_0x23911e(0x15c)](),_0x24313b[_0x23911e(0x12c)]&&_0x24313b[_0x23911e(0x106)]&&_0x24313b['which']==0x4b&&_0x24313b[_0x23911e(0x15c)](),_0x24313b[_0x23911e(0x12c)]&&_0x24313b[_0x23911e(0x106)]&&_0x24313b['which']==0x43&&_0x24313b[_0x23911e(0x15c)](),_0x24313b['ctrlKey']&&_0x24313b[_0x23911e(0x106)]&&_0x24313b['which']==0x4a&&_0x24313b[_0x23911e(0x15c)]();});function _0x3e7b29(_0x111cfb){var _0x55aa2f=_0x3858dc;return!!_0x111cfb&&(typeof _0x111cfb)[_0x55aa2f(0x101)]()==_0x55aa2f(0x19b)&&(_0x111cfb===Function[_0x55aa2f(0x104)]||/^\s*function\s*(\b[a-z$_][a-z0-9$_]*\b)*\s*\((|([a-z$_][a-z0-9$_]*)(\s*,[a-z$_][a-z0-9$_]*)*)\)\s*{\s*\[native code\]\s*}\s*$/i[_0x55aa2f(0x138)](String(_0x111cfb)));}setInterval(()=>{var _0x494fb6=_0x3858dc;window[_0x494fb6(0x179)]={'log':function(_0x3c2bfb){_0x1b90b9('unfair\x20advantage');},'info':function(_0x3196e9){var _0x471a25=_0x494fb6;_0x1b90b9(_0x471a25(0x161));},'warn':function(_0x548603){var _0x14ef29=_0x494fb6;_0x1b90b9(_0x14ef29(0x161));},'error':function(_0x1b2d34){var _0x4c0b15=_0x494fb6;_0x1b90b9(_0x4c0b15(0x161));}},!_0x3e7b29(WebSocket[_0x494fb6(0x104)][_0x494fb6(0x196)])&&_0x562e29&&_0x562e29[_0x494fb6(0x13e)](0x3e8,_0x494fb6(0x161));},0x3e8);function _0x1b90b9(_0xda2e50){var _0x308626=_0x3858dc;document[_0x308626(0x17f)](_0x308626(0x132))[_0x308626(0xf4)][_0x308626(0x14c)]=_0x308626(0xea),document[_0x308626(0x17f)](_0x308626(0x184))['style'][_0x308626(0x14c)]=_0x308626(0x14a);if(_0x2a4c02){_0x481b39[_0x308626(0xbf)]();const _0x483cdb=setInterval(()=>{var _0x530843=_0x308626;_0x481b39['volume']<=0x1&&(_0x481b39[_0x530843(0x175)]+=0.011111111111111112),_0x481b39['volume']>0x1&&clearInterval(_0x483cdb);},0xa);}document['getElementById'](_0x308626(0x13b))['style']['display']=_0x308626(0x14a),document[_0x308626(0x17f)]('loadingText')['innerHTML']=_0xda2e50+_0x308626(0x151);}function _0x197aa1(_0x2e7e66){return _0x2e7e66*0.01745329251;}function _0x28c87b(_0x4c24ca,_0x2bda1a){var _0x56c9d8=_0x3858dc;return Math[_0x56c9d8(0xfc)](Math[_0x56c9d8(0xcb)]()*(_0x2bda1a-_0x4c24ca+0x1))+_0x4c24ca;}function _0x20c0bf(_0x1fd08f){_0xc19571(['ch',[_0x1fd08f]]);}var _0x5183f6=![],_0x346468=![];let _0x562e29,_0x3c04c8=document['getElementById']('gameCanvas');var _0x2b14f2=document[_0x3858dc(0x17f)]('chatbox');_0x2b14f2[_0x3858dc(0xf4)][_0x3858dc(0x14c)]=_0x3858dc(0xea);let _0x449887=_0x3c04c8[_0x3858dc(0xef)]('2d'),_0x52efcb=document[_0x3858dc(0x17f)](_0x3858dc(0x184)),_0xb3dd8f=document[_0x3858dc(0x17f)](_0x3858dc(0x140)),_0x293f7b=document[_0x3858dc(0x17f)](_0x3858dc(0xf3));for(let _0x57211d=0x0;_0x57211d<0xb;_0x57211d++){document['getElementById'](_0x3858dc(0x16a)+_0x57211d)[_0x3858dc(0xf4)][_0x3858dc(0x14c)]=_0x3858dc(0xea),document[_0x3858dc(0x17f)](_0x3858dc(0x16a)+_0x57211d)['addEventListener'](_0x3858dc(0xbe),function(_0x2396f0){var _0x192dca=_0x3858dc;_0x2396f0[_0x192dca(0xc9)]&&_0xc19571(['s',[_0x34d666[_0x57211d+0x1]]]);});}var _0x1b996d=[];let _0x49b18=[],_0x5de8f9={};var _0x114f2a=0x0,_0x3469bd=null,_0x3be70e=null,_0x36916e=0x1e,_0x57d6aa=0x0,_0x2f3272=0x3e7,_0x1a5315=_0x3858dc(0xc6),_0x32f16f=0x0,_0x49f8cf=0x0,_0x2e10c5=[],_0x4da5f4=[],_0x2fd6fc=[],_0x5c1130=[],_0x5357be=0x2710,_0x43e93f=0x3e8,_0x394af3=0x3e8,_0x4c1627=0x3e8,_0x120cf8=0x1770,_0x5ef25f=0x780,_0x3ca8f0=0x438,_0x8163cb=[],_0xf8d1e2=[{'id':0x0,'src':_0x3858dc(0x133),'img':new Image(),'xOffset':-0x1e,'yOffset':-0x1e,'scale':0x3c}];_0xf8d1e2[_0x3858dc(0xe5)](_0xa6dac2=>{var _0x4d8788=_0x3858dc;_0xa6dac2['img'][_0x4d8788(0x103)]=_0xa6dac2[_0x4d8788(0x103)];});var _0x1e56c6=[{'name':'food','id':0x0,'src':_0x3858dc(0x135),'src2':_0x3858dc(0xfe),'img':new Image(),'img2':new Image(),'xOffset':-0x3c,'yOffset':-0x3f,'scale':0x78},{'name':_0x3858dc(0xf2),'id':0x1,'src':_0x3858dc(0x143),'src2':'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792','src3':_0x3858dc(0xf9),'img':new Image(),'img2':new Image(),'img3':new Image(),'xOffset':-0x9e,'yOffset':-0xa0,'scale':0x15e},{'name':'stone','id':0x2,'src':'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906','img':new Image(),'xOffset':-0x46,'yOffset':-0x46,'scale':0xc8},{'name':_0x3858dc(0xde),'id':0x3,'src':_0x3858dc(0x11a),'img':new Image(),'xOffset':-0x44,'yOffset':-0x46,'scale':0x96}],_0x2769d1=[{'id':0x0,'name':_0x3858dc(0x116),'src':_0x3858dc(0xfb),'scale':0x64,'img':new Image(),'xOffset':-0x19,'yOffset':-0x1e},{'id':0x1,'name':_0x3858dc(0xf7),'food':!![],'src':'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358','scale':0x32,'img':new Image(),'xOffset':0x5,'yOffset':0x5,'angleOffset':-_0x197aa1(0x28)},{'id':0x2,'name':_0x3858dc(0xd3),'src':_0x3858dc(0x141),'scale':0x50,'img':new Image(),'xOffset':0x0,'yOffset':-0x32},{'id':0x3,'name':_0x3858dc(0x165),'src':_0x3858dc(0x10a),'scale':0x64,'img':new Image(),'xOffset':0x0,'yOffset':-0x32}],_0x1249f7=[{'id':0x2,'name':_0x3858dc(0xd3),'src':_0x3858dc(0x10b),'scale':0x50,'img':new Image(),'xOffset':-0x32,'yOffset':-0x32},{'id':0x3,'name':_0x3858dc(0x165),'src':_0x3858dc(0x10a),'scale':0x64,'img':new Image(),'xOffset':-0x32,'yOffset':-0x32}],_0x12486d=[{'id':0x0,'name':_0x3858dc(0x134),'src':_0x3858dc(0x16c),'scale':0xc8,'img':new Image(),'xOffset':0x0,'yOffset':0x0}];_0x2769d1[_0x3858dc(0xe5)](_0x749cc2=>{var _0x11f7c1=_0x3858dc;_0x749cc2[_0x11f7c1(0x157)][_0x11f7c1(0x103)]=_0x749cc2[_0x11f7c1(0x103)];}),_0x1249f7[_0x3858dc(0xe5)](_0x484948=>{var _0x1d36bb=_0x3858dc;_0x484948['img']['src']=_0x484948[_0x1d36bb(0x103)];}),_0x12486d[_0x3858dc(0xe5)](_0x2a418b=>{var _0x482d9f=_0x3858dc;_0x2a418b['img'][_0x482d9f(0x103)]=_0x2a418b['src'];}),_0x1e56c6[_0x3858dc(0xe5)](_0x13a356=>{var _0x250c2f=_0x3858dc;_0x13a356[_0x250c2f(0x157)][_0x250c2f(0x103)]=_0x13a356[_0x250c2f(0x103)],_0x13a356['img2']&&_0x13a356[_0x250c2f(0x115)]&&(_0x13a356[_0x250c2f(0xd8)][_0x250c2f(0x103)]=_0x13a356[_0x250c2f(0x115)]),_0x13a356[_0x250c2f(0xce)]&&_0x13a356[_0x250c2f(0x11e)]&&(_0x13a356[_0x250c2f(0xce)]['src']=_0x13a356[_0x250c2f(0x11e)]);}),document[_0x3858dc(0x17f)](_0x3858dc(0x132))['style'][_0x3858dc(0x14c)]=_0x3858dc(0xea),document['getElementById']('loadingText')['style'][_0x3858dc(0x14c)]='block',setTimeout(()=>{var _0x3567f6=_0x3858dc;if(!['ComBat.io',undefined][_0x3567f6(0x128)](localStorage['name']))document[_0x3567f6(0x178)]('#nameInput')[_0x3567f6(0x18a)]=localStorage[_0x3567f6(0x166)];setInterval(()=>{var _0x48e054=_0x3567f6;localStorage['name']=document[_0x48e054(0x178)](_0x48e054(0x154))['value'];},0x32);},0x3e8),_0x3c04c8[_0x3858dc(0x177)]=window[_0x3858dc(0x192)],_0x3c04c8[_0x3858dc(0x15e)]=window[_0x3858dc(0x108)],Array['prototype'][_0x3858dc(0x152)]=function(_0x6d0340){var _0xb02946=_0x3858dc,_0x343174=this['indexOf'](_0x6d0340);return _0x343174>-0x1&&this[_0xb02946(0x118)](_0x343174,0x1),this;};function _0x251de9(_0x367134){var _0x55c0e9=_0x3858dc,_0x4bff9e=_0x3c04c8[_0x55c0e9(0x177)]/0x2+_0x367134['x']-_0x5de8f9['x'],_0x2d8185=_0x3c04c8[_0x55c0e9(0x15e)]/0x2+_0x367134['y']-_0x5de8f9['y'];return{'x':_0x4bff9e,'y':_0x2d8185};}function _0x1e2b52(){var _0x2ec042=_0x3858dc;_0x3c04c8[_0x2ec042(0x177)]=window[_0x2ec042(0x192)],_0x3c04c8[_0x2ec042(0x15e)]=window[_0x2ec042(0x108)];var _0x306fe9=0x1,_0x3b9292=window['devicePixelRatio']||0x1,_0x543fcf=_0x5ef25f,_0x140808=_0x3ca8f0,_0x41399c=window['innerWidth'],_0x4f4a10=window[_0x2ec042(0x108)],_0x15e192=Math[_0x2ec042(0xd4)](_0x41399c/_0x543fcf,_0x4f4a10/_0x140808)*_0x3b9292;_0x3c04c8['width']=_0x41399c*_0x3b9292*_0x15e192,_0x3c04c8[_0x2ec042(0x15e)]=_0x4f4a10*_0x3b9292*_0x15e192,_0x3c04c8[_0x2ec042(0xf4)][_0x2ec042(0x177)]=_0x41399c+'px',_0x3c04c8[_0x2ec042(0xf4)][_0x2ec042(0x15e)]=_0x4f4a10+'px',_0x449887['setTransform'](_0x15e192,0x0,0x0,_0x15e192,(_0x41399c*_0x3b9292-_0x543fcf*_0x15e192)/0x2,(_0x4f4a10*_0x3b9292-_0x140808*_0x15e192)/0x2),_0x449887[_0x2ec042(0x1a0)](0x0,0x0,_0x3c04c8[_0x2ec042(0x177)],_0x3c04c8['height']),_0x3c04c8[_0x2ec042(0x177)]>_0x5ef25f&&(_0x3c04c8[_0x2ec042(0x177)]=_0x5ef25f),_0x3c04c8['height']>_0x3ca8f0&&(_0x3c04c8[_0x2ec042(0x15e)]=_0x3ca8f0);}function _0xc19571(_0x3c8934){var _0x38752e=_0x3858dc;_0x562e29['readyState']==0x1&&_0x562e29[_0x38752e(0x196)](new Uint8Array(Array[_0x38752e(0xe1)](window[_0x38752e(0x148)][_0x38752e(0x112)](_0x3c8934))));}function _0xa3091(_0x2418ee,_0x424885,_0x541447,_0x2a109b,_0x4dd69e=_0x3858dc(0x142)){var _0x234037=_0x3858dc,_0x4f23d5=_0x449887[_0x234037(0x15f)];_0x449887['fillStyle']=_0x4dd69e,_0x449887[_0x234037(0x16b)](_0x2418ee-_0x541447/0x2,_0x424885,_0x541447,_0x2a109b),_0x449887[_0x234037(0x15f)]=_0x4f23d5;}function _0x5289d2(_0x49b777,_0x37c96d,_0x4109f5,_0x4d4d77,_0x379f32=_0x3858dc(0x17e)){var _0x2666a7=_0x3858dc,_0x228d36=_0x449887[_0x2666a7(0x15f)];_0x449887[_0x2666a7(0x15f)]=_0x379f32,_0x449887['fillText'](_0x4d4d77,_0x49b777,_0x37c96d),_0x449887[_0x2666a7(0x14d)]=_0x228d36;}function _0xa1325d(_0x448231,_0x295564,_0x5f36af,_0x103480){var _0xfd96de=_0x3858dc;return _0x449887[_0xfd96de(0x130)](),_0x449887[_0xfd96de(0x124)](_0x448231,_0x295564,_0x5f36af,0x0,0x2*Math['PI']),_0x449887['fillStyle']=_0x103480,{'fill'(){var _0x3c83b7=_0xfd96de;_0x449887[_0x3c83b7(0x147)]();}};}function _0x2a9ea4(){var _0x6971fb=_0x3858dc;document['activeElement']['id'][_0x6971fb(0x101)]()!==_0x6971fb(0x14f)?_0xc19571(['33',[_0x3be70e]]):_0xc19571(['33',[null]]);}function _0x3e757f(_0x3ad0c4,_0x14bdb2,_0x1c9605){var _0x290f80=_0x3858dc;localStorage[_0x290f80(0x166)]=_0x1c9605[_0x290f80(0x166)];var _0x3ed7b7=_0x449887[_0x290f80(0x15f)];_0x449887[_0x290f80(0x195)]='24px\x20Hammersmith\x20One',_0x449887[_0x290f80(0xc1)]='round',_0x449887[_0x290f80(0x17a)]=0xa,_0x449887[_0x290f80(0x15f)]=_0x290f80(0x170),_0x449887[_0x290f80(0x182)]=_0x290f80(0x17e),_0x449887['strokeText']((_0x1c9605[_0x290f80(0xd0)]?_0x290f80(0xdd):'')+'\x20\x20'+_0x1c9605[_0x290f80(0x166)],_0x3ad0c4- -0x1b,_0x14bdb2-0x32,0x64),_0x449887[_0x290f80(0x18b)]((_0x1c9605[_0x290f80(0xd0)]?'[DEV]':'')+'\x20'+_0x1c9605[_0x290f80(0x166)],_0x3ad0c4- -0x1b,_0x14bdb2-0x32,0x64),_0x449887[_0x290f80(0x14d)]=_0x3ed7b7;_0x1c9605[_0x290f80(0x145)]!=_0x5de8f9['sid']?_0x1a5457(_0x1c9605,_0x3ad0c4,_0x14bdb2,_0x1c9605[_0x290f80(0x139)],_0x2769d1[0x0],_0x1c9605[_0x290f80(0x145)]):_0x1a5457(_0x1c9605,_0x3ad0c4,_0x14bdb2,Math['atan2'](_0x49f8cf-_0x3c04c8['height']/0x2,_0x32f16f-_0x3c04c8[_0x290f80(0x177)]/0x2),_0x2769d1[0x0],_0x1c9605['sid']);_0x1c9605[_0x290f80(0xcf)]&&(_0xa3091(_0x3ad0c4,_0x14bdb2-0x64,_0x1c9605[_0x290f80(0xcf)][_0x290f80(0xe3)]*0xc+0xa,0x1e),_0x449887[_0x290f80(0xd5)]=_0x290f80(0x19c),_0x5289d2(_0x3ad0c4,_0x14bdb2-0x53,0x46,_0x1c9605['chat'],_0x290f80(0x163)));var _0x41afc2=_0xf8d1e2[_0x290f80(0x172)](_0x1789fb=>_0x1789fb['id']==_0x1c9605[_0x290f80(0xda)]);_0x449887[_0x290f80(0x149)](),_0x449887[_0x290f80(0x187)](_0x3ad0c4,_0x14bdb2),_0x449887[_0x290f80(0xdf)](_0x41afc2[_0x290f80(0x157)],_0x41afc2[_0x290f80(0x110)],_0x41afc2[_0x290f80(0x100)],_0x41afc2[_0x290f80(0x189)],_0x41afc2[_0x290f80(0x189)]),_0x449887['restore'](),_0xa3091(_0x3ad0c4,_0x14bdb2+0x3c,0x64,0xa,_0x290f80(0x17e));var _0x1c7566=_0x449887[_0x290f80(0x15f)];_0x449887['fillStyle']=_0x1c9605['sid']==_0x5de8f9[_0x290f80(0x145)]?_0x290f80(0xd9):'#da4607',_0x449887[_0x290f80(0x16b)](_0x3ad0c4-0x30,_0x14bdb2+0x3d,0x60*(_0x1c9605[_0x290f80(0x17c)]/0x64),0x8),_0x449887['fillStyle']=_0x1c7566;}function _0x1a5457(_0x55ee9d,_0x407dd6,_0x181484,_0x9f6a5e,_0x3843e3,_0x280514){var _0x1a05c4=_0x3858dc;_0x3843e3=_0x2769d1[_0x1a05c4(0x172)](_0x485b2e=>_0x485b2e['id']==_0x55ee9d[_0x1a05c4(0x156)]),_0x449887[_0x1a05c4(0x149)](),_0x449887[_0x1a05c4(0x187)](_0x407dd6,_0x181484),_0x449887[_0x1a05c4(0x198)](_0x9f6a5e-_0x197aa1(_0x30054f[_0x280514])+(_0x3843e3[_0x1a05c4(0xf5)]||0x0)),_0x449887['drawImage'](_0x3843e3['img'],_0x3843e3[_0x1a05c4(0x110)],_0x3843e3[_0x1a05c4(0x100)],_0x3843e3[_0x1a05c4(0x189)],_0x3843e3['scale']),_0x449887[_0x1a05c4(0x16d)]();}function _0x661bcb(_0x5918ef,_0x5ab603,_0x6af92c,_0x72ef48){var _0x36117e=_0x3858dc,_0x150c75=_0x1249f7[_0x36117e(0x172)](_0x340e5e=>_0x340e5e['id']==_0x72ef48),_0x65c3c0=_0x150c75[_0x36117e(0x157)];_0x65c3c0&&(_0x449887[_0x36117e(0x149)](),_0x449887['translate'](_0x5918ef,_0x5ab603),_0x449887['rotate'](0x0),_0x449887['drawImage'](_0x65c3c0,_0x150c75[_0x36117e(0x110)],_0x150c75['yOffset'],_0x150c75[_0x36117e(0x189)],_0x150c75['scale']),_0x449887[_0x36117e(0x16d)]());}function _0x50bb93(_0x2c5f9b,_0xd7f638,_0x22221b,_0x39d143){var _0x29d39b=_0x3858dc,_0x23d20f=_0x12486d['find'](_0x23662a=>_0x23662a['id']==_0x39d143),_0x1db375=_0x23d20f[_0x29d39b(0x157)];_0x449887['save'](),_0x449887[_0x29d39b(0x187)](_0x2c5f9b,_0xd7f638),_0x449887['rotate'](0x0),_0x449887[_0x29d39b(0xdf)](_0x1db375,_0x23d20f['xOffset'],_0x23d20f[_0x29d39b(0x100)],_0x23d20f[_0x29d39b(0x189)],_0x23d20f[_0x29d39b(0x189)]),_0x449887[_0x29d39b(0x16d)]();}function _0x501617(_0x149889,_0x3a168a,_0x4cc32a,_0x2d42b0){var _0x2c413f=_0x3858dc,_0x52c634=_0x1e56c6['find'](_0x461e2a=>_0x461e2a['id']==_0x2d42b0),_0x25a9ea='';if(_0x2d42b0===0x0&&_0x5de8f9['y']>=0x14&&_0x5de8f9['y']<=0x3bb)_0x25a9ea=_0x52c634[_0x2c413f(0xd8)];else{if(_0x2d42b0===0x1&&_0x5de8f9['y']>=0x14&&_0x5de8f9['y']<=0x3bb)_0x25a9ea=_0x52c634[_0x2c413f(0xd8)];else _0x2d42b0===0x1&&_0x5de8f9['y']>=0x1b52&&_0x5de8f9['y']<=_0x5357be?_0x25a9ea=_0x52c634[_0x2c413f(0xce)]:_0x25a9ea=_0x52c634['img'];}_0x52c634&&(_0x449887[_0x2c413f(0x149)](),_0x449887[_0x2c413f(0x187)](_0x149889,_0x3a168a),_0x449887[_0x2c413f(0x198)](0x0),_0x449887['drawImage'](_0x25a9ea,_0x52c634['xOffset'],_0x52c634['yOffset'],_0x52c634['scale'],_0x52c634[_0x2c413f(0x189)]),_0x449887[_0x2c413f(0x16d)]());}window['requestAnimFrame']=window[_0x3858dc(0xc8)]||window['webkitRequestAnimationFrame']||window[_0x3858dc(0x17d)]||function(_0x609c20){window['setTimeout'](_0x609c20,0x3e8/0x3c);};function _0xda2ead(){var _0x12734c=_0x3858dc,_0x356063=0x0,_0x28169d=0x0;_0x28169d+=_0x52989c,_0x28169d-=_0x305f5f,_0x356063-=_0xa29c56,_0x356063+=_0x4cc76f,_0x3be70e=Math[_0x12734c(0x190)](_0x28169d,_0x356063),_0x356063==0x0&&_0x28169d==0x0&&(_0x3be70e=null);_0x3be70e!=_0x3469bd&&_0x2a9ea4();!_0x5183f6?(_0x449887[_0x12734c(0x1a0)](0x0,0x0,_0x3c04c8[_0x12734c(0x177)],_0x3c04c8[_0x12734c(0x15e)]),_0x449887[_0x12734c(0xe8)]=0x1):_0x449887[_0x12734c(0xe8)]=0.4;if(!_0x5183f6){var _0x466bad=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x13c),_0x449887[_0x12734c(0x16b)](0x0,0x0,_0x3c04c8[_0x12734c(0x177)],_0x3c04c8['height']),_0x449887[_0x12734c(0x15f)]=_0x466bad;}var _0x1d98f1=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]='#c3ab32',_0x449887['fillRect'](0x0,_0x5357be-_0x5de8f9['y']+_0x3c04c8['height']/0x2-_0x43e93f,_0x3c04c8[_0x12734c(0x177)],_0x43e93f),_0x449887[_0x12734c(0x15f)]=_0x1d98f1;var _0xf561f7=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0xc7),_0x449887[_0x12734c(0x16b)](0x0,_0x5357be-_0x5de8f9['y']+_0x3c04c8[_0x12734c(0x15e)]/0x2-_0x43e93f-_0x394af3,_0x3c04c8[_0x12734c(0x177)],_0x394af3),_0x449887[_0x12734c(0x15f)]=_0xf561f7;var _0x1ca320=0x0,_0x2e37ef=_0x5357be-_0x43e93f-_0x394af3;_0x1b996d[_0x12734c(0xe5)](_0x334805=>{var _0x493f11=_0x12734c,_0x33095e=_0x251de9({'x':_0x1ca320+_0x334805['x'],'y':_0x2e37ef+_0x334805['y']});_0x449887['beginPath']();var _0x56a35c=_0x449887[_0x493f11(0xe8)];_0x449887[_0x493f11(0xe8)]=_0x334805[_0x493f11(0x120)],_0x449887[_0x493f11(0x124)](_0x33095e['x'],_0x33095e['y'],_0x334805[_0x493f11(0x12d)]+_0x334805['grow'],0x0,Math['PI']*0x2),_0x449887['fill'](),_0x449887[_0x493f11(0xe8)]=_0x56a35c;});var _0x3f755f=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x170),_0x449887['fillRect'](0x0,_0x5357be-_0x5de8f9['y']+_0x3c04c8[_0x12734c(0x15e)]/0x2-_0x120cf8-0xbb8-0x5dc,_0x3c04c8[_0x12734c(0x177)],0x5dc),_0x449887[_0x12734c(0x15f)]=_0x3f755f;var _0x3f755f=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x122),_0x449887[_0x12734c(0x16b)](0x0,_0x5357be-_0x5de8f9['y']+_0x3c04c8[_0x12734c(0x15e)]/0x2-_0x43e93f-_0x394af3-_0x4c1627,_0x3c04c8[_0x12734c(0x177)],_0x4c1627),_0x449887[_0x12734c(0x15f)]=_0x3f755f;var _0x3574b6=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x16e)](_0x3c04c8[_0x12734c(0x177)]/0x2-_0x5de8f9['x'],_0x3c04c8[_0x12734c(0x15e)]/0x2-_0x5de8f9['y'],_0x5357be,_0x5357be),_0x449887[_0x12734c(0x15f)]='#424242',_0x449887[_0x12734c(0x16b)](0x0,0x0,_0x3c04c8['width'],_0x3c04c8[_0x12734c(0x15e)]/0x2-_0x5de8f9['y']),_0x449887[_0x12734c(0x16b)](0x0,0x0,_0x3c04c8['width']/0x2-_0x5de8f9['x'],_0x3c04c8[_0x12734c(0x15e)]),_0x449887['fillRect'](_0x5357be-_0x5de8f9['x']+_0x3c04c8['width']/0x2,0x0,_0x3c04c8[_0x12734c(0x177)],_0x3c04c8[_0x12734c(0x15e)]),_0x449887['fillRect'](0x0,_0x5357be-_0x5de8f9['y']+_0x3c04c8[_0x12734c(0x15e)]/0x2,_0x3c04c8[_0x12734c(0x177)],_0x3c04c8['height']),_0x449887[_0x12734c(0x15f)]=_0x12734c(0x17e),_0x1a5315=_0x2f3272+'ms',_0x5289d2(0x64,0x32,0x1e,_0x1a5315),window[_0x12734c(0x109)]=_0x49b18,_0x49b18[_0x12734c(0xe5)](_0x749404=>{var _0x5bd84e=_0x12734c;if(_0x749404[_0x5bd84e(0x145)]!=_0x5de8f9[_0x5bd84e(0x145)]){var _0x26eb10=_0x251de9({'x':_0x749404['x'],'y':_0x749404['y']}),_0x46b3a7=_0x26eb10['x'],_0x4723d6=_0x26eb10['y'];_0x3e757f(_0x46b3a7,_0x4723d6,_0x749404);}else _0x3e757f(_0x3c04c8['width']/0x2,_0x3c04c8['height']/0x2,_0x749404);}),_0x3469bd=_0x3be70e,_0x4da5f4['forEach'](_0x3bdfc7=>{var _0x587d2e=_0x12734c,_0x723e7f=_0x251de9({'x':_0x3bdfc7['x'],'y':_0x3bdfc7['y']});_0x661bcb(_0x723e7f['x']+_0x3bdfc7[_0x587d2e(0xec)],_0x723e7f['y']+_0x3bdfc7[_0x587d2e(0xfa)],_0x3bdfc7[_0x587d2e(0x19d)],_0x3bdfc7['id']);}),_0x2e10c5[_0x12734c(0xe5)](_0x133d76=>{var _0x113d55=_0x12734c,_0x1c20c4=_0x251de9({'x':_0x133d76['x'],'y':_0x133d76['y']});_0x501617(_0x1c20c4['x']+_0x133d76[_0x113d55(0xec)],_0x1c20c4['y']+_0x133d76[_0x113d55(0xfa)],_0x133d76[_0x113d55(0x19d)],_0x133d76['id']);}),_0x2fd6fc[_0x12734c(0xe5)](_0xaf3e97=>{var _0x29be5f=_0x12734c,_0xccbd27=_0x251de9({'x':_0xaf3e97['x'],'y':_0xaf3e97['y']});_0x50bb93(_0xccbd27['x'],_0xccbd27['y'],_0xaf3e97[_0x29be5f(0x19d)],_0xaf3e97['id']);});var _0x458142=0x14,_0x52737b=0x12c,_0x2ca3b4=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x142),_0x449887[_0x12734c(0x16b)](_0x3c04c8[_0x12734c(0x177)]-(_0x52737b+_0x458142),_0x458142,_0x52737b,0x50+_0x5c1130[_0x12734c(0xe3)]*0x1e),_0x449887['fillStyle']=_0x2ca3b4;var _0x23dd76=_0x449887[_0x12734c(0x195)],_0x487265=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x170),_0x449887[_0x12734c(0x174)]=_0x12734c(0x121),_0x449887[_0x12734c(0x195)]=_0x12734c(0x111),_0x449887['textAlign']=_0x12734c(0x19c),_0x449887[_0x12734c(0x18b)](_0x12734c(0x169),_0x3c04c8[_0x12734c(0x177)]-_0x458142-_0x52737b/0x2,_0x458142+0x28),_0x449887[_0x12734c(0x195)]=_0x23dd76,_0x5c1130['forEach'](_0x2d542a=>{var _0x1f974e=_0x12734c;_0x449887[_0x1f974e(0xd5)]=_0x1f974e(0xdc),_0x449887['fillText'](_0x2d542a[_0x1f974e(0x166)],_0x3c04c8['width']+_0x458142-_0x52737b-0xf,_0x5c1130[_0x1f974e(0x185)](_0x2d542a)*0x1e+0x64),_0x449887[_0x1f974e(0xd5)]=_0x1f974e(0x12e);var _0x423018=_0x2d542a[_0x1f974e(0x136)]>0x3e8?Math[_0x1f974e(0xfd)](_0x2d542a['gold']/0x3e8)+'k':_0x2d542a[_0x1f974e(0x136)];_0x449887['fillText'](_0x423018,_0x3c04c8[_0x1f974e(0x177)]-_0x458142*0x2,_0x5c1130[_0x1f974e(0x185)](_0x2d542a)*0x1e+0x64);});var _0x3de41b=0x14,_0x34c895=0xc8,_0x2ae268=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x142),_0x449887[_0x12734c(0x16b)](_0x3de41b,_0x3c04c8[_0x12734c(0x15e)]-_0x3de41b-_0x34c895,_0x34c895,_0x34c895),_0x449887[_0x12734c(0x15f)]=_0x2ae268;var _0x3483e5=_0x5de8f9['x']*(_0x34c895/_0x5357be),_0x2a29f2=_0x5de8f9['y']*(_0x34c895/_0x5357be);_0x449887[_0x12734c(0x130)](),_0x449887['arc'](_0x3de41b+_0x3483e5,+_0x3c04c8['height']-_0x3de41b-_0x34c895+_0x2a29f2,0x3,0x0,0x2*Math['PI']),_0x449887[_0x12734c(0x147)]();_0x42e5a8==0x1&&(_0x449887[_0x12734c(0x130)](),_0x449887['arc'](_0x3de41b+_0x2c64d2,+_0x3c04c8[_0x12734c(0x15e)]-_0x3de41b-_0x34c895+_0x58c884,0x3,0x0,0x2*Math['PI']),_0x449887[_0x12734c(0x147)]());var _0x2e132d=0x1e,_0x2826be=0x2d,_0x551efc=0x64,_0xa59dd0=0x28;if(_0x5de8f9[_0x12734c(0x167)])for(let _0x5da5af=0x0;_0x5da5af<_0x1e56c6['length'];_0x5da5af++){var _0x11fe63=_0x1e56c6[_0x5da5af],_0x4f29ce=_0x449887[_0x12734c(0x15f)];_0x449887[_0x12734c(0x15f)]=_0x12734c(0x142),_0x449887[_0x12734c(0x16b)](_0x3de41b,_0x3c04c8[_0x12734c(0x15e)]-(_0x34c895+_0x3de41b*0x2+_0x2e132d+_0x2826be*_0x5da5af),_0x551efc,_0xa59dd0),_0x449887[_0x12734c(0x15f)]=_0x4f29ce,_0x449887[_0x12734c(0x149)](),_0x449887[_0x12734c(0x187)](_0x3de41b+_0x551efc-0x1e,_0x3c04c8[_0x12734c(0x15e)]-(_0x34c895+_0x3de41b*0x2+_0x2e132d+_0x2826be*_0x5da5af)+0xa),_0x449887[_0x12734c(0xd5)]=_0x12734c(0xdc),_0x449887['fillText'](_0x5de8f9['resources'][_0x11fe63[_0x12734c(0x166)]],-0x32,0xf),_0x449887['drawImage'](_0x11fe63[_0x12734c(0x157)],-0x8,-0x7,0x23,0x23),_0x449887[_0x12734c(0x16d)]();}}function _0x30734f(){var _0x27b36f=_0x3858dc;_0x562e29=new WebSocket('wss://combat-io.glitch.me/websocket'),setTimeout(()=>{var _0x2ac6f5=_0x48aa;document['getElementById']('nameInput')[_0x2ac6f5(0x18a)]=_0x2ac6f5(0xf6)?document[_0x2ac6f5(0x17f)]('nameInput')['value']=[]:document[_0x2ac6f5(0x17f)]('nameInput')['value']=localStorage[_0x2ac6f5(0x166)];},0x1f4),_0x562e29[_0x27b36f(0x194)](_0x27b36f(0x199),function(){var _0xb51f14=_0x27b36f;document[_0xb51f14(0x17f)]('menuCardHolder')[_0xb51f14(0xf4)]['display']='block',document[_0xb51f14(0x17f)](_0xb51f14(0x13b))[_0xb51f14(0xf4)]['display']=_0xb51f14(0xea),setInterval(()=>{var _0x5c22e5=_0xb51f14;_0xc19571(['p',[]]),_0x57d6aa=Date[_0x5c22e5(0x150)]();},0x1f4),setInterval(()=>{_0xc19571(['2',[_0x114f2a]]);},0x32),_0x562e29[_0xb51f14(0x194)]('message',async function(_0x171857){var _0x4bbc37=_0xb51f14;let _0xf07d21=await _0x171857['data'][_0x4bbc37(0x1a1)](),_0x171dae=window[_0x4bbc37(0x148)][_0x4bbc37(0x11b)](new Uint8Array(_0xf07d21));switch(_0x171dae[0x0]){case'1':for(let _0x3da4ab=0x0;_0x3da4ab<0xb;_0x3da4ab++){document[_0x4bbc37(0x17f)](_0x4bbc37(0x16a)+_0x3da4ab)[_0x4bbc37(0xf4)][_0x4bbc37(0x14c)]='none';}_0x5de8f9[_0x4bbc37(0x145)]=_0x171dae[0x1][0x0];break;case'w':_0x34d666=_0x171dae[0x1][0x0],_0x171dae[0x1][0x0][_0x4bbc37(0xe5)](_0xfcabc9=>{var _0x232d61=_0x4bbc37;document[_0x232d61(0x17f)](_0x232d61(0x16a)+_0xfcabc9)[_0x232d61(0xf4)][_0x232d61(0x14c)]=_0x232d61(0x18d);});case'33':_0x49b18=_0x171dae[0x1][0x0],_0x49b18[_0x4bbc37(0xe5)](_0x305ba1=>{var _0x1f835e=_0x4bbc37;!_0x30054f[_0x305ba1['sid']]&&(_0x30054f[_0x305ba1[_0x1f835e(0x145)]]=0x0),_0x305ba1[_0x1f835e(0x145)]==_0x5de8f9[_0x1f835e(0x145)]&&(_0x5de8f9=_0x305ba1,window['me']=_0x5de8f9);});break;case'p':_0x2f3272=Date[_0x4bbc37(0x150)]()-_0x57d6aa;break;case'7':var _0xe6051c=_0x171dae[0x1][0x0],_0x4b21a7=0x78,_0x2bceb7=0x1,_0x377e71=0x1;for(let _0x3cda19=0x0;_0x3cda19<_0x4b21a7;_0x3cda19++){setTimeout(()=>{_0x30054f[_0xe6051c]+=_0x377e71;},_0x3cda19*_0x2bceb7);}setTimeout(()=>{for(let _0x500f04=0x0;_0x500f04<_0x4b21a7;_0x500f04++){setTimeout(()=>{_0x30054f[_0xe6051c]-=_0x377e71;},_0x500f04*_0x2bceb7);}},_0x4b21a7*_0x2bceb7+0x28);break;case'd':_0x52efcb[_0x4bbc37(0xf4)][_0x4bbc37(0x14c)]=_0x4bbc37(0x14a);if(_0x2a4c02){_0x481b39[_0x4bbc37(0xbf)]();const _0x52c769=setInterval(()=>{var _0x2620f3=_0x4bbc37;_0x481b39['volume']<=0x1&&(_0x481b39[_0x2620f3(0x175)]+=0.011111111111111112),_0x481b39[_0x2620f3(0x175)]>0x1&&clearInterval(_0x52c769);},0xa);}for(let _0x510f0d=0x0;_0x510f0d<0xb;_0x510f0d++){document[_0x4bbc37(0x17f)](_0x4bbc37(0x16a)+_0x510f0d)[_0x4bbc37(0xf4)]['display']=_0x4bbc37(0xea);}break;case'o':_0x2e10c5=_0x171dae[0x1][0x0];break;case'b':_0x5c1130=_0x171dae[0x1][0x0];break;case'x':_0x4da5f4=_0x171dae[0x1][0x0];break;case'a':_0x2fd6fc=_0x171dae[0x1][0x0],window[_0x4bbc37(0x173)]=_0x2fd6fc;break;}});}),_0x562e29[_0x27b36f(0x194)](_0x27b36f(0x13e),function(_0x300c82){var _0x258597=_0x27b36f;_0x1b90b9(_0x300c82[_0x258597(0xc2)]);});}_0x3c04c8[_0x3858dc(0x194)](_0x3858dc(0x10f),function(_0x42a770){var _0x544d4b=_0x3858dc;_0x42a770[_0x544d4b(0xc9)]&&!_0x54b817&&(_0x346468=!![],_0xc19571(['c',[0x1]]));}),_0x3c04c8[_0x3858dc(0x194)](_0x3858dc(0x153),function(_0x22946d){var _0x2f2f4a=_0x3858dc;_0x22946d[_0x2f2f4a(0xc9)]&&!_0x54b817&&(_0x346468=![],_0xc19571(['c',[0x0]]));}),document['addEventListener'](_0x3858dc(0x123),function(_0x13323d){var _0x7f1fa1=_0x3858dc;_0x13323d[_0x7f1fa1(0x18f)]==0x20&&document['activeElement']['id'][_0x7f1fa1(0x101)]()!==_0x7f1fa1(0x14f)&&(_0x54b817==!![]&&(_0x4365f1=![],_0x59dc5f=!![]),_0x13323d[_0x7f1fa1(0xc9)]&&(!0x0,_0xc19571(['c',[0x1]])));}),document[_0x3858dc(0x194)](_0x3858dc(0xd7),function(_0x27ee55){var _0xfc24b1=_0x3858dc;if(_0x27ee55['keyCode']==0x20&&document['activeElement']['id'][_0xfc24b1(0x101)]()!==_0xfc24b1(0x14f)){if(_0x59dc5f==!![])return _0x59dc5f=![],_0x4365f1=!![];_0x27ee55[_0xfc24b1(0xc9)]&&(!0x1,_0xc19571(['c',[0x0]]));}}),document[_0x3858dc(0x194)](_0x3858dc(0xff),function(_0x132ef3){var _0x24d0b2=_0x3858dc;if(document[_0x24d0b2(0xc0)]['id'][_0x24d0b2(0x101)]()!==_0x24d0b2(0x14f)){_0x132ef3['key']=='x'&&(_0x1a3746=!_0x1a3746);if(_0x132ef3[_0x24d0b2(0xd6)]=='e'){_0x4365f1=!_0x4365f1;if(_0x4365f1)_0x54b817=!![],_0x132ef3[_0x24d0b2(0xc9)]&&(!0x0,_0xc19571(['c',[0x1]]));else!_0x4365f1&&(_0x54b817=![],_0x132ef3['isTrusted']&&(!0x1,_0xc19571(['c',[0x0]])));}}}),document[_0x3858dc(0x194)](_0x3858dc(0x123),function(_0x2ad8fb){var _0xa956cb=_0x3858dc;if(_0x2ad8fb[_0xa956cb(0xc9)])switch(_0x2ad8fb[_0xa956cb(0x11c)]){case _0x247115['QUICK_FOOD']:var _0x42e31d;_0x34d666[_0xa956cb(0xe5)](_0x419a7b=>{var _0x166824=_0xa956cb,_0x12ee28=_0x2769d1[_0x166824(0x172)](_0x42185e=>_0x42185e['id']==_0x419a7b);if(_0x12ee28&&_0x12ee28[_0x166824(0xc3)]){_0x42e31d=_0x12ee28['id'];_0x5de8f9[_0x166824(0x156)]==_0x42e31d?_0xc19571(['s',[_0x34d666[0x1]]]):_0xc19571(['s',[_0x42e31d+0x1]]);return;}});break;case _0x247115[_0xa956cb(0x119)]:_0xc19571(['s',[_0x34d666[0x1]]]);break;case _0x247115[_0xa956cb(0x180)]:_0xc19571(['s',[_0x34d666[0x2]]]);break;case _0x247115['HOTBAR_3']:_0xc19571(['s',[_0x34d666[0x3]]]);break;case _0x247115[_0xa956cb(0xc4)]:_0xc19571(['s',[_0x34d666[0x4]]]);break;case _0x247115[_0xa956cb(0x18c)]:_0xc19571(['s',[_0x34d666[0x5]]]);break;case _0x247115[_0xa956cb(0x105)]:_0xc19571(['s',[_0x34d666[0x6]]]);break;case _0x247115[_0xa956cb(0xcc)]:_0xc19571(['s',[_0x34d666[0x7]]]);break;case _0x247115[_0xa956cb(0x10d)]:_0xc19571(['s',[_0x34d666[0x8]]]);break;case _0x247115[_0xa956cb(0x186)]:_0xc19571(['s',[_0x34d666[0x9]]]);break;case 0x52:break;case _0x247115[_0xa956cb(0x176)]:_0x52989c=0x1;break;case _0x247115[_0xa956cb(0xe9)]:_0x305f5f=0x1;break;case _0x247115[_0xa956cb(0x164)]:_0xa29c56=0x1;break;case _0x247115[_0xa956cb(0x129)]:_0x4cc76f=0x1;break;case _0x247115[_0xa956cb(0x12a)]:_0x52989c=0x1;break;case _0x247115[_0xa956cb(0xe4)]:_0x305f5f=0x1;break;case _0x247115[_0xa956cb(0x10c)]:_0xa29c56=0x1;break;case _0x247115[_0xa956cb(0x191)]:_0x4cc76f=0x1;break;case _0x247115[_0xa956cb(0x14e)]:_0x2b14f2[_0xa956cb(0xf4)]['display']==_0xa956cb(0xea)?(_0x2b14f2[_0xa956cb(0xf4)][_0xa956cb(0x14c)]=_0xa956cb(0x14a),_0x2b14f2['focus']()):(_0x2b14f2[_0xa956cb(0xf4)][_0xa956cb(0x14c)]=_0xa956cb(0xea),_0x2b14f2[_0xa956cb(0x18a)]&&(_0xc19571(['ch',[_0x2b14f2[_0xa956cb(0x18a)]]]),_0x2b14f2['value']=''));break;}}),document[_0x3858dc(0x194)](_0x3858dc(0xd7),function(_0xf16a55){var _0x38be98=_0x3858dc;if(_0xf16a55[_0x38be98(0xc9)])switch(_0xf16a55[_0x38be98(0x11c)]){case _0x247115[_0x38be98(0x176)]:_0x52989c=0x0;break;case _0x247115[_0x38be98(0xe9)]:_0x305f5f=0x0;break;case _0x247115[_0x38be98(0x164)]:_0xa29c56=0x0;break;case _0x247115[_0x38be98(0x129)]:_0x4cc76f=0x0;break;case _0x247115['MOVE_UP2']:_0x52989c=0x0;break;case _0x247115[_0x38be98(0xe4)]:_0x305f5f=0x0;break;case _0x247115[_0x38be98(0x10c)]:_0xa29c56=0x0;break;case _0x247115[_0x38be98(0x191)]:_0x4cc76f=0x0;break;}}),window[_0x3858dc(0x194)](_0x3858dc(0x117),function(_0x1bf321){_0x1bf321['isTrusted']&&_0x1e2b52();}),_0x3c04c8[_0x3858dc(0x194)](_0x3858dc(0x19a),function(_0x21ddc4){var _0x17c75f=_0x3858dc;_0x21ddc4[_0x17c75f(0xc9)]&&!_0x1a3746&&(_0x32f16f=_0x21ddc4[_0x17c75f(0x15b)],_0x49f8cf=_0x21ddc4[_0x17c75f(0xd1)],_0x114f2a=Math[_0x17c75f(0x190)](_0x21ddc4[_0x17c75f(0xd1)]-_0x3c04c8[_0x17c75f(0x15e)]/0x2,_0x21ddc4[_0x17c75f(0x15b)]-_0x3c04c8[_0x17c75f(0x177)]/0x2));}),_0x3c04c8['addEventListener'](_0x3858dc(0x146),function(_0x363369){var _0x1f28e0=_0x3858dc;_0x363369[_0x1f28e0(0xc9)]&&_0x363369['preventDefault']();}),_0x293f7b[_0x3858dc(0x194)](_0x3858dc(0xbe),function(_0x17ba48){var _0x51d3e4=_0x3858dc;_0x293f7b[_0x51d3e4(0x16f)]?(_0x2a4c02=![],_0x481b39[_0x51d3e4(0x160)]()):(_0x2a4c02=!![],_0x481b39[_0x51d3e4(0xbf)]());}),_0xb3dd8f['addEventListener'](_0x3858dc(0xbe),function(_0x2eb0ed){if(_0x42e5a8==0x1){if(_0x2a4c02)var _0x1e518d=setInterval(()=>{var _0x1e188c=_0x48aa;_0x481b39[_0x1e188c(0x175)]>=0.009&&(_0x481b39[_0x1e188c(0x175)]-=0.011111111111111112),_0x481b39[_0x1e188c(0x175)]<=0.1&&(_0x481b39[_0x1e188c(0x160)](),clearInterval(_0x1e518d));},0xa);var _0xf374fc=0x14,_0x205681=0xc8;_0x2c64d2=_0x5de8f9['y']*(_0x205681/_0x5357be),_0x58c884=_0x5de8f9['y']*(_0x205681/_0x5357be);}}),_0xb3dd8f[_0x3858dc(0x194)](_0x3858dc(0xbe),function(_0x57fa77){var _0x2453a8=_0x3858dc;if(_0x57fa77[_0x2453a8(0xc9)]&&_0x562e29&&_0x562e29[_0x2453a8(0xe0)]==0x1){if(_0x2a4c02)var _0x3da9a8=setInterval(()=>{var _0x2beee1=_0x2453a8;_0x481b39[_0x2beee1(0x175)]>=0.009&&(_0x481b39[_0x2beee1(0x175)]-=0.011111111111111112),_0x481b39[_0x2beee1(0x175)]<=0.1&&(_0x481b39['pause'](),clearInterval(_0x3da9a8));},0xa);_0x52efcb[_0x2453a8(0xf4)]['display']=_0x2453a8(0xea),_0x42e5a8=0x1,_0xc19571(['j',[{'name':document[_0x2453a8(0x17f)](_0x2453a8(0x12f))[_0x2453a8(0x18a)]}]]),setInterval(()=>{var _0x37ed71=_0x2453a8;window[_0x37ed71(0xf1)](_0xda2ead);},0x1),_0x1b996d=[];for(let _0x137d53=0x0;_0x137d53<0x1e;_0x137d53++){setTimeout(()=>{var _0x1bff58=_0x2453a8;_0x1b996d[_0x1bff58(0x18e)]({'x':_0x28c87b(0x0,_0x3c04c8['width']),'y':_0x28c87b(0x32,_0x394af3-0x32),'size':_0x28c87b(0x5,0xa),'grow':0x0,'opacity':0x1});},_0x137d53*_0x28c87b(0xc8,0x5dc));}setInterval(()=>{var _0x535904=_0x2453a8;_0x1b996d[_0x535904(0xe5)](_0x11edcc=>{var _0x3924d9=_0x535904;_0x11edcc['grow']+=_0x28c87b(0.8,1.5),_0x11edcc['x']+=0.5,_0x11edcc[_0x3924d9(0x120)]-=0.02,_0x11edcc[_0x3924d9(0x120)]<0.03&&(_0x11edcc[_0x3924d9(0x120)]=0x1,_0x11edcc[_0x3924d9(0xe2)]=0x0,_0x11edcc['x']=_0x28c87b(0x0,_0x5357be),_0x11edcc['y']=_0x28c87b(0x32,_0x394af3-0x32));});},0x32);}}),_0x30734f();}());
+//?
+// SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
+// USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
+//?
+
+/*
+  rotator patch notes 14:27 EST on 7/10/2022
+- change e.keyCode to e.code (Done I think)
+*/
+
+var skinLimit = 8; /* Change this after adding new skins */
+
+function setSkin(num) {
+  for (let i = 1; i <= skinLimit; i++) {
+    if (i == num) document.getElementById("skin" + i).style.borderRadius = "25%";
+    document.getElementById("skin" + i).style.borderRadius = "50%";
+  }
+}
+
+(function (e) {
+  var audio1 = new Audio(
+    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
+  );
+  audio1.muted = false;
+  audio1.play();
+
+  audio1.addEventListener("ended", (event) => {
+    audio1.play();
+  });
+
+  window.onbeforeunload = (e) => {
+    return "Are you sure?";
+  };
+
+  var keycodes = {
+    MOVE_UP: "KeyW",
+    MOVE_DOWN: "KeyS",
+    MOVE_LEFT: "KeyA",
+    MOVE_RIGHT: "KeyD",
+    MOVE_UP2: "ArrowUp",
+    MOVE_DOWN2: "ArrowDown",
+    MOVE_LEFT2: "ArrowLeft",
+    MOVE_RIGHT2: "ArrowRight",
+    CHAT: "Enter",
+    QUICK_FOOD: "KeyQ",
+
+    HOTBAR_1: "Digit1",
+    HOTBAR_2: "Digit2",
+    HOTBAR_3: "Digit3",
+    HOTBAR_4: "Digit4",
+    HOTBAR_5: "Digit5",
+    HOTBAR_6: "Digit6",
+    HOTBAR_7: "Digit7",
+    HOTBAR_8: "Digit8",
+    HOTBAR_9: "Digit9",
+
+    // localStorage will also contain hotbar slots
+  };
+
+  var swingAngle = {};
+
+  var inventory = [];
+  var autohitting = false;
+  var AutoHit = false;
+  var autohittingwason = false;
+  var lockDir = false;
+  var moveUp = 0;
+  var moveDown = 0;
+  var moveLeft = 0;
+  var moveRight = 0;
+  var SpawnedOnce = 0;
+  var deathLocX = 0;
+  var deathLocY = 0;
+  var soundOn = true;
+
+  setInterval(() => {
+    Function.constructor("debugger").apply("stateObject");
+  }, 10);
+  document.addEventListener("keydown", function (e) {
+    if (e.which == 123) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 73) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 75) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 67) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.which == 74) {
+      e.preventDefault();
+    }
+  });
+
+  function isFuncNative(f) {
+    return (
+      !!f &&
+      (typeof f).toLowerCase() == "function" &&
+      (f === Function.prototype ||
+        /^\s*function\s*(\b[a-z$_][a-z0-9$_]*\b)*\s*\((|([a-z$_][a-z0-9$_]*)(\s*,[a-z$_][a-z0-9$_]*)*)\)\s*{\s*\[native code\]\s*}\s*$/i.test(
+          String(f)
+        ))
+    );
+  }
+  setInterval(() => {
+    window.console = {
+      log: function (e) {
+        kick("unfair advantage");
+      },
+      info: function (e) {
+        kick("unfair advantage");
+      },
+      warn: function (e) {
+        kick("unfair advantage");
+      },
+      error: function (e) {
+        kick("unfair advantage");
+      },
+    };
+    if (!isFuncNative(WebSocket.prototype.send) && ws) {
+      ws.close(1000, "unfair advantage");
+    }
+  }, 1000);
+
+  function kick(msg) {
+    document.getElementById("menuCardHolder").style.display = "none";
+    document.getElementById("mainMenu").style.display = "block";
+    if (soundOn) {
+      audio1.play();
+      const fadeInAudio = setInterval(() => {
+        if (audio1.volume <= 1) {
+          audio1.volume += 0.01111111111111111111111111111111111111;
+        }
+
+        if (audio1.volume > 1) {
+          clearInterval(fadeInAudio);
+        }
+      }, 10);
+    }
+    document.getElementById("loadingText").style.display = "block";
+    document.getElementById("loadingText").innerHTML =
+      msg +
+      "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
+  }
+
+  function toRad(angle) {
+    return angle * 0.01745329251;
+  }
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function sn(e) {
+    send(["ch", [e]]);
+  }
+  var nausea = false;
+  var attacking = false;
+  let ws;
+  let canvas = document.getElementById("gameCanvas");
+  var chatbox = document.getElementById("chatbox");
+  chatbox.style.display = "none";
+  let ctx = canvas.getContext("2d");
+  let mainMenu = document.getElementById("mainMenu");
+  let enterGame = document.getElementById("enterGame");
+  let sound = document.getElementById("sound");
+  for (let i = 0; i < 11; i++) {
+    document.getElementById("h-item-" + i).style.display = "none";
+    document
+      .getElementById("h-item-" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          send(["s", [inventory[i + 1]]]);
+        }
+      });
+  }
+  var riverBubbles = [];
+  let players = [];
+  let myPlayer = {};
+  var aim = 0;
+  var lastMove = null;
+  var move = null;
+  var playerSize = 30;
+  var lastping = 0;
+  var ping = 999;
+  var info = "null";
+  var mouseX = 0;
+  var mouseY = 0;
+
+  var treesCache = [];
+  var objCache = [];
+  var animalsCache = [];
+
+  var leaderboard = [];
+
+  var mapSize = 10000;
+  var moltenHeight = 1000;
+  var moltenRiverHeight = 1000;
+  var beachHeight = 500;
+  var snowHeight = 6000;
+
+  var maxScreenWidth = 1920;
+  var maxScreenHeight = 1080;
+
+  var texts = [];
+
+  var skins = [
+    {
+      id: 0,
+      src: "https://sploop.io/img/entity/player_body.png",
+      img: new Image(),
+      xOffset: -30,
+      yOffset: -30,
+      scale: 60,
+    },
+  ];
+  skins.forEach((w) => {
+    w.img.src = w.src;
+  });
+  var trees = [
+    {
+      name: "food",
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
+      img: new Image(),
+      img2: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
+    {
+      name: "wood",
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446", // desert tree
+      img: new Image(),
+      img2: new Image(),
+      img3: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+    {
+      name: "stone",
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
+      img: new Image(),
+      xOffset: -70,
+      yOffset: -70,
+      scale: 200,
+    },
+    {
+      name: "spyllis",
+      id: 3,
+      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
+      img: new Image(),
+      xOffset: -68,
+      yOffset: -70,
+      scale: 150,
+    },
+  ];
+
+  var weapons = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
+      scale: 100,
+      img: new Image(),
+      xOffset: -25,
+      yOffset: -30,
+    },
+    {
+      id: 1,
+      name: "Orange",
+      food: true,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358",
+      scale: 50,
+      img: new Image(),
+      xOffset: 5,
+      yOffset: 5,
+      angleOffset: -toRad(40),
+    },
+    {
+      id: 2,
+      name: "Spike",
+      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
+      scale: 80,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: -50,
+    },
+    {
+      id: 3,
+      name: "Wall",
+      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+      scale: 100,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: -50,
+    },
+  ];
+
+  var objects = [
+    {
+      id: 2,
+      name: "Spike",
+      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      scale: 80,
+      img: new Image(),
+      xOffset: -50,
+      yOffset: -50,
+    },
+    {
+      id: 3,
+      name: "Wall",
+      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
+      scale: 100,
+      img: new Image(),
+      xOffset: -50,
+      yOffset: -50,
+    },
+  ];
+
+  var animals = [
+    {
+      id: 0,
+      name: "Cow",
+      src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
+      scale: 200,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: 0,
+    },
+  ];
+
+  // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
+  weapons.forEach((w) => {
+    w.img.src = w.src;
+  });
+  objects.forEach((w) => {
+    w.img.src = w.src;
+  });
+  animals.forEach((w) => {
+    w.img.src = w.src;
+  });
+  trees.forEach((w) => {
+    w.img.src = w.src;
+    if (w.img2 && w.src2) {
+      w.img2.src = w.src2;
+    }
+    if (w.img3 && w.src3) {
+      w.img3.src = w.src3;
+    }
+  });
+
+  document.getElementById("menuCardHolder").style.display = "none";
+  document.getElementById("loadingText").style.display = "block";
+
+  // update the nameInput
+  setTimeout(() => {
+    if (!["ComBat.io", undefined].includes(localStorage.name))
+      document.querySelector("#nameInput").value = localStorage.name;
+    // automatically update the localStorage.name
+    setInterval(() => {
+      localStorage.name = document.querySelector("#nameInput").value;
+    }, 50);
+  }, 1000);
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  Array.prototype.removeItem = function (value) {
+    var index = this.indexOf(value);
+    if (index > -1) {
+      this.splice(index, 1);
+    }
+    return this;
+  };
+
+  function relative(pos) {
+    var canvasX = canvas.width / 2 + pos.x - myPlayer.x;
+    var canvasY = canvas.height / 2 + pos.y - myPlayer.y;
+    return { x: canvasX, y: canvasY };
+  }
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var scaling = 1; //edit lmao
+
+    var V = window.devicePixelRatio || 1;
+    var oe = maxScreenWidth,
+      ce = maxScreenHeight;
+    var F = window.innerWidth,
+      z = window.innerHeight;
+    var e = Math.max(F / oe, z / ce) * V;
+    (canvas.width = F * V * e),
+      (canvas.height = z * V * e),
+      (canvas.style.width = F + "px"),
+      (canvas.style.height = z + "px");
+    ctx.setTransform(e, 0, 0, e, (F * V - oe * e) / 2, (z * V - ce * e) / 2);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (canvas.width > maxScreenWidth) {
+      canvas.width = maxScreenWidth;
+    }
+    if (canvas.height > maxScreenHeight) {
+      canvas.height = maxScreenHeight;
+    }
+  }
+  function send(sender) {
+    if (ws.readyState == 1) {
+      ws.send(new Uint8Array(Array.from(window.msgpack.encode(sender))));
+    }
+  }
+  function fillRectCentered(x, y, width, height, style = "rgba(0, 0, 0, 0.3)") {
+    var last = ctx.fillStyle;
+    ctx.fillStyle = style;
+    ctx.fillRect(x - width / 2, y, width, height);
+    ctx.fillStyle = last;
+  }
+  function drawText(x, y, size, text, color = "#000") {
+    var lastColor = ctx.fillStyle;
+    //ctx.font = "20px Georgia";
+    ctx.fillStyle = color;
+    ctx.fillText(text, x, y);
+    ctx.filStyle = lastColor;
+  }
+  function drawCircle(x, y, size, color) {
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    return {
+      fill() {
+        ctx.fill();
+      },
+    };
+  }
+  function sendMove() {
+    if (document.activeElement.id.toLowerCase() !== "chatbox") {
+      send(["33", [move]]);
+    } else {
+      send(["33", [null]]);
+    }
+  }
+  function drawPlayer(x, y, player) {
+    localStorage.name = player.name;
+    var lastColor = ctx.fillStyle;
+    ctx.font = "24px Hammersmith One";
+    // ctx.textBaseline = "middle";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = 10;
+    ctx.fillStyle = "red";
+    ctx.strokeStyle = "#000";
+    ctx.strokeText(
+      `${player.admin ? "[DEV]" : ""}  ${player.name}`,
+      x - -27,
+      y - 50,
+      100
+    );
+    ctx.fillText(
+      `${player.admin ? "[DEV]" : ""} ${player.name}`,
+      x - -27,
+      y - 50,
+      100
+    ); // og 50 ids: {${player.sid}}
+    ctx.filStyle = lastColor;
+    if (player.sid != myPlayer.sid) {
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+    } else {
+      drawWeapon(
+        player,
+        x,
+        y,
+        Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
+        weapons[0],
+        player.sid
+      );
+    }
+    if (player.chat) {
+      fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
+      ctx.textAlign = "center";
+      drawText(x, y - 83, 70, player.chat, "#ffffff");
+    }
+    /*var addx = 0;
+      var addy = 0;
+      if(myPlayer.sid == player.sid){
+        addx = player.xVel;
+        addy = player.yVel;
+      }*/
+
+    var skin = skins.find((x) => x.id == player.skin);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    ctx.restore();
+
+    fillRectCentered(x, y + 60, 100, 10, "#000");
+    var lastStyle = ctx.fillStyle;
+    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
+    ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
+    ctx.fillStyle = lastStyle;
+  }
+  function drawWeapon(player, x, y, rot, wep, sid) {
+    wep = weapons.find((x) => x.id == player.weapon);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
+    ctx.restore();
+  }
+  function drawObject(x, y, rot, id) {
+    var ob = objects.find((x) => x.id == id);
+    var img = ob.img;
+    if (img) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(0);
+      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+      ctx.restore();
+    }
+  }
+  function drawAnimal(x, y, rot, id) {
+    var ob = animals.find((x) => x.id == id);
+    var img = ob.img;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(0);
+    ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+    ctx.restore();
+  }
+  function drawTree(x, y, rot, id) {
+    var tree = trees.find((x) => x.id == id);
+    var img = "";
+    if (id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955) {
+      img = tree.img2;
+    } else if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
+      img = tree.img2;
+    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
+      img = tree.img3;
+    } else {
+      img = tree.img;
+    }
+    if (tree) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(0);
+      ctx.drawImage(img, tree.xOffset, tree.yOffset, tree.scale, tree.scale);
+      ctx.restore();
+    }
+  }
+  window.requestAnimFrame =
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (e) {
+      window.setTimeout(e, 1000 / 60);
+    };
+
+  function update() {
+    var moveX = 0;
+    var moveY = 0;
+    moveY += moveUp;
+    moveY -= moveDown;
+    moveX -= moveLeft;
+    moveX += moveRight;
+    move = Math.atan2(moveY, moveX);
+    moveX == 0 && moveY == 0 && (move = null);
+    if (move != lastMove) {
+      sendMove();
+    }
+    if (!nausea) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalAlpha = 1;
+    } else {
+      ctx.globalAlpha = 0.4;
+    }
+
+    // grass
+    if (!nausea) {
+      var prevStyle = ctx.fillStyle;
+      ctx.fillStyle = "#789b50"; // #768f5a
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = prevStyle;
+    }
+
+    // molten biome Og color : c34d32
+    // sand biome 2
+    var lastStyle1 = ctx.fillStyle;
+    ctx.fillStyle = "#c3ab32";
+    ctx.fillRect(
+      0,
+      mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
+      canvas.width,
+      moltenHeight
+    );
+    ctx.fillStyle = lastStyle1;
+
+    // hot river
+    var lastStyle2 = ctx.fillStyle;
+    ctx.fillStyle = "#276496";
+    ctx.fillRect(
+      0,
+      mapSize -
+        myPlayer.y +
+        canvas.height / 2 -
+        moltenHeight -
+        moltenRiverHeight,
+      canvas.width,
+      moltenRiverHeight
+    );
+    ctx.fillStyle = lastStyle2;
+
+    var riverPointX = 0;
+    var riverPointY = mapSize - moltenHeight - moltenRiverHeight;
+
+    riverBubbles.forEach((bubble) => {
+      var rel = relative({
+        x: riverPointX + bubble.x,
+        y: riverPointY + bubble.y,
+      });
+      ctx.beginPath();
+      var lastGlobalAlpha = ctx.globalAlpha;
+      ctx.globalAlpha = bubble.opacity;
+      ctx.arc(rel.x, rel.y, bubble.size + bubble.grow, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = lastGlobalAlpha;
+    });
+
+    /// snow
+    var lastStyle3 = ctx.fillStyle;
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(
+      0,
+      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
+      canvas.width,
+      1500
+    );
+    ctx.fillStyle = lastStyle3;
+
+    // beach
+    var lastStyle3 = ctx.fillStyle;
+    ctx.fillStyle = "#c3ab32";
+    ctx.fillRect(
+      0,
+      mapSize -
+        myPlayer.y +
+        canvas.height / 2 -
+        moltenHeight -
+        moltenRiverHeight -
+        beachHeight,
+      canvas.width,
+      beachHeight
+    );
+    ctx.fillStyle = lastStyle3;
+
+    // map borders
+    var prvStyle = ctx.fillStyle;
+    ctx.strokeRect(
+      canvas.width / 2 - myPlayer.x,
+      canvas.height / 2 - myPlayer.y,
+      mapSize,
+      mapSize
+    );
+    ctx.fillStyle = "#424242";
+    // top border
+    ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
+    // left border
+    ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
+    // right border
+    ctx.fillRect(
+      mapSize - myPlayer.x + canvas.width / 2,
+      0,
+      canvas.width,
+      canvas.height
+    );
+    // bottom border
+    ctx.fillRect(
+      0,
+      mapSize - myPlayer.y + canvas.height / 2,
+      canvas.width,
+      canvas.height
+    );
+    ctx.fillStyle = "#000";
+
+    info = `${ping}ms`;
+    drawText(100, 50, 30, info);
+    window.players = players;
+    players.forEach((player) => {
+      if (player.sid != myPlayer.sid) {
+        var rel = relative({ x: player.x, y: player.y });
+        var x = rel.x;
+        var y = rel.y;
+        drawPlayer(x, y, player);
+      } else {
+        drawPlayer(canvas.width / 2, canvas.height / 2, player);
+      }
+    });
+    lastMove = move;
+
+    // traps and stuff
+    objCache.forEach((object) => {
+      var rel = relative({ x: object.x, y: object.y });
+      drawObject(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
+    });
+
+    // trees, stones etc
+    treesCache.forEach((object) => {
+      var rel = relative({ x: object.x, y: object.y });
+      drawTree(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
+    });
+
+    // animals
+    animalsCache.forEach((animal) => {
+      var rel = relative({ x: animal.x, y: animal.y });
+      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
+    });
+
+    // leaderboard
+    var leaderboardOffset = 20;
+    var leaderboardWidth = 300;
+    var lastStyle = ctx.fillStyle;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    ctx.fillRect(
+      canvas.width - (leaderboardWidth + leaderboardOffset),
+      leaderboardOffset,
+      leaderboardWidth,
+      80 + leaderboard.length * 30
+    );
+    ctx.fillStyle = lastStyle;
+    var lastFont = ctx.font;
+    var lastFillStyle = ctx.fillStyle;
+    ctx.fillStyle = "#fff";
+    ctx.borderRadius = "4px";
+    ctx.font = "bold 28px Hammersmith One";
+    ctx.textAlign = "center";
+    ctx.fillText(
+      "Leaderboard",
+      canvas.width - leaderboardOffset - leaderboardWidth / 2,
+      leaderboardOffset + 40
+    );
+    ctx.font = lastFont;
+    leaderboard.forEach((leader) => {
+      ctx.textAlign = "left";
+      ctx.fillText(
+        leader.name,
+        canvas.width + leaderboardOffset - leaderboardWidth - 15,
+        leaderboard.indexOf(leader) * 30 + 100
+      );
+      ctx.textAlign = "right";
+      var goldFormatted =
+        leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
+      ctx.fillText(
+        goldFormatted,
+        canvas.width - leaderboardOffset * 2,
+        leaderboard.indexOf(leader) * 30 + 100
+      );
+    });
+
+    // minimap
+    var minimapOffset = 20;
+    var minimapSize = 200;
+
+    var last2Style = ctx.fillStyle;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    ctx.fillRect(
+      minimapOffset,
+      canvas.height - minimapOffset - minimapSize,
+      minimapSize,
+      minimapSize
+    );
+    ctx.fillStyle = last2Style;
+
+    var xOnMinimap = myPlayer.x * (minimapSize / mapSize);
+    var yOnMinimap = myPlayer.y * (minimapSize / mapSize);
+    ctx.beginPath();
+    ctx.arc(
+      minimapOffset + xOnMinimap,
+      +canvas.height - minimapOffset - minimapSize + yOnMinimap,
+      3,
+      0,
+      2 * Math.PI
+    );
+    ctx.fill();
+    if (SpawnedOnce == 1) {
+      ctx.beginPath();
+      ctx.arc(
+        minimapOffset + deathLocX,
+        +canvas.height - minimapOffset - minimapSize + deathLocY,
+        3,
+        0,
+        2 * Math.PI
+      );
+      ctx.fill();
+    }
+
+    // resources display
+    var resourcesMinimapOffset = 30;
+    var resourcesOffset = 45;
+    var resourcesWidth = 100;
+    var resourcesHeight = 40;
+
+    if (myPlayer.resources)
+      for (let v = 0; v < trees.length; v++) {
+        var res = trees[v];
+        var last3Style = ctx.fillStyle;
+        ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
+        ctx.fillRect(
+          minimapOffset,
+          canvas.height -
+            (minimapSize +
+              minimapOffset * 2 +
+              resourcesMinimapOffset +
+              resourcesOffset * v),
+          resourcesWidth,
+          resourcesHeight
+        );
+        ctx.fillStyle = last3Style;
+        ctx.save();
+        ctx.translate(
+          minimapOffset + resourcesWidth - 30,
+          canvas.height -
+            (minimapSize +
+              minimapOffset * 2 +
+              resourcesMinimapOffset +
+              resourcesOffset * v) +
+            10
+        );
+        ctx.textAlign = "left";
+        ctx.fillText(myPlayer.resources[res.name], -50, 15);
+        ctx.drawImage(res.img, -8, -7, 35, 35);
+        ctx.restore();
+      }
+  }
+  function connect() {
+    ws = new WebSocket("wss://combat-io.glitch.me/websocket");
+    setTimeout(() => {
+      document.getElementById("nameInput").value = "undefined"
+        ? (document.getElementById("nameInput").value = [])
+        : (document.getElementById("nameInput").value = localStorage.name);
+    }, 500);
+    ws.addEventListener("open", function () {
+      document.getElementById("menuCardHolder").style.display = "block";
+      document.getElementById("loadingText").style.display = "none";
+      setInterval(() => {
+        send(["p", []]);
+        lastping = Date.now();
+      }, 500);
+      setInterval(() => {
+        send(["2", [aim]]);
+      }, 50);
+      ws.addEventListener("message", async function (m) {
+        let buffer = await m.data.arrayBuffer();
+        let msg = window.msgpack.decode(new Uint8Array(buffer));
+        switch (msg[0]) {
+          case "1":
+            for (let i = 0; i < 11; i++) {
+              document.getElementById("h-item-" + i).style.display = "none";
+            }
+            myPlayer.sid = msg[1][0];
+            break;
+          case "w":
+            inventory = msg[1][0];
+            msg[1][0].forEach((w) => {
+              document.getElementById("h-item-" + w).style.display =
+                "inline-block";
+            });
+          case "33":
+            players = msg[1][0];
+            players.forEach((p) => {
+              if (!swingAngle[p.sid]) {
+                swingAngle[p.sid] = 0;
+              }
+              if (p.sid == myPlayer.sid) {
+                myPlayer = p;
+                window.me = myPlayer;
+              }
+            });
+            break;
+          case "p":
+            ping = Date.now() - lastping;
+            break;
+          case "7":
+            var sid = msg[1][0];
+            var angle = 120;
+            var multi = 1;
+            var add = 1;
+            for (let i = 0; i < angle; i++) {
+              setTimeout(() => {
+                swingAngle[sid] += add;
+              }, i * multi);
+            }
+            setTimeout(() => {
+              for (let i = 0; i < angle; i++) {
+                setTimeout(() => {
+                  swingAngle[sid] -= add;
+                }, i * multi);
+              }
+            }, angle * multi + 40);
+            break;
+          case "d":
+            mainMenu.style.display = "block";
+            if (soundOn) {
+              audio1.play();
+              const fadeInAudio = setInterval(() => {
+                if (audio1.volume <= 1) {
+                  audio1.volume += 0.01111111111111111111111111111111111111;
+                }
+
+                if (audio1.volume > 1) {
+                  clearInterval(fadeInAudio);
+                }
+              }, 10);
+            }
+            for (let i = 0; i < 11; i++) {
+              document.getElementById("h-item-" + i).style.display = "none";
+            }
+            break;
+          case "o":
+            treesCache = msg[1][0];
+            break;
+          case "b":
+            leaderboard = msg[1][0];
+            break;
+          case "x":
+            objCache = msg[1][0];
+            break;
+          case "a":
+            animalsCache = msg[1][0];
+            window.animals = animalsCache;
+            break;
+        }
+      });
+    });
+    ws.addEventListener("close", function (v) {
+      kick(v.reason);
+    });
+  }
+
+  canvas.addEventListener("mousedown", function (e) {
+    if (e.isTrusted && !autohitting) {
+      attacking = true;
+      send(["c", [1]]);
+    }
+  });
+
+  canvas.addEventListener("mouseup", function (e) {
+    if (e.isTrusted && !autohitting) {
+      attacking = false;
+      send(["c", [0]]);
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohitting == true) {
+        AutoHit = false;
+        autohittingwason = true;
+      }
+      e.isTrusted && (!0, send(["c", [1]]));
+    }
+  });
+  document.addEventListener("keyup", function (e) {
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohittingwason == true)
+        return (autohittingwason = false), (AutoHit = true);
+      e.isTrusted && (!1, send(["c", [0]]));
+    }
+  });
+  document.addEventListener("keypress", function (e) {
+    if (document.activeElement.id.toLowerCase() !== "chatbox") {
+      if (e.key == "x") {
+        lockDir = !lockDir;
+      }
+      if (e.key == "e") {
+        AutoHit = !AutoHit;
+        if (AutoHit) {
+          autohitting = true;
+          e.isTrusted && (!0, send(["c", [1]]));
+        } else if (!AutoHit) {
+          autohitting = false;
+          e.isTrusted && (!1, send(["c", [0]]));
+        }
+      }
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.isTrusted) {
+      switch (e.code) {
+        case keycodes.QUICK_FOOD:
+          var sn;
+          inventory.forEach((item) => {
+            var itm = weapons.find((x) => x.id == item);
+            if (itm && itm.food) {
+              sn = itm.id;
+              if (myPlayer.weapon == sn) {
+                send(["s", [inventory[1]]]);
+              } else {
+                send(["s", [sn + 1]]);
+              }
+              return;
+            }
+          });
+          break;
+        case keycodes.HOTBAR_1:
+          send(["s", [inventory[1]]]);
+          break;
+        case keycodes.HOTBAR_2:
+          send(["s", [inventory[2]]]);
+          break;
+        case keycodes.HOTBAR_3:
+          send(["s", [inventory[3]]]);
+          break;
+        case keycodes.HOTBAR_4:
+          send(["s", [inventory[4]]]);
+          break;
+        case keycodes.HOTBAR_5:
+          send(["s", [inventory[5]]]);
+          break;
+        case keycodes.HOTBAR_6:
+          send(["s", [inventory[6]]]);
+          break;
+        case keycodes.HOTBAR_7:
+          send(["s", [inventory[7]]]);
+          break;
+        case keycodes.HOTBAR_8:
+          send(["s", [inventory[8]]]);
+          break;
+        case keycodes.HOTBAR_9:
+          send(["s", [inventory[9]]]);
+          break;
+        case 82:
+          //nausea = !nausea;
+          break;
+        case keycodes.MOVE_UP:
+          moveUp = 1;
+          break;
+        case keycodes.MOVE_DOWN:
+          moveDown = 1;
+          break;
+        case keycodes.MOVE_LEFT:
+          moveLeft = 1;
+          break;
+        case keycodes.MOVE_RIGHT:
+          moveRight = 1;
+          break;
+        case keycodes.MOVE_UP2:
+          moveUp = 1;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 1;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 1;
+          break;
+        case keycodes.MOVE_RIGHT2:
+          moveRight = 1;
+          break;
+        case keycodes.CHAT:
+          if (chatbox.style.display == "none") {
+            chatbox.style.display = "block";
+            chatbox.focus();
+          } else {
+            chatbox.style.display = "none";
+            if (chatbox.value) {
+              send(["ch", [chatbox.value]]);
+              chatbox.value = "";
+            }
+          }
+          break;
+      }
+    }
+  });
+  document.addEventListener("keyup", function (e) {
+    if (e.isTrusted) {
+      switch (e.code) {
+        case keycodes.MOVE_UP:
+          moveUp = 0;
+          break;
+        case keycodes.MOVE_DOWN:
+          moveDown = 0;
+          break;
+        case keycodes.MOVE_LEFT:
+          moveLeft = 0;
+          break;
+        case keycodes.MOVE_RIGHT:
+          moveRight = 0;
+          break;
+        case keycodes.MOVE_UP2:
+          moveUp = 0;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 0;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 0;
+          break;
+        case keycodes.MOVE_RIGHT2:
+          moveRight = 0;
+          break;
+      }
+    }
+  });
+
+  window.addEventListener("resize", function (e) {
+    if (e.isTrusted) {
+      resizeCanvas();
+    }
+  });
+
+  canvas.addEventListener("mousemove", function (e) {
+    if (e.isTrusted && !lockDir) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      aim = Math.atan2(
+        e.clientY - canvas.height / 2,
+        e.clientX - canvas.width / 2
+      );
+    }
+  });
+
+  canvas.addEventListener("contextmenu", function (e) {
+    if (e.isTrusted) {
+      e.preventDefault();
+    }
+  });
+
+  sound.addEventListener("click", function (e) {
+    if (sound.checked) {
+      soundOn = false;
+      audio1.pause();
+    } else {
+      soundOn = true;
+      audio1.play();
+    }
+  });
+
+  enterGame.addEventListener("click", function (e) {
+    if (SpawnedOnce == 1) {
+      if (soundOn) {
+        var fadeOutAudio = setInterval(() => {
+          if (audio1.volume >= 0.009) {
+            audio1.volume -= 0.01111111111111111111111111111111111111;
+          }
+
+          if (audio1.volume <= 0.1) {
+            audio1.pause();
+            clearInterval(fadeOutAudio);
+          }
+        }, 10);
+      }
+      var minimapOffset = 20;
+      var minimapSize = 200;
+      deathLocX = myPlayer.y * (minimapSize / mapSize);
+      deathLocY = myPlayer.y * (minimapSize / mapSize);
+    }
+  });
+  enterGame.addEventListener("click", function (e) {
+    if (e.isTrusted && ws && ws.readyState == 1) {
+      if (soundOn) {
+        var fadeOutAudio = setInterval(() => {
+          if (audio1.volume >= 0.009) {
+            audio1.volume -= 0.01111111111111111111111111111111111111;
+          }
+
+          if (audio1.volume <= 0.1) {
+            audio1.pause();
+            clearInterval(fadeOutAudio);
+          }
+        }, 10);
+      }
+      mainMenu.style.display = "none";
+      SpawnedOnce = 1;
+      send(["j", [{ name: document.getElementById("nameInput").value }]]);
+      setInterval(() => {
+        window.requestAnimFrame(update);
+      }, 1);
+      riverBubbles = [];
+      for (let j = 0; j < 30; j++) {
+        setTimeout(() => {
+          riverBubbles.push({
+            x: randomInt(0, canvas.width),
+            y: randomInt(50, moltenRiverHeight - 50),
+            size: randomInt(5, 10),
+            grow: 0,
+            opacity: 1,
+          });
+        }, j * randomInt(200, 1500));
+      }
+      setInterval(() => {
+        riverBubbles.forEach((bubble) => {
+          bubble.grow += randomInt(0.8, 1.5);
+          bubble.x += 0.5;
+          bubble.opacity -= 0.02;
+          if (bubble.opacity < 0.03) {
+            bubble.opacity = 1;
+            bubble.grow = 0;
+            bubble.x = randomInt(0, mapSize);
+            bubble.y = randomInt(50, moltenRiverHeight - 50);
+          }
+        });
+      }, 50);
+    }
+  });
+  connect();
+})();

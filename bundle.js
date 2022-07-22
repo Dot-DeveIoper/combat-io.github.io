@@ -8,7 +8,7 @@
 - change e.keyCode to e.code (Done I think)
 */
 
-var skinLimit = 4; /* Change this after adding new skins */
+var skinLimit = 8; /* Change this after adding new skins */
 
 function setSkin(num) {
   for (let i = 1; i <= skinLimit; i++) {
