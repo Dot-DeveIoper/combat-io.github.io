@@ -207,7 +207,7 @@ function setSkin(num) {
   var skins = [
     {
       id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658526446629",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
       img: new Image(),
       xOffset: -30,
       yOffset: -30,
@@ -469,6 +469,7 @@ function setSkin(num) {
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawBody(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
       drawWeapon(
         player,
@@ -478,6 +479,7 @@ function setSkin(num) {
         weapons[0],
         player.sid
       );
+      drawBody(player, x, y, player.aimdir, weapons[0], player.sid);
     }
     if (player.chat) {
       fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
@@ -491,12 +493,6 @@ function setSkin(num) {
         addy = player.yVel;
       }*/
 
-    var skin = skins.find((x) => x.id == player.skin);
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
-    ctx.restore();
-
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
@@ -509,6 +505,14 @@ function setSkin(num) {
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
+    ctx.restore();
+  }
+  function drawBody(player, x, y, rot, wep, sid) {
+    var skin = skins.find((x) => x.id == player.skin);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
