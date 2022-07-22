@@ -12,8 +12,11 @@ var skinLimit = 8; /* Change this after adding new skins */
 
 function setSkin(num) {
   for (let i = 1; i <= skinLimit; i++) {
-    if (i == num) document.getElementById("skin" + i).style.borderRadius = "25%";
-    document.getElementById("skin" + i).style.borderRadius = "50%";
+    if (i == num) {
+      document.getElementById("skin" + i).style.borderRadius = "25%";
+    } else {
+      document.getElementById("skin" + i).style.borderRadius = "50%";
+    }
   }
 }
 
