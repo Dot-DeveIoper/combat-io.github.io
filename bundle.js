@@ -8,15 +8,6 @@
 - change e.keyCode to e.code (Done I think)
 */
 
-var skinLimit = 8; /* Change this after adding new skins */
-
-function setSkin(num) {
-  for (let i = 1; i <= skinLimit; i++) {
-    if (i == num) document.getElementById("skin" + i).style.borderRadius = "25%";
-    document.getElementById("skin" + i).style.borderRadius = "50%";
-  }
-}
-
 (function (e) {
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"

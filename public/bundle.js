@@ -207,7 +207,7 @@ function setSkin(num) {
   var skins = [
     {
       id: 0,
-      src: "https://sploop.io/img/entity/player_body.png",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658526446629",
       img: new Image(),
       xOffset: -30,
       yOffset: -30,
@@ -452,7 +452,7 @@ function setSkin(num) {
     // ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
       `${player.admin ? "[DEV]" : ""}  ${player.name}`,
