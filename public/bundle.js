@@ -267,6 +267,9 @@ function setSkin(num) {
   ];
   skins.forEach((w) => {
     w.img.src = w.src;
+    if (w.img1 && w.src1) {
+      w.img1.src = w.src1;
+    }
     if (w.img2 && w.src2) {
       w.img2.src = w.src2;
     }
@@ -576,27 +579,23 @@ function setSkin(num) {
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
   }
-    if (Skin1) {
-  Skin1.addEventListener("click", function (e) {
-    SkinID = skin.img;
-  });
-  };
-  if (Skin2) {
-  Skin2.addEventListener("click", function (e) {
-    SkinID = skin.img1;
-  });  
-  };
-  if (Skin3) {
-  Skin3.addEventListener("click", function (e) {
-    SkinID = skin.img3;
-  });  
-  };
-  function drawBody(player, x, y, rot, wep, sid, skin) {
+  function drawBody(player, x, y, rot, wep, sid) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
-    ctx.drawImage(skin, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    if (SkinID === 0) {
+      ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    }
+    if (SkinID === 1) {
+      ctx.drawImage(skin.img1, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    }
+    if (SkinID === 2) {
+      ctx.drawImage(skin.img2, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    }
+    if (SkinID === 3) {
+      ctx.drawImage(skin.img3, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    }
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
@@ -1239,7 +1238,22 @@ function setSkin(num) {
       audio1.play();
     }
   });
- 
+    if (Skin1) {
+  Skin1.addEventListener("click", function (e) {
+    SkinID = skin.img;
+  });
+  };
+  if (Skin2) {
+  Skin2.addEventListener("click", function (e) {
+    SkinID = skin.img1;
+  });  
+  };
+  if (Skin3) {
+  Skin3.addEventListener("click", function (e) {
+
+    SkinID = skin.img3;
+  });  
+  };
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
