@@ -460,27 +460,6 @@ function setSkin(num) {
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    var scaling = 1; //edit lmao
-
-    var V = window.devicePixelRatio || 1;
-    var oe = maxScreenWidth,
-      ce = maxScreenHeight;
-    var F = window.innerWidth,
-      z = window.innerHeight;
-    var e = Math.max(F / oe, z / ce) * V;
-    (canvas.width = F * V * e),
-      (canvas.height = z * V * e),
-      (canvas.style.width = F + "px"),
-      (canvas.style.height = z + "px");
-    ctx.setTransform(e, 0, 0, e, (F * V - oe * e) / 2, (z * V - ce * e) / 2);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (canvas.width > maxScreenWidth) {
-      canvas.width = maxScreenWidth;
-    }
-    if (canvas.height > maxScreenHeight) {
-      canvas.height = maxScreenHeight;
-    }
   }
   function send(sender) {
     if (ws.readyState == 1) {
@@ -1238,27 +1217,7 @@ function setSkin(num) {
       audio1.play();
     }
   });
-  Skin1.addEventListener("click", function (e) {
-        if (e.isTrusted && ws && ws.readyState == 1) {
-
-    SkinID = 0;
-        }  });
-  Skin2.addEventListener("click", function (e) {
-        if (e.isTrusted && ws && ws.readyState == 1) {
-
-    SkinID = 1;
-        }  });  
-  Skin3.addEventListener("click", function (e) {
-        if (e.isTrusted && ws && ws.readyState == 1) {
-
-    SkinID = 2;
-        }  });  
-
-  Skin4.addEventListener("click", function (e) {
-        if (e.isTrusted && ws && ws.readyState == 1) {
-
-    SkinID = 3;
-        }  });  
+  
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
