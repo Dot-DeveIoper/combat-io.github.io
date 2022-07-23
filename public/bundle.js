@@ -98,6 +98,7 @@ function setSkin(num) {
   var deathLocX = 0;
   var deathLocY = 0;
   var soundOn = true;
+  var SkinID
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -234,7 +235,21 @@ function setSkin(num) {
     {
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
+      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png",
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png",
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png",
+      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png",
+      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png",
+      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png",
+      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png",
       img: new Image(),
+      img1: new Image(),
+      img2: new Image(),
+      img3: new Image(),
+      img4: new Image(),
+      img5: new Image(),
+      img6: new Image(),
+      img7: new Image(),
       xOffset: -35,
       yOffset: -35,
       scale: 70,
