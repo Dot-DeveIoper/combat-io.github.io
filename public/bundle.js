@@ -1238,22 +1238,27 @@ function setSkin(num) {
       audio1.play();
     }
   });
-    if (Skin1) {
   Skin1.addEventListener("click", function (e) {
-    SkinID = skin.img;
-  });
-  };
-  if (Skin2) {
-  Skin2.addEventListener("click", function (e) {
-    SkinID = skin.img1;
-  });  
-  };
-  if (Skin3) {
-  Skin3.addEventListener("click", function (e) {
+        if (e.isTrusted && ws && ws.readyState == 1) {
 
-    SkinID = skin.img3;
-  });  
-  };
+    SkinID = 0;
+        }  });
+  Skin2.addEventListener("click", function (e) {
+        if (e.isTrusted && ws && ws.readyState == 1) {
+
+    SkinID = 1;
+        }  });  
+  Skin3.addEventListener("click", function (e) {
+        if (e.isTrusted && ws && ws.readyState == 1) {
+
+    SkinID = 2;
+        }  });  
+
+  Skin4.addEventListener("click", function (e) {
+        if (e.isTrusted && ws && ws.readyState == 1) {
+
+    SkinID = 3;
+        }  });  
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
