@@ -20,13 +20,41 @@ function setSkin(num) {
   }
 }
 
+// const targetDiv = document.querySelector(".show");
+const targetDiv = document.getElementById("rightCardHolder");
+const btn = document.getElementById("toggleSettings");
+
+let x = document.querySelector(".changeText");
+
+/* targetDiv.style.display = "none"; */
+
+btn.onclick = function () {
+  if (targetDiv.style.display === "none" && x.innerHTML === "Open Settings") {
+    targetDiv.style.display = "block";
+    // btn.innerHTML = "Open Settings";
+    x.innerHTML = "Close Settings";
+    // this.innerHTML = "Open Settings";
+  } else {
+    targetDiv.style.display = "none";
+    // targetDiv.style.zIndex = "-1";
+    // btn.innerHTML = "Close Settings";
+    btn.style.zIndex = "1";
+    x.innerHTML = "Open Settings";
+    // this.innerHTML = "Close Settings";
+  }
+};
+
 (function (e) {
+  var audio = localStorage.getItem("AudioOn");
+  if (audio === null) {
+    localStorage.setItem("AudioOn", 'true');
+  }
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
   );
-  audio1.muted = false;
-  audio1.play();
-
+  if (Audio === 'true') {
+    audio1.play();
+  }
   audio1.addEventListener("ended", (event) => {
     audio1.play();
   });
