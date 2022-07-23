@@ -8,6 +8,29 @@
 - change e.keyCode to e.code (Done I think)
 */
 
+const targetDiv = document.querySelector(".show");
+const btn = document.getElementById("toggleSettings");
+
+let x = document.querySelector(".changeText");
+
+/* targetDiv.style.display = "none"; */
+
+btn.onclick = function () {
+  if (targetDiv.style.display === "none" || x.innerHTML === "Open Settings") {
+    targetDiv.style.display = "block";
+    // btn.innerHTML = "Open Settings";
+    x.innerHTML = "Close Settings";
+    // this.innerHTML = "Open Settings";
+  } else {
+    targetDiv.style.display = "none";
+    // targetDiv.style.zIndex = "-1";
+    // btn.innerHTML = "Close Settings";
+    btn.style.zIndex = "1";
+    x.innerHTML = "Open Settings";
+    // this.innerHTML = "Close Settings";
+  }
+};
+
 var skinLimit = 8; /* Change this after adding new skins */
 
 function setSkin(num) {
