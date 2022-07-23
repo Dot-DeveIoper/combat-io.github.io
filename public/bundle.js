@@ -235,9 +235,9 @@ function setSkin(num) {
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
       img: new Image(),
-      xOffset: -30,
-      yOffset: -30,
-      scale: 60,
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
     },
   ];
   skins.forEach((w) => {
@@ -295,7 +295,7 @@ function setSkin(num) {
       src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
       scale: 100,
       img: new Image(),
-      xOffset: -25,
+      xOffset: -20,
       yOffset: -30,
     },
     {
