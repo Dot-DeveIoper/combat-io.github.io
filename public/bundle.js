@@ -8,29 +8,6 @@
 - change e.keyCode to e.code (Done I think)
 */
 
-const targetDiv = document.querySelector(".show");
-const btn = document.getElementById("toggleSettings");
-
-let x = document.querySelector(".changeText");
-
-/* targetDiv.style.display = "none"; */
-
-btn.onclick = function () {
-  if (targetDiv.style.display === "none" || x.innerHTML === "Open Settings") {
-    targetDiv.style.display = "block";
-    // btn.innerHTML = "Open Settings";
-    x.innerHTML = "Close Settings";
-    // this.innerHTML = "Open Settings";
-  } else {
-    targetDiv.style.display = "none";
-    // targetDiv.style.zIndex = "-1";
-    // btn.innerHTML = "Close Settings";
-    btn.style.zIndex = "1";
-    x.innerHTML = "Open Settings";
-    // this.innerHTML = "Close Settings";
-  }
-};
-
 var skinLimit = 8; /* Change this after adding new skins */
 
 function setSkin(num) {
@@ -44,6 +21,21 @@ function setSkin(num) {
 }
 
 (function (e) {
+  const targetDiv = document.querySelector(".show");
+  const btn = document.getElementById("toggleSettings");
+
+  let x = document.querySelector(".changeText");
+
+  btn.onclick = function () {
+    if (targetDiv.style.display === "none" || x.innerHTML === "Open Settings") {
+      targetDiv.style.display = "block";
+      x.innerHTML = "Close Settings";
+    } else {
+      targetDiv.style.display = "none";
+      btn.style.zIndex = "1";
+      x.innerHTML = "Open Settings";
+    }
+  };
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
   );
@@ -181,7 +173,7 @@ function setSkin(num) {
   function sn(e) {
     send(["ch", [e]]);
   }
-  
+
   var nausea = false;
   var attacking = false;
   let ws;
@@ -278,13 +270,13 @@ function setSkin(num) {
     }
     if (w.img4 && w.src4) {
       w.img4.src = w.src4;
-    }    
+    }
     if (w.img5 && w.src5) {
       w.img5.src = w.src5;
-    }    
+    }
     if (w.img6 && w.src6) {
       w.img6.src = w.src6;
-    }    
+    }
     if (w.img7 && w.src7) {
       w.img7.src = w.src7;
     }
@@ -564,16 +556,40 @@ function setSkin(num) {
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     if (SkinID === 0) {
-      ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+      ctx.drawImage(
+        skin.img,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
     }
     if (SkinID === 1) {
-      ctx.drawImage(skin.img1, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+      ctx.drawImage(
+        skin.img1,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
     }
     if (SkinID === 2) {
-      ctx.drawImage(skin.img2, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+      ctx.drawImage(
+        skin.img2,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
     }
     if (SkinID === 3) {
-      ctx.drawImage(skin.img3, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+      ctx.drawImage(
+        skin.img3,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
     }
     ctx.restore();
   }
@@ -1217,7 +1233,7 @@ function setSkin(num) {
       audio1.play();
     }
   });
-  
+
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
