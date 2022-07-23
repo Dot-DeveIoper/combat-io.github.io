@@ -210,21 +210,7 @@ function setSkin(num) {
         }
       });
   }
-  if (Skin1) {
-  Skin1.addEventListener("click", function (e) {
-    SkinID = 0;
-  });
-  };
-  if (Skin2) {
-  Skin2.addEventListener("click", function (e) {
-    SkinID = 1;
-  });  
-  };
-  if (Skin3) {
-  Skin3.addEventListener("click", function (e) {
-    SkinID = 2;
-  });  
-  };
+
   var riverBubbles = [];
   let players = [];
   let myPlayer = {};
@@ -281,6 +267,24 @@ function setSkin(num) {
   ];
   skins.forEach((w) => {
     w.img.src = w.src;
+    if (w.img2 && w.src2) {
+      w.img2.src = w.src2;
+    }
+    if (w.img3 && w.src3) {
+      w.img3.src = w.src3;
+    }
+    if (w.img4 && w.src4) {
+      w.img4.src = w.src4;
+    }    
+    if (w.img5 && w.src5) {
+      w.img5.src = w.src5;
+    }    
+    if (w.img6 && w.src6) {
+      w.img6.src = w.src6;
+    }    
+    if (w.img7 && w.src7) {
+      w.img7.src = w.src7;
+    }
   });
   var trees = [
     {
@@ -572,12 +576,27 @@ function setSkin(num) {
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
   }
-  function drawBody(player, x, y, rot, wep, sid) {
+    if (Skin1) {
+  Skin1.addEventListener("click", function (e) {
+    SkinID = skin.img;
+  });
+  };
+  if (Skin2) {
+  Skin2.addEventListener("click", function (e) {
+    SkinID = skin.img1;
+  });  
+  };
+  if (Skin3) {
+  Skin3.addEventListener("click", function (e) {
+    SkinID = skin.img3;
+  });  
+  };
+  function drawBody(player, x, y, rot, wep, sid, skin) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
-    ctx.drawImage(skin.img + SkinID, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    ctx.drawImage(skin, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
