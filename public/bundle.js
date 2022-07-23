@@ -21,13 +21,13 @@ function setSkin(num) {
 }
 
 (function (e) {
-  const targetDiv = document.querySelector(".show");
-  const btn = document.getElementById("toggleSettings");
+  let targetDiv = document.querySelector(".show");
+  let btn = document.getElementById("toggleSettings");
 
   let x = document.querySelector(".changeText");
 
   btn.onclick = function () {
-    if (targetDiv.style.display === "none" || x.innerHTML === "Open Settings") {
+    if (document.querySelector(".show").style.display === "none" && document.querySelector(".changeText").innerHTML === "Open Settings") {
       targetDiv.style.display = "block";
       x.innerHTML = "Close Settings";
     } else {
