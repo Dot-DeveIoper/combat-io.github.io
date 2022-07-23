@@ -181,6 +181,7 @@ function setSkin(num) {
   function sn(e) {
     send(["ch", [e]]);
   }
+  
   var nausea = false;
   var attacking = false;
   let ws;
@@ -191,14 +192,14 @@ function setSkin(num) {
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
   let sound = document.getElementById("sound");
-  var Skin1 = document.getElementById("Skin1");
-var Skin2 = document.getElementById("Skin2");
-var Skin3 = document.getElementById("Skin3");
-var Skin4 = document.getElementById("Skin4");
-var Skin5 = document.getElementById("Skin5");
-var Skin6 = document.getElementById("Skin6");
-var Skin7 = document.getElementById("Skin7");
-var Skin8 = document.getElementById("Skin8");
+  let Skin1 = document.getElementById("Skin1");
+  let Skin2 = document.getElementById("Skin2");
+  let Skin3 = document.getElementById("Skin3");
+  let Skin4 = document.getElementById("Skin4");
+  let Skin5 = document.getElementById("Skin5");
+  let Skin6 = document.getElementById("Skin6");
+  let Skin7 = document.getElementById("Skin7");
+  let Skin8 = document.getElementById("Skin8");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -209,6 +210,21 @@ var Skin8 = document.getElementById("Skin8");
         }
       });
   }
+  if (Skin1) {
+  Skin1.addEventListener("click", function (e) {
+    SkinID = 0;
+  });
+  };
+  if (Skin2) {
+  Skin2.addEventListener("click", function (e) {
+    SkinID = 1;
+  });  
+  };
+  if (Skin3) {
+  Skin3.addEventListener("click", function (e) {
+    SkinID = 2;
+  });  
+  };
   var riverBubbles = [];
   let players = [];
   let myPlayer = {};
@@ -561,7 +577,7 @@ var Skin8 = document.getElementById("Skin8");
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
-    ctx.drawImage(skin.img1, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    ctx.drawImage(skin.img + SkinID, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
@@ -1203,31 +1219,6 @@ var Skin8 = document.getElementById("Skin8");
       soundOn = true;
       audio1.play();
     }
-  });
-
-  Skin1.addEventListener("click", function (e) {
-    SkinID = 0;
-  });
-  Skin2.addEventListener("click", function (e) {
-    SkinID = 1;
-  });  
-  Skin3.addEventListener("click", function (e) {
-    SkinID = 2;
-  });  
-  Skin4.addEventListener("click", function (e) {
-    SkinID = 3;
-  });
-  Skin5.addEventListener("click", function (e) {
-    SkinID = 4;
-  });
-  Skin6.addEventListener("click", function (e) {
-    SkinID = 5;
-  });
-  Skin7.addEventListener("click", function (e) {
-    SkinID = 6;
-  });
-  Skin8.addEventListener("click", function (e) {
-    SkinID = 7;
   });
  
   enterGame.addEventListener("click", function (e) {
