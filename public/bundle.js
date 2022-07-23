@@ -98,7 +98,7 @@ function setSkin(num) {
   var deathLocX = 0;
   var deathLocY = 0;
   var soundOn = true;
-  var SkinID
+  var SkinID = 0;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -191,6 +191,14 @@ function setSkin(num) {
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
   let sound = document.getElementById("sound");
+  var Skin1 = document.getElementById("Skin1");
+var Skin2 = document.getElementById("Skin2");
+var Skin3 = document.getElementById("Skin3");
+var Skin4 = document.getElementById("Skin4");
+var Skin5 = document.getElementById("Skin5");
+var Skin6 = document.getElementById("Skin6");
+var Skin7 = document.getElementById("Skin7");
+var Skin8 = document.getElementById("Skin8");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -553,7 +561,7 @@ function setSkin(num) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
-    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    ctx.drawImage(skin.img1, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
@@ -1197,6 +1205,31 @@ function setSkin(num) {
     }
   });
 
+  Skin1.addEventListener("click", function (e) {
+    SkinID = 0;
+  });
+  Skin2.addEventListener("click", function (e) {
+    SkinID = 1;
+  });  
+  Skin3.addEventListener("click", function (e) {
+    SkinID = 2;
+  });  
+  Skin4.addEventListener("click", function (e) {
+    SkinID = 3;
+  });
+  Skin5.addEventListener("click", function (e) {
+    SkinID = 4;
+  });
+  Skin6.addEventListener("click", function (e) {
+    SkinID = 5;
+  });
+  Skin7.addEventListener("click", function (e) {
+    SkinID = 6;
+  });
+  Skin8.addEventListener("click", function (e) {
+    SkinID = 7;
+  });
+ 
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
