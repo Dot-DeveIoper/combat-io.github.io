@@ -45,18 +45,20 @@ btn.onclick = function () {
 };
 
 (function (e) {
-  var audio = localStorage.getItem("AudioOn");
-  if (audio === null) {
+  var AudioOn = localStorage.getItem("AudioOn");
+  if (AudioOn === undefined) {
     localStorage.setItem("AudioOn", 'true');
   }
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
   );
-  if (Audio === 'true') {
+  if (AudioOn === 'true') {
     audio1.play();
   }
   audio1.addEventListener("ended", (event) => {
-    audio1.play();
+    if (AudioOn === 'true') {
+      audio1.play();
+    }
   });
 
   window.onbeforeunload = (e) => {
@@ -160,7 +162,8 @@ btn.onclick = function () {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
-      audio1.play();
+      if (AudioOn) {
+        audio1.play();
       const fadeInAudio = setInterval(() => {
         if (audio1.volume <= 1) {
           audio1.volume += 0.01111111111111111111111111111111111111;
@@ -170,6 +173,7 @@ btn.onclick = function () {
           clearInterval(fadeInAudio);
         }
       }, 10);
+    }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
@@ -1008,6 +1012,7 @@ btn.onclick = function () {
           case "d":
             mainMenu.style.display = "block";
             if (soundOn) {
+              if (AudioOn) {
               audio1.play();
               const fadeInAudio = setInterval(() => {
                 if (audio1.volume <= 1) {
@@ -1018,6 +1023,7 @@ btn.onclick = function () {
                   clearInterval(fadeInAudio);
                 }
               }, 10);
+            }
             }
             for (let i = 0; i < 11; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
@@ -1240,9 +1246,11 @@ btn.onclick = function () {
   sound.addEventListener("click", function (e) {
     if (sound.checked) {
       soundOn = false;
+      localStorage.setItem("AudioOn", 'false');
       audio1.pause();
     } else {
       soundOn = true;
+      localStorage.setItem("AudioOn", 'true');   
       audio1.play();
     }
   });
@@ -1250,6 +1258,7 @@ btn.onclick = function () {
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
+        if (AudioOn) {
         var fadeOutAudio = setInterval(() => {
           if (audio1.volume >= 0.009) {
             audio1.volume -= 0.01111111111111111111111111111111111111;
@@ -1260,6 +1269,7 @@ btn.onclick = function () {
             clearInterval(fadeOutAudio);
           }
         }, 10);
+      }
       }
       var minimapOffset = 20;
       var minimapSize = 200;
