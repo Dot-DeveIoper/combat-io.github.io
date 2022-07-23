@@ -21,21 +21,6 @@ function setSkin(num) {
 }
 
 (function (e) {
-  let targetDiv = document.querySelector(".show");
-  let btn = document.getElementById("toggleSettings");
-
-  let x = document.querySelector(".changeText");
-
-  btn.onclick = function () {
-    if (document.querySelector(".show").style.display === "none" && document.querySelector(".changeText").innerHTML === "Open Settings") {
-      targetDiv.style.display = "block";
-      x.innerHTML = "Close Settings";
-    } else {
-      targetDiv.style.display = "none";
-      btn.style.zIndex = "1";
-      x.innerHTML = "Open Settings";
-    }
-  };
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
   );
