@@ -45,22 +45,6 @@ btn.onclick = function () {
 };
 
 (function (e) {
-  var AudioOn = localStorage.getItem("AudioOn");
-  if (AudioOn === undefined) {
-    localStorage.setItem("AudioOn", 'true');
-  }
-  var audio1 = new Audio(
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
-  );
-  if (AudioOn === 'true') {
-    audio1.play();
-  }
-  audio1.addEventListener("ended", (event) => {
-    if (AudioOn === 'true') {
-      audio1.play();
-    }
-  });
-
   window.onbeforeunload = (e) => {
     return "Are you sure?";
   };
@@ -106,6 +90,7 @@ btn.onclick = function () {
   var deathLocY = 0;
   var soundOn = true;
   var SkinID = 0;
+  let sound = document.getElementById("sound");
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -157,12 +142,32 @@ btn.onclick = function () {
       ws.close(1000, "unfair advantage");
     }
   }, 1000);
+  
+    let AudioOn = localStorage.getItem("AudioOn");
+  if (AudioOn === undefined) {
+    localStorage.setItem("AudioOn", 'true');
+    AudioOn = localStorage.getItem("AudioOn");
+  }
+  var audio1 = new Audio(
+    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
+  );
+  if (AudioOn === 'true') {
+    audio1.play();
+    sound.checked = false;
+  } else {
+    sound.checked = true;
+  }
+  audio1.addEventListener("ended", (event) => {
+    if (AudioOn === 'true') {
+      audio1.play();
+    }
+  });
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
-      if (AudioOn) {
+      if (AudioOn === 'true') {
         audio1.play();
       const fadeInAudio = setInterval(() => {
         if (audio1.volume <= 1) {
@@ -200,7 +205,6 @@ btn.onclick = function () {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
-  let sound = document.getElementById("sound");
   let Skin1 = document.getElementById("Skin1");
   let Skin2 = document.getElementById("Skin2");
   let Skin3 = document.getElementById("Skin3");
@@ -1012,7 +1016,7 @@ btn.onclick = function () {
           case "d":
             mainMenu.style.display = "block";
             if (soundOn) {
-              if (AudioOn) {
+              if (AudioOn === 'true') {
               audio1.play();
               const fadeInAudio = setInterval(() => {
                 if (audio1.volume <= 1) {
@@ -1247,10 +1251,12 @@ btn.onclick = function () {
     if (sound.checked) {
       soundOn = false;
       localStorage.setItem("AudioOn", 'false');
+      AudioOn = localStorage.getItem("AudioOn");
       audio1.pause();
     } else {
       soundOn = true;
       localStorage.setItem("AudioOn", 'true');   
+      AudioOn = localStorage.getItem("AudioOn");
       audio1.play();
     }
   });
@@ -1258,7 +1264,7 @@ btn.onclick = function () {
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
-        if (AudioOn) {
+        if (AudioOn === 'true') {
         var fadeOutAudio = setInterval(() => {
           if (audio1.volume >= 0.009) {
             audio1.volume -= 0.01111111111111111111111111111111111111;
