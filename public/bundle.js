@@ -555,11 +555,11 @@ function setSkin(num) {
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
   }
-  function drawBody(player, x, y, rot, wep, sid) {
+  function drawBody(player, x, y, rot, skin, sid) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (skin.angleOffset || 0));
     if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
