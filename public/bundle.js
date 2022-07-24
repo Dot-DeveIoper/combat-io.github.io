@@ -67,7 +67,7 @@ function setSkin(num) {
     HOTBAR_9: "Digit9",
   };
 
-  var swingAngle = {}
+  var swingAngle = {};
   var inventory = [];
   var autohitting = false;
   var AutoHit = false;
