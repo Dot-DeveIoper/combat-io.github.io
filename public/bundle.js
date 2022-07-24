@@ -20,31 +20,27 @@ function setSkin(num) {
   }
 }
 
-// const targetDiv = document.querySelector(".show");
-const targetDiv = document.getElementById("rightCardHolder");
-const btn = document.getElementById("toggleSettings");
-
-let x = document.querySelector(".changeText");
-
-/* targetDiv.style.display = "none"; */
-
-btn.onclick = function () {
-  if (targetDiv.style.display === "none" && x.innerHTML === "Open Settings") {
-    targetDiv.style.display = "block";
-    // btn.innerHTML = "Open Settings";
-    x.innerHTML = "Close Settings";
-    // this.innerHTML = "Open Settings";
-  } else {
-    targetDiv.style.display = "none";
-    // targetDiv.style.zIndex = "-1";
-    // btn.innerHTML = "Close Settings";
-    btn.style.zIndex = "1";
-    x.innerHTML = "Open Settings";
-    // this.innerHTML = "Close Settings";
-  }
-};
-
 (function (e) {
+  let settingsDiv = document.getElementById("rightCardHolder");
+  let settingsToggle = document.getElementById("toggleSettings");
+
+  let settingsText = document.querySelector("#toggleSettings");
+
+  settingsToggle.onclick = function (e) {
+    if (e.isTrusted) {
+      if (
+        settingsDiv.style.display === "none" ||
+        settingsText.innerHTML === "Open Settings"
+      ) {
+        settingsDiv.style.display = "inline-block";
+        settingsText.innerHTML = "Close Settings";
+      } else {
+        settingsDiv.style.display = "none";
+        settingsToggle.style.zIndex = "1";
+        settingsText.innerHTML = "Open Settings";
+      }
+    }
+  };
   window.onbeforeunload = (e) => {
     return "Are you sure?";
   };
@@ -70,8 +66,6 @@ btn.onclick = function () {
     HOTBAR_7: "Digit7",
     HOTBAR_8: "Digit8",
     HOTBAR_9: "Digit9",
-
-    // localStorage will also contain hotbar slots
   };
 
   var swingAngle = {};
@@ -142,23 +136,23 @@ btn.onclick = function () {
       ws.close(1000, "unfair advantage");
     }
   }, 1000);
-  
-    let AudioOn = localStorage.getItem("AudioOn");
+
+  let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
-    localStorage.setItem("AudioOn", 'true');
+    localStorage.setItem("AudioOn", "true");
     AudioOn = localStorage.getItem("AudioOn");
   }
   var audio1 = new Audio(
     "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
   );
-  if (AudioOn === 'true') {
+  if (AudioOn === "true") {
     audio1.play();
     sound.checked = false;
   } else {
     sound.checked = true;
   }
   audio1.addEventListener("ended", (event) => {
-    if (AudioOn === 'true') {
+    if (AudioOn === "true") {
       audio1.play();
     }
   });
@@ -167,18 +161,18 @@ btn.onclick = function () {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
-      if (AudioOn === 'true') {
+      if (AudioOn === "true") {
         audio1.play();
-      const fadeInAudio = setInterval(() => {
-        if (audio1.volume <= 1) {
-          audio1.volume += 0.01111111111111111111111111111111111111;
-        }
+        const fadeInAudio = setInterval(() => {
+          if (audio1.volume <= 1) {
+            audio1.volume += 0.01111111111111111111111111111111111111;
+          }
 
-        if (audio1.volume > 1) {
-          clearInterval(fadeInAudio);
-        }
-      }, 10);
-    }
+          if (audio1.volume > 1) {
+            clearInterval(fadeInAudio);
+          }
+        }, 10);
+      }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
@@ -1016,18 +1010,18 @@ btn.onclick = function () {
           case "d":
             mainMenu.style.display = "block";
             if (soundOn) {
-              if (AudioOn === 'true') {
-              audio1.play();
-              const fadeInAudio = setInterval(() => {
-                if (audio1.volume <= 1) {
-                  audio1.volume += 0.01111111111111111111111111111111111111;
-                }
+              if (AudioOn === "true") {
+                audio1.play();
+                const fadeInAudio = setInterval(() => {
+                  if (audio1.volume <= 1) {
+                    audio1.volume += 0.01111111111111111111111111111111111111;
+                  }
 
-                if (audio1.volume > 1) {
-                  clearInterval(fadeInAudio);
-                }
-              }, 10);
-            }
+                  if (audio1.volume > 1) {
+                    clearInterval(fadeInAudio);
+                  }
+                }, 10);
+              }
             }
             for (let i = 0; i < 11; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
@@ -1250,12 +1244,12 @@ btn.onclick = function () {
   sound.addEventListener("click", function (e) {
     if (sound.checked) {
       soundOn = false;
-      localStorage.setItem("AudioOn", 'false');
+      localStorage.setItem("AudioOn", "false");
       AudioOn = localStorage.getItem("AudioOn");
       audio1.pause();
     } else {
       soundOn = true;
-      localStorage.setItem("AudioOn", 'true');   
+      localStorage.setItem("AudioOn", "true");
       AudioOn = localStorage.getItem("AudioOn");
       audio1.play();
     }
@@ -1264,18 +1258,18 @@ btn.onclick = function () {
   enterGame.addEventListener("click", function (e) {
     if (SpawnedOnce == 1) {
       if (soundOn) {
-        if (AudioOn === 'true') {
-        var fadeOutAudio = setInterval(() => {
-          if (audio1.volume >= 0.009) {
-            audio1.volume -= 0.01111111111111111111111111111111111111;
-          }
+        if (AudioOn === "true") {
+          var fadeOutAudio = setInterval(() => {
+            if (audio1.volume >= 0.009) {
+              audio1.volume -= 0.01111111111111111111111111111111111111;
+            }
 
-          if (audio1.volume <= 0.1) {
-            audio1.pause();
-            clearInterval(fadeOutAudio);
-          }
-        }, 10);
-      }
+            if (audio1.volume <= 0.1) {
+              audio1.pause();
+              clearInterval(fadeOutAudio);
+            }
+          }, 10);
+        }
       }
       var minimapOffset = 20;
       var minimapSize = 200;
