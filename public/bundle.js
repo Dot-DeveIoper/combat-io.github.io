@@ -28,7 +28,6 @@ function setSkin(num) {
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
       if (
-        settingsDiv.style.display === "none" &&
         settingsText.innerHTML === "Open Settings"
       ) {
         settingsDiv.style.display = "inline-block";
@@ -82,7 +81,7 @@ function setSkin(num) {
   var deathLocX = 0;
   var deathLocY = 0;
   var soundOn = true;
-  // var sound = document.getElementById("sound");
+  var sound = document.getElementById("sound");
   var SkinID = 6;
 
   setInterval(() => {
@@ -116,6 +115,7 @@ function setSkin(num) {
         ))
     );
   }
+  
   setInterval(() => {
     window.console = {
       log: function (e) {
