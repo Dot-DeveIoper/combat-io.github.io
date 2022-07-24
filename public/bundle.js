@@ -23,13 +23,12 @@ function setSkin(num) {
 (function (e) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
-
   let settingsText = document.querySelector("#toggleSettings");
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
       if (
-        settingsDiv.style.display === "none" ||
+        settingsDiv.style.display === "none" &&
         settingsText.innerHTML === "Open Settings"
       ) {
         settingsDiv.style.display = "inline-block";
@@ -41,6 +40,7 @@ function setSkin(num) {
       }
     }
   };
+  
   window.onbeforeunload = (e) => {
     return "Are you sure?";
   };
@@ -68,8 +68,7 @@ function setSkin(num) {
     HOTBAR_9: "Digit9",
   };
 
-  var swingAngle = {};
-
+  var swingAngle = {}
   var inventory = [];
   var autohitting = false;
   var AutoHit = false;
@@ -83,8 +82,7 @@ function setSkin(num) {
   var deathLocX = 0;
   var deathLocY = 0;
   var soundOn = true;
-  var SkinID = 0;
-  let sound = document.getElementById("sound");
+  var SkinID = 6;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -199,14 +197,6 @@ function setSkin(num) {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let enterGame = document.getElementById("enterGame");
-  let Skin1 = document.getElementById("Skin1");
-  let Skin2 = document.getElementById("Skin2");
-  let Skin3 = document.getElementById("Skin3");
-  let Skin4 = document.getElementById("Skin4");
-  let Skin5 = document.getElementById("Skin5");
-  let Skin6 = document.getElementById("Skin6");
-  let Skin7 = document.getElementById("Skin7");
-  let Skin8 = document.getElementById("Skin8");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
