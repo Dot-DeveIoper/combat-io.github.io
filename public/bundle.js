@@ -596,6 +596,42 @@ function setSkin(num) {
         skin.scale
       );
     }
+        if (SkinID === 4) {
+      ctx.drawImage(
+        skin.img4,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+        if (SkinID === 5) {
+      ctx.drawImage(
+        skin.img5,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+        }
+                  if (SkinID === 6) {
+      ctx.drawImage(
+        skin.img6,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+                  }
+                            if (SkinID === 7) {
+      ctx.drawImage(
+        skin.img7,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {

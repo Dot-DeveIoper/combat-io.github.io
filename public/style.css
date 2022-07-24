@@ -506,7 +506,7 @@ select:focus {
 
 #rightCardHolder {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: top !important;
 }
 
 /* MOBILE VIEW */
@@ -518,6 +518,12 @@ select:focus {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #rightCardHolder {
+    display: inline-block !important;
+    vertical-align: top;
   }
 }
 @media only screen and (max-width: 768px) and (orientation: landscape) {
