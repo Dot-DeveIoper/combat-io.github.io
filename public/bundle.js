@@ -517,7 +517,7 @@ function setSkin(num) {
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
-      drawBody(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawBody(player, x, y, player.aimdir, player.sid);
     } else {
       drawWeapon(
         player,
@@ -527,7 +527,7 @@ function setSkin(num) {
         weapons[0],
         player.sid
       );
-      drawBody(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
       fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
@@ -555,11 +555,11 @@ function setSkin(num) {
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
   }
-  function drawBody(player, x, y, rot, skin, sid) {
+  function drawBody(player, x, y, rot, sid) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + (skin.angleOffset || 0));
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
