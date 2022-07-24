@@ -82,6 +82,7 @@ function setSkin(num) {
   var deathLocX = 0;
   var deathLocY = 0;
   var soundOn = true;
+  // var sound = document.getElementById("sound");
   var SkinID = 6;
 
   setInterval(() => {
