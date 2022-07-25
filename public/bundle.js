@@ -515,9 +515,10 @@ function setSkin(num) {
     ); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
       drawBody(player, x, y, player.aimdir, player.sid);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
+      drawBody(player, x, y, player.aimdir, player.sid);
       drawWeapon(
         player,
         x,
@@ -526,7 +527,6 @@ function setSkin(num) {
         weapons[0],
         player.sid
       );
-      drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
       fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
