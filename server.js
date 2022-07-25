@@ -723,9 +723,9 @@
                       : tree.id == 3
                       ? "spyllis"
                       : tree.id == 4
-                      ? "food2"
+                      ? "food"
                       : tree.id == 5
-                      ? "wood2"
+                      ? "wood"
                       : test
                   ] += weapon.gather;
                   player.xp += weapon.gather;

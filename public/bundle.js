@@ -22,6 +22,7 @@ function setSkin(num) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
+  let TEDUSyg = document.getElementById("toggleSettings");
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -33,6 +34,12 @@ function setSkin(num) {
         settingsToggle.style.zIndex = "1";
         settingsText.innerHTML = "Open Settings";
       }
+    }
+  };
+  
+    settingsToggle.onclick = function (e) {
+    if (e.isTrusted) {
+      SkinID = 0;
     }
   };
 
