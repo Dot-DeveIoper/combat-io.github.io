@@ -657,18 +657,9 @@ function setSkin(num) {
   }
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {
-    console.log(x,y);
+    window.location.href = "#" + x + "||" + y;
     var tree = trees.find((x) => x.id == id);
     var img = "";
-    if (id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955) {
-      img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
-      img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
-      img = tree.img3;
-    } else {
-      img = tree.img;
-    }
     if (tree) {
       ctx.save();
       ctx.translate(x, y);
