@@ -899,66 +899,66 @@
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
-          } else if ((msg[1][0] == true ? true : false) == true) {}
-//             var obj = weapons.find((x) => x.id == socket.player.weapon);
-//             if (!obj) return;
+          } else if ((msg[1][0] == true ? true : false) == true) {
+            var obj = weapons.find((x) => x.id == socket.player.weapon);
+            if (!obj) return;
 
-//             var reqFood = obj.cost.food || 0;
-//             var reqWood = obj.cost.wood || 0;
-//             var reqStone = obj.cost.stone || 0;
-//             var reqSpyllis = obj.cost.spyllis || 0;
-//             var reqFood2 = obj.cost.food || 0;
-//             var reqWood2 = obj.cost.wood || 0;
+            var reqFood = obj.cost.food || 0;
+            var reqWood = obj.cost.wood || 0;
+            var reqStone = obj.cost.stone || 0;
+            var reqSpyllis = obj.cost.spyllis || 0;
+            var reqFood2 = obj.cost.food || 0;
+            var reqWood2 = obj.cost.wood || 0;
 
-//             var haveFood = socket.player.resources.food >= reqFood;
-//             var haveWood = socket.player.resources.wood >= reqWood;
-//             var haveStone = socket.player.resources.stone >= reqStone;
-//             var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
+            var haveFood = socket.player.resources.food >= reqFood;
+            var haveWood = socket.player.resources.wood >= reqWood;
+            var haveStone = socket.player.resources.stone >= reqStone;
+            var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
 
-//             if (haveFood && haveWood && haveStone && haveSpyllis) {
-//               if (obj.heal && socket.player.health < 100) {
-//                 socket.player.resources.food -= reqFood;
-//                 socket.player.resources.wood -= reqWood;
-//                 socket.player.resources.stone -= reqStone;
-//                 socket.player.resources.spyllis -= reqSpyllis;
+            if (haveFood && haveWood && haveStone && haveSpyllis) {
+              if (obj.heal && socket.player.health < 100) {
+                socket.player.resources.food -= reqFood;
+                socket.player.resources.wood -= reqWood;
+                socket.player.resources.stone -= reqStone;
+                socket.player.resources.spyllis -= reqSpyllis;
 
-//                 socket.player.health = Math.min(
-//                   100,
-//                   socket.player.health + obj.heal
-//                 );
-//                 // var playerWeaponObjects = [];
-//                 // socket.player.weapons.forEach((w) => {
-//                 //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
-//                 // });
-//                 // socket.player.weapon = playerWeaponObjects.filter(
-//                 //   (x) => x && x.isWeapon
-//                 // )[0].id;
-//               }
-//               if (obj.placeable) {
-//                 socket.player.resources.food -= reqFood;
-//                 socket.player.resources.wood -= reqWood;
-//                 socket.player.resources.stone -= reqStone;
-//                 socket.player.resources.spyllis -= reqSpyllis;
+                socket.player.health = Math.min(
+                  100,
+                  socket.player.health + obj.heal
+                );
+                var playerWeaponObjects = [];
+                socket.player.weapons.forEach((w) => {
+                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
+                });
+                socket.player.weapon = playerWeaponObjects.filter(
+                  (x) => x && x.isWeapon
+                )[0].id;
+              }
+              if (obj.placeable) {
+                socket.player.resources.food -= reqFood;
+                socket.player.resources.wood -= reqWood;
+                socket.player.resources.stone -= reqStone;
+                socket.player.resources.spyllis -= reqSpyllis;
 
-//                 objCache.push({
-//                   id: 2,
-//                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
-//                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
-//                   health: obj.health,
-//                   maxHealth: obj.maxHealth,
-//                   xWiggle: 0,
-//                   yWiggle: 0,
-//                 });
-//                 // var playerWeaponObjects = [];
-//                 // socket.player.weapons.forEach((w) => {
-//                 //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
-//                 // });
-//                 // socket.player.weapon = playerWeaponObjects.filter(
-//                 //   (x) => x && x.isWeapon
-//                 // )[0].id;
-//               }
-//             }
-//           }
+                objCache.push({
+                  id: 2,
+                  x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                  y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                  health: obj.health,
+                  maxHealth: obj.maxHealth,
+                  xWiggle: 0,
+                  yWiggle: 0,
+                });
+                var playerWeaponObjects = [];
+                socket.player.weapons.forEach((w) => {
+                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
+                });
+                socket.player.weapon = playerWeaponObjects.filter(
+                  (x) => x && x.isWeapon
+                )[0].id;
+              }
+            }
+          }
           break;
         case "s":
           var id = msg[1][0] - 1;

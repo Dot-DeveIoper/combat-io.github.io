@@ -952,7 +952,7 @@ function setSkin(num) {
     var resourcesHeight = 40;
 
     if (myPlayer.resources)
-      for (let v = 0; v < trees.length; v++) {
+      for (let v = 0; v < trees.length - 2; v++) {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
