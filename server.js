@@ -276,10 +276,11 @@
   */
 
   for (let j = 0; j < 6; j++) {
-    for (let i = 0; i < mapSize / 1; i++) {
+    for (let i = 0; i < mapSize * 2; i++) {
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
-      if (randomy < snowHeight + 500) {
+      // map is 
+      if (randomy < 1000) {
         if (j == 0 || j == 1) continue;
       }
       // if (
