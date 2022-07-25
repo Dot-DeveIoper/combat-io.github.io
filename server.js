@@ -276,28 +276,31 @@
   */
 
   for (let j = 0; j < 6; j++) {
-    for (let i = 0; i < mapSize * 2; i++) {
+    for (let i = 0; i < mapSize / 100; i++) {
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
-      // map is 
+      // map is 6:1 ratio
       if (randomy < 1000) {
         if (j == 0 || j == 1) continue;
       }
-      // if (
-      //   randomy > mapSize - moltenHeight - riverHeight - 100 &&
-      //   randomy < mapSize - moltenHeight + 100
-      // ) {
-      //   if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
-      // }
-      // if (randomy > mapSize - moltenHeight - 100) {
-      //   if (j == 0 || j == 1 || j == 4 || j == 5) continue;
-      // }
-      // if (
-      //   randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
-      //   randomy < mapSize - moltenHeight - riverHeight + 100
-      // ) {
-      //   if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
-      // }
+      if (randomy > 1000) {
+        if (j == 4 || j == 5) continue;
+      }
+      if (
+        randomy > mapSize - moltenHeight - riverHeight - 100 &&
+        randomy < mapSize - moltenHeight + 100
+      ) {
+        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+      }
+      if (randomy > mapSize - moltenHeight - 100) {
+        if (j == 0 || j == 1 || j == 4 || j == 5) continue;
+      }
+      if (
+        randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
+        randomy < mapSize - moltenHeight - riverHeight + 100
+      ) {
+        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+      }
       var object = {
         x: randomx,
         y: randomy,
@@ -348,7 +351,6 @@
       name: "Orange",
       cost: {
         food: 10,
-        Food2: 1,
       },
       heal: 20,
     },
@@ -905,8 +907,8 @@
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
             var reqSpyllis = obj.cost.spyllis || 0;
-            var reqFood2 = obj.cost.food2 || 0;
-            var reqWood2 = obj.cost.wood2 || 0;
+            var reqFood2 = obj.cost.food || 0;
+            var reqWood2 = obj.cost.wood || 0;
 
             var haveFood = socket.player.resources.food >= reqFood;
             var haveWood = socket.player.resources.wood >= reqWood;
