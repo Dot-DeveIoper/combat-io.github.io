@@ -282,7 +282,7 @@
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
       if (randomy > mapSize - snowHeight - 100) {
-        if (j == 0 || j == 1 ||) continue;
+        if (j == 0 || j == 1) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - 100 &&
@@ -420,6 +420,8 @@
       stone: 0,
       gold: 0,
       spyllis: 0,
+      food2: 0,
+      wood2: 0,
     };
   }
 
@@ -718,6 +720,9 @@
                       ? "stone"
                       : tree.id == 3
                       ? "spyllis"
+                    : tree.id == 4
+                      ? "wood2"
+                    
                       : test
                   ] += weapon.gather;
                   player.xp += weapon.gather;

@@ -660,10 +660,9 @@ function setSkin(num) {
     ctx.rotate(0);
     ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
     ctx.restore();
-  }
+  } 
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {
-    window.location.href = "#" + x + "||" + y;
     var tree = trees.find((x) => x.id == id);
     if (tree) {
       ctx.save();
