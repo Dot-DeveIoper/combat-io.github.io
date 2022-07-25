@@ -19,10 +19,10 @@ function setSkin(num) {
 }
 
 (function (e) {
+    var SkinID = 6;
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
-  let TEDUSyg = document.getElementById("Skin1");
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -34,14 +34,10 @@ function setSkin(num) {
         settingsToggle.style.zIndex = "1";
         settingsText.innerHTML = "Open Settings";
       }
-    }
+    }     
   };
-  
-    TEDUSyg.onclick = function (e) {
-    if (e.isTrusted) {
-      SkinID = 0;
-    }
-  };
+    settingsToggle.onclick = function (e) {
+
 
   window.onbeforeunload = (e) => {
     return "Are you sure?";
@@ -85,8 +81,7 @@ function setSkin(num) {
   var deathLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
-  var SkinID = 6;
-
+      
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
   }, 10);
