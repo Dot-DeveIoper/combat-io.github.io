@@ -282,7 +282,7 @@
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
       if (randomy > mapSize - snowHeight - 100) {
-        if (j == 0) continue;
+        if (j == 0 || j == 1 ||) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - 100 &&
@@ -291,13 +291,13 @@
         if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
       }
       if (randomy > mapSize - moltenHeight - 100) {
-        if (j == 0) continue;
+        if (j == 0 || j == 1 || j == 4 || j == 5) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
         randomy < mapSize - moltenHeight - riverHeight + 100
       ) {
-        if (j == 0 || j == 3) continue;
+        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
       }
       var object = {
         x: randomx,
