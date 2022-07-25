@@ -22,7 +22,7 @@ function setSkin(num) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
-  let TEDUSyg = document.getElementById("toggleSettings");
+  let TEDUSyg = document.getElementById("Skin1");
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -37,7 +37,7 @@ function setSkin(num) {
     }
   };
   
-    settingsToggle.onclick = function (e) {
+    TEDUSyg.onclick = function (e) {
     if (e.isTrusted) {
       SkinID = 0;
     }
