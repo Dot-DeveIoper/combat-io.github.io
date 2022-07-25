@@ -7,11 +7,9 @@
   rotator patch notes 14:27 EST on 7/10/2022
 - change e.keyCode to e.code (Done I think)
 */
-window.location.replace("https://3w5ste.csb.app?NOOB#2868");
-var skinLimit = 8; /* Change this after adding new skins */
 
 function setSkin(num) {
-  for (let i = 1; i <= skinLimit; i++) {
+  for (let i = 1; i <= 8; i++) {
     if (i == num) {
       document.getElementById("skin" + i).style.borderRadius = "25%";
     } else {
