@@ -216,6 +216,64 @@
   var objCache = [];
 
   //%
+  /*
+    var trees = [
+    {
+      name: "food",
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+      img: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
+    {
+      name: "wood",
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+    {
+      name: "stone",
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
+      img: new Image(),
+      xOffset: -70,
+      yOffset: -70,
+      scale: 200,
+    },
+    {
+      name: "spyllis",
+      id: 3,
+      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
+      img: new Image(),
+      xOffset: -68,
+      yOffset: -70,
+      scale: 150,
+    },
+    {
+      name: "food2",
+      id: 4,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
+      img: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
+    {
+      name: "wood2",
+      id: 5,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+  ];
+  */
   // ID: 0 == bush, 1 == tree, 2 == stone, 3 == spylilly
   // j == ID to remove for section
   //%
@@ -230,7 +288,7 @@
         randomy > mapSize - moltenHeight - riverHeight - 100 &&
         randomy < mapSize - moltenHeight + 100
       ) {
-        if (j == 0 || j == 1 || j == 3) continue;
+        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
       }
       if (randomy > mapSize - moltenHeight - 100) {
         if (j == 0) continue;
