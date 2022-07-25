@@ -723,9 +723,9 @@
                       : tree.id == 3
                       ? "spyllis"
                       : tree.id == 4
-                      ? "wood2"
-                      : tree.id == 5
                       ? "food2"
+                      : tree.id == 5
+                      ? "wood2"
                       : test
                   ] += weapon.gather;
                   player.xp += weapon.gather;
@@ -914,8 +914,8 @@
             var haveWood = socket.player.resources.wood >= reqWood;
             var haveStone = socket.player.resources.stone >= reqStone;
             var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
-            var haveFood2 = socket.player.resources.food2 >= reqFood2;
-            var haveWood2 = socket.player.resources.wood2 >= reqWood2;
+            var haveFood2 = socket.player.resources.food >= reqFood;
+            var haveWood2 = socket.player.resources.wood >= reqWood;
 
             if (haveFood && haveWood && haveStone && haveSpyllis && haveFood2 && haveWood2) {
               if (obj.heal && socket.player.health < 100) {
@@ -923,8 +923,8 @@
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
                 socket.player.resources.spyllis -= reqSpyllis;
-                socket.player.resources.food2 -= reqFood2;
-                socket.player.resources.wood2 -= reqWood2;
+                socket.player.resources.food -= reqFood;
+                socket.player.resources.wood -= reqWood;
 
                 socket.player.health = Math.min(
                   100,
@@ -943,8 +943,8 @@
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
                 socket.player.resources.spyllis -= reqSpyllis;
-                socket.player.resources.food2 -= reqFood2;
-                socket.player.resources.wood2 -= reqWood2;
+                socket.player.resources.food -= reqFood;
+                socket.player.resources.wood -= reqWood;
 
                 objCache.push({
                   id: 2,
@@ -969,6 +969,12 @@
         case "s":
           var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
+            if (id === 5) {
+              socket.player.weapon = 0;
+            }
+            if (id === 5) {
+              socket.player.weapon = 0;
+            }
             socket.player.weapon = id;
           }
           break;
