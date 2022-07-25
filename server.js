@@ -281,24 +281,24 @@
     for (let i = 0; i < mapSize / 100; i++) {
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
-      if (randomy > mapSize - snowHeight - 100) {
-        if (j == 0 || j == 1) continue;
-      }
-      if (
-        randomy > mapSize - moltenHeight - riverHeight - 100 &&
-        randomy < mapSize - moltenHeight + 100
-      ) {
-        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
-      }
-      if (randomy > mapSize - moltenHeight - 100) {
-        if (j == 0 || j == 1 || j == 4 || j == 5) continue;
-      }
-      if (
-        randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
-        randomy < mapSize - moltenHeight - riverHeight + 100
-      ) {
-        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
-      }
+      // if (randomy > mapSize - snowHeight - 100) {
+      //   if (j == 0 || j == 1) continue;
+      // }
+      // if (
+      //   randomy > mapSize - moltenHeight - riverHeight - 100 &&
+      //   randomy < mapSize - moltenHeight + 100
+      // ) {
+      //   if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+      // }
+      // if (randomy > mapSize - moltenHeight - 100) {
+      //   if (j == 0 || j == 1 || j == 4 || j == 5) continue;
+      // }
+      // if (
+      //   randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
+      //   randomy < mapSize - moltenHeight - riverHeight + 100
+      // ) {
+      //   if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+      // }
       var object = {
         x: randomx,
         y: randomy,
@@ -349,6 +349,7 @@
       name: "Orange",
       cost: {
         food: 10,
+        Food2: 1,
       },
       heal: 20,
     },
@@ -720,9 +721,10 @@
                       ? "stone"
                       : tree.id == 3
                       ? "spyllis"
-                    : tree.id == 4
+                      : tree.id == 4
                       ? "wood2"
-                    
+                      : tree.id == 5
+                      ? "food2"
                       : test
                   ] += weapon.gather;
                   player.xp += weapon.gather;
@@ -814,6 +816,8 @@
         stone: 100,
         gold: 100,
         spyllis: 100,
+        food2: 100,
+        wood2: 100,
       },
     };
     socket.player.spawned = false;
@@ -902,18 +906,24 @@
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
             var reqSpyllis = obj.cost.spyllis || 0;
+            var reqFood2 = obj.cost.food2 || 0;
+            var reqWood2 = obj.cost.wood2 || 0;
 
             var haveFood = socket.player.resources.food >= reqFood;
             var haveWood = socket.player.resources.wood >= reqWood;
             var haveStone = socket.player.resources.stone >= reqStone;
             var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
+            var haveFood2 = socket.player.resources.food2 >= reqFood2;
+            var haveWood2 = socket.player.resources.wood2 >= reqWood2;
 
-            if (haveFood && haveWood && haveStone && haveSpyllis) {
+            if (haveFood && haveWood && haveStone && haveSpyllis && haveFood2 && haveWood2) {
               if (obj.heal && socket.player.health < 100) {
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
                 socket.player.resources.spyllis -= reqSpyllis;
+                socket.player.resources.food2 -= reqFood2;
+                socket.player.resources.wood2 -= reqWood2;
 
                 socket.player.health = Math.min(
                   100,
@@ -932,6 +942,8 @@
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
                 socket.player.resources.spyllis -= reqSpyllis;
+                socket.player.resources.food2 -= reqFood2;
+                socket.player.resources.wood2 -= reqWood2;
 
                 objCache.push({
                   id: 2,
