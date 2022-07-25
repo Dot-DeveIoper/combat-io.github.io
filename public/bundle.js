@@ -515,10 +515,8 @@ function setSkin(num) {
     ); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
-      drawBody(player, x, y, player.aimdir, player.sid);
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
-      drawBody(player, x, y, player.aimdir, player.sid);
       drawWeapon(
         player,
         x,
@@ -555,7 +553,20 @@ function setSkin(num) {
     ctx.restore();
   }
   function drawBody(player, x, y, rot, sid) {
-    var skin = skins.find((x) => x.id == player.skin);
+
+
+  }
+  function drawObject(x, y, rot, id) {
+    var ob = objects.find((x) => x.id == id);
+    var img = ob.img;
+    if (img) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(0);
+      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+      ctx.restore();
+    }
+      var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
@@ -630,19 +641,8 @@ function setSkin(num) {
         skin.scale,
         skin.scale
       );
-    }
+                                  }
     ctx.restore();
-  }
-  function drawObject(x, y, rot, id) {
-    var ob = objects.find((x) => x.id == id);
-    var img = ob.img;
-    if (img) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(0);
-      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
-      ctx.restore();
-    }
   }
   function drawAnimal(x, y, rot, id) {
     var ob = animals.find((x) => x.id == id);
