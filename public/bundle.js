@@ -37,7 +37,7 @@ function setSkin(num) {
       }
     }
   };
-  
+
   window.onbeforeunload = (e) => {
     return "Are you sure?";
   };
@@ -113,7 +113,7 @@ function setSkin(num) {
         ))
     );
   }
-  
+
   setInterval(() => {
     window.console = {
       log: function (e) {
@@ -132,7 +132,8 @@ function setSkin(num) {
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  },
+    1000);
 
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
@@ -168,13 +169,14 @@ function setSkin(num) {
           if (audio1.volume > 1) {
             clearInterval(fadeInAudio);
           }
-        }, 10);
+        },
+          10);
       }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
-      msg +
-      "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
+    msg +
+    "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
   }
 
   function toRad(angle) {
@@ -184,7 +186,8 @@ function setSkin(num) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   function sn(e) {
-    send(["ch", [e]]);
+    send(["ch",
+      [e]]);
   }
 
   var nausea = false;
@@ -199,12 +202,12 @@ function setSkin(num) {
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
-      .getElementById("h-item-" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
-        }
-      });
+    .getElementById("h-item-" + i)
+    .addEventListener("click", function (e) {
+      if (e.isTrusted) {
+        send(["s", [inventory[i + 1]]]);
+      }
+    });
   }
 
   var riverBubbles = [];
@@ -237,29 +240,28 @@ function setSkin(num) {
 
   var texts = [];
 
-  var skins = [
-    {
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
-      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png",
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png",
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png",
-      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png",
-      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png",
-      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png",
-      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png",
-      img: new Image(),
-      img1: new Image(),
-      img2: new Image(),
-      img3: new Image(),
-      img4: new Image(),
-      img5: new Image(),
-      img6: new Image(),
-      img7: new Image(),
-      xOffset: -35,
-      yOffset: -35,
-      scale: 70,
-    },
+  var skins = [{
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
+    src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png",
+    src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png",
+    src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png",
+    src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png",
+    src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png",
+    src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png",
+    src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png",
+    img: new Image(),
+    img1: new Image(),
+    img2: new Image(),
+    img3: new Image(),
+    img4: new Image(),
+    img5: new Image(),
+    img6: new Image(),
+    img7: new Image(),
+    xOffset: -35,
+    yOffset: -35,
+    scale: 70,
+  },
   ];
   skins.forEach((w) => {
     w.img.src = w.src;
@@ -285,18 +287,17 @@ function setSkin(num) {
       w.img7.src = w.src7;
     }
   });
-  var trees = [
-    {
-      name: "food",
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
-      img: new Image(),
-      img2: new Image(),
-      xOffset: -60,
-      yOffset: -63,
-      scale: 120,
-    },
+  var trees = [{
+    name: "food",
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+    src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
+    img: new Image(),
+    img2: new Image(),
+    xOffset: -60,
+    yOffset: -63,
+    scale: 120,
+  },
     {
       name: "wood",
       id: 1,
@@ -330,16 +331,15 @@ function setSkin(num) {
     },
   ];
 
-  var weapons = [
-    {
-      id: 0,
-      name: "Tool Hammer",
-      src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
-      scale: 100,
-      img: new Image(),
-      xOffset: -20,
-      yOffset: -30,
-    },
+  var weapons = [{
+    id: 0,
+    name: "Tool Hammer",
+    src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
+    scale: 100,
+    img: new Image(),
+    xOffset: -20,
+    yOffset: -30,
+  },
     {
       id: 1,
       name: "Orange",
@@ -371,16 +371,15 @@ function setSkin(num) {
     },
   ];
 
-  var objects = [
-    {
-      id: 2,
-      name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 80,
-      img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
+  var objects = [{
+    id: 2,
+    name: "Spike",
+    src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+    scale: 80,
+    img: new Image(),
+    xOffset: -50,
+    yOffset: -50,
+  },
     {
       id: 3,
       name: "Wall",
@@ -392,16 +391,15 @@ function setSkin(num) {
     },
   ];
 
-  var animals = [
-    {
-      id: 0,
-      name: "Cow",
-      src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
-      scale: 200,
-      img: new Image(),
-      xOffset: 0,
-      yOffset: 0,
-    },
+  var animals = [{
+    id: 0,
+    name: "Cow",
+    src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
+    scale: 200,
+    img: new Image(),
+    xOffset: 0,
+    yOffset: 0,
+  },
   ];
 
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
@@ -435,7 +433,8 @@ function setSkin(num) {
     setInterval(() => {
       localStorage.name = document.querySelector("#nameInput").value;
     }, 50);
-  }, 1000);
+  },
+    1000);
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -451,7 +450,10 @@ function setSkin(num) {
   function relative(pos) {
     var canvasX = canvas.width / 2 + pos.x - myPlayer.x;
     var canvasY = canvas.height / 2 + pos.y - myPlayer.y;
-    return { x: canvasX, y: canvasY };
+    return {
+      x: canvasX,
+      y: canvasY
+    };
   }
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -502,13 +504,13 @@ function setSkin(num) {
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "[DEV]" : ""}  ${player.name}`,
+      `${player.admin ? "[DEV]": ""}  ${player.name}`,
       x - -27,
       y - 50,
       100
     );
     ctx.fillText(
-      `${player.admin ? "[DEV]" : ""} ${player.name}`,
+      `${player.admin ? "[DEV]": ""} ${player.name}`,
       x - -27,
       y - 50,
       100
@@ -542,7 +544,7 @@ function setSkin(num) {
 
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
-    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
+    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07": "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
   }
@@ -595,7 +597,7 @@ function setSkin(num) {
         skin.scale
       );
     }
-        if (SkinID === 4) {
+    if (SkinID === 4) {
       ctx.drawImage(
         skin.img4,
         skin.xOffset,
@@ -604,7 +606,7 @@ function setSkin(num) {
         skin.scale
       );
     }
-        if (SkinID === 5) {
+    if (SkinID === 5) {
       ctx.drawImage(
         skin.img5,
         skin.xOffset,
@@ -612,8 +614,8 @@ function setSkin(num) {
         skin.scale,
         skin.scale
       );
-        }
-                  if (SkinID === 6) {
+    }
+    if (SkinID === 6) {
       ctx.drawImage(
         skin.img6,
         skin.xOffset,
@@ -621,8 +623,8 @@ function setSkin(num) {
         skin.scale,
         skin.scale
       );
-                  }
-                            if (SkinID === 7) {
+    }
+    if (SkinID === 7) {
       ctx.drawImage(
         skin.img7,
         skin.xOffset,
@@ -674,12 +676,12 @@ function setSkin(num) {
     }
   }
   window.requestAnimFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (e) {
-      window.setTimeout(e, 1000 / 60);
-    };
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function (e) {
+    window.setTimeout(e, 1000 / 60);
+  };
 
   function update() {
     var moveX = 0;
@@ -726,10 +728,10 @@ function setSkin(num) {
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight,
+      myPlayer.y +
+      canvas.height / 2 -
+      moltenHeight -
+      moltenRiverHeight,
       canvas.width,
       moltenRiverHeight
     );
@@ -768,11 +770,11 @@ function setSkin(num) {
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight -
-        beachHeight,
+      myPlayer.y +
+      canvas.height / 2 -
+      moltenHeight -
+      moltenRiverHeight -
+      beachHeight,
       canvas.width,
       beachHeight
     );
@@ -812,7 +814,9 @@ function setSkin(num) {
     window.players = players;
     players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
-        var rel = relative({ x: player.x, y: player.y });
+        var rel = relative({
+          x: player.x, y: player.y
+        });
         var x = rel.x;
         var y = rel.y;
         drawPlayer(x, y, player);
@@ -824,7 +828,9 @@ function setSkin(num) {
 
     // traps and stuff
     objCache.forEach((object) => {
-      var rel = relative({ x: object.x, y: object.y });
+      var rel = relative({
+        x: object.x, y: object.y
+      });
       drawObject(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
@@ -835,7 +841,9 @@ function setSkin(num) {
 
     // trees, stones etc
     treesCache.forEach((object) => {
-      var rel = relative({ x: object.x, y: object.y });
+      var rel = relative({
+        x: object.x, y: object.y
+      });
       drawTree(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
@@ -846,7 +854,9 @@ function setSkin(num) {
 
     // animals
     animalsCache.forEach((animal) => {
-      var rel = relative({ x: animal.x, y: animal.y });
+      var rel = relative({
+        x: animal.x, y: animal.y
+      });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
 
@@ -883,7 +893,7 @@ function setSkin(num) {
       );
       ctx.textAlign = "right";
       var goldFormatted =
-        leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
+      leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k": leader.gold;
       ctx.fillText(
         goldFormatted,
         canvas.width - leaderboardOffset * 2,
@@ -936,42 +946,41 @@ function setSkin(num) {
 
     if (myPlayer.resources)
       for (let v = 0; v < trees.length; v++) {
-        var res = trees[v];
-        var last3Style = ctx.fillStyle;
-        ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
-        ctx.fillRect(
-          minimapOffset,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * v),
-          resourcesWidth,
-          resourcesHeight
-        );
-        ctx.fillStyle = last3Style;
-        ctx.save();
-        ctx.translate(
-          minimapOffset + resourcesWidth - 30,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * v) +
-            10
-        );
-        ctx.textAlign = "left";
-        ctx.fillText(myPlayer.resources[res.name], -50, 15);
-        ctx.drawImage(res.img, -8, -7, 35, 35);
-        ctx.restore();
-      }
+      var res = trees[v];
+      var last3Style = ctx.fillStyle;
+      ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
+      ctx.fillRect(
+        minimapOffset,
+        canvas.height -
+        (minimapSize +
+          minimapOffset * 2 +
+          resourcesMinimapOffset +
+          resourcesOffset * v),
+        resourcesWidth,
+        resourcesHeight
+      );
+      ctx.fillStyle = last3Style;
+      ctx.save();
+      ctx.translate(
+        minimapOffset + resourcesWidth - 30,
+        canvas.height -
+        (minimapSize +
+          minimapOffset * 2 +
+          resourcesMinimapOffset +
+          resourcesOffset * v) +
+        10
+      );
+      ctx.textAlign = "left";
+      ctx.fillText(myPlayer.resources[res.name], -50, 15);
+      ctx.drawImage(res.img, -8, -7, 35, 35);
+      ctx.restore();
+    }
   }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
-        ? (document.getElementById("nameInput").value = [])
-        : (document.getElementById("nameInput").value = localStorage.name);
+      ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);
     }, 500);
     ws.addEventListener("open", function () {
       document.getElementById("menuCardHolder").style.display = "block";
@@ -997,74 +1006,76 @@ function setSkin(num) {
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
               document.getElementById("h-item-" + w).style.display =
-                "inline-block";
+              "inline-block";
             });
-          case "33":
-            players = msg[1][0];
-            players.forEach((p) => {
-              if (!swingAngle[p.sid]) {
-                swingAngle[p.sid] = 0;
-              }
-              if (p.sid == myPlayer.sid) {
-                myPlayer = p;
-                window.me = myPlayer;
-              }
-            });
-            break;
-          case "p":
-            ping = Date.now() - lastping;
-            break;
-          case "7":
-            var sid = msg[1][0];
-            var angle = 120;
-            var multi = 1;
-            var add = 1;
-            for (let i = 0; i < angle; i++) {
-              setTimeout(() => {
-                swingAngle[sid] += add;
-              }, i * multi);
-            }
-            setTimeout(() => {
+            case "33":
+              players = msg[1][0];
+              players.forEach((p) => {
+                if (!swingAngle[p.sid]) {
+                  swingAngle[p.sid] = 0;
+                }
+                if (p.sid == myPlayer.sid) {
+                  myPlayer = p;
+                  window.me = myPlayer;
+                }
+              });
+              break;
+            case "p":
+              ping = Date.now() - lastping;
+              break;
+            case "7":
+              var sid = msg[1][0];
+              var angle = 120;
+              var multi = 1;
+              var add = 1;
               for (let i = 0; i < angle; i++) {
                 setTimeout(() => {
-                  swingAngle[sid] -= add;
+                  swingAngle[sid] += add;
                 }, i * multi);
               }
-            }, angle * multi + 40);
-            break;
-          case "d":
-            mainMenu.style.display = "block";
-            if (soundOn) {
-              if (AudioOn === "true") {
-                audio1.play();
-                const fadeInAudio = setInterval(() => {
-                  if (audio1.volume <= 1) {
-                    audio1.volume += 0.01111111111111111111111111111111111111;
-                  }
+              setTimeout(() => {
+                for (let i = 0; i < angle; i++) {
+                  setTimeout(() => {
+                    swingAngle[sid] -= add;
+                  }, i * multi);
+                }
+              },
+                angle * multi + 40);
+              break;
+            case "d":
+              mainMenu.style.display = "block";
+              if (soundOn) {
+                if (AudioOn === "true") {
+                  audio1.play();
+                  const fadeInAudio = setInterval(() => {
+                    if (audio1.volume <= 1) {
+                      audio1.volume += 0.01111111111111111111111111111111111111;
+                    }
 
-                  if (audio1.volume > 1) {
-                    clearInterval(fadeInAudio);
-                  }
-                }, 10);
+                    if (audio1.volume > 1) {
+                      clearInterval(fadeInAudio);
+                    }
+                  },
+                    10);
+                }
               }
-            }
-            for (let i = 0; i < 11; i++) {
-              document.getElementById("h-item-" + i).style.display = "none";
-            }
-            break;
-          case "o":
-            treesCache = msg[1][0];
-            break;
-          case "b":
-            leaderboard = msg[1][0];
-            break;
-          case "x":
-            objCache = msg[1][0];
-            break;
-          case "a":
-            animalsCache = msg[1][0];
-            window.animals = animalsCache;
-            break;
+              for (let i = 0; i < 11; i++) {
+                document.getElementById("h-item-" + i).style.display = "none";
+              }
+              break;
+            case "o":
+              treesCache = msg[1][0];
+              break;
+            case "b":
+              leaderboard = msg[1][0];
+              break;
+            case "x":
+              objCache = msg[1][0];
+              break;
+            case "a":
+              animalsCache = msg[1][0];
+              window.animals = animalsCache;
+              break;
         }
       });
     });
@@ -1080,228 +1091,250 @@ function setSkin(num) {
     }
   });
 
-  canvas.addEventListener("mouseup", function (e) {
-    if (e.isTrusted && !autohitting) {
-      attacking = false;
-      send(["c", [0]]);
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohitting == true) {
-        AutoHit = false;
-        autohittingwason = true;
+  canvas.addEventListener("mouseup",
+    function (e) {
+      if (e.isTrusted && !autohitting) {
+        attacking = false;
+        send(["c", [0]]);
       }
-      e.isTrusted && (!0, send(["c", [1]]));
-    }
-  });
-  document.addEventListener("keyup", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohittingwason == true)
-        return (autohittingwason = false), (AutoHit = true);
-      e.isTrusted && (!1, send(["c", [0]]));
-    }
-  });
-  document.addEventListener("keypress", function (e) {
-    if (document.activeElement.id.toLowerCase() !== "chatbox") {
-      if (e.key == "x") {
-        lockDir = !lockDir;
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohitting == true) {
+          AutoHit = false;
+          autohittingwason = true;
+        }
+        e.isTrusted && (!0, send(["c", [1]]));
       }
-      if (e.key == "e") {
-        AutoHit = !AutoHit;
-        if (AutoHit) {
-          autohitting = true;
-          e.isTrusted && (!0, send(["c", [1]]));
-        } else if (!AutoHit) {
-          autohitting = false;
-          e.isTrusted && (!1, send(["c", [0]]));
+    });
+  document.addEventListener("keyup",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohittingwason == true)
+          return (autohittingwason = false),
+        (AutoHit = true);
+        e.isTrusted && (!1, send(["c", [0]]));
+      }
+    });
+  document.addEventListener("keypress",
+    function (e) {
+      if (document.activeElement.id.toLowerCase() !== "chatbox") {
+        if (e.key == "x") {
+          lockDir = !lockDir;
+        }
+        if (e.key == "e") {
+          AutoHit = !AutoHit;
+          if (AutoHit) {
+            autohitting = true;
+            e.isTrusted && (!0, send(["c", [1]]));
+          } else if (!AutoHit) {
+            autohitting = false;
+            e.isTrusted && (!1, send(["c", [0]]));
+          }
         }
       }
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.QUICK_FOOD:
-          var sn;
-          inventory.forEach((item) => {
-            var itm = weapons.find((x) => x.id == item);
-            if (itm && itm.food) {
-              sn = itm.id;
-              if (myPlayer.weapon == sn) {
-                send(["s", [inventory[1]]]);
-              } else {
-                send(["s", [sn + 1]]);
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.QUICK_FOOD:
+            var sn;
+            inventory.forEach((item) => {
+              var itm = weapons.find((x) => x.id == item);
+              if (itm && itm.food) {
+                sn = itm.id;
+                if (myPlayer.weapon == sn) {
+                  send(["s", [inventory[1]]]);
+                } else {
+                  send(["s", [sn + 1]]);
+                }
+                return;
               }
-              return;
-            }
           });
           break;
-        case keycodes.HOTBAR_1:
-          send(["s", [inventory[1]]]);
-          break;
-        case keycodes.HOTBAR_2:
-          send(["s", [inventory[2]]]);
-          break;
-        case keycodes.HOTBAR_3:
-          send(["s", [inventory[3]]]);
-          break;
-        case keycodes.HOTBAR_4:
-          send(["s", [inventory[4]]]);
-          break;
-        case keycodes.HOTBAR_5:
-          send(["s", [inventory[5]]]);
-          break;
-        case keycodes.HOTBAR_6:
-          send(["s", [inventory[6]]]);
-          break;
-        case keycodes.HOTBAR_7:
-          send(["s", [inventory[7]]]);
-          break;
-        case keycodes.HOTBAR_8:
-          send(["s", [inventory[8]]]);
-          break;
-        case keycodes.HOTBAR_9:
-          send(["s", [inventory[9]]]);
-          break;
-        case 82:
-          //nausea = !nausea;
-          break;
-        case keycodes.MOVE_UP:
-          moveUp = 1;
-          break;
-        case keycodes.MOVE_DOWN:
-          moveDown = 1;
-          break;
-        case keycodes.MOVE_LEFT:
-          moveLeft = 1;
-          break;
-        case keycodes.MOVE_RIGHT:
-          moveRight = 1;
-          break;
-        case keycodes.MOVE_UP2:
-          moveUp = 1;
-          break;
-        case keycodes.MOVE_DOWN2:
-          moveDown = 1;
-          break;
-        case keycodes.MOVE_LEFT2:
-          moveLeft = 1;
-          break;
-        case keycodes.MOVE_RIGHT2:
-          moveRight = 1;
-          break;
-        case keycodes.CHAT:
-          if (chatbox.style.display == "none") {
-            chatbox.style.display = "block";
-            chatbox.focus();
-          } else {
-            chatbox.style.display = "none";
-            if (chatbox.value) {
-              send(["ch", [chatbox.value]]);
-              chatbox.value = "";
+          case keycodes.HOTBAR_1:
+            send(["s",
+              [inventory[1]]]);
+            break;
+          case keycodes.HOTBAR_2:
+            send(["s",
+              [inventory[2]]]);
+            break;
+          case keycodes.HOTBAR_3:
+            send(["s",
+              [inventory[3]]]);
+            break;
+          case keycodes.HOTBAR_4:
+            send(["s",
+              [inventory[4]]]);
+            break;
+          case keycodes.HOTBAR_5:
+            send(["s",
+              [inventory[5]]]);
+            break;
+          case keycodes.HOTBAR_6:
+            send(["s",
+              [inventory[6]]]);
+            break;
+          case keycodes.HOTBAR_7:
+            send(["s",
+              [inventory[7]]]);
+            break;
+          case keycodes.HOTBAR_8:
+            send(["s",
+              [inventory[8]]]);
+            break;
+          case keycodes.HOTBAR_9:
+            send(["s",
+              [inventory[9]]]);
+            break;
+          case 82:
+            //nausea = !nausea;
+            break;
+          case keycodes.MOVE_UP:
+            moveUp = 1;
+            break;
+          case keycodes.MOVE_DOWN:
+            moveDown = 1;
+            break;
+          case keycodes.MOVE_LEFT:
+            moveLeft = 1;
+            break;
+          case keycodes.MOVE_RIGHT:
+            moveRight = 1;
+            break;
+          case keycodes.MOVE_UP2:
+            moveUp = 1;
+            break;
+          case keycodes.MOVE_DOWN2:
+            moveDown = 1;
+            break;
+          case keycodes.MOVE_LEFT2:
+            moveLeft = 1;
+            break;
+          case keycodes.MOVE_RIGHT2:
+            moveRight = 1;
+            break;
+          case keycodes.CHAT:
+            if (chatbox.style.display == "none") {
+              chatbox.style.display = "block";
+              chatbox.focus();
+            } else {
+              chatbox.style.display = "none";
+              if (chatbox.value) {
+                send(["ch", [chatbox.value]]);
+                chatbox.value = "";
+              }
             }
-          }
-          break;
-      }
-    }
-  });
-  document.addEventListener("keyup", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.MOVE_UP:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT:
-          moveRight = 0;
-          break;
-        case keycodes.MOVE_UP2:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN2:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT2:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT2:
-          moveRight = 0;
-          break;
-      }
-    }
-  });
-
-  window.addEventListener("resize", function (e) {
-    if (e.isTrusted) {
-      resizeCanvas();
-    }
-  });
-
-  canvas.addEventListener("mousemove", function (e) {
-    if (e.isTrusted && !lockDir) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      aim = Math.atan2(
-        e.clientY - canvas.height / 2,
-        e.clientX - canvas.width / 2
-      );
-    }
-  });
-
-  canvas.addEventListener("contextmenu", function (e) {
-    if (e.isTrusted) {
-      e.preventDefault();
-    }
-  });
-
-  sound.addEventListener("click", function (e) {
-    if (sound.checked) {
-      soundOn = false;
-      localStorage.setItem("AudioOn", "false");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.pause();
-    } else {
-      soundOn = true;
-      localStorage.setItem("AudioOn", "true");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.play();
-    }
-  });
-
-  enterGame.addEventListener("click", function (e) {
-    if (SpawnedOnce == 1) {
-      if (soundOn) {
-        if (AudioOn === "true") {
-          var fadeOutAudio = setInterval(() => {
-            if (audio1.volume >= 0.009) {
-              audio1.volume -= 0.01111111111111111111111111111111111111;
-            }
-
-            if (audio1.volume <= 0.1) {
-              audio1.pause();
-              clearInterval(fadeOutAudio);
-            }
-          }, 10);
+            break;
         }
       }
-      var minimapOffset = 20;
-      var minimapSize = 200;
-      deathLocX = myPlayer.y * (minimapSize / mapSize);
-      deathLocY = myPlayer.y * (minimapSize / mapSize);
-    }
-  });
+    });
+  document.addEventListener("keyup",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.MOVE_UP:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT:
+            moveRight = 0;
+            break;
+          case keycodes.MOVE_UP2:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN2:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT2:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT2:
+            moveRight = 0;
+            break;
+        }
+      }
+    });
+
+  window.addEventListener("resize",
+    function (e) {
+      if (e.isTrusted) {
+        resizeCanvas();
+      }
+    });
+
+  canvas.addEventListener("mousemove",
+    function (e) {
+      if (e.isTrusted && !lockDir) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        aim = Math.atan2(
+          e.clientY - canvas.height / 2,
+          e.clientX - canvas.width / 2
+        );
+      }
+    });
+
+  canvas.addEventListener("contextmenu",
+    function (e) {
+      if (e.isTrusted) {
+        e.preventDefault();
+      }
+    });
+
+  sound.addEventListener("click",
+    function (e) {
+      if (sound.checked) {
+        soundOn = false;
+        localStorage.setItem("AudioOn", "false");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.pause();
+      } else {
+        soundOn = true;
+        localStorage.setItem("AudioOn", "true");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.play();
+      }
+    });
+
+  enterGame.addEventListener("click",
+    function (e) {
+      if (SpawnedOnce == 1) {
+        if (soundOn) {
+          if (AudioOn === "true") {
+            var fadeOutAudio = setInterval(() => {
+              if (audio1.volume >= 0.009) {
+                audio1.volume -= 0.01111111111111111111111111111111111111;
+              }
+
+              if (audio1.volume <= 0.1) {
+                audio1.pause();
+                clearInterval(fadeOutAudio);
+              }
+            },
+              10);
+          }
+        }
+        var minimapOffset = 20;
+        var minimapSize = 200;
+        deathLocX = myPlayer.y * (minimapSize / mapSize);
+        deathLocY = myPlayer.y * (minimapSize / mapSize);
+      }
+    });
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {
@@ -1314,14 +1347,19 @@ function setSkin(num) {
             audio1.pause();
             clearInterval(fadeOutAudio);
           }
-        }, 10);
+        },
+          10);
       }
       mainMenu.style.display = "none";
       SpawnedOnce = 1;
-      send(["j", [{ name: document.getElementById("nameInput").value }]]);
+      send(["j",
+        [{
+          name: document.getElementById("nameInput").value
+        }]]);
       setInterval(() => {
         window.requestAnimFrame(update);
-      }, 1);
+      },
+        1);
       riverBubbles = [];
       for (let j = 0; j < 30; j++) {
         setTimeout(() => {
