@@ -114,7 +114,7 @@ function setSkin(num) {
     );
   }
 
-  setInterval(() => {
+  /*setInterval(() => {
     window.console = {
       log: function (e) {
         kick("unfair advantage");
@@ -133,7 +133,7 @@ function setSkin(num) {
       ws.close(1000, "unfair advantage");
     }
   },
-    1000);
+    1000);*/
 
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
@@ -394,7 +394,7 @@ function setSkin(num) {
   var animals = [{
     id: 0,
     name: "Cow",
-    src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
     scale: 200,
     img: new Image(),
     xOffset: 0,
@@ -657,7 +657,6 @@ function setSkin(num) {
   }
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {
-      console.log(x,y);
     var tree = trees.find((x) => x.id == id);
     var img = "";
     if (id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955) {
