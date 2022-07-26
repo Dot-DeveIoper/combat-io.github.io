@@ -155,6 +155,7 @@ function setSkin(num) {
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
+    ageBar.style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
       if (AudioOn === "true") {
@@ -194,6 +195,7 @@ function setSkin(num) {
   chatbox.style.display = "none";
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
+  let ageBar = document.getElementById("ageBar");
   let enterGame = document.getElementById("enterGame");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
@@ -430,6 +432,7 @@ function setSkin(num) {
   });
 
   document.getElementById("menuCardHolder").style.display = "none";
+  ageBar.style.display = "block";
   document.getElementById("loadingText").style.display = "block";
 
   // update the nameInput
@@ -934,7 +937,7 @@ function setSkin(num) {
     if (SpawnedOnce == 1) {
       ctx.beginPath();
       ctx.arc(
-        minimapOffset + deathLocX,
+        minimapOffset + deathLocX + 10,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
         3,
         0,
@@ -1049,6 +1052,7 @@ function setSkin(num) {
             break;
           case "d":
             mainMenu.style.display = "block";
+            ageBar.style.display = "none";
             if (soundOn) {
               if (AudioOn === "true") {
                 audio1.play();
@@ -1332,6 +1336,7 @@ function setSkin(num) {
         }, 10);
       }
       mainMenu.style.display = "none";
+      ageBar.style.display = "block";
       SpawnedOnce = 1;
       send([
         "j",
