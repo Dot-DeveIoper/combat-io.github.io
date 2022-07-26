@@ -7,7 +7,7 @@
   rotator patch notes 14:27 EST on 7/10/2022
 - change e.keyCode to e.code (Done I think)
 */
-
+var SkinID = 6;
 function setSkin(num) {
   for (let i = 1; i <= 8; i++) {
     if (i == num) {
@@ -16,10 +16,10 @@ function setSkin(num) {
       document.getElementById("skin" + i).style.borderRadius = "50%";
     }
   }
+  SkinID = num - 1;
 }
 
 (function (e) {
-    var SkinID = 6;
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
@@ -36,8 +36,6 @@ function setSkin(num) {
       }
     }     
   };
-    settingsToggle.onclick = function (e) {
-
 
   window.onbeforeunload = (e) => {
     return "Are you sure?";
@@ -241,14 +239,14 @@ function setSkin(num) {
   var skins = [
     {
       id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=1658527232679",
-      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png",
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png",
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png",
-      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png",
-      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png",
-      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png",
-      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
+      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
+      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
+      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
+      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
+      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
       img: new Image(),
       img1: new Image(),
       img2: new Image(),
@@ -282,7 +280,7 @@ function setSkin(num) {
     if (w.img6 && w.src6) {
       w.img6.src = w.src6;
     }
-    if (w.img7 && w.src7) {
+    else {
       w.img7.src = w.src7;
     }
   });
