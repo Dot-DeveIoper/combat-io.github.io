@@ -812,7 +812,7 @@ body > #mainMenu {
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .ageBar {
-    margin-bottom: 79px;
+    margin-bottom: 78.5px;
   }
   .ageText {
     font-size: 1.25rem;
@@ -845,8 +845,8 @@ body > #mainMenu {
 .hotbarItem {
   width: 66px;
   height: 66px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 4px;
