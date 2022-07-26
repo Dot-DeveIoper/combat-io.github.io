@@ -766,9 +766,9 @@ body > #mainMenu {
 }
 .ageProgressBar {
   background-color: rgba(0, 0, 0, 0.25);
-  width: 300px;
-  max-width: 300px;
-  min-width: 300px;
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
   height: 14px;
   max-height: 14px;
   min-height: 14px;
@@ -780,7 +780,7 @@ body > #mainMenu {
   background-color: #ffffff;
   width: 0;
   /* width: 194px; */
-  max-width: 294px;
+  max-width: 244px;
   min-width: 0;
   height: 7px;
   max-height: 7px;
