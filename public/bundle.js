@@ -503,20 +503,21 @@ function setSkin(num) {
   function drawPlayer(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
-    ctx.font = '20pt Verdana';
+    ctx.textAlign = 'center';
+    ctx.font = "24px Hammersmith One";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
       `${player.admin ? "[DEV]" : ""}  ${player.name}`,
-      x - -27,
+      x - 7,
       y - 50,
-      100
     );
     ctx.fillText(
       `${player.admin ? "[DEV]" : ""} ${player.name}`,
-      x - -27,
+      x - 7 + 4,
       y - 50,
-      100
     ); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
