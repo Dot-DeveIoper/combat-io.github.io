@@ -281,7 +281,7 @@
       var randomy = randomInt(0, mapSize);
       // map is 6:1 ratio
       if (randomy < 1000) {
-        if (j == 0 || j == 1) continue;
+        if (j == 0 || j == 1 || j == 3) continue;
       }
       if (randomy > 1000) {
         if (j == 4 || j == 5) continue;

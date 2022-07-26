@@ -315,7 +315,7 @@ function setSkin(num) {
     {
       name: "gold",
       id: 3,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658804246324",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658804246324", //gold
       img: new Image(),
       xOffset: -68,
       yOffset: -70,
