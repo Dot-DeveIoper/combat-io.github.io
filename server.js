@@ -276,7 +276,7 @@
   */
 
   for (let j = 0; j < 6; j++) {
-    for (let i = 0; i < mapSize / 100; i++) {
+    for (let i = 0; i < mapSize / 80; i++) {
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
       // map is 6:1 ratio

@@ -280,7 +280,7 @@ function setSkin(num) {
     if (w.img6 && w.src6) {
       w.img6.src = w.src6;
     }
-    else {
+    if (w.img7 && w.src7) {
       w.img7.src = w.src7;
     }
   });
@@ -407,7 +407,7 @@ function setSkin(num) {
     {
       id: 0,
       name: "Cow",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
+      src: "", //"https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
       scale: 200,
       img: new Image(),
       xOffset: 0,
