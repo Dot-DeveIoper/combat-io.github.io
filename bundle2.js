@@ -1,23 +1,40 @@
+// IMPORTANT --- IMPORTANT
+// BUNDLE BACKUP AS OF 07/26/2022 19:14 EST
+
 //?
 // SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
-/*
-  rotator patch notes 14:27 EST on 7/10/2022
-- change e.keyCode to e.code (Done I think)
-*/
+var SkinID = 6;
+function setSkin(num) {
+  for (let i = 1; i <= 8; i++) {
+    if (i == num) {
+      document.getElementById("skin" + i).style.borderRadius = "25%";
+    } else {
+      document.getElementById("skin" + i).style.borderRadius = "50%";
+    }
+  }
+  SkinID = num - 1;
+}
 
 (function (e) {
-  var audio1 = new Audio(
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
-  );
-  audio1.muted = false;
-  audio1.play();
+  let settingsDiv = document.getElementById("rightCardHolder");
+  let settingsToggle = document.getElementById("toggleSettings");
+  let settingsText = document.querySelector("#toggleSettings");
 
-  audio1.addEventListener("ended", (event) => {
-    audio1.play();
-  });
+  settingsToggle.onclick = function (e) {
+    if (e.isTrusted) {
+      if (settingsText.innerHTML === "Open Settings") {
+        settingsDiv.style.display = "inline-block";
+        settingsText.innerHTML = "Close Settings";
+      } else {
+        settingsDiv.style.display = "none";
+        settingsToggle.style.zIndex = "1";
+        settingsText.innerHTML = "Open Settings";
+      }
+    }
+  };
 
   window.onbeforeunload = (e) => {
     return "Are you sure?";
@@ -44,12 +61,9 @@
     HOTBAR_7: "Digit7",
     HOTBAR_8: "Digit8",
     HOTBAR_9: "Digit9",
-
-    // localStorage will also contain hotbar slots
   };
 
   var swingAngle = {};
-
   var inventory = [];
   var autohitting = false;
   var AutoHit = false;
@@ -60,9 +74,10 @@
   var moveLeft = 0;
   var moveRight = 0;
   var SpawnedOnce = 0;
-  var deathLocX = 0;
+  var deathLocX = -40;
   var deathLocY = 0;
   var soundOn = true;
+  var sound = document.getElementById("sound");
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -95,6 +110,7 @@
         ))
     );
   }
+
   setInterval(() => {
     window.console = {
       log: function (e) {
@@ -113,27 +129,52 @@
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  },
+    1000);
+
+  let AudioOn = localStorage.getItem("AudioOn");
+  if (AudioOn === undefined) {
+    localStorage.setItem("AudioOn", "true");
+    AudioOn = localStorage.getItem("AudioOn");
+  }
+  var audio1 = new Audio(
+    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
+  );
+  if (AudioOn === "true") {
+    audio1.play();
+    sound.checked = false;
+  } else {
+    sound.checked = true;
+  }
+  audio1.addEventListener("ended", (event) => {
+    if (AudioOn === "true") {
+      audio1.play();
+    }
+  });
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
+    ageBar.style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
-      audio1.play();
-      const fadeInAudio = setInterval(() => {
-        if (audio1.volume <= 1) {
-          audio1.volume += 0.01111111111111111111111111111111111111;
-        }
+      if (AudioOn === "true") {
+        audio1.play();
+        const fadeInAudio = setInterval(() => {
+          if (audio1.volume <= 1) {
+            audio1.volume += 0.01111111111111111111111111111111111111;
+          }
 
-        if (audio1.volume > 1) {
-          clearInterval(fadeInAudio);
-        }
-      }, 10);
+          if (audio1.volume > 1) {
+            clearInterval(fadeInAudio);
+          }
+        },
+          10);
+      }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
-      msg +
-      "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
+    msg +
+    "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
   }
 
   function toRad(angle) {
@@ -143,8 +184,10 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   function sn(e) {
-    send(["ch", [e]]);
+    send(["ch",
+      [e]]);
   }
+
   var nausea = false;
   var attacking = false;
   let ws;
@@ -153,18 +196,19 @@
   chatbox.style.display = "none";
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
+  let ageBar = document.getElementById("ageBar");
   let enterGame = document.getElementById("enterGame");
-  let sound = document.getElementById("sound");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
-      .getElementById("h-item-" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
-        }
-      });
+    .getElementById("h-item-" + i)
+    .addEventListener("click", function (e) {
+      if (e.isTrusted) {
+        send(["s", [inventory[i + 1]]]);
+      }
+    });
   }
+
   var riverBubbles = [];
   let players = [];
   let myPlayer = {};
@@ -195,40 +239,67 @@
 
   var texts = [];
 
-  var skins = [
-    {
-      id: 0,
-      src: "https://sploop.io/img/entity/player_body.png",
-      img: new Image(),
-      xOffset: -30,
-      yOffset: -30,
-      scale: 60,
-    },
+  var skins = [{
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+    src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+    src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
+    src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
+    src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
+    src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
+    src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
+    src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
+    img: new Image(),
+    img1: new Image(),
+    img2: new Image(),
+    img3: new Image(),
+    img4: new Image(),
+    img5: new Image(),
+    img6: new Image(),
+    img7: new Image(),
+    xOffset: -35,
+    yOffset: -35,
+    scale: 70,
+  },
   ];
   skins.forEach((w) => {
     w.img.src = w.src;
+    if (w.img1 && w.src1) {
+      w.img1.src = w.src1;
+    }
+    if (w.img2 && w.src2) {
+      w.img2.src = w.src2;
+    }
+    if (w.img3 && w.src3) {
+      w.img3.src = w.src3;
+    }
+    if (w.img4 && w.src4) {
+      w.img4.src = w.src4;
+    }
+    if (w.img5 && w.src5) {
+      w.img5.src = w.src5;
+    }
+    if (w.img6 && w.src6) {
+      w.img6.src = w.src6;
+    }
+    if (w.img7 && w.src7) {
+      w.img7.src = w.src7;
+    }
   });
-  var trees = [
-    {
-      name: "food",
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
-      img: new Image(),
-      img2: new Image(),
-      xOffset: -60,
-      yOffset: -63,
-      scale: 120,
-    },
+  var trees = [{
+    name: "food",
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+    img: new Image(),
+    xOffset: -60,
+    yOffset: -63,
+    scale: 120,
+  },
     {
       name: "wood",
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/DesertTree.png?v=1657585803446", // desert tree
       img: new Image(),
-      img2: new Image(),
-      img3: new Image(),
       xOffset: -158,
       yOffset: -160,
       scale: 350,
@@ -236,33 +307,50 @@
     {
       name: "stone",
       id: 2,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574", //stone
       img: new Image(),
-      xOffset: -70,
-      yOffset: -70,
-      scale: 200,
+      xOffset: -100,
+      yOffset: -100,
+      scale: 190,
     },
     {
-      name: "Gold",
+      name: "gold",
       id: 3,
-      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405", //gold
       img: new Image(),
       xOffset: -68,
       yOffset: -70,
       scale: 150,
     },
+    {
+      name: "food2",
+      id: 4,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
+      img: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
+    {
+      name: "wood2",
+      id: 5,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
   ];
 
-  var weapons = [
-    {
-      id: 0,
-      name: "Tool Hammer",
-      src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
-      scale: 100,
-      img: new Image(),
-      xOffset: -25,
-      yOffset: -30,
-    },
+  var weapons = [{
+    id: 0,
+    name: "Tool Hammer",
+    src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
+    scale: 100,
+    img: new Image(),
+    xOffset: -20,
+    yOffset: -30,
+  },
     {
       id: 1,
       name: "Orange",
@@ -294,16 +382,15 @@
     },
   ];
 
-  var objects = [
-    {
-      id: 2,
-      name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 80,
-      img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
+  var objects = [{
+    id: 2,
+    name: "Spike",
+    src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+    scale: 80,
+    img: new Image(),
+    xOffset: -50,
+    yOffset: -50,
+  },
     {
       id: 3,
       name: "Wall",
@@ -315,16 +402,15 @@
     },
   ];
 
-  var animals = [
-    {
-      id: 0,
-      name: "Cow",
-      src: "https://static.wikia.nocookie.net/moom/images/d/d7/Cow_1.png/revision/latest?cb=20170708201503",
-      scale: 200,
-      img: new Image(),
-      xOffset: 0,
-      yOffset: 0,
-    },
+  var animals = [{
+    id: 0,
+    name: "Cow",
+    src: "", //"https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
+    scale: 200,
+    img: new Image(),
+    xOffset: 0,
+    yOffset: 0,
+  },
   ];
 
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
@@ -339,15 +425,10 @@
   });
   trees.forEach((w) => {
     w.img.src = w.src;
-    if (w.img2 && w.src2) {
-      w.img2.src = w.src2;
-    }
-    if (w.img3 && w.src3) {
-      w.img3.src = w.src3;
-    }
   });
 
   document.getElementById("menuCardHolder").style.display = "none";
+  ageBar.style.display = "none";
   document.getElementById("loadingText").style.display = "block";
 
   // update the nameInput
@@ -358,7 +439,8 @@
     setInterval(() => {
       localStorage.name = document.querySelector("#nameInput").value;
     }, 50);
-  }, 1000);
+  },
+    1000);
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -374,32 +456,14 @@
   function relative(pos) {
     var canvasX = canvas.width / 2 + pos.x - myPlayer.x;
     var canvasY = canvas.height / 2 + pos.y - myPlayer.y;
-    return { x: canvasX, y: canvasY };
+    return {
+      x: canvasX,
+      y: canvasY,
+    };
   }
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    var scaling = 1; //edit lmao
-
-    var V = window.devicePixelRatio || 1;
-    var oe = maxScreenWidth,
-      ce = maxScreenHeight;
-    var F = window.innerWidth,
-      z = window.innerHeight;
-    var e = Math.max(F / oe, z / ce) * V;
-    (canvas.width = F * V * e),
-      (canvas.height = z * V * e),
-      (canvas.style.width = F + "px"),
-      (canvas.style.height = z + "px");
-    ctx.setTransform(e, 0, 0, e, (F * V - oe * e) / 2, (z * V - ce * e) / 2);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (canvas.width > maxScreenWidth) {
-      canvas.width = maxScreenWidth;
-    }
-    if (canvas.height > maxScreenHeight) {
-      canvas.height = maxScreenHeight;
-    }
   }
   function send(sender) {
     if (ws.readyState == 1) {
@@ -439,27 +503,26 @@
   function drawPlayer(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
+    ctx.textAlign = 'center';
     ctx.font = "24px Hammersmith One";
-    // ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "[DEV]" : ""}  ${player.name}`,
-      x - -27,
+      `${player.admin ? "[DEV]": ""}  ${player.name}`,
+      x - 7,
       y - 50,
-      100
     );
     ctx.fillText(
-      `${player.admin ? "[DEV]" : ""} ${player.name}`,
-      x - -27,
+      `${player.admin ? "[DEV]": ""} ${player.name}`,
+      x - 7 + 4,
       y - 50,
-      100
     ); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawBody(player, x, y, player.aimdir, player.sid);
     } else {
       drawWeapon(
         player,
@@ -469,11 +532,12 @@
         weapons[0],
         player.sid
       );
+      drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
-      fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
-      ctx.textAlign = "center";
-      drawText(x, y - 83, 70, player.chat, "#ffffff");
+      fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
+      ctx.textAlign = 'center';
+      drawText(x, y - 88, 70, player.chat, "#ffffff");
     }
     /*var addx = 0;
       var addy = 0;
@@ -482,15 +546,9 @@
         addy = player.yVel;
       }*/
 
-    var skin = skins.find((x) => x.id == player.skin);
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
-    ctx.restore();
-
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
-    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
+    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07": "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
   }
@@ -500,6 +558,85 @@
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
+    ctx.restore();
+  }
+  function drawBody(player, x, y, rot, sid) {
+    var skin = skins.find((x) => x.id == player.skin);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    if (SkinID === 0) {
+      ctx.drawImage(
+        skin.img,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 1) {
+      ctx.drawImage(
+        skin.img1,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 2) {
+      ctx.drawImage(
+        skin.img2,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 3) {
+      ctx.drawImage(
+        skin.img3,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 4) {
+      ctx.drawImage(
+        skin.img4,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 5) {
+      ctx.drawImage(
+        skin.img5,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 6) {
+      ctx.drawImage(
+        skin.img6,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 7) {
+      ctx.drawImage(
+        skin.img7,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
@@ -522,33 +659,30 @@
     ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
     ctx.restore();
   }
+  ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {
     var tree = trees.find((x) => x.id == id);
-    var img = "";
-    if (id === 0 && myPlayer.y >= 20 && myPlayer.y <= 955) {
-      img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 20 && myPlayer.y <= 955) {
-      img = tree.img2;
-    } else if (id === 1 && myPlayer.y >= 7494 && myPlayer.y <= mapSize) {
-      img = tree.img3;
-    } else {
-      img = tree.img;
-    }
     if (tree) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(0);
-      ctx.drawImage(img, tree.xOffset, tree.yOffset, tree.scale, tree.scale);
+      ctx.drawImage(
+        tree.img,
+        tree.xOffset,
+        tree.yOffset,
+        tree.scale,
+        tree.scale
+      );
       ctx.restore();
     }
   }
   window.requestAnimFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (e) {
-      window.setTimeout(e, 1000 / 60);
-    };
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function (e) {
+    window.setTimeout(e, 1000 / 60);
+  };
 
   function update() {
     var moveX = 0;
@@ -595,10 +729,10 @@
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight,
+      myPlayer.y +
+      canvas.height / 2 -
+      moltenHeight -
+      moltenRiverHeight,
       canvas.width,
       moltenRiverHeight
     );
@@ -637,11 +771,11 @@
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight -
-        beachHeight,
+      myPlayer.y +
+      canvas.height / 2 -
+      moltenHeight -
+      moltenRiverHeight -
+      beachHeight,
       canvas.width,
       beachHeight
     );
@@ -681,7 +815,10 @@
     window.players = players;
     players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
-        var rel = relative({ x: player.x, y: player.y });
+        var rel = relative({
+          x: player.x,
+          y: player.y,
+        });
         var x = rel.x;
         var y = rel.y;
         drawPlayer(x, y, player);
@@ -693,7 +830,10 @@
 
     // traps and stuff
     objCache.forEach((object) => {
-      var rel = relative({ x: object.x, y: object.y });
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
       drawObject(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
@@ -704,7 +844,10 @@
 
     // trees, stones etc
     treesCache.forEach((object) => {
-      var rel = relative({ x: object.x, y: object.y });
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
       drawTree(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
@@ -715,7 +858,10 @@
 
     // animals
     animalsCache.forEach((animal) => {
-      var rel = relative({ x: animal.x, y: animal.y });
+      var rel = relative({
+        x: animal.x,
+        y: animal.y,
+      });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
 
@@ -752,7 +898,7 @@
       );
       ctx.textAlign = "right";
       var goldFormatted =
-        leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
+      leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k": leader.gold;
       ctx.fillText(
         goldFormatted,
         canvas.width - leaderboardOffset * 2,
@@ -786,15 +932,17 @@
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
+      ctx.fillStyle = "#FF7878"; //#78B2FF FoR base lock
       ctx.beginPath();
       ctx.arc(
-        minimapOffset + deathLocX,
+        minimapOffset + deathLocX - 19,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
         3,
         0,
         2 * Math.PI
       );
       ctx.fill();
+      ctx.fillStyle = last2Style;
     }
 
     // resources display
@@ -804,43 +952,42 @@
     var resourcesHeight = 40;
 
     if (myPlayer.resources)
-      for (let v = 0; v < trees.length; v++) {
-        var res = trees[v];
-        var last3Style = ctx.fillStyle;
-        ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
-        ctx.fillRect(
-          minimapOffset,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * v),
-          resourcesWidth,
-          resourcesHeight
-        );
-        ctx.fillStyle = last3Style;
-        ctx.save();
-        ctx.translate(
-          minimapOffset + resourcesWidth - 30,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * v) +
-            10
-        );
-        ctx.textAlign = "left";
-        ctx.fillText(myPlayer.resources[res.name], -50, 15);
-        ctx.drawImage(res.img, -8, -7, 35, 35);
-        ctx.restore();
-      }
+      for (let v = 0; v < trees.length - 2; v++) {
+      var res = trees[v];
+      var last3Style = ctx.fillStyle;
+      ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
+      ctx.fillRect(
+        minimapOffset,
+        canvas.height -
+        (minimapSize +
+          minimapOffset * 2 +
+          resourcesMinimapOffset +
+          resourcesOffset * v),
+        resourcesWidth,
+        resourcesHeight
+      );
+      ctx.fillStyle = last3Style;
+      ctx.save();
+      ctx.translate(
+        minimapOffset + resourcesWidth - 30,
+        canvas.height -
+        (minimapSize +
+          minimapOffset * 2 +
+          resourcesMinimapOffset +
+          resourcesOffset * v) +
+        10
+      );
+      ctx.textAlign = "left";
+      ctx.fillText(myPlayer.resources[res.name], -50, 15);
+      ctx.drawImage(res.img, -8, -7, 35, 35);
+      ctx.restore();
+    }
   }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
-        ? (document.getElementById("nameInput").value = [])
-        : (document.getElementById("nameInput").value = localStorage.name);
+      ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);
     }, 500);
     ws.addEventListener("open", function () {
       document.getElementById("menuCardHolder").style.display = "block";
@@ -866,72 +1013,77 @@
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
               document.getElementById("h-item-" + w).style.display =
-                "inline-block";
+              "inline-block";
             });
-          case "33":
-            players = msg[1][0];
-            players.forEach((p) => {
-              if (!swingAngle[p.sid]) {
-                swingAngle[p.sid] = 0;
-              }
-              if (p.sid == myPlayer.sid) {
-                myPlayer = p;
-                window.me = myPlayer;
-              }
-            });
-            break;
-          case "p":
-            ping = Date.now() - lastping;
-            break;
-          case "7":
-            var sid = msg[1][0];
-            var angle = 120;
-            var multi = 1;
-            var add = 1;
-            for (let i = 0; i < angle; i++) {
-              setTimeout(() => {
-                swingAngle[sid] += add;
-              }, i * multi);
-            }
-            setTimeout(() => {
+            case "33":
+              players = msg[1][0];
+              players.forEach((p) => {
+                if (!swingAngle[p.sid]) {
+                  swingAngle[p.sid] = 0;
+                }
+                if (p.sid == myPlayer.sid) {
+                  myPlayer = p;
+                  window.me = myPlayer;
+                }
+              });
+              break;
+            case "p":
+              ping = Date.now() - lastping;
+              break;
+            case "7":
+              var sid = msg[1][0];
+              var angle = 120;
+              var multi = 1;
+              var add = 1;
               for (let i = 0; i < angle; i++) {
                 setTimeout(() => {
-                  swingAngle[sid] -= add;
+                  swingAngle[sid] += add;
                 }, i * multi);
               }
-            }, angle * multi + 40);
-            break;
-          case "d":
-            mainMenu.style.display = "block";
-            if (soundOn) {
-              audio1.play();
-              const fadeInAudio = setInterval(() => {
-                if (audio1.volume <= 1) {
-                  audio1.volume += 0.01111111111111111111111111111111111111;
+              setTimeout(() => {
+                for (let i = 0; i < angle; i++) {
+                  setTimeout(() => {
+                    swingAngle[sid] -= add;
+                  }, i * multi);
                 }
+              },
+                angle * multi + 40);
+              break;
+            case "d":
+              mainMenu.style.display = "block";
+              ageBar.style.display = "none";
+              if (soundOn) {
+                if (AudioOn === "true") {
+                  audio1.play();
+                  const fadeInAudio = setInterval(() => {
+                    if (audio1.volume <= 1) {
+                      audio1.volume += 0.01111111111111111111111111111111111111;
+                    }
 
-                if (audio1.volume > 1) {
-                  clearInterval(fadeInAudio);
+                    if (audio1.volume > 1) {
+                      clearInterval(fadeInAudio);
+                    }
+                  },
+                    10);
                 }
-              }, 10);
-            }
-            for (let i = 0; i < 11; i++) {
-              document.getElementById("h-item-" + i).style.display = "none";
-            }
-            break;
-          case "o":
-            treesCache = msg[1][0];
-            break;
-          case "b":
-            leaderboard = msg[1][0];
-            break;
-          case "x":
-            objCache = msg[1][0];
-            break;
-          case "a":
-            animalsCache = msg[1][0];
-            window.animals = animalsCache;
-            break;
+              }
+              for (let i = 0; i < 11; i++) {
+                document.getElementById("h-item-" + i).style.display = "none";
+              }
+              break;
+            case "o":
+              treesCache = msg[1][0];
+              break;
+            case "b":
+              leaderboard = msg[1][0];
+              break;
+            case "x":
+              objCache = msg[1][0];
+              break;
+            case "a":
+              animalsCache = msg[1][0];
+              window.animals = animalsCache;
+              break;
         }
       });
     });
@@ -947,222 +1099,250 @@
     }
   });
 
-  canvas.addEventListener("mouseup", function (e) {
-    if (e.isTrusted && !autohitting) {
-      attacking = false;
-      send(["c", [0]]);
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohitting == true) {
-        AutoHit = false;
-        autohittingwason = true;
+  canvas.addEventListener("mouseup",
+    function (e) {
+      if (e.isTrusted && !autohitting) {
+        attacking = false;
+        send(["c", [0]]);
       }
-      e.isTrusted && (!0, send(["c", [1]]));
-    }
-  });
-  document.addEventListener("keyup", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohittingwason == true)
-        return (autohittingwason = false), (AutoHit = true);
-      e.isTrusted && (!1, send(["c", [0]]));
-    }
-  });
-  document.addEventListener("keypress", function (e) {
-    if (document.activeElement.id.toLowerCase() !== "chatbox") {
-      if (e.key == "x") {
-        lockDir = !lockDir;
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohitting == true) {
+          AutoHit = false;
+          autohittingwason = true;
+        }
+        e.isTrusted && (!0, send(["c", [1]]));
       }
-      if (e.key == "e") {
-        AutoHit = !AutoHit;
-        if (AutoHit) {
-          autohitting = true;
-          e.isTrusted && (!0, send(["c", [1]]));
-        } else if (!AutoHit) {
-          autohitting = false;
-          e.isTrusted && (!1, send(["c", [0]]));
+    });
+  document.addEventListener("keyup",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohittingwason == true)
+          return (autohittingwason = false),
+        (AutoHit = true);
+        e.isTrusted && (!1, send(["c", [0]]));
+      }
+    });
+  document.addEventListener("keypress",
+    function (e) {
+      if (document.activeElement.id.toLowerCase() !== "chatbox") {
+        if (e.key == "x") {
+          lockDir = !lockDir;
+        }
+        if (e.key == "e") {
+          AutoHit = !AutoHit;
+          if (AutoHit) {
+            autohitting = true;
+            e.isTrusted && (!0, send(["c", [1]]));
+          } else if (!AutoHit) {
+            autohitting = false;
+            e.isTrusted && (!1, send(["c", [0]]));
+          }
         }
       }
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.QUICK_FOOD:
-          var sn;
-          inventory.forEach((item) => {
-            var itm = weapons.find((x) => x.id == item);
-            if (itm && itm.food) {
-              sn = itm.id;
-              if (myPlayer.weapon == sn) {
-                send(["s", [inventory[1]]]);
-              } else {
-                send(["s", [sn + 1]]);
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.QUICK_FOOD:
+            var sn;
+            inventory.forEach((item) => {
+              var itm = weapons.find((x) => x.id == item);
+              if (itm && itm.food) {
+                sn = itm.id;
+                if (myPlayer.weapon == sn) {
+                  send(["s", [inventory[1]]]);
+                } else {
+                  send(["s", [sn + 1]]);
+                }
+                return;
               }
-              return;
-            }
           });
           break;
-        case keycodes.HOTBAR_1:
-          send(["s", [inventory[1]]]);
-          break;
-        case keycodes.HOTBAR_2:
-          send(["s", [inventory[2]]]);
-          break;
-        case keycodes.HOTBAR_3:
-          send(["s", [inventory[3]]]);
-          break;
-        case keycodes.HOTBAR_4:
-          send(["s", [inventory[4]]]);
-          break;
-        case keycodes.HOTBAR_5:
-          send(["s", [inventory[5]]]);
-          break;
-        case keycodes.HOTBAR_6:
-          send(["s", [inventory[6]]]);
-          break;
-        case keycodes.HOTBAR_7:
-          send(["s", [inventory[7]]]);
-          break;
-        case keycodes.HOTBAR_8:
-          send(["s", [inventory[8]]]);
-          break;
-        case keycodes.HOTBAR_9:
-          send(["s", [inventory[9]]]);
-          break;
-        case 82:
-          //nausea = !nausea;
-          break;
-        case keycodes.MOVE_UP:
-          moveUp = 1;
-          break;
-        case keycodes.MOVE_DOWN:
-          moveDown = 1;
-          break;
-        case keycodes.MOVE_LEFT:
-          moveLeft = 1;
-          break;
-        case keycodes.MOVE_RIGHT:
-          moveRight = 1;
-          break;
-        case keycodes.MOVE_UP2:
-          moveUp = 1;
-          break;
-        case keycodes.MOVE_DOWN2:
-          moveDown = 1;
-          break;
-        case keycodes.MOVE_LEFT2:
-          moveLeft = 1;
-          break;
-        case keycodes.MOVE_RIGHT2:
-          moveRight = 1;
-          break;
-        case keycodes.CHAT:
-          if (chatbox.style.display == "none") {
-            chatbox.style.display = "block";
-            chatbox.focus();
-          } else {
-            chatbox.style.display = "none";
-            if (chatbox.value) {
-              send(["ch", [chatbox.value]]);
-              chatbox.value = "";
+          case keycodes.HOTBAR_1:
+            send(["s",
+              [inventory[1]]]);
+            break;
+          case keycodes.HOTBAR_2:
+            send(["s",
+              [inventory[2]]]);
+            break;
+          case keycodes.HOTBAR_3:
+            send(["s",
+              [inventory[3]]]);
+            break;
+          case keycodes.HOTBAR_4:
+            send(["s",
+              [inventory[4]]]);
+            break;
+          case keycodes.HOTBAR_5:
+            send(["s",
+              [inventory[5]]]);
+            break;
+          case keycodes.HOTBAR_6:
+            send(["s",
+              [inventory[6]]]);
+            break;
+          case keycodes.HOTBAR_7:
+            send(["s",
+              [inventory[7]]]);
+            break;
+          case keycodes.HOTBAR_8:
+            send(["s",
+              [inventory[8]]]);
+            break;
+          case keycodes.HOTBAR_9:
+            send(["s",
+              [inventory[9]]]);
+            break;
+          case 82:
+            //nausea = !nausea;
+            break;
+          case keycodes.MOVE_UP:
+            moveUp = 1;
+            break;
+          case keycodes.MOVE_DOWN:
+            moveDown = 1;
+            break;
+          case keycodes.MOVE_LEFT:
+            moveLeft = 1;
+            break;
+          case keycodes.MOVE_RIGHT:
+            moveRight = 1;
+            break;
+          case keycodes.MOVE_UP2:
+            moveUp = 1;
+            break;
+          case keycodes.MOVE_DOWN2:
+            moveDown = 1;
+            break;
+          case keycodes.MOVE_LEFT2:
+            moveLeft = 1;
+            break;
+          case keycodes.MOVE_RIGHT2:
+            moveRight = 1;
+            break;
+          case keycodes.CHAT:
+            if (chatbox.style.display == "none") {
+              chatbox.style.display = "block";
+              chatbox.focus();
+            } else {
+              chatbox.style.display = "none";
+              if (chatbox.value) {
+                send(["ch", [chatbox.value]]);
+                chatbox.value = "";
+              }
             }
-          }
-          break;
+            break;
+        }
       }
-    }
-  });
-  document.addEventListener("keyup", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.MOVE_UP:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT:
-          moveRight = 0;
-          break;
-        case keycodes.MOVE_UP2:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN2:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT2:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT2:
-          moveRight = 0;
-          break;
+    });
+  document.addEventListener("keyup",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.MOVE_UP:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT:
+            moveRight = 0;
+            break;
+          case keycodes.MOVE_UP2:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN2:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT2:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT2:
+            moveRight = 0;
+            break;
+        }
       }
-    }
-  });
+    });
 
-  window.addEventListener("resize", function (e) {
-    if (e.isTrusted) {
-      resizeCanvas();
-    }
-  });
-
-  canvas.addEventListener("mousemove", function (e) {
-    if (e.isTrusted && !lockDir) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      aim = Math.atan2(
-        e.clientY - canvas.height / 2,
-        e.clientX - canvas.width / 2
-      );
-    }
-  });
-
-  canvas.addEventListener("contextmenu", function (e) {
-    if (e.isTrusted) {
-      e.preventDefault();
-    }
-  });
-
-  sound.addEventListener("click", function (e) {
-    if (sound.checked) {
-      soundOn = false;
-      audio1.pause();
-    } else {
-      soundOn = true;
-      audio1.play();
-    }
-  });
-
-  enterGame.addEventListener("click", function (e) {
-    if (SpawnedOnce == 1) {
-      if (soundOn) {
-        var fadeOutAudio = setInterval(() => {
-          if (audio1.volume >= 0.009) {
-            audio1.volume -= 0.01111111111111111111111111111111111111;
-          }
-
-          if (audio1.volume <= 0.1) {
-            audio1.pause();
-            clearInterval(fadeOutAudio);
-          }
-        }, 10);
+  window.addEventListener("resize",
+    function (e) {
+      if (e.isTrusted) {
+        resizeCanvas();
       }
-      var minimapOffset = 20;
-      var minimapSize = 200;
-      deathLocX = myPlayer.y * (minimapSize / mapSize);
-      deathLocY = myPlayer.y * (minimapSize / mapSize);
-    }
-  });
+    });
+
+  canvas.addEventListener("mousemove",
+    function (e) {
+      if (e.isTrusted && !lockDir) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        aim = Math.atan2(
+          e.clientY - canvas.height / 2,
+          e.clientX - canvas.width / 2
+        );
+      }
+    });
+
+  canvas.addEventListener("contextmenu",
+    function (e) {
+      if (e.isTrusted) {
+        e.preventDefault();
+      }
+    });
+
+  sound.addEventListener("click",
+    function (e) {
+      if (sound.checked) {
+        soundOn = false;
+        localStorage.setItem("AudioOn", "false");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.pause();
+      } else {
+        soundOn = true;
+        localStorage.setItem("AudioOn", "true");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.play();
+      }
+    });
+
+  enterGame.addEventListener("click",
+    function (e) {
+      if (SpawnedOnce == 1) {
+        if (soundOn) {
+          if (AudioOn === "true") {
+            var fadeOutAudio = setInterval(() => {
+              if (audio1.volume >= 0.009) {
+                audio1.volume -= 0.01111111111111111111111111111111111111;
+              }
+
+              if (audio1.volume <= 0.1) {
+                audio1.pause();
+                clearInterval(fadeOutAudio);
+              }
+            },
+              10);
+          }
+        }
+        var minimapOffset = 20;
+        var minimapSize = 200;
+        deathLocX = myPlayer.y * (minimapSize / mapSize);
+        deathLocY = myPlayer.y * (minimapSize / mapSize);
+      }
+    });
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {
@@ -1175,14 +1355,23 @@
             audio1.pause();
             clearInterval(fadeOutAudio);
           }
-        }, 10);
+        },
+          10);
       }
       mainMenu.style.display = "none";
+      ageBar.style.display = "inline-block";
       SpawnedOnce = 1;
-      send(["j", [{ name: document.getElementById("nameInput").value }]]);
+      send([
+        "j",
+        [{
+          name: document.getElementById("nameInput").value,
+        },
+        ],
+      ]);
       setInterval(() => {
         window.requestAnimFrame(update);
-      }, 1);
+      },
+        1);
       riverBubbles = [];
       for (let j = 0; j < 30; j++) {
         setTimeout(() => {
