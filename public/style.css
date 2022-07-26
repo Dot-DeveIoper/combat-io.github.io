@@ -755,6 +755,7 @@ body > #mainMenu {
 }
 .ageText {
   color: #ffffff;
+  font-size: 5rem;
   text-transform: uppercase;
   text-align: center;
   transform: translate(-0px, -3px);
@@ -810,6 +811,9 @@ body > #mainMenu {
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
+  .ageText {
+    font-size: 2rem;
+  }
   .ageProgressBar {
     width: 200px;
     max-width: 200px;
