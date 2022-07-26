@@ -22,3 +22,21 @@
 -Added Player Speed.
 -Added Player Movement [W, A, S, D].
 -Added Hitting Features [E, Space, Click].
+
+-Version 1.1.3-
+
+-Updated ui (for PC and mobile) , game now works! 
+-added snow tree texture (only shows up in snow biome)
+-added menu music that fades in and out
+-Updated tree assets
+-updated bush assets, added snow bush, fixed bush hit box
+-fixed audio on or off toggle switch.
+-Made desert biome larger
+-Added new skin colors, pink, emerald green, light yellow and cyan.
+-Added game mode buttons, "Normal", "Sandbox", and "Survival".
+-Fixed canvas resize glitch
+-fixed tree asset switching when going into new biome.
+-Added skins to game, they now work.
+-fixed name glitch, and centered name inside border.
+-fixed chat glitch, centered chat text.
+-changed death lock color, fixed the bug were it does not go to exact location of death, removed it when you first join game
