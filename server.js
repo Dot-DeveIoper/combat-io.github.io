@@ -241,7 +241,7 @@
 
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
-    //console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
+    // console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
     res.sendFile(__dirname + "/views/index.html");
   });
 
