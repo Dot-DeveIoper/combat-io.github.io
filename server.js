@@ -246,9 +246,9 @@
       scale: 200,
     },
     {
-      name: "spyllis",
+      name: "gold",
       id: 3,
-      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
+      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/gold.png?width=673&height=675",
       img: new Image(),
       xOffset: -68,
       yOffset: -70,
@@ -421,7 +421,7 @@
       wood: 0,
       stone: 0,
       gold: 0,
-      spyllis: 0,
+      gold: 0,
       food2: 0,
       wood2: 0,
     };
@@ -461,7 +461,7 @@
         leaderboard.forEach((player) => {
           formattedLeaderboard.push({
             name: player.name,
-            gold: player.resources.spyllis,
+            gold: player.resources.gold,
           });
         });
         client.send(msgpack.encode(["b", [formattedLeaderboard]]));
@@ -721,7 +721,7 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? "spyllis"
+                      ? "gold"
                       : tree.id == 4
                       ? "food"
                       : tree.id == 5
@@ -816,7 +816,7 @@
         wood: 100,
         stone: 100,
         gold: 100,
-        spyllis: 100,
+        gold: 100,
         food2: 100,
         wood2: 100,
       },
@@ -880,7 +880,7 @@
             socket.player.resources.food = 99999;
             socket.player.resources.wood = 99999;
             socket.player.resources.stone = 99999;
-            socket.player.resources.spyllis = 99999;
+            socket.player.resources.gold = 99999;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
@@ -906,21 +906,21 @@
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
-            var reqSpyllis = obj.cost.spyllis || 0;
+            var reqGold = obj.cost.gold || 0;
             var reqFood2 = obj.cost.food || 0;
             var reqWood2 = obj.cost.wood || 0;
 
             var haveFood = socket.player.resources.food >= reqFood;
             var haveWood = socket.player.resources.wood >= reqWood;
             var haveStone = socket.player.resources.stone >= reqStone;
-            var haveSpyllis = socket.player.resources.spyllis >= reqSpyllis;
+            var haveGold = socket.player.resources.gold >= reqGold;
 
-            if (haveFood && haveWood && haveStone && haveSpyllis) {
+            if (haveFood && haveWood && haveStone && haveGold) {
               if (obj.heal && socket.player.health < 100) {
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
-                socket.player.resources.spyllis -= reqSpyllis;
+                socket.player.resources.gold -= reqGold;
 
                 socket.player.health = Math.min(
                   100,
@@ -938,7 +938,7 @@
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
-                socket.player.resources.spyllis -= reqSpyllis;
+                socket.player.resources.gold -= reqGold;
 
                 objCache.push({
                   id: 2,
