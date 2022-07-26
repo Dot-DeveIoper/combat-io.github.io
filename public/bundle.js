@@ -537,8 +537,8 @@ function setSkin(num) {
       drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
-      fillRectCentered(x, y - 105, player.chat.length * 12 + 10, 30);
-      drawText(x, y - 83, 70, player.chat, "#ffffff");
+      fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
+      drawText(x + 20, y - 75, 70, player.chat, "#ffffff");
     }
     /*var addx = 0;
       var addy = 0;
