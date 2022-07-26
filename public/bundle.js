@@ -315,7 +315,7 @@ function setSkin(num) {
     {
       name: "gold",
       id: 3,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658804246324", //gold
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405", //gold
       img: new Image(),
       xOffset: -68,
       yOffset: -70,
@@ -537,8 +537,7 @@ function setSkin(num) {
       drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
-      fillRectCentered(x, y - 100, player.chat.length * 12 + 10, 30);
-      ctx.textAlign = "center";
+      fillRectCentered(x, y - 105, player.chat.length * 12 + 10, 30);
       drawText(x, y - 83, 70, player.chat, "#ffffff");
     }
     /*var addx = 0;
