@@ -503,10 +503,7 @@ function setSkin(num) {
   function drawPlayer(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
-    ctx.font = "24px Hammersmith One";
-    // ctx.textBaseline = "middle";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = 10;
+    ctx.font = '20pt Verdana';
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
@@ -537,9 +534,9 @@ function setSkin(num) {
       drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
-      fillRectCentered(x + 100, y - 120, player.chat.length * 12 + 10, 30);
+      fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
       ctx.textAlign = 'center';
-      drawText(x + 100, y - 98, 70, player.chat, "#ffffff");
+      drawText(x, y - 88, 70, player.chat, "#ffffff");
     }
     /*var addx = 0;
       var addy = 0;
