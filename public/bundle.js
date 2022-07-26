@@ -313,9 +313,9 @@ function setSkin(num) {
       scale: 190,
     },
     {
-      name: "spyllis",
+      name: "Gold",
       id: 3,
-      src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658804246324",
       img: new Image(),
       xOffset: -68,
       yOffset: -70,

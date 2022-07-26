@@ -243,7 +243,7 @@
       scale: 200,
     },
     {
-      name: "spyllis",
+      name: "Gold",
       id: 3,
       src: "https://media.discordapp.net/attachments/796483767560437820/838805911123656755/spyllis.png?width=673&height=675",
       img: new Image(),
