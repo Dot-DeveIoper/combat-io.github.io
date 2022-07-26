@@ -742,7 +742,7 @@ body > #mainMenu {
   display: none;
   /* display: inline-block; */
   position: absolute;
-  margin-bottom: 81px;
+  margin-bottom: 75px;
   /* margin-bottom: 65px; */
   left: 50%;
   /* top: calc(80% - 20px); */
@@ -811,6 +811,9 @@ body > #mainMenu {
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
+  .ageBar {
+    margin-bottom: 79px;
+  }
   .ageText {
     font-size: 1.25rem;
   }
@@ -842,8 +845,8 @@ body > #mainMenu {
 .hotbarItem {
   width: 66px;
   height: 66px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 4px;
@@ -859,6 +862,14 @@ body > #mainMenu {
 
   /* display: none; */
   /* switch display to block with js to fix it */
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  .hotbarItem {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
 }
 
 /* skins */
