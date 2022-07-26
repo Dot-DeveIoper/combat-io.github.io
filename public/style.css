@@ -739,9 +739,11 @@ body > #mainMenu {
 }
 
 .ageBar {
-  display: inline-block;
+  display: none;
+  /* display: inline-block; */
   position: absolute;
-  margin-bottom: 65px;
+  margin-bottom: 81px;
+  /* margin-bottom: 65px; */
   left: 50%;
   /* top: calc(80% - 20px); */
   bottom: 0;
@@ -752,18 +754,25 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 .ageText {
+  display: none;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
-  transform: translate(-0px, 15px);
+  transform: translate(-0px, -3px);
+  /* transform: translate(-0px, 15px); */
   user-select: none;
+}
+.ageCounter {
+  /* display: inline; */
 }
 .ageProgressBar {
   background-color: rgba(0, 0, 0, 0.25);
-  width: 200px;
-  max-width: 200px;
+  width: 400px;
+  max-width: 400px;
+  min-width: 400px;
   height: 14px;
   max-height: 14px;
+  min-height: 14px;
   border-radius: 4px;
   user-select: none;
 }
@@ -772,9 +781,11 @@ body > #mainMenu {
   background-color: #ffffff;
   width: 0;
   /* width: 194px; */
-  max-width: 194px;
+  max-width: 394px;
+  min-width: 0;
   height: 7px;
   max-height: 7px;
+  min-height: 7px;
   border-radius: 2px;
   top: 50%;
   left: 50%;
@@ -797,6 +808,26 @@ body > #mainMenu {
   z-index: 1;
   user-select: none;
 } */
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  .ageProgressBar {
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    height: 14px;
+    max-height: 14px;
+    min-height: 14px;
+  }
+  .ageLevelBar {
+    width: 0;
+    max-width: 194px;
+    min-width: 0;
+    height: 7px;
+    max-height: 7px;
+    min-height: 7px;
+  }
+}
 
 #hotbar {
   position: absolute;

@@ -75,7 +75,7 @@ function setSkin(num) {
   var moveLeft = 0;
   var moveRight = 0;
   var SpawnedOnce = 0;
-  var deathLocX = 0;
+  var deathLocX = -40;
   var deathLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
@@ -935,9 +935,10 @@ function setSkin(num) {
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
+      ctx.fillStyle = "red";
       ctx.beginPath();
       ctx.arc(
-        minimapOffset + deathLocX + 10,
+        minimapOffset + deathLocX - 19,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
         3,
         0,
