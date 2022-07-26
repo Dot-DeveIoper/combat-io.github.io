@@ -306,11 +306,11 @@ function setSkin(num) {
     {
       name: "stone",
       id: 2,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stome.png?v=1657467566906", //stone
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574", //stone
       img: new Image(),
-      xOffset: -70,
-      yOffset: -70,
-      scale: 200,
+      xOffset: -100,
+      yOffset: -100,
+      scale: 190,
     },
     {
       name: "spyllis",
