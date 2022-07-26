@@ -754,7 +754,6 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 .ageText {
-  display: none;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
@@ -763,13 +762,13 @@ body > #mainMenu {
   user-select: none;
 }
 .ageCounter {
-  /* display: inline; */
+  display: inline;
 }
 .ageProgressBar {
   background-color: rgba(0, 0, 0, 0.25);
-  width: 400px;
-  max-width: 400px;
-  min-width: 400px;
+  width: 300px;
+  max-width: 300px;
+  min-width: 300px;
   height: 14px;
   max-height: 14px;
   min-height: 14px;
@@ -781,7 +780,7 @@ body > #mainMenu {
   background-color: #ffffff;
   width: 0;
   /* width: 194px; */
-  max-width: 394px;
+  max-width: 294px;
   min-width: 0;
   height: 7px;
   max-height: 7px;

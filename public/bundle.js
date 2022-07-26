@@ -432,7 +432,7 @@ function setSkin(num) {
   });
 
   document.getElementById("menuCardHolder").style.display = "none";
-  ageBar.style.display = "block";
+  ageBar.style.display = "none";
   document.getElementById("loadingText").style.display = "block";
 
   // update the nameInput
@@ -935,7 +935,7 @@ function setSkin(num) {
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "#FF7878"; //#78B2FF FoR base lock
       ctx.beginPath();
       ctx.arc(
         minimapOffset + deathLocX - 19,
@@ -945,6 +945,7 @@ function setSkin(num) {
         2 * Math.PI
       );
       ctx.fill();
+      ctx.fillStyle = last2Style;
     }
 
     // resources display
@@ -1337,7 +1338,7 @@ function setSkin(num) {
         }, 10);
       }
       mainMenu.style.display = "none";
-      ageBar.style.display = "block";
+      ageBar.style.display = "inline-block";
       SpawnedOnce = 1;
       send([
         "j",
