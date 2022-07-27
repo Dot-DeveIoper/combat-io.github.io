@@ -6,7 +6,7 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
-var SkinID = 6;
+var SkinID = 0;
 function setSkin(num) {
   for (let i = 1; i <= 8; i++) {
     if (i == num) {
@@ -523,7 +523,6 @@ function setSkin(num) {
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
-      drawBody(player, x, y, player.aimdir, player.sid);
     } else {
       drawWeapon(
         player,
@@ -533,7 +532,6 @@ function setSkin(num) {
         weapons[0],
         player.sid
       );
-      drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
       fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
@@ -560,8 +558,6 @@ function setSkin(num) {
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-  }
-  function drawBody(player, x, y, rot, sid) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
