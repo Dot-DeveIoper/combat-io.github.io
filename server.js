@@ -517,7 +517,7 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? "" + (function () {let v = randomInt(0,1); if (v === 0) {return "gold"} else {return "wood"}}) + ""
+                      ? (function () {let v = randomInt(0,1); if (v === 0) {return "\"gold\""} else {return "\"wood\""}})
                       : tree.id == 4
                       ? "food"
                       : tree.id == 5

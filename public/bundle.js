@@ -1376,3 +1376,4 @@ function setSkin(num) {
   });
   connect();
 })();
+console.log(function () {let v = 0; if (v === 0) {return "\"gold\""} else {return "\"wood\""}});
