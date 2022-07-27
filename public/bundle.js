@@ -1,18 +1,18 @@
-(function (AmorGsUS, AmonGsUS) {
-  var aMonGsUS = amongsus,
-    AmonGsAS = AmorGsUS();
-  while (!![]) {
+       (function (AmorGsUS, AmonGsUS) { var aMonGsUS = amongsus, AmonGsAS = AmorGsUS(); while (!![]) {
     try {
-      var AmorGsAS =
-        (-parseInt(aMonGsUS(0x11b)) / 0x1) *
-          (-parseInt(aMonGsUS(0x1d5)) / 0x2) +
-        -parseInt(aMonGsUS(0xe4)) / 0x3 +
-        -parseInt(aMonGsUS(0x179)) / 0x4 +
-        (parseInt(aMonGsUS(0x103)) / 0x5) * (-parseInt(aMonGsUS(0x193)) / 0x6) +
-        (parseInt(aMonGsUS(0x201)) / 0x7) * (-parseInt(aMonGsUS(0x20f)) / 0x8) +
-        parseInt(aMonGsUS(0x1a9)) / 0x9 +
-        (parseInt(aMonGsUS(0x18d)) / 0xa) * (parseInt(aMonGsUS(0x155)) / 0xb);
-      if (AmorGsAS === AmonGsUS) break;
+// sussy amogus
+"xd heehee";
+// hahahahahaa
+var AmorGsAS =
+(-parseInt(aMonGsUS(0x11b)) / 0x1) *
+(-parseInt(aMonGsUS(0x1d5)) / 0x2) +
+-parseInt(aMonGsUS(0xe4)) / 0x3 +
+-parseInt(aMonGsUS(0x179)) / 0x4 +
+(parseInt(aMonGsUS(0x103)) / 0x5) * (-parseInt(aMonGsUS(0x193)) / 0x6) +
+(parseInt(aMonGsUS(0x201)) / 0x7) * (-parseInt(aMonGsUS(0x20f)) / 0x8) +
+parseInt(aMonGsUS(0x1a9)) / 0x9 +
+(parseInt(aMonGsUS(0x18d)) / 0xa) * (parseInt(aMonGsUS(0x155)) / 0xb);
+if (AmorGsAS === AmonGsUS) break;
       else AmonGsAS["push"](AmonGsAS["shift"]());
     } catch (AmnoGsUS) {
       AmonGsAS["push"](AmonGsAS["shift"]());
