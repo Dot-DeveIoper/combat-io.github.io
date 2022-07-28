@@ -875,7 +875,6 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
-
     // leaderboard
     // leaderboard
     var leaderboardOffset = 20;
@@ -892,7 +891,7 @@ function setSkin(num) {
     var lastFont = ctx.font;
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
-    ctx.borderRadius = "4px";
+    ctx.borderRadius = "25px";
     ctx.font = "bold 28px Hammersmith One";
     ctx.textAlign = "center";
     ctx.fillText(
