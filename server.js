@@ -538,7 +538,7 @@
                   tree.yWiggle += Math.sin(wiggleDir) * 14;
                 }
               });
-
+              console.log(Gem());
               // check for traps and stuff hit
               var objNear = objCache.filter(
                 (x) => x && dist(player, x) < renderDistance
