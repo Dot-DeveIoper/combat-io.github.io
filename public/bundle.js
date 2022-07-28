@@ -51,6 +51,7 @@ function setSkin(num) {
     MOVE_RIGHT2: "ArrowRight",
     CHAT: "Enter",
     QUICK_FOOD: "KeyQ",
+    BASE: "KeyC",
 
     HOTBAR_1: "Digit1",
     HOTBAR_2: "Digit2",
@@ -75,11 +76,14 @@ function setSkin(num) {
   var moveRight = 0;
   var SpawnedOnce = 0;
   var deathLocX = -40;
-  var deathLocY = 0;
+  var deathLocY = 0;  
+  var baseLocX = -40;
+  var baseLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
   let age = 1;
   let ageChange = false;
+  var Base = 0;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -941,7 +945,7 @@ function setSkin(num) {
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
-      ctx.fillStyle = "#FF7878"; //#78B2FF FoR base lock
+      ctx.fillStyle = "#FF7878";
       ctx.beginPath();
       ctx.arc(
         minimapOffset + deathLocX,
@@ -953,7 +957,19 @@ function setSkin(num) {
       ctx.fill();
       ctx.fillStyle = last2Style;
     }
-
+    if (Base == 1) {
+          ctx.fillStyle = "#78B2FF";
+          ctx.beginPath();
+          ctx.arc(
+          20 + baseLocX,
+          +canvas.height - 20 - 200 + baseLocY,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fill();
+        ctx.fillStyle = last2Style;
+    }
     // resources display
     var resourcesMinimapOffset = 30;
     var resourcesOffset = 45;
@@ -1243,6 +1259,9 @@ function setSkin(num) {
             }
           }
           break;
+        case keycodes.BASE:
+            Base = 1;
+          break;
       }
     }
   });
@@ -1332,7 +1351,7 @@ function setSkin(num) {
       }
       var minimapOffset = 20;
       var minimapSize = 200;
-      deathLocX = myPlayer.y * (minimapSize / mapSize);
+      deathLocX = myPlayer.x * (minimapSize / mapSize);
       deathLocY = myPlayer.y * (minimapSize / mapSize);
     }
   });
