@@ -720,8 +720,8 @@
           } if (msg[1][0] == "/end" && socket.player.admin) {
             ws.close()
           } if (msg[1][0] == "/tp" && socket.player.admin) {
-            socket.player.x = -15;
-            socket.player.y = -15;
+            socket.player.x = 5000;
+            socket.player.y = 5000;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
