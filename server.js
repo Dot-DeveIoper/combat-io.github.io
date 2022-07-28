@@ -541,7 +541,6 @@
                   );
                   tree.xWiggle += Math.cos(wiggleDir) * 14;
                   tree.yWiggle += Math.sin(wiggleDir) * 14;
-                  ageBar.style.width = player.xp + "%";
                 }
               });
               // check for traps and stuff hit

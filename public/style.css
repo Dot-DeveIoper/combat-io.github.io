@@ -779,7 +779,7 @@ body > #mainMenu {
 .ageLevelBar {
   position: relative;
   background-color: #ffffff;
-  width: 100%;
+  width: 0%;
   max-width: 244px;
   min-width: 0;
   height: 7px;
@@ -810,7 +810,7 @@ body > #mainMenu {
     min-height: 14px;
   }
   .ageLevelBar {
-    width: 100%;
+    width: 0%;
     /* width: 0; */
     max-width: 194px;
     min-width: 0;

@@ -194,6 +194,7 @@ function setSkin(num) {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let ageBar = document.getElementById("ageBar");
+  let ageLevelBar = document.getElementById("ageLevelBar");
   let enterGame = document.getElementById("enterGame");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
@@ -715,7 +716,6 @@ function setSkin(num) {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
-
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
@@ -957,7 +957,6 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-    ageBar.style.width = myPlayer.xp + ""
     if (myPlayer.resources)
       for (let v = 0; v < trees.length - 2; v++) {
         var res = trees[v];
@@ -989,6 +988,12 @@ function setSkin(num) {
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
       }
+    let age = 1;
+    ageLevelBar.style.width = myPlayer.xp + '%';
+    if (ageLevelBar.style.width === "100%") {
+      age += 1;
+    }
+    document.getElementById("ageCounter").innerHTML = age;
   }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
@@ -1384,4 +1389,3 @@ function setSkin(num) {
   });
   connect();
 })();
-console.log(function () {let v = 0; if (v === 0) {return "\"gold\""} else {return "\"wood\""}});
