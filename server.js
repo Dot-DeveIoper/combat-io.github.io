@@ -513,7 +513,7 @@
                   reaching(
                     player,
                     tree,
-                    weapon.range + (tree.id == 3 ? 40 : 65)
+                    weapon.range + (tree.id == 2 ? 40 : 65)
                   ) &&
                   isfacing(player, tree, radToDeg(player.aimdir), weapon.fov)
                 ) {
@@ -541,6 +541,7 @@
                   );
                   tree.xWiggle += Math.cos(wiggleDir) * 14;
                   tree.yWiggle += Math.sin(wiggleDir) * 14;
+                  console.log("hit")
                 }
               });
               // check for traps and stuff hit
@@ -658,7 +659,7 @@
           try {
             name =
               msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
-              "ComBat.io";
+              "Combat.io";
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
@@ -679,7 +680,6 @@
           break;
         case "ch":
           if (msg[1][0] == "/" + process.env.ADMINPASS) {
-            // quick admin command
             socket.player.admin = true;
             socket.player.health = 100;
             socket.player.resources.food = 99999;
@@ -697,8 +697,6 @@
             setTimeout(() => {
               socket.player.chat = null;
             }, 3000);
-
-            // Admin commands because why not (WIP)
           }
           break;
         case "c":
@@ -708,7 +706,7 @@
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
-
+            
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
