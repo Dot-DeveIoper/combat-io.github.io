@@ -79,7 +79,7 @@ function setSkin(num) {
   var soundOn = true;
   var sound = document.getElementById("sound");
   let age = 1;
-  let hi = true;
+  let ageChange = false;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -991,13 +991,16 @@ function setSkin(num) {
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
       }
-    if (ageLevelBar.style.width === '100%' && hi) {
-      ageLevelBar.style.width = myPlayer.xp + '%';
+    if (ageLevelBar.style.width === "100%" && !ageChange) {
+      ageLevelBar.style.width = myPlayer.xp + "%";
       age += 1;
       myPlayer.xp = 0;
-      hi = false;
+      ageChange = true;
+      setTimeout(() => {
+        ageChange = false;
+      }, 1000);
     } else {
-      ageLevelBar.style.width = myPlayer.xp + '%';
+      ageLevelBar.style.width = myPlayer.xp + "%";
     }
     ageCounter.innerHTML = age;
   }
