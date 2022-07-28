@@ -709,7 +709,7 @@
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
 
-            var reqFood = obj.cost.food || 0;
+            var reqFood = obj.cost.wood > 1000 ? Math.ceil(obj.cost.wood / 1000) + "k" : obj.cost.wood || 0;
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
             var reqRuby = obj.cost.Ruby || 0;
