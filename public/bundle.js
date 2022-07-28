@@ -714,7 +714,9 @@ function setSkin(num) {
     } else {
       ctx.globalAlpha = 0.4;
     }
-
+    if (myPlayer.admin) {
+      myPlayer.health = 100;
+    }
     // grass
     if (!nausea) {
       var prevStyle = ctx.fillStyle;
