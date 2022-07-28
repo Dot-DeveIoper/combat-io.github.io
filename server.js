@@ -534,7 +534,11 @@
                       ? "wood"
                       : test
                   ] += weapon.gather;
-                  player.xp += weapon.gather;
+                  if (player.xp >= 100) {
+                    player.xp = 0;
+                  } else {
+                    player.xp += weapon.gather;
+                  }
                   var wiggleDir = Math.atan2(
                     tree.y - player.y,
                     tree.x - player.x

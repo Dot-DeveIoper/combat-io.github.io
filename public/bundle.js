@@ -78,6 +78,7 @@ function setSkin(num) {
   var deathLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
+  let age = 1;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -195,6 +196,7 @@ function setSkin(num) {
   let mainMenu = document.getElementById("mainMenu");
   let ageBar = document.getElementById("ageBar");
   let ageLevelBar = document.getElementById("ageLevelBar");
+  let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
@@ -988,12 +990,13 @@ function setSkin(num) {
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
       }
-    let age = 1;
     ageLevelBar.style.width = myPlayer.xp + '%';
-    if (ageLevelBar.style.width === "100%") {
-      age += 1;
+    if (ageLevelBar.style.width === '100%') {
+      age++;
+      myPlayer.xp = 0;
+      ageLevelBar.style.width = '99%';
     }
-    document.getElementById("ageCounter").innerHTML = age;
+    ageCounter.innerHTML = age;
   }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
