@@ -468,10 +468,8 @@
                 player.noHurtTime == 0 &&
                 obj.id != player.sid
               ) {
-                if (!player.admin) {
                   player.health -= aObj.damage;
                   player.noHurtTime += 2;
-                }
               }
               player.xVel += pushVelX;
               player.yVel += pushVelY;
@@ -501,9 +499,7 @@
                   );
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
-                  if (!player.admin) {
-                    enemy.health -= weapon.damage;
-                  }
+                  enemy.health -= weapon.damage;
                   client.send(
                     msgpack.encode([
                       "t",
@@ -577,9 +573,7 @@
                   reaching(player, obj, weapon.range + 10) &&
                   isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
                 ) {
-                  if (!player.admin) {
                   obj.health -= weapon.damage;
-                  }
                   var wiggleDir = Math.atan2(
                     obj.y - player.y,
                     obj.x - player.x
@@ -730,6 +724,9 @@
           }
           break;
         case "c":
+          if (socket.player.admin) {
+            socket.player.health = 100;
+          }
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
