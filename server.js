@@ -76,13 +76,16 @@
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
       // map is 6:1 ratio
-      if (randomy <= 0 || randomy >= 0) { // remove from whole map
+      if (randomy <= 0 || randomy >= 0) {
+        // remove from whole map
         if (j == 4) continue;
       }
-      if (randomy < 1000) { // remove from snow biome
+      if (randomy < 1000) {
+        // remove from snow biome
         if (j == 0 || j == 1 || j == 3) continue;
       }
-      if (randomy > 1000) { // remove from snow bomie down
+      if (randomy > 1000) {
+        // remove from snow bomie down
         if (j == 5 || j == 6) continue;
       }
       if (
@@ -215,15 +218,27 @@
     player.y = randomInt(0, mapSize);
     player.health = 100;
     player.weapons = [0, 1, 2, 3];
-    player.resources = {
-      food: 0,
-      wood: 0,
-      stone: 0,
-      gold: 0,
-      ruby: 0,
-      food2: 0,
-      wood2: 0,
-    };
+    if (player.admin) {
+      player.resources = {
+        food: 99999,
+        wood: 99999,
+        stone: 99999,
+        gold: 99999,
+        ruby: 99999,
+        food2: 0,
+        wood2: 0,
+      };
+    } else {
+      player.resources = {
+        food: 0,
+        wood: 0,
+        stone: 0,
+        gold: 0,
+        ruby: 0,
+        food2: 0,
+        wood2: 0,
+      };
+    }
   }
 
   var renderDistance = 1300;
@@ -454,8 +469,8 @@
                 obj.id != player.sid
               ) {
                 if (!player.admin) {
-                player.health -= aObj.damage;
-                player.noHurtTime += 2;
+                  player.health -= aObj.damage;
+                  player.noHurtTime += 2;
                 }
               }
               player.xVel += pushVelX;
@@ -487,7 +502,7 @@
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
                   if (!player.admin) {
-                  enemy.health -= weapon.damage;
+                    enemy.health -= weapon.damage;
                   }
                   client.send(
                     msgpack.encode([
@@ -503,12 +518,12 @@
                 }
               });
               function Gem() {
-                if (Math.floor(Math.random() * 100) == 3) { 
-                  return true; 
-                } else { 
+                if (Math.floor(Math.random() * 100) == 3) {
+                  return true;
+                } else {
                   return false;
-                };
-              };
+                }
+              }
               var treesNear = treesCache.filter(
                 (x) => x && dist(player, x) < renderDistance
               );
@@ -529,7 +544,9 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? Gem() ? "ruby" : "gold"
+                      ? Gem()
+                        ? "ruby"
+                        : "gold"
                       : tree.id == 4
                       ? ""
                       : tree.id == 5
@@ -560,7 +577,9 @@
                   reaching(player, obj, weapon.range + 10) &&
                   isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
                 ) {
+                  if (!player.admin) {
                   obj.health -= weapon.damage;
+                  }
                   var wiggleDir = Math.atan2(
                     obj.y - player.y,
                     obj.x - player.x
@@ -695,7 +714,7 @@
             socket.player.resources.stone = 99999;
             socket.player.resources.ruby = 99999;
             socket.player.resources.gold = 99999;
-          } 
+          }
           if (msg[1][0] == "/kill" && socket.player.admin) {
             socket.player.health = 0;
           } else if (
@@ -717,7 +736,7 @@
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
-            
+
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
@@ -808,4 +827,4 @@
     }
   });
   console.clear();
-})()
+})();
