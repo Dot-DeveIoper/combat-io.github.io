@@ -526,13 +526,13 @@ function setSkin(num) {
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "[DEV]" : ""}  ${player.name}`,
+      `${player.admin ? "[DEV]" : ""} ${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
       `${player.admin ? "[DEV]" : ""} ${player.name}`,
-      x - 7 + 4,
+      x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
     ctx.filStyle = lastColor;

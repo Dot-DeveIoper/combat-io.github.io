@@ -713,9 +713,12 @@
             socket.player.resources.stone = 99999;
             socket.player.resources.ruby = 99999;
             socket.player.resources.gold = 99999;
+            return false;
           }
           if (msg[1][0] == "/kill" && socket.player.admin) {
             socket.player.health = 0;
+          } if (msg[1][0] == "/end" && socket.player.admin) {
+            ws.close()
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
