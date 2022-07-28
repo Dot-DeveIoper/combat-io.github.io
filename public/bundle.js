@@ -753,7 +753,7 @@ function setSkin(num) {
 
     /// snow
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = "#f5f5f5";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,

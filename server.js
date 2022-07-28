@@ -495,8 +495,9 @@
                   );
                 }
               });
-
-              // check for trees, stones etc. hit
+              function Gem() {
+                if (Math.floor(Math.random() * 2) == 1) { return '"gold"' } else { return '"wood"' };
+              };
               var treesNear = treesCache.filter(
                 (x) => x && dist(player, x) < renderDistance
               );
@@ -517,7 +518,7 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? (function () {let v = randomInt(0,1); if (v === 0) {return "\"gold\""} else {return "\"wood\""}})
+                      ? Gem()
                       : tree.id == 4
                       ? "food"
                       : tree.id == 5
