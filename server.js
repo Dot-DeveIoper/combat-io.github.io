@@ -76,26 +76,29 @@
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
       // map is 6:1 ratio
-      if (randomy < 1000) {
+      if (randomy <= 0 || randomy >= 0) { // remove from whole map
+        if (j == 4) continue;
+      }
+      if (randomy < 1000) { // remove from snow biome
         if (j == 0 || j == 1 || j == 3) continue;
       }
-      if (randomy > 1000) {
-        if (j == 4 || j == 5) continue;
+      if (randomy > 1000) { //
+        if (j == 5 || j == 6) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - 100 &&
         randomy < mapSize - moltenHeight + 100
       ) {
-        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+        if (j == 0 || j == 1 || j == 3 || j == 5 || j == 6) continue;
       }
       if (randomy > mapSize - moltenHeight - 100) {
-        if (j == 0 || j == 1 || j == 4 || j == 5) continue;
+        if (j == 0 || j == 1 || j == 5 || j == 6) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
         randomy < mapSize - moltenHeight - riverHeight + 100
       ) {
-        if (j == 0 || j == 1 || j == 3 || j == 4 || j == 5) continue;
+        if (j == 0 || j == 1 || j == 3 || j == 5 || j == 6) continue;
       }
       var object = {
         x: randomx,
@@ -217,7 +220,7 @@
       wood: 0,
       stone: 0,
       gold: 0,
-      gold: 0,
+      ruby: 0,
       food2: 0,
       wood2: 0,
     };
@@ -522,10 +525,12 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? Gem() ? "wood" : "gold"
+                      ? Gem() ? "ruby" : "gold"
                       : tree.id == 4
-                      ? "food"
+                      ? ""
                       : tree.id == 5
+                      ? "food"
+                      : tree.id === 6
                       ? "wood"
                       : test
                   ] += weapon.gather;
@@ -616,7 +621,7 @@
         wood: 100,
         stone: 100,
         gold: 100,
-        gold: 100,
+        ruby: 100,
         food2: 100,
         wood2: 100,
       },
@@ -680,6 +685,7 @@
             socket.player.resources.food = 99999;
             socket.player.resources.wood = 99999;
             socket.player.resources.stone = 99999;
+            socket.player.resources.ruby = 99999;
             socket.player.resources.gold = 99999;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
@@ -706,6 +712,7 @@
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
             var reqStone = obj.cost.stone || 0;
+            var reqRuby = obj.cost.Ruby || 0;
             var reqGold = obj.cost.gold || 0;
             var reqFood2 = obj.cost.food || 0;
             var reqWood2 = obj.cost.wood || 0;
@@ -713,13 +720,15 @@
             var haveFood = socket.player.resources.food >= reqFood;
             var haveWood = socket.player.resources.wood >= reqWood;
             var haveStone = socket.player.resources.stone >= reqStone;
+            var haveRuby = socket.player.resources.ruby >= reqRuby;
             var haveGold = socket.player.resources.gold >= reqGold;
 
-            if (haveFood && haveWood && haveStone && haveGold) {
+            if (haveFood && haveWood && haveStone && haveGold && haveRuby) {
               if (obj.heal && socket.player.health < 100) {
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
+                socket.player.resources.ruby -= reqStone;
                 socket.player.resources.gold -= reqGold;
 
                 socket.player.health = Math.min(
@@ -738,6 +747,7 @@
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
+                socket.player.resources.ruby -= reqRuby;
                 socket.player.resources.gold -= reqGold;
 
                 objCache.push({
