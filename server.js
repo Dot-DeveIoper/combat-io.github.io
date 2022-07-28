@@ -82,7 +82,7 @@
       if (randomy < 1000) { // remove from snow biome
         if (j == 0 || j == 1 || j == 3) continue;
       }
-      if (randomy > 1000) { //
+      if (randomy > 1000) { // remove from snow bomie down
         if (j == 5 || j == 6) continue;
       }
       if (
