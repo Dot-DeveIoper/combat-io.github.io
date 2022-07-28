@@ -75,9 +75,9 @@ function setSkin(num) {
   var moveLeft = 0;
   var moveRight = 0;
   var SpawnedOnce = 0;
-  var deathLocX = 0;
+  var deathLocX = -40;
   var deathLocY = 0;  
-  var baseLocX = 0;
+  var baseLocX = ;
   var baseLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
@@ -1260,6 +1260,8 @@ function setSkin(num) {
           }
           break;
         case keycodes.BASE:
+            baseLocX = myPlayer.x * (200 / mapSize);
+            baseLocY = myPlayer.y * (200 / mapSize);
             Base = 1;
           break;
       }
@@ -1353,8 +1355,6 @@ function setSkin(num) {
       var minimapSize = 200;
       deathLocX = myPlayer.x * (minimapSize / mapSize);
       deathLocY = myPlayer.y * (minimapSize / mapSize);
-      baseLocX = myPlayer.x * (minimapSize / mapSize);
-      baseLocY = myPlayer.y * (minimapSize / mapSize);
     }
   });
   enterGame.addEventListener("click", function (e) {
