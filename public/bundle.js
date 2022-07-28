@@ -876,6 +876,7 @@ function setSkin(num) {
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
     // leaderboard
+    // leaderboard
     var leaderboardOffset = 20;
     var leaderboardWidth = 300;
     var lastStyle = ctx.fillStyle;
@@ -916,6 +917,7 @@ function setSkin(num) {
       );
     });
 
+    // minimap
     // minimap
     var minimapOffset = 20;
     var minimapSize = 200;
