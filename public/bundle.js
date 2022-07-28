@@ -51,7 +51,7 @@ function setSkin(num) {
     MOVE_RIGHT2: "ArrowRight",
     CHAT: "Enter",
     QUICK_FOOD: "KeyQ",
-    BASE: "KeyC",
+    BASE: "KeyV",
 
     HOTBAR_1: "Digit1",
     HOTBAR_2: "Digit2",
@@ -75,9 +75,9 @@ function setSkin(num) {
   var moveLeft = 0;
   var moveRight = 0;
   var SpawnedOnce = 0;
-  var deathLocX = -40;
+  var deathLocX = 0;
   var deathLocY = 0;  
-  var baseLocX = -40;
+  var baseLocX = 0;
   var baseLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
@@ -949,7 +949,7 @@ function setSkin(num) {
       ctx.beginPath();
       ctx.arc(
         minimapOffset + deathLocX,
-        +canvas.height - minimapOffset - minimapSize + deathLocY,
+        + canvas.height - minimapOffset - minimapSize + deathLocY,
         3,
         0,
         2 * Math.PI
@@ -958,17 +958,17 @@ function setSkin(num) {
       ctx.fillStyle = last2Style;
     }
     if (Base == 1) {
-          ctx.fillStyle = "#78B2FF";
-          ctx.beginPath();
-          ctx.arc(
-          20 + baseLocX,
-          +canvas.height - 20 - 200 + baseLocY,
-          3,
-          0,
-          2 * Math.PI
-        );
-        ctx.fill();
-        ctx.fillStyle = last2Style;
+      ctx.fillStyle = "#78B2FF";
+      ctx.beginPath();
+      ctx.arc(
+        minimapOffset + baseLocX,
+        + canvas.height - minimapOffset - minimapSize + baseLocY,
+        3,
+        0,
+        2 * Math.PI
+      );
+      ctx.fill();
+      ctx.fillStyle = last2Style;
     }
     // resources display
     var resourcesMinimapOffset = 30;
@@ -1221,7 +1221,7 @@ function setSkin(num) {
           send(["s", [inventory[9]]]);
           break;
         case 82:
-          //nausea = !nausea;
+          // nausea = !nausea;
           break;
         case keycodes.MOVE_UP:
           moveUp = 1;
@@ -1353,6 +1353,8 @@ function setSkin(num) {
       var minimapSize = 200;
       deathLocX = myPlayer.x * (minimapSize / mapSize);
       deathLocY = myPlayer.y * (minimapSize / mapSize);
+      baseLocX = myPlayer.x * (minimapSize / mapSize);
+      baseLocY = myPlayer.y * (minimapSize / mapSize);
     }
   });
   enterGame.addEventListener("click", function (e) {
