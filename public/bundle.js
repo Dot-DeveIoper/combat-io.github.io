@@ -1005,8 +1005,8 @@ function setSkin(num) {
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
       }
-    if (ageLevelBar.style.width === "100%" && !ageChange) {
-      ageLevelBar.style.width = myPlayer.xp + "%";
+    if (ageLevelBar.style.width === 100 && !ageChange) {
+      ageLevelBar.style.width = "0%";
       age += 1;
       myPlayer.xp = 0;
       ageChange = true;
