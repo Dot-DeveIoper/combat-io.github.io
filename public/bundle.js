@@ -462,7 +462,6 @@ function setSkin(num) {
     }
     return this;
   };
-
   function relative(pos) {
     var canvasX = canvas.width / 2 + pos.x - myPlayer.x;
     var canvasY = canvas.height / 2 + pos.y - myPlayer.y;
@@ -958,7 +957,7 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-
+    ageBar.style.width = myPlayer.xp + ""
     if (myPlayer.resources)
       for (let v = 0; v < trees.length - 2; v++) {
         var res = trees[v];
