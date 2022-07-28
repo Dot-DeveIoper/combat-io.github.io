@@ -5,8 +5,9 @@
 // SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
+//THIS IS A SAVED COPY DO NOT EDIT
 
-var SkinID = 6;
+var SkinID = 0;
 function setSkin(num) {
   for (let i = 1; i <= 8; i++) {
     if (i == num) {
@@ -78,6 +79,8 @@ function setSkin(num) {
   var deathLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
+  let age = 1;
+  let ageChange = false;
 
   setInterval(() => {
     Function.constructor("debugger").apply("stateObject");
@@ -153,7 +156,6 @@ function setSkin(num) {
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
-    ageBar.style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
       if (AudioOn === "true") {
@@ -194,6 +196,8 @@ function setSkin(num) {
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
   let ageBar = document.getElementById("ageBar");
+  let ageLevelBar = document.getElementById("ageLevelBar");
+  let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
@@ -322,8 +326,17 @@ function setSkin(num) {
       scale: 150,
     },
     {
-      name: "food2",
+      name: "ruby",
       id: 4,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539", //ruby
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+    {
+      name: "food2",
+      id: 5,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
       img: new Image(),
       xOffset: -60,
@@ -332,7 +345,7 @@ function setSkin(num) {
     },
     {
       name: "wood2",
-      id: 5,
+      id: 6,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
       img: new Image(),
       xOffset: -158,
@@ -453,7 +466,6 @@ function setSkin(num) {
     }
     return this;
   };
-
   function relative(pos) {
     var canvasX = canvas.width / 2 + pos.x - myPlayer.x;
     var canvasY = canvas.height / 2 + pos.y - myPlayer.y;
@@ -523,7 +535,6 @@ function setSkin(num) {
     ctx.filStyle = lastColor;
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
-      drawBody(player, x, y, player.aimdir, player.sid);
     } else {
       drawWeapon(
         player,
@@ -533,7 +544,6 @@ function setSkin(num) {
         weapons[0],
         player.sid
       );
-      drawBody(player, x, y, player.aimdir, player.sid);
     }
     if (player.chat) {
       fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
@@ -560,8 +570,6 @@ function setSkin(num) {
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-  }
-  function drawBody(player, x, y, rot, sid) {
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
@@ -711,7 +719,6 @@ function setSkin(num) {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
-
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
@@ -757,7 +764,7 @@ function setSkin(num) {
 
     /// snow
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = "#f5f5f5";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
@@ -953,7 +960,6 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-
     if (myPlayer.resources)
       for (let v = 0; v < trees.length - 2; v++) {
         var res = trees[v];
@@ -985,6 +991,18 @@ function setSkin(num) {
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
       }
+    if (ageLevelBar.style.width === "100%" && !ageChange) {
+      ageLevelBar.style.width = myPlayer.xp + "%";
+      age += 1;
+      myPlayer.xp = 0;
+      ageChange = true;
+      setTimeout(() => {
+        ageChange = false;
+      }, 1000);
+    } else {
+      ageLevelBar.style.width = myPlayer.xp + "%";
+    }
+    ageCounter.innerHTML = age;
   }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
@@ -1054,7 +1072,6 @@ function setSkin(num) {
             break;
           case "d":
             mainMenu.style.display = "block";
-            ageBar.style.display = "none";
             if (soundOn) {
               if (AudioOn === "true") {
                 audio1.play();
@@ -1068,9 +1085,6 @@ function setSkin(num) {
                   }
                 }, 10);
               }
-            }
-            for (let i = 0; i < 11; i++) {
-              document.getElementById("h-item-" + i).style.display = "none";
             }
             break;
           case "o":

@@ -593,6 +593,7 @@
         if (player.health <= 0) {
           client.send(msgpack.encode(["d", []]));
           player.spawned = false;
+          player.xp = 0;
         }
       }
     });

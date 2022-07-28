@@ -155,7 +155,6 @@ function setSkin(num) {
 
   function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
-    ageBar.style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
       if (AudioOn === "true") {
@@ -945,7 +944,7 @@ function setSkin(num) {
       ctx.fillStyle = "#FF7878"; //#78B2FF FoR base lock
       ctx.beginPath();
       ctx.arc(
-        minimapOffset + deathLocX - 19,
+        minimapOffset + deathLocX,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
         3,
         0,
@@ -1072,7 +1071,6 @@ function setSkin(num) {
             break;
           case "d":
             mainMenu.style.display = "block";
-            ageBar.style.display = "none";
             if (soundOn) {
               if (AudioOn === "true") {
                 audio1.play();
@@ -1086,9 +1084,6 @@ function setSkin(num) {
                   }
                 }, 10);
               }
-            }
-            for (let i = 0; i < 11; i++) {
-              document.getElementById("h-item-" + i).style.display = "none";
             }
             break;
           case "o":
