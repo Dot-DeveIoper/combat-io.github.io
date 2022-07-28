@@ -497,9 +497,9 @@
               });
               function Gem() {
                 if (Math.floor(Math.random() * 2) == 1) { 
-                  return '"gold"' 
+                  return true; 
                 } else { 
-                  return '"wood"' 
+                  return false;
                 };
               };
               var treesNear = treesCache.filter(
@@ -522,7 +522,7 @@
                       : tree.id == 2
                       ? "stone"
                       : tree.id == 3
-                      ? Gem()
+                      ? Gem() ? "wood" : "gold"
                       : tree.id == 4
                       ? "food"
                       : tree.id == 5
@@ -538,7 +538,6 @@
                   tree.yWiggle += Math.sin(wiggleDir) * 14;
                 }
               });
-              console.log(Gem());
               // check for traps and stuff hit
               var objNear = objCache.filter(
                 (x) => x && dist(player, x) < renderDistance
