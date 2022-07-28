@@ -322,8 +322,17 @@ function setSkin(num) {
       scale: 150,
     },
     {
-      name: "food2",
+      name: "ruby",
       id: 4,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539", //ruby
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+    {
+      name: "food2",
+      id: 5,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
       img: new Image(),
       xOffset: -60,
@@ -332,7 +341,7 @@ function setSkin(num) {
     },
     {
       name: "wood2",
-      id: 5,
+      id: 6,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
       img: new Image(),
       xOffset: -158,
