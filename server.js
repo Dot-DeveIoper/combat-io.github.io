@@ -453,8 +453,10 @@
                 player.noHurtTime == 0 &&
                 obj.id != player.sid
               ) {
+                if (!player.admin) {
                 player.health -= aObj.damage;
                 player.noHurtTime += 2;
+                }
               }
               player.xVel += pushVelX;
               player.yVel += pushVelY;
@@ -484,7 +486,9 @@
                   );
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
+                  if (!player.admin) {
                   enemy.health -= weapon.damage;
+                  }
                   client.send(
                     msgpack.encode([
                       "t",
