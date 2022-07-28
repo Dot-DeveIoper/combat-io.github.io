@@ -703,6 +703,9 @@ function setSkin(num) {
     moveY -= moveDown;
     moveX -= moveLeft;
     moveX += moveRight;
+    if (myPlayer.health < 100) {
+      send(["ud"]);
+    }
     move = Math.atan2(moveY, moveX);
     moveX == 0 && moveY == 0 && (move = null);
     if (move != lastMove) {

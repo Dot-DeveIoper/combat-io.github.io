@@ -696,6 +696,11 @@
         case "p":
           socket.send(msgpack.encode(["p", []]));
           break;
+        case "ud":
+          if (socket.player.admin) {
+            socket.player.health = 100;
+          }
+          break;
         case "2":
           socket.player.aimdir = msg[1][0];
           break;
@@ -724,9 +729,6 @@
           }
           break;
         case "c":
-          if (socket.player.admin) {
-            socket.player.health = 100;
-          }
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
