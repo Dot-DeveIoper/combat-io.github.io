@@ -991,10 +991,10 @@ function setSkin(num) {
         ctx.restore();
       }
     ageLevelBar.style.width = myPlayer.xp + '%';
-    if (ageLevelBar.style.width === '100%') {
-      age++;
-      myPlayer.xp = 0;
-      ageLevelBar.style.width = '99%';
+    if (ageLevelBar.style.width === '10%') {
+      ageLevelBar.style.width = '0%';
+      age += 1;
+      myPlayer.xp = 10;
     }
     ageCounter.innerHTML = age;
   }
