@@ -496,7 +496,7 @@
                 }
               });
               function Gem() {
-                if (Math.floor(Math.random() * 2) == 1) { 
+                if (Math.floor(Math.random() * 100) == 3) { 
                   return true; 
                 } else { 
                   return false;
