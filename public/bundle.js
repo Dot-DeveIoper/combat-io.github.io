@@ -77,7 +77,7 @@ function setSkin(num) {
   var SpawnedOnce = 0;
   var deathLocX = -40;
   var deathLocY = 0;  
-  var baseLocX = ;
+  var baseLocX = -40;
   var baseLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
