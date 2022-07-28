@@ -496,7 +496,11 @@
                 }
               });
               function Gem() {
-                if (Math.floor(Math.random() * 2) == 1) { return '"gold"' } else { return '"wood"' };
+                if (Math.floor(Math.random() * 2) == 1) { 
+                  return '"gold"' 
+                } else { 
+                  return '"wood"' 
+                };
               };
               var treesNear = treesCache.filter(
                 (x) => x && dist(player, x) < renderDistance
