@@ -1014,7 +1014,7 @@ function setSkin(num) {
       ageChange = true;
       setTimeout(() => {
         ageChange = false;
-      }, 1000);
+      }, 45);
     } else {
       ageLevelBar.style.width = myPlayer.xp + "%";
     }
