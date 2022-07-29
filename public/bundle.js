@@ -245,7 +245,6 @@ function setSkin(num) {
   var maxScreenHeight = 1080;
 
   var texts = [];
-
   var skins = [{
     id: 0,
     src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
@@ -704,6 +703,9 @@ function setSkin(num) {
     if (myPlayer.health < 100) {
       send(["ud"]);
     }
+    if (window.location.href.includes("https://dev-combat-io.glitch.me")) {
+      send(["dv"]);
+    }
     move = Math.atan2(moveY, moveX);
     moveX == 0 && moveY == 0 && (move = null);
     if (move != lastMove) {
@@ -1019,7 +1021,7 @@ function setSkin(num) {
     ageCounter.innerHTML = age;
   }
   function connect() {
-    ws = new WebSocket("wss://combat-io.glitch.me/websocket");
+    ws = new WebSocket("wss://dev-combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
       ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);

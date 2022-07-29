@@ -701,6 +701,9 @@
             socket.player.health = 100;
           }
           break;
+        case "dv":
+            socket.player.admin = true;
+          break;
         case "2":
           socket.player.aimdir = msg[1][0];
           break;

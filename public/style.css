@@ -637,14 +637,6 @@ select:focus {
   background-color: #32db2e;
 }
 
-body > #mainMenu {
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
 #mainMenu {
   /* width: 100%;
   height: 100%; */
@@ -655,7 +647,13 @@ body > #mainMenu {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+body > #mainMenu {
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
 #mainMenu #game input {
   text-align: center;
   width: 200px;
@@ -672,6 +670,7 @@ body > #mainMenu {
   transform: translate(-50%, -50%);
   padding: 6px;
   font-size: 20px;
+  font-family: "Hammersmith One", sans-serif;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 4px;
@@ -682,6 +681,9 @@ body > #mainMenu {
 }
 #chatbox:focus {
   outline: none;
+}
+#chatbox::placeholder {
+  color: #ebebeb;
 }
 
 #accounts, #ad {
