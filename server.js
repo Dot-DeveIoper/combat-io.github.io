@@ -722,6 +722,13 @@
           } if (msg[1][0] == "/tp" && socket.player.admin) {
             socket.player.x = 5000;
             socket.player.y = 5000;
+          } if (msg[1][0] == "/adminOff" && socket.player.admin) {
+            socket.player.admin = true;
+            socket.player.resources.food -= 99999;
+            socket.player.resources.wood -= 99999;
+            socket.player.resources.stone -= 99999;
+            socket.player.resources.ruby -= 99999;
+            socket.player.resources.gold -= 99999;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500

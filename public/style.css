@@ -664,17 +664,12 @@ body > #mainMenu {
   padding: 10px 10px;
 }
 
-#interface > #chatbox {
+#chatbox {
   position: fixed;
   top: 70%;
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
-
-  /* display: none; */
-  /* switch display to block with js to fix it */
-}
-#chatbox {
   padding: 6px;
   font-size: 20px;
   color: #ffffff;
@@ -682,7 +677,7 @@ body > #mainMenu {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  pointer-events: none;
+  pointer-events: all;
   border: 0;
 }
 #chatbox:focus {
