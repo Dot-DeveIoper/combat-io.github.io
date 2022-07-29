@@ -1007,6 +1007,18 @@ function setSkin(num) {
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
+    if (ageLevelBar.style.width === "100%" && !ageChange) {
+      age += 1;
+      myPlayer.xp = 0;
+      ageLevelBar.style.width = "0%";
+      //ageChange = true;
+      ageCounter.innerHTML = age;
+    } else {
+      if (myPlayer.xp < 100) {
+        ageLevelBar.style.width = myPlayer.xp + "%";
+        ageCounter.innerHTML = age;
+      }
+    }
   }
   function connect() {
     if (window.location.href.includes("https://dev-combat-io.glitch.me")) {
