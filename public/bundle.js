@@ -704,7 +704,7 @@ function setSkin(num) {
     if (myPlayer.health < 100) {
       send(["ud"]);
     }
-    if (window.location.href.includes("https://dev-combat-io.glitch.me")) {
+    if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
       send(["dv"]);
     }
     move = Math.atan2(moveY, moveX);
@@ -795,7 +795,6 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle3;
     
-    //Grid
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
     for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 55) {
       ctx.moveTo(x, 0);
@@ -1024,8 +1023,8 @@ function setSkin(num) {
     }
   }
   function connect() {
-    if (window.location.href.includes("https://dev-combat-io.glitch.me")) {
-      ws = new WebSocket("wss://dev-combat-io.glitch.me/websocket");
+    if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
+      ws = new WebSocket("wss://anarchy-combat-io.glitch.me/websocket");
     } else {
       ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     }
