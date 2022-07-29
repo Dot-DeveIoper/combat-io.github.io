@@ -778,6 +778,7 @@ body > #mainMenu {
 }
 .ageLevelBar {
   position: relative;
+  /* position: relative; */
   background-color: #ffffff;
   width: 0;
   max-width: 244px;
@@ -786,12 +787,27 @@ body > #mainMenu {
   max-height: 7px;
   min-height: 7px;
   border-radius: 2px;
+  /* float: left; */
+  top: 50%;
+  left: 50%;
+  /* left: 4.25%; */
+  /* margin-left: 4.25%; */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  user-select: none;
+}
+/* .ageLevelBar {
+  position: relative;
+  background-color: #ffffff;
+  width: 194px;
+  height: 7px;
+  border-radius: 2px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   user-select: none;
-}
+} */
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
@@ -838,7 +854,7 @@ body > #mainMenu {
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;
-  pointer-events: all;
+  pointer-events: none;
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
