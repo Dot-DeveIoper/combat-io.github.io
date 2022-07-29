@@ -412,7 +412,7 @@ function setSkin(num) {
       src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
       scale: 100,
       img: new Image(),
-      xOffset: -50,
+      xOffset: 0,
       yOffset: -50,
     },
   ];
