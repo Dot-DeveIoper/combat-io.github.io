@@ -282,7 +282,7 @@
         client.send(msgpack.encode(["b", [formattedLeaderboard]]));
       }
     });
-  }, 500);
+  }, 10);
 
   setInterval(() => {
     wsServer.clients.forEach((client) => {
