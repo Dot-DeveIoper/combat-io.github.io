@@ -748,6 +748,7 @@ body > #mainMenu {
   /* top: calc(80% - 20px); */
   bottom: 0;
   transform: translate(-50%, -50%);
+  pointer-events: none;
   user-select: none;
 
   /* display: none; */
