@@ -453,7 +453,6 @@ function setSkin(num) {
   setTimeout(() => {
     if (!["ComBat.io", undefined].includes(localStorage.name))
       document.querySelector("#nameInput").value = localStorage.name;
-    // automatically update the localStorage.name
     setInterval(() => {
       localStorage.name = document.querySelector("#nameInput").value;
     }, 50);
