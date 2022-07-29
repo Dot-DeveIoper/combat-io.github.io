@@ -794,16 +794,17 @@ function setSkin(num) {
       beachHeight
     );
     ctx.fillStyle = lastStyle3;
-    for (var x = canvas.width / 2 - myPlayer.x; x < 0; x += 1000) {
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, 500);
+    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 75) {
+      ctx.moveTo(x, -100);
+      ctx.lineTo(x, 10000);
     }
-    for (var y = canvas.height / 2 - myPlayer.y; y < 0; y += 1000) {
-      ctx.moveTo(0, y);
+    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize; y += 75) {
+      ctx.moveTo(-100, y);
       ctx.lineTo(10000, y);
     }
-    ctx.fillStyle = "#61b134";
+    ctx.fillStyle = "rgba(255, 255, 255, 0.20)";
     ctx.stroke();
+    ctx.fillStyle = lastStyle3;
     // map borders
     var prvStyle = ctx.fillStyle;
     ctx.strokeRect(
