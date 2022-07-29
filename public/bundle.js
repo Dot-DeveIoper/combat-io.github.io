@@ -1021,7 +1021,11 @@ function setSkin(num) {
     ageCounter.innerHTML = age;
   }
   function connect() {
-    ws = new WebSocket("wss://dev-combat-io.glitch.me/websocket");
+    if (window.location.href.includes("https://dev-combat-io.glitch.me")) {
+      ws = new WebSocket("wss://dev-combat-io.glitch.me/websocket");
+    } else {
+      ws = new WebSocket("wss://combat-io.glitch.me/websocket");
+    }
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
       ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);

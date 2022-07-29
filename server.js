@@ -218,7 +218,7 @@
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
-    player.weapons = [0, 1, 2, 3];
+    player.weapons = [0, 1, 2, 3, 4];
     if (player.admin) {
       player.resources = {
         food: 99999,
