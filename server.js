@@ -29,6 +29,7 @@
   var riverHeight = 1000;
   var beachHeight = 1000;
   var playerSpeed = 1;
+  var InfMode = false;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -698,7 +699,7 @@
           socket.send(msgpack.encode(["p", []]));
           break;
         case "ud":
-          if (socket.player.admin) {
+          if (socket.player.admin && InfMode) {
             socket.player.health = 100;
           }
           break;
@@ -728,6 +729,10 @@
             socket.player.y = 5000;
           } if (msg[1][0] == "/adminOff" && socket.player.admin) {
             socket.close();
+          } if (msg[1][0] == "/InfOn" && socket.player.admin) {
+            InfMode = true;
+          } if (msg[1][0] == "/InfOff" && socket.player.admin) {
+            InfMode = false;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
