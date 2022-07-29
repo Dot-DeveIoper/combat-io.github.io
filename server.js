@@ -177,6 +177,7 @@
       name: "Wall",
       cost: {
         wood: 20,
+        stone: 5,
       },
       damage: 0,
       velocity: 0,
