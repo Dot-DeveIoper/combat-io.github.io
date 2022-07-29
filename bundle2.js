@@ -79,6 +79,7 @@ function setSkin(num) {
   var deathLocY = 0;
   var soundOn = true;
   var sound = document.getElementById("sound");
+  var killstreak = 0
   let age = 1;
   let ageChange = false;
 
