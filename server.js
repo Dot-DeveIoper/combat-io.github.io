@@ -29,7 +29,7 @@
   var riverHeight = 1000;
   var beachHeight = 1000;
   var playerSpeed = 1;
-  var InfMode = false;
+  var infMode = false;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
