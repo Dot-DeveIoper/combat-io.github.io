@@ -466,7 +466,7 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                obj.id != player.sid
+                obj.id !== player.sid
               ) {
                   player.health -= aObj.damage;
                   player.noHurtTime += 2;
