@@ -1021,6 +1021,18 @@ function setSkin(num) {
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
+    if (ageLevelBar.style.width === "%100" && !ageChange) {
+      ageLevelBar.style.width = "0%";
+      age += 1;
+      myPlayer.xp = 0;
+      ageChange = true;
+      setTimeout(() => {
+        ageChange = false;
+      }, 1000);
+    } else {
+      ageLevelBar.style.width = myPlayer.xp + "%";
+    }
+    ageCounter.innerHTML = age;
   }
   function connect() {
     if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
