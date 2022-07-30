@@ -1020,7 +1020,11 @@ function setSkin(num) {
     }
     if (ageLevelBar.style.width === "100%" && !ageChange) {
       ageLevelBar.style.width = "0%";
-      age += 1;
+        if (age > 999) {
+          age = "MAX";
+        } else {
+          age += 1;
+        }
       myPlayer.xp = 0;
       ageChange = true;
       setTimeout(() => {
