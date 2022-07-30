@@ -744,7 +744,7 @@
             }, 3000);
           }
           break;
-        case "c":
+        /*case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
@@ -812,7 +812,7 @@
               }
             }
           }
-          break;
+          break;*/
         case "s":
           var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
