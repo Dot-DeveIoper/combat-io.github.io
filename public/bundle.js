@@ -701,9 +701,6 @@ function setSkin(num) {
     if (myPlayer.health < 100) {
       send(["ud"]);
     }
-    if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
-      send(["dv"]);
-    }
     move = Math.atan2(moveY, moveX);
     moveX == 0 && moveY == 0 && (move = null);
     if (move != lastMove) {
@@ -1064,6 +1061,9 @@ function setSkin(num) {
               document.getElementById("h-item-" + i).style.display = "none";
             }
             myPlayer.sid = msg[1][0];
+            if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
+              send(["dv"]);
+            }
             break;
           case "w":
             inventory = msg[1][0];
