@@ -794,20 +794,20 @@ function setSkin(num) {
       beachHeight
     );
     ctx.fillStyle = lastStyle3;
-
-    ctx.strokeStyle = "rgb(105, 105, 105, 0.2)";
-    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 50) {
+    
+    ctx.strokeStyle = "rgb(105,105,105, 0.2)";
+    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 55) {
       ctx.moveTo(x, 0);
-      ctx.lineWidth = "2.5";
+      ctx.lineWidth = "5";
       ctx.lineTo(x, 10000);
     }
-    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize; y += 50) {
+    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize; y += 55) {
       ctx.moveTo(0, y);
-      ctx.lineWidth = "2.5";
+      ctx.lineWidth = "5";
       ctx.lineTo(10000, y);
     }
     ctx.stroke();
-
+    
     // map borders
     var prvStyle = ctx.fillStyle;
     ctx.strokeRect(
@@ -1017,7 +1017,7 @@ function setSkin(num) {
         10
       );
       ctx.textAlign = "left";
-      ctx.fillText(myPlayer.resources[res.name], -60, 18);
+      ctx.fillText(myPlayer.resources[res.name], -50, 15);
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
