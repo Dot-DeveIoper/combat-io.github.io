@@ -1018,6 +1018,7 @@ function setSkin(num) {
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
+    if (age < 999 || age === "MAX") {
     if (ageLevelBar.style.width === "100%" && !ageChange) {
       ageLevelBar.style.width = "0%";
       age += 1;
@@ -1028,6 +1029,9 @@ function setSkin(num) {
       }, 45000);
     } else {
       ageLevelBar.style.width = myPlayer.xp + "%";
+    }
+    } else {
+      age = "MAX";
     }
     ageCounter.innerHTML = age;
   }
