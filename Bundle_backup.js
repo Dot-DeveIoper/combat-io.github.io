@@ -799,6 +799,7 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle3;
 
+    //draw grid
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
     for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 55) {
       ctx.moveTo(x, 0);
@@ -1192,7 +1193,7 @@ function setSkin(num) {
         case keycodes.QUICK_FOOD:
           var sn;
           inventory.forEach((item) => {
-            var itm = weapons.find((x) => x.id == item);
+            var itm = weapons.find((x) => x.id == item +1);
             if (itm && itm.food) {
               sn = itm.id;
               if (myPlayer.weapon == sn) {

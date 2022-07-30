@@ -178,7 +178,7 @@
       cost: {
         wood: 20,
       },
-      damage: 0,
+      damage: 100000,
       velocity: 0,
       health: 250,
       maxHealth: 250,
@@ -635,7 +635,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3],
+      weapons: [0, 1, 2, 3, 4],
       xp: 0,
       age: 0,
       resources: {

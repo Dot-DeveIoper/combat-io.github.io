@@ -413,7 +413,7 @@ function setSkin(num) {
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWallV%5B2%5D.webp?v=1659183780096",
       scale: 80,
       img: new Image(),
-      xOffset: 0,
+      xOffset: -50,
       yOffset: -50,
     },
   ];
@@ -1199,7 +1199,7 @@ function setSkin(num) {
               if (itm && itm.food) {
                 sn = itm.id;
                 if (myPlayer.weapon == sn) {
-                  send(["s", [inventory[1]]]);
+                  // send(["s", [inventory[1]]]);
                 } else {
                   send(["s", [sn + 1]]);
                 }
