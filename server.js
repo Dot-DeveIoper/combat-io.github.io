@@ -804,6 +804,7 @@
                   yWiggle: 0,
                 });
                 var playerWeaponObjects = [];
+                console.log(playerWeaponObjects)
                 socket.player.weapons.forEach((w) => {
                   playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
