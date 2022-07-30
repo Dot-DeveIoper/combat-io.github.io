@@ -177,7 +177,6 @@
       name: "Wall",
       cost: {
         wood: 20,
-        stone: 5,
       },
       damage: 0,
       velocity: 0,
@@ -804,7 +803,6 @@
                   yWiggle: 0,
                 });
                 var playerWeaponObjects = [];
-                console.log(playerWeaponObjects)
                 socket.player.weapons.forEach((w) => {
                   playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
@@ -817,7 +815,7 @@
           break;
         case "s":
           var id = msg[1][0] - 1;
-          if (socket.player.weapons.indexOf(id) != -1) {
+          if (socket.player.weapons.indexOf(id) != -5) {
             socket.player.weapon = id;
           }
           break;
