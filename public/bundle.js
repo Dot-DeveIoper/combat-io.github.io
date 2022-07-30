@@ -86,9 +86,6 @@ function setSkin(num) {
   let ageChange = false;
   var Base = 0;
 
-  setInterval(() => {
-    Function.constructor("debugger").apply("stateObject");
-  }, 10);
   document.addEventListener("keydown", function (e) {
     if (e.which == 123) {
       e.preventDefault();
@@ -1021,14 +1018,14 @@ function setSkin(num) {
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
-    if (ageLevelBar.style.width === "%100" && !ageChange) {
+    if (ageLevelBar.style.width === "100%" && !ageChange) {
       ageLevelBar.style.width = "0%";
       age += 1;
       myPlayer.xp = 0;
       ageChange = true;
       setTimeout(() => {
         ageChange = false;
-      }, 1000);
+      }, 45000);
     } else {
       ageLevelBar.style.width = myPlayer.xp + "%";
     }
