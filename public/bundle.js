@@ -521,7 +521,7 @@ function setSkin(num) {
     ctx.font = "24px Hammersmith One";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = player.admin ? "#009999": "#fff";
+    ctx.fillStyle = player.admin ? "#30d1a1": "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
       `${player.admin ? "[DEV]": ""} ${player.name}`,
