@@ -390,10 +390,10 @@ function setSkin(num) {
     {
       id: 3,
       name: "Wall",
-      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
-      scale: 100,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWallV.webp?v=1659181510387",
+      scale: 80,
       img: new Image(),
-      xOffset: -50,
+      xOffset: 0,
       yOffset: -50,
     },
   ];
@@ -410,8 +410,8 @@ function setSkin(num) {
     {
       id: 3,
       name: "Wall",
-      src: "https://media.discordapp.net/attachments/974248776082542602/979260157353685002/unknown.png?width=500&height=500",
-      scale: 100,
+      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      scale: 80,
       img: new Image(),
       xOffset: 0,
       yOffset: -50,
