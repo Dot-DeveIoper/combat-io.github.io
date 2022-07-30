@@ -635,7 +635,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4],
+      weapons: [0, 1, 2, 3],
       xp: 0,
       age: 0,
       resources: {
@@ -779,8 +779,8 @@
                   socket.player.health + obj.heal
                 );
                 var playerWeaponObjects = [];
-                socket.player.weapons.forEach((w) => {
-                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
+                socket.player.weapons.forEach((w ) => {
+                  playerWeaponObjects.push(weapons.find((x) => x.id == w - 1));
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
                   (x) => x && x.isWeapon
@@ -815,7 +815,7 @@
           break;
         case "s":
           var id = msg[1][0] - 1;
-          if (socket.player.weapons.indexOf(id) != -5) {
+          if (socket.player.weapons.indexOf(id) != -1) {
             socket.player.weapon = id;
           }
           break;
