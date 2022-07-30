@@ -1017,7 +1017,7 @@ function setSkin(num) {
         10
       );
       ctx.textAlign = "left";
-      ctx.fillText(myPlayer.resources[res.name], -50, 15);
+      ctx.fillText(myPlayer.resources[res.name], -60, 18);
       ctx.drawImage(res.img, -8, -7, 35, 35);
       ctx.restore();
     }
