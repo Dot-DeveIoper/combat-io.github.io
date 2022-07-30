@@ -852,7 +852,7 @@ body > #mainMenu {
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;
-  pointer-events: none;
+  pointer-events: all;
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
