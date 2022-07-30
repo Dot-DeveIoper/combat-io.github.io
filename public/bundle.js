@@ -650,7 +650,7 @@ function setSkin(num) {
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
-    var ob = objects.find((x) => x.id == id + 1);
+    var ob = objects.find((x) => x.id == id);
     var img = ob.img;
     if (img) {
       ctx.save();
@@ -1199,7 +1199,7 @@ function setSkin(num) {
               if (itm && itm.food) {
                 sn = itm.id;
                 if (myPlayer.weapon == sn) {
-                  // send(["s", [inventory[1]]]);
+                   send(["s", [inventory[1]]]);
                 } else {
                   send(["s", [sn + 1]]);
                 }
@@ -1225,7 +1225,7 @@ function setSkin(num) {
             break;
           case keycodes.HOTBAR_5:
             send(["s",
-              [inventory[5]]]);
+              [inventory[4]]]);
             break;
           case keycodes.HOTBAR_6:
             send(["s",
