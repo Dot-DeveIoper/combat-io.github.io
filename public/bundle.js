@@ -1225,7 +1225,7 @@ function setSkin(num) {
             break;
           case keycodes.HOTBAR_5:
             send(["s",
-              [inventory[4]]]);
+              [inventory[5]]]);
             break;
           case keycodes.HOTBAR_6:
             send(["s",
