@@ -178,7 +178,7 @@
       cost: {
         wood: 20,
       },
-      damage: 100000,
+      damage: 1,
       velocity: 0,
       health: 250,
       maxHealth: 250,

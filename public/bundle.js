@@ -650,7 +650,7 @@ function setSkin(num) {
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
-    var ob = objects.find((x) => x.id == id);
+    var ob = objects.find((x) => x.id == id + 1);
     var img = ob.img;
     if (img) {
       ctx.save();
