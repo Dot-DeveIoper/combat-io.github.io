@@ -775,9 +775,8 @@ body > #mainMenu {
   user-select: none;
 }
 .ageLevelBar {
-  filter: drop-shadow(0 0 5px #ffff33, 0 0 6px #ffff33);
+  filter: drop-shadow(0 0 5px #ffff33);
   position: relative;
-  /* position: relative; */
   background-color: #ffffff;
   width: 0;
   max-width: 244px;
