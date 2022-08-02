@@ -355,7 +355,7 @@
           mapSize - player.y - snowHeight &&
           player.y < snowHeight - 2000 - 3000
         ) {
-          playerSpeed *= 0.4;
+          playerSpeed *= 0.5;
         }
         if (!weapons.find((x) => x.id == player.weapon).isWeapon) {
           playerSpeed *= 0.4;
