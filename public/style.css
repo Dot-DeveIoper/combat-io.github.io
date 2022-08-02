@@ -775,6 +775,7 @@ body > #mainMenu {
   user-select: none;
 }
 .ageLevelBar {
+  transition: ease 0.2s all;
   filter: drop-shadow(0 0 5px #ffff33);
   position: relative;
   background-color: #ffffff;
