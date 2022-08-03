@@ -551,7 +551,7 @@
                       ? "wood"
                       : test
                   ] += weapon.gather;
-                  if (player.xp >= 99) {
+                  if (player.xp >= 100) {
                     player.xp = 0;
                   } else {
                     player.xp += weapon.gather;
