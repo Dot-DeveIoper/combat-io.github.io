@@ -28,7 +28,7 @@
   var snowHeight = 6000;
   var riverHeight = 1000;
   var beachHeight = 1000;
-  var playerSpeed = 10;
+  var playerSpeed = 1;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -73,12 +73,12 @@
 
   for (let j = 0; j < 6; j++) {
     for (let i = 0; i < mapSize / 80; i++) {
-      var randomx = randomInt(50, mapSize - 100);
-      var randomy = randomInt(50, mapSize - 100); 
+      var randomx = randomInt(200, mapSize + 200);
+      var randomy = randomInt(200, mapSize + 200); 
       // map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
-        if (j == 4) continue;
+        if (j == 4) continue; 
       }
       if (randomy < 1000) {
         // remove from snow biome
