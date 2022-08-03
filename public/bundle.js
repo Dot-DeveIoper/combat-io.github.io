@@ -802,16 +802,19 @@ function setSkin(num) {
       ctx.lineTo(10000, y);
     }
     ctx.stroke();
-
+      
+          ctx.save();
+      ctx.translate(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
+      ctx.rotate(0);
+      ctx.drawImage(
+        "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0g0_Kleki.png?v=1659533811828",
+        10,
+        10
+      );
+      ctx.restore();
+    
     // map borders
-    var prvStyle = ctx.fillStyle;
-    ctx.strokeRect(
-      canvas.width / 2 - myPlayer.x,
-      canvas.height / 2 - myPlayer.y,
-      mapSize,
-      mapSize
-    );
-    ctx.fillStyle = "#000";
+    ctx.fillStyle = "rgba(6, 184, 196, 0.3)";
     // top border
     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
     // left border
@@ -829,11 +832,9 @@ function setSkin(num) {
       mapSize - myPlayer.y + canvas.height / 2,
       canvas.width,
       canvas.height
-    );
-    ctx.fillStyle = "#000";
-    
+    );    
     lastMove = move;
-
+    ctx.fillStyle = "#000";
     // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
