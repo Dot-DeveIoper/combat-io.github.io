@@ -867,21 +867,12 @@ function setSkin(num) {
         x: object.x,
         y: object.y,
       });
-      if (object.id === 1 || object.id === 6) {
-        // drawTreeTop(
-        //           rel.x + object.xWiggle,
-        // rel.y + object.yWiggle,
-        // object.dir,
-        // object.id
-        // );
-      } else {
-              drawTree(
+      drawTree(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
         object.dir,
         object.id
       );
-      }
     });
 
     // animals
@@ -921,23 +912,7 @@ function setSkin(num) {
       200,
       mapSize
       );
-      function drawTreeTop(x, y, rot, id) {
-    var tree = trees.find((x) => x.id == id);
-    if (tree) {
-      this.zIndex = 100;
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(0);
-      ctx.drawImage(
-        tree.img,
-        tree.xOffset,
-        tree.yOffset,
-        tree.scale,
-        tree.scale
-      );
-      ctx.restore();
-    }
-  }
+    
     info = `${ping}ms`;
     drawText(100, 50, 30, info);
     
