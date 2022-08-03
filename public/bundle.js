@@ -830,15 +830,16 @@ function setSkin(num) {
 //       0,
 //       mapSize - myPlayer.y + canvas.height / 2,
 //       canvas.width,
-//       canvas.height
+//       40
 //     );
     var WallImg = new Image();
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0g0_Kleki.png?v=1659533811828';
     ctx.drawImage(WallImg,
       0,
       mapSize - myPlayer.y + canvas.height / 2,
-      canvas.width,
-      canvas.height);
+      mapSize,
+      250
+      );
     ctx.fillStyle = "#000";
 
     window.players = players;
