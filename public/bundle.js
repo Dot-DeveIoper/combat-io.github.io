@@ -792,26 +792,18 @@ function setSkin(num) {
     ctx.fillStyle = lastStyle3;
 
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
-    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize; x += 55) {
+    for (var x = canvas.width / 2 - myPlayer.x; x < -100 && ; x += 55) {
       ctx.moveTo(x, 0);
       ctx.lineWidth = "5";
-      ctx.lineTo(x, 10000);
+      ctx.lineTo(x, 10100);
     }
-    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize; y += 55) {
+    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize + 100; y += 55) {
       ctx.moveTo(0, y);
       ctx.lineWidth = "5";
-      ctx.lineTo(10000, y);
+      ctx.lineTo(10100, y);
     }
     ctx.stroke();
 
-    // map borders
-    var prvStyle = ctx.fillStyle;
-    ctx.strokeRect(
-      canvas.width / 2 - myPlayer.x,
-      canvas.height / 2 - myPlayer.y,
-      mapSize,
-      mapSize
-    );
 
 //     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 //     // top border
@@ -851,7 +843,7 @@ function setSkin(num) {
     lastMove = move;
     
     var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki.png?v=1659538717307';
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
     ctx.drawImage(WallImg,
       canvas.width / 2 - myPlayer.x,
       canvas.width / 2 - myPlayer.y - 505,
