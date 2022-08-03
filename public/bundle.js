@@ -1015,10 +1015,10 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-    var vOffset = 0;
+    var vOffset = -1;
     if (myPlayer.resources) {
       for (let v = 0; v < trees.length; v++) {
-        if (v === 1 || v === 3) {
+        if (v === 1 || v === 3) { //remove from resource list
           continue;
         } else {
         vOffset += 1;
