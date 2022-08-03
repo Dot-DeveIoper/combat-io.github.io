@@ -832,14 +832,6 @@ function setSkin(num) {
 //       canvas.width,
 //       40
 //     );
-    var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0hs_Kleki.png?v=1659537628740';
-    ctx.drawImage(WallImg,
-      canvas.width / 2 - myPlayer.x,
-      canvas.width / 2 - myPlayer.y ,
-      248,
-      350
-      );
     ctx.fillStyle = "#000";
 
     window.players = players;
@@ -857,6 +849,15 @@ function setSkin(num) {
       }
     });
     lastMove = move;
+    
+    var WallImg = new Image();
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0i2_Kleki.png?v=1659538262391';
+    ctx.drawImage(WallImg,
+      canvas.width / 2 - myPlayer.x,
+      canvas.width / 2 - myPlayer.y - 545,
+      1462,
+      250
+      );
     
     // traps and stuff
     objCache.forEach((object) => {
