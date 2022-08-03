@@ -1398,6 +1398,7 @@ function setSkin(num) {
         }, 10);
       }
       mainMenu.style.display = "none";
+      age = 1;
       ageBar.style.display = "inline-block";
       SpawnedOnce = 1;
       send([
