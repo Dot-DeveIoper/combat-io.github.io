@@ -70,7 +70,7 @@
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
-
+  //   4 = ruby, 
   for (let j = 0; j < 7; j++) {
     for (let i = 0; i < mapSize / 80; i++) {
       var randomx = randomInt(200, mapSize - 200);
@@ -78,30 +78,30 @@
       //map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
-        if (j == 4) continue;  
+        if (j == 6) continue;  
       }
       if (randomy < 1000) {
         // remove from snow biome
-        if (j == 0 || j == 1 || j == 3) continue;
+        if (j == 0 || j == 2 || j == 5) continue;
       }
       if (randomy > 1000) {
         // remove from snow bomie down
-        if (j == 5 || j == 6) continue;
+        if (j == 3 || j == 1) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - 100 &&
         randomy < mapSize - moltenHeight + 100
       ) {
-        if (j == 0 || j == 1 || j == 3 || j == 5 || j == 6) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
       if (randomy > mapSize - moltenHeight - 100) {
-        if (j == 0 || j == 1 || j == 5 || j == 6) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
       }
       if (
         randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
         randomy < mapSize - moltenHeight - riverHeight + 100
       ) {
-        if (j == 0 || j == 1 || j == 3 || j == 5 || j == 6) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
       var object = {
         x: randomx,

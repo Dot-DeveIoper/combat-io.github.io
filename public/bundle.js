@@ -290,27 +290,45 @@ function setSkin(num) {
   });
   
   var trees = [
-    {
-      name: "food",
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
-      img: new Image(),
-      xOffset: -60,
-      yOffset: -63,
-      scale: 120,
-    },
-    {
+        {
       name: "wood",
-      id: 1,
+      id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
       img: new Image(),
       xOffset: -158,
       yOffset: -160,
       scale: 350,
     },
+        {
+      name: "wood2",
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
+    {
+      name: "food",
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614", //bush
+      img: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
+        {
+      name: "food2",
+      id: 3,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
+      img: new Image(),
+      xOffset: -60,
+      yOffset: -63,
+      scale: 120,
+    },
     {
       name: "stone",
-      id: 2,
+      id: 4,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574", //stone
       img: new Image(),
       xOffset: -100,
@@ -319,7 +337,7 @@ function setSkin(num) {
     },
     {
       name: "gold",
-      id: 3,
+      id: 5,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405", //gold
       img: new Image(),
       xOffset: -68,
@@ -328,26 +346,8 @@ function setSkin(num) {
     },
     {
       name: "ruby",
-      id: 4,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539", //ruby
-      img: new Image(),
-      xOffset: -158,
-      yOffset: -160,
-      scale: 350,
-    },
-    {
-      name: "food2",
-      id: 5,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884", //snow Bush
-      img: new Image(),
-      xOffset: -60,
-      yOffset: -63,
-      scale: 120,
-    },
-    {
-      name: "wood2",
       id: 6,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792", //Snow tree
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539", //ruby
       img: new Image(),
       xOffset: -158,
       yOffset: -160,
