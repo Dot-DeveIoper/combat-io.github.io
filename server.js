@@ -534,21 +534,21 @@
                 ) {
                   player.resources[
                     tree.id == 0
-                      ? "food"
+                      ? "wood"
                       : tree.id == 1
                       ? "wood"
                       : tree.id == 2
-                      ? "stone"
+                      ? "food"
                       : tree.id == 3
+                      ? "food"
+                      : tree.id == 4
+                      ? "stone"
+                      : tree.id == 5
+                      ? "gold"
+                      : tree.id == 6
                       ? Gem()
                         ? "ruby"
                         : "gold"
-                      : tree.id == 4
-                      ? ""
-                      : tree.id == 5
-                      ? "food"
-                      : tree.id == 6
-                      ? "wood"
                       : test
                   ] += weapon.gather;
                   if (player.xp >= 100) {

@@ -1015,11 +1015,13 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-    if (myPlayer.resources)
+    var vOffset = 0;
+    if (myPlayer.resources) {
       for (let v = 0; v < trees.length; v++) {
-        if (v === 1 || v === 3 || v === 6) {
+        if (v === 1 || v === 3) {
           continue;
         } else {
+        vOffset += 1;
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
@@ -1029,7 +1031,7 @@ function setSkin(num) {
             (minimapSize +
               minimapOffset * 2 +
               resourcesMinimapOffset +
-              resourcesOffset * v),
+              resourcesOffset * vOffset),
           resourcesWidth,
           resourcesHeight
         );
@@ -1041,7 +1043,7 @@ function setSkin(num) {
             (minimapSize +
               minimapOffset * 2 +
               resourcesMinimapOffset +
-              resourcesOffset * v) +
+              resourcesOffset * vOffset) +
             10
         );
         ctx.textAlign = "left";
@@ -1050,6 +1052,7 @@ function setSkin(num) {
         ctx.restore();
         }
       }
+    }
     if (age < 999 && age != "MAX") {
       if (ageLevelBar.style.width === "100%" && !ageChange) {
         ageLevelBar.style.width = "0%";
