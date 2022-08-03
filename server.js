@@ -28,7 +28,7 @@
   var snowHeight = 6000;
   var riverHeight = 1000;
   var beachHeight = 1000;
-  var playerSpeed = 1;
+  var playerSpeed = 10;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -364,8 +364,8 @@
         if (player.movedir != null) {
           let xv = Math.cos(player.movedir);
           let yv = Math.sin(player.movedir);
-          player.xVel += xv * playerSpeed;
-          player.yVel += yv * playerSpeed * -1;
+          player.xVel += xv * 10;
+          player.yVel += yv * 10 * -1;
         }
         player.x += player.xVel * 0.3;
         player.y += player.yVel * 0.3;

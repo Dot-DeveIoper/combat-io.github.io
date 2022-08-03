@@ -793,14 +793,14 @@ function setSkin(num) {
 
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
     for (var x = canvas.width / 2 - myPlayer.x; x < mapSize + 100; x += 55) {
-      ctx.moveTo(x, -100);
+      ctx.moveTo(x, 0);
       ctx.lineWidth = "5";
-      ctx.lineTo(x, 10100);
+      ctx.lineTo(x, mapSize);
     }
-    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize + 100; y += 55) {
-      ctx.moveTo(-100, y);
+    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize - 100; y += 55) {
+      ctx.moveTo(0, y);
       ctx.lineWidth = "5";
-      ctx.lineTo(10100, y);
+      ctx.lineTo(mapSize, y);
     }
     ctx.stroke();
 //     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
