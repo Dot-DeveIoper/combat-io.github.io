@@ -364,8 +364,8 @@
         if (player.movedir != null) {
           let xv = Math.cos(player.movedir);
           let yv = Math.sin(player.movedir);
-          player.xVel += xv * 10;
-          player.yVel += yv * 10 * -1;
+          player.xVel += xv * playerSpeed;
+          player.yVel += yv * playerSpeed * -1;
         }
         player.x += player.xVel * 0.3;
         player.y += player.yVel * 0.3;

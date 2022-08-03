@@ -395,6 +395,13 @@ function setSkin(num) {
       yOffset: -50,
     },
   ];
+  
+    var WallTop = new Image();
+    WallTop.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
+  
+    var WallRight = new Image();
+    WallRight.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
+
 
   var objects = [
     {
@@ -841,38 +848,30 @@ function setSkin(num) {
     lastMove = move;
     
     //Bottom border wall
-    var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
-    ctx.drawImage(WallImg,
+    ctx.drawImage(WallTop,
       canvas.width / 2 - myPlayer.x,
       mapSize - myPlayer.y + canvas.height / 2,
       mapSize,
       200
       );
     //top border wall
-    var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
-    ctx.drawImage(WallImg,
+    ctx.drawImage(WallTop,
       canvas.width / 2 - myPlayer.x,
       canvas.height / 2 - myPlayer.y - 178,
       mapSize,
       200
       );
     //left border wall
-    var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
-    ctx.drawImage(WallImg,
+      ctx.drawImage(WallRight,
       canvas.width / 2 - myPlayer.x - 200,
       canvas.height / 2 - myPlayer.y,
       200,
       mapSize
       );
     //right border wall
-    var WallImg = new Image();
-    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
-    ctx.drawImage(WallImg,
-      canvas.width / 2 - myPlayer.x,
-      mapSize - canvas.height / 2 + myPlayer.y,
+    ctx.drawImage(WallRight,
+      canvas.width / 2 - myPlayer.x + mapSize - 20,
+      canvas.height / 2 - myPlayer.y,
       200,
       mapSize
       );
