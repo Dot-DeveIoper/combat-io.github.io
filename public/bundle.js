@@ -803,7 +803,6 @@ function setSkin(num) {
       ctx.lineTo(10100, y);
     }
     ctx.stroke();
-
 //     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 //     // top border
 //     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
@@ -845,7 +844,7 @@ function setSkin(num) {
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
     ctx.drawImage(WallImg,
       canvas.width / 2 - myPlayer.x,
-      canvas.width / 2 - myPlayer.y - 505,
+      canvas.width / 2 - myPlayer.y,
       mapSize,
       200
       );
