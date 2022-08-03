@@ -792,7 +792,7 @@ function setSkin(num) {
     ctx.fillStyle = lastStyle3;
 
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
-    for (var x = canvas.width / 2 - myPlayer.x; x < -100 && ; x += 55) {
+    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize + 100; x += 55) {
       ctx.moveTo(x, 0);
       ctx.lineWidth = "5";
       ctx.lineTo(x, 10100);
@@ -803,7 +803,6 @@ function setSkin(num) {
       ctx.lineTo(10100, y);
     }
     ctx.stroke();
-
 
 //     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 //     // top border
