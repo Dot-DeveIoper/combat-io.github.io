@@ -847,6 +847,52 @@ function setSkin(num) {
     });
     lastMove = move;
     
+    // traps and stuff
+    objCache.forEach((object) => {
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
+      drawObject(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
+    });
+
+    // trees, stones etc
+    treesCache.forEach((object) => {
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
+      if (object.id != 1 || object.id != 6) {
+      drawTree(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
+      } else {
+        drawTreeTop(
+                  rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+        )
+      }
+    });
+
+    // animals
+    animalsCache.forEach((animal) => {
+      var rel = relative({
+        x: animal.x,
+        y: animal.y,
+      });
+      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
+    });
+    
     //Bottom border wall
     ctx.drawImage(WallTop,
       canvas.width / 2 - myPlayer.x,
@@ -875,42 +921,6 @@ function setSkin(num) {
       200,
       mapSize
       );
-    // traps and stuff
-    objCache.forEach((object) => {
-      var rel = relative({
-        x: object.x,
-        y: object.y,
-      });
-      drawObject(
-        rel.x + object.xWiggle,
-        rel.y + object.yWiggle,
-        object.dir,
-        object.id
-      );
-    });
-
-    // trees, stones etc
-    treesCache.forEach((object) => {
-      var rel = relative({
-        x: object.x,
-        y: object.y,
-      });
-      drawTree(
-        rel.x + object.xWiggle,
-        rel.y + object.yWiggle,
-        object.dir,
-        object.id
-      );
-    });
-
-    // animals
-    animalsCache.forEach((animal) => {
-      var rel = relative({
-        x: animal.x,
-        y: animal.y,
-      });
-      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
-    });
     
     info = `${ping}ms`;
     drawText(100, 50, 30, info);
