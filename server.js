@@ -28,7 +28,7 @@
   var snowHeight = 6000;
   var riverHeight = 1000;
   var beachHeight = 1000;
-  var playerSpeed = 1;
+  var playerSpeed = 10;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -353,7 +353,7 @@
         }
         if (
           mapSize - player.y - snowHeight &&
-          player.y < snowHeight - 2000 - 2500
+          player.y < snowHeight - 2000 - 3000
         ) {
           playerSpeed *= 0.5;
         }

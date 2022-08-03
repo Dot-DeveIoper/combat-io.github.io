@@ -769,7 +769,7 @@ function setSkin(num) {
     ctx.fillStyle = "#f5f5f5";
     ctx.fillRect(
       0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 2500 - 1500,
+      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
       canvas.width,
       1500
     );
@@ -861,10 +861,10 @@ function setSkin(num) {
     var WallImg = new Image();
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
     ctx.drawImage(WallImg,
-      mapSize - myPlayer.x + canvas.width / 2,
-      0,
-      canvas.width,
-      canvas.height
+      canvas.width / 2 + myPlayer.x,
+      mapSize - myPlayer.y - canvas.height / 2,
+      200,
+      mapSize
       );
     // traps and stuff
     objCache.forEach((object) => {
