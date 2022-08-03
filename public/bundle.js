@@ -858,11 +858,21 @@ function setSkin(num) {
       mapSize,
       200
       );
+    //left border wall
     var WallImg = new Image();
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
     ctx.drawImage(WallImg,
       canvas.width / 2 - myPlayer.x - 200,
-      canvas.width / 2 - myPlayer.y - 3,
+      mapSize + myPlayer.y + canvas.height / 2,
+      200,
+      mapSize
+      );
+    //right border wall
+    var WallImg = new Image();
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
+    ctx.drawImage(WallImg,
+      canvas.width / 2 - myPlayer.x - 200,
+      canvas.width / 2 - myPlayer.y + mapSize,
       200,
       mapSize
       );
