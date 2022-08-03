@@ -288,6 +288,7 @@ function setSkin(num) {
       w.img7.src = w.src7;
     }
   });
+  
   var trees = [
     {
       name: "food",
@@ -811,25 +812,33 @@ function setSkin(num) {
       mapSize,
       mapSize
     );
-    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
-    // top border
-    ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
-    // left border
-    ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
-    // right border
-    ctx.fillRect(
-      mapSize - myPlayer.x + canvas.width / 2,
-      0,
-      canvas.width,
-      canvas.height
-    );
-    // bottom border
-    ctx.fillRect(
+
+//     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+//     // top border
+//     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
+//     // left border
+//     ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
+//     // right border
+//     ctx.fillRect(
+//       mapSize - myPlayer.x + canvas.width / 2,
+//       0,
+//       canvas.width,
+//       canvas.height
+//     );
+//     // bottom border
+//     ctx.fillRect(
+//       0,
+//       mapSize - myPlayer.y + canvas.height / 2,
+//       canvas.width,
+//       canvas.height
+//     );
+    var WallImg = new Image();
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0g0_Kleki.png?v=1659533811828';
+    ctx.drawImage(WallImg,
       0,
       mapSize - myPlayer.y + canvas.height / 2,
       canvas.width,
-      canvas.height
-    );
+      canvas.height);
     ctx.fillStyle = "#000";
 
     window.players = players;
