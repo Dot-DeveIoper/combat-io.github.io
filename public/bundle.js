@@ -769,7 +769,7 @@ function setSkin(num) {
     ctx.fillStyle = "#f5f5f5";
     ctx.fillRect(
       0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
+      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 2500 - 1500,
       canvas.width,
       1500
     );
@@ -792,12 +792,12 @@ function setSkin(num) {
     ctx.fillStyle = lastStyle3;
 
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
-    for (var x = canvas.width / 2 - myPlayer.x; x < mapSize + 100; x += 55) {
+    for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 55) {
       ctx.moveTo(x, 0);
       ctx.lineWidth = "5";
       ctx.lineTo(x, mapSize);
     }
-    for (var y = canvas.height / 2 - myPlayer.y; y < mapSize - 100; y += 55) {
+    for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 55) {
       ctx.moveTo(0, y);
       ctx.lineWidth = "5";
       ctx.lineTo(mapSize, y);
@@ -858,7 +858,14 @@ function setSkin(num) {
       mapSize,
       200
       );
-    
+    var WallImg = new Image();
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0lr_Kleki%20(1).png?v=1659546242958';
+    ctx.drawImage(WallImg,
+      mapSize - myPlayer.x + canvas.width / 2,
+      0,
+      canvas.width,
+      canvas.height
+      );
     // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
