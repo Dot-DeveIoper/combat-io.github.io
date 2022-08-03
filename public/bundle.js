@@ -793,12 +793,12 @@ function setSkin(num) {
 
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
     for (var x = canvas.width / 2 - myPlayer.x; x < mapSize + 100; x += 55) {
-      ctx.moveTo(x, 0);
+      ctx.moveTo(x, -100);
       ctx.lineWidth = "5";
       ctx.lineTo(x, 10100);
     }
     for (var y = canvas.height / 2 - myPlayer.y; y < mapSize + 100; y += 55) {
-      ctx.moveTo(0, y);
+      ctx.moveTo(-100, y);
       ctx.lineWidth = "5";
       ctx.lineTo(10100, y);
     }
@@ -854,7 +854,7 @@ function setSkin(num) {
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
     ctx.drawImage(WallImg,
       canvas.width / 2 - myPlayer.x,
-      canvas.height / 2 - myPlayer.y - 198,
+      canvas.height / 2 - myPlayer.y - 178,
       mapSize,
       200
       );

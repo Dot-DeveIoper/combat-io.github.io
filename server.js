@@ -591,16 +591,16 @@
           }
         }
         if (player.x > mapSize - 30) {
-          player.xVel += (mapSize - 30 - player.x) * 0.0;
+          player.xVel += (mapSize - 30 - player.x);
         }
         if (player.y > mapSize - 30) {
-          player.yVel += (mapSize - 30 - player.y) * 0.0;
+          player.yVel += (mapSize - 30 - player.y);
         }
         if (player.x < 30) {
-          player.xVel += (30 - player.x) * 0.0;
+          player.xVel += (30 - player.x);
         }
         if (player.y < 30) {
-          player.yVel += (30 - player.y) * 0.0;
+          player.yVel += (30 - player.y);
         }
         //player.x = Math.max(30, player.x);
         //player.x = Math.min(mapSize - 30, player.x);
