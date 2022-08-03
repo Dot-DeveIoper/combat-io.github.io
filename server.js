@@ -71,14 +71,14 @@
   var treesCache = [];
   var objCache = [];
 
-  for (let j = 0; j < 6; j++) {
+  for (let j = 0; j < 7; j++) {
     for (let i = 0; i < mapSize / 80; i++) {
-      var randomx = randomInt(200, mapSize + 200);
-      var randomy = randomInt(200, mapSize + 200); 
-      // map is 6:1 ratio
+      var randomx = randomInt(200, mapSize - 200);
+      var randomy = randomInt(200, mapSize - 200); 
+      //map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
-        if (j == 4) continue; 
+        if (j == 4) continue;  
       }
       if (randomy < 1000) {
         // remove from snow biome
@@ -547,7 +547,7 @@
                       ? ""
                       : tree.id == 5
                       ? "food"
-                      : tree.id === 6
+                      : tree.id == 6
                       ? "wood"
                       : test
                   ] += weapon.gather;
