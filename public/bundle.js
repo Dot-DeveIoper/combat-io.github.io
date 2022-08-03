@@ -1016,7 +1016,10 @@ function setSkin(num) {
     var resourcesWidth = 100;
     var resourcesHeight = 40;
     if (myPlayer.resources)
-      for (let v = 0; v < trees.length - 2; v++) {
+      for (let v = 0; v < trees.length; v++) {
+        if (v === 1 || v === 3 || v === 6) {
+          continue;
+        } else {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
@@ -1045,6 +1048,7 @@ function setSkin(num) {
         ctx.fillText(myPlayer.resources[res.name], -50, 15);
         ctx.drawImage(res.img, -8, -7, 35, 35);
         ctx.restore();
+        }
       }
     if (age < 999 && age != "MAX") {
       if (ageLevelBar.style.width === "100%" && !ageChange) {
