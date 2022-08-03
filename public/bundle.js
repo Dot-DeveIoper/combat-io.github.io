@@ -840,11 +840,21 @@ function setSkin(num) {
     });
     lastMove = move;
     
+    //Bottom border wall
     var WallImg = new Image();
     WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
     ctx.drawImage(WallImg,
       canvas.width / 2 - myPlayer.x,
-      canvas.width / 2 - myPlayer.y,
+      mapSize - myPlayer.y + canvas.height / 2,
+      mapSize,
+      200
+      );
+    //top border wall
+    var WallImg = new Image();
+    WallImg.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0ia_Kleki-modified%20(1).png?v=1659539672773';
+    ctx.drawImage(WallImg,
+      canvas.width / 2 - myPlayer.x,
+      canvas.height / 2 - myPlayer.y - 198,
       mapSize,
       200
       );

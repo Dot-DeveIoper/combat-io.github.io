@@ -551,7 +551,7 @@
                       ? "wood"
                       : test
                   ] += weapon.gather;
-                  if (player.xp >= 100) {
+                  if (player.xp >= 99) {
                     player.xp = 0;
                   } else {
                     player.xp += weapon.gather;
@@ -591,16 +591,16 @@
           }
         }
         if (player.x > mapSize - 30) {
-          player.xVel += (mapSize - 30 - player.x) * 0.05;
+          player.xVel += (mapSize - 30 - player.x) * 0.0;
         }
         if (player.y > mapSize - 30) {
-          player.yVel += (mapSize - 30 - player.y) * 0.05;
+          player.yVel += (mapSize - 30 - player.y) * 0.0;
         }
         if (player.x < 30) {
-          player.xVel += (30 - player.x) * 0.05;
+          player.xVel += (30 - player.x) * 0.0;
         }
         if (player.y < 30) {
-          player.yVel += (30 - player.y) * 0.05;
+          player.yVel += (30 - player.y) * 0.0;
         }
         //player.x = Math.max(30, player.x);
         //player.x = Math.min(mapSize - 30, player.x);
