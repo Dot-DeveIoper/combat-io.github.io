@@ -811,7 +811,7 @@ function setSkin(num) {
       mapSize,
       mapSize
     );
-    ctx.fillStyle = "#424242";
+    ctx.fillStyle = "#000";
     // top border
     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
     // left border
@@ -831,23 +831,7 @@ function setSkin(num) {
       canvas.height
     );
     ctx.fillStyle = "#000";
-
-    info = `${ping}ms`;
-    drawText(100, 50, 30, info);
-    window.players = players;
-    players.forEach((player) => {
-      if (player.sid != myPlayer.sid) {
-        var rel = relative({
-          x: player.x,
-          y: player.y,
-        });
-        var x = rel.x;
-        var y = rel.y;
-        drawPlayer(x, y, player);
-      } else {
-        drawPlayer(canvas.width / 2, canvas.height / 2, player);
-      }
-    });
+    
     lastMove = move;
 
     // traps and stuff
@@ -927,7 +911,22 @@ function setSkin(num) {
         leaderboard.indexOf(leader) * 30 + 100
       );
     });
-
+    info = `${ping}ms`;
+    drawText(100, 50, 30, info);
+    window.players = players;
+    players.forEach((player) => {
+      if (player.sid != myPlayer.sid) {
+        var rel = relative({
+          x: player.x,
+          y: player.y,
+        });
+        var x = rel.x;
+        var y = rel.y;
+        drawPlayer(x, y, player);
+      } else {
+        drawPlayer(canvas.width / 2, canvas.height / 2, player);
+      }
+    });
     // minimap
     // minimap
     var minimapOffset = 20;
