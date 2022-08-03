@@ -802,19 +802,16 @@ function setSkin(num) {
       ctx.lineTo(10000, y);
     }
     ctx.stroke();
-      
-          ctx.save();
-      ctx.translate(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
-      ctx.rotate(0);
-      ctx.drawImage(
-        "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_03_0g0_Kleki.png?v=1659533811828",
-        10,
-        10
-      );
-      ctx.restore();
-    
+
     // map borders
-    ctx.fillStyle = "rgba(6, 184, 196, 0.3)";
+    var prvStyle = ctx.fillStyle;
+    ctx.strokeRect(
+      canvas.width / 2 - myPlayer.x,
+      canvas.height / 2 - myPlayer.y,
+      mapSize,
+      mapSize
+    );
+    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
     // left border
@@ -832,9 +829,25 @@ function setSkin(num) {
       mapSize - myPlayer.y + canvas.height / 2,
       canvas.width,
       canvas.height
-    );    
-    lastMove = move;
+    );
     ctx.fillStyle = "#000";
+
+    window.players = players;
+    players.forEach((player) => {
+      if (player.sid != myPlayer.sid) {
+        var rel = relative({
+          x: player.x,
+          y: player.y,
+        });
+        var x = rel.x;
+        var y = rel.y;
+        drawPlayer(x, y, player);
+      } else {
+        drawPlayer(canvas.width / 2, canvas.height / 2, player);
+      }
+    });
+    lastMove = move;
+    
     // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
@@ -871,6 +884,10 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
+    
+    info = `${ping}ms`;
+    drawText(100, 50, 30, info);
+    
     // leaderboard
     // leaderboard
     var leaderboardOffset = 20;
@@ -912,22 +929,7 @@ function setSkin(num) {
         leaderboard.indexOf(leader) * 30 + 100
       );
     });
-    info = `${ping}ms`;
-    drawText(100, 50, 30, info);
-    window.players = players;
-    players.forEach((player) => {
-      if (player.sid != myPlayer.sid) {
-        var rel = relative({
-          x: player.x,
-          y: player.y,
-        });
-        var x = rel.x;
-        var y = rel.y;
-        drawPlayer(x, y, player);
-      } else {
-        drawPlayer(canvas.width / 2, canvas.height / 2, player);
-      }
-    });
+
     // minimap
     // minimap
     var minimapOffset = 20;
