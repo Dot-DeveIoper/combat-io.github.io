@@ -397,7 +397,7 @@ function setSkin(num) {
   ];
   
     var WallTop = new Image();
-    WallTop.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/imgonline-com-ua-tile-c2GhWIRMdPZ4AwY.png?v=1659627474607';
+    WallTop.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/imgonline-com-ua-tile-dL6QNdG65VSS3U.png?v=1659628448349';
   
     var WallRight = new Image();
     WallRight.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Wall_Horizontal.png?v=1659568444068';
