@@ -1016,16 +1016,16 @@ function setSkin(num) {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
-        ctx.fillRect(
-          minimapOffset,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * vOffset),
-          resourcesWidth,
-          resourcesHeight
-        );
+        // ctx.fillRect(
+        //   minimapOffset,
+        //   canvas.height -
+        //     (minimapSize +
+        //       minimapOffset * 2 +
+        //       resourcesMinimapOffset +
+        //       resourcesOffset * vOffset),
+        //   resourcesWidth,
+        //   resourcesHeight
+        // );
         ctx.fillStyle = last3Style;
         ctx.save();
         ctx.translate(
