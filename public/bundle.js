@@ -883,13 +883,7 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
-       var prvStyle = ctx.fillStyle;
-    ctx.strokeRect(
-      canvas.width / 2 - myPlayer.x,
-      canvas.height / 2 - myPlayer.y,
-      mapSize,
-      mapSize
-    );
+
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
     ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
