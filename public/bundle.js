@@ -115,21 +115,21 @@ function setSkin(num) {
     );
   }
 
-  setInterval(() => {
-    window.console = {
-      log: function (e) {
-        kick("unfair advantage");
-      },
-      info: function (e) {
-        kick("unfair advantage");
-      },
-      warn: function (e) {
-        kick("unfair advantage");
-      },
-      error: function (e) {
-        kick("unfair advantage");
-      },
-    };
+  // setInterval(() => {
+  //   window.console = {
+  //     log: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     info: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     warn: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     error: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //   };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
@@ -925,12 +925,10 @@ function setSkin(num) {
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
     leaderboard.forEach((leader) => {
-      document.getElementById("players").innerHTML = leader.name;
-      document.getElementById("playersGold").innerHTML += leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
-          document.getElementById("players").innerHTML = "";
-      document.getElementById("playersGold").innerHTML = "";
+      let gold = leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
+      document.getElementById("players").innerHTML = "<span style='float:left;'>" + leader.name + "</span><span style='float: right;'>" + gold + "</span>";
     });
-
+    console.log(leaderboard);
     // minimap
     // minimap
     var minimapOffset = 20;
