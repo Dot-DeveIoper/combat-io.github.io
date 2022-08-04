@@ -847,7 +847,7 @@ function setSkin(num) {
     });
     lastMove = move;
     
-    console.log("X:" + Math.round(myPlayer.x) + "  | || |  " + "Y:" + Math.round(myPlayer.y));
+    console.log("return " + Math.round(myPlayer.x) + "||" + Math.round(myPlayer.y));
     // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
