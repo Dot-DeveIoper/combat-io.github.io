@@ -117,18 +117,42 @@ var object = {
   }
   for (let k = 0; k < 18; k++) {
     var object = {
-        x: 5000 + k,
-        y: 9500 + k,
+        x: 5000 + h(k),
+        y: 9500 + m(k),
         dir: Math.random(),
-        id: 6,
+        id: 4,
         xWiggle: 0,
         yWiggle: 0,
       };
     treesCache.push(object);
     function h(num) {
       if (num === 0) {
-        
+        return 500
+      } if (num == 1) {
+        return -500
+      } if (num === 2) {
+        return 350
+      } if (num === 3) {
+        return -350
+      } if (num === 4) {
+        return 150
+      } if (num === 5) {
+        return -150
       }
+    }
+    function m(num) {
+      if (num === 0) {
+        return 0
+      } if (num == 1) {
+        return 0
+      } if (num === 2) {
+        return 150
+      } if (num === 3) {
+        return -150
+      } if (num === 2) {
+        return 350
+      } if (num === 3) {
+        return -350
     }
   }
       treesCache.push(object);
@@ -744,7 +768,7 @@ var object = {
             ws.close()
           } if (msg[1][0] == "/tp" && socket.player.admin) {
             socket.player.x = 5000;
-            socket.player.y = 5000;
+            socket.player.y = 9500;
           } if (msg[1][0] == "/adminOff" && socket.player.admin) {
             socket.close();
           } else if (
