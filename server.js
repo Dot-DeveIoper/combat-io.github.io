@@ -117,14 +117,19 @@ var object = {
   }
   for (let k = 0; k < 18; k++) {
     var object = {
-        x: 200 + k,
-        y: 200 + k,
+        x: 5000 + k,
+        y: 9500 + k,
         dir: Math.random(),
-        id: 1,
+        id: 6,
         xWiggle: 0,
         yWiggle: 0,
       };
     treesCache.push(object);
+    function h(num) {
+      if (num === 0) {
+        
+      }
+    }
   }
       treesCache.push(object);
   animals.forEach((a) => {
