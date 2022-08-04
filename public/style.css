@@ -893,6 +893,9 @@ body > #mainMenu {
   padding-bottom: 5px;
 }
 
+#playersGold {
+  float: right;
+}
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .hotbarItem {

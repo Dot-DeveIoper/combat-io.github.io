@@ -921,38 +921,14 @@ function setSkin(num) {
     
     // leaderboard
     // leaderboard
-    var leaderboardOffset = 20;
-    var leaderboardWidth = 300;
     var lastStyle = ctx.fillStyle;
-    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
-    ctx.fillRect(
-      canvas.width - (leaderboardWidth + leaderboardOffset),
-      leaderboardOffset,
-      leaderboardWidth,
-      80 + leaderboard.length * 30
-    );
-    ctx.fillStyle = lastStyle;
-    var lastFont = ctx.font;
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
-    ctx.font = "bold 28px Hammersmith One";
-    ctx.textAlign = "center";
-    ctx.fillText(
-      "Leaderboard",
-      canvas.width - leaderboardOffset - leaderboardWidth / 2,
-      leaderboardOffset + 40
-    );
-    ctx.font = lastFont;
     leaderboard.forEach((leader) => {
-        leader.name,
-      ctx.textAlign = "right";
-      var goldFormatted =
-        leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
-      ctx.fillText(
-        goldFormatted,
-        canvas.width - leaderboardOffset * 2,
-        leaderboard.indexOf(leader) * 30 + 100
-      );
+      document.getElementById("players").innerHTML = leader.name;
+      document.getElementById("playersGold").innerHTML += leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
+          document.getElementById("players").innerHTML = "";
+      document.getElementById("playersGold").innerHTML = "";
     });
 
     // minimap
