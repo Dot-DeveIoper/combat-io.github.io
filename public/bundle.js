@@ -891,6 +891,7 @@ function setSkin(num) {
       mapSize,
       200
       );
+    
     //top border wall
     ctx.drawImage(WallTop,
       canvas.width / 2 - myPlayer.x,
@@ -898,6 +899,7 @@ function setSkin(num) {
       mapSize,
       200
       );
+    
     //left border wall
       ctx.drawImage(WallRight,
       canvas.width / 2 - myPlayer.x - 200,
@@ -905,6 +907,7 @@ function setSkin(num) {
       200,
       mapSize
       );
+    
     //right border wall
     ctx.drawImage(WallRight,
       canvas.width / 2 - myPlayer.x + mapSize - 20,
