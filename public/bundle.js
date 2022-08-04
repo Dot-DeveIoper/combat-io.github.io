@@ -941,15 +941,7 @@ function setSkin(num) {
     var minimapOffset = 20;
     var minimapSize = 200;
 
-    // var last2Style = ctx.fillStyle;
-    // ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
-    // ctx.fillRect(
-    //   minimapOffset,
-    //   canvas.height - minimapOffset - minimapSize,
-    //   minimapSize,
-    //   minimapSize
-    // );
-    // ctx.fillStyle = last2Style;
+    var last2Style = ctx.fillStyle;
 
     var xOnMinimap = myPlayer.x * (minimapSize / mapSize);
     var yOnMinimap = myPlayer.y * (minimapSize / mapSize);
@@ -972,6 +964,8 @@ function setSkin(num) {
         0,
         2 * Math.PI
       );
+      document.getElementById("playerDot").style.left = "" + minimapOffset + deathLocX + "";
+      document.getElementById("playerDot").style.top = canvas.height - minimapOffset - minimapSize + deathLocY;
       ctx.fill();
       ctx.fillStyle = last2Style;
     }

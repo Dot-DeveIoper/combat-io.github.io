@@ -893,7 +893,25 @@ body > #mainMenu {
   padding-bottom: 5px;
 }
 
-#mini
+#miniMap {
+  display: block;
+  width: 200px;
+  height: 200px;
+  padding: 15px;
+  z-index: 3;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#playerDot {
+            background: white;
+            height: 100px;
+            width: 200px;
+            margin: 0 auto;
+            color: white;
+}
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .hotbarItem {
