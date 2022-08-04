@@ -964,8 +964,6 @@ function setSkin(num) {
         0,
         2 * Math.PI
       );
-      document.getElementById("playerDot").style.left = "" + minimapOffset + deathLocX + "";
-      document.getElementById("playerDot").style.top = canvas.height - minimapOffset - minimapSize + deathLocY;
       ctx.fill();
       ctx.fillStyle = last2Style;
     }

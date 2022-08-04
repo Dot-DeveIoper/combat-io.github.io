@@ -905,13 +905,6 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
 }
 
-#playerDot {
-            background: white;
-            height: 100px;
-            width: 200px;
-            margin: 0 auto;
-            color: white;
-}
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .hotbarItem {
