@@ -127,7 +127,7 @@ var object = {
     treesCache.push(object);
     function h(num) {
       if (num === 0) {
-        return 5500
+        return 5300
       } if (num === 1) {
         return 4500
       } if (num === 2) {
@@ -146,13 +146,25 @@ var object = {
         return 4842
       } if (num === 9) {
         return 4894
+      } if (num === 10) {
+        return 4991
+      } if (num === 11) {
+        return 5146
+      } if (num === 11) {
+        return 5060
+      } if (num === 12) {
+        return 5059
+      } if (num === 13) {
+        return 5187
+      } if (num === 14) {
+        return 5265
       }
     }
     function m(num) {
       if (num === 0) {
         return 9500
       } if (num === 1) {
-        return 9500
+        return 9440
       } if (num === 2) {
         return 9345
       } if (num === 3) {
@@ -169,6 +181,18 @@ var object = {
         return 9189
       } if (num === 9) {
         return 9940
+      } if (num === 10) {
+        return 9171
+      } if (num === 11) {
+        return 9219
+      } if (num === 12) {
+        return 9924
+      } if (num === 12) {
+        return 9996
+      } if (num === 13) {
+        return 9839
+      } if (num === 14) {
+        return 9684
       }
     }
   }

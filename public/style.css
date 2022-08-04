@@ -775,10 +775,9 @@ body > #mainMenu {
   user-select: none;
 }
 .ageLevelBar {
-  transition: ease 0.2s all;
-  filter: drop-shadow(0 0 5px #ffff33);
   position: relative;
   background-color: #ffffff;
+  filter: drop-shadow(0 0 5px #ffff33);
   width: 0;
   max-width: 244px;
   min-width: 0;
@@ -792,6 +791,7 @@ body > #mainMenu {
   /* left: 4.25%; */
   /* margin-left: 4.25%; */
   transform: translate(-50%, -50%);
+  transition: ease 0.2s all;
   z-index: 1;
   user-select: none;
 }
@@ -878,8 +878,8 @@ body > #mainMenu {
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  font-family: 'Hammersmith One';
-  color: #fff;
+  font-family: "Hammersmith One", sans-serif;
+  color: #ffffff;
   z-index: 4;
   padding-bottom: 6px;
 }
@@ -887,8 +887,8 @@ body > #mainMenu {
 #players {
   position: relative;
   font-size: 26px;
-  font-family: 'Hammersmith One';
-  color: #fff;
+  font-family: "Hammersmith One", sans-serif;
+  color: #ffffff;
   z-index: 4;
   padding-bottom: 5px;
 }
