@@ -924,30 +924,32 @@ function setSkin(num) {
     var lastStyle = ctx.fillStyle;
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
+    
     function gold(num) {
       return leaderboard[num].gold > 1000 ? Math.ceil(leaderboard[num].gold / 1000) + "k" : leaderboard[num].gold
     }
-      document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>";
-        "<span style='float:left;'>";
-    document.getElementById("players").innerHTML += leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";
-    document.getElementById("players").innerHTML += leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";
-    document.getElementById("players").innerHTML += leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";
-    document.getElementById("players").innerHTML += leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";
+    
+    if (leaderboard[0]) {document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>" + "<br>";}
+    if (leaderboard[1]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";}
+    if (leaderboard[2]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";}
+    if (leaderboard[3]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";}
+    if (leaderboard[4]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";}
+    if (leaderboard[5]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + "And " + leaderboard.length - 5 + "more...";}
 
     // minimap
     // minimap
     var minimapOffset = 20;
     var minimapSize = 200;
 
-    var last2Style = ctx.fillStyle;
-    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
-    ctx.fillRect(
-      minimapOffset,
-      canvas.height - minimapOffset - minimapSize,
-      minimapSize,
-      minimapSize
-    );
-    ctx.fillStyle = last2Style;
+    // var last2Style = ctx.fillStyle;
+    // ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    // ctx.fillRect(
+    //   minimapOffset,
+    //   canvas.height - minimapOffset - minimapSize,
+    //   minimapSize,
+    //   minimapSize
+    // );
+    // ctx.fillStyle = last2Style;
 
     var xOnMinimap = myPlayer.x * (minimapSize / mapSize);
     var yOnMinimap = myPlayer.y * (minimapSize / mapSize);
