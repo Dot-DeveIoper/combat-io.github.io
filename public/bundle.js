@@ -942,7 +942,8 @@ function setSkin(num) {
     var minimapSize = 200;
 
     var last2Style = ctx.fillStyle;
-
+    
+    ctx.fillStyle = "#000";
     var xOnMinimap = myPlayer.x * (minimapSize / mapSize);
     var yOnMinimap = myPlayer.y * (minimapSize / mapSize);
     ctx.beginPath();
@@ -955,7 +956,7 @@ function setSkin(num) {
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
-      ctx.fillStyle = "#FF7878";
+      ctx.fillStyle = "#ff0000";
       ctx.beginPath();
       ctx.arc(
         minimapOffset + deathLocX,
@@ -968,7 +969,7 @@ function setSkin(num) {
       ctx.fillStyle = last2Style;
     }
     if (Base == 1) {
-      ctx.fillStyle = "#78B2FF";
+      ctx.fillStyle = "#00ffff";
       ctx.beginPath();
       ctx.arc(
         minimapOffset + baseLocX,
