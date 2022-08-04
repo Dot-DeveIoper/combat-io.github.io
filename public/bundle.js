@@ -115,25 +115,25 @@ function setSkin(num) {
     );
   }
 
-  // setInterval(() => {
-  //   window.console = {
-  //     log: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     info: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     warn: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     error: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //   };
-  //   if (!isFuncNative(WebSocket.prototype.send) && ws) {
-  //     ws.close(1000, "unfair advantage");
-  //   }
-  // }, 1000);
+  setInterval(() => {
+    window.console = {
+      log: function (e) {
+        kick("unfair advantage");
+      },
+      info: function (e) {
+        kick("unfair advantage");
+      },
+      warn: function (e) {
+        kick("unfair advantage");
+      },
+      error: function (e) {
+        kick("unfair advantage");
+      },
+    };
+    if (!isFuncNative(WebSocket.prototype.send) && ws) {
+      ws.close(1000, "unfair advantage");
+    }
+  }, 1000);
 
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
@@ -847,7 +847,6 @@ function setSkin(num) {
     });
     lastMove = move;
     
-    console.log("return " + Math.round(myPlayer.x) + "||" + Math.round(myPlayer.y));
     // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
