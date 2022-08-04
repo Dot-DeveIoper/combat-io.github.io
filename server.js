@@ -116,7 +116,7 @@ var object = {
     }
   }
   
-  treesCache.push({ x: 4884, y: 9556, dir: Math.random(), id: 6, xWiggle: 0, yWiggle: 0});
+  treesCache.push({ x: 4884, y: 9556, dir: Math.random(), id: 3, xWiggle: 0, yWiggle: 0});
   
   for (let k = 0; k < 18; k++) {
     var object = {
