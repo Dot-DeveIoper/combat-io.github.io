@@ -70,7 +70,7 @@
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
-  for (let j = 0; j < 7; j++) {
+  for (let j = 0; j < 0; j++) { ///MKAE 7
     for (let i = 0; i < mapSize / 80; i++) {
         var randomx = randomInt(200, mapSize - 200);
         var randomy = randomInt(200, mapSize - 200); 
@@ -117,8 +117,8 @@ var object = {
   }
   for (let k = 0; k < 18; k++) {
     var object = {
-        x: 5000 + h(k),
-        y: 9500 + m(k),
+        x: h(k),
+        y: m(k),
         dir: Math.random(),
         id: 4,
         xWiggle: 0,
@@ -127,32 +127,21 @@ var object = {
     treesCache.push(object);
     function h(num) {
       if (num === 0) {
-        return 500
-      } if (num == 1) {
-        return -500
+        return 9500
+      } if (num === 1) {
+        return 9500
       } if (num === 2) {
-        return 350
-      } if (num === 3) {
-        return -350
-      } if (num === 4) {
-        return 150
-      } if (num === 5) {
-        return -150
+        return 4593
       }
     }
     function m(num) {
       if (num === 0) {
-        return 0
-      } if (num == 1) {
-        return 0
+        return 5500
+      } if (num === 1) {
+        return 5500
       } if (num === 2) {
-        return 150
-      } if (num === 3) {
-        return -150
-      } if (num === 2) {
-        return 350
-      } if (num === 3) {
-        return -350
+        return 9345
+      }
     }
   }
       treesCache.push(object);
