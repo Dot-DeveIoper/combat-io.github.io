@@ -627,11 +627,11 @@ var object = {
                       : tree.id == 4
                       ? "stone"
                       : tree.id == 5
-                      ? "gold"
-                      : tree.id == 6
                       ? Gem()
                         ? "ruby"
                         : "gold"
+                      : tree.id == 6
+                      ? "ruby"
                       : test
                   ] += weapon.gather;
                   if (player.xp >= 100) {
