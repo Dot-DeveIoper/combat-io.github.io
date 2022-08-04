@@ -882,7 +882,7 @@ body > #mainMenu {
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  padding-bottom: 6px;
+  padding-bottom: 15px;
   z-index: 4;
 }
 
@@ -893,6 +893,10 @@ body > #mainMenu {
   color: #ffffff;
   padding-bottom: 5px;
   z-index: 4;
+}
+
+#gold {
+  color: gold;  
 }
 
 #miniMap {
