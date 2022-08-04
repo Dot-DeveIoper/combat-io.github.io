@@ -949,11 +949,11 @@ function setSkin(num) {
       return leaderboard[num].gold > 1000 ? Math.ceil(leaderboard[num].gold / 1000) + "k" : leaderboard[num].gold
     }
     
-    if (leaderboard[0]) {document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>" + "<br>";}
-    if (leaderboard[1]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";}
-    if (leaderboard[2]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";}
-    if (leaderboard[3]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";}
-    if (leaderboard[4]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";}
+    if (leaderboard[0]) {document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;color:gold;'>" + gold(0) + "</div>" + "<br>";}
+    if (leaderboard[1]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[1].name + "</div><div style='float: right;color:gold;'>" + gold(1) + "</div>" + "<br>";}
+    if (leaderboard[2]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[2].name + "</div><div style='float: right;color:gold;'>" + gold(2) + "</div>" + "<br>";}
+    if (leaderboard[3]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[3].name + "</div><div style='float: right;color:gold;'>" + gold(3) + "</div>" + "<br>";}
+    if (leaderboard[4]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[4].name + "</div><div style='float: right;color:gold;'>" + gold(4) + "</div>" + "<br>";}
     if (leaderboard[5]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + "And " + leaderboard.length - 5 + "more...";}
 
     // minimap
@@ -1006,48 +1006,12 @@ function setSkin(num) {
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-    var vOffset = -1;
     if (myPlayer.resources) {
-      document.getElementById("Ruby").innerHTML = myPlayer.resources[trees[0].name];
-      document.getElementById("Gold").innerHTML = myPlayer.resources[trees[0].name];
-      document.getElementById("Stone").innerHTML = myPlayer.resources[trees[0].name];
-      document.getElementById("Bush").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("Ruby").innerHTML = myPlayer.resources[trees[6].name];
+      document.getElementById("Gold").innerHTML = myPlayer.resources[trees[5].name];
+      document.getElementById("Stone").innerHTML = myPlayer.resources[trees[4].name];
+      document.getElementById("Bush").innerHTML = myPlayer.resources[trees[2].name];
       document.getElementById("Tree").innerHTML = myPlayer.resources[trees[0].name];
-      for (let v = 0; v < trees.length; v++) {
-        if (v === 1 || v === 3) { //remove from resource list
-          continue;
-        } else {
-        vOffset += 1;
-        var res = trees[v];
-        var last3Style = ctx.fillStyle;
-        ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
-        ctx.fillRect(
-          minimapOffset,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * vOffset),
-          resourcesWidth,
-          resourcesHeight
-        );
-        ctx.fillStyle = last3Style;
-        ctx.save();
-        ctx.translate(
-          minimapOffset + resourcesWidth - 30,
-          canvas.height -
-            (minimapSize +
-              minimapOffset * 2 +
-              resourcesMinimapOffset +
-              resourcesOffset * vOffset) +
-            10
-        );
-        ctx.textAlign = "left";
-        ctx.fillText(myPlayer.resources[res.name], -50, 15);
-        ctx.drawImage(res.img, -8, -7, 35, 35);
-        ctx.restore();
-        }
-      }
     }
     if (age < 999 && age != "MAX") {
       if (ageLevelBar.style.width === "100%" && !ageChange) {

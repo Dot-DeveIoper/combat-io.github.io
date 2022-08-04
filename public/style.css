@@ -903,15 +903,76 @@ body > #mainMenu {
   z-index: 4;
 }
 
-#gold {
-  color: gold;  
-}
-
 #miniMap {
   display: block;
   position: fixed;
   width: 200px;
   height: 200px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+#Ruby {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+#Gold {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+#Stone {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+#Bush {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+
+#Tree {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
