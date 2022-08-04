@@ -949,15 +949,13 @@ function setSkin(num) {
       return leaderboard[num].gold > 1000 ? Math.ceil(leaderboard[num].gold / 1000) + "k" : leaderboard[num].gold
     }
     
-//     if (leaderboard[0]) {document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>" + "<br>";}
-//     if (leaderboard[1]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";}
-//     if (leaderboard[2]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";}
-//     if (leaderboard[3]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";}
-//     if (leaderboard[4]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";}
-//     if (leaderboard[5]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + "And " + leaderboard.length - 5 + "more...";}
-leaderboard.forEach(element => {
-  document.getElementById("players").innerHTML = "<div style='float:left;'>" + element.name + "</div><div style='float: right;'>" + gold(0) + "</div>" + "<br>";
-})
+    if (leaderboard[0]) {document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>" + "<br>";}
+    if (leaderboard[1]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";}
+    if (leaderboard[2]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";}
+    if (leaderboard[3]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";}
+    if (leaderboard[4]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";}
+    if (leaderboard[5]) {document.getElementById("players").innerHTML +="<div style='float:left;'>" + "And " + leaderboard.length - 5 + "more...";}
+
     // minimap
     // minimap
     var minimapOffset = 20;
