@@ -157,14 +157,14 @@ var object = {
       } if (num === 13) {
         return 5187
       } if (num === 14) {
-        return 5265
+        return 5275
       }
     }
     function m(num) {
       if (num === 0) {
-        return 9500
+        return 9520
       } if (num === 1) {
-        return 9440
+        return 9500
       } if (num === 2) {
         return 9345
       } if (num === 3) {
