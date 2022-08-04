@@ -862,6 +862,14 @@ body > #mainMenu {
   user-select: none;
 }
 
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  .hotbarItem {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+
 #leaderBoard {
   display: block;
   position: fixed;
@@ -910,14 +918,6 @@ body > #mainMenu {
   left: 20px;
   bottom: 20px;
   z-index: 3;
-}
-
-/* MOBILE VIEW */
-@media only screen and (max-width: 768px) {
-  .hotbarItem {
-    margin-left: 2px;
-    margin-right: 2px;
-  }
 }
 
 /* skins */
