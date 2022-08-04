@@ -1008,6 +1008,11 @@ function setSkin(num) {
     var resourcesHeight = 40;
     var vOffset = -1;
     if (myPlayer.resources) {
+      document.getElementById("Ruby").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("Gold").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("Stone").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("Bush").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("Tree").innerHTML = myPlayer.resources[trees[0].name];
       for (let v = 0; v < trees.length; v++) {
         if (v === 1 || v === 3) { //remove from resource list
           continue;
@@ -1016,16 +1021,16 @@ function setSkin(num) {
         var res = trees[v];
         var last3Style = ctx.fillStyle;
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // stop xd //nou
-        // ctx.fillRect(
-        //   minimapOffset,
-        //   canvas.height -
-        //     (minimapSize +
-        //       minimapOffset * 2 +
-        //       resourcesMinimapOffset +
-        //       resourcesOffset * vOffset),
-        //   resourcesWidth,
-        //   resourcesHeight
-        // );
+        ctx.fillRect(
+          minimapOffset,
+          canvas.height -
+            (minimapSize +
+              minimapOffset * 2 +
+              resourcesMinimapOffset +
+              resourcesOffset * vOffset),
+          resourcesWidth,
+          resourcesHeight
+        );
         ctx.fillStyle = last3Style;
         ctx.save();
         ctx.translate(
