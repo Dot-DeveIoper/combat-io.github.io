@@ -115,21 +115,21 @@ function setSkin(num) {
     );
   }
 
-  // setInterval(() => {
-  //   window.console = {
-  //     log: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     info: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     warn: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     error: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //   };
+  setInterval(() => {
+    window.console = {
+      log: function (e) {
+        kick("unfair advantage");
+      },
+      info: function (e) {
+        kick("unfair advantage");
+      },
+      warn: function (e) {
+        kick("unfair advantage");
+      },
+      error: function (e) {
+        kick("unfair advantage");
+      },
+    };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
@@ -924,11 +924,16 @@ function setSkin(num) {
     var lastStyle = ctx.fillStyle;
     var lastFillStyle = ctx.fillStyle;
     ctx.fillStyle = "#fff";
-    leaderboard.forEach((leader) => {
-      let gold = leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
-      document.getElementById("players").innerHTML = "<span style='float:left;'>" + leader.name + "</span><span style='float: right;'>" + gold + "</span>";
-    });
-    console.log(leaderboard);
+    function gold(num) {
+      return leaderboard[num].gold > 1000 ? Math.ceil(leaderboard[num].gold / 1000) + "k" : leaderboard[num].gold
+    }
+      document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;'>" + gold(0) + "</div>";
+        "<span style='float:left;'>";
+    document.getElementById("players").innerHTML += leaderboard[1].name + "</div><div style='float: right;'>" + gold(1) + "</div>" + "<br>";
+    document.getElementById("players").innerHTML += leaderboard[2].name + "</div><div style='float: right;'>" + gold(2) + "</div>" + "<br>";
+    document.getElementById("players").innerHTML += leaderboard[3].name + "</div><div style='float: right;'>" + gold(3) + "</div>" + "<br>";
+    document.getElementById("players").innerHTML += leaderboard[4].name + "</div><div style='float: right;'>" + gold(4) + "</div>" + "<br>";
+
     // minimap
     // minimap
     var minimapOffset = 20;
