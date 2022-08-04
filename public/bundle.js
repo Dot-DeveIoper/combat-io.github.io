@@ -932,33 +932,22 @@ function setSkin(num) {
       80 + leaderboard.length * 30
     );
     ctx.fillStyle = lastStyle;
-    var lastFont = ctx.font;
-    var lastFillStyle = ctx.fillStyle;
-    ctx.fillStyle = "#fff";
-    ctx.borderRadius = "25px";
-    ctx.font = "bold 28px Hammersmith One";
-    ctx.textAlign = "center";
-    ctx.fillText(
-      "Leaderboard",
-      canvas.width - leaderboardOffset - leaderboardWidth / 2,
-      leaderboardOffset + 40
-    );
-    ctx.font = lastFont;
+    // var lastFont = ctx.font;
+    // var lastFillStyle = ctx.fillStyle;
+    // ctx.fillStyle = "#fff";
+    // ctx.borderRadius = "25px";
+    // ctx.font = "bold 28px Hammersmith One";
+    // ctx.textAlign = "center";
+    // ctx.fillText(
+    //   "Leaderboard",
+    //   canvas.width - leaderboardOffset - leaderboardWidth / 2,
+    //   leaderboardOffset + 40
+    // );
+    // ctx.font = lastFont;
     leaderboard.forEach((leader) => {
-      ctx.textAlign = "left";
-      ctx.fillText(
-        leader.name,
-        canvas.width + leaderboardOffset - leaderboardWidth - 15,
-        leaderboard.indexOf(leader) * 30 + 100
-      );
-      ctx.textAlign = "right";
       var goldFormatted =
         leader.gold > 1000 ? Math.ceil(leader.gold / 1000) + "k" : leader.gold;
-      ctx.fillText(
-        goldFormatted,
-        canvas.width - leaderboardOffset * 2,
-        leaderboard.indexOf(leader) * 30 + 100
-      );
+      document.getElementById("leaderBoard").innnerHTML = "Leaderboard" + "<br>" + leader.name + goldFormatted + "<br>";
     });
 
     // minimap

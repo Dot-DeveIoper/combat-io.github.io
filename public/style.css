@@ -860,9 +860,12 @@ body > #mainMenu {
   background-repeat: no-repeat;
   background-position: center;
   user-select: none;
+}
 
-  /* display: none; */
-  /* switch display to block with js to fix it */
+#leaderBoard {
+  display: block;
+  width: 200px;
+  padding: 
 }
 
 /* MOBILE VIEW */
@@ -881,10 +884,6 @@ body > #mainMenu {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
-  /* display: flex;
-  width: 100%; */
-  /* overflow-x: scroll;
-  overflow-y: hidden; */
 }
 .skin {
   border: 3px solid #4c4c4c;
@@ -893,20 +892,6 @@ body > #mainMenu {
   margin-right: 8px;
   margin-bottom: 8px;
   cursor: pointer;
-  /* white-space: pre-wrap; */
-  /* display: block; */
-  /* inline-size: auto;
-  overflow-wrap: break-word; */
-  /* display: flex;
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden; */
-  /* word-break: break-word;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  display: flex;
-  flex-wrap: wrap; */
   transition: ease 0.2s all;
 }
 .skin:hover {
@@ -940,14 +925,6 @@ body > #mainMenu {
 .selected {
   border-radius: 25%;
 }
-/* Hover */
-/* @media(hover: hover) and (pointer: fine) {
-  .skin:hover {
-    border-radius: 25%;
-    transition: ease 0.2s all;
-  }
-} */
-
 /* checkbox styles */
 label.checkbox {
   margin-right: 1rem;
