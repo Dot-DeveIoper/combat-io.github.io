@@ -883,38 +883,64 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
-    
-    //Bottom border wall
-    ctx.drawImage(WallTop,
+       var prvStyle = ctx.fillStyle;
+    ctx.strokeRect(
       canvas.width / 2 - myPlayer.x,
+      canvas.height / 2 - myPlayer.y,
+      mapSize,
+      mapSize
+    );
+    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    // top border
+    ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
+    // left border
+    ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
+    // right border
+    ctx.fillRect(
+      mapSize - myPlayer.x + canvas.width / 2,
+      0,
+      canvas.width,
+      canvas.height
+    );
+    // bottom border
+    ctx.fillRect(
+      0,
       mapSize - myPlayer.y + canvas.height / 2,
-      mapSize,
-      200
-      );
+      canvas.width,
+      canvas.height
+    );
+ 
+//     //Bottom border wall
+//     ctx.drawImage(WallTop,
+//       canvas.width / 2 - myPlayer.x,
+//       mapSize - myPlayer.y + canvas.height / 2,
+//       mapSize,
+//       200
+//       );
     
-    //top border wall
-    ctx.drawImage(WallTop,
-      canvas.width / 2 - myPlayer.x,
-      canvas.height / 2 - myPlayer.y - 178,
-      mapSize,
-      200
-      );
+//     //top border wall
+//     ctx.drawImage(WallTop,
+//       canvas.width / 2 - myPlayer.x,
+//       canvas.height / 2 - myPlayer.y - 178,
+//       mapSize,
+//       200
+//       );
     
-    //left border wall
-      ctx.drawImage(WallRight,
-      canvas.width / 2 - myPlayer.x - 200,
-      canvas.height / 2 - myPlayer.y,
-      200,
-      mapSize
-      );
+//     //left border wall
+//       ctx.drawImage(WallRight,
+//       canvas.width / 2 - myPlayer.x - 200,
+//       canvas.height / 2 - myPlayer.y,
+//       200,
+//       mapSize
+//       );
     
-    //right border wall
-    ctx.drawImage(WallRight,
-      canvas.width / 2 - myPlayer.x + mapSize - 20,
-      canvas.height / 2 - myPlayer.y,
-      200,
-      mapSize
-      );
+//     //right border wall
+//     ctx.drawImage(WallRight,
+//       canvas.width / 2 - myPlayer.x + mapSize - 20,
+//       canvas.height / 2 - myPlayer.y,
+//       200,
+//       mapSize
+//       );
     
     info = `${ping}ms`;
     drawText(100, 50, 30, info);
