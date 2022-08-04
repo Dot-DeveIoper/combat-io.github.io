@@ -736,7 +736,7 @@ function setSkin(num) {
       0,
       mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
       canvas.width,
-      moltenHeight + 100
+      moltenHeight + 550
     );
     ctx.fillStyle = lastStyle1;
 

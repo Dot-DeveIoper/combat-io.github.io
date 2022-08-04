@@ -70,11 +70,10 @@
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
-  //   4 = ruby, 
   for (let j = 0; j < 7; j++) {
     for (let i = 0; i < mapSize / 80; i++) {
-      var randomx = randomInt(200, mapSize - 200);
-      var randomy = randomInt(200, mapSize - 200); 
+        var randomx = randomInt(200, mapSize - 200);
+        var randomy = randomInt(200, mapSize - 200); 
       //map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
@@ -103,7 +102,7 @@
       ) {
         if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
-      var object = {
+var object = {
         x: randomx,
         y: randomy,
         dir: Math.random(),
@@ -116,7 +115,18 @@
       treesCache.push(object);
     }
   }
-
+  for (let k = 0; k < 18; k++) {
+    var object = {
+        x: 200 + k,
+        y: 200 + k,
+        dir: Math.random(),
+        id: 1,
+        xWiggle: 0,
+        yWiggle: 0,
+      };
+    treesCache.push(object);
+  }
+      treesCache.push(object);
   animals.forEach((a) => {
     for (let i = 0; i < a.count; i++) {
       var animal = {
