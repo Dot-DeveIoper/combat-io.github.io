@@ -916,7 +916,7 @@ body > #mainMenu {
   z-index: 3;
 }
 
-#Ruby {
+#RubyDisplay {
   display: block;
   position: fixed;
   width: 100px;
@@ -925,11 +925,11 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   left: 20px;
-  bottom: 20px;
+  bottom: 440px;
   z-index: 3;
 }
 
-#Gold {
+#GoldDisplay {
   display: block;
   position: fixed;
   width: 100px;
@@ -938,11 +938,11 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   left: 20px;
-  bottom: 20px;
+  bottom: 390px;
   z-index: 3;
 }
 
-#Stone {
+#StoneDisplay {
   display: block;
   position: fixed;
   width: 100px;
@@ -951,11 +951,11 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   left: 20px;
-  bottom: 20px;
+  bottom: 340px;
   z-index: 3;
 }
 
-#Bush {
+#BushDisplay {
   display: block;
   position: fixed;
   width: 100px;
@@ -964,11 +964,11 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   left: 20px;
-  bottom: 20px;
+  bottom: 290px;
   z-index: 3;
 }
 
-#Tree {
+#TreeDisplay {
   display: block;
   position: fixed;
   width: 100px;
@@ -977,7 +977,7 @@ body > #mainMenu {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   left: 20px;
-  bottom: 20px;
+  bottom: 240px;
   z-index: 3;
 }
 
