@@ -987,7 +987,7 @@ function setSkin(num) {
 
     var last2Style = ctx.fillStyle;
 
-    ctx.fillStyle = "#000";
+    ctx.fillStyle = "#fff";
     var xOnMinimap = myPlayer.x * (minimapSize / mapSize);
     var yOnMinimap = myPlayer.y * (minimapSize / mapSize);
     ctx.beginPath();
