@@ -961,12 +961,12 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 /* .resourcesDisplay {
-    /* display: block; /
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    user-select: none;
-  } */
+  /* display: block; /
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  user-select: none;
+} */
 .resources {
   display: inline-block;
   position: relative;
@@ -1006,12 +1006,12 @@ body > #mainMenu {
 }
 
 /* .mapDisplay {
-    /* display: block; /
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    user-select: none;
-  } */
+  /* display: block; /
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  user-select: none;
+} */
 .map {
   display: inline-block;
   position: relative;
@@ -1034,8 +1034,8 @@ body > #mainMenu {
   height: 6px;
   border-radius: 50%;
   /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 .playerDeathLocation {
   display: none;
@@ -1046,8 +1046,8 @@ body > #mainMenu {
   height: 6px;
   border-radius: 50%;
   /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 .playerBaseLocation {
   display: none;
@@ -1058,8 +1058,8 @@ body > #mainMenu {
   height: 6px;
   border-radius: 50%;
   /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 
 /* skins */
