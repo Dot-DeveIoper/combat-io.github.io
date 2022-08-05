@@ -26,7 +26,7 @@ function setSkin(num) {
   let resourcesAndMap = document.getElementById("resourcesAndMap");
 
   let leaderboardScores = document.querySelector(".leaderboardScores");
-  let YTofDay = document.querySelector("#");
+  //let YTofDay = document.querySelector("#");
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
