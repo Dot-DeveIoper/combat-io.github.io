@@ -35,8 +35,8 @@ function setSkin(num) {
     "https://www.youtube.com/c/xXNOOBXx",
   ]
   var p = Math.floor(Math.random() * YTcreator.length / 2 / 1) * YTcreator.length / 2;
-  YTofDay.href = YTcreator[p + 1];
-  YTofDay.innerHTML = YTcreator[p];
+  YTofDay.href = YTcreator[p + 1] + "?sub_confirmation=1";
+  YTofDay.innerHTML = "YT: " + YTcreator[p];
   
   settingsToggle.onclick = function (e) {
     
