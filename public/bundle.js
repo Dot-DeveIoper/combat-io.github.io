@@ -26,8 +26,15 @@ function setSkin(num) {
   let resourcesAndMap = document.getElementById("resourcesAndMap");
 
   let leaderboardScores = document.querySelector(".leaderboardScores");
-  let YTofDay = document.getElementById("YTofDay");
   
+  let YTofDay = document.getElementById("YTofDay");
+  var YTcreator = [
+    "Dot",
+    ""
+  ]
+  var p = Math.floor(Math.random() * YTcreator.length / 2 / 1) * YTcreator.length / 2;
+  YTofDay.href = YTcreator[p];
+  YTofDay.innerHTML = YTcreator[p + 1];
   
   settingsToggle.onclick = function (e) {
     
