@@ -871,7 +871,8 @@ body > #mainMenu {
 }
 
 #leaderBoard {
-  display: block;
+  display: none;
+  /* display: block; */
   position: fixed;
   width: 300px;
   height: auto;
@@ -881,6 +882,11 @@ body > #mainMenu {
   right: 20px;
   top: 20px;
   z-index: 3;
+  pointer-events: none;
+  user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
 }
 
 #title {
@@ -911,17 +917,19 @@ body > #mainMenu {
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  left: 20px;
   bottom: 20px;
+  left: 20px;
   z-index: 3;
 } */
 
 .resourcesAndMapDisplay {
   display: none;
-  /* display: block; */
+  /* display: inline-block; */
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 20px;
+  z-index: 4;
+  pointer-events: none;
   user-select: none;
 
   /* display: none; */
