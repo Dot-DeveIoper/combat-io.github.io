@@ -72,47 +72,6 @@ body {
   left: 5px;
 }
 
-#youtuberOf {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #ffffff;
-  font-size: 24px;
-}
-
-.ytLink {
-  color: #6eb3ef;
-  font-size: 24px;
-  text-decoration: none;
-}
-.ytLink:hover {
-  color: #5c96c9;
-}
-
-/* .spanLink {
-  text-decoration: none;
-  color: #1466f4;
-  font-weight: 600;
-  margin-bottom: 4px;
-  vertical-align: super;
-  font-size: 0.5rem;
-}
-.spanLink:hover {
-  color: #1466f4;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-} */
-
-#featuredYoutube {
-  margin-top: 5px;
-}
-#featuredYoutube > a {
-  color: #6eb3ef !important;
-}
-#featuredYoutube > a:hover {
-  color: #5c96c9 !important;
-}
-
 #menuContainer {
   width: 100%;
   white-space: nowrap;
@@ -229,15 +188,36 @@ body {
   bottom: 10px;
   left: 10px;
 }
-
-#linksContainer1 {
+#YTofDayContainer {
+  /* display: inline-block; */
   border-radius: 4px;
   position: absolute;
   bottom: 0;
   left: 0;
   background-color: #ffffff;
+  /* float: right; */
+  text-align: right;
   font-size: 20px;
   padding: 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+    text-decoration: none;
+    color: #5865F2;
+    font-weight: 600;
+    margin-bottom: 4px;
+  /* transform: translate(-14px, 100px); */
+}
+
+#YTofDay {
+      text-decoration: none;
+    color: #1466f4;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#YTofDay:hover {
+  color: #1466f4;
+  border-bottom: 2px solid #1466f4;
 }
 
 #linksContainer2 {
