@@ -987,7 +987,7 @@ body > #mainMenu {
     left: 10px;
     user-select: none;
   } */
-.map {
+#miniMap {
   display: inline-block;
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
@@ -1005,30 +1005,6 @@ body > #mainMenu {
   /* display: inline-block; */
   position: absolute;
   background-color: #ffffff;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-}
-.playerDeathLocation {
-  display: none;
-  /* display: inline-block; */
-  position: absolute;
-  background-color: #f77364;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-}
-.playerBaseLocation {
-  display: none;
-  /* display: inline-block; */
-  position: absolute;
-  background-color: #52a8f0;
   width: 6px;
   height: 6px;
   border-radius: 50%;
