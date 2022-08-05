@@ -7,7 +7,7 @@
 //?
 
 // this is a backup of the bundle js
-// dont delete this
+// do NOT delete this
 
 var SkinID = 0;
 function setSkin(num) {
