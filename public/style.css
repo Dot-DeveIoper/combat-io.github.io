@@ -895,7 +895,7 @@ body > #mainMenu {
   }
 }
 
-#leaderBoard {
+#leaderboard {
   display: none;
   /* display: block; */
   position: fixed;
@@ -982,11 +982,11 @@ body > #mainMenu {
   /* margin-top: 5px;
   margin-bottom: 5px; */
 }
-#Ruby {}
-#Gold {}
-#Stone {}
-#Tree {}
-#Bush {}
+#ruby {}
+#gold {}
+#stone {}
+#tree {}
+#bush {}
 .resourcesCounter {
   display: inline-block;
   color: #ffffff;
