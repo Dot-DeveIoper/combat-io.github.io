@@ -662,6 +662,16 @@ body > #mainMenu {
   padding: 10px 10px;
 }
 
+/* #interface > #chatbox {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+  /* display: none; /
+  /* switch display to block with js to fix it /
+} */
 #chatbox {
   position: fixed;
   top: 70%;
@@ -679,6 +689,18 @@ body > #mainMenu {
   pointer-events: all;
   border: 0;
 }
+/* #chatbox {
+  padding: 6px;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  pointer-events: all;
+  border: 0;
+} */
 #chatbox:focus {
   outline: none;
 }
@@ -860,6 +882,9 @@ body > #mainMenu {
   background-repeat: no-repeat;
   background-position: center;
   user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
 }
 
 /* MOBILE VIEW */
@@ -871,7 +896,8 @@ body > #mainMenu {
 }
 
 #leaderBoard {
-  display: block;
+  display: none;
+  /* display: block; */
   position: fixed;
   width: 300px;
   height: auto;
@@ -881,6 +907,11 @@ body > #mainMenu {
   right: 20px;
   top: 20px;
   z-index: 3;
+  pointer-events: none;
+  user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
 }
 
 #title {
@@ -903,7 +934,7 @@ body > #mainMenu {
   z-index: 4;
 }
 
-#miniMap {
+/* #miniMap {
   display: block;
   position: fixed;
   width: 200px;
@@ -911,74 +942,124 @@ body > #mainMenu {
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  left: 20px;
   bottom: 20px;
+  left: 20px;
   z-index: 3;
+} */
+
+.resourcesAndMapDisplay {
+  display: none;
+  /* display: inline-block; */
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  z-index: 4;
+  pointer-events: none;
+  user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
+}
+/* .resourcesDisplay {
+    /* display: block; /
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    user-select: none;
+  } */
+.resources {
+  display: inline-block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px;
+  width: auto;
+  max-width: 250px;
+  height: 40px;
+  /* height: 25px; */
+  text-align: left;
+  justify-content: center;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+}
+#Ruby {}
+#Gold {}
+#Stone {}
+#Tree {}
+#Bush {}
+.resourcesCounter {
+  display: inline-block;
+  color: #ffffff;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  transform: translate(-0px, -12px);
+}
+.resourcesImg {
+  width: 35px;
+  height: 35px;
+  pointer-events: none;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-0px, -3px);
 }
 
-#RubyDisplay {
-  display: block;
-  position: fixed;
-  width: 100px;
-  height: 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
+/* .mapDisplay {
+    /* display: block; /
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    user-select: none;
+  } */
+.map {
+  display: inline-block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  left: 20px;
-  bottom: 410px;
-  z-index: 3;
+  width: 200px;
+  height: 200px;
+  /* width: 150px;
+  height: 150px; */
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-
-#GoldDisplay {
-  display: block;
-  position: fixed;
-  width: 100px;
-  height: 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  left: 20px;
-  bottom: 365px;
-  z-index: 3;
+#miniMap {}
+.playerLocation {
+  display: none;
+  /* display: inline-block; */
+  position: absolute;
+  background-color: #ffffff;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  /* bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
-
-#StoneDisplay {
-  display: block;
-  position: fixed;
-  width: 100px;
-  height: 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  left: 20px;
-  bottom: 320px;
-  z-index: 3;
+.playerDeathLocation {
+  display: none;
+  /* display: inline-block; */
+  position: absolute;
+  background-color: #f77364;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  /* bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
-
-#BushDisplay {
-  display: block;
-  position: fixed;
-  width: 100px;
-  height: 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  left: 20px;
-  bottom: 275px;
-  z-index: 3;
-}
-
-#TreeDisplay {
-  display: block;
-  position: fixed;
-  width: 100px;
-  height: 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  left: 20px;
-  bottom: 230px;
-  z-index: 3;
+.playerBaseLocation {
+  display: none;
+  /* display: inline-block; */
+  position: absolute;
+  background-color: #52a8f0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  /* bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
 
 /* skins */
@@ -989,6 +1070,10 @@ body > #mainMenu {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  /* display: flex;
+  width: 100%; */
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
 }
 .skin {
   border: 3px solid #4c4c4c;
@@ -997,6 +1082,20 @@ body > #mainMenu {
   margin-right: 8px;
   margin-bottom: 8px;
   cursor: pointer;
+  /* white-space: pre-wrap; */
+  /* display: block; */
+  /* inline-size: auto;
+  overflow-wrap: break-word; */
+  /* display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden; */
+  /* word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  display: flex;
+  flex-wrap: wrap; */
   transition: ease 0.2s all;
 }
 .skin:hover {
@@ -1030,6 +1129,14 @@ body > #mainMenu {
 .selected {
   border-radius: 25%;
 }
+/* Hover */
+/* @media(hover: hover) and (pointer: fine) {
+  .skin:hover {
+    border-radius: 25%;
+    transition: ease 0.2s all;
+  }
+} */
+
 /* checkbox styles */
 label.checkbox {
   margin-right: 1rem;
