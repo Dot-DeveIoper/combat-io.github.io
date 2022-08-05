@@ -26,9 +26,11 @@ function setSkin(num) {
   let resourcesAndMap = document.getElementById("resourcesAndMap");
 
   let leaderboardScores = document.querySelector(".leaderboardScores");
-  //let YTofDay = document.querySelector("#");
-
+  let YTofDay = document.getElementById("YTofDay");
+  
+  
   settingsToggle.onclick = function (e) {
+    
     if (e.isTrusted) {
       if (settingsText.innerHTML === "Open Settings") {
         settingsDiv.style.display = "inline-block";
