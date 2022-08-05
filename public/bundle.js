@@ -1056,8 +1056,8 @@ function setSkin(num) {
     ageCounter.innerHTML = age;
   }
   function connect() {
-    if (window.location.href.includes("https://anarchy-combat-io.glitch.me")) {
-      ws = new WebSocket("wss://anarchy-combat-io.glitch.me/websocket");
+    if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {
+      ws = new WebSocket("wss://sandbox-combat-io.glitch.me/websocket");
     } else {
       ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     }
@@ -1086,7 +1086,7 @@ function setSkin(num) {
             myPlayer.sid = msg[1][0];
             if (
               window.location.href.includes(
-                "https://anarchy-combat-io.glitch.me"
+                "https://sandbox-combat-io.glitch.me"
               )
             ) {
               send(["dv"]);
