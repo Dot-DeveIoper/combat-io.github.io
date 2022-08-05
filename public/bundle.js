@@ -30,7 +30,9 @@ function setSkin(num) {
   let YTofDay = document.getElementById("YTofDay");
   var YTcreator = [
     "Dot",
-    "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q"
+    "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
+    "xXNOOBXx",
+    "https://www.youtube.com/c/xXNOOBXx",
   ]
   var p = Math.floor(Math.random() * YTcreator.length / 2 / 1) * YTcreator.length / 2;
   YTofDay.href = YTcreator[p + 1];
