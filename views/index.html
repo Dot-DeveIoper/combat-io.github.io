@@ -23,23 +23,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One" rel="stylesheet">
 </head>
 <body>
-  
-  <div id="RubyDisplay">
-    
-  </div>  
-  <div id="GoldDisplay">
-    
-  </div>
-  <div id="StoneDisplay">
-    
-  </div>
-  <div id="BushDisplay">
-    
-  </div>
-  <div id="TreeDisplay">
-    
-  </div>
   <canvas id="gameCanvas"></canvas>
+  
   <div id="leaderBoard">
     <div id="title">
       Leaderboard
@@ -47,9 +32,53 @@
     <div id="players">
     </div>
   </div>
-  <div id="miniMap">
-    
+  
+  <!-- RESOURCES AND MAP -->
+  <div class="resourcesAndMapDisplay" id="">
+    <br><div class="resources">
+      <span class="resourcesCounter" id="Ruby">
+        0
+      </span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539" alt="" class="resourcesImg" />
+    </div>
+
+    <br><div class="resources">
+      <span class="resourcesCounter" id="Gold">
+        0
+      </span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405" alt="" class="resourcesImg" />
+    </div>
+
+    <br><div class="resources">
+      <span class="resourcesCounter" id="Stone">
+        0
+      </span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574" alt="" class="resourcesImg" />
+    </div>
+
+    <br><div class="resources">
+      <span class="resourcesCounter" id="Tree">
+        0
+      </span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978" alt="" class="resourcesImg" />
+    </div>
+
+    <br><div class="resources">
+      <span class="resourcesCounter" id="Bush">
+        0
+      </span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614" alt="" class="resourcesImg" />
+    </div>
+
+    <br><div class="map" id="miniMap">
+      <span class="playerLocation" id=""></span>
+      <span class="playerDeathLocation" id=""></span>
+      <span class="playerBaseLocation" id=""></span>
+    </div>
   </div>
+  
+  <!-- <div id="miniMap"></div> -->
+  
   <div id="interface">
     <div class="ageBar" id="ageBar">
       <div class="ageText">
