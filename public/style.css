@@ -871,8 +871,7 @@ body > #mainMenu {
 }
 
 #leaderBoard {
-  display: none;
-  /* display: block; */
+  display: block;
   position: fixed;
   width: 300px;
   height: auto;
@@ -882,11 +881,6 @@ body > #mainMenu {
   right: 20px;
   top: 20px;
   z-index: 3;
-  pointer-events: none;
-  user-select: none;
-
-  /* display: none; */
-  /* switch display to block with js to fix it */
 }
 
 #title {
@@ -909,7 +903,7 @@ body > #mainMenu {
   z-index: 4;
 }
 
-/* #miniMap {
+#miniMap {
   display: block;
   position: fixed;
   width: 200px;
@@ -917,100 +911,74 @@ body > #mainMenu {
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  left: 20px;
   bottom: 20px;
-  left: 20px;
   z-index: 3;
-} */
-
-.resourcesAndMapDisplay {
-  display: none;
-  /* display: inline-block; */
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  z-index: 4;
-  pointer-events: none;
-  user-select: none;
-
-  /* display: none; */
-  /* switch display to block with js to fix it */
 }
-/* .resourcesDisplay {
-    /* display: block; /
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    user-select: none;
-  } */
-.resources {
-  display: inline-block;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  padding: 5px;
-  width: auto;
-  max-width: 250px;
+
+#RubyDisplay {
+  display: block;
+  position: fixed;
+  width: 100px;
   height: 40px;
-  /* height: 25px; */
-  text-align: left;
-  justify-content: center;
-  /* margin-top: 5px;
-  margin-bottom: 5px; */
-}
-#Ruby {}
-#Gold {}
-#Stone {}
-#Tree {}
-#Bush {}
-.resourcesCounter {
-  display: inline-block;
-  color: #ffffff;
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  transform: translate(-0px, -12px);
-}
-.resourcesImg {
-  width: 35px;
-  height: 35px;
-  pointer-events: none;
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: translate(-0px, -3px);
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 410px;
+  z-index: 3;
 }
 
-/* .mapDisplay {
-    /* display: block; /
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    user-select: none;
-  } */
-#miniMap {
-  display: inline-block;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.3);
+#GoldDisplay {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  width: 200px;
-  height: 200px;
-  /* width: 150px;
-  height: 150px; */
-  margin-top: 5px;
-  margin-bottom: 5px;
+  left: 20px;
+  bottom: 365px;
+  z-index: 3;
 }
-#miniMap {}
-.playerLocation {
-  display: none;
-  /* display: inline-block; */
-  position: absolute;
-  background-color: #ffffff;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  /* bottom: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+
+#StoneDisplay {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 320px;
+  z-index: 3;
+}
+
+#BushDisplay {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 275px;
+  z-index: 3;
+}
+
+#TreeDisplay {
+  display: block;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  left: 20px;
+  bottom: 230px;
+  z-index: 3;
 }
 
 /* skins */
