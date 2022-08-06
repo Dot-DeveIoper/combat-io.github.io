@@ -36,13 +36,17 @@ function setSkin(num) {
     "Aʂʂαʂιɳジɮʟǟʐɛ?ジ",
     "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ/featured",
   ]
-  var p = Math.floor(Math.random() * YTcreator.length + 1);
-  if(p % 2 == 0) {
+ var p = Math.floor(Math.random() * YTcreator.length);
+ function RandomYT () {
+  if (p % 2 == 0) {
     YTofDay.href = YTcreator[p + 1] + "?sub_confirmation=1";
     YTofDay.innerHTML = "YT: " + YTcreator[p];
+  } else {
+   p = Math.floor(Math.random() * YTcreator.length);
+   RandomYT()
   }
-  
-  
+  }
+  RandomYT()
   settingsToggle.onclick = function (e) {
     
     if (e.isTrusted) {
