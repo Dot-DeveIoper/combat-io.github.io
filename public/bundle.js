@@ -985,7 +985,7 @@ function setSkin(num) {
     if (n > 1000) {  
     x=(''+n).length,p=Math.pow,d=p(10,d)
     x-=x%3
-    return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]
+    return Math.round(n*d/p(10,x))/d+" kMBT"[x/3]
     }else{
       return n
     }}
@@ -1060,11 +1060,11 @@ function setSkin(num) {
     var resourcesWidth = 100;
     var resourcesHeight = 40;
     if (myPlayer.resources) {
-      document.getElementById("ruby").innerHTML = myPlayer.resources[trees[6].name];
-      document.getElementById("gold").innerHTML = myPlayer.resources[trees[5].name];
-      document.getElementById("stone").innerHTML = myPlayer.resources[trees[4].name];
-      document.getElementById("bush").innerHTML = myPlayer.resources[trees[2].name];
-      document.getElementById("tree").innerHTML = myPlayer.resources[trees[0].name];
+      document.getElementById("ruby").innerHTML = myPlayer.resources[trees[6].name].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById("gold").innerHTML = myPlayer.resources[trees[5].name].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById("stone").innerHTML = myPlayer.resources[trees[4].name].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById("bush").innerHTML = myPlayer.resources[trees[2].name].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementById("tree").innerHTML = myPlayer.resources[trees[0].name].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     if (age < 999 && age != "MAX") {
       if (ageLevelBar.style.width === "100%" && !ageChange) {
