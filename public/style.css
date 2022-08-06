@@ -773,7 +773,9 @@ body > #mainMenu {
   transform: translate(-0px, -3px);
   /* transform: translate(-0px, 15px); */
   user-select: none;
+  text-shadow: 0 0 3px #000000; /* horizontal-offset vertical-offset 'blur' colour */
 }
+
 .ageCounter {
   display: inline;
 }
