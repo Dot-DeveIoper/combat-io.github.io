@@ -979,8 +979,13 @@ function setSkin(num) {
     ctx.fillStyle = "#fff";
 
     function gold(num) {
-      return leaderboard[num].gold > 1000 ? Math.ceil(leaderboard[num].gold / 1000) + "k": leaderboard[num].gold
+      return m(leaderboard[num].gold, 1);
     }
+    function m(n,d){
+    if (n > 1000) {  
+    x=(''+n).length,p=Math.pow,d=p(10,d)
+    x-=x%3
+    return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]}
 
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;color:gold;'>" + gold(0) + "</div>" + "<br>";
