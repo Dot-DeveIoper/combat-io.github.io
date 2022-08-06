@@ -193,7 +193,7 @@ function setSkin(num) {
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
     msg +
-    "<a href='javascript:window.location.href=window.location.href' class='ytLink'>reload</a>";
+    "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
   }
 
   function toRad(angle) {
