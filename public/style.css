@@ -1213,3 +1213,20 @@ canvas {
   image-rendering: optimizeQuality;
   image-rendering: high-quality;
 }
+
+.box1 {
+    background-color: #000;
+    color: #fff;
+    opacity: .5;
+}
+
+.box2 {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+    
+<div class="wrapper">
+    <div class="box box1">This box uses opacity</div>
+    <div class="box box2">This box has a background color with an alpha channel</div>
+</div>            
+    
