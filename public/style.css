@@ -176,18 +176,17 @@ body {
   color: #ffffff;
   font-size: 22px;
 }
-
 #twitterFollow {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-
 #youtubeFollow {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
+
 #YTofDayContainer {
   /* display: inline-block; */
   border-radius: 4px;
@@ -204,14 +203,12 @@ body {
 
   /* transform: translate(-14px, 100px); */
 }
-
 #YTofDay {
-      text-decoration: none;
-    color: #1466f4;
-    font-weight: 600;
-    margin-bottom: 4px;
+  text-decoration: none;
+  color: #1466f4;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
-
 #YTofDay:hover {
   color: #1466f4;
   border-bottom: 2px solid #1466f4;
