@@ -985,7 +985,10 @@ function setSkin(num) {
     if (n > 1000) {  
     x=(''+n).length,p=Math.pow,d=p(10,d)
     x-=x%3
-    return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]}
+    return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]
+    }else{
+      return n
+    }}
 
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML = "<div style='float:left;'>" + leaderboard[0].name + "</div><div style='float: right;color:gold;'>" + gold(0) + "</div>" + "<br>";
