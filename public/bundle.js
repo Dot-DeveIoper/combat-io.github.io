@@ -171,7 +171,7 @@ function setSkin(num) {
     window.addEventListener("scroll", z, true);
 
     function q() {
-      if (document.getElementById("mainMenu").style.display = "none") {
+      if (document.getElementById("mainMenu").style.display === "none") {
         ws.close(1000, "idle to long");
       }
     }
