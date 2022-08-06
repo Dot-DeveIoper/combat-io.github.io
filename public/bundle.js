@@ -160,7 +160,28 @@ function setSkin(num) {
     }
   },
     1000);
+  
+(function () {
+    var t;
+    window.onload = resetTimer;
+    window.onmousemove = resetTimer;
+    window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+    window.ontouchstart = resetTimer; // catches touchscreen swipes as well      
+    window.ontouchmove = resetTimer;  // required by some devices 
+    window.onclick = resetTimer;      // catches touchpad clicks as well
+    window.onkeydown = resetTimer;   
+    window.addEventListener('scroll', resetTimer, true); // improved; see comments
 
+    function yourFunction() {
+      ws.close(1000, "idle to long")
+    }
+
+    function resetTimer() {
+        clearTimeout(t);
+        t = setTimeout(yourFunction, 10000);
+    }
+});
+  
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
     localStorage.setItem("AudioOn", "true");
