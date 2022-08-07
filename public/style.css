@@ -382,8 +382,6 @@ select:focus {
   outline-color: #77c44c;
 
   /* outline-color: #1d9300; */
-}select:focus {
-  outline-color: #1d9300;
 }
 
 #altServer {
