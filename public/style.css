@@ -143,11 +143,11 @@ body {
   opacity: 0 !important;
 }
 .settingsText {
-  text-decoration: none;
   color: #6eb3ef;
   border: 0;
   font-size: 1.1rem;
   font-weight: 600;
+  text-decoration: none;
   user-select: none;
 }
 .settingsText:hover {
@@ -265,6 +265,7 @@ body {
   color: #6eb3ef;
   font-size: 24px;
   text-decoration: none;
+  user-select: none;
 }
 .reload:hover {
   color: #5c96c9;
@@ -378,6 +379,10 @@ body {
   border: 1px solid #48e346;
 } */
 select:focus {
+  outline-color: #77c44c;
+
+  /* outline-color: #1d9300; */
+}select:focus {
   outline-color: #1d9300;
 }
 
