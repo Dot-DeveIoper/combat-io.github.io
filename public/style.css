@@ -1007,8 +1007,7 @@ body > #mainMenu {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-#miniMap {
-}
+/* #miniMap {} */
 .playerLocation {
   display: none;
   /* display: inline-block; */
