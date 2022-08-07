@@ -181,7 +181,7 @@ function setSkin(num) {
 
     function z() {
       clearTimeout(t);
-      t = setTimeout(q, 10000);
+      t = setTimeout(q, 300000);
     }
   }
 
