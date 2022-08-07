@@ -172,13 +172,11 @@ function setSkin(num) {
     window.addEventListener("scroll",
       z,
       true);
-
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
         ws.close(1000, "idle too long");
       }
     }
-
     function z() {
       clearTimeout(t);
       t = setTimeout(q, 300000);
