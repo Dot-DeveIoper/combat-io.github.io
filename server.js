@@ -71,9 +71,9 @@
   var treesCache = [];
   var objCache = [];
   for (let j = 0; j < 7; j++) {
-    for (let i = 0; i < mapSize / 80; i++) {
+    for (let i = 0; i < mapSize / 60; i++) {
         var randomx = randomInt(0, mapSize);
-        var randomy = randomInt(00, mapSize); 
+        var randomy = randomInt(0, mapSize); 
       //map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
