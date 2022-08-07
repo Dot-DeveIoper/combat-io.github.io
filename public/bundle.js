@@ -175,7 +175,7 @@ function setSkin(num) {
 
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
-        ws.close(1000, "idle to long");
+        ws.close(1000, "idle too long");
       }
     }
 
@@ -183,9 +183,9 @@ function setSkin(num) {
       clearTimeout(t);
       t = setTimeout(q, 10000);
     }
-  };
+  }
 
-  m()
+  m();
 
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
