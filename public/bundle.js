@@ -75,6 +75,8 @@ function setSkin(num) {
     MOVE_RIGHT2: "ArrowRight",
     CHAT: "Enter",
     QUICK_FOOD: "KeyQ",
+    AUTO_HIT: "KeyE",
+    LOCK_DIR: "KeyX",
     BASE: "KeyV",
 
     HOTBAR_1: "Digit1",
@@ -821,7 +823,7 @@ function setSkin(num) {
 
     /// snow
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#f5f5f5";
+    ctx.fillStyle = "#A6A6BE";//"#f5f5f5";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
@@ -832,7 +834,7 @@ function setSkin(num) {
 
     // beach
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#c3ab32";
+    ctx.fillStyle = "#8F815A";//"#c3ab32";
     ctx.fillRect(
       0,
       mapSize -
@@ -848,12 +850,12 @@ function setSkin(num) {
 
     ctx.strokeStyle = "rgb(0, 0, 0, 0.1)";//"rgb(105,105,105, 0.2)";
 
-    for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 45) {
+    for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 50) {
       ctx.moveTo(x, 0);
       ctx.lineWidth = "1.5";//6
       ctx.lineTo(x, mapSize);
     }
-    for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 45) {
+    for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 50) {
       ctx.moveTo(0, y);
       ctx.lineWidth = "1.5";//6
       ctx.lineTo(mapSize, y);
@@ -1306,26 +1308,22 @@ function setSkin(num) {
       e.isTrusted && (!1, send(["c", [0]]));
     }
   });
-  document.addEventListener("keypress", function (e) {
-    if (document.activeElement.id.toLowerCase() !== "chatbox") {
-      if (e.key == "x") {
-        lockDir = !lockDir;
-      }
-      if (e.key == "e") {
-        AutoHit = !AutoHit;
-        if (AutoHit) {
-          autohitting = true;
-          e.isTrusted && (!0, send(["c", [1]]));
-        } else if (!AutoHit) {
-          autohitting = false;
-          e.isTrusted && (!1, send(["c", [0]]));
-        }
-      }
-    }
-  });
   document.addEventListener("keydown", function (e) {
     if (e.isTrusted) {
       switch (e.code) {
+        case keycodes.AUTO_HIT:
+          AutoHit = !AutoHit;
+          if (AutoHit) {
+            autohitting = true;
+            e.isTrusted && (!0, send(["c", [1]]));
+          } else if (!AutoHit) {
+            autohitting = false;
+            e.isTrusted && (!1, send(["c", [0]]));
+          }
+          break;
+        case keycodes.LOCK_DIR:
+          lockDir = !lockDir;
+          break;
         case keycodes.QUICK_FOOD:
           var sn;
           inventory.forEach((item) => {
