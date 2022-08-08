@@ -804,9 +804,9 @@ var object = {
             ws.close()
           } if (msg[1][0] == "/tp" && socket.player.admin) {
             socket.player.x = 5000;
-            socket.player.y = 9500;
-          } if (msg[1][0] == "/adminOff" && socket.player.admin) {
-            socket.close();
+            socket.player.y = 5000;
+          } if (msg[1][0] == "/money" && socket.player.admin) {
+            socket.player.resources.gold += 1000;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
