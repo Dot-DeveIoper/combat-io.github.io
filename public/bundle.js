@@ -919,8 +919,8 @@ function setSkin(num) {
         y: object.y,
       });
       drawTree(
-        rel.x + object.xWiggle,
-        rel.y + object.yWiggle,
+        rel.x + object.xWiggle - 10,
+        rel.y + object.yWiggle - 10,
         object.dir,
         object.id
       );
