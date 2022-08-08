@@ -807,6 +807,8 @@
           } if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
             socket.player.resources.ruby += 1000;
+          } if (msg[1][0] == "/devOff" && socket.player.admin) {
+            socket.close();
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
