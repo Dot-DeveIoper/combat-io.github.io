@@ -849,12 +849,12 @@ function setSkin(num) {
     ctx.strokeStyle = "rgb(105,105,105, 0.2)";
     for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 55) {
       ctx.moveTo(x, 0);
-      ctx.lineWidth = "5";
+      ctx.lineWidth = "3";
       ctx.lineTo(x, mapSize);
     }
     for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 55) {
       ctx.moveTo(0, y);
-      ctx.lineWidth = "5";
+      ctx.lineWidth = "3";
       ctx.lineTo(mapSize, y);
     }
     ctx.stroke();
