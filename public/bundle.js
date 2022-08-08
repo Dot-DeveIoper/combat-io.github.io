@@ -881,7 +881,7 @@ function setSkin(num) {
     //       40
     //     );
     ctx.fillStyle = "#000";
-
+    let color;
     window.players = players;
     players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
@@ -892,8 +892,24 @@ function setSkin(num) {
         var x = rel.x;
         var y = rel.y;
         drawPlayer(x, y, player);
+        if(player.health < 100){
+            ctx.fillStyle = "#fff";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.lineJoin = "round";
+            ctx.strokeText(`${player.health}`, player.x + 70, player.y);
+            ctx.fillText(`${player.health}`, player.x + 70, player.y);
+        }
       } else {
         drawPlayer(canvas.width / 2, canvas.height / 2, player);
+        if(player.health < 100){
+            ctx.fillStyle = "#8ecc51";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.lineJoin = "round";
+            ctx.strokeText(`${player.health}`, canvas.width / 2 + 70, canvas.height / 2);
+            ctx.fillText(`${player.health}`, canvas.width / 2 + 70, canvas.height / 2);
+        }
       }
     });
     lastMove = move;
