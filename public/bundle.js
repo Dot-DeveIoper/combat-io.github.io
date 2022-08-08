@@ -892,18 +892,19 @@ function setSkin(num) {
         var x = rel.x;
         var y = rel.y;
         drawPlayer(x, y, player);
-        if(player.health < 100){
+        /*if(myPlayer.health < 100){
             ctx.fillStyle = "#fff";
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
             ctx.lineJoin = "round";
-            ctx.strokeText(`${player.health}`, player.x + 70, player.y);
-            ctx.fillText(`${player.health}`, player.x + 70, player.y);
-        }
+            ctx.strokeText(`${myPlayer.health}`, myPlayer.x + 70, myPlayer.y);
+            ctx.fillText(`${myPlayer.health}`, myPlayer.x + 70, myPlayer.y);
+        }*/
       } else {
         drawPlayer(canvas.width / 2, canvas.height / 2, player);
         if(player.health < 100){
             ctx.fillStyle = "#8ecc51";
+            ctx.strokeStyle = "#000";
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
             ctx.lineJoin = "round";
