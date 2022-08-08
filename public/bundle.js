@@ -1202,13 +1202,6 @@ function setSkin(num) {
               document.getElementById("h-item-" + i).style.display = "none";
             }
             myPlayer.sid = msg[1][0];
-            if (
-              window.location.href.includes(
-                "https://sandbox-combat-io.glitch.me"
-              )
-            ) {
-              send(["dv"]);
-            }
             break;
           case "w":
             inventory = msg[1][0];

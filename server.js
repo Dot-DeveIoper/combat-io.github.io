@@ -784,14 +784,6 @@ var object = {
             socket.player.health = 100;
           }
           break;
-        case "dv":
-            socket.player.admin = true;
-            socket.player.resources.food = 99999;
-            socket.player.resources.wood = 99999;
-            socket.player.resources.stone = 99999;
-            socket.player.resources.ruby = 99999;
-            socket.player.resources.gold = 99999;
-          break;
         case "2":
           socket.player.aimdir = msg[1][0];
           break;
@@ -799,11 +791,11 @@ var object = {
           if (msg[1][0] == "/" + process.env.ADMINPASS) {
             socket.player.admin = true;
             socket.player.health = 100;
-            socket.player.resources.food = 99999;
-            socket.player.resources.wood = 99999;
-            socket.player.resources.stone = 99999;
-            socket.player.resources.ruby = 99999;
-            socket.player.resources.gold = 99999;
+            socket.player.resources.food = 1000000;
+            socket.player.resources.wood = 1000000;
+            socket.player.resources.stone = 1000000;
+            socket.player.resources.ruby = 1000000;
+            socket.player.resources.gold = 1000000;
             return false;
           }
           if (msg[1][0] == "/kill" && socket.player.admin) {
