@@ -807,6 +807,7 @@ var object = {
             socket.player.y = 5000;
           } if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
+            socket.player.resources.ruby += 1000;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500

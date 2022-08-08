@@ -1395,7 +1395,7 @@ function setSkin(num) {
           moveRight = 1;
           break;
         case keycodes.CHAT:
-          if (chatbox.style.display == "none") {
+          if (chatbox.style.display === "none") {
             chatbox.style.display = "block";
             chatbox.focus();
           } else {
@@ -1407,7 +1407,7 @@ function setSkin(num) {
           }
           break;
         case keycodes.BASE:
-          if (myPlayer.chat = null) {
+          if (chatbox.style.display === "none") {
           baseLocX = myPlayer.x * (200 / mapSize);
           baseLocY = myPlayer.y * (200 / mapSize);
           Base = 1;
