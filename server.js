@@ -215,7 +215,6 @@
       console.log(a.count + " animal has spawned" + animal);
     }
   });
-  animalsCache.push({ x: 4884, y: 9556, dir: Math.random(), id: 3, xWiggle: 0, yWiggle: 0});
   console.log(animalsCache);
 
   var defaultReload = 500;
