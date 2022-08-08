@@ -516,7 +516,7 @@ var object = {
           treesNear.forEach((tree) => {
             if (
               dist(player, { x: tree.x, y: tree.y }) <
-              (tree.id == 0 ? 70 : tree.id == 3 ? 50 : 100)
+              (tree.id == 0 ? 80 : tree.id == 0 ? 80 : 80)
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
               var pushVelX = Math.cos(pushDir);
