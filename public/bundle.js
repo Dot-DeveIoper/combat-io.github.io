@@ -772,14 +772,14 @@ function setSkin(num) {
     // grass
     if (!nausea) {
       var prevStyle = ctx.fillStyle;
-      ctx.fillStyle = "#789b50"; // #768f5a
+      ctx.fillStyle = "#768F5A";//"#789b50"; // #768f5a
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
-    ctx.fillStyle = "#c3ab32";
+    ctx.fillStyle = "#8F815A";//"#c3ab32";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
@@ -790,7 +790,7 @@ function setSkin(num) {
 
     // hot river
     var lastStyle2 = ctx.fillStyle;
-    ctx.fillStyle = "#276496";
+    ctx.fillStyle = "#5E74A7";//"#276496";
     ctx.fillRect(
       0,
       mapSize -
@@ -846,16 +846,16 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle3;
 
-    ctx.strokeStyle = "rgb(0, 0, 0, 0.2)";//"rgb(105,105,105, 0.2)";
+    ctx.strokeStyle = "rgb(0, 0, 0, 0.1)";//"rgb(105,105,105, 0.2)";
 
     for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 45) {
       ctx.moveTo(x, 0);
-      ctx.lineWidth = "2";//6
+      ctx.lineWidth = "1.5";//6
       ctx.lineTo(x, mapSize);
     }
     for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 45) {
       ctx.moveTo(0, y);
-      ctx.lineWidth = "2";//6
+      ctx.lineWidth = "1.5";//6
       ctx.lineTo(mapSize, y);
     }
     ctx.stroke();
