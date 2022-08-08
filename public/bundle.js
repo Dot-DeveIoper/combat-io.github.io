@@ -846,15 +846,16 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle3;
 
-    ctx.strokeStyle = "rgb(105,105,105, 0.2)";
-    for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 55) {
+    ctx.strokeStyle = "rgb(0, 0, 0, 0.2)";//"rgb(105,105,105, 0.2)";
+
+    for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 45) {
       ctx.moveTo(x, 0);
-      ctx.lineWidth = "3";
+      ctx.lineWidth = "2";//6
       ctx.lineTo(x, mapSize);
     }
-    for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 55) {
+    for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 45) {
       ctx.moveTo(0, y);
-      ctx.lineWidth = "3";
+      ctx.lineWidth = "2";//6
       ctx.lineTo(mapSize, y);
     }
     ctx.stroke();
