@@ -1407,9 +1407,11 @@ function setSkin(num) {
           }
           break;
         case keycodes.BASE:
+          if (myPlayer.chat = null) {
           baseLocX = myPlayer.x * (200 / mapSize);
           baseLocY = myPlayer.y * (200 / mapSize);
           Base = 1;
+          }
           break;
       }
     }
