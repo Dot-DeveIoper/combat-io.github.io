@@ -292,7 +292,7 @@
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
-    player.skin = 0;
+    player.skin = player.skin;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
@@ -898,7 +898,7 @@
           break;
         case "sk":
           console.log(msg[1][0]);
-            socket.player.skin = [msg[1][0]];
+            socket.player.skin = msg[1][0];
           break;
         default:
           socket.close(1012, "Buffer missing");
