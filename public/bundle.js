@@ -292,7 +292,6 @@ function setSkin(num) {
   var info = "null";
   var mouseX = 0;
   var mouseY = 0;
-  var playerJumping = false;
 
   var treesCache = [];
   var objCache = [];
@@ -630,7 +629,7 @@ function setSkin(num) {
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, player.skin);
     } else {
       drawWeapon(
         player,
@@ -638,93 +637,29 @@ function setSkin(num) {
         y,
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
-        player.sid
+        player.sid,
+        SkinID
       );
     }
   }
-  function drawWeapon(player, x, y, rot, wep, sid) {
+  function drawWeapon(player, x, y, rot, wep, sid, skin) {
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-    var skin = skins.find((x) => x.id == player.skin);
+    skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
         skin.xOffset,
         skin.yOffset,
         skin.scale,
         skin.scale
-      );
-    }
-    if (SkinID === 1) {
-      ctx.drawImage(
-        skin.img1,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 2) {
-      ctx.drawImage(
-        skin.img2,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 3) {
-      ctx.drawImage(
-        skin.img3,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 4) {
-      ctx.drawImage(
-        skin.img4,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 5) {
-      ctx.drawImage(
-        skin.img5,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 6) {
-      ctx.drawImage(
-        skin.img6,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 7) {
-      ctx.drawImage(
-        skin.img7,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
+);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
@@ -1351,27 +1286,26 @@ function setSkin(num) {
     }
   });
   document.addEventListener("keydown", function (e) {
-    // if (
-    //   e.keyCode == 32 &&
-    //   document.activeElement.id.toLowerCase() !== "chatbox"
-    // ) {
-    //   if (autohitting == true) {
-    //     AutoHit = false;
-    //     autohittingwason = true;
-    //   }
-    //   e.isTrusted && (!0, send(["c", [1]]));
-    // }
-    playerJumping = true;
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohitting == true) {
+        AutoHit = false;
+        autohittingwason = true;
+      }
+      e.isTrusted && (!0, send(["c", [1]]));
+    }
   });
   document.addEventListener("keyup", function (e) {
-    // if (
-    //   e.keyCode == 32 &&
-    //   document.activeElement.id.toLowerCase() !== "chatbox"
-    // ) {
-    //   if (autohittingwason == true)
-    //     return (autohittingwason = false), (AutoHit = true);
-    //   e.isTrusted && (!1, send(["c", [0]]));
-    // }
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohittingwason == true)
+        return (autohittingwason = false), (AutoHit = true);
+      e.isTrusted && (!1, send(["c", [0]]));
+    }
   });
   document.addEventListener("keydown", function (e) {
     if (e.isTrusted) {
