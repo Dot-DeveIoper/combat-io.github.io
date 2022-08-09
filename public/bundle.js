@@ -292,6 +292,7 @@ function setSkin(num) {
   var info = "null";
   var mouseX = 0;
   var mouseY = 0;
+  var playerJumping = false;
 
   var treesCache = [];
   var objCache = [];
@@ -1350,26 +1351,27 @@ function setSkin(num) {
     }
   });
   document.addEventListener("keydown", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohitting == true) {
-        AutoHit = false;
-        autohittingwason = true;
-      }
-      e.isTrusted && (!0, send(["c", [1]]));
-    }
+    // if (
+    //   e.keyCode == 32 &&
+    //   document.activeElement.id.toLowerCase() !== "chatbox"
+    // ) {
+    //   if (autohitting == true) {
+    //     AutoHit = false;
+    //     autohittingwason = true;
+    //   }
+    //   e.isTrusted && (!0, send(["c", [1]]));
+    // }
+    playerJumping = true;
   });
   document.addEventListener("keyup", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohittingwason == true)
-        return (autohittingwason = false), (AutoHit = true);
-      e.isTrusted && (!1, send(["c", [0]]));
-    }
+    // if (
+    //   e.keyCode == 32 &&
+    //   document.activeElement.id.toLowerCase() !== "chatbox"
+    // ) {
+    //   if (autohittingwason == true)
+    //     return (autohittingwason = false), (AutoHit = true);
+    //   e.isTrusted && (!1, send(["c", [0]]));
+    // }
   });
   document.addEventListener("keydown", function (e) {
     if (e.isTrusted) {
