@@ -790,6 +790,19 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle1;
 
+        function Wave() {
+      setTimeout(() => {
+      if (Wave() === riverHeight + 50) {
+        for (let i = riverHeight; i != riverHeight; i--) {
+          return i
+        }
+      } else {
+        for (let i = riverHeight; i > riverHeight + 50; i++) {
+          return i
+        }
+      }
+      }, 500);
+    }
     // hot river
     var lastStyle2 = ctx.fillStyle;
     ctx.fillStyle = "#5E74A7";//"#276496";
@@ -801,7 +814,7 @@ function setSkin(num) {
         desertHeight -
         riverHeight,
       canvas.width,
-      riverHeight
+      Wave()
     );
     ctx.fillStyle = lastStyle2;
 
