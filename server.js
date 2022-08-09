@@ -292,7 +292,7 @@
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
-    player.skin = player.skin;
+    player.skin = 0;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
@@ -895,10 +895,6 @@
           if (socket.player.weapons.indexOf(id) != -1) {
             socket.player.weapon = id;
           }
-          break;
-        case "sk":
-          console.log(msg[1][0]);
-            socket.player.skin = msg[1][0];
           break;
         default:
           socket.close(1012, "Buffer missing");

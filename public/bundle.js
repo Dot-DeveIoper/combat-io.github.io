@@ -6,6 +6,18 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
+var SkinID = 0;
+function setSkin(num) {
+  for (let i = 1; i <= 8; i++) {
+    if (i == num) {
+      document.getElementById("skin" + i).style.borderRadius = "25%";
+    } else {
+      document.getElementById("skin" + i).style.borderRadius = "50%";
+    }
+  }
+  SkinID = num - 1;
+}
+
 (function (e) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
@@ -264,15 +276,6 @@
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
           send(["s", [inventory[i + 1]]]);
-        }
-      });
-  }
-   for (let i = 1; i < 8; i++) {
-    document
-      .getElementById("skin" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["sk", [i + 1]]);
         }
       });
   }
@@ -626,7 +629,7 @@
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, skins[0]);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
       drawWeapon(
         player,
@@ -634,29 +637,93 @@
         y,
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
-        player.sid,
-        skins[0]
+        player.sid
       );
     }
   }
-  function drawWeapon(player, x, y, rot, wep, sid, skin) {
+  function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
-    skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
+    var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
         skin.xOffset,
         skin.yOffset,
         skin.scale,
         skin.scale
-);
+      );
+    }
+    if (SkinID === 1) {
+      ctx.drawImage(
+        skin.img1,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 2) {
+      ctx.drawImage(
+        skin.img2,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 3) {
+      ctx.drawImage(
+        skin.img3,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 4) {
+      ctx.drawImage(
+        skin.img4,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 5) {
+      ctx.drawImage(
+        skin.img5,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 6) {
+      ctx.drawImage(
+        skin.img6,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
+    if (SkinID === 7) {
+      ctx.drawImage(
+        skin.img7,
+        skin.xOffset,
+        skin.yOffset,
+        skin.scale,
+        skin.scale
+      );
+    }
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
