@@ -990,7 +990,7 @@ function setSkin(num) {
             canvas.height / 2
           );
           ctx.fillText(
-            `- ${player.health}`,
+            `- ${player.health - 100}`,
             canvas.width / 2 + 70,
             canvas.height / 2
           );
