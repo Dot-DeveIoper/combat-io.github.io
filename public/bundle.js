@@ -31,9 +31,9 @@ function setSkin(num) {
   var YTcreator = [
     "Dot",
     "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
-    "xXNOOBXx",
+    "x_XNOOBX_x",
     "https://www.youtube.com/c/xXNOOBXx",
-    "Aʂʂαʂιɳジɮʟǟʐɛ?ジ",
+    "Assasin_blaze?",
     "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ/featured",
   ];
   var p = Math.floor(Math.random() * YTcreator.length);
@@ -979,18 +979,18 @@ function setSkin(num) {
       } else {
         drawPlayerText(canvas.width / 2, canvas.height / 2, player);
         if (player.health < 100) {
-          ctx.fillStyle = "#8ecc51";
+          ctx.fillStyle = "#8c0404";
           ctx.strokeStyle = "#000";
           ctx.textBaseline = "middle";
           ctx.textAlign = "center";
           ctx.lineJoin = "round";
           ctx.strokeText(
-            `${player.health}`,
+            `- ${player.health}`,
             canvas.width / 2 + 70,
             canvas.height / 2
           );
           ctx.fillText(
-            `${player.health}`,
+            `- ${player.health}`,
             canvas.width / 2 + 70,
             canvas.height / 2
           );
