@@ -283,7 +283,7 @@ function setSkin(num) {
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 1000;
-  var snowHeight = 8000;
+  var snowHeight = 10000;
 
   var maxScreenWidth = 1920;
   var maxScreenHeight = 1080;
@@ -780,73 +780,6 @@ function setSkin(num) {
     }
     // molten biome Og color : c34d32
     // sand biome 2
-    var lastStyle1 = ctx.fillStyle;
-    ctx.fillStyle = "#8F815A";//"#c3ab32";
-    ctx.fillRect(
-      0,
-      mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
-      canvas.width,
-      moltenHeight + 550
-    );
-    ctx.fillStyle = lastStyle1;
-
-    // hot river
-    var lastStyle2 = ctx.fillStyle;
-    ctx.fillStyle = "#5E74A7";//"#276496";
-    ctx.fillRect(
-      0,
-      mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight,
-      canvas.width,
-      moltenRiverHeight
-    );
-    ctx.fillStyle = lastStyle2;
-
-    var riverPointX = 0;
-    var riverPointY = mapSize - moltenHeight - moltenRiverHeight;
-
-    riverBubbles.forEach((bubble) => {
-      var rel = relative({
-        x: riverPointX + bubble.x,
-        y: riverPointY + bubble.y,
-      });
-      ctx.beginPath();
-      var lastGlobalAlpha = ctx.globalAlpha;
-      ctx.globalAlpha = bubble.opacity;
-      ctx.arc(rel.x, rel.y, bubble.size + bubble.grow, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = lastGlobalAlpha;
-    });
-
-    /// snow
-    var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#e6e6e6";//"#f5f5f5";
-    ctx.fillRect(
-      0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 2000,
-      canvas.width,
-      1500
-    );
-    ctx.fillStyle = lastStyle3;
-
-    // beach
-    var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#8F815A";//"#c3ab32";
-    ctx.fillRect(
-      0,
-      mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight -
-        beachHeight,
-      canvas.width,
-      beachHeight
-    );
-    ctx.fillStyle = lastStyle3;
 
     ctx.strokeStyle = "rgb(0, 0, 0, 0.1)";//"rgb(105,105,105, 0.2)";
 
