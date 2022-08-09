@@ -626,7 +626,7 @@
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, player.skin);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, skins[0]);
     } else {
       drawWeapon(
         player,
@@ -635,18 +635,18 @@
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
         player.sid,
-        player.skin
+        skins[0]
       );
     }
   }
   function drawWeapon(player, x, y, rot, wep, sid, skin) {
     wep = weapons.find((x) => x.id == player.weapon);
+    skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-    skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
