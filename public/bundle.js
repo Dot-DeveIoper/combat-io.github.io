@@ -590,7 +590,7 @@ function setSkin(num) {
       send(["33", [null]]);
     }
   }
-  function drawPlayer(x, y, player) {
+  function drawPlayerText(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
     ctx.textAlign = "center";
@@ -609,19 +609,6 @@ function setSkin(num) {
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
-    ctx.filStyle = lastColor;
-    if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
-    } else {
-      drawWeapon(
-        player,
-        x,
-        y,
-        Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
-        weapons[0],
-        player.sid
-      );
-    }
     if (player.chat) {
       fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
       ctx.textAlign = "center";
@@ -639,6 +626,20 @@ function setSkin(num) {
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
+  }
+  function drawPlayer(x, y, player) {
+    if (player.sid != myPlayer.sid) {
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+    } else {
+      drawWeapon(
+        player,
+        x,
+        y,
+        Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
+        weapons[0],
+        player.sid
+      );
+    }
   }
   function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
@@ -913,6 +914,7 @@ function setSkin(num) {
         var x = rel.x;
         var y = rel.y;
         drawPlayer(x, y, player);
+        drawPlayerText(x, y, player);
         /*if(myPlayer.health < 100){
             ctx.fillStyle = "#fff";
             ctx.textBaseline = "middle";
@@ -923,6 +925,7 @@ function setSkin(num) {
         }*/
       } else {
         drawPlayer(canvas.width / 2, canvas.height / 2, player);
+        drawPlayerText(canvas.width / 2, canvas.height / 2, player);
         if (player.health < 100) {
           ctx.fillStyle = "#8ecc51";
           ctx.strokeStyle = "#000";
@@ -980,6 +983,19 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
+    
+        players.forEach((player) => {
+      if (player.sid != myPlayer.sid) {
+        var rel = relative({
+          x: player.x,
+          y: player.y,
+        });
+        var x = rel.x;
+        var y = rel.y;
+        drawPlayerText(x, y, player);
+      } else {
+        drawPlayerText(canvas.width / 2, canvas.height / 2, player);
+    }});
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
