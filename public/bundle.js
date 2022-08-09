@@ -790,7 +790,6 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle1;
 
-    var Wwave = Wave();
     // hot river
     var lastStyle2 = ctx.fillStyle;
     ctx.fillStyle = "#5E74A7";//"#276496";
@@ -802,22 +801,30 @@ function setSkin(num) {
         desertHeight -
         riverHeight,
       canvas.width,
-      Wwave,
     );
     ctx.fillStyle = lastStyle2;
-    function Wave() {
-      setTimeout(() => {
-      if (Wave() === riverHeight + 50) {
-        for (let i = riverHeight; i !== riverHeight; i--) {
-          Wwave = i
-        }
-      } else {
-        for (let i = riverHeight; i > riverHeight + 50; i++) {
-          Wwave = i
-        }
-      }
-      }, 500);
-    }
+
+        let counttx = 0, countup = true;
+
+function timerr()
+{
+  if (countup)
+  {
+    ++counttx;
+    
+    if (counttx >= 50)
+      countup = false;
+  }
+  else
+  {
+    --counttx;
+    
+    if (counttx <= 0)
+      countup = true;
+  }
+
+
+setInterval(timerr, 100);
     var riverPointX = 0;
     var riverPointY = mapSize - desertHeight - riverHeight;
 
