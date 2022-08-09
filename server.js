@@ -292,7 +292,7 @@
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
-    player.skin = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    player.skin = 0;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
@@ -707,7 +707,7 @@
     socket.player = {
       socketLimit: 0,
       noHurtTime: 0,
-      skin: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      skin: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
