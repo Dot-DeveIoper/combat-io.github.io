@@ -203,7 +203,7 @@ function setSkin(num) {
   }
 
   setInterval(Wave, 50);
-  
+
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
     localStorage.setItem("AudioOn", "true");
@@ -926,23 +926,6 @@ function setSkin(num) {
       } else {
         drawPlayer(canvas.width / 2, canvas.height / 2, player);
         drawPlayerText(canvas.width / 2, canvas.height / 2, player);
-        if (player.health < 100) {
-          ctx.fillStyle = "#8ecc51";
-          ctx.strokeStyle = "#000";
-          ctx.textBaseline = "middle";
-          ctx.textAlign = "center";
-          ctx.lineJoin = "round";
-          ctx.strokeText(
-            `${player.health}`,
-            canvas.width / 2 + 70,
-            canvas.height / 2
-          );
-          ctx.fillText(
-            `${player.health}`,
-            canvas.width / 2 + 70,
-            canvas.height / 2
-          );
-        }
       }
     });
     lastMove = move;
@@ -983,8 +966,8 @@ function setSkin(num) {
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
-    
-        players.forEach((player) => {
+
+    players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
         var rel = relative({
           x: player.x,
@@ -995,7 +978,25 @@ function setSkin(num) {
         drawPlayerText(x, y, player);
       } else {
         drawPlayerText(canvas.width / 2, canvas.height / 2, player);
-    }});
+        if (player.health < 100) {
+          ctx.fillStyle = "#8ecc51";
+          ctx.strokeStyle = "#000";
+          ctx.textBaseline = "middle";
+          ctx.textAlign = "center";
+          ctx.lineJoin = "round";
+          ctx.strokeText(
+            `${player.health}`,
+            canvas.width / 2 + 70,
+            canvas.height / 2
+          );
+          ctx.fillText(
+            `${player.health}`,
+            canvas.width / 2 + 70,
+            canvas.height / 2
+          );
+        }
+      }
+    });
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
