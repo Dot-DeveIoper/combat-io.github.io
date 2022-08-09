@@ -781,7 +781,7 @@ function setSkin(num) {
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
-    ctx.fillStyle = "#8F815A";//"#c3ab32";
+    ctx.fillStyle = "#e0b670";//"#c3ab32";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
