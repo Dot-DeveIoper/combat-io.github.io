@@ -183,7 +183,27 @@ function setSkin(num) {
   }
 
   m();
+  let waveSize = 0,
+    waveGrow = true;
 
+  function Wave() {
+    if (waveGrow) {
+      waveSize = ++waveSize;
+
+      if (waveSize >= 50) {
+        waveGrow = false;
+      }
+    } else {
+      waveSize = --waveSize;
+
+      if (waveSize <= 0) {
+        waveGrow = true;
+      }
+    }
+  }
+
+  setInterval(Wave, 50);
+  
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
     localStorage.setItem("AudioOn", "true");
@@ -774,14 +794,14 @@ function setSkin(num) {
     // grass
     if (!nausea) {
       var prevStyle = ctx.fillStyle;
-      ctx.fillStyle = "#768F5A";//"#789b50"; // #768f5a
+      ctx.fillStyle = "#768F5A"; //"#789b50"; // #768f5a
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
-    ctx.fillStyle = "#d9a652";//"#c3ab32";
+    ctx.fillStyle = "#d9a652"; //"#c3ab32";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - desertHeight,
@@ -792,7 +812,7 @@ function setSkin(num) {
 
     /// snow
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#e6e6e6";//"#f5f5f5";
+    ctx.fillStyle = "#e6e6e6"; //"#f5f5f5";
     ctx.fillRect(
       0,
       mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
@@ -803,7 +823,7 @@ function setSkin(num) {
 
     // beach
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#8F815A";//"#c3ab32";
+    ctx.fillStyle = "#8F815A"; //"#c3ab32";
     ctx.fillRect(
       0,
       mapSize -
@@ -817,42 +837,19 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle3;
 
-                let counttx = 0, countup = true;
-
-function timerr()
-{
-  if (countup)
-  {
-   counttx = ++counttx;
-    
-    if (counttx >= 1000)
-      countup = false;
-  }
-  else
-  {
-    counttx = --counttx;
-    
-    if (counttx <= 0) {
-      countup = true;
-  }
-  }
-  console.log(counttx);
-}
-
-setInterval(timerr, 200);
-  
     // hot river
     var lastStyle2 = ctx.fillStyle;
-    ctx.fillStyle = "#5E74A7";//"#276496";
+    ctx.fillStyle = "#5E74A7"; //"#276496";
     ctx.fillRect(
       0,
       mapSize -
         myPlayer.y +
         canvas.height / 2 -
         desertHeight -
-        riverHeight,
+        riverHeight -
+        waveSize / 2,
       canvas.width,
-      riverHeight + counttx
+      riverHeight + waveSize
     );
     ctx.fillStyle = lastStyle2;
 
@@ -871,17 +868,17 @@ setInterval(timerr, 200);
       ctx.fill();
       ctx.globalAlpha = lastGlobalAlpha;
     });
-    
-    ctx.strokeStyle = "rgb(0, 0, 0, 0.1)";//"rgb(105,105,105, 0.2)";
+
+    ctx.strokeStyle = "rgb(0, 0, 0, 0.1)"; //"rgb(105,105,105, 0.2)";
 
     for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 50) {
       ctx.moveTo(x, 0);
-      ctx.lineWidth = "1.5";//6
+      ctx.lineWidth = "1.5"; //6
       ctx.lineTo(x, mapSize);
     }
     for (var y = canvas.height / 2 - myPlayer.y - 1000; y < mapSize; y += 50) {
       ctx.moveTo(0, y);
-      ctx.lineWidth = "1.5";//6
+      ctx.lineWidth = "1.5"; //6
       ctx.lineTo(mapSize, y);
     }
     ctx.stroke();
@@ -926,14 +923,22 @@ setInterval(timerr, 200);
         }*/
       } else {
         drawPlayer(canvas.width / 2, canvas.height / 2, player);
-        if(player.health < 100){
-            ctx.fillStyle = "#8ecc51";
-            ctx.strokeStyle = "#000";
-            ctx.textBaseline = "middle";
-            ctx.textAlign = "center";
-            ctx.lineJoin = "round";
-            ctx.strokeText(`${player.health}`, canvas.width / 2 + 70, canvas.height / 2);
-            ctx.fillText(`${player.health}`, canvas.width / 2 + 70, canvas.height / 2);
+        if (player.health < 100) {
+          ctx.fillStyle = "#8ecc51";
+          ctx.strokeStyle = "#000";
+          ctx.textBaseline = "middle";
+          ctx.textAlign = "center";
+          ctx.lineJoin = "round";
+          ctx.strokeText(
+            `${player.health}`,
+            canvas.width / 2 + 70,
+            canvas.height / 2
+          );
+          ctx.fillText(
+            `${player.health}`,
+            canvas.width / 2 + 70,
+            canvas.height / 2
+          );
         }
       }
     });
@@ -1448,9 +1453,9 @@ setInterval(timerr, 200);
           break;
         case keycodes.BASE:
           if (chatbox.style.display === "none") {
-          baseLocX = myPlayer.x * (200 / mapSize);
-          baseLocY = myPlayer.y * (200 / mapSize);
-          Base = 1;
+            baseLocX = myPlayer.x * (200 / mapSize);
+            baseLocY = myPlayer.y * (200 / mapSize);
+            Base = 1;
           }
           break;
       }
