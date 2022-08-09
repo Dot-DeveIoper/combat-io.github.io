@@ -626,7 +626,7 @@
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, player.skin);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid, skins[0]);
     } else {
       drawWeapon(
         player,
@@ -635,7 +635,7 @@
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
         player.sid,
-        player.skin
+        skins[0]
       );
     }
   }
