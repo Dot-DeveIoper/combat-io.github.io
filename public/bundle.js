@@ -6,18 +6,6 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
-var SkinID = 0;
-function setSkin(num) {
-  for (let i = 1; i <= 8; i++) {
-    if (i == num) {
-      document.getElementById("skin" + i).style.borderRadius = "25%";
-    } else {
-      document.getElementById("skin" + i).style.borderRadius = "50%";
-    }
-  }
-  SkinID = num - 1;
-}
-
 (function (e) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
@@ -276,6 +264,15 @@ function setSkin(num) {
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
           send(["s", [inventory[i + 1]]]);
+        }
+      });
+  }
+   for (let i = 1; i < 8; i++) {
+    document
+      .getElementById("skin" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          send(["sk", [i + 1]]);
         }
       });
   }
@@ -638,7 +635,7 @@ function setSkin(num) {
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
         player.sid,
-        SkinID
+        player.skin
       );
     }
   }

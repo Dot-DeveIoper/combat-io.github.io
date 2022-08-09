@@ -896,6 +896,11 @@
             socket.player.weapon = id;
           }
           break;
+        case "sk":
+          var sssss = msg[1][0] - 1;
+          console.log(id);
+            socket.player.skin = sssss || 6;
+          break;
         default:
           socket.close(1012, "Buffer missing");
       }
