@@ -263,7 +263,10 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   text-align: left;
-  padding: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
   bottom: 0;
@@ -287,11 +290,7 @@ body {
 @media only screen and (max-width: 768px) {
   #YTofDayContainer {
     text-align: inherit;
-    padding: 0;
-    padding-top: 8px;
     padding-bottom: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
     margin-bottom: 0;
     margin-left: 0;
     top: 10px;
