@@ -24,7 +24,7 @@
   var leaderboard = [];
 
   var mapSize = 10000;
-  var moltenHeight = 1000;
+  var desertHeight = 1000;
   var snowHeight = 6000;
   var riverHeight = 1000;
   var beachHeight = 1000;
@@ -88,17 +88,17 @@
         if (j == 3 || j == 1) continue;
       }
       if (
-        randomy > mapSize - moltenHeight - riverHeight - 100 &&
-        randomy < mapSize - moltenHeight + 100
+        randomy > mapSize - desertHeight - riverHeight - 100 &&
+        randomy < mapSize - desertHeight + 100
       ) {
         if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
-      if (randomy > mapSize - moltenHeight - 100) {
+      if (randomy > mapSize - desertHeight - 100) {
         if (j == 2 || j == 0 || j == 3 || j == 1) continue;
       }
       if (
-        randomy > mapSize - moltenHeight - riverHeight - beachHeight - 100 &&
-        randomy < mapSize - moltenHeight - riverHeight + 100
+        randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 &&
+        randomy < mapSize - desertHeight - riverHeight + 100
       ) {
         if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
@@ -427,8 +427,8 @@
         // player velocity
 
         if (
-          player.y > mapSize - moltenHeight - riverHeight &&
-          player.y < mapSize - moltenHeight
+          player.y > mapSize - desertHeight - riverHeight &&
+          player.y < mapSize - desertHeight
         ) {
           player.xVel += 0.5;
           playerSpeed *= 0.3;

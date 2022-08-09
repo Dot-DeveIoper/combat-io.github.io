@@ -280,8 +280,8 @@ function setSkin(num) {
   var leaderboard = [];
 
   var mapSize = 10000;
-  var moltenHeight = 1000;
-  var moltenRiverHeight = 1000;
+  var desertHeight = 1000;
+  var riverHeight = 1000;
   var beachHeight = 1000;
   var snowHeight = 6000;
 
@@ -781,12 +781,12 @@ function setSkin(num) {
     // molten biome Og color : c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
-    ctx.fillStyle = "#e0b670";//"#c3ab32";
+    ctx.fillStyle = "#d9a652";//"#c3ab32";
     ctx.fillRect(
       0,
-      mapSize - myPlayer.y + canvas.height / 2 - moltenHeight,
+      mapSize - myPlayer.y + canvas.height / 2 - desertHeight,
       canvas.width,
-      moltenHeight + 550
+      desertHeight + 550
     );
     ctx.fillStyle = lastStyle1;
 
@@ -798,15 +798,15 @@ function setSkin(num) {
       mapSize -
         myPlayer.y +
         canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight,
+        desertHeight -
+        riverHeight,
       canvas.width,
-      moltenRiverHeight
+      riverHeight
     );
     ctx.fillStyle = lastStyle2;
 
     var riverPointX = 0;
-    var riverPointY = mapSize - moltenHeight - moltenRiverHeight;
+    var riverPointY = mapSize - desertHeight - riverHeight;
 
     riverBubbles.forEach((bubble) => {
       var rel = relative({
@@ -840,8 +840,8 @@ function setSkin(num) {
       mapSize -
         myPlayer.y +
         canvas.height / 2 -
-        moltenHeight -
-        moltenRiverHeight -
+        desertHeight -
+        riverHeight -
         beachHeight,
       canvas.width,
       beachHeight
@@ -1558,7 +1558,7 @@ function setSkin(num) {
         setTimeout(() => {
           riverBubbles.push({
             x: randomInt(0, canvas.width),
-            y: randomInt(50, moltenRiverHeight - 50),
+            y: randomInt(50, riverHeight - 50),
             size: randomInt(5, 10),
             grow: 0,
             opacity: 1,
@@ -1574,7 +1574,7 @@ function setSkin(num) {
             bubble.opacity = 1;
             bubble.grow = 0;
             bubble.x = randomInt(0, mapSize);
-            bubble.y = randomInt(50, moltenRiverHeight - 50);
+            bubble.y = randomInt(50, riverHeight - 50);
           }
         });
       }, 50);
