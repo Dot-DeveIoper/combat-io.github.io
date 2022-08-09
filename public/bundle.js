@@ -283,7 +283,7 @@ function setSkin(num) {
   var moltenHeight = 1000;
   var moltenRiverHeight = 1000;
   var beachHeight = 1000;
-  var snowHeight = 6000;
+  var snowHeight = 8000;
 
   var maxScreenWidth = 1920;
   var maxScreenHeight = 1080;
@@ -823,10 +823,10 @@ function setSkin(num) {
 
     /// snow
     var lastStyle3 = ctx.fillStyle;
-    ctx.fillStyle = "#A6A6BE";//"#f5f5f5";
+    ctx.fillStyle = "#e6e6e6";//"#f5f5f5";
     ctx.fillRect(
       0,
-      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
+      mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 2000,
       canvas.width,
       1500
     );
