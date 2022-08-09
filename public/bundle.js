@@ -141,25 +141,25 @@ function setSkin(num) {
     );
   }
 
-  setInterval(() => {
-    window.console = {
-      log: function (e) {
-        kick("unfair advantage");
-      },
-      info: function (e) {
-        kick("unfair advantage");
-      },
-      warn: function (e) {
-        kick("unfair advantage");
-      },
-      error: function (e) {
-        kick("unfair advantage");
-      },
-    };
-    if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      ws.close(1000, "unfair advantage");
-    }
-  }, 1000);
+  // setInterval(() => {
+  //   window.console = {
+  //     log: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     info: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     warn: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //     error: function (e) {
+  //       kick("unfair advantage");
+  //     },
+  //   };
+  //   if (!isFuncNative(WebSocket.prototype.send) && ws) {
+  //     ws.close(1000, "unfair advantage");
+  //   }
+  // }, 1000);
 
   function m() {
     var t;
@@ -790,57 +790,6 @@ function setSkin(num) {
     );
     ctx.fillStyle = lastStyle1;
 
-    // hot river
-    var lastStyle2 = ctx.fillStyle;
-    ctx.fillStyle = "#5E74A7";//"#276496";
-    ctx.fillRect(
-      0,
-      mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        desertHeight -
-        riverHeight,
-      canvas.width,
-    );
-    ctx.fillStyle = lastStyle2;
-
-        let counttx = 0, countup = true;
-
-function timerr()
-{
-  if (countup)
-  {
-    ++counttx;
-    
-    if (counttx >= 50)
-      countup = false;
-  }
-  else
-  {
-    --counttx;
-    
-    if (counttx <= 0)
-      countup = true;
-  }
-
-
-setInterval(timerr, 100);
-    var riverPointX = 0;
-    var riverPointY = mapSize - desertHeight - riverHeight;
-
-    riverBubbles.forEach((bubble) => {
-      var rel = relative({
-        x: riverPointX + bubble.x,
-        y: riverPointY + bubble.y,
-      });
-      ctx.beginPath();
-      var lastGlobalAlpha = ctx.globalAlpha;
-      ctx.globalAlpha = bubble.opacity;
-      ctx.arc(rel.x, rel.y, bubble.size + bubble.grow, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = lastGlobalAlpha;
-    });
-
     /// snow
     var lastStyle3 = ctx.fillStyle;
     ctx.fillStyle = "#e6e6e6";//"#f5f5f5";
@@ -868,6 +817,61 @@ setInterval(timerr, 100);
     );
     ctx.fillStyle = lastStyle3;
 
+                let counttx = 0, countup = true;
+
+function timerr()
+{
+  if (countup)
+  {
+   counttx = ++counttx;
+    
+    if (counttx >= 1000)
+      countup = false;
+  }
+  else
+  {
+    counttx = --counttx;
+    
+    if (counttx <= 0) {
+      countup = true;
+  }
+  }
+  console.log(counttx);
+}
+
+setInterval(timerr, 200);
+  
+    // hot river
+    var lastStyle2 = ctx.fillStyle;
+    ctx.fillStyle = "#5E74A7";//"#276496";
+    ctx.fillRect(
+      0,
+      mapSize -
+        myPlayer.y +
+        canvas.height / 2 -
+        desertHeight -
+        riverHeight,
+      canvas.width,
+      riverHeight + counttx
+    );
+    ctx.fillStyle = lastStyle2;
+
+    var riverPointX = 0;
+    var riverPointY = mapSize - desertHeight - riverHeight;
+
+    riverBubbles.forEach((bubble) => {
+      var rel = relative({
+        x: riverPointX + bubble.x,
+        y: riverPointY + bubble.y,
+      });
+      ctx.beginPath();
+      var lastGlobalAlpha = ctx.globalAlpha;
+      ctx.globalAlpha = bubble.opacity;
+      ctx.arc(rel.x, rel.y, bubble.size + bubble.grow, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = lastGlobalAlpha;
+    });
+    
     ctx.strokeStyle = "rgb(0, 0, 0, 0.1)";//"rgb(105,105,105, 0.2)";
 
     for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 50) {
