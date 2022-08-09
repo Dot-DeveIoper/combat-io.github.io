@@ -985,12 +985,12 @@ function setSkin(num) {
           ctx.textAlign = "center";
           ctx.lineJoin = "round";
           ctx.strokeText(
-            `- ${player.health}`,
+            `${player.health - 100}`,
             canvas.width / 2 + 70,
             canvas.height / 2
           );
           ctx.fillText(
-            `- ${player.health - 100}`,
+            `${player.health - 100}`,
             canvas.width / 2 + 70,
             canvas.height / 2
           );
