@@ -799,16 +799,21 @@
           }
           if (msg[1][0] == "/kill" && socket.player.admin) {
             socket.player.health = 0;
+            return false;
           } if (msg[1][0] == "/end" && socket.player.admin) {
-            ws.close()
-          } if (msg[1][0] == "/tp" && socket.player.admin) {
-            socket.player.x = 5000;
+            ws.close();
+            return false;
+          } if (msg[1][0].includes("/tp") && socket.player.admin) {
+            socket.player.x = msg[1][0].replace(/[^0-9]/g, '').replace(/\s/g, '');
             socket.player.y = 5000;
+            return false;
           } if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
             socket.player.resources.ruby += 1000;
+            return false;
           } if (msg[1][0] == "/devOff" && socket.player.admin) {
             socket.close();
+            return false;
           } else if (
             socket.player.lastChatTimestamp == undefined ||
             Date.now() - socket.player.lastChatTimestamp > 500
