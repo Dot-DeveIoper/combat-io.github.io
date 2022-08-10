@@ -611,17 +611,10 @@
       y - 50
     ); // og 50 ids: {${player.sid}}
     if (player.chat) {
-      fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
+      // fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
       ctx.textAlign = "center";
-      drawText(x, y - 88, 70, player.chat, "#ffffff");
+      drawText(x, y - 88, 100, player.chat, "#ffffff");
     }
-    /*var addx = 0;
-      var addy = 0;
-      if(myPlayer.sid == player.sid){
-        addx = player.xVel;
-        addy = player.yVel;
-      }*/
-
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
