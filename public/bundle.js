@@ -16,16 +16,18 @@
   let leaderboardScores = document.querySelector(".leaderboardScores");
 
   let YTofDay = document.getElementById("YTofDay");
+  
   var YTcreator = [
     "Dot",
     "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
-    "x_XNOOBX_x",
+    "x_X NOOB X_x",
     "https://www.youtube.com/c/xXNOOBXx",
     "AFK",
     "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g",
     "Assasin_blaze?",
     "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ",
   ];
+  
   var p = Math.floor(Math.random() * YTcreator.length);
   function RandomYT() {
     if (p % 2 == 0) {
@@ -37,6 +39,7 @@
     }
   }
   RandomYT();
+  
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
       if (settingsText.innerHTML === "Open Settings") {
