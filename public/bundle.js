@@ -6,18 +6,6 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
-var SkinID = 0;
-function setSkin(num) {
-  for (let i = 1; i <= 8; i++) {
-    if (i == num) {
-      document.getElementById("skin" + i).style.borderRadius = "25%";
-    } else {
-      document.getElementById("skin" + i).style.borderRadius = "50%";
-    }
-  }
-  SkinID = num - 1;
-}
-
 (function (e) {
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
@@ -141,25 +129,25 @@ function setSkin(num) {
     );
   }
 
-  // setInterval(() => {
-  //   window.console = {
-  //     log: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     info: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     warn: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //     error: function (e) {
-  //       kick("unfair advantage");
-  //     },
-  //   };
-  //   if (!isFuncNative(WebSocket.prototype.send) && ws) {
-  //     ws.close(1000, "unfair advantage");
-  //   }
-  // }, 1000);
+  setInterval(() => {
+    window.console = {
+      log: function (e) {
+        kick("unfair advantage");
+      },
+      info: function (e) {
+        kick("unfair advantage");
+      },
+      warn: function (e) {
+        kick("unfair advantage");
+      },
+      error: function (e) {
+        kick("unfair advantage");
+      },
+    };
+    if (!isFuncNative(WebSocket.prototype.send) && ws) {
+      ws.close(1000, "unfair advantage");
+    }
+  }, 1000);
 
   function m() {
     var t;
@@ -277,6 +265,18 @@ function setSkin(num) {
         if (e.isTrusted) {
           send(["s", [inventory[i + 1]]]);
         }
+      });
+  }
+  var SkinID = 0;
+  for (let i = 1; i < 9; i++) {
+    document
+      .getElementById("skin" + i)
+      .addEventListener("click", function (e) {
+        for (let i = 1; i < 9; i++) {
+          document.getElementById("skin" + i).style.borderRadius = "50%";
+        }
+        document.getElementById("skin" + i).style.borderRadius = "25%";
+        SkinID = i - 1;
       });
   }
 
