@@ -992,17 +992,27 @@ body > #mainMenu {
   }
 }
 
-#leaderboard {
+#leaderboardDisplay {
   display: none;
   /* display: block; */
-  position: fixed;
+  position: absolute;
+  /* position: fixed; */
+  /* float: right; */
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
+}
+#leaderboard {
   width: 300px;
   height: auto;
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  right: 20px;
-  top: 20px;
   z-index: 3;
   pointer-events: none;
   user-select: none;
@@ -1027,6 +1037,69 @@ body > #mainMenu {
   color: #ffffff;
   padding-bottom: 5px;
   z-index: 4;
+}
+
+.killDisplay {
+  display: block;
+  position: absolute;
+  float: right;
+  right: 25px;
+  margin-top: 10px;
+  margin-right: -25px;
+  /* margin-top: -9px; */
+}
+/* .killDisplay {
+  display: block;
+  /* display: inline-block; /
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  pointer-events: none;
+  user-select: none;
+
+  /* display: none; /
+  /* switch display to block with js to fix it /
+} */
+/* .killDisplay {
+  /* display: block; /
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  user-select: none;
+} */
+.playersKilled {
+  display: inline-block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px;
+  width: auto;
+  max-width: 250px;
+  height: 40px;
+  /* height: 25px; */
+  text-align: left;
+  justify-content: center;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+}
+#kills {}
+.killCounter {
+  display: inline-block;
+  color: #ffffff;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  transform: translate(-0px, -12px);
+}
+.skullImg {
+  width: 35px;
+  height: 35px;
+  pointer-events: none;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-0px, -3px);
 }
 
 /* #miniMap {
