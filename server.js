@@ -804,8 +804,8 @@
             ws.close();
             return false;
           } if (msg[1][0].includes("/tp") && socket.player.admin) {
-            socket.player.x = msg[1][0].replace(/[^0-9]/g, '').replace(/\s/g, '');
-            socket.player.y = 5000;
+            socket.player.x = ~~msg[1][0].replace(/[^0-9]/g, '').replace(/\s/g, '');
+            socket.player.y = ~~msg[1][0].replace(/[^0-9]/g, '').replace(/\s/g, '').slice(0, -1);
             return false;
           } if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
