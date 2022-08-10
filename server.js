@@ -72,12 +72,12 @@
   var objCache = [];
   for (let j = 0; j < 7; j++) {
     for (let i = 0; i < mapSize / 50; i++) {
-        var randomx = randomInt(0, mapSize);
-        var randomy = randomInt(0, mapSize); 
+      var randomx = randomInt(0, mapSize);
+      var randomy = randomInt(0, mapSize);
       //map is 6:1 ratio
       if (randomy <= 0 || randomy >= 0) {
         // remove from whole map
-        if (j == 6) continue;  
+        if (j == 6) continue;
       }
       if (randomy < 1000) {
         // remove from snow biome
@@ -115,91 +115,128 @@
       treesCache.push(object);
     }
   }
-  
-  treesCache.push({ x: 4884, y: 9556, dir: Math.random(), id: 3, xWiggle: 0, yWiggle: 0});
-  
+
+  treesCache.push({
+    x: 4884,
+    y: 9556,
+    dir: Math.random(),
+    id: 3,
+    xWiggle: 0,
+    yWiggle: 0,
+  });
+
   for (let k = 0; k < 18; k++) {
     var object = {
-        x: h(k),
-        y: m(k),
-        dir: Math.random(),
-        id: 4,
-        xWiggle: 0,
-        yWiggle: 0,
-      };
+      x: h(k),
+      y: m(k),
+      dir: Math.random(),
+      id: 4,
+      xWiggle: 0,
+      yWiggle: 0,
+    };
     treesCache.push(object);
     function h(num) {
       if (num === 0) {
-        return 5300
-      } if (num === 1) {
-        return 4500
-      } if (num === 2) {
-        return 4593
-      } if (num === 3) {
-        return 5243
-      } if (num === 4) {
-        return 4523
-      } if (num === 5) {
-        return 4609
-      } if (num === 6) {
-        return 4700
-      } if (num === 7) {
-        return 4735
-      } if (num === 8) {
-        return 4842
-      } if (num === 9) {
-        return 4894
-      } if (num === 10) {
-        return 4991
-      } if (num === 11) {
-        return 5146
-      } if (num === 11) {
-        return 5060
-      } if (num === 12) {
-        return 5059
-      } if (num === 13) {
-        return 5187
-      } if (num === 14) {
-        return 5275
+        return 5300;
+      }
+      if (num === 1) {
+        return 4500;
+      }
+      if (num === 2) {
+        return 4593;
+      }
+      if (num === 3) {
+        return 5243;
+      }
+      if (num === 4) {
+        return 4523;
+      }
+      if (num === 5) {
+        return 4609;
+      }
+      if (num === 6) {
+        return 4700;
+      }
+      if (num === 7) {
+        return 4735;
+      }
+      if (num === 8) {
+        return 4842;
+      }
+      if (num === 9) {
+        return 4894;
+      }
+      if (num === 10) {
+        return 4991;
+      }
+      if (num === 11) {
+        return 5146;
+      }
+      if (num === 11) {
+        return 5060;
+      }
+      if (num === 12) {
+        return 5059;
+      }
+      if (num === 13) {
+        return 5187;
+      }
+      if (num === 14) {
+        return 5275;
       }
     }
     function m(num) {
       if (num === 0) {
-        return 9520
-      } if (num === 1) {
-        return 9500
-      } if (num === 2) {
-        return 9345
-      } if (num === 3) {
-        return 9369
-      } if (num === 4) {
-        return 9648
-      } if (num === 5) {
-        return 9789
-      } if (num === 6) {
-        return 9239
-      } if (num === 7) {
-        return 9887
-      } if (num === 8) {
-        return 9189
-      } if (num === 9) {
-        return 9940
-      } if (num === 10) {
-        return 9171
-      } if (num === 11) {
-        return 9219
-      } if (num === 12) {
-        return 9924
-      } if (num === 12) {
-        return 9996
-      } if (num === 13) {
-        return 9839
-      } if (num === 14) {
-        return 9684
+        return 9520;
+      }
+      if (num === 1) {
+        return 9500;
+      }
+      if (num === 2) {
+        return 9345;
+      }
+      if (num === 3) {
+        return 9369;
+      }
+      if (num === 4) {
+        return 9648;
+      }
+      if (num === 5) {
+        return 9789;
+      }
+      if (num === 6) {
+        return 9239;
+      }
+      if (num === 7) {
+        return 9887;
+      }
+      if (num === 8) {
+        return 9189;
+      }
+      if (num === 9) {
+        return 9940;
+      }
+      if (num === 10) {
+        return 9171;
+      }
+      if (num === 11) {
+        return 9219;
+      }
+      if (num === 12) {
+        return 9924;
+      }
+      if (num === 12) {
+        return 9996;
+      }
+      if (num === 13) {
+        return 9839;
+      }
+      if (num === 14) {
+        return 9684;
       }
     }
   }
-      treesCache.push(object);
+  treesCache.push(object);
   animals.forEach((a) => {
     for (let i = 0; i < a.count; i++) {
       var animal = {
@@ -515,7 +552,19 @@
           treesNear.forEach((tree) => {
             if (
               dist(player, { x: tree.x, y: tree.y }) <
-              (tree.id == 0 ? 80 : tree.id == 1 ? 80 : tree.id == 2 ? 60 : tree.id == 3 ? 60 : tree.id == 4 ? 90 : tree.id == 5 ? 85 : 0) //obj hit boxes
+              (tree.id == 0
+                ? 80
+                : tree.id == 1
+                ? 80
+                : tree.id == 2
+                ? 60
+                : tree.id == 3
+                ? 60
+                : tree.id == 4
+                ? 90
+                : tree.id == 5
+                ? 85
+                : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
               var pushVelX = Math.cos(pushDir);
@@ -550,8 +599,8 @@
                 player.noHurtTime == 0 &&
                 obj.id !== player.sid
               ) {
-                  player.health -= aObj.damage;
-                  player.noHurtTime += 2;
+                player.health -= aObj.damage;
+                player.noHurtTime += 2;
               }
               player.xVel += pushVelX;
               player.yVel += pushVelY;
@@ -673,16 +722,16 @@
           }
         }
         if (player.x > mapSize - 30) {
-          player.xVel += (mapSize - 30 - player.x);
+          player.xVel += mapSize - 30 - player.x;
         }
         if (player.y > mapSize - 30) {
-          player.yVel += (mapSize - 30 - player.y);
+          player.yVel += mapSize - 30 - player.y;
         }
         if (player.x < 30) {
-          player.xVel += (30 - player.x);
+          player.xVel += 30 - player.x;
         }
         if (player.y < 30) {
-          player.yVel += (30 - player.y);
+          player.yVel += 30 - player.y;
         }
         //player.x = Math.max(30, player.x);
         //player.x = Math.min(mapSize - 30, player.x);
@@ -800,20 +849,42 @@
           if (msg[1][0] == "/kill" && socket.player.admin) {
             socket.player.health = 0;
             return false;
-          } if (msg[1][0] == "/end" && socket.player.admin) {
+          }
+          if (msg[1][0] == "/end" && socket.player.admin) {
             ws.close();
             return false;
-          } if (msg[1][0].includes("/tp") && socket.player.admin) {
-            if (-~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0] < 10001 && ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0] > -1 && socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1] < 10001 && socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1] > -1) {
-            socket.player.x = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0];
-            socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1];
+          }
+          if (msg[1][0].includes("/tp") && socket.player.admin) {
+            if (
+              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] < 10001 &&
+              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] > -1 &&
+              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] < 10001 &&
+              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] > -1
+            ) {
+              socket.player.x = ~~msg[1][0]
+                .substr(4)
+                .replace(/\s/g, "")
+                .split(",")[0];
+              socket.player.y = ~~msg[1][0]
+                .substr(4)
+                .replace(/\s/g, "")
+                .split(",")[1];
+              return false;
+            } else {
+              socket.player.chat = "x or y value to high or low".slice(0, 30);
+              socket.player.lastChatTimestamp = Date.now();
+              setTimeout(() => {
+                socket.player.chat = null;
+              }, 3000);
+              return false;
             }
-            return false;
-          } if (msg[1][0] == "/money" && socket.player.admin) {
+          }
+          if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
             socket.player.resources.ruby += 1000;
             return false;
-          } if (msg[1][0] == "/devOff" && socket.player.admin) {
+          }
+          if (msg[1][0] == "/devOff" && socket.player.admin) {
             socket.close();
             return false;
           } else if (
@@ -863,7 +934,7 @@
                   socket.player.health + obj.heal
                 );
                 var playerWeaponObjects = [];
-                socket.player.weapons.forEach((w ) => {
+                socket.player.weapons.forEach((w) => {
                   playerWeaponObjects.push(weapons.find((x) => x.id == w - 1));
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
