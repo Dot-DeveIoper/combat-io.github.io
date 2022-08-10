@@ -372,7 +372,6 @@ body {
   color: #ffffff;
   text-align: center;
 }
-
 #loadingText > a {
   display: block;
 }
@@ -1011,7 +1010,6 @@ body > #mainMenu {
   /* display: none; */
   /* switch display to block with js to fix it */
 }
-
 #title {
   position: relative;
   font-family: "Hammersmith One", sans-serif;
@@ -1022,7 +1020,6 @@ body > #mainMenu {
   padding-bottom: 15px;
   z-index: 4;
 }
-
 #players {
   position: relative;
   font-family: "Hammersmith One", sans-serif;
