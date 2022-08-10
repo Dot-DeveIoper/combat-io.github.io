@@ -1398,6 +1398,7 @@
       if (e.isTrusted) {
         switch (e.code) {
           case keycodes.AUTO_HIT:
+                        if (chatbox.style.display === "none") {
             AutoHit = !AutoHit;
             if (AutoHit) {
               autohitting = true;
@@ -1406,11 +1407,15 @@
               autohitting = false;
               e.isTrusted && (!1, send(["c", [0]]));
             }
+                        }
             break;
           case keycodes.LOCK_DIR:
+            if (chatbox.style.display === "none") {
             lockDir = !lockDir;
+            }
             break;
           case keycodes.QUICK_FOOD:
+            if (chatbox.style.display === "none") {
             var sn;
             inventory.forEach((item) => {
               var itm = weapons.find((x) => x.id == item);
@@ -1424,42 +1429,61 @@
                 return;
               }
           });
+          }
           break;
           case keycodes.HOTBAR_1:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[1]]]);
+              }
             break;
           case keycodes.HOTBAR_2:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[2]]]);
+              }
             break;
           case keycodes.HOTBAR_3:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[3]]]);
+              }
             break;
           case keycodes.HOTBAR_4:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[4]]]);
+              }
             break;
           case keycodes.HOTBAR_5:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[5]]]);
+              }
             break;
           case keycodes.HOTBAR_6:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[6]]]);
+              }
             break;
           case keycodes.HOTBAR_7:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[7]]]);
+              }
             break;
           case keycodes.HOTBAR_8:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[8]]]);
+              }
             break;
           case keycodes.HOTBAR_9:
+              if (chatbox.style.display === "none") {
             send(["s",
               [inventory[9]]]);
+              }
             break;
           case 82:
             // nausea = !nausea;
