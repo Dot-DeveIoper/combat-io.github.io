@@ -302,11 +302,11 @@
     player.weapons = [0, 1, 2, 3, 4];
     if (player.admin) {
       player.resources = {
-        food: 99999,
-        wood: 99999,
-        stone: 99999,
-        gold: 99999,
-        ruby: 99999,
+        food: 1000000,
+        wood: 1000000,
+        stone: 1000000,
+        gold: 1000000,
+        ruby: 1000000,
         food2: 0,
         wood2: 0,
       };
