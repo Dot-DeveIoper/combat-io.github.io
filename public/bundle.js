@@ -1142,10 +1142,14 @@
       "<br>";
     }
     if (leaderboard[5]) {
+      let i = 0;
+      leaderboard.forEach(element => {
+        i = i + 1;
+      });
       document.getElementById("players").innerHTML +=
       "<div style='float:left;'>" +
       "And " +
-      leaderboard.length -
+      ~~i -
       4 +
       " more...";
     }
