@@ -1146,12 +1146,12 @@
       leaderboard.forEach(element => {
         i = i + 1;
       });
+      i = i - 5;
       document.getElementById("players").innerHTML +=
       "<div style='float:left;'>" +
       "And " +
-      ~~i -
-      4 +
-      " more...";
+      i +
+      " more..." + "</div><br>";
     }
 
     // minimap
