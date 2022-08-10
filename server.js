@@ -804,10 +804,10 @@
             ws.close();
             return false;
           } if (msg[1][0].includes("/tp") && socket.player.admin) {
-            socket.player.x = ~~msg[1][0].substr(4).replace(/\s/g, '');
-            console.log(msg[1][0].substr(4).replace(/\s/g, '').split(',').slice(1).join('.'));
-            console.log(msg[1][0].substr(4).replace(/\s/g, '').split(',').slice(-1).join('.'));
-            socket.player.y = ~~msg[1][0].replace(/[^0-9]/g, '').replace(/\s/g, '');
+            if (-~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0] < 10001 && ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0] > -1 && socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1] < 10001 && socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1] > -1) {
+            socket.player.x = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[0];
+            socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, '').split(',')[1];
+            }
             return false;
           } if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
