@@ -1146,8 +1146,8 @@
       "<div style='float:left;'>" +
       "And " +
       leaderboard.length -
-      5 +
-      "more...";
+      4 +
+      " more...";
     }
 
     // minimap
