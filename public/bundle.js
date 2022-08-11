@@ -283,6 +283,58 @@
       SkinID = i - 1;
     });
   }
+let shopDiv = document.getElementById("shopBtn");
+let shopToggle = document.getElementById("toggleShop");
+
+shopDiv.onclick = function(e) {
+  if (shopToggle.style.display === "none") {
+    shopToggle.style.display = "inline-block";
+  } else if (shopToggle.style.display === "inline-block") {
+    shopToggle.style.display = "none";
+    shopToggle.style.zIndex = "9";
+  } else {
+    shopToggle.style.display = "inline-block";
+  }
+};
+
+let chatBtn = document.getElementById("chatBtn");
+chatBtn.onclick = function(e) {
+          if (chatbox.style.display === "none") {
+            chatbox.style.display = "block";
+            chatbox.focus();
+          } else {
+            chatbox.style.display = "none";
+            if (chatbox.value) {
+              send(["ch", [chatbox.value]]);
+              chatbox.value = "";
+            }
+          }
+};
+
+
+let items = document.getElementById("itemsSection");
+let powerups = document.getElementById("powerupsSection");
+let itemsShop = document.getElementById("itemsShop");
+let powerupsShop = document.getElementById("powerupsShop");
+
+items.onclick = function (e) {
+  if (itemsShop.style.display === "none") {
+    itemsShop.style.display = "inline-block";
+    powerupsShop.style.display = "none";
+  } else {
+    itemsShop.style.display = "inline-block";
+    powerupsShop.style.display = "none";
+  }
+};
+powerups.onclick = function (e) {
+  if (powerupsShop.style.display === "none") {
+    powerupsShop.style.display = "inline-block";
+    itemsShop.style.display = "none";
+  } else {
+    powerupsShop.style.display = "inline-block";
+    itemsShop.style.display = "none";
+  }
+};
 
   var riverBubbles = [];
   let players = [];
