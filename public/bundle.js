@@ -152,7 +152,8 @@
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
-  }, 1000);
+  },
+    1000);
 
   function m() {
     var t;
@@ -163,7 +164,9 @@
     window.ontouchmove = z;
     window.onclick = z;
     window.onkeydown = z;
-    window.addEventListener("scroll", z, true);
+    window.addEventListener("scroll",
+      z,
+      true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
         ws.close(1000, "idle too long");
@@ -177,7 +180,7 @@
 
   m();
   let waveSize = 0,
-    waveGrow = true;
+  waveGrow = true;
 
   function Wave() {
     if (waveGrow) {
@@ -231,13 +234,14 @@
           if (audio1.volume > 1) {
             clearInterval(fadeInAudio);
           }
-        }, 10);
+        },
+          10);
       }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
-      msg +
-      "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
+    msg +
+    "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
   }
 
   function toRad(angle) {
@@ -247,7 +251,8 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   function sn(e) {
-    send(["ch", [e]]);
+    send(["ch",
+      [e]]);
   }
 
   var nausea = false;
@@ -265,12 +270,12 @@
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
-      .getElementById("h-item-" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
-        }
-      });
+    .getElementById("h-item-" + i)
+    .addEventListener("click", function (e) {
+      if (e.isTrusted) {
+        send(["s", [inventory[i + 1]]]);
+      }
+    });
   }
 
   var SkinID = 0;
@@ -283,58 +288,58 @@
       SkinID = i - 1;
     });
   }
-let shopDiv = document.getElementById("shopBtn");
-let shopToggle = document.getElementById("toggleShop");
+  let shopDiv = document.getElementById("shopBtn");
+  let shopToggle = document.getElementById("toggleShop");
 
-shopDiv.onclick = function(e) {
-  if (shopToggle.style.display === "none") {
-    shopToggle.style.display = "inline-block";
-  } else if (shopToggle.style.display === "inline-block") {
-    shopToggle.style.display = "none";
-    shopToggle.style.zIndex = "9";
-  } else {
-    shopToggle.style.display = "inline-block";
-  }
-};
+  shopDiv.onclick = function(e) {
+    if (shopToggle.style.display === "none") {
+      shopToggle.style.display = "inline-block";
+    } else if (shopToggle.style.display === "inline-block") {
+      shopToggle.style.display = "none";
+      shopToggle.style.zIndex = "9";
+    } else {
+      shopToggle.style.display = "inline-block";
+    }
+  };
 
-let chatBtn = document.getElementById("chatBtn");
-chatBtn.onclick = function(e) {
-          if (chatbox.style.display === "none") {
-            chatbox.style.display = "block";
-            chatbox.focus();
-          } else {
-            chatbox.style.display = "none";
-            if (chatbox.value) {
-              send(["ch", [chatbox.value]]);
-              chatbox.value = "";
-            }
-          }
-};
+  let chatBtn = document.getElementById("chatBtn");
+  chatBtn.onclick = function(e) {
+    if (chatbox.style.display === "none") {
+      chatbox.style.display = "block";
+      chatbox.focus();
+    } else {
+      chatbox.style.display = "none";
+      if (chatbox.value) {
+        send(["ch", [chatbox.value]]);
+        chatbox.value = "";
+      }
+    }
+  };
 
 
-let items = document.getElementById("itemsSection");
-let powerups = document.getElementById("powerupsSection");
-let itemsShop = document.getElementById("itemsShop");
-let powerupsShop = document.getElementById("powerupsShop");
+  let items = document.getElementById("itemsSection");
+  let powerups = document.getElementById("powerupsSection");
+  let itemsShop = document.getElementById("itemsShop");
+  let powerupsShop = document.getElementById("powerupsShop");
 
-items.onclick = function (e) {
-  if (itemsShop.style.display === "none") {
-    itemsShop.style.display = "inline-block";
-    powerupsShop.style.display = "none";
-  } else {
-    itemsShop.style.display = "inline-block";
-    powerupsShop.style.display = "none";
-  }
-};
-powerups.onclick = function (e) {
-  if (powerupsShop.style.display === "none") {
-    powerupsShop.style.display = "inline-block";
-    itemsShop.style.display = "none";
-  } else {
-    powerupsShop.style.display = "inline-block";
-    itemsShop.style.display = "none";
-  }
-};
+  items.onclick = function (e) {
+    if (itemsShop.style.display === "none") {
+      itemsShop.style.display = "inline-block";
+      powerupsShop.style.display = "none";
+    } else {
+      itemsShop.style.display = "inline-block";
+      powerupsShop.style.display = "none";
+    }
+  };
+  powerups.onclick = function (e) {
+    if (powerupsShop.style.display === "none") {
+      powerupsShop.style.display = "inline-block";
+      itemsShop.style.display = "none";
+    } else {
+      powerupsShop.style.display = "inline-block";
+      itemsShop.style.display = "none";
+    }
+  };
 
   var riverBubbles = [];
   let players = [];
@@ -365,29 +370,28 @@ powerups.onclick = function (e) {
   var maxScreenHeight = 1080;
 
   var texts = [];
-  var skins = [
-    {
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
-      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
-      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
-      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
-      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
-      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
-      img: new Image(),
-      img1: new Image(),
-      img2: new Image(),
-      img3: new Image(),
-      img4: new Image(),
-      img5: new Image(),
-      img6: new Image(),
-      img7: new Image(),
-      xOffset: -35,
-      yOffset: -35,
-      scale: 70,
-    },
+  var skins = [{
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+    src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+    src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
+    src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
+    src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
+    src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
+    src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
+    src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
+    img: new Image(),
+    img1: new Image(),
+    img2: new Image(),
+    img3: new Image(),
+    img4: new Image(),
+    img5: new Image(),
+    img6: new Image(),
+    img7: new Image(),
+    xOffset: -35,
+    yOffset: -35,
+    scale: 70,
+  },
   ];
   skins.forEach((w) => {
     w.img.src = w.src;
@@ -414,16 +418,15 @@ powerups.onclick = function (e) {
     }
   });
 
-  var trees = [
-    {
-      name: "wood",
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
-      img: new Image(),
-      xOffset: -158,
-      yOffset: -160,
-      scale: 350,
-    },
+  var trees = [{
+    name: "wood",
+    id: 0,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978", //tree
+    img: new Image(),
+    xOffset: -158,
+    yOffset: -160,
+    scale: 350,
+  },
     {
       name: "wood2",
       id: 1,
@@ -480,16 +483,15 @@ powerups.onclick = function (e) {
     },
   ];
 
-  var weapons = [
-    {
-      id: 0,
-      name: "Tool Hammer",
-      src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
-      scale: 100,
-      img: new Image(),
-      xOffset: -20,
-      yOffset: -30,
-    },
+  var weapons = [{
+    id: 0,
+    name: "Tool Hammer",
+    src: "https://images-ext-2.discordapp.net/external/BKjxSb7m8SOKAQTU8iavjElVRl1hCefd-q2MD3U74Es/%3Fcb%3D20171004213820/https/static.wikia.nocookie.net/moom/images/2/2b/Hammer_1.png/revision/latest/scale-to-width-down/512?width=230&height=230",
+    scale: 100,
+    img: new Image(),
+    xOffset: -20,
+    yOffset: -30,
+  },
     {
       id: 1,
       name: "Orange",
@@ -523,22 +525,21 @@ powerups.onclick = function (e) {
 
   var WallTop = new Image();
   WallTop.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/imgonline-com-ua-tile-dL6QNdG65VSS3U.png?v=1659628448349";
+  "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/imgonline-com-ua-tile-dL6QNdG65VSS3U.png?v=1659628448349";
 
   var WallRight = new Image();
   WallRight.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Wall_Horizontal.png?v=1659568444068";
+  "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Wall_Horizontal.png?v=1659568444068";
 
-  var objects = [
-    {
-      id: 2,
-      name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
-      scale: 80,
-      img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
-    },
+  var objects = [{
+    id: 2,
+    name: "Spike",
+    src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+    scale: 80,
+    img: new Image(),
+    xOffset: -50,
+    yOffset: -50,
+  },
     {
       id: 3,
       name: "Wall",
@@ -550,16 +551,15 @@ powerups.onclick = function (e) {
     },
   ];
 
-  var animals = [
-    {
-      id: 0,
-      name: "Cow",
-      src: "", //"https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
-      scale: 200,
-      img: new Image(),
-      xOffset: 0,
-      yOffset: 0,
-    },
+  var animals = [{
+    id: 0,
+    name: "Cow",
+    src: "", //"https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
+    scale: 200,
+    img: new Image(),
+    xOffset: 0,
+    yOffset: 0,
+  },
   ];
 
   // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
@@ -587,7 +587,8 @@ powerups.onclick = function (e) {
     setInterval(() => {
       localStorage.name = document.querySelector("#nameInput").value;
     }, 50);
-  }, 1000);
+  },
+    1000);
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -653,15 +654,15 @@ powerups.onclick = function (e) {
     ctx.font = "24px Hammersmith One";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = player.admin ? "#30d1a1" : "#fff";
+    ctx.fillStyle = player.admin ? "#30d1a1": "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${player.name}`,
+      `${player.admin ? "</DEV>": ""} ${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${player.name}`,
+      `${player.admin ? "</DEV>": ""} ${player.name}`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
@@ -672,7 +673,7 @@ powerups.onclick = function (e) {
     }
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
-    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
+    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07": "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
   }
@@ -813,12 +814,12 @@ powerups.onclick = function (e) {
     }
   }
   window.requestAnimFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (e) {
-      window.setTimeout(e, 1000 / 60);
-    };
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function (e) {
+    window.setTimeout(e, 1000 / 60);
+  };
 
   function update() {
     var moveX = 0;
@@ -877,11 +878,11 @@ powerups.onclick = function (e) {
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        desertHeight -
-        riverHeight -
-        beachHeight,
+      myPlayer.y +
+      canvas.height / 2 -
+      desertHeight -
+      riverHeight -
+      beachHeight,
       canvas.width,
       beachHeight
     );
@@ -893,11 +894,11 @@ powerups.onclick = function (e) {
     ctx.fillRect(
       0,
       mapSize -
-        myPlayer.y +
-        canvas.height / 2 -
-        desertHeight -
-        riverHeight -
-        waveSize / 2,
+      myPlayer.y +
+      canvas.height / 2 -
+      desertHeight -
+      riverHeight -
+      waveSize / 2,
       canvas.width,
       riverHeight + waveSize
     );
@@ -1049,9 +1050,15 @@ powerups.onclick = function (e) {
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
-    ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
+    ctx.fillRect(0,
+      0,
+      canvas.width,
+      canvas.height / 2 - myPlayer.y);
     // left border
-    ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
+    ctx.fillRect(0,
+      0,
+      canvas.width / 2 - myPlayer.x,
+      canvas.height);
     // right border
     ctx.fillRect(
       mapSize - myPlayer.x + canvas.width / 2,
@@ -1100,7 +1107,10 @@ powerups.onclick = function (e) {
     //       );
 
     info = `${ping}ms`;
-    drawText(100, 50, 30, info);
+    drawText(100,
+      50,
+      30,
+      info);
 
     // leaderboard
     // leaderboard
@@ -1109,14 +1119,14 @@ powerups.onclick = function (e) {
     ctx.fillStyle = "#fff";
 
     function gold(num) {
-      return m(leaderboard[num].gold, 1);
+      return m(leaderboard[num].gold,
+        1);
     }
     function m(num, s) {
-      var f = [
-        {
-          value: 1,
-          symbol: "",
-        },
+      var f = [{
+        value: 1,
+        symbol: "",
+      },
         {
           value: 1e3,
           symbol: "k",
@@ -1142,48 +1152,48 @@ powerups.onclick = function (e) {
 
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
-        "<div style='float:left;'>" +
-        leaderboard[0].name +
-        "</div><div style='float: right;color:gold;'>" +
-        gold(0) +
-        "</div>" +
-        "<br>";
+      "<div style='float:left;'>" +
+      leaderboard[0].name +
+      "</div><div style='float: right;color:gold;'>" +
+      gold(0) +
+      "</div>" +
+      "<br>";
     }
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
-        "<div style='float:left;'>" +
-        leaderboard[1].name +
-        "</div><div style='float: right;color:gold;'>" +
-        gold(1) +
-        "</div>" +
-        "<br>";
+      "<div style='float:left;'>" +
+      leaderboard[1].name +
+      "</div><div style='float: right;color:gold;'>" +
+      gold(1) +
+      "</div>" +
+      "<br>";
     }
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
-        "<div style='float:left;'>" +
-        leaderboard[2].name +
-        "</div><div style='float: right;color:gold;'>" +
-        gold(2) +
-        "</div>" +
-        "<br>";
+      "<div style='float:left;'>" +
+      leaderboard[2].name +
+      "</div><div style='float: right;color:gold;'>" +
+      gold(2) +
+      "</div>" +
+      "<br>";
     }
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
-        "<div style='float:left;'>" +
-        leaderboard[3].name +
-        "</div><div style='float: right;color:gold;'>" +
-        gold(3) +
-        "</div>" +
-        "<br>";
+      "<div style='float:left;'>" +
+      leaderboard[3].name +
+      "</div><div style='float: right;color:gold;'>" +
+      gold(3) +
+      "</div>" +
+      "<br>";
     }
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
-        "<div style='float:left;'>" +
-        leaderboard[4].name +
-        "</div><div style='float: right;color:gold;'>" +
-        gold(4) +
-        "</div>" +
-        "<br>";
+      "<div style='float:left;'>" +
+      leaderboard[4].name +
+      "</div><div style='float: right;color:gold;'>" +
+      gold(4) +
+      "</div>" +
+      "<br>";
     }
     if (leaderboard[5]) {
       let i = 0;
@@ -1192,7 +1202,7 @@ powerups.onclick = function (e) {
       });
       i = i - 5;
       document.getElementById("players").innerHTML +=
-        "<div style='float:left;'>" + "And " + ~~i + " more..." + "</div><br>";
+      "<div style='float:left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
 
     // minimap
@@ -1249,28 +1259,28 @@ powerups.onclick = function (e) {
       document.getElementById("ruby").innerHTML = myPlayer.resources[
         trees[6].name
       ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("gold").innerHTML = myPlayer.resources[
         trees[5].name
       ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("stone").innerHTML = myPlayer.resources[
         trees[4].name
       ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("bush").innerHTML = myPlayer.resources[
         trees[2].name
       ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("tree").innerHTML = myPlayer.resources[
         trees[0].name
       ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     if (age < 999 && age != "MAX") {
       if (ageLevelBar.style.width === "100%" && !ageChange) {
@@ -1298,8 +1308,7 @@ powerups.onclick = function (e) {
     }
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
-        ? (document.getElementById("nameInput").value = [])
-        : (document.getElementById("nameInput").value = localStorage.name);
+      ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);
     }, 500);
     ws.addEventListener("open", function () {
       document.getElementById("menuCardHolder").style.display = "block";
@@ -1325,71 +1334,73 @@ powerups.onclick = function (e) {
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
               document.getElementById("h-item-" + w).style.display =
-                "inline-block";
+              "inline-block";
             });
-          case "33":
-            players = msg[1][0];
-            players.forEach((p) => {
-              if (!swingAngle[p.sid]) {
-                swingAngle[p.sid] = 0;
-              }
-              if (p.sid == myPlayer.sid) {
-                myPlayer = p;
-                window.me = myPlayer;
-              }
-            });
-            break;
-          case "p":
-            ping = Date.now() - lastping;
-            break;
-          case "7":
-            var sid = msg[1][0];
-            var angle = 120;
-            var multi = 1;
-            var add = 1;
-            for (let i = 0; i < angle; i++) {
-              setTimeout(() => {
-                swingAngle[sid] += add;
-              }, i * multi);
-            }
-            setTimeout(() => {
+            case "33":
+              players = msg[1][0];
+              players.forEach((p) => {
+                if (!swingAngle[p.sid]) {
+                  swingAngle[p.sid] = 0;
+                }
+                if (p.sid == myPlayer.sid) {
+                  myPlayer = p;
+                  window.me = myPlayer;
+                }
+              });
+              break;
+            case "p":
+              ping = Date.now() - lastping;
+              break;
+            case "7":
+              var sid = msg[1][0];
+              var angle = 120;
+              var multi = 1;
+              var add = 1;
               for (let i = 0; i < angle; i++) {
                 setTimeout(() => {
-                  swingAngle[sid] -= add;
+                  swingAngle[sid] += add;
                 }, i * multi);
               }
-            }, angle * multi + 40);
-            break;
-          case "d":
-            mainMenu.style.display = "block";
-            if (soundOn) {
-              if (AudioOn === "true") {
-                audio1.play();
-                const fadeInAudio = setInterval(() => {
-                  if (audio1.volume <= 1) {
-                    audio1.volume += 0.01111111111111111111111111111111111111;
-                  }
+              setTimeout(() => {
+                for (let i = 0; i < angle; i++) {
+                  setTimeout(() => {
+                    swingAngle[sid] -= add;
+                  }, i * multi);
+                }
+              },
+                angle * multi + 40);
+              break;
+            case "d":
+              mainMenu.style.display = "block";
+              if (soundOn) {
+                if (AudioOn === "true") {
+                  audio1.play();
+                  const fadeInAudio = setInterval(() => {
+                    if (audio1.volume <= 1) {
+                      audio1.volume += 0.01111111111111111111111111111111111111;
+                    }
 
-                  if (audio1.volume > 1) {
-                    clearInterval(fadeInAudio);
-                  }
-                }, 10);
+                    if (audio1.volume > 1) {
+                      clearInterval(fadeInAudio);
+                    }
+                  },
+                    10);
+                }
               }
-            }
-            break;
-          case "o":
-            treesCache = msg[1][0];
-            break;
-          case "b":
-            leaderboard = msg[1][0];
-            break;
-          case "x":
-            objCache = msg[1][0];
-            break;
-          case "a":
-            animalsCache = msg[1][0];
-            window.animals = animalsCache;
-            break;
+              break;
+            case "o":
+              treesCache = msg[1][0];
+              break;
+            case "b":
+              leaderboard = msg[1][0];
+              break;
+            case "x":
+              objCache = msg[1][0];
+              break;
+            case "a":
+              animalsCache = msg[1][0];
+              window.animals = animalsCache;
+              break;
         }
       });
     });
@@ -1405,71 +1416,76 @@ powerups.onclick = function (e) {
     }
   });
 
-  canvas.addEventListener("mouseup", function (e) {
-    if (e.isTrusted && !autohitting) {
-      attacking = false;
-      send(["c", [0]]);
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohitting == true) {
-        AutoHit = false;
-        autohittingwason = true;
+  canvas.addEventListener("mouseup",
+    function (e) {
+      if (e.isTrusted && !autohitting) {
+        attacking = false;
+        send(["c", [0]]);
       }
-      e.isTrusted && (!0, send(["c", [1]]));
-    }
-  });
-  document.addEventListener("keyup", function (e) {
-    if (
-      e.keyCode == 32 &&
-      document.activeElement.id.toLowerCase() !== "chatbox"
-    ) {
-      if (autohittingwason == true)
-        return (autohittingwason = false), (AutoHit = true);
-      e.isTrusted && (!1, send(["c", [0]]));
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.AUTO_HIT:
-          if (chatbox.style.display === "none") {
-            AutoHit = !AutoHit;
-            if (AutoHit) {
-              autohitting = true;
-              e.isTrusted && (!0, send(["c", [1]]));
-            } else if (!AutoHit) {
-              autohitting = false;
-              e.isTrusted && (!1, send(["c", [0]]));
-            }
-          }
-          break;
-        case keycodes.LOCK_DIR:
-          if (chatbox.style.display === "none") {
-            lockDir = !lockDir;
-          }
-          break;
-        case keycodes.QUICK_FOOD:
-          if (chatbox.style.display === "none") {
-            var sn;
-            inventory.forEach((item) => {
-              var itm = weapons.find((x) => x.id == item);
-              if (itm && itm.food) {
-                sn = itm.id;
-                if (myPlayer.weapon == sn) {
-                  send(["s", [inventory[1]]]);
-                } else {
-                  send(["s", [sn + 1]]);
-                }
-                return;
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohitting == true) {
+          AutoHit = false;
+          autohittingwason = true;
+        }
+        e.isTrusted && (!0, send(["c", [1]]));
+      }
+    });
+  document.addEventListener("keyup",
+    function (e) {
+      if (
+        e.keyCode == 32 &&
+        document.activeElement.id.toLowerCase() !== "chatbox"
+      ) {
+        if (autohittingwason == true)
+          return (autohittingwason = false),
+        (AutoHit = true);
+        e.isTrusted && (!1, send(["c", [0]]));
+      }
+    });
+  document.addEventListener("keydown",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.AUTO_HIT:
+            if (chatbox.style.display === "none") {
+              AutoHit = !AutoHit;
+              if (AutoHit) {
+                autohitting = true;
+                e.isTrusted && (!0, send(["c", [1]]));
+              } else if (!AutoHit) {
+                autohitting = false;
+                e.isTrusted && (!1, send(["c", [0]]));
               }
+            }
+            break;
+          case keycodes.LOCK_DIR:
+            if (chatbox.style.display === "none") {
+              lockDir = !lockDir;
+            }
+            break;
+          case keycodes.QUICK_FOOD:
+            if (chatbox.style.display === "none") {
+              var sn;
+              inventory.forEach((item) => {
+                var itm = weapons.find((x) => x.id == item);
+                if (itm && itm.food) {
+                  sn = itm.id;
+                  if (myPlayer.weapon == sn) {
+                    send(["s", [inventory[1]]]);
+                  } else {
+                    send(["s", [sn + 1]]);
+                  }
+                  return;
+                }
             });
-          }
-          break;
+        }
+        break;
         case keycodes.HOTBAR_1:
           if (chatbox.style.display === "none") {
             send(["s", [inventory[1]]]);
@@ -1564,96 +1580,103 @@ powerups.onclick = function (e) {
       }
     }
   });
-  document.addEventListener("keyup", function (e) {
-    if (e.isTrusted) {
-      switch (e.code) {
-        case keycodes.MOVE_UP:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT:
-          moveRight = 0;
-          break;
-        case keycodes.MOVE_UP2:
-          moveUp = 0;
-          break;
-        case keycodes.MOVE_DOWN2:
-          moveDown = 0;
-          break;
-        case keycodes.MOVE_LEFT2:
-          moveLeft = 0;
-          break;
-        case keycodes.MOVE_RIGHT2:
-          moveRight = 0;
-          break;
-      }
-    }
-  });
-
-  window.addEventListener("resize", function (e) {
-    if (e.isTrusted) {
-      resizeCanvas();
-    }
-  });
-
-  canvas.addEventListener("mousemove", function (e) {
-    if (e.isTrusted && !lockDir) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      aim = Math.atan2(
-        e.clientY - canvas.height / 2,
-        e.clientX - canvas.width / 2
-      );
-    }
-  });
-
-  canvas.addEventListener("contextmenu", function (e) {
-    if (e.isTrusted) {
-      e.preventDefault();
-    }
-  });
-
-  sound.addEventListener("click", function (e) {
-    if (sound.checked) {
-      soundOn = false;
-      localStorage.setItem("AudioOn", "false");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.pause();
-    } else {
-      soundOn = true;
-      localStorage.setItem("AudioOn", "true");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.play();
-    }
-  });
-
-  enterGame.addEventListener("click", function (e) {
-    if (SpawnedOnce == 1) {
-      if (soundOn) {
-        if (AudioOn === "true") {
-          var fadeOutAudio = setInterval(() => {
-            if (audio1.volume >= 0.009) {
-              audio1.volume -= 0.01111111111111111111111111111111111111;
-            }
-
-            if (audio1.volume <= 0.1) {
-              audio1.pause();
-              clearInterval(fadeOutAudio);
-            }
-          }, 10);
+  document.addEventListener("keyup",
+    function (e) {
+      if (e.isTrusted) {
+        switch (e.code) {
+          case keycodes.MOVE_UP:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT:
+            moveRight = 0;
+            break;
+          case keycodes.MOVE_UP2:
+            moveUp = 0;
+            break;
+          case keycodes.MOVE_DOWN2:
+            moveDown = 0;
+            break;
+          case keycodes.MOVE_LEFT2:
+            moveLeft = 0;
+            break;
+          case keycodes.MOVE_RIGHT2:
+            moveRight = 0;
+            break;
         }
       }
-      var minimapOffset = 20;
-      var minimapSize = 200;
-      deathLocX = myPlayer.x * (minimapSize / mapSize);
-      deathLocY = myPlayer.y * (minimapSize / mapSize);
-    }
-  });
+    });
+
+  window.addEventListener("resize",
+    function (e) {
+      if (e.isTrusted) {
+        resizeCanvas();
+      }
+    });
+
+  canvas.addEventListener("mousemove",
+    function (e) {
+      if (e.isTrusted && !lockDir) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        aim = Math.atan2(
+          e.clientY - canvas.height / 2,
+          e.clientX - canvas.width / 2
+        );
+      }
+    });
+
+  canvas.addEventListener("contextmenu",
+    function (e) {
+      if (e.isTrusted) {
+        e.preventDefault();
+      }
+    });
+
+  sound.addEventListener("click",
+    function (e) {
+      if (sound.checked) {
+        soundOn = false;
+        localStorage.setItem("AudioOn", "false");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.pause();
+      } else {
+        soundOn = true;
+        localStorage.setItem("AudioOn", "true");
+        AudioOn = localStorage.getItem("AudioOn");
+        audio1.play();
+      }
+    });
+
+  enterGame.addEventListener("click",
+    function (e) {
+      if (SpawnedOnce == 1) {
+        if (soundOn) {
+          if (AudioOn === "true") {
+            var fadeOutAudio = setInterval(() => {
+              if (audio1.volume >= 0.009) {
+                audio1.volume -= 0.01111111111111111111111111111111111111;
+              }
+
+              if (audio1.volume <= 0.1) {
+                audio1.pause();
+                clearInterval(fadeOutAudio);
+              }
+            },
+              10);
+          }
+        }
+        var minimapOffset = 20;
+        var minimapSize = 200;
+        deathLocX = myPlayer.x * (minimapSize / mapSize);
+        deathLocY = myPlayer.y * (minimapSize / mapSize);
+      }
+    });
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {
@@ -1666,7 +1689,8 @@ powerups.onclick = function (e) {
             audio1.pause();
             clearInterval(fadeOutAudio);
           }
-        }, 10);
+        },
+          10);
       }
       mainMenu.style.display = "none";
       age = 1;
@@ -1676,15 +1700,15 @@ powerups.onclick = function (e) {
       SpawnedOnce = 1;
       send([
         "j",
-        [
-          {
-            name: document.getElementById("nameInput").value,
-          },
+        [{
+          name: document.getElementById("nameInput").value,
+        },
         ],
       ]);
       setInterval(() => {
         window.requestAnimFrame(update);
-      }, 1);
+      },
+        1);
       riverBubbles = [];
       for (let j = 0; j < 30; j++) {
         setTimeout(() => {
