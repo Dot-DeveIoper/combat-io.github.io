@@ -1057,7 +1057,7 @@ body > #mainMenu {
   /* display: inline-block; */
   position: absolute;
   max-width: 350px;
-  top: 35%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%);
   z-index: 5;
@@ -1104,7 +1104,7 @@ body > #mainMenu {
   /* display: inline-block; */
   max-width: 350px;
   width: 350px;
-  height: 200px;
+  height: 250px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: scroll;
@@ -1114,7 +1114,7 @@ body > #mainMenu {
   display: none;
   /* display: inline-block; */
   width: 350px;
-  height: 200px;
+  height: 250px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: scroll;
