@@ -1056,10 +1056,11 @@ body > #mainMenu {
   display: none;
   /* display: inline-block; */
   position: absolute;
-  max-width: 350px;
-  top: 25%;
+  max-width: 400px;
+  top: 50%;
+  /* top: 25%; */
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   z-index: 5;
 }
 .sectionContainer {
@@ -1073,7 +1074,7 @@ body > #mainMenu {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 50%;
+  width: 75%;
   padding: 10px;
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
@@ -1086,7 +1087,7 @@ body > #mainMenu {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 50%;
+  width: 75%;
   padding: 10px;
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
@@ -1102,9 +1103,9 @@ body > #mainMenu {
 .itemShopSection {
   display: inline-block;
   /* display: inline-block; */
-  max-width: 350px;
-  width: 350px;
-  height: 250px;
+  max-width: 400px;
+  width: 400px;
+  height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: scroll;
@@ -1113,8 +1114,9 @@ body > #mainMenu {
 .itemPowerupsSection {
   display: none;
   /* display: inline-block; */
-  width: 350px;
-  height: 250px;
+  max-width: 400px;
+  width: 400px;
+  height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: scroll;
@@ -1123,7 +1125,7 @@ body > #mainMenu {
 .itemContainer {
   display: inline-block;
   /* display: flex; */
-  max-width: 350px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   vertical-align: middle;
@@ -1165,7 +1167,8 @@ body > #mainMenu {
   text-align: right;
   float: right;
   /* margin-top: 5px; */
-  margin-right: 19px;
+  margin-right: -29px;
+  /* margin-right: 19px; */
 }
 /* .itemsInfo2:first-child {
   display: inline-block;
