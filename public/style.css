@@ -35,6 +35,8 @@ body {
 }
 
 #gameCanvas {
+  /* width: 100vw;
+  height: 100vh; */
   z-index: -999;
   margin: 0;
   position: absolute;
@@ -1123,6 +1125,7 @@ body > #mainMenu {
   border-radius: 4px;
   overflow: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 .itemPowerupsSection {
   display: none;
@@ -1134,6 +1137,7 @@ body > #mainMenu {
   border-radius: 4px;
   overflow: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 .itemContainer {
   display: inline-block;
