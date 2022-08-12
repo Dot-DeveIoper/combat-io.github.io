@@ -236,6 +236,7 @@
       }
     }
   }
+  //Make moofie cage lol
   treesCache.push(object);
   animals.forEach((a) => {
     for (let i = 0; i < a.count; i++) {
@@ -757,6 +758,7 @@
       socketLimit: 0,
       noHurtTime: 0,
       skin: 0,
+      SkinID: 0,
       sid: null,
       xVel: 0,
       yVel: 0,

@@ -6,6 +6,9 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
+//!~~~~~~~~~~~~~~
+//this is a back up.
+//!~~~~~~~~~~~~~~~~~~
 var SkinID = 0;
 function setSkin(num) {
   for (let i = 1; i <= 8; i++) {
