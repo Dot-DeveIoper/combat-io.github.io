@@ -640,6 +640,11 @@
       },
     };
   }
+  var skinColor = 0;
+  window.selectSkin = function(num) {
+    alert("testing Skin "+num)
+    skinColor = num;
+  };
   function sendMove() {
     if (document.activeElement.id.toLowerCase() !== "chatbox") {
       send(["33", [move]]);
@@ -702,7 +707,8 @@
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    if (SkinID === 0) {
+    player.skin = skinColor;
+    if (player.skin === 0) {
       ctx.drawImage(
         skin.img,
         skin.xOffset,
@@ -711,7 +717,7 @@
         skin.scale
       );
     }
-    if (SkinID === 1) {
+    if (player.skin === 1) {
       ctx.drawImage(
         skin.img1,
         skin.xOffset,
@@ -720,7 +726,7 @@
         skin.scale
       );
     }
-    if (SkinID === 2) {
+    if (player.skin === 2) {
       ctx.drawImage(
         skin.img2,
         skin.xOffset,

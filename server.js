@@ -568,10 +568,10 @@
                 : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
-              var pushVelX = Math.cos(pushDir);
-              var pushVelY = Math.sin(pushDir);
-              player.xVel += 30; //+ pushVelX;
-              player.yVel += 30; //- pushVelY;
+              var pushVelX = Math.cos(pushDir = null);
+              var pushVelY = Math.sin(pushDir - 25);
+              player.xVel += pushVelX;
+              player.yVel += pushVelY;
             }
           });
         }
@@ -603,8 +603,8 @@
                 player.health -= aObj.damage;
                 player.noHurtTime += 2;
               }
-              player.xVel = 1; //pushVelX;
-              player.yVel = -1;//pushVelY;
+              player.xVel += pushVelX;
+              player.yVel += pushVelY;
             }
           });
         }
@@ -751,14 +751,17 @@
       .filter((x) => x.spawned)
       .slice(0, 10);
   }, 10);
+  var skinColor = 0;
+  function skinChoose(num) {
+    skinColor = num;
+  }
 
   wsServer.on("connection", (socket, request) => {
     socket.send(msgpack.encode(["init", []]));
     socket.player = {
       socketLimit: 0,
       noHurtTime: 0,
-      skin: 0,
-      SkinID: 0,
+      skin: skinColor,
       sid: null,
       xVel: 0,
       yVel: 0,
@@ -819,7 +822,7 @@
           }
           respawn(socket.player, name);
           if (!players.find((x) => x.sid == socket.player.sid))
-            players.push(socket.player);
+          players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
           socket.send(msgpack.encode(["w", [socket.player.weapons]]));
           break;
