@@ -683,7 +683,7 @@
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.skin, player.sid, player.SkinID);
     } else {
       drawWeapon(
         player,
@@ -691,12 +691,13 @@
         y,
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
-        
-        player.sid
+        player.skin,
+        player.sid,
+        player.SkinID
       );
     }
   }
-  function drawWeapon(player, x, y, rot, wep, skin, sid) {
+  function drawWeapon(player, x, y, rot, wep, skin, sid, skinNum) {
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
@@ -707,7 +708,7 @@
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    if (SkinID === 0) {
+    if (skinNum === 0) {
       ctx.drawImage(
         skin.img,
         skin.xOffset,
@@ -716,7 +717,7 @@
         skin.scale
       );
     }
-    if (SkinID === 1) {
+    if (player.SkinID === 1) {
       ctx.drawImage(
         skin.img1,
         skin.xOffset,
@@ -725,7 +726,7 @@
         skin.scale
       );
     }
-    if (SkinID === 2) {
+    if (player.SkinID === 2) {
       ctx.drawImage(
         skin.img2,
         skin.xOffset,
@@ -795,11 +796,13 @@
   function drawAnimal(x, y, rot, id) {
     var am = animals.find((x) => x.id == id);
     var img = am.img;
+  if(img) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(0);
     ctx.drawImage(img, am.xOffset, am.yOffset, am.scale, am.scale);
     ctx.restore();
+  }
   }
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {

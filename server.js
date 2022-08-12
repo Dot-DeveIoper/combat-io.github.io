@@ -759,6 +759,7 @@
       socketLimit: 0,
       noHurtTime: 0,
       skin: 0,
+      SkinID: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
