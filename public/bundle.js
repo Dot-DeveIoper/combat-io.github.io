@@ -788,12 +788,12 @@
     }
   }
   function drawAnimal(x, y, rot, id) {
-    var ob = animals.find((x) => x.id == id);
-    var img = ob.img;
+    var am = animals.find((x) => x.id == id);
+    var img = am.img;
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(0);
-    ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+    ctx.drawImage(img, am.xOffset, am.yOffset, am.scale, am.scale);
     ctx.restore();
   }
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,

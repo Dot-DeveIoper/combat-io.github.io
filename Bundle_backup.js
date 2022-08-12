@@ -967,7 +967,11 @@ function setSkin(num) {
         x: animal.x,
         y: animal.y,
       });
-      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
+      drawAnimal(
+        rel.x,
+        rel.y,
+        animal.dir,
+        animal.id);
     });
 
     players.forEach((player) => {
@@ -1329,7 +1333,7 @@ function setSkin(num) {
             break;
           case "a":
             animalsCache = msg[1][0];
-            window.animals = animalsCache;
+            //window.animals = animalsCache;
             break;
         }
       });

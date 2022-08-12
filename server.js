@@ -603,8 +603,8 @@
                 player.health -= aObj.damage;
                 player.noHurtTime += 2;
               }
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
+              player.xVel = 1; //pushVelX;
+              player.yVel = -1;//pushVelY;
             }
           });
         }
