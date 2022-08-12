@@ -570,8 +570,8 @@
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
               var pushVelX = Math.cos(pushDir);
               var pushVelY = Math.sin(pushDir);
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
+              player.xVel += 30; //+ pushVelX;
+              player.yVel += 30; //- pushVelY;
             }
           });
         }
