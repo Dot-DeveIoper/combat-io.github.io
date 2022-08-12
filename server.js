@@ -568,8 +568,8 @@
                 : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
-              var pushVelX = Math.cos(pushDir = null);
-              var pushVelY = Math.sin(pushDir - 25);
+              var pushVelX = Math.cos(pushDir);
+              var pushVelY = Math.sin(pushDir);
               player.xVel += pushVelX;
               player.yVel += pushVelY;
             }
@@ -751,17 +751,13 @@
       .filter((x) => x.spawned)
       .slice(0, 10);
   }, 10);
-  var skinColor = 0;
-  function skinChoose(num) {
-    skinColor = num;
-  }
 
   wsServer.on("connection", (socket, request) => {
     socket.send(msgpack.encode(["init", []]));
     socket.player = {
       socketLimit: 0,
       noHurtTime: 0,
-      skin: skinColor,
+      skin: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
