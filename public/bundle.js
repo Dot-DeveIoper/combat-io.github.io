@@ -5,8 +5,7 @@
 // SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
-
-(function (e) {
+(function (e) { //i think you have that, no?
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
@@ -707,7 +706,6 @@
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    SkinID = skinColor;
     if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
