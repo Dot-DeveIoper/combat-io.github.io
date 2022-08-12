@@ -5,6 +5,7 @@
 // SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
+
 (function (e) { //i think you have that, no?
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
@@ -639,11 +640,6 @@
       },
     };
   }
-  var skinColor = 0;
-  window.selectSkin = function(num) {
-    alert("testing Skin "+num)
-    skinColor = num;
-  };
   function sendMove() {
     if (document.activeElement.id.toLowerCase() !== "chatbox") {
       send(["33", [move]]);
@@ -683,7 +679,7 @@
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.skin, player.sid, player.SkinID);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
       drawWeapon(
         player,
@@ -691,24 +687,22 @@
         y,
         Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2),
         weapons[0],
-        player.skin,
-        player.sid,
-        player.SkinID
+        player.sid
       );
     }
   }
-  function drawWeapon(player, x, y, rot, wep, skin, sid, skinNum) {
+  function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-    skin = skins.find((x) => x.id == player.skin); ///
+    var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    if (skinNum === 0) {
+    if (SkinID === 0) {
       ctx.drawImage(
         skin.img,
         skin.xOffset,
@@ -717,7 +711,7 @@
         skin.scale
       );
     }
-    if (player.SkinID === 1) {
+    if (SkinID === 1) {
       ctx.drawImage(
         skin.img1,
         skin.xOffset,
@@ -726,7 +720,7 @@
         skin.scale
       );
     }
-    if (player.SkinID === 2) {
+    if (SkinID === 2) {
       ctx.drawImage(
         skin.img2,
         skin.xOffset,
@@ -794,15 +788,13 @@
     }
   }
   function drawAnimal(x, y, rot, id) {
-    var am = animals.find((x) => x.id == id);
-    var img = am.img;
-  if(img) {
+    var ob = animals.find((x) => x.id == id);
+    var img = ob.img;
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(0);
-    ctx.drawImage(img, am.xOffset, am.yOffset, am.scale, am.scale);
+    ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
     ctx.restore();
-  }
   }
   ///mapSize - myPlayer.y + canvas.height / 2 - snowHeight - 3000 - 1500,
   function drawTree(x, y, rot, id) {

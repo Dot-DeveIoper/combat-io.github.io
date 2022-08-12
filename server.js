@@ -1,4 +1,3 @@
-
 (() => {
   const express = require("express");
   const bodyParser = require("body-parser");
@@ -758,8 +757,7 @@
     socket.player = {
       socketLimit: 0,
       noHurtTime: 0,
-      skin: 0,
-      SkinID: 0,
+      skin: 5,
       sid: null,
       xVel: 0,
       yVel: 0,
