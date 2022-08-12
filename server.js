@@ -873,7 +873,7 @@
                 .split(",")[1];
               return false;
             } else {
-              socket.player.chat = "x or y value to high or low".slice(0, 30);
+              socket.player.chat = "x or y value too high or low".slice(0, 30);
               socket.player.lastChatTimestamp = Date.now();
               setTimeout(() => {
                 socket.player.chat = null;
