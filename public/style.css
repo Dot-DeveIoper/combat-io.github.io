@@ -1319,6 +1319,9 @@ body > #mainMenu {
 .teamInfo:first-child {
   margin-top: 5px;
 }
+.teamInfo:last-child {
+  margin-bottom: 55px;
+}
 .teamsText {
   display: none;
   /* display: block; */
