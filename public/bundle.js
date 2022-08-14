@@ -295,11 +295,14 @@
   teamDiv.onclick = function(e) {
     if (teamToggle.style.display === "none") {
       teamToggle.style.display = "inline-block";
+      shopToggle.style.display = "none";
     } else if (teamToggle.style.display === "inline-block") {
       teamToggle.style.display = "none";
       teamToggle.style.zIndex = "9";
+      shopToggle.style.display = "none";
     } else {
       teamToggle.style.display = "inline-block";
+      shopToggle.style.display = "none";
     }
   };
 
@@ -308,11 +311,14 @@
   shopDiv.onclick = function(e) {
     if (shopToggle.style.display === "none") {
       shopToggle.style.display = "inline-block";
+      teamToggle.style.display = "none";
     } else if (shopToggle.style.display === "inline-block") {
       shopToggle.style.display = "none";
       shopToggle.style.zIndex = "9";
+      teamToggle.style.display = "none";
     } else {
       shopToggle.style.display = "inline-block";
+      teamToggle.style.display = "none";
     }
   };
 
