@@ -6,7 +6,8 @@
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
 
-(function (e) { //i think you have that, no?
+(function (e) {
+  //i think you have that, no?
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
@@ -288,9 +289,22 @@
       SkinID = i - 1;
     });
   }
+
+  let teamDiv = document.getElementById("teamBtn");
+  let teamToggle = document.getElementById("toggleTeam");
+  teamDiv.onclick = function(e) {
+    if (teamToggle.style.display === "none") {
+      teamToggle.style.display = "inline-block";
+    } else if (teamToggle.style.display === "inline-block") {
+      teamToggle.style.display = "none";
+      teamToggle.style.zIndex = "9";
+    } else {
+      teamToggle.style.display = "inline-block";
+    }
+  };
+
   let shopDiv = document.getElementById("shopBtn");
   let shopToggle = document.getElementById("toggleShop");
-
   shopDiv.onclick = function(e) {
     if (shopToggle.style.display === "none") {
       shopToggle.style.display = "inline-block";
@@ -302,26 +316,10 @@
     }
   };
 
-  let chatBtn = document.getElementById("chatBtn");
-  chatBtn.onclick = function(e) {
-    if (chatbox.style.display === "none") {
-      chatbox.style.display = "block";
-      chatbox.focus();
-    } else {
-      chatbox.style.display = "none";
-      if (chatbox.value) {
-        send(["ch", [chatbox.value]]);
-        chatbox.value = "";
-      }
-    }
-  };
-
-
   let items = document.getElementById("itemsSection");
   let powerups = document.getElementById("powerupsSection");
   let itemsShop = document.getElementById("itemsShop");
   let powerupsShop = document.getElementById("powerupsShop");
-
   items.onclick = function (e) {
     if (itemsShop.style.display === "none") {
       itemsShop.style.display = "inline-block";
@@ -338,6 +336,20 @@
     } else {
       powerupsShop.style.display = "inline-block";
       itemsShop.style.display = "none";
+    }
+  };
+
+  let chatBtn = document.getElementById("chatBtn");
+  chatBtn.onclick = function(e) {
+    if (chatbox.style.display === "none") {
+      chatbox.style.display = "block";
+      chatbox.focus();
+    } else {
+      chatbox.style.display = "none";
+      if (chatbox.value) {
+        send(["ch", [chatbox.value]]);
+        chatbox.value = "";
+      }
     }
   };
 
