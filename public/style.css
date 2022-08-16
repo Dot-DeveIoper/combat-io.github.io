@@ -1828,6 +1828,39 @@ label.checkbox span {
   font-weight: bold;
 }
 
+.icons {
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.icon2 {
+  margin-top: 15%;
+  margin-left: 14%;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* svg {
+  fill: #ffffff;
+} */
+
 canvas {
   display: block;
   /* position: absolute;
