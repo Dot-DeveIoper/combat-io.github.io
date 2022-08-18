@@ -299,7 +299,7 @@
         wood: 10,
       },
       damage: 0,
-      velocity: 0,
+      velocity: 2,
       health: 250,
       maxHealth: 300,
     },
@@ -590,7 +590,14 @@
               }
               objCache.removeItem(obj);
             }
-            if (dist(player, { x: obj.x, y: obj.y }) < 60) {
+            if (
+              dist(player, { x: obj.x, y: obj.y }) <
+              (obj.id == 2
+                ? 60
+                : obj.id == 3
+                ? 60
+                : 0) //obj hit boxes
+            ) { 
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
