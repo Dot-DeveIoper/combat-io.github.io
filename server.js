@@ -317,6 +317,20 @@
       health: 200,
       maxHealth: 200,
     },
+    {
+      id: 5,
+      isWeapon: false,
+      placeable: true,
+      name: "Booster",
+      cost: {
+        wood: 10,
+        stone: 20,
+      },
+      damage: 0,
+      velocity: -50,
+      health: 200,
+      maxHealth: 200,
+    },
   ];
 
   app.get("/", (req, res) => {
@@ -617,8 +631,8 @@
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               if (obj.id === 4) {
-                                var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
-                var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
+                var pushVelX = Math.cos(pushDir) + 10;
+                var pushVelY = Math.sin(pushDir) + 10;
               } else {
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
