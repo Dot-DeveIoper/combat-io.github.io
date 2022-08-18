@@ -7,7 +7,11 @@
 //?
 
 (function (e) {
-  //i think you have that, no?
+  
+  var audio1 = new Audio(
+    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
+  );
+  
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
@@ -200,21 +204,20 @@
   }
 
   setInterval(Wave, 50);
-
+  
   let AudioOn = localStorage.getItem("AudioOn");
   if (AudioOn === undefined) {
     localStorage.setItem("AudioOn", "true");
     AudioOn = localStorage.getItem("AudioOn");
   }
-  var audio1 = new Audio(
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818"
-  );
+
   if (AudioOn === "true") {
-    audio1.play();
     sound.checked = false;
+    audio1.play();
   } else {
     sound.checked = true;
   }
+  
   audio1.addEventListener("ended", (event) => {
     if (AudioOn === "true") {
       audio1.play();
