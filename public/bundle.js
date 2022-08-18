@@ -216,7 +216,7 @@
         click = false;
       }
     });
-    document.addEventListener("keydown", function(e) {
+    document.addEventListener("keydown", function (e) {
       if (click) {
         audio1.play();
         click = false;
@@ -239,11 +239,11 @@
       if (AudioOn === "true") {
         audio1.play();
         const fadeInAudio = setInterval(() => {
-          if (audio1.volume <= 1) {
-            audio1.volume += 0.011;
+          if (audio1.volume < 1) {
+            audio1.volume += 0.01111111111111111111111111111111111111;
           }
 
-          if (audio1.volume >= 1) {
+          if (audio1.volume > 1) {
             clearInterval(fadeInAudio);
           }
         }, 10);
@@ -1399,7 +1399,7 @@
               if (AudioOn === "true") {
                 audio1.play();
                 const fadeInAudio = setInterval(() => {
-                  if (audio1.volume <= 1) {
+                  if (audio1.volume < 1) {
                     audio1.volume += 0.01111111111111111111111111111111111111;
                   }
 
