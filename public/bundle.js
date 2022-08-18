@@ -554,11 +554,11 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
-      scale: 110,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Booster.png?v=1660865194975",
+      scale: 80,
       img: new Image(),
-      xOffset: 0,
-      yOffset: -55,
+      xOffset: 20,
+      yOffset: -40,
     },
   ];
 
@@ -592,8 +592,8 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
-      scale: 110,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Booster.png?v=1660865194975",
+      scale: 80,
       img: new Image(),
       xOffset: -50,
       yOffset: -50,

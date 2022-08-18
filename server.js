@@ -631,8 +631,8 @@
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               if (obj.id === 4) {
-                var pushVelX = Math.cos(pushDir) + 10;
-                var pushVelY = Math.sin(pushDir) + 10;
+                var pushVelX = Math.cos(pushDir) + 5;
+                var pushVelY = Math.sin(pushDir) + 5;
               } else {
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
