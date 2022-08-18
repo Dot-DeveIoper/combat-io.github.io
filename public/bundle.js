@@ -563,7 +563,7 @@
 
   var objects = [
     {
-      id: 0,
+      id: 2,
       name: "Spike",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 110,
@@ -572,7 +572,7 @@
       yOffset: -50,
     },
     {
-      id: 1,
+      id: 3,
       name: "Wall",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
       scale: 110,
@@ -809,12 +809,17 @@
   }
   function drawObject(x, y, rot, id) {
     var ob = objects.find((x) => x.id == id);
-    var img = ob.img;
-    if (img) {
+    if (ob) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(0);
-      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+      ctx.drawImage(
+        ob.img,
+        ob.xOffset,
+        ob.yOffset,
+        ob.scale,
+        ob.scale
+      );
       ctx.restore();
     }
   }

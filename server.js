@@ -296,12 +296,12 @@
       placeable: true,
       name: "Wall",
       cost: {
-        wood: 20,
+        wood: 10,
       },
-      damage: 1,
+      damage: 0,
       velocity: 0,
       health: 250,
-      maxHealth: 250,
+      maxHealth: 300,
     },
   ];
 
@@ -936,11 +936,11 @@
                 );
                 var playerWeaponObjects = [];
                 socket.player.weapons.forEach((w) => {
-                  playerWeaponObjects.push(weapons.find((x) => x.id == w - 1));
+                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
                   (x) => x && x.isWeapon
-                )[0].id;
+                )[0].id + 10;
               }
               if (obj.placeable) {
                 socket.player.resources.food -= reqFood;
