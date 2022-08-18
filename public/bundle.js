@@ -563,7 +563,7 @@
 
   var objects = [
     {
-      id: 2,
+      id: 0,
       name: "Spike",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 110,
@@ -572,7 +572,7 @@
       yOffset: -50,
     },
     {
-      id: 3,
+      id: 1,
       name: "Wall",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
       scale: 110,
