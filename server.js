@@ -296,12 +296,12 @@
       placeable: true,
       name: "Wall",
       cost: {
-        wood: 20,
+        wood: 10,
       },
-      damage: 1,
+      damage: 0,
       velocity: 0,
       health: 250,
-      maxHealth: 250,
+      maxHealth: 300,
     },
   ];
 
@@ -767,7 +767,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4],
+      weapons: [0, 1, 2, 3],
       xp: 0,
       age: 0,
       resources: {
@@ -936,7 +936,7 @@
                 );
                 var playerWeaponObjects = [];
                 socket.player.weapons.forEach((w) => {
-                  playerWeaponObjects.push(weapons.find((x) => x.id == w - 1));
+                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
                   (x) => x && x.isWeapon
@@ -950,7 +950,7 @@
                 socket.player.resources.gold -= reqGold;
 
                 objCache.push({
-                  id: 2,
+                  id: socket.player.weapon,
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
                   health: obj.health,
