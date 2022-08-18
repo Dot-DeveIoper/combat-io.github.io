@@ -283,7 +283,7 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i]]]);
+          send(["s", [inventory[i + 1]]]);
         }
       });
   }
@@ -809,17 +809,12 @@
   }
   function drawObject(x, y, rot, id) {
     var ob = objects.find((x) => x.id == id);
-    if (ob) {
+    var img = ob.img;
+    if (img) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(0);
-      ctx.drawImage(
-        ob.img,
-        ob.xOffset,
-        ob.yOffset,
-        ob.scale,
-        ob.scale
-      );
+      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
       ctx.restore();
     }
   }
@@ -1501,7 +1496,7 @@
                 if (myPlayer.weapon == sn) {
                   send(["s", [inventory[1]]]);
                 } else {
-                  send(["s", [sn]]);
+                  send(["s", [sn - 1]]);
                 }
                 return;
               }

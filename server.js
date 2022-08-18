@@ -337,7 +337,7 @@
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
-    player.weapons = [0, 1, 2, 3, 4];
+    player.weapons = [0, 1, 2, 3];
     if (player.admin) {
       player.resources = {
         food: 1000000,
@@ -767,7 +767,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4],
+      weapons: [0, 1, 2, 3],
       xp: 0,
       age: 0,
       resources: {
@@ -820,7 +820,7 @@
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
-          socket.send(msgpack.encode(["w", [socket.player.weapons - 1]]));
+          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
           break;
         case "33":
           socket.player.movedir = msg[1][0];
