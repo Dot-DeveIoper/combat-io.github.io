@@ -551,6 +551,15 @@
       xOffset: 0,
       yOffset: -55,
     },
+    {
+      id: 4,
+      name: "Booster",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
+      scale: 110,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: -55,
+    },
   ];
 
   var WallTop = new Image();
@@ -579,6 +588,15 @@
       img: new Image(),
       xOffset: -50,
       yOffset: -50,
+    },
+    {
+      id: 4,
+      name: "Booster",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
+      scale: 110,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: -55,
     },
   ];
 
