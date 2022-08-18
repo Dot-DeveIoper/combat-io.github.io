@@ -940,7 +940,7 @@
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
                   (x) => x && x.isWeapon
-                )[0].id -1;
+                )[0].id;
               }
               if (obj.placeable) {
                 socket.player.resources.food -= reqFood;
@@ -950,7 +950,7 @@
                 socket.player.resources.gold -= reqGold;
 
                 objCache.push({
-                  id: 2,
+                  id: socket.player.weapon,
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
                   health: obj.health,

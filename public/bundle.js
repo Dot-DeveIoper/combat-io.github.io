@@ -283,7 +283,7 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
+          send(["s", [inventory[i - 1]]]);
         }
       });
   }
@@ -1501,7 +1501,7 @@
                 if (myPlayer.weapon == sn) {
                   send(["s", [inventory[1]]]);
                 } else {
-                  send(["s", [sn + 1]]);
+                  send(["s", [sn]]);
                 }
                 return;
               }
