@@ -940,7 +940,7 @@
                 });
                 socket.player.weapon = playerWeaponObjects.filter(
                   (x) => x && x.isWeapon
-                )[0].id + 10;
+                )[0].id -1;
               }
               if (obj.placeable) {
                 socket.player.resources.food -= reqFood;
