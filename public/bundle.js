@@ -536,7 +536,7 @@
     {
       id: 2,
       name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=500&height=500",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 80,
       img: new Image(),
       xOffset: 0,
@@ -565,7 +565,7 @@
     {
       id: 2,
       name: "Spike",
-      src: "https://media.discordapp.net/attachments/812730676326563850/819249394758451200/unknown.png?width=772&height=676",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 80,
       img: new Image(),
       xOffset: -50,
