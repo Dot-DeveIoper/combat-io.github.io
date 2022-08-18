@@ -240,10 +240,10 @@
         audio1.play();
         const fadeInAudio = setInterval(() => {
           if (audio1.volume <= 1) {
-            audio1.volume += 0.01111111111111111111111111111111111111;
+            audio1.volume += 0.011;
           }
 
-          if (audio1.volume > 1) {
+          if (audio1.volume >= 1) {
             clearInterval(fadeInAudio);
           }
         }, 10);
