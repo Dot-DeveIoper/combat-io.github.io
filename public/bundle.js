@@ -1496,7 +1496,7 @@
                 if (myPlayer.weapon == sn) {
                   send(["s", [inventory[1]]]);
                 } else {
-                  send(["s", [sn - 1]]);
+                  send(["s", [sn + 1]]);
                 }
                 return;
               }

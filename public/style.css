@@ -982,14 +982,6 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 
-#h-item-2 {
-  background-size: 66px 66px;
-}
-
-#h-item-3 {
-  background-size: 66px 66px;
-}
-
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .hotbarItem {
