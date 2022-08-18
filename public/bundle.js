@@ -1123,12 +1123,13 @@
     //       200,
     //       mapSize
     //       );
-
+    if (myPlayer.admin) {
     info = `${ping}ms`;
     drawText(100,
       50,
       30,
       info);
+    }
 
     // leaderboard
     // leaderboard
