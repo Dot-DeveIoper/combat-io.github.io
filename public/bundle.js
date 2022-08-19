@@ -829,7 +829,7 @@
     var skin = skins.find(x => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
     
