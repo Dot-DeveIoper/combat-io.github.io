@@ -30,6 +30,7 @@
   var beachHeight = 1000;
   var playerSpeed = 1;
   var chatMessages = {};
+  var inRiver = false;
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -497,8 +498,11 @@
           player.y > mapSize - desertHeight - riverHeight &&
           player.y < mapSize - desertHeight
         ) {
+          inRiver = true;
           player.xVel += 0.5;
           playerSpeed *= 0.3;
+        }else{
+          inRiver = false;
         }
         if (
           mapSize - player.y - snowHeight &&
@@ -947,6 +951,7 @@
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
+            if (inRiver) return;
 
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;

@@ -277,7 +277,7 @@
   let ageLevelBar = document.getElementById("ageLevelBar");
   let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
       .getElementById("h-item-" + i)
