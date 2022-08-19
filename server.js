@@ -290,6 +290,7 @@
       damage: 20,
       velocity: 20,
       health: 300,
+      oid: 0,
       maxHealth: 300,
     },
     {
@@ -644,9 +645,9 @@
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
-              if (aObj.damage && player.noHurtTime == 0) {//object damage
+              if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
                 player.health -= aObj.damage;
-                player.noHurtTime += 2;
+                //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
               player.yVel += pushVelY;
@@ -922,10 +923,6 @@
               },3000);
               return false;
             }
-          }
-          if (msg[1][0] == "/removeItems" && socket.player.admin) {
-            players.removeItem(players.find(x => x.sid == socket.player.sid));
-            return false;
           }
           if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
