@@ -644,7 +644,7 @@
     {
       id: 5,
       name: "Trap",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap70%25Opacity.png?v=1660928648706",
       scale: 80,
       img: new Image(),
       xOffset: -50,
@@ -1009,6 +1009,21 @@
     //       canvas.width,
     //       40
     //     );
+    
+        // traps and stuff
+    objCache.forEach((object) => {
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
+      drawObject(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
+    });
+    
     ctx.fillStyle = "#000";
     let color;
     window.players = players;
@@ -1037,20 +1052,6 @@
       }
     });
     lastMove = move;
-
-    // traps and stuff
-    objCache.forEach((object) => {
-      var rel = relative({
-        x: object.x,
-        y: object.y,
-      });
-      drawObject(
-        rel.x + object.xWiggle,
-        rel.y + object.yWiggle,
-        object.dir,
-        object.id
-      );
-    });
 
     // trees, stones etc
     treesCache.forEach((object) => {
