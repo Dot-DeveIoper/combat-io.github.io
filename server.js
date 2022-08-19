@@ -940,10 +940,11 @@
             // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
             socket.player.lastChatTimestamp = Date.now();
-              if(Date.now() - chatDelay > 700) {
-                socket.player.chat = null;
-                chatDelay = Date.now();
-            }
+            if(Date.now() - chatDelay >= 700) {
+            }else{
+              socket.player.chat = null;
+              chatDelay = Date.now();
+            } //kk also try pit trap
           }
           break;
         case "c":
