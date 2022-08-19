@@ -322,20 +322,6 @@
       id: 5,
       isWeapon: false,
       placeable: true,
-      name: "Booster",
-      cost: {
-        wood: 10,
-        stone: 20,
-      },
-      damage: 0,
-      velocity: 0,
-      health: 200,
-      maxHealth: 200,
-    },
-    {
-      id: 6,
-      isWeapon: false,
-      placeable: true,
       name: "Trap",
       cost: {
         wood: 20,
@@ -954,8 +940,9 @@
             // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
             socket.player.lastChatTimestamp = Date.now();
-              if(Date.now() - socket.player.lastChatTimestamp > 700) {
+              if(Date.now() - chatDelay > 700) {
                 socket.player.chat = null;
+                chatDelay = Date.now();
             }
           }
           break;
