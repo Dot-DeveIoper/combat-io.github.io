@@ -357,11 +357,12 @@
   var players = [];
   var ids = 0;
 
-  function respawn(player, name, skin) {
+  function respawn(player, name, skin, hat) {
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
     player.skin = skin || 0;
+    player.hat = hat || 0;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
@@ -802,6 +803,7 @@
       socketLimit: 0,
       noHurtTime: 0,
       skin: 0,
+      hat: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
@@ -865,6 +867,17 @@
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
           socket.send(msgpack.encode(["w", [socket.player.weapons]]));
+          break;
+        case "13c":
+          if (!msg[1][0]) {
+            socket.close(1012, "Buffer missing");
+          }
+          var hat;
+          try {
+            hat = msg[1][0].hat || 0;
+          } catch (err) {
+            socket.close(1012, "Buffer missing");
+          }
           break;
         case "33":
           socket.player.movedir = msg[1][0];

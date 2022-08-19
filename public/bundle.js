@@ -393,6 +393,25 @@
     nameY: 50,
   }
 
+  var hats = [
+    {
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+  ]
+  
   var skins = [
     {
       id: 0,
@@ -660,6 +679,9 @@
   skins.forEach(w => {
     w.img.src = w.src;
   });
+  hats.forEach(w => {
+    w.img.src = w.src;
+  });
 
   document.getElementById("menuCardHolder").style.display = "none";
   ageBar.style.display = "none";
@@ -808,6 +830,13 @@
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
+    ctx.restore();
+    
+    var hat = hats.find(x => x.id == player.hat);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
