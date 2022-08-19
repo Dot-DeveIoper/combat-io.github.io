@@ -330,7 +330,7 @@
         stone: 5,
       },
       damage: 0,
-      velocity: -1,
+      velocity: -2,
       health: 200,
       maxHealth: 200,
     },
@@ -503,11 +503,8 @@
           player.y > mapSize - desertHeight - riverHeight &&
           player.y < mapSize - desertHeight
         ) {
-          inRiver = true;
           player.xVel += 0.5;
           playerSpeed *= 0.3;
-        }else{
-          inRiver = false;
         }
         if (
           mapSize - player.y - snowHeight &&
