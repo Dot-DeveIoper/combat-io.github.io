@@ -603,8 +603,8 @@
                 : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
-              var pushVelX = Math.cos(pushDir);
-              var pushVelY = Math.sin(pushDir);
+              var pushVelX = Math.cos(pushDir) * 2;
+              var pushVelY = Math.sin(pushDir) * 2;
               player.xVel += pushVelX;
               player.yVel += pushVelY;
             }

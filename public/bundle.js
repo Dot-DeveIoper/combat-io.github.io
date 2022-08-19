@@ -836,7 +836,7 @@
     var hat = hats.find(x => x.id == player.hat);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
     ctx.restore();
   }
