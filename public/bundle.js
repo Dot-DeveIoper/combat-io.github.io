@@ -283,7 +283,7 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i -2]]]);
+          send(["s", [inventory[i + 1]]]);
         }
       });
   }
