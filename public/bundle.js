@@ -277,7 +277,7 @@
   let ageLevelBar = document.getElementById("ageLevelBar");
   let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
-  
+
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -392,7 +392,7 @@
     healthBarPad: 4.5,
     healthBarHeight: 15,
     nameY: 50,
-  }
+  };
 
   var hats = [
     {
@@ -411,8 +411,8 @@
       yOffset: -40,
       scale: 80,
     },
-  ]
-  
+  ];
+
   var skins = [
     {
       id: 0,
@@ -478,7 +478,7 @@
       yOffset: -35,
       scale: 70,
     },
-  ]
+  ];
 
   var trees = [
     {
@@ -677,10 +677,10 @@
   trees.forEach((w) => {
     w.img.src = w.src;
   });
-  skins.forEach(w => {
+  skins.forEach((w) => {
     w.img.src = w.src;
   });
-  hats.forEach(w => {
+  hats.forEach((w) => {
     w.img.src = w.src;
   });
 
@@ -759,7 +759,7 @@
   var clan = false;
   createClan.addEventListener("click", () => {
     clan = clanInput.value;
-  })
+  });
   function drawPlayerText(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
@@ -770,12 +770,16 @@
     ctx.fillStyle = player.admin ? "#30d1a1" : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${clan ? "["+clan+"]" : ""} ${player.name}`,
+      `${player.admin ? "</DEV>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+        player.name
+      }`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${clan ? "["+clan+"]" : ""} ${player.name}`,
+      `${player.admin ? "</DEV>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+        player.name
+      }`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
@@ -791,17 +795,23 @@
         addy = player.yVel;
       }*/
 
-          var vlastStyle = ctx.fillStyle;
-      ctx.fillStyle = "#333333";
-      ctx.roundRect(x - cfg.healthBarWidth - cfg.healthBarPad, y + cfg.nameY, 2 * (cfg.healthBarWidth + 0) + 2 * cfg.healthBarPad, cfg.healthBarHeight, 8);
-      //ctx.roundRect(x - 55, y + 59, 100, 12, 12);
-      ctx.fill();
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 53.5, 96 * (player.health / 100), 8);
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = "#fff";
   }
   function drawPlayer(x, y, player) {
+    var vlastStyle = ctx.fillStyle;
+    ctx.fillStyle = "#333333";
+    ctx.roundRect(
+      x - cfg.healthBarWidth - cfg.healthBarPad,
+      y + cfg.nameY,
+      2 * (cfg.healthBarWidth + 0) + 2 * cfg.healthBarPad,
+      cfg.healthBarHeight,
+      8
+    );
+    //ctx.roundRect(x - 55, y + 59, 100, 12, 12);
+    ctx.fill();
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
@@ -823,14 +833,14 @@
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
 
-    var skin = skins.find(x => x.id == player.skin);
+    var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
-    
-    var hat = hats.find(x => x.id == player.hat);
+
+    var hat = hats.find((x) => x.id == player.hat);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
@@ -1013,8 +1023,8 @@
     //       canvas.width,
     //       40
     //     );
-    
-        // traps and stuff
+
+    // traps and stuff
     objCache.forEach((object) => {
       var rel = relative({
         x: object.x,
@@ -1027,7 +1037,7 @@
         object.id
       );
     });
-    
+
     ctx.fillStyle = "#000";
     let color;
     window.players = players;
@@ -1389,7 +1399,8 @@
           case "w":
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
-              document.getElementById("h-item-" + w).style.display = "inline-block";
+              document.getElementById("h-item-" + w).style.display =
+                "inline-block";
             });
           case "33":
             players = msg[1][0];
@@ -1518,7 +1529,7 @@
           }
           break;
         case keycodes.QUICK_FOOD:
-           var sn;
+          var sn;
           inventory.forEach((item) => {
             var itm = weapons.find((x) => x.id == item);
             if (itm && itm.food) {
@@ -1703,22 +1714,30 @@
       document.getElementById("skin" + i).style.borderRadius = "25%";
     });
   }
-  window.selectSkinColor = function(e) {
+  window.selectSkinColor = function (e) {
     SkinColor = e;
   };
   var hatEquipped = false;
-  const hatDisplay1 = document.getElementById("hatDisplay1")
-  window.equipHat = function(e) {
-    hatEquipped =! hatEquipped;
-    hatEquipped ? hatDisplay1.innerHTML = "EQUIP" : hatDisplay1.innerHTML = "UNEQUIP";
-    if(!hatEquipped) {
-      send(["Hd",[{
+  const hatDisplay1 = document.getElementById("hatDisplay1");
+  window.equipHat = function (e) {
+    hatEquipped = !hatEquipped;
+    hatEquipped
+      ? (hatDisplay1.innerHTML = "EQUIP")
+      : (hatDisplay1.innerHTML = "UNEQUIP");
+    if (!hatEquipped) {
+      send([
+        "Hd",
+        [
+          {
             hat: e,
           },
         ],
       ]);
-    }else{
-      send(["Hd",[{
+    } else {
+      send([
+        "Hd",
+        [
+          {
             hat: 0,
           },
         ],
@@ -1726,12 +1745,15 @@
     }
   };
   enterGame.addEventListener("click", function (e) {
-      send(["j",[{
-            name: document.getElementById("nameInput").value,
-            skin: SkinColor,
-          },
-        ],
-      ]);
+    send([
+      "j",
+      [
+        {
+          name: document.getElementById("nameInput").value,
+          skin: SkinColor,
+        },
+      ],
+    ]);
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1773,7 +1795,10 @@
       resourcesAndMap.style.display = "inline-block";
       leaderboardScores.style.display = "block";
       SpawnedOnce = 1;
-      send(["j",[{
+      send([
+        "j",
+        [
+          {
             name: document.getElementById("nameInput").value,
             skin: SkinColor,
           },
