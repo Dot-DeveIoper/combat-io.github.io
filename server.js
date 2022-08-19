@@ -871,7 +871,7 @@
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
-          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
+          socket.send(msgpack.encode(["w", [socket.player.weapons - 1]]));
           break;
         case "Hd":
           if (!msg[1][0]) {
