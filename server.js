@@ -644,7 +644,7 @@
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
-              if (aObj.damage && player.noHurtTime == 0 && obj.id !== player.sid) {
+              if (aObj.damage && player.noHurtTime == 0) {//object damage
                 player.health -= aObj.damage;
                 player.noHurtTime += 2;
               }
