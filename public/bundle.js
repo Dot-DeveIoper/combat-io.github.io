@@ -395,16 +395,8 @@
 
   var hats = [
     {
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
-      img: new Image(),
-      xOffset: -35,
-      yOffset: -35,
-      scale: 70,
-    },
-    {
       id: 1,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+      src: "https://static.wikia.nocookie.net/moom/images/5/58/Hat_26_V1.png/revision/latest?cb=20170728090443",
       img: new Image(),
       xOffset: -35,
       yOffset: -35,
@@ -1708,6 +1700,13 @@
   }
   window.selectSkinColor = function(e) {
     SkinColor = e;
+  };
+  window.equipHat = function(e) {
+      send(["13c",[{
+            hat: e,
+          },
+        ],
+      ]);
   };
   enterGame.addEventListener("click", function (e) {
       send(["j",[{

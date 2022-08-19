@@ -357,12 +357,12 @@
   var players = [];
   var ids = 0;
 
-  function respawn(player, name, skin, hat) {
+  function respawn(player, name, skin) {
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
+    player.hat = 1;
     player.skin = skin || 0;
-    player.hat = hat || 0;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
