@@ -816,7 +816,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4, 5, 6],
+      weapons: [0, 1, 2, 3, 4, 5],
       xp: 0,
       age: 0,
       resources: {
@@ -1034,7 +1034,7 @@
           }
           break;
         case "s":
-          var id = msg[1][0] + 1;
+          var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
             socket.player.weapon = id;
           }

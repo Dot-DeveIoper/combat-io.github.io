@@ -283,7 +283,7 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i]]]);
+          send(["s", [inventory[i + 1]]]);
         }
       });
   }
@@ -1382,7 +1382,7 @@
         let msg = window.msgpack.decode(new Uint8Array(buffer));
         switch (msg[0]) {
           case "1":
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 11; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
             }
             myPlayer.sid = msg[1][0];
@@ -1519,21 +1519,19 @@
           }
           break;
         case keycodes.QUICK_FOOD:
-          if (chatbox.style.display === "none") {
-            var sn;
-            inventory.forEach((item) => {
-              var itm = weapons.find((x) => x.id == item);
-              if (itm && itm.food) {
-                sn = itm.id;
-                if (myPlayer.weapon == sn) {
-                  send(["s", [inventory[1]]]);
-                } else {
-                  send(["s", [sn + 1]]);
-                }
-                return;
+           var sn;
+          inventory.forEach((item) => {
+            var itm = weapons.find((x) => x.id == item);
+            if (itm && itm.food) {
+              sn = itm.id;
+              if (myPlayer.weapon == sn) {
+                send(["s", [inventory[1]]]);
+              } else {
+                send(["s", [sn + 1]]);
               }
-            });
-          }
+              return;
+            }
+          });
           break;
         case keycodes.HOTBAR_1:
           if (chatbox.style.display === "none") {
