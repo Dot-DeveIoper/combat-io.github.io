@@ -1702,7 +1702,7 @@
     SkinColor = e;
   };
   window.equipHat = function(e) {
-      send(["13c",[{
+      send(["j",[{
             hat: 1,
           },
         ],
