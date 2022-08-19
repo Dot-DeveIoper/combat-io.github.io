@@ -588,7 +588,7 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660926195341",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
       img: new Image(),
       xOffset: 20,
@@ -635,7 +635,7 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660926195341",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
       img: new Image(),
       xOffset: -50,
