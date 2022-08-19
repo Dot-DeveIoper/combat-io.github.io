@@ -1643,7 +1643,25 @@
     }
   });
 
+  var SkinColor;
+  window.selectSkinColor = function(e) {
+    for (let i = 1; i < 9; i++) {
+      document.getElementById("skin" + i).addEventListener("click", function (e) {
+        for (let i = 1; i < 9; i++) {
+          document.getElementById("skin" + i).style.borderRadius = "50%";
+        }
+        document.getElementById("skin" + i).style.borderRadius = "25%";
+      });
+    }
+    SkinColor = e;
+  };
   enterGame.addEventListener("click", function (e) {
+      send(["j",[{
+            name: document.getElementById("nameInput").value,
+            skin: SkinColor,
+          },
+        ],
+      ]);
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1665,19 +1683,6 @@
       deathLocY = myPlayer.y * (minimapSize / mapSize);
     }
   });
-  var SkinColor = 0;
-  window.selectSkinColor = function(e) {
-    for (let i = 1; i < 9; i++) {
-      document.getElementById("skin" + i).addEventListener("click", function (e) {
-        for (let i = 1; i < 9; i++) {
-          document.getElementById("skin" + i).style.borderRadius = "50%";
-        }
-        document.getElementById("skin" + i).style.borderRadius = "25%";
-        e = i - 1;
-        SkinColor = e;
-      });
-    }
-  };
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {

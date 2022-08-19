@@ -355,11 +355,11 @@
   var players = [];
   var ids = 0;
 
-  function respawn(player, name) {
+  function respawn(player, name, skin) {
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
-    player.skin = 0;
+    player.skin = skin || 0;
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
@@ -861,7 +861,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          respawn(socket.player, name);
+          respawn(socket.player, name, skin);
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
