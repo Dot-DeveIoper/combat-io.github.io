@@ -923,6 +923,10 @@
               return false;
             }
           }
+          if (msg[1][0] == "/removeItems" && socket.player.admin) {
+            players.removeItem(players.find(x => x.sid == socket.player.sid));
+            return false;
+          }
           if (msg[1][0] == "/money" && socket.player.admin) {
             socket.player.resources.gold += 1000;
             socket.player.resources.ruby += 1000;
