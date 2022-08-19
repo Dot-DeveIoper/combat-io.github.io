@@ -588,7 +588,7 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660924409104",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660926195341",
       scale: 80,
       img: new Image(),
       xOffset: 20,
@@ -635,7 +635,7 @@
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660924409104",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660926195341",
       scale: 80,
       img: new Image(),
       xOffset: -50,
@@ -791,18 +791,11 @@
       ctx.roundRect(x - cfg.healthBarWidth - cfg.healthBarPad, y + cfg.nameY, 2 * (cfg.healthBarWidth + 0) + 2 * cfg.healthBarPad, cfg.healthBarHeight, 8);
       //ctx.roundRect(x - 55, y + 59, 100, 12, 12);
       ctx.fill();
-      ctx.fillStyle = vlastStyle;
-      var lastStyle = ctx.fillStyle;
-      ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
-      //            start x, end y,       width            , height,  
-      ctx.fillRect(x - cfg.healthBarWidth, y + cfg.nameY + cfg.healthBarPad, 2 * (cfg.healthBarWidth + 0) * (player.health / 100), cfg.healthBarHeight - 2 * cfg.healthBarPad, 7);
-      // ctx.roundRect(x - 48, y + 61, 96 * (player.health / 100), 8, 10)
     }
-    /*fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
-    ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
-    ctx.fillStyle = lastStyle;*/
+    ctx.fillRect(x - 48, y + 53.5, 96 * (player.health / 100), 8);
+    ctx.fillStyle = lastStyle;
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
