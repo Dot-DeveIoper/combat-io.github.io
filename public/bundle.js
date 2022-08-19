@@ -296,6 +296,8 @@
       }
       document.getElementById("skin" + i).style.borderRadius = "25%";
       SkinID = i - 1;
+      var skin = skins.find(x => x.id == SkinID);
+      skin = SkinID
     });
   }
 
@@ -463,58 +465,6 @@
       scale: 70,
     },
   ]
-  skins.forEach(w => {
-    w.img.src = w.src;
-  });
-  var skins = [
-    {
-      id: 0,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
-      src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
-      src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
-      src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
-
-      src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
-      src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
-      src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
-      src7: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
-      img: new Image(),
-      img1: new Image(),
-      img2: new Image(),
-      img3: new Image(),
-      img4: new Image(),
-      img5: new Image(),
-      img6: new Image(),
-      img7: new Image(),
-      xOffset: -35,
-      yOffset: -35,
-      scale: 70,
-    },
-  ];
-  skins.forEach((w) => {
-    w.img.src = w.src;
-    if (w.img1 && w.src1) {
-      w.img1.src = w.src1;
-    }
-    if (w.img2 && w.src2) {
-      w.img2.src = w.src2;
-    }
-    if (w.img3 && w.src3) {
-      w.img3.src = w.src3;
-    }
-    if (w.img4 && w.src4) {
-      w.img4.src = w.src4;
-    }
-    if (w.img5 && w.src5) {
-      w.img5.src = w.src5;
-    }
-    if (w.img6 && w.src6) {
-      w.img6.src = w.src6;
-    }
-    if (w.img7 && w.src7) {
-      w.img7.src = w.src7;
-    }
-  });
 
   var trees = [
     {
@@ -711,6 +661,9 @@
     w.img.src = w.src;
   });
   trees.forEach((w) => {
+    w.img.src = w.src;
+  });
+  skins.forEach(w => {
     w.img.src = w.src;
   });
 
