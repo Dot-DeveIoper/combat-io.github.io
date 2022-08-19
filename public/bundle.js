@@ -287,16 +287,16 @@
         }
       });
   }
-  // for (let i = 0; i < 11; i++) {
-  //   document.getElementById("h-item-" + i).style.display = "none";
-  //   document
-  //     .getElementById("h-item-" + i)
-  //     .addEventListener("click", function (e) {
-  //       if (e.isTrusted) {
-  //         send(["s", [inventory[i]]]);
-  //       }
-  //     });
-  // }
+  for (let i = 0; i < 1; i++) {
+    document.getElementById("hat-item" + i).style.display = "none";
+    document
+      .getElementById("hat-item" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          equipHat(1);
+        }
+      });
+  }
 
   let teamDiv = document.getElementById("teamBtn");
   let teamToggle = document.getElementById("toggleTeam");
