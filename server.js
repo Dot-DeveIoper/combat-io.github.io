@@ -884,10 +884,6 @@
             socket.close(1012, "Buffer missing");
           }
           sendHatData(socket.player, hat)
-          if (!players.find((x) => x.sid == socket.player.sid))
-            players.push(socket.player);
-          socket.send(msgpack.encode(["1", [socket.player.sid]]));
-          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
           break;
         case "33":
           socket.player.movedir = msg[1][0];
@@ -1016,7 +1012,7 @@
                   id: socket.player.weapon,
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
-                  dir: Math.sin(socket.player.aimdir) * 65,
+                  dir: 0,
                   health: obj.health,
                   maxHealth: obj.maxHealth,
                   xWiggle: 0,

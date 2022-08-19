@@ -277,6 +277,7 @@
   let ageLevelBar = document.getElementById("ageLevelBar");
   let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
+  
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
@@ -1711,15 +1712,14 @@
   const hatDisplay1 = document.getElementById("hatDisplay1")
   window.equipHat = function(e) {
     hatEquipped =! hatEquipped;
+    hatEquipped ? hatDisplay1.innerHTML = "EQUIP" : hatDisplay1.innerHTML = "UNEQUIP";
     if(!hatEquipped) {
-      hatDisplay1.innerHTML = "EQUIP";
       send(["Hd",[{
             hat: e,
           },
         ],
       ]);
     }else{
-      hatDisplay1.innerHTML = "UNEQUIP";
       send(["Hd",[{
             hat: 0,
           },
