@@ -632,7 +632,7 @@
                 : obj.id == 4
                 ? 60
                 : obj.id == 5
-                ? 60
+                ? 50
                 : 0) //obj hit boxes
             ) { 
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
@@ -644,11 +644,7 @@
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
-              if (
-                aObj.damage &&
-                player.noHurtTime == 0 &&
-                obj.id !== player.sid
-              ) {
+              if (aObj.damage && player.noHurtTime == 0 && obj.id !== player.sid) {
                 player.health -= aObj.damage;
                 player.noHurtTime += 2;
               }
@@ -682,9 +678,7 @@
                   enemy.yVel += Math.sin(knockDir) * 10;
                   enemy.health -= weapon.damage;
                   client.send(
-                    msgpack.encode([
-                      "t",
-                      [
+                    msgpack.encode(["t",[
                         enemy.x + randomInt(-20, 20),
                         enemy.y + randomInt(-20, 20),
                         true,
