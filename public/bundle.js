@@ -749,7 +749,7 @@
       ctx.textAlign = "center";
       drawText(x, y - 88, 100, player.chat, "#ffffff");
     }
-    fillRectCentered(x, y + 60, 100, 10, "#000");
+    /*fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
