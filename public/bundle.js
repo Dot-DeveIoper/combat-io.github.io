@@ -1709,25 +1709,12 @@
   window.selectSkinColor = function(e) {
     SkinColor = e;
   };
-  var hatEquipped = false;
-  const hatDisplay1 = document.getElementById("hatDisplay1")
   window.equipHat = function(e) {
-    hatEquipped =! hatEquipped;
-    if(!hatEquipped) {
-      hatDisplay1.innerHTML = "EQUIP";
-      send(["Hd",[{
+      send(["j",[{
             hat: e,
           },
         ],
       ]);
-    }else{
-      hatDisplay1.innerHTML = "UNEQUIP";
-      send(["Hd",[{
-            hat: 0,
-          },
-        ],
-      ]);
-    }
   };
   enterGame.addEventListener("click", function (e) {
       send(["j",[{
