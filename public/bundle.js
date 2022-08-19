@@ -731,6 +731,7 @@
       send(["33", [null]]);
     }
   }
+  const createClan = document.getElementById("createClanSection");
   function drawPlayerText(x, y, player) {
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
