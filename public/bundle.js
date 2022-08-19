@@ -283,7 +283,7 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
+          send(["s", [inventory[i]]]);
         }
       });
   }
@@ -1385,7 +1385,7 @@
         let msg = window.msgpack.decode(new Uint8Array(buffer));
         switch (msg[0]) {
           case "1":
-            for (let i = 0; i < 11; i++) {
+            for (let i = 0; i < 6; i++) {
               document.getElementById("h-item-" + i).style.display = "none";
             }
             myPlayer.sid = msg[1][0];

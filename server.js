@@ -366,7 +366,7 @@
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
-    player.weapons = [0, 1, 2, 3, 4, 5, 6];
+    player.weapons = [0, 1, 2, 3, 4, 5,];
     if (player.admin) {
       player.resources = {
         food: 1000000,
@@ -939,11 +939,9 @@
           ) {
             // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
-            socket.player.lastChatTimestamp = Date.now();
-            if(Date.now() - chatDelay >= 700) {
-            }else{
+            if(Date.now() - socket.player.lastChatTimestamp >= 200) {
               socket.player.chat = null;
-              chatDelay = Date.now();
+              socket.player.lastChatTimestamp = Date.now();
             } //kk also try pit trap
           }
           break;
@@ -1017,7 +1015,7 @@
           }
           break;
         case "s":
-          var id = msg[1][0] - 1;
+          var id = msg[1][0] + 1;
           if (socket.player.weapons.indexOf(id) != -1) {
             socket.player.weapon = id;
           }
