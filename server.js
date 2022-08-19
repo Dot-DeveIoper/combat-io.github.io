@@ -357,11 +357,14 @@
   var players = [];
   var ids = 0;
 
+  function sendData(player, hat) {
+    player.hat = hat || 0;
+  }
+
   function respawn(player, name, skin, hat) {
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
-    player.hat = hat || 0;
     player.skin = skin || 0;
     player.name = name;
     player.sid = player.sid || ++ids;
@@ -856,11 +859,9 @@
           }
           var name;
           var skin;
-          var hat;
           try {
             name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "Combat.io";
             skin = msg[1][0].skin || 0;
-            hat = msg[1][0].hat || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
@@ -869,6 +870,18 @@
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
           socket.send(msgpack.encode(["w", [socket.player.weapons]]));
+          break;
+        case "13c":
+          if (!msg[1][0]) {
+            socket.close(1012, "Buffer missing");
+          }
+          var hat;
+          try {
+            hat = msg[1][0].hat || 0;
+          } catch (err) {
+            socket.close(1012, "Buffer missing");
+          }
+          sendData(socket.player, hat);
           break;
         case "33":
           socket.player.movedir = msg[1][0];
