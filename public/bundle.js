@@ -287,7 +287,6 @@
         }
       });
   }
-
   var SkinID = 0;
   for (let i = 1; i < 9; i++) {
     document.getElementById("skin" + i).addEventListener("click", function (e) {
@@ -296,8 +295,6 @@
       }
       document.getElementById("skin" + i).style.borderRadius = "25%";
       SkinID = i - 1;
-      var skin = skins.find(x => x.id == SkinID);
-      skin = SkinID
     });
   }
 
@@ -977,6 +974,7 @@
     let color;
     window.players = players;
     players.forEach((player) => {
+      window.playerDefine = player;
       if (player.sid != myPlayer.sid) {
         var rel = relative({
           x: player.x,
