@@ -854,10 +854,10 @@
             socket.close(1012, "Buffer missing");
           }
           var name;
+          var skin;
           try {
-            name =
-              msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
-              "Combat.io";
+            name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "Combat.io";
+            skin = socket.player.skin || 4;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
