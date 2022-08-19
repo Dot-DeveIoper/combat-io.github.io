@@ -781,21 +781,25 @@
     ); // og 50 ids: {${player.sid}}
 
     if (player.chat) {
-      // fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
       ctx.textAlign = "center";
-      drawText(x, y - 88, 100, player.chat, "#ffffff");
+      drawText(x, y - 88, 70, player.chat, "#ffffff");
     }
-    if(player.health > 0){
-      var vlastStyle = ctx.fillStyle;
+    /*var addx = 0;
+      var addy = 0;
+      if(myPlayer.sid == player.sid){
+        addx = player.xVel;
+        addy = player.yVel;
+      }*/
+
+          var vlastStyle = ctx.fillStyle;
       ctx.fillStyle = "#333333";
       ctx.roundRect(x - cfg.healthBarWidth - cfg.healthBarPad, y + cfg.nameY, 2 * (cfg.healthBarWidth + 0) + 2 * cfg.healthBarPad, cfg.healthBarHeight, 8);
       //ctx.roundRect(x - 55, y + 59, 100, 12, 12);
       ctx.fill();
-    }
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 53.5, 96 * (player.health / 100), 8);
-    ctx.fillStyle = lastStyle;
+    ctx.fillStyle = '#fff';
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
