@@ -563,7 +563,7 @@
     {
       id: 5,
       name: "Trap",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.webp?v=1660865894302",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.webp?v=166086589",
       scale: 80,
       img: new Image(),
       xOffset: 20,
