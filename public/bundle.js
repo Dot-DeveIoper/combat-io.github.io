@@ -395,6 +395,14 @@
 
   var hats = [
     {
+      id: 0,
+      src: "",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
+    {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
       img: new Image(),
@@ -1703,7 +1711,7 @@
   };
   window.equipHat = function(e) {
       send(["j",[{
-            hat: 1,
+            hat: e,
           },
         ],
       ]);
