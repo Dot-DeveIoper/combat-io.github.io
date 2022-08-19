@@ -401,9 +401,79 @@
     {
       id: 0,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 3,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 4,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 5,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 6,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+    {
+      id: 7,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin8.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
+  ]
+  skins.forEach(w => {
+    w.img.src = w.src;
+  });
+  var skins = [
+    {
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
       src1: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
       src2: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin4.png?v=99999999999999",
       src3: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin3.png?v=99999999999999",
+
       src4: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin5.png?v=99999999999999",
       src5: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin6.png?v=99999999999999",
       src6: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin7.png?v=99999999999999",
@@ -733,6 +803,7 @@
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
+
     if (player.chat) {
       // fillRectCentered(x, y - 110, player.chat.length * 12 + 10, 30);
       ctx.textAlign = "center";
@@ -765,82 +836,12 @@
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
-    var skin = skins.find((x) => x.id == player.skin);
+
+    var skin = skins.find(x => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    if (SkinID === 0) {
-      ctx.drawImage(
-        skin.img,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 1) {
-      ctx.drawImage(
-        skin.img1,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 2) {
-      ctx.drawImage(
-        skin.img2,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 3) {
-      ctx.drawImage(
-        skin.img3,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 4) {
-      ctx.drawImage(
-        skin.img4,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 5) {
-      ctx.drawImage(
-        skin.img5,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 6) {
-      ctx.drawImage(
-        skin.img6,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
-    if (SkinID === 7) {
-      ctx.drawImage(
-        skin.img7,
-        skin.xOffset,
-        skin.yOffset,
-        skin.scale,
-        skin.scale
-      );
-    }
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
+    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
   }
   function drawObject(x, y, rot, id) {
