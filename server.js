@@ -933,16 +933,14 @@
           if (msg[1][0] == "/devOff" && socket.player.admin) {
             socket.close();
             return false;
-          } else if (
-            socket.player.lastChatTimestamp == undefined ||
-            Date.now() - socket.player.lastChatTimestamp > 500
-          ) {
+          } else if (socket.player.lastChatTimestamp == undefined || Date.now() - socket.player.lastChatTimestamp >= 500) {
             // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
-            if(socket.player.lastChatTimestamp >= 600) {
-              socket.player.chat = null;
-            } //kk also try pit trap
             socket.player.lastChatTimestamp = Date.now();
+          var timeoutHandle = setTimeout(() => {
+              socket.player.chat = null;
+          }, 3000);
+            clearTimeout(timeoutHandle);
           }
           break;
         case "c":
