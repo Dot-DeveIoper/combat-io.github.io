@@ -283,21 +283,10 @@
       .getElementById("h-item-" + i)
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
+          send(["s", [inventory[i]]]);
         }
       });
   }
-  
-  // for (let i = 0; i < 1; i++) {
-  //   document.getElementById("hat-item" + i).style.display = "none";
-  //   document
-  //     .getElementById("hat-item" + i)
-  //     .addEventListener("click", function (e) {
-  //       if (e.isTrusted) {
-  //         equipHat(1);
-  //       }
-  //     });
-  // }
 
   let teamDiv = document.getElementById("teamBtn");
   let teamToggle = document.getElementById("toggleTeam");
@@ -1724,14 +1713,15 @@
   const hatDisplay1 = document.getElementById("hatDisplay1")
   window.equipHat = function(e) {
     hatEquipped =! hatEquipped;
-    hatEquipped ? hatDisplay1.innerHTML = "EQUIP" : hatDisplay1.innerHTML = "UNEQUIP";
     if(!hatEquipped) {
+      hatDisplay1.innerHTML = "EQUIP";
       send(["Hd",[{
             hat: e,
           },
         ],
       ]);
     }else{
+      hatDisplay1.innerHTML = "UNEQUIP";
       send(["Hd",[{
             hat: 0,
           },

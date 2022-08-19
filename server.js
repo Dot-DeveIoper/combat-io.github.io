@@ -871,7 +871,7 @@
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
           socket.send(msgpack.encode(["1", [socket.player.sid]]));
-          socket.send(msgpack.encode(["w", [socket.player.weapons - 1]]));
+          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
           break;
         case "Hd":
           if (!msg[1][0]) {
@@ -884,6 +884,10 @@
             socket.close(1012, "Buffer missing");
           }
           sendHatData(socket.player, hat)
+          if (!players.find((x) => x.sid == socket.player.sid))
+            players.push(socket.player);
+          socket.send(msgpack.encode(["1", [socket.player.sid]]));
+          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
           break;
         case "33":
           socket.player.movedir = msg[1][0];
