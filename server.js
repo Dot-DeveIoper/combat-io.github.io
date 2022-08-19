@@ -934,13 +934,11 @@
             socket.close();
             return false;
           } else if (socket.player.lastChatTimestamp == undefined || Date.now() - socket.player.lastChatTimestamp >= 500) {
-            // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
             socket.player.lastChatTimestamp = Date.now();
-          var timeoutHandle = setTimeout(() => {
+            setTimeout(() => {
               socket.player.chat = null;
-          }, 3000);
-            clearTimeout(timeoutHandle);
+            }, 3000)
           }
           break;
         case "c":
