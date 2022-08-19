@@ -386,6 +386,13 @@
   var maxScreenHeight = 1080;
 
   var texts = [];
+  var cfg = {
+    healthBarWidth: 50,
+    healthBarPad: 4.5,
+    healthBarHeight: 15,
+    nameY: 50,
+  }
+
   var skins = [
     {
       id: 0,
@@ -749,11 +756,24 @@
       ctx.textAlign = "center";
       drawText(x, y - 88, 100, player.chat, "#ffffff");
     }
+    if(player.health > 0){
+      var vlastStyle = ctx.fillStyle;
+      ctx.fillStyle = "#333333";
+      ctx.roundRect(x - cfg.healthBarWidth - cfg.healthBarPad, y + cfg.nameY, 2 * (cfg.healthBarWidth + 0) + 2 * cfg.healthBarPad, cfg.healthBarHeight, 8);
+      //ctx.roundRect(x - 55, y + 59, 100, 12, 12);
+      ctx.fill();
+      ctx.fillStyle = vlastStyle;
+      var lastStyle = ctx.fillStyle;
+      ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
+      //            start x, end y,       width            , height,  
+      ctx.fillRect(x - cfg.healthBarWidth, y + cfg.nameY + cfg.healthBarPad, 2 * (cfg.healthBarWidth + 0) * (player.health / (100)), cfg.healthBarHeight - 2 * cfg.healthBarPad, 7);
+      //ctx.roundRect(x - 48, y + 61, 96 * (player.health / 100), 8, 10)
+    }
     /*fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
     ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
-    ctx.fillStyle = lastStyle;
+    ctx.fillStyle = lastStyle;*/
   }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
