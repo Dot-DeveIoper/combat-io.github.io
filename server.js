@@ -29,7 +29,7 @@
   var riverHeight = 1000;
   var beachHeight = 1000;
   var playerSpeed = 1;
-  var chatDelay = null;
+  var chatMessages = {};
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
@@ -933,13 +933,12 @@
           if (msg[1][0] == "/devOff" && socket.player.admin) {
             socket.close();
             return false;
-          } else if (socket.player.lastChatTimestamp == undefined || Date.now() - socket.player.lastChatTimestamp >= 500) {
-            socket.player.chat = msg[1][0].slice(0, 30);
-            socket.player.lastChatTimestamp = Date.now();
-            setTimeout(() => {
-              socket.player.chat = null;
-            }, 3000)
           }
+        socket.player.chat = msg[1][0].slice(0, 30);
+        clearTimeout(chatMessages[socket.player.sid])
+        chatMessages[socket.player.sid] = setTimeout(() => {
+          socket.player.chat = null;
+        }, 3000);
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
