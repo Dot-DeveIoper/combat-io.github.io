@@ -1053,14 +1053,12 @@
         x: object.x,
         y: object.y,
       });
-      object.dir = aim;
       drawObject(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
         object.dir,
         object.id
       );
-      object.dir = null;
     });
 
     // trees, stones etc

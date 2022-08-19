@@ -939,10 +939,10 @@
           ) {
             // you can only chat every 0.5 seconds
             socket.player.chat = msg[1][0].slice(0, 30);
-            if(Date.now() - socket.player.lastChatTimestamp >= 200) {
+            if(socket.player.lastChatTimestamp >= 600) {
               socket.player.chat = null;
-              socket.player.lastChatTimestamp = Date.now();
             } //kk also try pit trap
+            socket.player.lastChatTimestamp = Date.now();
           }
           break;
         case "c":
@@ -998,6 +998,7 @@
                   id: socket.player.weapon,
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                  dir: Math.sin(socket.player.aimdir) * 65,
                   health: obj.health,
                   maxHealth: obj.maxHealth,
                   xWiggle: 0,
