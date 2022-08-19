@@ -849,7 +849,7 @@
     if (img) {
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(0);
+      ctx.rotate(rot); // need to make the "rot" be the same angle of player, this would prob be done in server.js tho
       ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
       ctx.restore();
     }
@@ -1053,12 +1053,14 @@
         x: object.x,
         y: object.y,
       });
+      object.dir = aim;
       drawObject(
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
         object.dir,
         object.id
       );
+      object.dir = null;
     });
 
     // trees, stones etc
