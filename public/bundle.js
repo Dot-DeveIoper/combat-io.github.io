@@ -287,6 +287,16 @@
         }
       });
   }
+  // for (let i = 0; i < 11; i++) {
+  //   document.getElementById("h-item-" + i).style.display = "none";
+  //   document
+  //     .getElementById("h-item-" + i)
+  //     .addEventListener("click", function (e) {
+  //       if (e.isTrusted) {
+  //         send(["s", [inventory[i]]]);
+  //       }
+  //     });
+  // }
 
   let teamDiv = document.getElementById("teamBtn");
   let teamToggle = document.getElementById("toggleTeam");
