@@ -277,7 +277,7 @@
   let ageLevelBar = document.getElementById("ageLevelBar");
   let ageCounter = document.getElementById("ageCounter");
   let enterGame = document.getElementById("enterGame");
-  for (let i = 0; i < 11; i++) {
+  for (let i = 0; i < 10; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
     document
       .getElementById("h-item-" + i)
@@ -1335,8 +1335,7 @@
           case "w":
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
-              document.getElementById("h-item-" + w).style.display =
-                "inline-block";
+              document.getElementById("h-item-" + w).style.display = "inline-block";
             });
           case "33":
             players = msg[1][0];
@@ -1644,15 +1643,15 @@
   });
 
   var SkinColor;
+  for (let i = 1; i < 9; i++) {
+    document.getElementById("skin" + i).addEventListener("click", function (e) {
+      for (let i = 1; i < 9; i++) {
+        document.getElementById("skin" + i).style.borderRadius = "50%";
+      }
+      document.getElementById("skin" + i).style.borderRadius = "25%";
+    });
+  }
   window.selectSkinColor = function(e) {
-    for (let i = 1; i < 9; i++) {
-      document.getElementById("skin" + i).addEventListener("click", function (e) {
-        for (let i = 1; i < 9; i++) {
-          document.getElementById("skin" + i).style.borderRadius = "50%";
-        }
-        document.getElementById("skin" + i).style.borderRadius = "25%";
-      });
-    }
     SkinColor = e;
   };
   enterGame.addEventListener("click", function (e) {
