@@ -396,11 +396,11 @@
   var hats = [
     {
       id: 1,
-      src: "https://static.wikia.nocookie.net/moom/images/5/58/Hat_26_V1.png/revision/latest?cb=20170728090443",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
       img: new Image(),
-      xOffset: -35,
-      yOffset: -35,
-      scale: 70,
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
     },
   ]
   
@@ -1702,7 +1702,7 @@
     SkinColor = e;
   };
   window.equipHat = function(e) {
-      send(["13c",[{
+      send(["j",[{
             hat: e,
           },
         ],
