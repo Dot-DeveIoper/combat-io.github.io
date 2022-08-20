@@ -282,6 +282,7 @@
       id: 2,
       isWeapon: false,
       placeable: true,
+      placeInRiver: false,
       name: "Spike",
       cost: {
         wood: 20,
@@ -297,6 +298,7 @@
       id: 3,
       isWeapon: false,
       placeable: true,
+      placeInRiver: false,
       name: "Wall",
       cost: {
         wood: 10,
@@ -310,6 +312,7 @@
       id: 4,
       isWeapon: false,
       placeable: true,
+      placeInRiver: false,
       name: "Booster",
       cost: {
         wood: 10,
@@ -324,6 +327,7 @@
       id: 5,
       isWeapon: false,
       placeable: true,
+      placeInRiver: false,
       name: "Trap",
       cost: {
         wood: 20,
@@ -338,6 +342,7 @@
       id: 6,
       isWeapon: false,
       placeable: true,
+      placeInRiver: false,
       teleport: true,
       name: "TeleportPad",
       cost: {
