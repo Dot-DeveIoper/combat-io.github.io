@@ -510,7 +510,7 @@
     wsServer.clients.forEach((client) => {
       let player = client.player;
       if (player && player.spawned) {
-        var playerSpeed = player.hat == 2 ? 1 : .8;
+        var playerSpeed = player.hat == 2 ? 1 : player.hat == 3 ? .7 : .8;
         // player velocity
 
         if (
@@ -661,7 +661,7 @@
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
-                player.health -= aObj.damage;
+                player.health -= player.hat == 3 ? aObj.damage - 15 : aObj.damage;
                 //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
