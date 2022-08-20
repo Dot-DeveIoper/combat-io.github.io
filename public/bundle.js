@@ -707,7 +707,6 @@
   },
   ];
 
-  // https://media.discordapp.net/attachments/838763124907048981/839201453285179402/trap.png
   weapons.forEach((w) => {
     w.img.src = w.src;
   });

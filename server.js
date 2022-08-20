@@ -661,7 +661,7 @@
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
-                player.health -= player.hat == 3 ? aObj.damage-15 : aObj.damage;
+                player.health -= player.hat == 3 ? aObj.damage - 15 : aObj.damage;
                 //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
