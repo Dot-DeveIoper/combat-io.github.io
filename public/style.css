@@ -952,12 +952,15 @@ body > #mainMenu {
 }
 
 #hotbar {
+  /* display: block; */
   position: absolute;
+  width: auto;
   /* width: 100%; */
   text-align: center;
   bottom: 17px;
   left: 50%;
   transform: translate(-50%, 0px);
+  white-space: nowrap;
   user-select: none;
 }
 .hotbarItem {
@@ -982,17 +985,69 @@ body > #mainMenu {
   /* switch display to block with js to fix it */
 }
 
-#h-item-2 {
-    background-size: 66px 66px;
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  .hotbarItem {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
 }
 
-#h-item-3 {
-    background-size: 66px 66px;
+#ageLevelItems {
+  /* display: block; */
+  position: absolute;
+  width: auto;
+  /* width: 100%; */
+  text-align: center;
+  top: 20px;
+  /* top: 17px */
+  left: 50%;
+  transform: translate(-50%, 0px);
+  white-space: nowrap;
+  user-select: none;
+}
+.ageLevelItem {
+  display: inline-block;
+  width: 66px;
+  height: 66px;
+  margin-left: 2px;
+  margin-right: 2px;
+  /* border-radius: 5px; */
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  pointer-events: all;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+
+  /* display: none; */
+  /* switch display to block with js to fix it */
+}
+.ageItemSelectText {
+  color: #ffffff;
+  font-size: 1rem;
+  /* font-size: 1.50rem; */
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8px;
+  transform: translate(-0px, -3px);
+  /* transform: translate(-0px, 15px); */
+  user-select: none;
+  text-shadow: 1px 1px 2px #000000;
+  /* text-shadow: 0 0 3px #000000; */
+  /* horizontal-offset vertical-offset 'blur' colour */
+}
+.ageItemSelectCounter {
+  display: inline;
 }
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
-  .hotbarItem {
+  .ageLevelItem {
     margin-left: 2px;
     margin-right: 2px;
   }
@@ -1548,6 +1603,7 @@ body > #mainMenu {
   font-family: "Hammersmith One", sans-serif;
   font-size: 24px;
   font-weight: 500;
+  /* margin-left: 5px; */
   transform: translate(-0px, -12px);
 }
 .skullImg {
@@ -1619,6 +1675,7 @@ body > #mainMenu {
   font-family: "Hammersmith One", sans-serif;
   font-size: 24px;
   font-weight: 500;
+  /* margin-left: 2px; */
   transform: translate(-0px, -12px);
 }
 .resourcesImg {
