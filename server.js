@@ -338,6 +338,7 @@
       id: 6,
       isWeapon: false,
       placeable: true,
+      teleport: true,
       name: "TeleportPad",
       cost: {
         wood: 50,
@@ -648,21 +649,23 @@
                 : obj.id == 4
                 ? 60
                 : obj.id == 5
+                ? 50                
+                : obj.id == 6
                 ? 50
                 : 0) //obj hit boxes
             ) { 
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
-              if (obj.id === 4) {
-                var pushVelX = Math.cos(pushDir) + 0;
-                var pushVelY = Math.sin(pushDir) + -5;
-              } 
-              if (obj.id === 5) {
+              if (aObj.id === 4) {
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
               } else {
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
+              }
+              if (aObj.teleport) {
+                player.x = 5000;
+                player.y = 5000;
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
                 player.health -= player.hat === 3 ? aObj.damage - 8 : aObj.damage; //hmm
