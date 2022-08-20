@@ -689,7 +689,7 @@
       name: "TeleportPad",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
       scale: 80,
-      img: new Gif(),
+      img: new Image(),
       xOffset: -50,
       yOffset: -50,
     },
