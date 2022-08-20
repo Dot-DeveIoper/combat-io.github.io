@@ -646,6 +646,7 @@
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
       img: new Image(),
+      dir: 60,//wtf?!?!?!
       xOffset: -50,
       yOffset: -50,
     },
@@ -1472,7 +1473,6 @@
               break;
             case "a":
               animalsCache = msg[1][0];
-              window.animals = animalsCache;
               break;
         }
       });
