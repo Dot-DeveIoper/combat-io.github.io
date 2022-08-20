@@ -943,8 +943,8 @@ function setSkin(num) {
         rel.x + object.xWiggle,
         rel.y + object.yWiggle,
         object.dir,
-        object.id
-      );
+        object.id //hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+      ); //
     });
 
     // trees, stones etc
