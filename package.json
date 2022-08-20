@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "ws": "^7.4.5",
-    "msgpack-lite": "^0.1.26",
+    "@msgpack/msgpack": "^2.7.2",
     "node-fetch": "^2.6.1",
     "fs": "^0.0.2",
     "body-parser": "^1.19.0",
@@ -20,7 +20,7 @@
     "cookie-parser": "^1.4.5"
   },
   "engines": {
-    "node": "12.x"
+    "node": "16.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"

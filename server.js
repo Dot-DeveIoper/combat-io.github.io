@@ -3,9 +3,9 @@
   const bodyParser = require("body-parser");
   const ws = require("ws");
   const app = express();
-  const msgpack = require("msgpack-lite");
   const fs = require("fs");
   const fetch = require("node-fetch");
+  const { encode, decode } = require("@msgpack/msgpack");
   app.use(
     bodyParser.urlencoded({
       extended: true,
@@ -252,7 +252,7 @@
         xVel: 0,
         yVel: 0,
       };
-      console.log(a.count + " animal has spawned" + animal);
+      // console.log(a.count + " animal has spawned" + animal);
     }
   });
   console.log(animalsCache);
@@ -416,7 +416,7 @@
       let player = client.player;
       if (player) {
         if (dist(player, origin) < renderDistance) {
-          client.send(msgpack.encode(data));
+          client.send(encode(data));
         }
       }
     });
@@ -433,7 +433,7 @@
             gold: player.resources.gold,
           });
         });
-        client.send(msgpack.encode(["b", [formattedLeaderboard]]));
+        client.send(encode(["b", [formattedLeaderboard]]));
       }
     });
   }, 1000);
@@ -445,22 +445,22 @@
         var playersNear = players.filter(
           (x) => x && x.spawned && dist(player, x) < renderDistance
         );
-        client.send(msgpack.encode(["33", [playersNear]]));
+        client.send(encode(["33", [playersNear]]));
 
         var treesNear = treesCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
-        client.send(msgpack.encode(["o", [treesNear]]));
+        client.send(encode(["o", [treesNear]]));
 
         var objNear = objCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
-        client.send(msgpack.encode(["x", [objNear]]));
+        client.send(encode(["x", [objNear]]));
 
         var animalNear = animalsCache.filter(
           (x) => x && dist(player, x) < renderDistance * 3
         );
-        client.send(msgpack.encode(["a", [animalNear]]));
+        client.send(encode(["a", [animalNear]]));
       }
     });
   }, 20);
@@ -680,7 +680,7 @@
                   enemy.yVel += Math.sin(knockDir) * 10;
                   enemy.health -= weapon.damage;
                   client.send(
-                    msgpack.encode(["t",[
+                    encode(["t",[
                         enemy.x + randomInt(-20, 20),
                         enemy.y + randomInt(-20, 20),
                         true,
@@ -785,7 +785,7 @@
         //player.y = Math.min(mapSize - 30, player.y);
 
         if (player.health <= 0) {
-          client.send(msgpack.encode(["d", []]));
+          client.send(encode(["d", []]));
           player.spawned = false;
           player.xp = 0;
         }
@@ -798,7 +798,7 @@
   }, 10);
 
   wsServer.on("connection", (socket, request) => {
-    socket.send(msgpack.encode(["init", []]));
+    socket.send(encode(["init", []]));
     socket.player = {
       socketLimit: 0,
       noHurtTime: 0,
@@ -840,7 +840,7 @@
       }*/
       var msg;
       try {
-        msg = msgpack.decode(new Uint8Array(message));
+        msg = decode(new Uint8Array(message));
       } catch (err) {
         socket.close(1012, "Buffer missing");
         return;
@@ -867,8 +867,8 @@
           respawn(socket.player, name, skin);
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
-          socket.send(msgpack.encode(["1", [socket.player.sid]]));
-          socket.send(msgpack.encode(["w", [socket.player.weapons]]));
+          socket.send(encode(["1", [socket.player.sid]]));
+          socket.send(encode(["w", [socket.player.weapons]]));
           break;
         case "Hd":
           if (!msg[1][0]) {
@@ -883,10 +883,11 @@
           sendHatData(socket.player, hat)
           break;
         case "33":
+          if (typeof msg[1][0] !== 'number' && msg[1][0] !== null) break;
           socket.player.movedir = msg[1][0];
           break;
         case "p":
-          socket.send(msgpack.encode(["p", []]));
+          socket.send(encode(["p", []]));
           break;
         case "ud":
           if (socket.player.admin) {
@@ -894,6 +895,7 @@
           }
           break;
         case "2":
+          if (typeof msg[1][0] !== 'number') break;
           socket.player.aimdir = msg[1][0];
           break;
         case "ch":
