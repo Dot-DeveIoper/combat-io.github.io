@@ -656,12 +656,13 @@
               if (obj.id === 4) {
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
-              } else {
+              } if (obj.id === 4) { } 
+              else {
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
-                player.health -= player.hat == 3 ? aObj.damage - 15 : aObj.damage;
+                player.health -= player.hat === 3 ? aObj.damage - 8 : aObj.damage; //hmm
                 //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
@@ -692,7 +693,7 @@
                   );
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
-                  enemy.health -= weapon.damage;
+                  enemy.health -= player.hat === 3 ? weapon.damage - 8 : weapon.damage; //hmm
                   client.send(
                     encode(["t",[
                         enemy.x + randomInt(-20, 20),
