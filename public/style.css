@@ -1029,8 +1029,8 @@ body > #mainMenu {
 }
 .ageItemSelectText {
   color: #ffffff;
-  font-size: 1rem;
-  /* font-size: 1.50rem; */
+  font-size: 1.50rem;
+  /* font-size: 1rem; */
   text-transform: uppercase;
   text-align: center;
   margin-top: 8px;
