@@ -334,6 +334,20 @@
       health: 200,
       maxHealth: 200,
     },
+    {
+      id: 6,
+      isWeapon: false,
+      placeable: true,
+      name: "TeleportPad",
+      cost: {
+        wood: 50,
+        stone: 50,
+      },
+      damage: 0,
+      velocity: -2,
+      health: 50,
+      maxHealth: 200,
+    },
   ];
 
   app.get("/", (req, res) => {
@@ -372,7 +386,7 @@
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
-    player.weapons = [0, 1, 2, 3, 4, 5, 6];
+    player.weapons = [0, 1, 2, 3, 4, 5, 6, 7];
     if (player.admin) {
       player.resources = {
         food: 1000000,
@@ -496,7 +510,7 @@
     wsServer.clients.forEach((client) => {
       let player = client.player;
       if (player && player.spawned) {
-        var playerSpeed = player.hat == 2 ? 1.3 : 1;
+        var playerSpeed = player.hat == 2 ? 1 : .8;
         // player velocity
 
         if (
@@ -813,7 +827,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4, 5],
+      weapons: [0, 1, 2, 3, 4, 5, 6],
       xp: 0,
       age: 0,
       resources: {

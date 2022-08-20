@@ -424,6 +424,14 @@
     yOffset: -40,
     scale: 80,
   },
+  {
+    id: 3,
+    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
+    img: new Image(),
+    xOffset: -40,
+    yOffset: -40,
+    scale: 80,
+  },
   ];
 
   var skins = [{
@@ -621,7 +629,7 @@
       yOffset: -40,
     },
     {
-      id: 5,
+      id: 6,
       name: "TeleportPad",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
       scale: 80,
@@ -671,6 +679,15 @@
       id: 5,
       name: "Trap",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap70%25Opacity.png?v=1660928648706",
+      scale: 80,
+      img: new Image(),
+      xOffset: -50,
+      yOffset: -50,
+    },
+    {
+      id: 6,
+      name: "TeleportPad",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
       scale: 80,
       img: new Image(),
       xOffset: -50,
