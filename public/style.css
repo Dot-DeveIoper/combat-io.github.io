@@ -1074,7 +1074,8 @@ body > #mainMenu {
   /* text-align: center; */
   /* top: 20px; */
   float: right;
-  right: 309px;
+  right: 0;
+  /* right: 309px; */
   /* right: 10px; */
   user-select: none;
 }
