@@ -664,8 +664,8 @@
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
               if (aObj.teleport) {
-                player.x = 5000;
-                player.y = 5000;
+                player.x = randomInt(0, mapSize);
+                player.y = randomInt(0, mapSize);
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
                 player.health -= player.hat === 3 ? aObj.damage - 8 : aObj.damage; //hmm

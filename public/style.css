@@ -1261,6 +1261,15 @@ body > #mainMenu {
   transform: translate(-0px, -1.5px);
   /* transform: translate(-0px, 7.5px); */
 }
+#h-item-2 {
+  background-size: 66px 66px;
+}
+#h-item-3 { 
+  background-size: 66px 66px;
+}
+#h-item-6 { 
+  background-size: 66px 66px;
+}
 .itemsInfo1 {
   display: block;
   text-align: left;
