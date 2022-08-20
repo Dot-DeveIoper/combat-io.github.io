@@ -985,7 +985,7 @@
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
-            if (inRiver) return;
+            if (socket.player.y > mapSize - desertHeight - riverHeight && socket.player.y < mapSize - desertHeight  && !obj.placeInRiver) return;
 
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
