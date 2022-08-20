@@ -631,7 +631,7 @@
     {
       id: 6,
       name: "TeleportPad",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
       scale: 80,
       img: new Image(),
       xOffset: 20,
@@ -687,9 +687,9 @@
     {
       id: 6,
       name: "TeleportPad",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
       scale: 80,
-      img: new Image(),
+      img: new Gif(),
       xOffset: -50,
       yOffset: -50,
     },
