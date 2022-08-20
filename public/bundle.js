@@ -862,7 +862,7 @@
     var img = ob.img;
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(0);
+    ctx.rotate(rot);
     ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
     ctx.restore();
   }

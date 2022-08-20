@@ -352,7 +352,7 @@
     return Math.sqrt(Math.pow(p1.y - p2.y, 2) + Math.pow(p1.x - p2.x, 2));
   }
 
-  const wsServer = new ws.Server({ noServer: true });
+  const wsServer = new ws.Server({ noServer: true, maxPayload: 512 });
 
   var players = [];
   var ids = 0;
