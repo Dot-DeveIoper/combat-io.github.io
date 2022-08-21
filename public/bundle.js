@@ -92,6 +92,14 @@
       clicked: false,
       price: 15000,
     },
+    {
+      name: "Spike Gear",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
+      id: 6,
+      info: "Deals damage to enemy when hit",
+      clicked: false,
+      price: 15000,
+    },
   ];
   
   function hatMenu(player) {
