@@ -105,12 +105,16 @@
           },
           ],
         ]);
-   }
-      for (let i = 1; i < Hats.length; i++) {
+      for (let i = 0; i < Hats.length; i++) {
         document.getElementById("EquipGear" + i).innerHTML = "Equip";
       }
+        if(EquipHat.innerHTML == "Unequip") {
+          document.getElementById("EquipGear" + i).innerHTML = "Equip"
+        }else{
       document.getElementById("EquipGear" + i).innerHTML = "Unequip";
+        }
       }
+   }
   }
   hatMenu();
 
