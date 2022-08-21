@@ -440,6 +440,14 @@
       yOffset: -40,
       scale: 80,
     },
+    {
+      id: 5,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
   ];
 
   var skins = [{
@@ -837,6 +845,7 @@
     ); // og 50 ids: {${player.sid}}
 
     if (player.chat) {
+      fillRectCentered(x, y - 100, ctx.measureText(player.chat).width + 20, 30);
       ctx.textAlign = "center";
       drawText(x, y - 88, 70, player.chat, "#ffffff");
     }

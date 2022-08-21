@@ -516,7 +516,7 @@
     wsServer.clients.forEach((client) => {
       let player = client.player;
       if (player && player.spawned) {
-        var playerSpeed = player.hat == 2 ? 1 : player.hat == 3 ? .7 : .8;
+        var playerSpeed = player.hat == 2 ? 1 : player.hat == 3 ? .7 : player.hat == 5 ? .3 : .8;
         // player velocity
 
         if (
@@ -776,7 +776,7 @@
                   reaching(player, obj, weapon.range + 10) &&
                   isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
                 ) {
-                  obj.health -= weapon.damage; /
+                  obj.health -= player.hat == 5 ? weapon.damage + 25: weapon.damage; // for tankgear
                   var wiggleDir = Math.atan2(
                     obj.y - player.y,
                     obj.x - player.x
