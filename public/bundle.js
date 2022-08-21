@@ -49,18 +49,35 @@
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
         id: 1,
         info: "Free Hat",
-        price: 500
+        price: 0
     }, {
         name: "Booster Hat",
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
         id: 2,
         info: "Increase Speed",
         price: 1000
+    }, {
+        name: "Soldier Hat",
+        src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
+        id: 3,
+        info: "Increase Health",
+        price: 4000
+    }, {
+        name: "Fish Hat",
+        src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_4?v=1661059006830",
+        id: 4,
+        info: "Advanced Swimmer",
+        price: 2500
+    }, {
+        name: "Tank Gear",
+        src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
+        id: 5,
+        info: "Increase Damage To Objects",
+        price: 15000
     }];
   function hatMenu() {
   for(let i = 0; i < Hats.length; i++) {
     var HatItems = document.getElementById("HatItems"+[i]);
-    var EquipHat = document.getElementById("EquipHat"+[i]);
     HatItems.innerHTML = `
         <div class="itemsInfo1">
           <img src="${Hats[i].src}" alt="" class="itemImg" />
@@ -69,11 +86,18 @@
         </div>
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
-          <a id="${EquipGear+[i]}" class="equipItem">Equip</a>
-        </div>
+          <a id="EquipGear${[i]}" class="equipItem">Equip</a>
+        </div><br>
     `;
+    var EquipHat = document.getElementById("EquipGear"+[i]);
       EquipHat.onclick = function() {
-        alert('gg'+[i])
+        send([
+          "Hd",
+          [{
+            hat: Hats[i].id,
+          },
+          ],
+        ]);
       }
     }
   }
@@ -1818,30 +1842,6 @@
   }
   window.selectSkinColor = function (e) {
     SkinColor = e;
-  };
-  var hatEquipped = false;
-  const hatDisplay1 = document.getElementById("hatDisplay1");
-  window.equipHat = function (e) {
-    hatEquipped = !hatEquipped;
-    hatEquipped
-    ? (hatDisplay1.innerHTML = "Equip"): (hatDisplay1.innerHTML = "Unequip");
-    if (!hatEquipped) {
-      send([
-        "Hd",
-        [{
-          hat: e,
-        },
-        ],
-      ]);
-    } else {
-      send([
-        "Hd",
-        [{
-          hat: 0,
-        },
-        ],
-      ]);
-    }
   };
   enterGame.addEventListener("click", function (e) {
     send([
