@@ -104,6 +104,17 @@
       ) {
         if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
+      var animal = {
+        id: j,
+        speed: 5,
+        x: randomInt(0, mapSize),
+        y: randomInt(0, mapSize),
+        dir: 0,
+        health: 100,
+        xVel: 0,
+        yVel: 0,
+      };
+      animalsCache.push(animal);
       var object = {
         x: randomx,
         y: randomy,
