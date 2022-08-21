@@ -672,7 +672,7 @@
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
-              if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
+              if (aObj.damage && player.noHurtTime == 0 && obj.oid !== player.sid) {//object damage
                 player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage; //hmm
                 //player.noHurtTime += .2;
               }
@@ -1046,6 +1046,7 @@
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
                   y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
                   dir: 0,
+                  oid: socket.player.sid,
                   health: obj.health,
                   maxHealth: obj.maxHealth,
                   xWiggle: 0,
