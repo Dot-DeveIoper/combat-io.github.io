@@ -654,7 +654,7 @@
                 : obj.id == 4
                 ? 60
                 : obj.id == 5
-                ? 60                
+                ? 50                
                 : obj.id == 6
                 ? 50
                 : 0) //obj hit boxes
@@ -665,16 +665,15 @@
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
               } else {
-                player.movedir = 0;
-                var pushVelX = 0;
-                var pushVelY = 0;
+                var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
+                var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               }
               if (aObj.teleport) {
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
               if (aObj.damage && player.noHurtTime == 0 && aObj.oid != player.sid) {//object damage
-                player.health -= player.hat === 3 ? aObj.damage - 8 : aObj.damage; //hmm
+                player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage; //hmm
                 //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
@@ -777,7 +776,7 @@
                   reaching(player, obj, weapon.range + 10) &&
                   isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
                 ) {
-                  obj.health -= weapon.damage;
+                  obj.health -= weapon.damage; /
                   var wiggleDir = Math.atan2(
                     obj.y - player.y,
                     obj.x - player.x
