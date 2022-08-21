@@ -977,6 +977,11 @@
             socket.close();
             return false;
           }
+          var e = msg[1][0];
+  var BadWords = ["fuck", "shit", "bitch"];
+    for(let words = 0; words < BadWords.length; words++) {
+      e.replace(words[words], "NaughtyWord")
+    }
         socket.player.chat = msg[1][0].slice(0, 30);
         clearTimeout(chatMessages[socket.player.sid])
         chatMessages[socket.player.sid] = setTimeout(() => {

@@ -263,8 +263,7 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   function sn(e) {
-    send(["ch",
-      [e]]);
+    send(["ch",[e]]);
   }
 
   var nausea = false;
@@ -1345,27 +1344,27 @@
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
-      ctx.fillStyle = "#fc5553";
+      ctx.fillStyle = "#ff0000";
       ctx.beginPath();
-      ctx.fillText("x",
+      ctx.arc(
         minimapOffset + deathLocX,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
-        5,
+        3,
         0,
-        5 * Math.PI
+        2 * Math.PI
       );
       ctx.fill();
       ctx.fillStyle = last2Style;
     }
     if (Base == 1) {
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = "#00ffff";
       ctx.beginPath();
-      ctx.fillText("x", baseLocX / o.mapScale * Ne.width, It.y / o.mapScale * Ne.height))
+      ctx.arc(
         minimapOffset + baseLocX,
         +canvas.height - minimapOffset - minimapSize + baseLocY,
-        5,
+        3,
         0,
-        5 * Math.PI
+        2 * Math.PI
       );
       ctx.fill();
       ctx.fillStyle = last2Style;
