@@ -408,30 +408,30 @@
     yOffset: -40,
     scale: 80,
   },
-  {
-    id: 1,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
-    img: new Image(),
-    xOffset: -40,
-    yOffset: -40,
-    scale: 80,
-  },
-  {
-    id: 2,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
-    img: new Image(),
-    xOffset: -40,
-    yOffset: -40,
-    scale: 80,
-  },
-  {
-    id: 3,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
-    img: new Image(),
-    xOffset: -40,
-    yOffset: -40,
-    scale: 80,
-  },
+    {
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
+    {
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
+    {
+      id: 3,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
   ];
 
   var skins = [{
@@ -671,7 +671,8 @@
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
       img: new Image(),
-      dir: 60,//wtf?!?!?!
+      dir: 60,
+      //wtf?!?!?!
       xOffset: -50,
       yOffset: -50,
     },
@@ -1774,7 +1775,7 @@
   window.equipHat = function (e) {
     hatEquipped = !hatEquipped;
     hatEquipped
-    ? (hatDisplay1.innerHTML = "EQUIP"): (hatDisplay1.innerHTML = "UNEQUIP");
+    ? (hatDisplay1.innerHTML = "Equip"): (hatDisplay1.innerHTML = "Unequip");
     if (!hatEquipped) {
       send([
         "Hd",

@@ -984,6 +984,23 @@ body > #mainMenu {
   /* display: none; */
   /* switch display to block with js to fix it */
 }
+#h-item-0 {}
+#h-item-1 {}
+#h-item-2 {
+  background-size: 66px 66px;
+}
+#h-item-3 {
+  background-size: 66px 66px;
+}
+#h-item-4 {}
+#h-item-5 {}
+#h-item-6 {
+  background-size: 66px 66px;
+}
+#h-item-7 {}
+#h-item-8 {}
+#h-item-9 {}
+#h-item-10 {}
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
@@ -1027,6 +1044,19 @@ body > #mainMenu {
   /* display: none; */
   /* switch display to block with js to fix it */
 }
+#age-item-0 {}
+#age-item-1 {}
+#age-item-2 {
+  background-size: 66px 66px;
+}
+#age-item-3 {}
+#age-item-4 {}
+#age-item-5 {}
+#age-item-6 {}
+#age-item-7 {}
+#age-item-8 {}
+#age-item-9 {}
+#age-item-10 {}
 .ageItemSelectText {
   color: #ffffff;
   font-size: 1.50rem;
@@ -1260,15 +1290,6 @@ body > #mainMenu {
   background-position: center;
   transform: translate(-0px, -1.5px);
   /* transform: translate(-0px, 7.5px); */
-}
-#h-item-2 {
-  background-size: 66px 66px;
-}
-#h-item-3 { 
-  background-size: 66px 66px;
-}
-#h-item-6 { 
-  background-size: 66px 66px;
 }
 .itemsInfo1 {
   display: block;
