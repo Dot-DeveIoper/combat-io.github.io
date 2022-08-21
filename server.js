@@ -723,6 +723,9 @@
               if (aObj.id === 4) {
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
+              } if (aObj.id === 2 && obj.oid === player.sid) {
+                var pushVelX = Math.cos(pushDir) * 1;
+                var pushVelY = Math.sin(pushDir) * 1;
               }
               if (aObj.teleport) {
                 player.x = randomInt(0, mapSize);
