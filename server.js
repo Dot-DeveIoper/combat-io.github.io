@@ -951,7 +951,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          if (socket.player.resources.gold >= Hats[hat - 1].price) {
+          if (socket.player.resources.gold >= Hats[hat].price) {
             socket.player.resources.gold -= Hats[hat].price;
             sendHatData(socket.player, hat)
           }
