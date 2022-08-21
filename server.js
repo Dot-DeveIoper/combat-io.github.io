@@ -368,35 +368,47 @@
   ];
   
   var Hats = [
+      {
+      name: "No Hat",
+      owned: true,
+      gold: 0,
+      ruby: 0,
+    },
     {
       name: "Barbarian Hat",
       owned: false,
-      price: 0,
+      gold: 0,
+      ruby: 0,
     },
     {
       name: "Booster Hat",
       id: 2,
-      price: 1000,
+      gold: 1000,
+      ruby: 0,
     },
     {
       name: "Soldier Hat",
       owned: false,
-      price: 4000,
+      gold: 4000,
+      ruby: 0,
     },
     {
       name: "Fish Hat",
       owned: false,
-      price: 2500,
+      gold: 2500,
+      ruby: 0,
     },
     {
       name: "Tank Gear",
       owned: false,
-      price: 15000,
+      gold: 15000,
+      ruby: 0,
     },
     {
       name: "Spike Gear",
       owned: false,
-      price: 15000,
+      gold: 15000,
+      ruby: 0,
     },
   ];
   
@@ -947,19 +959,18 @@
           }
           var hat;
           try {
-            hat = msg[1][0].hat || 1;
-            hat = hat - 1;
+            hat = msg[1][0].hat || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          if (socket.player.resources.gold >= Hats[hat].price && !Hats[hat].owned) {
-            socket.player.resources.gold -= Hats[hat].price;
+          console.log(hat);
+          if (socket.player.resources.gold >= Hats[hat].gold && socket.player.resources.ruby >= Hats[hat].ruby && !Hats[hat].owned) {
+            socket.player.resources.gold -= Hats[hat].gold;
+            socket.player.resources.gold -= Hats[hat].ruby;
             Hats[hat].owned = true;
-            sendHatData(socket.player, hat + 1)
+            sendHatData(socket.player, hat)
           } else if (Hats[hat].owned) {
-            sendHatData(socket.player, hat + 1)
-          } else if (hat - 1 === 0) {
-            sendHatData(socket.player, hat + 1) 
+            sendHatData(socket.player, hat)
           }
           break;
         case "33":
