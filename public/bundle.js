@@ -49,30 +49,35 @@
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
         id: 1,
         info: "Free Hat",
+        clicked: false,
         price: 0
     }, {
         name: "Booster Hat",
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
         id: 2,
         info: "Increase Speed",
+        clicked: false,
         price: 1000
     }, {
         name: "Soldier Hat",
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
         id: 3,
         info: "Increase Health",
+        clicked: false,
         price: 4000
     }, {
         name: "Fish Hat",
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_4?v=1661059006830",
         id: 4,
         info: "Advanced Swimmer",
+        clicked: false,
         price: 2500
     }, {
         name: "Tank Gear",
         src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
         id: 5,
         info: "Increase Damage To Objects",
+        clicked: false,
         price: 15000
     }];
   function hatMenu(player) {
@@ -86,29 +91,29 @@
         </div>
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
-          <a id="EquipGear${[i]}" class="equipItem">Equip</a>
+          <a id="EquipGear${[i]}" class="equipItem">${Hats[i].clicked}</a>
         </div><br>
     `;
+    Hats[i].clicked = false;
     var EquipHat = document.getElementById("EquipGear"+[i]);
       EquipHat.onclick = function() {
-        player == Hats[i].id ? 
+        Hats[i].clicked = !Hats[i].clicked;
         send([
           "Hd",
           [{
-            hat: 0,
-          },
-          ],
-        ]) : 
-        send([
-          "Hd",
-          [{
-            hat: Hats[i].id,
+            hat: Hats[i].clicked ? 0 : Hats[i].id,
           },
           ],
         ]);
+        if(Hats[i].clicked == true) {
+          Hats[i].clicked = "Unequip"
+        }else{
+          Hats[i].clicked = "Equip"
+        }
       }
     }
   }
+  hatMenu();
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -941,7 +946,6 @@
   }
   function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
-    hatMenu(player);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
