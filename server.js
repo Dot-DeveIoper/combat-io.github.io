@@ -662,12 +662,12 @@
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               if (aObj.id === 4) {
-                player.movedir = 0;
-               // var pushVelX = Math.cos(pushDir) + 0;
-               // var pushVelY = Math.sin(pushDir) + -5;
+                var pushVelX = Math.cos(pushDir) + 0;
+                var pushVelY = Math.sin(pushDir) + -5;
               } else {
-                var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
-                var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
+                player.movedir = 0;
+                var pushVelX = 0;
+                var pushVelY = 0;
               }
               if (aObj.teleport) {
                 player.x = randomInt(0, mapSize);
