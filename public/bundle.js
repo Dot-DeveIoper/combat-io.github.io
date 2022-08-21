@@ -996,12 +996,8 @@
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    ctx.strokeStyle = "#3d3f42"; // yes lol
-    ctx.fillStyle = "#fff";// hold up error spotted
-    ctx.arc(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
-    ctx.stroke();
-    ctx.fill();
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);  
+    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);;
     ctx.restore();
 
     var hat = hats.find((x) => x.id == player.hat);
