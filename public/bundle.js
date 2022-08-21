@@ -120,16 +120,18 @@
           "Hd",
           [
             {
-              hat: Hats[i].clicked ? 0 : Hats[i].id,
+              hat: Hats[i].clicked ? Hats[i].id : 0,
             },
           ],
         ]);
-        for (let i = 0; i < Hats.length; i++) {
-          document.getElementById("EquipGear" + i).innerHTML = "Equip";
-        }
-        if (EquipHat.innerHTML == "Unequip") {
-          document.getElementById("EquipGear" + i).innerHTML = "Equip";
+        if (Hats[i].clicked === false) {
+          for (let i = 0; i < Hats.length; i++) {
+            document.getElementById("EquipGear" + i).innerHTML = "Equip";
+          }        
         } else {
+          for (let i = 0; i < Hats.length; i++) {
+            document.getElementById("EquipGear" + i).innerHTML = "Equip";
+          }   
           document.getElementById("EquipGear" + i).innerHTML = "Unequip";
         }
       };

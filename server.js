@@ -966,7 +966,7 @@
           console.log(hat);
           if (socket.player.resources.gold >= Hats[hat].gold && socket.player.resources.ruby >= Hats[hat].ruby && !Hats[hat].owned) {
             socket.player.resources.gold -= Hats[hat].gold;
-            socket.player.resources.gold -= Hats[hat].ruby;
+            socket.player.resources.ruby -= Hats[hat].ruby;
             Hats[hat].owned = true;
             sendHatData(socket.player, hat)
           } else if (Hats[hat].owned) {
