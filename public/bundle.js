@@ -37,7 +37,7 @@
   function RandomYT() {
     if (p % 2 == 0) {
       YTofDay.href = YTcreator[p + 1] + "?sub_confirmation=1";
-      YTofDay.innerHTML = "YT: " + YTcreator[p];
+      YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${YTcreator[p]}`;
     } else {
       p = Math.floor(Math.random() * YTcreator.length);
       RandomYT();
