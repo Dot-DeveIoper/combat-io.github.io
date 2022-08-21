@@ -31,6 +31,9 @@
         name: "AFK",
         link: "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g"
     }, {
+        name: "Yoshie",
+        link: "https://www.youtube.com/channel/UCy7DlulqJNNaMfxIv4paKDg"
+    }, {
         name: "Assasin_blaze?",
         link: "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ"
     }];
@@ -40,6 +43,12 @@
       YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
+  
+    var HatEquip = document.getElementById("hatDisplay");
+    var Hats = [{
+        name: "Barbarian Hat",
+        id: 1
+    }];
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
