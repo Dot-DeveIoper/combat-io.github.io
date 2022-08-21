@@ -43,26 +43,39 @@
       YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-  
-    var HatEquip = document.getElementById("hatDisplay");
-    var ItemInfo = document.getElementById("ItemInfo");
-    var ItemName = document.getElementById("ItemName");
-    var ItemSrc = document.getElementById("ItemSrc");
 
     var Hats = [{
         name: "Barbarian Hat",
+        src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
         id: 1,
         info: "Free Hat",
         price: 500
     }, {
-        src: "",
         name: "Booster Hat",
+        src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
         id: 2,
         info: "Increase Speed",
         price: 1000
     }];
   function hatMenu() {
   for(let i = 0; i < Hats.length; i++) {
+    var HatEquip = document.getElementById("hatDisplay"+[i]);
+    var ItemInfo = document.getElementById("ItemInfo"+[i]);
+    var ItemName = document.getElementById("ItemName"+[i]);
+    var ItemSrc = document.getElementById("ItemSrc"+[i]);
+    var HatItems = document.getElementById("HatItems");
+    HatItems.innerHTML = `
+        <div class="itemsInfo1">
+          <img id="${Hats[i].src}" src="test" alt="" class="itemImg" />
+          <span id="ItemName" class="itemName">${Hats[i].name}</span>
+          <br><span id="ItemInfo0" class="itemInfo">${Hats[i].info}</span>
+        </div>
+        <div class="itemsInfo2">
+          <span class="itemPrice"></span>
+          <a id="hatDisplay${[i]}" class="equipItem">Equip</a>
+        </div>
+      </div>
+    `;
     ItemSrc.src = Hats[i].src;
     ItemName.innerHTML = Hats[i].name;
     ItemInfo.innerHTML = Hats[i].info;
