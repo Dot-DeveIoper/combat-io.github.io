@@ -47,6 +47,7 @@
     var HatEquip = document.getElementById("hatDisplay");
     var ItemInfo = document.getElementById("ItemInfo");
     var ItemName = document.getElementById("ItemName");
+    var ItemSrc = document.getElementById("ItemSrc");
 
     var Hats = [{
         name: "Barbarian Hat",
@@ -54,22 +55,20 @@
         info: "Free Hat",
         price: 500
     }, {
+        src: "",
         name: "Booster Hat",
         id: 2,
         info: "Increase Speed",
         price: 1000
     }];
   function hatMenu() {
-    ItemName.innerHTML = Hats.name;
-    ItemInfo.innerHTML = Hats.info;
+  for(let i = 0; i < Hats.length; i++) {
+    ItemSrc.src = Hats[i].src;
+    ItemName.innerHTML = Hats[i].name;
+    ItemInfo.innerHTML = Hats[i].info;
     HatEquip.onclick = function() {
-      send([
-        "Hd",
-        [{
-          hat: Hats.id[0],
-        },
-        ],
-      ]);
+      send(["Hd",[{hat: Hats[i].id,}]]);
+    }
     }
     //ItemName.innerHTML = Hats.price;
   }
