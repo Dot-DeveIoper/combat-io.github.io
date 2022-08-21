@@ -57,18 +57,6 @@
     return this;
   };
 
-  var animals = [
-    {
-      id: 0,
-      count: 10,
-      aggresive: false,
-      name: "Cow",
-      speed: 3,
-      health: 100,
-      maxHealth: 100,
-    },
-  ];
-
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
@@ -104,17 +92,6 @@
       ) {
         if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
-      var animal = {
-        id: j,
-        speed: 5,
-        x: randomInt(0, mapSize),
-        y: randomInt(0, mapSize),
-        dir: 0,
-        health: 100,
-        xVel: 0,
-        yVel: 0,
-      };
-      animalsCache.push(animal);
       var object = {
         x: randomx,
         y: randomy,
@@ -136,6 +113,17 @@
     id: 3,
     xWiggle: 0,
     yWiggle: 0,
+  });
+
+    animalsCache.push({
+        id: 0,
+        speed: 3,
+        x: 5000,
+        y: 5000,
+        dir: 0,
+        health: 100,
+        xVel: 0,
+        yVel: 0,
   });
 
   for (let k = 0; k < 18; k++) {
@@ -251,6 +239,18 @@
   }
   //Make moofie cage lol
   treesCache.push(object);
+  
+  var animals = [
+    {
+      id: 0,
+      count: 10,
+      aggresive: false,
+      name: "Cow",
+      speed: 5,
+      health: 100,
+      maxHealth: 100,
+    },
+  ];
   animals.forEach((a) => {
     for (let i = 0; i < a.count; i++) {
       var animal = {

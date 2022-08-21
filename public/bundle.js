@@ -815,13 +815,12 @@
     {
       id: 0,
       name: "Cow",
-      src: "",
-      //"https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1658781233539",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1661107702198",
       scale: 200,
       img: new Image(),
       xOffset: 0,
       yOffset: 0,
-    },
+    }
   ];
 
   weapons.forEach((w) => {
