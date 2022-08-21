@@ -91,7 +91,7 @@
         </div>
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
-          <a id="EquipGear${[i]}" class="equipItem">${Hats[i].clicked}</a>
+          <a id="EquipGear${[i]}" class="equipItem">Equip</a>
         </div><br>
     `;
     Hats[i].clicked = false;
@@ -105,13 +105,12 @@
           },
           ],
         ]);
-        if(Hats[i].clicked == true) {
-          Hats[i].clicked = "Unequip"
-        }else{
-          Hats[i].clicked = "Equip"
-        }
+   }
+      for (let i = 1; i < Hats.length; i++) {
+        document.getElementById("EquipGear" + i).innerHTML = "Equip";
       }
-    }
+      document.getElementById("EquipGear" + i).innerHTML = "Unequip";
+      }
   }
   hatMenu();
 
