@@ -1271,8 +1271,10 @@ body > #mainMenu {
   margin-bottom: 5px;
   margin-left: 10px;
   margin-right: 10px;
-  word-break: break-all;
+  /* word-break: break-word; */
+  /* word-break: break-all; */
   inline-size: 350px;
+  white-space: nowrap;
 }
 .itemContainer:first-child {
   margin-top: 15px;
@@ -1296,7 +1298,7 @@ body > #mainMenu {
   text-align: left;
   float: left;
   margin-top: -7px;
-  max-width: 200px;
+  max-width: 300px;
   width: auto;
   clear: both;
 }
@@ -1323,7 +1325,6 @@ body > #mainMenu {
 .itemInfo {
   color: #ffffff;
   font-size: 1rem;
-  width: 50px;
   font-weight: 400;
   user-select: none;
 }
