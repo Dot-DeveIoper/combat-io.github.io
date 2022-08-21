@@ -60,7 +60,7 @@
   function hatMenu() {
   for(let i = 0; i < Hats.length; i++) {
     var HatItems = document.getElementById("HatItems"+[i]);
-    var EquipHat = "EquipHat";
+    var EquipHat = document.getElementById("EquipHat"+[i]);
     HatItems.innerHTML = `
         <div class="itemsInfo1">
           <img src="${Hats[i].src}" alt="" class="itemImg" />
@@ -69,11 +69,11 @@
         </div>
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
-          <a id="${EquipHat[i]}" class="equipItem">Equip</a>
+          <a id="${EquipGear+[i]}" class="equipItem">Equip</a>
         </div>
     `;
-      document.getElementById("EquipHat").onclick = function() {
-        send(["Hd",[{hat: Hats[i].id,}]]);
+      EquipHat.onclick = function() {
+        alert('gg'+[i])
       }
     }
   }
