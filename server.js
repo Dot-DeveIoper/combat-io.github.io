@@ -253,6 +253,7 @@
         yVel: 0,
       };
       // console.log(a.count + " animal has spawned" + animal);
+      animalsCache.push(animal);
     }
   });
   console.log(animalsCache);
@@ -266,7 +267,7 @@
       reload: 450,
       damage: 25,
       range: 95,
-      fov: 150,
+      fov: 160,
       gather: 1,
     },
     {
@@ -405,10 +406,10 @@
       };
     } else {
       player.resources = {
-        food: 0,
-        wood: 0,
-        stone: 0,
-        gold: 0,
+        food: 100,
+        wood: 100,
+        stone: 100,
+        gold: 100,
         ruby: 0,
         food2: 0,
         wood2: 0,
@@ -523,7 +524,7 @@
           player.y > mapSize - desertHeight - riverHeight &&
           player.y < mapSize - desertHeight
         ) {
-          player.xVel += player.hat == 4 ? 0.1 : 0.5;
+          player.xVel += player.hat == 4 ? 0.2 : 0.5;
           playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
         }
         if (
