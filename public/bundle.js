@@ -964,6 +964,17 @@
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
   }
+  function drawObject(x, y, rot, id) {
+    var ob = objects.find((x) => x.id == id);
+    var img = ob.img;
+    if (img) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot); // need to make the "rot" be the same angle of player, this would prob be done in server.js tho
+      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
+      ctx.restore();
+    }
+  }
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
@@ -999,17 +1010,6 @@
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
     ctx.restore();
-  }
-  function drawObject(x, y, rot, id) {
-    var ob = objects.find((x) => x.id == id);
-    var img = ob.img;
-    if (img) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(rot); // need to make the "rot" be the same angle of player, this would prob be done in server.js tho
-      ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
-      ctx.restore();
-    }
   }
   function drawAnimal(x, y, rot, id) {
     var ob = animals.find((x) => x.id == id);
@@ -1177,7 +1177,7 @@
     //       40
     //     );
 
-    // traps and stuff
+    // objects and stuff
     objCache.forEach((object) => {
       var rel = relative({
         x: object.x,

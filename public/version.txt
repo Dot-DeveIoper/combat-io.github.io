@@ -1,5 +1,13 @@
 -Version 1.3.8-
 
+-Added Hats
+-Spike Gear (Deals damage when hit)
+-Boost Hat (increases speed)
+and more!
+
+-Bugs Patched
+-Decreased Lag Issues
+
 -Version 1.1.4-
 
 -Decreased Sizes Of Stones
