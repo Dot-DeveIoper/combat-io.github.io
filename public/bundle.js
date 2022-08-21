@@ -94,7 +94,7 @@
     },
     {
       name: "Spike Gear",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_11.png?v=1661095515533",
       id: 6,
       info: "Deals damage to enemy when hit",
       clicked: false,
@@ -541,7 +541,7 @@
     },
     {
       id: 6,
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_11.png?v=1661095515533",
       img: new Image(),
       xOffset: -40,
       yOffset: -40,
