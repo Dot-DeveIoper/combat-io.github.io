@@ -45,10 +45,35 @@
   RandomYT();
   
     var HatEquip = document.getElementById("hatDisplay");
+    var ItemInfo = document.getElementById("ItemInfo");
+    var ItemName = document.getElementById("ItemName");
+
     var Hats = [{
         name: "Barbarian Hat",
-        id: 1
+        id: 1,
+        info: "Free Hat",
+        price: 500
+    }, {
+        name: "Booster Hat",
+        id: 2,
+        info: "Increase Speed",
+        price: 1000
     }];
+  function hatMenu() {
+    ItemName.innerHTML = Hats.name;
+    ItemInfo.innerHTML = Hats.info;
+    HatEquip.onclick = function() {
+      send([
+        "Hd",
+        [{
+          hat: Hats.id[0],
+        },
+        ],
+      ]);
+    }
+    //ItemName.innerHTML = Hats.price;
+  }
+  hatMenu();
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
