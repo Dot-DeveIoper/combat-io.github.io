@@ -1177,20 +1177,6 @@
     //       40
     //     );
 
-    // objects and stuff
-    objCache.forEach((object) => {
-      var rel = relative({
-        x: object.x,
-        y: object.y,
-      });
-      drawObject(
-        rel.x + object.xWiggle,
-        rel.y + object.yWiggle,
-        object.dir,
-        object.id
-      );
-    });
-
     ctx.fillStyle = "#000";
     let color;
     window.players = players;
@@ -1241,6 +1227,20 @@
         y: animal.y,
       });
       drawAnimal(rel.x, rel.y, animal.dir, animal.id);
+    });
+
+    // objects and stuff
+    objCache.forEach((object) => {
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
+      drawObject(
+        rel.x + object.xWiggle,
+        rel.y + object.yWiggle,
+        object.dir,
+        object.id
+      );
     });
 
     players.forEach((player) => {
