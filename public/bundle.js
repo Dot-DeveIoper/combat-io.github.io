@@ -106,6 +106,7 @@
     for (let i = 0; i < Hats.length; i++) {
       var HatItems = document.getElementById("HatItems" + [i]);
       HatItems.innerHTML = `
+      <div class="itemContainer">
         <div class="itemsInfo1">
           <img src="${Hats[i].src}" alt="" class="itemImg" />
           <span class="itemName">${Hats[i].name}</span>
@@ -114,7 +115,8 @@
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
           <a id="EquipGear${[i]}" class="equipItem">Equip</a>
-        </div><br>
+        </div>
+      </div>
     `;
       Hats[i].clicked = false;
       var EquipHat = document.getElementById("EquipGear" + [i]);
