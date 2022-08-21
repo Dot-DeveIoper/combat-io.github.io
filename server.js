@@ -60,7 +60,7 @@
   var animals = [
     {
       id: 0,
-      count: 100,
+      count: 10,
       aggresive: false,
       name: "Cow",
       speed: 3,
@@ -252,7 +252,6 @@
         xVel: 0,
         yVel: 0,
       };
-      // console.log(a.count + " animal has spawned" + animal);
       animalsCache.push(animal);
     }
   });

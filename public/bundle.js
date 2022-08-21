@@ -1222,7 +1222,12 @@
         x: animal.x,
         y: animal.y,
       });
-      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
+      drawAnimal(
+        rel.x,
+        rel.y,
+        animal.dir,
+        animal.id
+      );
     });
 
     // objects and stuff
