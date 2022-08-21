@@ -683,8 +683,8 @@
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
-              if (aObj.damage && player.noHurtTime == 0 && obj.oid !== player.sid) {//object damage
-                player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage; //hmm
+              if (aObj.damage && player.noHurtTime == 0 && obj.oid !== player.sid) {
+                player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
             }
