@@ -845,7 +845,7 @@
     ); // og 50 ids: {${player.sid}}
 
     if (player.chat) {
-      fillRectCentered(x, y - 100, ctx.measureText(player.chat).width + 20, 30);
+      //fillRectCentered(x, y - 100, ctx.measureText(player.chat).width + 20, 30);
       ctx.textAlign = "center";
       drawText(x, y - 88, 70, player.chat, "#ffffff");
     }
