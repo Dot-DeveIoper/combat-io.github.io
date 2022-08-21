@@ -732,6 +732,8 @@
                 player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
+              player.xVel += pushVelX;
+              player.yVel += pushVelY;
             }
           });
         }
