@@ -21,7 +21,7 @@
   let leaderboardScores = document.querySelector(".leaderboardScores");
 
     var YTofDay = document.getElementById("YTofDay");
-    var ot = [{
+    var Youtubers = [{
         name: "Dot",
         link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q"
     }, {
@@ -34,19 +34,7 @@
         name: "Assasin_blaze?",
         link: "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ"
     }];
-    var creator = ot[Math.floor(Math.random() * (ot.length - 1 - 0 + 1)) + 0];
-  var YTcreator = [
-    "Dot",
-    "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
-    "x_X NOOB X_x",
-    "https://www.youtube.com/c/xXNOOBXx",
-    "AFK",
-    "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g",
-    "Assasin_blaze?",
-    "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ",
-  ];
-
-  var p = Math.floor(Math.random() * YTcreator.length);
+    var creator = Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
   function RandomYT() {
       YTofDay.href = creator.link + "?sub_confirmation=1";
       YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
@@ -1357,27 +1345,27 @@
     );
     ctx.fill();
     if (SpawnedOnce == 1) {
-      ctx.fillStyle = "#ff0000";
+      ctx.fillStyle = "#fc5553";
       ctx.beginPath();
-      ctx.arc(
+      ctx.fillText("x",
         minimapOffset + deathLocX,
         +canvas.height - minimapOffset - minimapSize + deathLocY,
-        3,
+        5,
         0,
-        2 * Math.PI
+        5 * Math.PI
       );
       ctx.fill();
       ctx.fillStyle = last2Style;
     }
     if (Base == 1) {
-      ctx.fillStyle = "#00ffff";
+      ctx.fillStyle = "#fff";
       ctx.beginPath();
-      ctx.arc(
+      ctx.fillText("x", baseLocX / o.mapScale * Ne.width, It.y / o.mapScale * Ne.height))
         minimapOffset + baseLocX,
         +canvas.height - minimapOffset - minimapSize + baseLocY,
-        3,
+        5,
         0,
-        2 * Math.PI
+        5 * Math.PI
       );
       ctx.fill();
       ctx.fillStyle = last2Style;
