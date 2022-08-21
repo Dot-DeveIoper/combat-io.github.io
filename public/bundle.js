@@ -20,8 +20,21 @@
 
   let leaderboardScores = document.querySelector(".leaderboardScores");
 
-  let YTofDay = document.getElementById("YTofDay");
-
+    var YTofDay = document.getElementById("YTofDay");
+    var ot = [{
+        name: "Dot",
+        link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q"
+    }, {
+        name: "x_X NOOB X_x",
+        link: "https://www.youtube.com/c/xXNOOBXx"
+    }, {
+        name: "AFK",
+        link: "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g"
+    }, {
+        name: "Assasin_blaze?",
+        link: "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ"
+    }];
+    var creator = ot[Math.floor(Math.random() * (ot.length - 1 - 0 + 1)) + 0];
   var YTcreator = [
     "Dot",
     "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
@@ -35,13 +48,8 @@
 
   var p = Math.floor(Math.random() * YTcreator.length);
   function RandomYT() {
-    if (p % 2 == 0) {
-      YTofDay.href = YTcreator[p + 1] + "?sub_confirmation=1";
-      YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${YTcreator[p]}`;
-    } else {
-      p = Math.floor(Math.random() * YTcreator.length);
-      RandomYT();
-    }
+      YTofDay.href = creator.link + "?sub_confirmation=1";
+      YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
 
