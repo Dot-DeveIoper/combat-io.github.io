@@ -366,7 +366,40 @@
       maxHealth: 200,
     },
   ];
-
+  
+  var Hats = [
+    {
+      name: "Barbarian Hat",
+      id: 1,
+      price: 0,
+    },
+    {
+      name: "Booster Hat",
+      id: 2,
+      price: 1000,
+    },
+    {
+      name: "Soldier Hat",
+      id: 3,
+      price: 4000,
+    },
+    {
+      name: "Fish Hat",
+      id: 4,
+      price: 2500,
+    },
+    {
+      name: "Tank Gear",
+      id: 5,
+      price: 15000,
+    },
+    {
+      name: "Spike Gear",
+      id: 6,
+      price: 15000,
+    },
+  ];
+  
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
     // console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
@@ -918,7 +951,10 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          sendHatData(socket.player, hat)
+          if (socket.player.resources.gold >= Hats[hat - 1].price) {
+            socket.player.resources.gold -= Hats[hat].price;
+            sendHatData(socket.player, hat)
+          }
           break;
         case "33":
           if (typeof msg[1][0] !== 'number' && msg[1][0] !== null) break;
