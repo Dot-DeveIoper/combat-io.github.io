@@ -654,7 +654,7 @@
                 : obj.id == 4
                 ? 60
                 : obj.id == 5
-                ? 50                
+                ? 60                
                 : obj.id == 6
                 ? 50
                 : 0) //obj hit boxes
@@ -662,8 +662,9 @@
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               if (aObj.id === 4) {
-                var pushVelX = Math.cos(pushDir) + 0;
-                var pushVelY = Math.sin(pushDir) + -5;
+                player.movedir = 0;
+               // var pushVelX = Math.cos(pushDir) + 0;
+               // var pushVelY = Math.sin(pushDir) + -5;
               } else {
                 var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
                 var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
