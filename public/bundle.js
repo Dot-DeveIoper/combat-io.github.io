@@ -35,10 +35,6 @@
       link: "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g",
     },
     {
-      name: "Yoshie",
-      link: "https://www.youtube.com/channel/UCy7DlulqJNNaMfxIv4paKDg",
-    },
-    {
       name: "Assasin_blaze?",
       link: "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ",
     },
@@ -106,7 +102,6 @@
     for (let i = 0; i < Hats.length; i++) {
       var HatItems = document.getElementById("HatItems" + [i]);
       HatItems.innerHTML = `
-      <div class="itemContainer">
         <div class="itemsInfo1">
           <img src="${Hats[i].src}" alt="" class="itemImg" />
           <span class="itemName">${Hats[i].name}</span>
@@ -116,7 +111,6 @@
           <span class="itemPrice"></span>
           <a id="EquipGear${[i]}" class="equipItem">Equip</a>
         </div>
-      </div>
     `;
       Hats[i].clicked = false;
       var EquipHat = document.getElementById("EquipGear" + [i]);
