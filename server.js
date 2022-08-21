@@ -523,8 +523,8 @@
           player.y > mapSize - desertHeight - riverHeight &&
           player.y < mapSize - desertHeight
         ) {
-          player.xVel += 0.5;
-          playerSpeed *= 0.3;
+          player.xVel += player.hat == 4 ? 0.1 : 0.5;
+          playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
         }
         if (
           mapSize - player.y - snowHeight &&

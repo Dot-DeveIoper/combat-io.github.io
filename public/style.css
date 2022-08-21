@@ -1323,6 +1323,7 @@ body > #mainMenu {
 .itemInfo {
   color: #ffffff;
   font-size: 1rem;
+  width: 50px;
   font-weight: 400;
   user-select: none;
 }
