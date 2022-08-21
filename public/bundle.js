@@ -75,7 +75,7 @@
         info: "Increase Damage To Objects",
         price: 15000
     }];
-  function hatMenu() {
+  function hatMenu(player) {
   for(let i = 0; i < Hats.length; i++) {
     var HatItems = document.getElementById("HatItems"+[i]);
     HatItems.innerHTML = `
@@ -91,6 +91,14 @@
     `;
     var EquipHat = document.getElementById("EquipGear"+[i]);
       EquipHat.onclick = function() {
+        player == Hats[i].id ? 
+        send([
+          "Hd",
+          [{
+            hat: 0,
+          },
+          ],
+        ]) : 
         send([
           "Hd",
           [{
@@ -101,7 +109,6 @@
       }
     }
   }
-  hatMenu();
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -934,6 +941,7 @@
   }
   function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
+    hatMenu(player);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
