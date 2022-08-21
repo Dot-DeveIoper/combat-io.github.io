@@ -704,8 +704,8 @@
                   );
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
-                  enemy.health -= enemy.hat === 3 ? weapon.damage  - 8 : weapon.damage;
-                  enemy.health -= enemy.hat === 6 ? aObj.damage - 5 : aObj.damage; //hmm
+                  enemy.health -= enemy.hat === 3 ? weapon.damage - 8 : weapon.damage;
+                  player.health -= enemy.hat === 6 ? weapon.damage - 20 : 0; //hmm
                   client.send(
                     encode(["t",[
                         enemy.x + randomInt(-20, 20),
