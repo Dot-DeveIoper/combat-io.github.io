@@ -59,31 +59,23 @@
     }];
   function hatMenu() {
   for(let i = 0; i < Hats.length; i++) {
-    var HatEquip = document.getElementById("hatDisplay"+[i]);
-    var ItemInfo = document.getElementById("ItemInfo"+[i]);
-    var ItemName = document.getElementById("ItemName"+[i]);
-    var ItemSrc = document.getElementById("ItemSrc"+[i]);
-    var HatItems = document.getElementById("HatItems");
+    var HatItems = document.getElementById("HatItems"+[i]);
+    var EquipHat = "EquipHat";
     HatItems.innerHTML = `
         <div class="itemsInfo1">
-          <img id="${Hats[i].src}" src="test" alt="" class="itemImg" />
-          <span id="ItemName" class="itemName">${Hats[i].name}</span>
-          <br><span id="ItemInfo0" class="itemInfo">${Hats[i].info}</span>
+          <img src="${Hats[i].src}" alt="" class="itemImg" />
+          <span class="itemName">${Hats[i].name}</span>
+          <br><span class="itemInfo">${Hats[i].info}</span>
         </div>
         <div class="itemsInfo2">
           <span class="itemPrice"></span>
-          <a id="hatDisplay${[i]}" class="equipItem">Equip</a>
+          <a id="${EquipHat[i]}" class="equipItem">Equip</a>
         </div>
-      </div>
     `;
-    ItemSrc.src = Hats[i].src;
-    ItemName.innerHTML = Hats[i].name;
-    ItemInfo.innerHTML = Hats[i].info;
-    HatEquip.onclick = function() {
-      send(["Hd",[{hat: Hats[i].id,}]]);
+      document.getElementById("EquipHat").onclick = function() {
+        send(["Hd",[{hat: Hats[i].id,}]]);
+      }
     }
-    }
-    //ItemName.innerHTML = Hats.price;
   }
   hatMenu();
 
