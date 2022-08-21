@@ -54,7 +54,6 @@
       id: 1,
       info: "Free Hat",
       clicked: false,
-      price: 0,
     },
     {
       name: "Booster Hat",
@@ -62,7 +61,6 @@
       id: 2,
       info: "Increase Speed",
       clicked: false,
-      price: 1000,
     },
     {
       name: "Soldier Hat",
@@ -70,7 +68,6 @@
       id: 3,
       info: "Increase Health",
       clicked: false,
-      price: 4000,
     },
     {
       name: "Fish Hat",
@@ -78,7 +75,6 @@
       id: 4,
       info: "Advanced Swimmer",
       clicked: false,
-      price: 2500,
     },
     {
       name: "Tank Gear",
@@ -86,7 +82,6 @@
       id: 5,
       info: "Increase Damage To Objects",
       clicked: false,
-      price: 15000,
     },
     {
       name: "Spike Gear",
@@ -94,10 +89,9 @@
       id: 6,
       info: "Deals damage to enemy when hit",
       clicked: false,
-      price: 15000,
     },
   ];
-  
+
   function hatMenu(player) {
     for (let i = 0; i < Hats.length; i++) {
       var HatItems = document.getElementById("HatItems" + [i]);
@@ -127,11 +121,11 @@
         if (Hats[i].clicked === false) {
           for (let i = 0; i < Hats.length; i++) {
             document.getElementById("EquipGear" + i).innerHTML = "Equip";
-          }        
+          }
         } else {
           for (let i = 0; i < Hats.length; i++) {
             document.getElementById("EquipGear" + i).innerHTML = "Equip";
-          }   
+          }
           document.getElementById("EquipGear" + i).innerHTML = "Unequip";
         }
       };
@@ -822,7 +816,7 @@
       img: new Image(),
       xOffset: 0,
       yOffset: 0,
-    }
+    },
   ];
 
   weapons.forEach((w) => {
@@ -998,7 +992,7 @@
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);;
+    ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
 
     var hat = hats.find((x) => x.id == player.hat);
@@ -1223,12 +1217,7 @@
         x: animal.x,
         y: animal.y,
       });
-      drawAnimal(
-        rel.x,
-        rel.y,
-        animal.dir,
-        animal.id
-      );
+      drawAnimal(rel.x, rel.y, animal.dir, animal.id);
     });
 
     // objects and stuff
@@ -1506,23 +1495,13 @@
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    if (age < 999 && age != "MAX") {
-      if (ageLevelBar.style.width === "100%" && !ageChange) {
-        ageLevelBar.style.width = "0%";
-        age += 1;
-        myPlayer.xp = 0;
-        ageChange = true;
-        setTimeout(() => {
-          ageChange = false;
-        }, 45000);
-      } else {
-        ageLevelBar.style.width = myPlayer.xp + "%";
-      }
+    if (ageLevelBar.style.width === "100%") {
+      ageLevelBar.style.width = "0%";
+      myPlayer.xp = 0;
     } else {
-      age = "MAX";
-      ageLevelBar.style.width = "100%";
+      ageLevelBar.style.width = myPlayer.xp + "%";
     }
-    ageCounter.innerHTML = age;
+    ageCounter.innerHTML = myPlayer.age;
   }
   function connect() {
     if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {

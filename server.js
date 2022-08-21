@@ -445,6 +445,7 @@
     player.name = name;
     player.sid = player.sid || ++ids;
     player.spawned = true;
+    player.age = 1;
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
@@ -813,6 +814,7 @@
                   ] += weapon.gather;
                   if (player.xp >= 100) {
                     player.xp = 0;
+                    player.age = player.age + 1;
                   } else {
                     player.xp += weapon.gather;
                   }
