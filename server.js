@@ -947,14 +947,19 @@
           }
           var hat;
           try {
-            hat = msg[1][0].hat || 0;
+            hat = msg[1][0].hat || 1;
             hat = hat - 1;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
           if (socket.player.resources.gold >= Hats[hat].price && !Hats[hat].owned) {
             socket.player.resources.gold -= Hats[hat].price;
+            Hats[hat].owned = true;
             sendHatData(socket.player, hat + 1)
+          } else if (Hats[hat].owned) {
+            sendHatData(socket.player, hat + 1)
+          } else if (hat - 1 === 0) {
+            sendHatData(socket.player, hat + 1) 
           }
           break;
         case "33":
