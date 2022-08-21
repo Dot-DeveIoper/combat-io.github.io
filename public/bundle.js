@@ -845,7 +845,6 @@
     ); // og 50 ids: {${player.sid}}
 
     if (player.chat) {
-      
       ctx.textAlign = "center";
       drawText(x, y - 88, 70, player.chat, "#ffffff");
     }
