@@ -489,7 +489,7 @@
         client.send(encode(["x", [objNear]]));
 
         var animalNear = animalsCache.filter(
-          (x) => x && dist(player, x) < renderDistance * 3
+          (x) => x && dist(player, x) < renderDistance
         );
         client.send(encode(["a", [animalNear]]));
       }
