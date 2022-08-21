@@ -676,8 +676,6 @@
                 player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage; //hmm
                 //player.noHurtTime += .2;
               }
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
             }
           });
         }
@@ -983,7 +981,7 @@
         var e = msg[1][0];
         var BadWords = ["fuck", "shit", "bitch"];
         for(let words = 0; words < BadWords.length; words++) {
-          e.replace(BadWords[words], "NaughtyWord")
+          e.replaceAll(BadWords[words], "NaughtyWord")
         }
         socket.player.chat = e.slice(0, 30);
         clearTimeout(chatMessages[socket.player.sid])
@@ -1066,7 +1064,11 @@
         case "s":
           var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
+          if(socket.player.weapon == id) {
+            socket.player.weapon = 0;
+          }else{
             socket.player.weapon = id;
+          }
           }
           break;
         default:
