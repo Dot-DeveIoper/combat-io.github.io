@@ -1524,6 +1524,15 @@ body > #mainMenu {
   .itemsInfo2 {
     margin-right: 0;
   }
+  .itemName {
+    font-size: 0.8rem;
+  }
+  .itemInfo {
+    font-size: 0.8rem;
+  }
+  .itemPrice {
+    font-size: 0.9rem;
+  }
   .teamSection {
     width: 325px;
   }
