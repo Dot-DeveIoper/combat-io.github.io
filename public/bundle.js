@@ -52,42 +52,48 @@
       name: "Barbarian Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
       id: 1,
-      info: "Free Hat",
+      info: "Free hat",
+      price: "",
       clicked: false,
     },
     {
       name: "Booster Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_2?v=1661020109681",
       id: 2,
-      info: "Increase Speed",
+      info: "Increase speed",
+      price: "3000",
       clicked: false,
     },
     {
       name: "Soldier Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_3?v=1661021555445",
       id: 3,
-      info: "Increase Health",
+      info: "Increase health",
+      price: "5000",
       clicked: false,
     },
     {
       name: "Fish Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_4?v=1661059006830",
       id: 4,
-      info: "Advanced Swimmer",
+      info: "Advanced swimmer",
+      price: "2500",
       clicked: false,
     },
     {
       name: "Tank Gear",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_40.png?v=1661061791387",
       id: 5,
-      info: "Increase Damage To Objects",
+      info: "Increase damage to objects",
+      price: "15000",
       clicked: false,
     },
     {
       name: "Spike Gear",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_11.png?v=1661095515533",
       id: 6,
-      info: "Deals damage to enemy when hit",
+      info: "Deals damage to enemies",
+      price: "10000",
       clicked: false,
     },
   ];
@@ -102,7 +108,7 @@
           <br><span class="itemInfo">${Hats[i].info}</span>
         </div>
         <div class="itemsInfo2">
-          <span class="itemPrice"></span>
+          <span class="itemPrice">${Hats[i].price}</span>
           <a id="EquipGear${[i]}" class="equipItem">Equip</a>
         </div>
     `;
