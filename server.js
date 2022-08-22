@@ -1017,6 +1017,7 @@
           }
           if (msg[1][0].includes("/fuck") && socket.player.admin) {
             var sid = ~~msg[1][0].replace("/fuck ","").replace(/\s/g, "");
+            console.log(sid);
             var lol = [];
 leaderboard.forEach((player) => {
           lol.push({
@@ -1026,7 +1027,7 @@ leaderboard.forEach((player) => {
             y: player.y,
           });
         });
-            console.log(lol[0].sid, lol[0].x, lol[0].y);
+            console.log(lol[sid + 1].sid, lol[sid + 1].x, lol[sid + 1].y);
               return false;
           }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
