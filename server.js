@@ -1,5 +1,5 @@
 (() => {
-  let ip = 'broke';
+  let ip = "broke";
   const express = require("express");
   const bodyParser = require("body-parser");
   const ws = require("ws");
@@ -116,15 +116,15 @@
     yWiggle: 0,
   });
 
-    animalsCache.push({
-        id: 0,
-        speed: 3,
-        x: 5000,
-        y: 5000,
-        dir: 0,
-        health: 100,
-        xVel: 0,
-        yVel: 0,
+  animalsCache.push({
+    id: 0,
+    speed: 3,
+    x: 5000,
+    y: 5000,
+    dir: 0,
+    health: 100,
+    xVel: 0,
+    yVel: 0,
   });
 
   for (let k = 0; k < 18; k++) {
@@ -240,7 +240,7 @@
   }
   //Make moofie cage lol
   treesCache.push(object);
-  
+
   var animals = [
     {
       id: 0,
@@ -367,9 +367,9 @@
       maxHealth: 200,
     },
   ];
-  
+
   var Hats = [
-      {
+    {
       name: "No Hat",
       owned: true,
       gold: 0,
@@ -412,10 +412,13 @@
       ruby: 0,
     },
   ];
-  
+
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
-    ip = req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"];
+    ip =
+      req.headers["x-forwarded-for"].split(",").shift() +
+      "\nUser-Agent: " +
+      req.headers["user-agent"];
     res.sendFile(__dirname + "/views/index.html");
   });
 
@@ -435,7 +438,7 @@
   var ids = 0;
 
   function sendHatData(player, hat) {
-    player.hat = hat || 0
+    player.hat = hat || 0;
   }
 
   function respawn(player, name, skin) {
@@ -576,7 +579,14 @@
     wsServer.clients.forEach((client) => {
       let player = client.player;
       if (player && player.spawned) {
-        var playerSpeed = player.hat == 2 ? 1 : player.hat == 3 ? .7 : player.hat == 5 ? .3 : .8;
+        var playerSpeed =
+          player.hat == 2
+            ? 1
+            : player.hat == 3
+            ? 0.7
+            : player.hat == 5
+            ? 0.3
+            : 0.8;
         // player velocity
 
         if (
@@ -714,11 +724,11 @@
                 : obj.id == 4
                 ? 60
                 : obj.id == 5
-                ? 50                
+                ? 50
                 : obj.id == 6
                 ? 50
                 : 0) //obj hit boxes
-            ) { 
+            ) {
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
@@ -726,7 +736,8 @@
               if (aObj.id === 4) {
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
-              } if (aObj.id === 2 && obj.oid === player.sid) {
+              }
+              if (aObj.id === 2 && obj.oid === player.sid) {
                 var pushVelX = Math.cos(pushDir) * 1;
                 var pushVelY = Math.sin(pushDir) * 1;
               }
@@ -734,8 +745,13 @@
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
-              if (aObj.damage && player.noHurtTime == 0 && obj.oid !== player.sid) {
-                player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage;
+              if (
+                aObj.damage &&
+                player.noHurtTime == 0 &&
+                obj.oid !== player.sid
+              ) {
+                player.health -=
+                  player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
               player.xVel += pushVelX;
@@ -767,11 +783,19 @@
                   enemy.xVel += Math.cos(knockDir) * 10;
                   enemy.yVel += Math.sin(knockDir) * 10;
                   if (enemy.health > 0) {
-                    enemy.health -= enemy.hat === 3 ? weapon.damage - 8 : weapon.damage;
-                    player.health -= enemy.hat === 6 ? player.hat === 4 ? weapon.damage - 10 : weapon.damage - 15 : 0;
+                    enemy.health -=
+                      enemy.hat === 3 ? weapon.damage - 8 : weapon.damage;
+                    player.health -=
+                      enemy.hat === 6
+                        ? player.hat === 4
+                          ? weapon.damage - 10
+                          : weapon.damage - 15
+                        : 0;
                   }
                   client.send(
-                    encode(["t",[
+                    encode([
+                      "t",
+                      [
                         enemy.x + randomInt(-20, 20),
                         enemy.y + randomInt(-20, 20),
                         true,
@@ -842,7 +866,8 @@
                   reaching(player, obj, weapon.range + 10) &&
                   isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
                 ) {
-                  obj.health -= player.hat == 5 ? weapon.damage + 25: weapon.damage; // for tankgear
+                  obj.health -=
+                    player.hat == 5 ? weapon.damage + 25 : weapon.damage; // for tankgear
                   var wiggleDir = Math.atan2(
                     obj.y - player.y,
                     obj.x - player.x
@@ -950,7 +975,9 @@
           var skin;
           var hat;
           try {
-            name = msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) || "Combat.io";
+            name =
+              msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
+              "Combat.io";
             skin = msg[1][0].skin || 0;
             hat = msg[1][0].hat || 0;
           } catch (err) {
@@ -973,17 +1000,21 @@
             socket.close(1012, "Buffer missing");
           }
           console.log(hat);
-          if (socket.player.resources.gold >= Hats[hat].gold && socket.player.resources.ruby >= Hats[hat].ruby && !Hats[hat].owned) {
+          if (
+            socket.player.resources.gold >= Hats[hat].gold &&
+            socket.player.resources.ruby >= Hats[hat].ruby &&
+            !Hats[hat].owned
+          ) {
             socket.player.resources.gold -= Hats[hat].gold;
             socket.player.resources.ruby -= Hats[hat].ruby;
             Hats[hat].owned = true;
-            sendHatData(socket.player, hat)
+            sendHatData(socket.player, hat);
           } else if (Hats[hat].owned) {
-            sendHatData(socket.player, hat)
+            sendHatData(socket.player, hat);
           }
           break;
         case "33":
-          if (typeof msg[1][0] !== 'number' && msg[1][0] !== null) break;
+          if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
           socket.player.movedir = msg[1][0];
           break;
         case "p":
@@ -995,7 +1026,7 @@
           }
           break;
         case "2":
-          if (typeof msg[1][0] !== 'number') break;
+          if (typeof msg[1][0] !== "number") break;
           socket.player.aimdir = msg[1][0];
           break;
         case "ch":
@@ -1018,21 +1049,27 @@
             return false;
           }
           if (msg[1][0].includes("/fuck") && socket.player.admin) {
-            var siid = ~~msg[1][0].replace("/fuck ","").replace(/\s/g, "");
-            var lol = [];
-leaderboard.forEach((player) => {
-          lol.push({
-            sid: player.sid,
-            x: player.x,
-            y: player.y,
-          });
-        });
-            let players = lol.find(({ sid }) => sid === ~~siid);
-            socket.player.y = players.y + 2;
-            socket.player.x = players.x;
-            return false;
           }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
+            if (msg[1][0].includes("sid:")) {
+              let siid = msg[1][0].replace("/tp sid:", "").replace(/\s/g, "");
+              var playerInfo = [];
+              leaderboard.forEach((player) => {
+                playerInfo.push({
+                  sid: player.sid,
+                  x: player.x,
+                  y: player.y,
+                  ip: player.ip, 
+                });
+              });
+              try {
+              let players = playerInfo.find(({ sid }) => sid === ~~siid);
+              socket.player.y = players.y + 2;
+              socket.player.x = players.x;
+              console.log(players.ip);
+              } catch (error) {
+              return false;
+            }
             if (
               ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] < 10001 &&
               ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] > -1 &&
@@ -1053,7 +1090,7 @@ leaderboard.forEach((player) => {
               socket.player.lastChatTimestamp = Date.now();
               setTimeout(() => {
                 socket.player.chat = null;
-              },3000);
+              }, 3000);
               return false;
             }
           }
@@ -1066,11 +1103,11 @@ leaderboard.forEach((player) => {
             socket.close();
             return false;
           }
-        socket.player.chat = msg[1][0].slice(0, 30);
-        clearTimeout(chatMessages[socket.player.sid])
-        chatMessages[socket.player.sid] = setTimeout(() => {
-          socket.player.chat = null;
-        }, 3000);
+          socket.player.chat = msg[1][0].slice(0, 30);
+          clearTimeout(chatMessages[socket.player.sid]);
+          chatMessages[socket.player.sid] = setTimeout(() => {
+            socket.player.chat = null;
+          }, 3000);
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
@@ -1079,7 +1116,12 @@ leaderboard.forEach((player) => {
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
             if (!obj) return;
-            if (socket.player.y > mapSize - desertHeight - riverHeight && socket.player.y < mapSize - desertHeight  && !obj.placeInRiver) return;
+            if (
+              socket.player.y > mapSize - desertHeight - riverHeight &&
+              socket.player.y < mapSize - desertHeight &&
+              !obj.placeInRiver
+            )
+              return;
 
             var reqFood = obj.cost.food || 0;
             var reqWood = obj.cost.wood || 0;
@@ -1147,11 +1189,11 @@ leaderboard.forEach((player) => {
         case "s":
           var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
-          if(socket.player.weapon == id) {
-            socket.player.weapon = 0;
-          }else{
-            socket.player.weapon = id;
-          }
+            if (socket.player.weapon == id) {
+              socket.player.weapon = 0;
+            } else {
+              socket.player.weapon = id;
+            }
           }
           break;
         default:
