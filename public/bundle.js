@@ -755,14 +755,6 @@
     },
   ];
 
-  var WallTop = new Image();
-  WallTop.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/imgonline-com-ua-tile-dL6QNdG65VSS3U.png?v=1659628448349";
-
-  var WallRight = new Image();
-  WallRight.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Wall_Horizontal.png?v=1659568444068";
-
   var objects = [
     {
       id: 2,
@@ -1290,42 +1282,6 @@
       canvas.width,
       canvas.height
     );
-
-    //     //Bottom border wall
-    //     ctx.drawImage(WallTop,
-    //       canvas.width / 2 - myPlayer.x,
-    //       mapSize - myPlayer.y + canvas.height / 2,
-    //       mapSize,
-    //       200
-    //       );
-
-    //     //top border wall
-    //     ctx.drawImage(WallTop,
-    //       canvas.width / 2 - myPlayer.x,
-    //       canvas.height / 2 - myPlayer.y - 178,
-    //       mapSize,
-    //       200
-    //       );
-
-    //     //left border wall
-    //       ctx.drawImage(WallRight,
-    //       canvas.width / 2 - myPlayer.x - 200,
-    //       canvas.height / 2 - myPlayer.y,
-    //       200,
-    //       mapSize
-    //       );
-
-    //     //right border wall
-    //     ctx.drawImage(WallRight,
-    //       canvas.width / 2 - myPlayer.x + mapSize - 20,
-    //       canvas.height / 2 - myPlayer.y,
-    //       200,
-    //       mapSize
-    //       );
-
-    /* info = `${ping}ms`;
-    drawText(100, 50, 30, info); */
-
     if (myPlayer.admin) {
       info = `${ping}ms`;
       drawText(100, 50, 30, info);
