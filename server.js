@@ -15,7 +15,11 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-
+  
+  var Banned = [
+    "100.16.168.92",
+  ]
+  
   var users = [];
 
   function radToDeg(radians) {
@@ -989,6 +993,11 @@
             players.push(socket.player);
           socket.send(encode(["1", [socket.player.sid]]));
           socket.send(encode(["w", [socket.player.weapons]]));
+          for (let i = 0; i < Banned.length; i++) {
+            if (socket.player.ip.includes(Banned[i])) {
+              socket.close(1012, "You are banned.");
+            }
+          }
           break;
         case "Hd":
           if (!msg[1][0]) {
@@ -1017,9 +1026,6 @@
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
           socket.player.movedir = msg[1][0];
-          if (socket.player.ip.includes('100.16.168.92')) {
-            socket.close(1012, "You are banned.");
-          }
           break;
         case "p":
           socket.send(encode(["p", []]));
