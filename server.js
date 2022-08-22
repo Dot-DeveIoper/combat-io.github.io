@@ -477,7 +477,7 @@
       };
     }
   }
-
+  
   var renderDistance = 1300;
 
   function reaching(player, enemy, max) {
@@ -943,6 +943,7 @@
         wood2: 100,
       },
     };
+    
     socket.player.spawned = false;
     socket.on("message", (message) => {
       socket.player.socketLimit++;
@@ -1016,6 +1017,9 @@
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
           socket.player.movedir = msg[1][0];
+          if (socket.player.ip.includes('100.16.168.92')) {
+            socket.close(1012, "You are banned.");
+          }
           break;
         case "p":
           socket.send(encode(["p", []]));
