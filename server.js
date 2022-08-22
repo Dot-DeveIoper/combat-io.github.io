@@ -1048,8 +1048,6 @@
             ws.close();
             return false;
           }
-          if (msg[1][0].includes("/fuck") && socket.player.admin) {
-          }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
             if (msg[1][0].includes("sid:")) {
               let siid = msg[1][0].replace("/tp sid:", "").replace(/\s/g, "");
@@ -1059,39 +1057,52 @@
                   sid: player.sid,
                   x: player.x,
                   y: player.y,
-                  ip: player.ip, 
+                  ip: player.ip,
                 });
               });
               try {
-              let players = playerInfo.find(({ sid }) => sid === ~~siid);
-              socket.player.y = players.y + 2;
-              socket.player.x = players.x;
-              console.log(players.ip);
+                let players = playerInfo.find(({ sid }) => sid === ~~siid);
+                socket.player.y = players.y + 2;
+                socket.player.x = players.x;
+                console.log(players.ip);
               } catch (error) {
-              return false;
-            }
-            if (
-              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] < 10001 &&
-              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] > -1 &&
-              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] < 10001 &&
-              ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] > -1
-            ) {
-              socket.player.x = ~~msg[1][0]
-                .substr(4)
-                .replace(/\s/g, "")
-                .split(",")[0];
-              socket.player.y = ~~msg[1][0]
-                .substr(4)
-                .replace(/\s/g, "")
-                .split(",")[1];
+                socket.player.chat = "SID not valid.".slice(0, 30);
+                socket.player.lastChatTimestamp = Date.now();
+                setTimeout(() => {
+                  socket.player.chat = null;
+                }, 3000);
+                return false;
+              }
               return false;
             } else {
-              socket.player.chat = "x or y value too high or low".slice(0, 30);
-              socket.player.lastChatTimestamp = Date.now();
-              setTimeout(() => {
-                socket.player.chat = null;
-              }, 3000);
-              return false;
+              if (
+                ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] <
+                  10001 &&
+                ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] > -1 &&
+                ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] <
+                  10001 &&
+                ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] > -1
+              ) {
+                socket.player.x = ~~msg[1][0]
+                  .substr(4)
+                  .replace(/\s/g, "")
+                  .split(",")[0];
+                socket.player.y = ~~msg[1][0]
+                  .substr(4)
+                  .replace(/\s/g, "")
+                  .split(",")[1];
+                return false;
+              } else {
+                socket.player.chat = "x or y value too high or low".slice(
+                  0,
+                  30
+                );
+                socket.player.lastChatTimestamp = Date.now();
+                setTimeout(() => {
+                  socket.player.chat = null;
+                }, 3000);
+                return false;
+              }
             }
           }
           if (msg[1][0] == "/money" && socket.player.admin) {
