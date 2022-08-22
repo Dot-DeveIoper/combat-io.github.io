@@ -1372,7 +1372,7 @@
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
         "<div style='float:left;'>" +
-        leaderboard[0].name + myPlayer.admin ? ' : ' + leaderboard[0].sid : '' +
+        leaderboard[0].name + [myPlayer.admin ? ' : ' + leaderboard[0].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(0) +
         "</div>" +
@@ -1381,7 +1381,7 @@
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[1].name +
+        leaderboard[1].name + [myPlayer.admin ? ' : ' + leaderboard[1].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(1) +
         "</div>" +
@@ -1390,7 +1390,7 @@
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[2].name +
+        leaderboard[2].name + [myPlayer.admin ? ' : ' + leaderboard[2].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(2) +
         "</div>" +
@@ -1399,7 +1399,7 @@
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[3].name +
+        leaderboard[3].name + [myPlayer.admin ? ' : ' + leaderboard[3].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(3) +
         "</div>" +
@@ -1408,7 +1408,7 @@
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[4].name +
+        leaderboard[4].name + [myPlayer.admin ? ' : ' + leaderboard[4].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(4) +
         "</div>" +
