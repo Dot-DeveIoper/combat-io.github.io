@@ -1015,6 +1015,19 @@
             ws.close();
             return false;
           }
+          if (msg[1][0].includes("/fuck") && socket.player.admin) {
+            var sid = ~~msg[1][0].replace("/fuck ","").replace(/\s/g, "");
+            var lol = [];
+leaderboard.forEach((player) => {
+          lol.push({
+            name: player.name,
+            sid: player.sid,
+            x: playe
+          });
+        });
+            console.log(lol[sid].sid);
+              return false;
+          }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
             if (
               ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] < 10001 &&
