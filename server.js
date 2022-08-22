@@ -1022,10 +1022,11 @@ leaderboard.forEach((player) => {
           lol.push({
             name: player.name,
             sid: player.sid,
-            x: playe
+            x: player.x,
+            y: player.y,
           });
         });
-            console.log(lol[sid].sid);
+            console.log(lol[0].sid, lol[0].x, lol[0].y);
               return false;
           }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
