@@ -1,4 +1,5 @@
 (() => {
+  let ip = 'broke';
   const express = require("express");
   const bodyParser = require("body-parser");
   const ws = require("ws");
@@ -414,7 +415,7 @@
   
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
-    // console.log("New user! IP: " +req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"]);
+    ip = req.headers["x-forwarded-for"].split(",").shift() +"\nUser-Agent: " +req.headers["user-agent"];
     res.sendFile(__dirname + "/views/index.html");
   });
 
@@ -443,6 +444,7 @@
     player.noHurtTime = 200;
     player.skin = skin || 0;
     player.name = name;
+    player.ip = ip;
     player.sid = player.sid || ++ids;
     player.spawned = true;
     player.age = 1;
@@ -1017,19 +1019,17 @@
           }
           if (msg[1][0].includes("/fuck") && socket.player.admin) {
             var siid = ~~msg[1][0].replace("/fuck ","").replace(/\s/g, "");
-            console.log(siid);
             var lol = [];
 leaderboard.forEach((player) => {
           lol.push({
-            name: player.name,
             sid: player.sid,
             x: player.x,
             y: player.y,
           });
         });
-            const shit = lol.find(({ sid }) => sid === ~~siid);
-            socket.player.y = shit.y + 2;
-            socket.player.x = shit.x;
+            let players = lol.find(({ sid }) => sid === ~~siid);
+            socket.player.y = players.y + 2;
+            socket.player.x = players.x;
             return false;
           }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
