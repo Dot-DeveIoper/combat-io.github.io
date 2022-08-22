@@ -1067,7 +1067,7 @@
               });
               try {
                 let players = playerInfo.find(({ sid }) => sid === ~~siid);
-                console.log(socket.player.name + " requested ban of IP: " + players.ip + ", Name: " + players.name)
+                console.log(socket.player.name + " requested ban of player: " + players.name + "; IP: " + players.ip);
               } catch (error) {
                 socket.player.chat = "SID not valid.".slice(0, 30);
                 socket.player.lastChatTimestamp = Date.now();
