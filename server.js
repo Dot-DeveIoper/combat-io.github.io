@@ -507,6 +507,7 @@
         leaderboard.forEach((player) => {
           formattedLeaderboard.push({
             name: player.name,
+            sid: player.sid,
             gold: player.resources.gold,
           });
         });

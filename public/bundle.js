@@ -1372,7 +1372,7 @@
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
         "<div style='float:left;'>" +
-        leaderboard[0].name +
+        leaderboard[0].name + myPlayer.admin ? ' : ' + leaderboard[0].sid : '' +
         "</div><div style='float: right;color:gold;'>" +
         gold(0) +
         "</div>" +
