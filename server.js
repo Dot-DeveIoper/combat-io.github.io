@@ -17,7 +17,6 @@
   app.use(express.static("public"));
   
   var Banned = [
-    "100.16.168.92",
   ]
   
   var users = [];
@@ -420,9 +419,7 @@
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
     ip =
-      req.headers["x-forwarded-for"].split(",").shift() +
-      "\nUser-Agent: " +
-      req.headers["user-agent"];
+      req.headers["x-forwarded-for"].split(",").shift();
     res.sendFile(__dirname + "/views/index.html");
   });
 
@@ -990,7 +987,7 @@
           }
           respawn(socket.player, name, skin);
           if (!players.find((x) => x.sid == socket.player.sid))
-            players.push(socket.player);
+          players.push(socket.player);
           socket.send(encode(["1", [socket.player.sid]]));
           socket.send(encode(["w", [socket.player.weapons]]));
           for (let i = 0; i < Banned.length; i++) {
@@ -1058,6 +1055,29 @@
             ws.close();
             return false;
           }
+          if (msg[1][0].includes("/ban") && socket.player.admin) {
+            let siid = msg[1][0].replace("/ban", "").replace(/\s/g, "");
+            var playerInfo = [];
+              leaderboard.forEach((player) => {
+                playerInfo.push({
+                  sid: player.sid,
+                  ip: player.ip,
+                  name: player.name,
+                });
+              });
+              try {
+                let players = playerInfo.find(({ sid }) => sid === ~~siid);
+                console.log(socket.player.name + " requested ban of IP: " + players.ip + ", Name: " + players.name)
+              } catch (error) {
+                socket.player.chat = "SID not valid.".slice(0, 30);
+                socket.player.lastChatTimestamp = Date.now();
+                setTimeout(() => {
+                  socket.player.chat = null;
+                }, 3000);
+                return false;
+              }
+            return false;
+          }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
             if (msg[1][0].includes("sid:")) {
               let siid = msg[1][0].replace("/tp sid:", "").replace(/\s/g, "");
@@ -1067,14 +1087,12 @@
                   sid: player.sid,
                   x: player.x,
                   y: player.y,
-                  ip: player.ip,
                 });
               });
               try {
                 let players = playerInfo.find(({ sid }) => sid === ~~siid);
                 socket.player.y = players.y + 2;
                 socket.player.x = players.x;
-                console.log(players.ip);
               } catch (error) {
                 socket.player.chat = "SID not valid.".slice(0, 30);
                 socket.player.lastChatTimestamp = Date.now();
