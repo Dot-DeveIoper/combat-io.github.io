@@ -292,7 +292,8 @@ body {
 @media only screen and (max-width: 768px) {
   #YTofDayContainer {
     text-align: inherit;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
+    /* padding-bottom: 4px; */
     margin-bottom: 0;
     margin-left: 0;
     top: 10px;
