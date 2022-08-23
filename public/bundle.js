@@ -451,7 +451,7 @@
       }
     }
   };
-
+ 
   var riverBubbles = [];
   let players = [];
   let myPlayer = {};
@@ -1908,3 +1908,5 @@
   });
   connect();
 })();
+
+if "chatbox" value = !Kick 
