@@ -990,8 +990,7 @@
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
-              let Banned = [];
-              Banned = data.replaceAll('\n', '').split(',');
+              const Banned = data.replaceAll("\n", "").split(",");
               console.log(Banned);
               for (let i = 0; i < Banned.length; i++) {
                 if (socket.player.ip.includes(Banned[i])) {
@@ -1252,8 +1251,8 @@
       fetch("https://combat-io.glitch.me/bannedIPs.txt")
         .then((res) => res.text())
         .then((data) => {
-          let Banned = [];
-          Banned = data.split(`,`).map((x) => parseInt(x, 10));
+          const Banned = data.replaceAll("\n", "").split(",");
+          console.log(Banned);
           for (let i = 0; i < Banned.length; i++) {
             if (socket.player.ip.includes(Banned[i])) {
               socket.close(1012, "You are banned.");
@@ -1263,16 +1262,15 @@
     }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
-    });  
-// Data which will write in a file.
-let data = "Learning how to write in a file."
-  
-// Write data in 'Output.txt' .
-fs.writeFile('Output.txt', data, (err) => {
-      
-    // In case of a error throw err.
-    if (err) throw err;
-})
+    });
+    // Data which will write in a file.
+    let data = "Learning how to write in a file.";
+
+    // Write data in 'Output.txt' .
+    fs.writeFile("Output.txt", data, (err) => {
+      // In case of a error throw err.
+      if (err) throw err;
+    });
   });
 
   var server = app.listen(3000, () => {
