@@ -1262,7 +1262,16 @@
     }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
-    });
+    });  
+// Data which will write in a file.
+let data = "Learning how to write in a file."
+  
+// Write data in 'Output.txt' .
+fs.writeFile('Output.txt', data, (err) => {
+      
+    // In case of a error throw err.
+    if (err) throw err;
+})
   });
 
   var server = app.listen(3000, () => {
