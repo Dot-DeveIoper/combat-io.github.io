@@ -987,13 +987,11 @@
             players.push(socket.player);
           socket.send(encode(["1", [socket.player.sid]]));
           socket.send(encode(["w", [socket.player.weapons]]));
-          fetch("https://combat-io.glitch.me/banned.txt")
+          fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
-            console.log(data);
               let Banned = [];
-              Banned.push(data);
-              console.log(Banned);
+              Banned = data.split(`,`).map((x) => parseInt(x, 10));
               for (let i = 0; i < Banned.length; i++) {
                 if (socket.player.ip.includes(Banned[i])) {
                   socket.close(1012, "You are banned.");
@@ -1011,7 +1009,6 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          console.log(hat);
           if (
             socket.player.resources.gold >= Hats[hat].gold &&
             socket.player.resources.ruby >= Hats[hat].ruby &&
@@ -1027,6 +1024,17 @@
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
+          fetch("https://combat-io.glitch.me/bannedIPs.txt")
+            .then((res) => res.text())
+            .then((data) => {
+              let Banned = [];
+              Banned = data.split(`,`).map((x) => parseInt(x, 10));
+              for (let i = 0; i < Banned.length; i++) {
+                if (socket.player.ip.includes(Banned[i])) {
+                  socket.close(1012, "You are banned.");
+                }
+              }
+            });
           socket.player.movedir = msg[1][0];
           break;
         case "p":
