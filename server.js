@@ -995,11 +995,6 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          respawn(socket.player, name, skin);
-          if (!players.find((x) => x.sid == socket.player.sid))
-            players.push(socket.player);
-          socket.send(encode(["1", [socket.player.sid]]));
-          socket.send(encode(["w", [socket.player.weapons]]));
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
@@ -1009,12 +1004,17 @@
                 .filter(function (e) {
                   return e;
                 });
-              for (let i = 0; i < Banned.length - 1; i++) {
+              for (let i = 0; i < Banned.length; i++) {
                 if (socket.player.ip === Banned[i]) {
                   socket.close(1012, "You are banned.");
                 }
               }
             });
+          respawn(socket.player, name, skin);
+          if (!players.find((x) => x.sid == socket.player.sid))
+            players.push(socket.player);
+          socket.send(encode(["1", [socket.player.sid]]));
+          socket.send(encode(["w", [socket.player.weapons]]));
           break;
         case "Hd":
           if (!msg[1][0]) {
