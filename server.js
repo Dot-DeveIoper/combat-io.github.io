@@ -1248,17 +1248,17 @@
       }
     });
     setInterval(() => {
-          fetch("https://combat-io.glitch.me/bannedIPs.txt")
-            .then((res) => res.text())
-            .then((data) => {
-              let Banned = [];
-              Banned = data.split(`,`).map((x) => parseInt(x, 10));
-              for (let i = 0; i < Banned.length; i++) {
-                if (socket.player.ip.includes(Banned[i])) {
-                  socket.close(1012, "You are banned.");
-                }
-              }
-            });
+      fetch("https://combat-io.glitch.me/bannedIPs.txt")
+        .then((res) => res.text())
+        .then((data) => {
+          let Banned = [];
+          Banned = data.split(`,`).map((x) => parseInt(x, 10));
+          for (let i = 0; i < Banned.length; i++) {
+            if (socket.player.ip.includes(Banned[i])) {
+              socket.close(1012, "You are banned.");
+            }
+          }
+        });
     }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
