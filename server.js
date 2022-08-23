@@ -20,9 +20,9 @@
   var Banned = [
   ];
   
-  fetch("https://combat-io.glitch.me/terms.txt")
+  fetch("https://combat-io.glitch.me/ban.txt")
    .then(res => res.text())
-   .then(data => Banned = data)
+   .then(data => Banned.push(data))
   
   console.log(Banned);
   var users = [];
