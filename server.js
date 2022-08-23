@@ -7,6 +7,7 @@
   const fs = require("fs");
   const fetch = require("node-fetch");
   const { encode, decode } = require("@msgpack/msgpack");
+
   app.use(
     bodyParser.urlencoded({
       extended: true,
@@ -15,10 +16,15 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-  
+    
   var Banned = [
-  ]
+  ];
   
+  fetch("https://combat-io.glitch.me/terms.txt")
+   .then(res => res.text())
+   .then(data => Banned = data)
+  
+  console.log(Banned);
   var users = [];
 
   function radToDeg(radians) {
