@@ -991,7 +991,8 @@
             .then((res) => res.text())
             .then((data) => {
               let Banned = [];
-              Banned = data.split(`,`).map((x) => parseInt(x, 10));
+              Banned = data.replaceAll('\n', '').split(',');
+              console.log(Banned);
               for (let i = 0; i < Banned.length; i++) {
                 if (socket.player.ip.includes(Banned[i])) {
                   socket.close(1012, "You are banned.");
