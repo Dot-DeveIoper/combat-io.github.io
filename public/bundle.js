@@ -1908,5 +1908,3 @@
   });
   connect();
 })();
-
-if "chatbox" value = !Kick 
