@@ -16,15 +16,7 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-    
-  var Banned = [
-  ];
-  
-  fetch("https://combat-io.glitch.me/ban.txt")
-   .then(res => res.text())
-   .then(data => Banned.push(data))
-  
-  console.log(Banned);
+
   var users = [];
 
   function radToDeg(radians) {
@@ -424,8 +416,7 @@
 
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
-    ip =
-      req.headers["x-forwarded-for"].split(",").shift();
+    ip = req.headers["x-forwarded-for"].split(",").shift();
     res.sendFile(__dirname + "/views/index.html");
   });
 
@@ -484,7 +475,7 @@
       };
     }
   }
-  
+
   var renderDistance = 1300;
 
   function reaching(player, enemy, max) {
@@ -950,7 +941,7 @@
         wood2: 100,
       },
     };
-    
+
     socket.player.spawned = false;
     socket.on("message", (message) => {
       socket.player.socketLimit++;
@@ -993,14 +984,22 @@
           }
           respawn(socket.player, name, skin);
           if (!players.find((x) => x.sid == socket.player.sid))
-          players.push(socket.player);
+            players.push(socket.player);
           socket.send(encode(["1", [socket.player.sid]]));
           socket.send(encode(["w", [socket.player.weapons]]));
-          for (let i = 0; i < Banned.length; i++) {
-            if (socket.player.ip.includes(Banned[i])) {
-              socket.close(1012, "You are banned.");
-            }
-          }
+          fetch("https://combat-io.glitch.me/banned.txt")
+            .then((res) => res.text())
+            .then((data) => {
+            console.log(data);
+              let Banned = [];
+              Banned.push(data);
+              console.log(Banned);
+              for (let i = 0; i < Banned.length; i++) {
+                if (socket.player.ip.includes(Banned[i])) {
+                  socket.close(1012, "You are banned.");
+                }
+              }
+            });
           break;
         case "Hd":
           if (!msg[1][0]) {
@@ -1064,24 +1063,30 @@
           if (msg[1][0].includes("/ban") && socket.player.admin) {
             let siid = msg[1][0].replace("/ban", "").replace(/\s/g, "");
             var playerInfo = [];
-              leaderboard.forEach((player) => {
-                playerInfo.push({
-                  sid: player.sid,
-                  ip: player.ip,
-                  name: player.name,
-                });
+            leaderboard.forEach((player) => {
+              playerInfo.push({
+                sid: player.sid,
+                ip: player.ip,
+                name: player.name,
               });
-              try {
-                let players = playerInfo.find(({ sid }) => sid === ~~siid);
-                console.log(socket.player.name + " requested ban of player: " + players.name + "; IP: " + players.ip);
-              } catch (error) {
-                socket.player.chat = "SID not valid.".slice(0, 30);
-                socket.player.lastChatTimestamp = Date.now();
-                setTimeout(() => {
-                  socket.player.chat = null;
-                }, 3000);
-                return false;
-              }
+            });
+            try {
+              let players = playerInfo.find(({ sid }) => sid === ~~siid);
+              console.log(
+                socket.player.name +
+                  " requested ban of player: " +
+                  players.name +
+                  "; IP: " +
+                  players.ip
+              );
+            } catch (error) {
+              socket.player.chat = "SID not valid.".slice(0, 30);
+              socket.player.lastChatTimestamp = Date.now();
+              setTimeout(() => {
+                socket.player.chat = null;
+              }, 3000);
+              return false;
+            }
             return false;
           }
           if (msg[1][0].includes("/tp") && socket.player.admin) {
