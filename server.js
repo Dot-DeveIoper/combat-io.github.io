@@ -992,8 +992,8 @@
             .then((data) => {
               const Banned = data.replaceAll("\n", "").split(",");
               console.log(Banned);
-              for (let i = 0; i < Banned.length; i++) {
-                if (socket.player.ip.includes(Banned[i])) {
+              for (let i = 0; i < Banned.length - 1; i++) {
+                if (socket.player.ip = Banned[i]) {
                   socket.close(1012, "You are banned.");
                 }
               }
@@ -1069,13 +1069,14 @@
             });
             try {
               let players = playerInfo.find(({ sid }) => sid === ~~siid);
-              console.log(
-                socket.player.name +
-                  " requested ban of player: " +
-                  players.name +
-                  "; IP: " +
-                  players.ip
-              );
+                   fetch("https://combat-io.glitch.me/bannedIPs.txt")
+        .then((res) => res.text())
+        .then((data) => {   
+var datax = data + "\n" + players.ip + ",";
+fs.writeFile('./public/bannedIPs.txt', datax, (err) => {
+    if (err) throw err;
+})
+                   });
             } catch (error) {
               socket.player.chat = "SID not valid.".slice(0, 30);
               socket.player.lastChatTimestamp = Date.now();
@@ -1253,8 +1254,8 @@
         .then((data) => {
           const Banned = data.replaceAll("\n", "").split(",");
           console.log(Banned);
-          for (let i = 0; i < Banned.length; i++) {
-            if (socket.player.ip.includes(Banned[i])) {
+          for (let i = 0; i < Banned.length - 1; i++) {
+            if (socket.player.ip = Banned[i]) {
               socket.close(1012, "You are banned.");
             }
           }
@@ -1271,16 +1272,6 @@
       // In case of a error throw err.
       if (err) throw err;
     });
-  
-// Data which will write in a file.
-let datax = "Learning how to write in a file.";
-  
-// Write data in 'Output.txt' .
-fs.writeFile('./public/Output.txt', data, (err) => {
-      
-    // In case of a error throw err.
-    if (err) throw err;
-})
   });
 
   var server = app.listen(3000, () => {
