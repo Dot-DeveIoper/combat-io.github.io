@@ -1102,6 +1102,18 @@
                         }
                         return false;
                     }
+                    if (msg[1][0].includes("/unban") && socket.player.admin) {
+                        let siid = msg[1][0].replace("/unban", "").replace(/\s/g, "");
+                            fetch("https://combat-io.glitch.me/bannedIPs.txt")
+                                .then((res) => res.text())
+                                .then((data) => {
+                                    var datax = data.replace("\n" + players.ip + ",", "");
+                                    fs.writeFile('./public/bannedIPs.txt', datax, (err) => {
+                                        if (err) throw err;
+                                    })
+                                });
+                        return false;
+                    }
                     if (msg[1][0].includes("/tp") && socket.player.admin) {
                         if (msg[1][0].includes("sid:")) {
                             let siid = msg[1][0].replace("/tp sid:", "").replace(/\s/g, "");
