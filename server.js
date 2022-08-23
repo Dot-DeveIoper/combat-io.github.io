@@ -1024,17 +1024,6 @@
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
-          fetch("https://combat-io.glitch.me/bannedIPs.txt")
-            .then((res) => res.text())
-            .then((data) => {
-              let Banned = [];
-              Banned = data.split(`,`).map((x) => parseInt(x, 10));
-              for (let i = 0; i < Banned.length; i++) {
-                if (socket.player.ip.includes(Banned[i])) {
-                  socket.close(1012, "You are banned.");
-                }
-              }
-            });
           socket.player.movedir = msg[1][0];
           break;
         case "p":
@@ -1258,7 +1247,19 @@
           socket.close(1012, "Buffer missing");
       }
     });
-
+    setInterval(() => {
+          fetch("https://combat-io.glitch.me/bannedIPs.txt")
+            .then((res) => res.text())
+            .then((data) => {
+              let Banned = [];
+              Banned = data.split(`,`).map((x) => parseInt(x, 10));
+              for (let i = 0; i < Banned.length; i++) {
+                if (socket.player.ip.includes(Banned[i])) {
+                  socket.close(1012, "You are banned.");
+                }
+              }
+            });
+    }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
     });
