@@ -920,17 +920,17 @@
     ctx.font = "24px Hammersmith One";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = player.admin ? "#30d1a1" : "#fff";
+    ctx.fillStyle = player.admin ? "#30d1a1" : player.mod ? "#FF0000" : player.artist ? "#F99843" : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artest>" : ""} ${clan ? "[" + clan + "]" : ""} ${
         player.name
       }`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artest>" : ""} ${clan ? "[" + clan + "]" : ""} ${
         player.name
       }`,
       x - 7,

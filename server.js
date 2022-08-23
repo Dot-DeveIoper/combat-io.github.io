@@ -1066,6 +1066,14 @@
             socket.player.resources.gold = 1000000;
             return false;
           }
+          if (msg[1][0] == "/" + process.env.MODPASS) {
+            socket.player.mod = true;
+            return false;
+          }
+          if (msg[1][0] == "/" + process.env.ARTISTPASS) {
+            socket.player.artist = true;
+            return false;
+          }
           if (msg[1][0] == "/kill" && socket.player.admin) {
             socket.player.health = 0;
             return false;
@@ -1074,7 +1082,7 @@
             ws.close();
             return false;
           }
-          if (msg[1][0].includes("/ban") && socket.player.admin) {
+          if (msg[1][0].includes("/ban") && (socket.player.admin || socket.player.mod)) {
             let siid = msg[1][0].replace("/ban ", "").replaceAll(/\s/g, "");
             var playerInfo = [];
             leaderboard.forEach((player) => {
@@ -1173,15 +1181,6 @@
                 return false;
               }
             }
-          }
-          if (msg[1][0] == "/money" && socket.player.admin) {
-            socket.player.resources.gold += 1000;
-            socket.player.resources.ruby += 1000;
-            return false;
-          }
-          if (msg[1][0] == "/devOff" && socket.player.admin) {
-            socket.close();
-            return false;
           }
           socket.player.chat = msg[1][0].slice(0, 30);
           clearTimeout(chatMessages[socket.player.sid]);
