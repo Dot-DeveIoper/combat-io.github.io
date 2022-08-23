@@ -1112,7 +1112,7 @@
             }
             return false;
           }
-          if (msg[1][0].includes("/unban") && socket.player.admin) {
+          if (msg[1][0].includes("/unban") && (socket.player.admin || socket.player.mod)) {
             let IP = msg[1][0].replace("/unban ", "").replaceAll(/\s/g, "");
             console.log(IP);
             fetch("https://combat-io.glitch.me/bannedIPs.txt")
@@ -1125,7 +1125,7 @@
               });
             return false;
           }
-          if (msg[1][0].includes("/tp") && socket.player.admin) {
+          if (msg[1][0].includes("/tp") && (socket.player.admin || socket.player.mod)) {
             if (msg[1][0].includes("sid:")) {
               let siid = msg[1][0]
                 .replace("/tp sid:", "")

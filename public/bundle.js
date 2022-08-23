@@ -923,14 +923,14 @@
     ctx.fillStyle = player.admin ? "#30d1a1" : player.mod ? "#FF0000" : player.artist ? "#F99843" : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artest>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artist>" : ""} ${clan ? "[" + clan + "]" : ""} ${
         player.name
       }`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artest>" : ""} ${clan ? "[" + clan + "]" : ""} ${
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artist>" : ""} ${clan ? "[" + clan + "]" : ""} ${
         player.name
       }`,
       x - 7,
@@ -1329,7 +1329,7 @@
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
         "<div style='float:left;'>" +
-        leaderboard[0].name + [myPlayer.admin ? ' : ' + leaderboard[0].sid : ''] +
+        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[0].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(0) +
         "</div>" +
@@ -1338,7 +1338,7 @@
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[1].name + [myPlayer.admin ? ' : ' + leaderboard[1].sid : ''] +
+        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[1].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(1) +
         "</div>" +
@@ -1347,7 +1347,7 @@
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[2].name + [myPlayer.admin ? ' : ' + leaderboard[2].sid : ''] +
+        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[2].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(2) +
         "</div>" +
@@ -1356,7 +1356,7 @@
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[3].name + [myPlayer.admin ? ' : ' + leaderboard[3].sid : ''] +
+        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[3].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(3) +
         "</div>" +
@@ -1365,7 +1365,7 @@
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[4].name + [myPlayer.admin ? ' : ' + leaderboard[4].sid : ''] +
+        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[4].sid : ''] +
         "</div><div style='float: right;color:gold;'>" +
         gold(4) +
         "</div>" +
