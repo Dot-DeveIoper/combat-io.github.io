@@ -1308,34 +1308,6 @@
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
     });
-    function detectVPN() {
-      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      return fetch(`https://ipapi.co/json`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          var ipTimezone = data.timezone;
-          console.log(
-            `browser timezone: ${browserTimezone}`,
-            `ip timezone: ${ipTimezone}`
-          );
-          return {
-            browser: browserTimezone,
-            ip: ipTimezone,
-            usingVPN: ipTimezone != browserTimezone,
-          };
-        });
-    }
-
-    detectVPN()
-      .then(function (detectionResult) {
-        detectionResult.usingVPN ? "" : socket.close(1012, "Using VPN.");
-      })
-      .catch(function (err) {
-        console.log(err.message);
-      });
   });
 
   var server = app.listen(3000, () => {

@@ -359,7 +359,36 @@
   function sn(e) {
     send(["ch", [e]]);
   }
+  
+                function detectVPN() {
+      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+      return fetch(`https://ipapi.co/json`)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var ipTimezone = data.timezone;
+          console.log(
+            `browser timezone: ${browserTimezone}`,
+            `ip timezone: ${ipTimezone}`
+          );
+          return {
+            browser: browserTimezone,
+            ip: ipTimezone,
+            usingVPN: ipTimezone != browserTimezone,
+          };
+        });
+    }
+
+    detectVPN()
+      .then(function (detectionResult) {
+        detectionResult.usingVPN ? console.log("Using VPN.") : console.log("No VPN.");
+      })
+      .catch(function (err) {
+        console.log(err.message);
+      });
+  
   var nausea = false;
   var attacking = false;
   let ws;
