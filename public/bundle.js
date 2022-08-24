@@ -1837,12 +1837,10 @@
         },
       ],
     ]);
-    
-      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-
-  fetch(`https://ipapi.co/json`)
-  .then(function(response) { return response.json() })
-  .then(function (data) { 
+  fetch('https://ipapi.co/json')
+  .then((response) => response.json())
+  .then((data) => { 
+    var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
     var ipTimezone = data.timezone
     alert(`browser timezone: ${browserTimezone}`, `ip timezone: ${ipTimezone}`)
     return {
