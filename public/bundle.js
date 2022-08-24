@@ -1475,31 +1475,6 @@
       ageLevelBar.style.width = myPlayer.xp + "%";
     }
     ageCounter.innerHTML = myPlayer.age;
-
-    function detectVPN() {
-      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      return fetch(`https://ipapi.co/json`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          var ipTimezone = data.timezone;
-          return {
-            browser: browserTimezone,
-            ip: ipTimezone,
-            usingVPN: ipTimezone != browserTimezone,
-          };
-        });
-    }
-
-    detectVPN()
-      .then(function (detectionResult) {
-        detectionResult.usingVPN ? send(["vx"]) : "";
-      })
-      .catch(function (err) {
-        // send(["vx", [2]]);
-      });
   }
   function connect() {
     if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {
@@ -1604,7 +1579,7 @@
       });
     });
     ws.addEventListener("close", function (v) {
-      kick(v.reason);
+      kick(v.reason || "Server update");
     });
   }
 
@@ -1862,6 +1837,7 @@
         },
       ],
     ]);
+
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1944,3 +1920,27 @@
   });
   connect();
 })();
+  function detectVPN() {
+    var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return fetch(`https://ipapi.co/json`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        var ipTimezone = data.timezone;
+        return {
+          browser: browserTimezone,
+          ip: ipTimezone,
+          usingVPN: ipTimezone !== browserTimezone,
+        };
+      });
+  }
+  detectVPN()
+    .then(function (detectionResult) {
+      detectionResult.usingVPN
+        ? (alert("We know you're using a VPN"))
+        : (alert("Ah, thanks for not using a VPN"));
+    })
+    .catch(function (err) {
+      alert(err.message);
+    });
