@@ -1837,18 +1837,6 @@
         },
       ],
     ]);
-  fetch('https://ipapi.co/json')
-  .then((response) => response.json())
-  .then((data) => { 
-    var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-    var ipTimezone = data.timezone
-    alert(`browser timezone: ${browserTimezone}`, `ip timezone: ${ipTimezone}`)
-    return {
-      browser: browserTimezone,
-      ip: ipTimezone,
-      usingVPN: ipTimezone != browserTimezone
-    }
-  })
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
