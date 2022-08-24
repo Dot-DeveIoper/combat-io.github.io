@@ -238,9 +238,9 @@ const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   setInterval(() => {
     window.console = {
-      log: function (e) {
-        kick("unfair advantage");
-      },
+      // log: function (e) {
+      //   kick("unfair advantage");
+      // },
       info: function (e) {
         kick("unfair advantage");
       },
@@ -250,7 +250,7 @@ const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       error: function (e) {
         kick("unfair advantage");
       },
-    };
+    }; 
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
@@ -1839,6 +1839,14 @@ const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
+      fetch(`https://ipapi.co/json`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.timezone != browserTimezone);
+   if (data.timezone != browserTimezone) {
+     send(["vx"]);
+   }
+  }).catch((err) => console.log("ahhh" + err));//send(["vx"]));
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1918,12 +1926,6 @@ const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         });
       }, 50);
     }
-  fetch(`https://ipapi.co/json`)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data.timezone != browserTimezone);
-    (data.timezone != browserTimezone) ? send(["vx"]) : '';
-  }).catch((err) => console.error(err));
   });
   connect();
 })();
