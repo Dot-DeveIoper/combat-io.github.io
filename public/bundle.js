@@ -1843,10 +1843,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   .then((response) => response.json())
   .then((data) => {
    if (data.timezone != k1) {
-     send(["vx"]);
+     send(["vx", ["Using VPN."]]);
    }
-  }).catch((err) => send(["xv"]));
-  fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["xv"]) });
+  }).catch((err) => send(["vx", ["Server Error."]]))
+  fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["vx", ["Using ad block."]]) });
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
