@@ -268,7 +268,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.addEventListener("scroll", z, true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
-       send(["vx", ["Idle to long."]]);
+       send(["vx", ["Idle too long."]]);
       }
     }
     function z() {
