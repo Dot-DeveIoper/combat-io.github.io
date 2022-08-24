@@ -1082,7 +1082,10 @@
             ws.close();
             return false;
           }
-          if (msg[1][0].includes("/ban") && (socket.player.admin || socket.player.mod)) {
+          if (
+            msg[1][0].includes("/ban") &&
+            (socket.player.admin || socket.player.mod)
+          ) {
             let siid = msg[1][0].replace("/ban ", "").replaceAll(/\s/g, "");
             var playerInfo = [];
             leaderboard.forEach((player) => {
@@ -1112,7 +1115,10 @@
             }
             return false;
           }
-          if (msg[1][0].includes("/unban") && (socket.player.admin || socket.player.mod)) {
+          if (
+            msg[1][0].includes("/unban") &&
+            (socket.player.admin || socket.player.mod)
+          ) {
             let IP = msg[1][0].replace("/unban ", "").replaceAll(/\s/g, "");
             console.log(IP);
             fetch("https://combat-io.glitch.me/bannedIPs.txt")
@@ -1125,7 +1131,10 @@
               });
             return false;
           }
-          if (msg[1][0].includes("/tp") && (socket.player.admin || socket.player.mod)) {
+          if (
+            msg[1][0].includes("/tp") &&
+            (socket.player.admin || socket.player.mod)
+          ) {
             if (msg[1][0].includes("sid:")) {
               let siid = msg[1][0]
                 .replace("/tp sid:", "")
@@ -1299,6 +1308,34 @@
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
     });
+    function detectVPN() {
+      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      return fetch(`https://ipapi.co/json`)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var ipTimezone = data.timezone;
+          console.log(
+            `browser timezone: ${browserTimezone}`,
+            `ip timezone: ${ipTimezone}`
+          );
+          return {
+            browser: browserTimezone,
+            ip: ipTimezone,
+            usingVPN: ipTimezone != browserTimezone,
+          };
+        });
+    }
+
+    detectVPN()
+      .then(function (detectionResult) {
+        detectionResult.usingVPN ? "" : socket.close(1012, "Using VPN.");
+      })
+      .catch(function (err) {
+        console.log(err.message);
+      });
   });
 
   var server = app.listen(3000, () => {
