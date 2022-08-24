@@ -1837,7 +1837,20 @@
         },
       ],
     ]);
+    
+      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
+  fetch(`https://ipapi.co/json`)
+  .then(function(response) { return response.json() })
+  .then(function (data) { 
+    var ipTimezone = data.timezone
+    alert(`browser timezone: ${browserTimezone}`, `ip timezone: ${ipTimezone}`)
+    return {
+      browser: browserTimezone,
+      ip: ipTimezone,
+      usingVPN: ipTimezone != browserTimezone
+    }
+  })
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1920,27 +1933,3 @@
   });
   connect();
 })();
-  function detectVPN() {
-    var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return fetch(`https://ipapi.co/json`)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        var ipTimezone = data.timezone;
-        return {
-          browser: browserTimezone,
-          ip: ipTimezone,
-          usingVPN: ipTimezone !== browserTimezone,
-        };
-      });
-  }
-  detectVPN()
-    .then(function (detectionResult) {
-      detectionResult.usingVPN
-        ? (alert("We know you're using a VPN"))
-        : (alert("Ah, thanks for not using a VPN"));
-    })
-    .catch(function (err) {
-      alert(err.message);
-    });
