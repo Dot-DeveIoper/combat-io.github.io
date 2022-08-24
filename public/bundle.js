@@ -335,6 +335,28 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+    function kick(msg) {
+    document.getElementById("menuCardHolder").style.display = "none";
+    document.getElementById("mainMenu").style.display = "block";
+    if (soundOn) {
+      if (AudioOn === "true") {
+        audio1.play();
+        const fadeInAudio = setInterval(() => {
+          if (audio1.volume < 1) {
+            audio1.volume += 0.01111111111111111111111111111111111111;
+          }
+
+          if (audio1.volume > 1) {
+            clearInterval(fadeInAudio);
+          }
+        }, 10);
+      }
+    }
+    document.getElementById("loadingText").style.display = "block";
+    document.getElementById("loadingText").innerHTML =
+      msg +
+      "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
+  }
   var nausea = false;
   var attacking = false;
   let ws;
@@ -1555,7 +1577,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       });
     });
     ws.addEventListener("close", function (v) {
-      send(["vx", [v.reason || "Server update."]]);
+      kick(v.reason || "Server update.");
     });
   }
 
