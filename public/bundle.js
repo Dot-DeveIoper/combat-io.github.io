@@ -239,20 +239,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   setInterval(() => {
     window.console = {
       log: function (e) {
-        send(["vx"], ["unfair advantage"]);
+        send(["vx", ["unfair advantage"]]);
       },
       info: function (e) {
-        send(["vx"], ["unfair advantage"]);
+        send(["vx", ["unfair advantage"]]);
       },
       warn: function (e) {
-        send(["vx"], ["unfair advantage"]);
+        send(["vx", ["unfair advantage"]]);
       },
       error: function (e) {
-        send(["vx"], ["unfair advantage"]);
+        send(["vx", ["unfair advantage"]]);
       },
     };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      send(["vx"], ["unfair advantage"]);
+      send(["vx", ["unfair advantage"]]);
     }
   }, 1000);
 
@@ -268,7 +268,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.addEventListener("scroll", z, true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
-       send(["vx"], ["Idle to long."])
+       send(["vx", ["Idle to long."]]);
       }
     }
     function z() {
@@ -1555,7 +1555,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       });
     });
     ws.addEventListener("close", function (v) {
-      send(["vx"], [v.reason || "Server update"]);
+      send(["vx", [v.reason || "Server update."]]);
     });
   }
 
@@ -1818,7 +1818,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       .then((response) => response.json())
       .then((data) => {
         if (data.timezone != k1) {
-          send(["vx", ["Using VPN."]]);
+          send(["vx", ["Using VPN."]]); 
         }
       }).catch((err) => send(["vx", ["Server Error."]]));
     fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["vx", ["Using ad block."]]) });
