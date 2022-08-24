@@ -750,7 +750,7 @@
               if (aObj.id === 5 && obj.oid != player.sid) {
                 var pushVelX = Math.cos(pushDir) * -2;
                 var pushVelY = Math.sin(pushDir) * -2;
-              } else {
+              } else if (aObj.id === 5) {
                 var pushVelX = 0;
                 var pushVelY = 0;
               }
