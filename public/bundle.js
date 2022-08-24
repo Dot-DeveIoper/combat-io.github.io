@@ -359,36 +359,6 @@
   function sn(e) {
     send(["ch", [e]]);
   }
-  
-                function detectVPN() {
-      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      return fetch(`https://ipapi.co/json`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          var ipTimezone = data.timezone;
-          console.log(
-            `browser timezone: ${browserTimezone}`,
-            `ip timezone: ${ipTimezone}`
-          );
-          return {
-            browser: browserTimezone,
-            ip: ipTimezone,
-            usingVPN: ipTimezone != browserTimezone,
-          };
-        });
-    }
-
-    detectVPN()
-      .then(function (detectionResult) {
-        detectionResult.usingVPN ? console.log("Using VPN.") : console.log("No VPN.");
-      })
-      .catch(function (err) {
-        console.log(err.message);
-      });
-  
   var nausea = false;
   var attacking = false;
   let ws;
@@ -481,7 +451,7 @@
       }
     }
   };
- 
+
   var riverBubbles = [];
   let players = [];
   let myPlayer = {};
@@ -949,19 +919,25 @@
     ctx.font = "24px Hammersmith One";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = player.admin ? "#30d1a1" : player.mod ? "#FF0000" : player.artist ? "#F99843" : "#fff";
+    ctx.fillStyle = player.admin
+      ? "#30d1a1"
+      : player.mod
+      ? "#FF0000"
+      : player.artist
+      ? "#F99843"
+      : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artist>" : ""} ${clan ? "[" + clan + "]" : ""} ${
-        player.name
-      }`,
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${
+        player.artist ? "</Artist>" : ""
+      } ${clan ? "[" + clan + "]" : ""} ${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${player.artist ? "</Artist>" : ""} ${clan ? "[" + clan + "]" : ""} ${
-        player.name
-      }`,
+      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${
+        player.artist ? "</Artist>" : ""
+      } ${clan ? "[" + clan + "]" : ""} ${player.name}`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
@@ -1358,7 +1334,8 @@
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
         "<div style='float:left;'>" +
-        leaderboard[0].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[0].sid : ''] +
+        leaderboard[0].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[0].sid : ""] +
         "</div><div style='float: right;color:gold;'>" +
         gold(0) +
         "</div>" +
@@ -1367,7 +1344,8 @@
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[1].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[1].sid : ''] +
+        leaderboard[1].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[1].sid : ""] +
         "</div><div style='float: right;color:gold;'>" +
         gold(1) +
         "</div>" +
@@ -1376,7 +1354,8 @@
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[2].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[2].sid : ''] +
+        leaderboard[2].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[2].sid : ""] +
         "</div><div style='float: right;color:gold;'>" +
         gold(2) +
         "</div>" +
@@ -1385,7 +1364,8 @@
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[3].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[3].sid : ''] +
+        leaderboard[3].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[3].sid : ""] +
         "</div><div style='float: right;color:gold;'>" +
         gold(3) +
         "</div>" +
@@ -1394,7 +1374,8 @@
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
         "<div style='float:left;'>" +
-        leaderboard[4].name + [myPlayer.admin || myPlayer.mod ? ' : ' + leaderboard[4].sid : ''] +
+        leaderboard[4].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[4].sid : ""] +
         "</div><div style='float: right;color:gold;'>" +
         gold(4) +
         "</div>" +
@@ -1494,6 +1475,31 @@
       ageLevelBar.style.width = myPlayer.xp + "%";
     }
     ageCounter.innerHTML = myPlayer.age;
+
+    function detectVPN() {
+      var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      return fetch(`https://ipapi.co/json`)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var ipTimezone = data.timezone;
+          return {
+            browser: browserTimezone,
+            ip: ipTimezone,
+            usingVPN: ipTimezone != browserTimezone,
+          };
+        });
+    }
+
+    detectVPN()
+      .then(function (detectionResult) {
+        detectionResult.usingVPN ? send(["vx"]) : "";
+      })
+      .catch(function (err) {
+        // send(["vx", [2]]);
+      });
   }
   function connect() {
     if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {

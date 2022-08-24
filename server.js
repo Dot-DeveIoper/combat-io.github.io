@@ -1197,6 +1197,9 @@
             socket.player.chat = null;
           }, 3000);
           break;
+        case "vx":
+            socket.close(1012, "Using a VPN.");
+          break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
