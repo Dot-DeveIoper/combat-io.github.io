@@ -7,17 +7,7 @@
 //?
 // Requiring fs module in which
 // writeFile function is defined.
-  var browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-
-  fetch(`https://ipapi.co/json`)
-  .then((response) => response.json())
-  .then((data) => {
-    let ipTimezone = data.timezone;
-      let browser = browserTimezone;
-      let ip = ipTimezone;
-      let usingVPN = ipTimezone != browserTimezone;
-      data.usingVPN ? console.log("We know you're using a VPN") : ("Ah, thanks for not using a VPN")
-  }).catch((err) => console.error(err));
+const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 (function (e) {
   let audio1 = new Audio(
@@ -1928,6 +1918,12 @@
         });
       }, 50);
     }
+  fetch(`https://ipapi.co/json`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.timezone != browserTimezone);
+    (data.timezone != browserTimezone) ? send(["vx"]) : '';
+  }).catch((err) => console.error(err));
   });
   connect();
 })();
