@@ -239,20 +239,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   setInterval(() => {
     window.console = {
       log: function (e) {
-        kick("unfair advantage");
+        send(["vx"], ["unfair advantage"]);
       },
       info: function (e) {
-        kick("unfair advantage");
+        send(["vx"], ["unfair advantage"]);
       },
       warn: function (e) {
-        kick("unfair advantage");
+        send(["vx"], ["unfair advantage"]);
       },
       error: function (e) {
-        kick("unfair advantage");
+        send(["vx"], ["unfair advantage"]);
       },
     };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      ws.close(1000, "unfair advantage");
+      send(["vx"], ["unfair advantage"]);
     }
   }, 1000);
 
@@ -268,7 +268,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.addEventListener("scroll", z, true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
-        ws.close(1000, "idle too long");
+       send(["vx"], ["Idle to long."])
       }
     }
     function z() {
@@ -329,37 +329,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   });
 
-  function kick(msg) {
-    document.getElementById("menuCardHolder").style.display = "none";
-    document.getElementById("mainMenu").style.display = "block";
-    if (soundOn) {
-      if (AudioOn === "true") {
-        audio1.play();
-        const fadeInAudio = setInterval(() => {
-          if (audio1.volume < 1) {
-            audio1.volume += 0.01111111111111111111111111111111111111;
-          }
-
-          if (audio1.volume > 1) {
-            clearInterval(fadeInAudio);
-          }
-        }, 10);
-      }
-    }
-    document.getElementById("loadingText").style.display = "block";
-    document.getElementById("loadingText").innerHTML =
-      msg +
-      "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
-  }
-
   function toRad(angle) {
     return angle * 0.01745329251;
   }
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  function sn(e) {
-    send(["ch", [e]]);
   }
   var nausea = false;
   var attacking = false;
@@ -1581,7 +1555,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       });
     });
     ws.addEventListener("close", function (v) {
-      kick(v.reason || "Server update");
+      send(["vx"], [v.reason || "Server update"]);
     });
   }
 

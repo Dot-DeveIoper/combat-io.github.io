@@ -748,8 +748,8 @@
                 var pushVelY = Math.sin(pushDir) + -5;
               }
               if (aObj.id === 5 && obj.oid != player.sid) {
-                var pushVelX = Math.cos(pushDir) + -2;
-                var pushVelY = Math.sin(pushDir) + -2;
+                var pushVelX = Math.cos(pushDir) * -2;
+                var pushVelY = Math.sin(pushDir) * -2;
               } else {
                 var pushVelX = 0;
                 var pushVelY = 0;
