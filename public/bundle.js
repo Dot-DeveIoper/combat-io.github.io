@@ -7,7 +7,7 @@
 //?
 // Requiring fs module in which
 // writeFile function is defined.
-const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 (function (e) {
   let audio1 = new Audio(
@@ -1839,14 +1839,14 @@ const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-      fetch(`https://ipapi.co/json`)
+  fetch(`https://ipapi.co/json`)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.timezone != browserTimezone);
-   if (data.timezone != browserTimezone) {
+   if (data.timezone != k1) {
      send(["vx"]);
    }
-  }).catch((err) => console.log("ahhh" + err));//send(["vx"]));
+  }).catch((err) => send(["xv"]));
+  fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["xv"]) });
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {

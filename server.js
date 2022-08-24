@@ -1200,6 +1200,9 @@
         case "vx":
             socket.close(1012, "Using a VPN.");
           break;
+        case "xv":
+            socket.close(1012, "Ad block.");
+          break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
