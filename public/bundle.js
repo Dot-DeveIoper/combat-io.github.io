@@ -238,9 +238,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   setInterval(() => {
     window.console = {
-      // log: function (e) {
-      //   kick("unfair advantage");
-      // },
+      log: function (e) {
+        kick("unfair advantage");
+      },
       info: function (e) {
         kick("unfair advantage");
       },
@@ -250,7 +250,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       error: function (e) {
         kick("unfair advantage");
       },
-    }; 
+    };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       ws.close(1000, "unfair advantage");
     }
@@ -1817,13 +1817,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   });
 
-  var SkinColor;
+  var SkinColor = localStorage.getItem("Skin") || 0;
   for (let i = 1; i < 9; i++) {
     document.getElementById("skin" + i).addEventListener("click", function (e) {
       for (let i = 1; i < 9; i++) {
         document.getElementById("skin" + i).style.borderRadius = "50%";
       }
       document.getElementById("skin" + i).style.borderRadius = "25%";
+      localStorage.setItem("Skin", i - 1);
     });
   }
   window.selectSkinColor = function (e) {
@@ -1839,14 +1840,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-  fetch(`https://ipapi.co/json`)
-  .then((response) => response.json())
-  .then((data) => {
-   if (data.timezone != k1) {
-     send(["vx", ["Using VPN."]]);
-   }
-  }).catch((err) => send(["vx", ["Server Error."]]))
-  fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["vx", ["Using ad block."]]) });
+    fetch(`https://ipapi.co/json`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.timezone != k1) {
+          send(["vx", ["Using VPN."]]);
+        }
+      }).catch((err) => send(["vx", ["Server Error."]]));
+    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => { send(["vx", ["Using ad block."]]) });
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
