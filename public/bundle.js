@@ -1843,7 +1843,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           send(["vx", ["Using VPN."]]); 
         }
       }).catch((err) => send(["vx", ["Server Error."]]));
-    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => {if (err.toString().includes("TypeError: Failed to fetch")) [ send(["vx", ["Using ad block."]]) ]});
+    // fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => {if (err.toString().includes("TypeError: Failed to fetch")) { send(["vx", ["Using ad block."]]) }});
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
@@ -1926,20 +1926,3 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   });
   connect();
 })();
-
-function ah(x, y, x2, y2) {
-let xTrue = false;
-let yTrue = false;
-for (let i = x; i < 50; i++) {
-   if (x2 === i) {
-    xTrue = true;  
-   }
-}
-for (let i = y; i < 50; i++) {
-   if (y2 === i) {
-     yTrue = true;
-   }
-}
-return yTrue, xTrue;
-}
-ah(5, 5, 56, 56);
