@@ -1843,7 +1843,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           send(["vx", ["Using VPN."]]); 
         }
       }).catch((err) => send(["vx", ["Server Error."]]));
-    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => if (err.{ alert(err); send(["vx", ["Using ad block."]]) });
+    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => {if (err.toString().includes("TypeError: Failed to fetch")) [ send(["vx", ["Using ad block."]]) ]});
     if (SpawnedOnce == 1) {
       if (soundOn) {
         if (AudioOn === "true") {
