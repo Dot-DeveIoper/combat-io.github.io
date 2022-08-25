@@ -714,12 +714,31 @@
         );
         if (objNear) {
           objNear.forEach((obj) => {
+                            let xTouching = false;
+let yTouching = false;
+function test(x, y, x2, y2) {
+    for (let i = x; i < 51 + x; i++) {
+    if (i === x2) {
+       xTouching = true; 
+     }
+} 
+        for (let i = y; i < 51 + y; i++) {
+    if (i === y2) {
+       yTouching = true; 
+     }
+} 
+    if(yTouching || xTouching) {
+        return true;    
+    } else {
+        return false;
+    }
+} 
             if (obj.health <= 0) {
               for (let resource in weapons.find((x) => x.id == obj.id).cost) {
                 player.resources[resource] += weapons.find(
                   (x) => x.id == obj.id
                 ).cost[resource];
-              }
+                }
               objCache.removeItem(obj);
             }
             if (
@@ -738,7 +757,7 @@
                 : obj.id == 6
                 ? 50
                 : 0) //obj hit boxes
-            ) {
+            &&  test(obj.x, obj.y, aObj.x, aObj.y)) {
               var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
               var aObj = weapons.find((x) => x.id == obj.id);
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
