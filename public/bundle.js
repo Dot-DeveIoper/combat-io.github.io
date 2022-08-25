@@ -479,12 +479,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var maxScreenHeight = 1080;
 
   var texts = [];
-  var cfg = {
-    healthBarWidth: 50,
-    healthBarPad: 4.5,
-    healthBarHeight: 15,
-    nameY: 50,
-  };
 
   var hats = [
     {
