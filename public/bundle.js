@@ -268,7 +268,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.addEventListener("scroll", z, true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
-       send(["vx", ["Idle too long."]]);
+        send(["vx", ["Idle too long."]]);
       }
     }
     function z() {
@@ -335,7 +335,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-    function kick(msg) {
+  function kick(msg) {
     document.getElementById("menuCardHolder").style.display = "none";
     document.getElementById("mainMenu").style.display = "block";
     if (soundOn) {
@@ -1840,9 +1840,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       .then((response) => response.json())
       .then((data) => {
         if (data.timezone != k1) {
-          send(["vx", ["Using VPN."]]); 
+          send(["vx", ["Using VPN."]]);
         }
-      }).catch((err) => send(["vx", ["Server Error."]]));
+      })
+      .catch((err) => send(["vx", ["Server Error."]]));
     // fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`).catch((err) => {if (err.toString().includes("TypeError: Failed to fetch")) { send(["vx", ["Using ad block."]]) }});
     if (SpawnedOnce == 1) {
       if (soundOn) {
@@ -1926,24 +1927,3 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   });
   connect();
 })();
-
-function ah(x, y, x2, y2) {
-let xTrue = false;
-let yTrue = false;
-for (let i = x; i < 50; i++) {
-   if (x2 === x) {
-    xTrue = true;  
-   }
-}
-for (let i = y; i < 50; i++) {
-   if (y2 === y) {
-     yTrue = true;
-   }
-}
-if (xTrue || xTrue) {
-    return false
-} else {
-    return true
-}
-}
-ah(5, 5, 50, 50);
