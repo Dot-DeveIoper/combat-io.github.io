@@ -1926,3 +1926,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   });
   connect();
 })();
+
+function ah(x, y, x2, y2) {
+let xTrue = false;
+let yTrue = false;
+for (let i = x; i < 50; i++) {
+   if (x2 === x) {
+    xTrue = true;  
+   }
+}
+for (let i = y; i < 50; i++) {
+   if (y2 === y) {
+     yTrue = true;
+   }
+}
+if (xTrue || xTrue) {
+    return false
+} else {
+    return true
+}
+}
+ah(5, 5, 50, 50);
