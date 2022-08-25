@@ -1,5 +1,4 @@
 (() => {
-  let ip = "broke";
   const express = require("express");
   const bodyParser = require("body-parser");
   const ws = require("ws");
@@ -19,7 +18,7 @@
 
   var users = [];
 
-  function radToDeg(radians) {
+  function radToDeg(radians) { 
     var pi = Math.PI;
     return radians * (180 / pi);
   }
@@ -33,6 +32,7 @@
   var playerSpeed = 1;
   var chatMessages = {};
   var inRiver = false;
+  let ip = "Error...";
 
   function isfacing(p1, p2, angle, addition = 25) {
     let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
