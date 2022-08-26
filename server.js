@@ -438,7 +438,7 @@
 
   var Accs = [
     {
-      name: "No Hat",
+      name: "No Acc",
       owned: true,
       gold: 0,
       ruby: 0,

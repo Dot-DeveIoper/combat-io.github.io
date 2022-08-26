@@ -174,7 +174,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       name: "God Wings",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       id: 2,
-      info: "Fly Over The Sunrise", ///LOL thats nice :)
+      info: "Fly Over The Sunrise",
       price: "20000",
       clicked: false,
     },
