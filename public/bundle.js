@@ -43,6 +43,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       name: "Assasin_blaze?",
       link: "https://www.youtube.com/channel/UCJ88TU07XHUQxdAaUaTHGFQ",
     },
+    {
+      name: "X-Jorge Pet",
+      link: "https://www.youtube.com/channel/UCndcue_WhfwrDy3uzUTnMNQ"
+    }
   ];
   var creator =
     Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
