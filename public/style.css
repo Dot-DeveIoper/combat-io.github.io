@@ -1906,6 +1906,54 @@ label.checkbox span {
   user-select: none;
 }
 
+.weaponNameContainer {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  width: 200px;
+  /* width: 200px; */
+  height: auto;
+  /* padding: 10px; */
+  padding-top: 0;
+  /* padding-top: -5px; */
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+.weaponNameDetails {
+  display: inline-block;
+  /* position: relative; */
+  float: left;
+  clear: left;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  /* font-size: 1.5rem; */
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+}
+.weaponDetails {
+  display: inline-block;
+  /* position: relative; */
+  float: left;
+  clear: left;
+  word-break: break-word;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  /* font-size: 1rem; */
+  font-weight: 400;
+  text-decoration: none;
+  user-select: none;
+}
+
 .itemDetailsContainer {
   display: none;
   position: absolute;

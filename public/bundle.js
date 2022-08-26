@@ -24,7 +24,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let leaderboardScores = document.querySelector(".leaderboardScores");
   let ageLevelItems = document.querySelector("#ageLevelItems");
   let itemDetailsContainer = document.querySelector(".itemDetailsContainer");
-
+  let weaponDetailsContainer = document.querySelector(".weaponNameContainer");
   var YTofDay = document.getElementById("YTofDay");
   var Youtubers = [
     {
@@ -202,6 +202,36 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   }
   hatMenu();
+  
+  for (let i = 0; i < Hats.length; i++) {
+    document.getElementById("h-item-" + i).style.display = "none";
+    document
+      .getElementById("EquipGear" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          send(["s", [inventory[i + 1]]]);
+        }
+      });
+     document
+      .getElementById("EquipGear" + i)
+      .addEventListener("mouseover", function (e) {
+        if (e.isTrusted) {
+          itemDetailsContainer.style.display = "block";
+          document.getElementById("itemNameDetails").innerHTML = Hats[i].name;
+          document.getElementById("itemDetails").innerHTML = Hats[i].info;
+          document.getElementById("Stone").innerHTML = "";
+          document.getElementById("Wood").innerHTML = "";
+          document.getElementById("Food").innerHTML = "";
+        }
+      });
+      document
+      .getElementById("EquipGear" + i)
+      .addEventListener("mouseout", function (e) {
+        if (e.isTrusted) {
+          itemDetailsContainer.style.display = "none";
+        }
+      });
+  }
 
   settingsToggle.onclick = function (e) {
     if (e.isTrusted) {
@@ -1911,14 +1941,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-    fetch(`https://ipapi.co/json`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.timezone != k1) {
-          send(["vx", ["Using VPN."]]);
-        }
-      })
-      .catch((err) => send(["vx", ["Server Error."]]));
+    // fetch(`https://ipapi.co/json`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.timezone != k1) {
+    //       send(["vx", ["Using VPN."]]);
+    //     }
+    //   })
+    //   .catch((err) => alert(err),
+    //     send(["vx", ["Server error."]]));
 
     fetch(
       `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
