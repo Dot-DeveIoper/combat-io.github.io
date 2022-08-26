@@ -1019,7 +1019,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: 0,
     },
   ];
-
+  
+    const shadow = new Image();
+    shadow.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_26_0vw_Kleki.png?v=1661555316804';
+  
   weapons.forEach((w) => {
     w.img.src = w.src;
   });
@@ -1193,6 +1196,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawWeapon(player, x, y, rot, wep, sid) {
+        if (player.acc === 2) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+      ctx.drawImage(shadow, 0, 0, 196, 215);
+      ctx.restore();
+        }
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
