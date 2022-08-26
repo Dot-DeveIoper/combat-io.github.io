@@ -51,7 +51,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-  
+
   var Weapons = [
     {
       id: 0,
@@ -110,7 +110,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       food: 0,
     },
   ];
-  
+
   var Hats = [
     {
       name: "Barbarian Hat",
@@ -253,9 +253,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   }
   hatMenu();
-  
+
   for (let i = 0; i < Hats.length; i++) {
-     document
+    document
       .getElementById("EquipGear" + i)
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
@@ -265,7 +265,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         }
       });
 
-      document
+    document
       .getElementById("EquipGear" + i)
       .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
@@ -511,22 +511,26 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           send(["s", [inventory[i + 1]]]);
         }
       });
-     document
+    document
       .getElementById("h-item-" + i)
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "block";
-          document.getElementById("itemNameDetails").innerHTML = Weapons[i].name;
+          document.getElementById("itemNameDetails").innerHTML =
+            Weapons[i].name;
           document.getElementById("itemDetails").innerHTML = Weapons[i].info;
           document.getElementById("Stone").innerHTML = Weapons[i].stone;
           document.getElementById("Wood").innerHTML = Weapons[i].wood;
           document.getElementById("Food").innerHTML = Weapons[i].food;
-          document.getElementById("stoneReqDisplay").style.display = Weapons[i].stone === 0 ? "none" : "block";
-          document.getElementById("woodReqDisplay").style.display = Weapons[i].wood === 0 ? "none" : "block";
-          document.getElementById("foodReqDisplay").style.display = Weapons[i].food === 0 ? "none" : "block";
+          document.getElementById("stoneReqDisplay").style.display =
+            Weapons[i].stone === 0 ? "none" : "block";
+          document.getElementById("woodReqDisplay").style.display =
+            Weapons[i].wood === 0 ? "none" : "block";
+          document.getElementById("foodReqDisplay").style.display =
+            Weapons[i].food === 0 ? "none" : "block";
         }
       });
-      document
+    document
       .getElementById("h-item-" + i)
       .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
@@ -1144,13 +1148,22 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
-
+    
+    var acc = Accessories.find((x) => x.id == player.acc);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
+    ctx.restore();
+    
     var hat = hats.find((x) => x.id == player.hat);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
     ctx.restore();
+//idk what u were doing i was just making acc and it teleported me to this location lol
+//it broke
   }
   function drawAnimal(x, y, rot, id) {
     var ob = animals.find((x) => x.id == id);
@@ -1370,7 +1383,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       );
     });
 
-        // trees, stones etc
+    // trees, stones etc
     treesCache.forEach((object) => {
       var rel = relative({
         x: object.x,
@@ -1383,7 +1396,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         object.id
       );
     });
-    
+
     players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
         var rel = relative({
@@ -1657,9 +1670,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
               if (w != 7) {
-              document.getElementById("h-item-" + w).style.display =
-                "inline-block";
-            }});
+                document.getElementById("h-item-" + w).style.display =
+                  "inline-block";
+              }
+            });
           case "33":
             players = msg[1][0];
             players.forEach((p) => {
@@ -1985,14 +1999,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
-.then((response) => response.json())
-.then((data) => {
-if (data.time_zone.name != k1) {
-send(["vx", ["Using VPN."]]);
-}
-})
-.catch((err) => send(["vx", ["Server error."]]));
+    fetch(
+      `https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.time_zone.name != k1) {
+          send(["vx", ["Using VPN."]]);
+        }
+      })
+      .catch((err) => send(["vx", ["Server error."]]));
 
     fetch(
       `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
