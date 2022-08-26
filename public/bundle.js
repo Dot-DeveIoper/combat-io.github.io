@@ -1196,13 +1196,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawWeapon(player, x, y, rot, wep, sid) {
-        if (player.acc === 2) {
       ctx.save();
-      ctx.translate(x, y);
+      ctx.translate(x / 100, y / 100);
       ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0) * Math.PI/180);
       ctx.drawImage(shadow, -20, -20, 196, 215);
       ctx.restore();
-        }
+    
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
