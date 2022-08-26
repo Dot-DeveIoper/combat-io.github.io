@@ -161,6 +161,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       clicked: false,
     },
   ];
+  var Accessories = [
+    {
+      name: "Shadow Wings",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_11.png?v=1661095515533",
+      id: 1,
+      info: "Move Faster",
+      price: "",
+      clicked: false,
+    },
+  ];
 
   function hatMenu(player) {
     for (let i = 0; i < Hats.length; i++) {
@@ -470,6 +480,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           document.getElementById("Stone").innerHTML = Weapons[i].stone;
           document.getElementById("Wood").innerHTML = Weapons[i].wood;
           document.getElementById("Food").innerHTML = Weapons[i].food;
+          document.getElementById("stoneReqDisplay").style.display = Weapons[i].stone === 0 ? "none" : "block";
+          document.getElementById("woodReqDisplay").style.display = Weapons[i].wood === 0 ? "none" : "block";
+          document.getElementById("foodReqDisplay").style.display = Weapons[i].food === 0 ? "none" : "block";
         }
       });
       document
