@@ -50,10 +50,10 @@
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  function test(x, y, x2, y2) {
     let xTouching = false;
     let yTouching = false;
-  
-  function test(x, y, x2, y2) {
     for (let i = x; i < 51 + x; i++) {
       if (i === x2) {
         xTouching = true;
@@ -558,12 +558,10 @@
         );
         client.send(encode(["o", [treesNear]]));
 
-        if (test(3,3,40,40)) {
         var objNear = objCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
         client.send(encode(["x", [objNear]]));
-        }
         
         var animalNear = animalsCache.filter(
           (x) => x && dist(player, x) < renderDistance
