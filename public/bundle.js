@@ -51,7 +51,61 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-
+  
+  var Weapons = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      info: "Get resources and upgrade your tool.",
+    },
+    {
+      id: 1,
+      name: "Orange",
+      info: "Heals +20 health."
+    },
+    {
+      id: 2,
+      name: "Spike",
+      info: "does damage to enimys "
+    },
+    {
+      id: 3,
+      name: "Wall",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
+      scale: 110,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: -55,
+    },
+    {
+      id: 4,
+      name: "Booster",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
+      scale: 80,
+      img: new Image(),
+      xOffset: 20,
+      yOffset: -40,
+    },
+    {
+      id: 5,
+      name: "Trap",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
+      scale: 80,
+      img: new Image(),
+      xOffset: 20,
+      yOffset: -40,
+    },
+    {
+      id: 6,
+      name: "TeleportPad",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
+      scale: 80,
+      img: new Image(),
+      xOffset: 20,
+      yOffset: -40,
+    },
+  ];
+  
   var Hats = [
     {
       name: "Barbarian Hat",
@@ -383,9 +437,17 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       });
      document
       .getElementById("h-item-" + i)
-      .addEventListener("onmouseover", function (e) {
+      .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
-          ageLevelItems.style.display = "block";
+          itemDetailsContainer.style.display = "block";
+          document.getElementById("itemNameDetails").innerHTML = i;
+        }
+      });
+      document
+      .getElementById("h-item-" + i)
+      .addEventListener("mouseout", function (e) {
+        if (e.isTrusted) {
+          itemDetailsContainer.style.display = "none";
         }
       });
   }
