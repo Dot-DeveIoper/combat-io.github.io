@@ -22,6 +22,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let resourcesAndMap = document.getElementById("resourcesAndMap");
 
   let leaderboardScores = document.querySelector(".leaderboardScores");
+  let ageLevelItems = document.querySelector("#ageLevelItems");
+  let itemDetailsContainer = document.querySelector(".itemDetailsContainer");
 
   var YTofDay = document.getElementById("YTofDay");
   var Youtubers = [
@@ -377,6 +379,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       .addEventListener("click", function (e) {
         if (e.isTrusted) {
           send(["s", [inventory[i + 1]]]);
+        }
+      });
+     document
+      .getElementById("h-item-" + i)
+      .addEventListener("onmouseover", function (e) {
+        if (e.isTrusted) {
+          ageLevelItems.style.display = "block";
         }
       });
   }
@@ -1887,6 +1896,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ageBar.style.display = "inline-block";
       resourcesAndMap.style.display = "inline-block";
       leaderboardScores.style.display = "block";
+      ageLevelItems.style.display = "block";
       SpawnedOnce = 1;
       send([
         "j",
