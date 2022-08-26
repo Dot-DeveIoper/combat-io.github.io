@@ -57,8 +57,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 0,
       name: "Tool Hammer",
       info: "Get resources and upgrade your tool.",
-      ruby: 0,
-      gold: 0,
       stone: 0,
       wood: 0,
       food: 0,
@@ -449,11 +447,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           itemDetailsContainer.style.display = "block";
           document.getElementById("itemNameDetails").innerHTML = Weapons[i].name;
           document.getElementById("itemDetails").innerHTML = Weapons[i].info;
-          document.getElementById("itemDetails").innerHTML = Weapons[i].ruby;
-          document.getElementById("itemDetails").innerHTML = Weapons[i].gold;
-          document.getElementById("itemDetails").innerHTML = Weapons[i].stone;
-          document.getElementById("itemDetails").innerHTML = Weapons[i].wood;
-          document.getElementById("itemDetails").innerHTML = Weapons[i].food;
+          document.getElementById("Stone").innerHTML = Weapons[i].stone;
+          document.getElementById("Wood").innerHTML = Weapons[i].wood;
+          document.getElementById("Food").innerHTML = Weapons[i].food;
         }
       });
       document
@@ -1586,9 +1582,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           case "w":
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
+              if (w != 7) {
               document.getElementById("h-item-" + w).style.display =
                 "inline-block";
-            });
+            }});
           case "33":
             players = msg[1][0];
             players.forEach((p) => {
