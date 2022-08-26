@@ -615,6 +615,12 @@
             : player.hat == 5
             ? 0.3
             : 0.8;
+        if(player.acc == 1) {
+          playerSpeed += 0.2;
+        }
+        if(player.acc == 2) {
+          playerSpeed += 0.6;
+        }
         // player velocity
 
         if (
@@ -795,8 +801,10 @@
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
+            if(player.acc !== 2) {
               player.xVel += pushVelX;
               player.yVel += pushVelY;
+            }
             }
           });
         }

@@ -170,8 +170,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       price: "",
       clicked: false,
     },
+    {
+      name: "God Wings",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
+      id: 2,
+      info: "Move Faster",
+      price: "20000",
+      clicked: false,
+    },
   ];
-
   function accessoriesMenu(player) {
     for (let i = 0; i < Accessories.length; i++) {
       var AccItems = document.getElementById("AccessoriesGear" + [i]);
@@ -650,6 +657,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
+      img: new Image(),
+      xOffset: -75,
+      yOffset: -50,
+      scale: 100,
+    },
+    {
+      id: 2,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       img: new Image(),
       xOffset: -75,
       yOffset: -50,
@@ -2018,16 +2033,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-    fetch(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.time_zone.name != k1) {
-          send(["vx", ["Using VPN."]]);
-        }
-      })
-      .catch((err) => send(["vx", ["Server error."]]));
+    // fetch(
+    //   `https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.time_zone.name != k1) {
+    //       send(["vx", ["Using VPN."]]);
+    //     }
+    //   })
+    //   .catch((err) => send(["vx", ["Server error."]]));
 
     fetch(
       `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
