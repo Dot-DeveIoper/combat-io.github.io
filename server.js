@@ -607,19 +607,26 @@
     wsServer.clients.forEach((client) => {
       let player = client.player;
       if (player && player.spawned) {
-        var playerSpeed =
-          player.hat == 2
-            ? 1
-            : player.hat == 3
-            ? 0.7
-            : player.hat == 5
-            ? 0.3
-            : 0.8;
+        var playerSpeed = 0.8;
+
+        if(player.hat == 2) {
+          playerSpeed += 0.2;
+        }
+
+        if(player.hat == 3) {
+          playerSpeed -= 0.2;
+        }
+
+        if(player.hat == 5) {
+          playerSpeed -= 0.5;
+        }
+
         if(player.acc == 1) {
           playerSpeed += 0.2;
         }
+
         if(player.acc == 2) {
-          playerSpeed += 0.6;
+          playerSpeed += 0.4;
         }
         // player velocity
 

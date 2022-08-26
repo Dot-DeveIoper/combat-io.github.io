@@ -666,8 +666,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 2,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       img: new Image(),
-      xOffset: -75,
-      yOffset: -75,
+      xOffset: -100,
+      yOffset: -70,
       scale: 140,
     },
 ];
