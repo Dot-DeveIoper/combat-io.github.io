@@ -18,7 +18,7 @@
 
   var users = [];
 
-  function radToDeg(radians) { 
+  function radToDeg(radians) {
     var pi = Math.PI;
     return radians * (180 / pi);
   }
@@ -49,6 +49,26 @@
 
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+    let xTouching = false;
+    let yTouching = false;
+  
+  function test(x, y, x2, y2) {
+    for (let i = x; i < 51 + x; i++) {
+      if (i === x2) {
+        xTouching = true;
+      }
+    }
+    for (let i = y; i < 51 + y; i++) {
+      if (i === y2) {
+        yTouching = true;
+      }
+    }
+    if (yTouching || xTouching) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Array.prototype.removeItem = function (value) {
@@ -538,11 +558,13 @@
         );
         client.send(encode(["o", [treesNear]]));
 
+        if (test(3,3,40,40)) {
         var objNear = objCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
         client.send(encode(["x", [objNear]]));
-
+        }
+        
         var animalNear = animalsCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
@@ -1205,8 +1227,8 @@
           }, 3000);
           break;
         case "vx":
-            var msg = msg[1][0];
-            socket.close(1012, msg);
+          var msg = msg[1][0];
+          socket.close(1012, msg);
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
