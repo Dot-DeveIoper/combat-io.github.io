@@ -191,7 +191,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       AccessoriesHat.onclick = function () {
         Accessories[i].clicked = !Accessories[i].clicked;
         send([
-          "Hd",
+          "Ac",
           [
             {
               acc: Accessories[i].clicked ? Accessories[i].id : 0,
@@ -651,9 +651,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
       img: new Image(),
-      xOffset: -65,
-      yOffset: -45,
-      scale: 90,
+      xOffset: -75,
+      yOffset: -50,
+      scale: 100,
     },
 ];
   var hats = [
@@ -1163,6 +1163,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
     ctx.restore();
 
+    var acc = accs.find((x) => x.id == player.acc);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
+    ctx.restore();
+    
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
@@ -1175,13 +1182,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
-    ctx.restore();
-    
-    var acc = accs.find((x) => x.id == player.acc);
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
     ctx.restore();
   }
   function drawAnimal(x, y, rot, id) {

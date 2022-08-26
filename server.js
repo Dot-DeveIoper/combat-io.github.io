@@ -460,8 +460,11 @@
   var players = [];
   var ids = 0;
 
-  function sendHatData(player, hat, acc) {
+  function sendHatData(player, hat) {
     player.hat = hat || 0;
+  }
+
+  function sendAccData(player, acc) {
     player.acc = acc || 0;
   }
 
@@ -1069,6 +1072,18 @@
           } else if (Hats[hat].owned) {
             sendHatData(socket.player, hat, acc);
           }
+          break;
+        case "Ac":
+          if (!msg[1][0]) {
+            socket.close(1012, "Buffer missing");
+          }
+          var acc;
+          try {
+            acc = msg[1][0].acc || 0;
+          } catch (err) {
+            socket.close(1012, "Buffer missing");
+          }
+            sendAccData(socket.player, acc);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
