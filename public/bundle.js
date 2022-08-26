@@ -1199,7 +1199,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (player.acc === 2) {
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(Math.PI / 180 + rot - toRad(swingAngle[sid]) + 0);
+      ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0) * Math.PI/180);
       ctx.drawImage(shadow, -20, -20, 196, 215);
       ctx.restore();
         }
