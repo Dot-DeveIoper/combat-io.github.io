@@ -300,7 +300,7 @@
       placeInRiver: false,
       name: "Spike",
       cost: {
-        wood: 20,
+        wood: 10,
         stone: 5,
       },
       damage: 20,
@@ -316,7 +316,7 @@
       placeInRiver: false,
       name: "Wall",
       cost: {
-        wood: 10,
+        wood: 20,
       },
       damage: 0,
       velocity: 2,

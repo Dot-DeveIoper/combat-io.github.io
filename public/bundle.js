@@ -57,52 +57,59 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 0,
       name: "Tool Hammer",
       info: "Get resources and upgrade your tool.",
+      ruby: 0,
+      gold: 0,
+      stone: 0,
+      wood: 0,
+      food: 0,
     },
     {
       id: 1,
       name: "Orange",
-      info: "Heals +20 health."
+      info: "Heals +20 health.",
+      stone: 0,
+      wood: 0,
+      food: 10,
     },
     {
       id: 2,
       name: "Spike",
-      info: "does damage to enimys "
+      info: "Does damage to enemies but not you.",
+      stone: 5,
+      wood: 10,
+      food: 0,
     },
     {
       id: 3,
       name: "Wall",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
-      scale: 110,
-      img: new Image(),
-      xOffset: 0,
-      yOffset: -55,
+      info: "Use this to make a base and protect you.",
+      stone: 0,
+      wood: 20,
+      food: 0,
     },
     {
       id: 4,
       name: "Booster",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
-      scale: 80,
-      img: new Image(),
-      xOffset: 20,
-      yOffset: -40,
+      info: "Gives you a boost when you walk on it.",
+      stone: 20,
+      wood: 10,
+      food: 0,
     },
     {
       id: 5,
       name: "Trap",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
-      scale: 80,
-      img: new Image(),
-      xOffset: 20,
-      yOffset: -40,
+      info: "Traps your enemies but not you.",
+      stone: 5,
+      wood: 20,
+      food: 0,
     },
     {
       id: 6,
       name: "TeleportPad",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
-      scale: 80,
-      img: new Image(),
-      xOffset: 20,
-      yOffset: -40,
+      info: "Teleports you to random location on map.",
+      stone: 50,
+      wood: 50,
+      food: 0,
     },
   ];
   
@@ -440,7 +447,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "block";
-          document.getElementById("itemNameDetails").innerHTML = i;
+          document.getElementById("itemNameDetails").innerHTML = Weapons[i].name;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].info;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].ruby;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].gold;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].stone;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].wood;
+          document.getElementById("itemDetails").innerHTML = Weapons[i].food;
         }
       });
       document
