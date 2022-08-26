@@ -435,8 +435,8 @@
       ruby: 0,
     },
   ];
-  
-    var Accs = [
+
+  var Accs = [
     {
       name: "No Hat",
       owned: true,
@@ -611,7 +611,7 @@
           (x) => x && dist(player, x) < renderDistance
         );
         client.send(encode(["x", [objNear]]));
-        
+
         var animalNear = animalsCache.filter(
           (x) => x && dist(player, x) < renderDistance
         );
@@ -654,23 +654,23 @@
       if (player && player.spawned) {
         var playerSpeed = 0.8;
 
-        if(player.hat == 2) {
+        if (player.hat == 2) {
           playerSpeed += 0.2;
         }
 
-        if(player.hat == 3) {
+        if (player.hat == 3) {
           playerSpeed -= 0.2;
         }
 
-        if(player.hat == 5) {
+        if (player.hat == 5) {
           playerSpeed -= 0.5;
         }
 
-        if(player.acc == 1) {
+        if (player.acc == 1) {
           playerSpeed += 0.2;
         }
 
-        if(player.acc == 2) {
+        if (player.acc == 2) {
           playerSpeed += 0.4;
         }
         // player velocity
@@ -784,10 +784,10 @@
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
               var pushVelX = Math.cos(pushDir) * 2;
               var pushVelY = Math.sin(pushDir) * 2;
-            if(player.acc !== 2) {
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
-            }
+              if (player.acc !== 2) {
+                player.xVel += pushVelX;
+                player.yVel += pushVelY;
+              }
             }
           });
         }
@@ -849,16 +849,17 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                obj.oid !== player.sid
+                obj.oid !== player.sid &&
+                player.acc !== 2
               ) {
                 player.health -=
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
-            if(player.acc !== 2) {
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
-            }
+              if (player.acc !== 2) {
+                player.xVel += pushVelX;
+                player.yVel += pushVelY;
+              }
             }
           });
         }
@@ -1145,7 +1146,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-            sendAccData(socket.player, acc);
+          sendAccData(socket.player, acc);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;

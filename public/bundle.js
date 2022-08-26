@@ -174,7 +174,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       name: "God Wings",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       id: 2,
-      info: "Fly Over The Sunrise",
+      info: "Fly Over The Sunrise", ///LOL thats nice :)
       price: "20000",
       clicked: false,
     },
@@ -1156,6 +1156,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ctx.restore();
     }
   }
+
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
