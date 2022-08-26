@@ -161,7 +161,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       clicked: false,
     },
   ];
-  var Accessories = [
+  var Acc = [
     {
       name: "Shadow Wings",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
@@ -180,37 +180,37 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
   function accessoriesMenu(player) {
-    for (let i = 0; i < Accessories.length; i++) {
+    for (let i = 0; i < Acc.length; i++) {
       var AccItems = document.getElementById("AccessoriesGear" + [i]);
       AccItems.innerHTML = `
         <div class="itemsInfo1">
-          <img src="${Accessories[i].src}" alt="" class="itemImg" />
-          <span class="itemName">${Accessories[i].name}</span>
-          <br><span class="itemInfo">${Accessories[i].info}</span>
+          <img src="${Acc[i].src}" alt="" class="itemImg" />
+          <span class="itemName">${Acc[i].name}</span>
+          <br><span class="itemInfo">${Acc[i].info}</span>
         </div>
         <div class="itemsInfo2">
-          <span class="itemPrice">${Accessories[i].price}</span>
+          <span class="itemPrice">${Acc[i].price}</span>
           <a id="EquipAccessories${[i]}" class="equipItem">Equip</a>
         </div>
     `;
-      Accessories[i].clicked = false;
+      Acc[i].clicked = false;
       var AccessoriesHat = document.getElementById("AccessoriesGear" + [i]);
       AccessoriesHat.onclick = function () {
-        Accessories[i].clicked = !Accessories[i].clicked;
+        Acc[i].clicked = !Acc[i].clicked;
         send([
           "Ac",
           [
             {
-              acc: Accessories[i].clicked ? Accessories[i].id : 0,
+              acc: Acc[i].clicked ? Acc[i].id : 0,
             },
           ],
         ]);
-        if (Accessories[i].clicked === false) {
-          for (let i = 0; i < Accessories.length; i++) {
+        if (Acc[i].clicked === false) {
+          for (let i = 0; i < Acc.length; i++) {
             document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
           }
         } else {
-          for (let i = 0; i < Accessories.length; i++) {
+          for (let i = 0; i < Acc.length; i++) {
             document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
           }
           document.getElementById("EquipAccessories" + i).innerHTML = "Unequip";
@@ -274,6 +274,26 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     document
       .getElementById("EquipGear" + i)
+      .addEventListener("mouseout", function (e) {
+        if (e.isTrusted) {
+          hatNameContainer.style.display = "none";
+        }
+      });
+  }
+  
+    for (let i = 0; i < Acc.length; i++) {
+    document
+      .getElementById("EquipAccessories" + i)
+      .addEventListener("mouseover", function (e) {
+        if (e.isTrusted) {
+          hatNameContainer.style.display = "block";
+          document.getElementById("hatNameDetails").innerHTML = Acc[i].name;
+          document.getElementById("hatDetails").innerHTML = Acc[i].info;
+        }
+      });
+
+    document
+      .getElementById("EquipAccessories" + i)
       .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
