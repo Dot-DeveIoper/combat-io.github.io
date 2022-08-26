@@ -878,7 +878,7 @@
                 if (
                   enemy.sid != player.sid &&
                   reaching(player, enemy, weapon.range) &&
-                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
+                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2 && enemy.acc !== 2
                 ) {
                   var knockDir = Math.atan2(
                     enemy.y - player.y,
@@ -927,7 +927,7 @@
                     tree,
                     weapon.range + (tree.id == 2 ? 40 : 65)
                   ) &&
-                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov)
+                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
                 ) {
                   player.resources[
                     tree.id == 0
@@ -1116,10 +1116,8 @@
             socket.close(1012, "Buffer missing");
           }
           var hat;
-          var acc;
           try {
             hat = msg[1][0].hat || 0;
-            acc = msg[1][0].acc || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
@@ -1131,9 +1129,9 @@
             socket.player.resources.gold -= Hats[hat].gold;
             socket.player.resources.ruby -= Hats[hat].ruby;
             Hats[hat].owned = true;
-            sendHatData(socket.player, hat, acc);
+            sendHatData(socket.player, hat);
           } else if (Hats[hat].owned) {
-            sendHatData(socket.player, hat, acc);
+            sendHatData(socket.player, hat);
           }
           break;
         case "Ac":
@@ -1146,7 +1144,18 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          sendAccData(socket.player, acc);
+          if (
+            socket.player.resources.gold >= Accs[acc].gold &&
+            socket.player.resources.ruby >= Accs[acc].ruby &&
+            !Accs[acc].owned
+          ) {
+            socket.player.resources.gold -= Accs[acc].gold;
+            socket.player.resources.ruby -= Accs[acc].ruby;
+            Accs[acc].owned = true;
+            sendAccData(socket.player, acc);
+          } else if (Accs[acc].owned) {
+            sendAccData(socket.player, acc);
+          }
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
