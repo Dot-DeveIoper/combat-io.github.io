@@ -960,6 +960,7 @@
       noHurtTime: 0,
       skin: 0,
       hat: 0,
+      acc: 0,
       sid: null,
       xVel: 0,
       yVel: 0,

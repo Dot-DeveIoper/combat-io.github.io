@@ -638,6 +638,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var texts = [];
 
+  var accs = [
+    {
+      id: 0,
+      src: "",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
+    {
+      id: 1,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
+      img: new Image(),
+      xOffset: -65,
+      yOffset: -45,
+      scale: 90,
+    },
+];
   var hats = [
     {
       id: 0,
@@ -985,6 +1003,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   hats.forEach((w) => {
     w.img.src = w.src;
   });
+  accs.forEach((w) => {
+    w.img.src = w.src;
+  });
 
   document.getElementById("menuCardHolder").style.display = "none";
   ageBar.style.display = "none";
@@ -1148,22 +1169,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(skin.img, skin.xOffset, skin.yOffset, skin.scale, skin.scale);
     ctx.restore();
-    
-    var acc = Accessories.find((x) => x.id == player.acc);
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
-    ctx.restore();
-    
+
     var hat = hats.find((x) => x.id == player.hat);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(hat.img, hat.xOffset, hat.yOffset, hat.scale, hat.scale);
     ctx.restore();
-//idk what u were doing i was just making acc and it teleported me to this location lol
-//it broke
+    
+    var acc = accs.find((x) => x.id == player.acc);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
+    ctx.restore();
   }
   function drawAnimal(x, y, rot, id) {
     var ob = animals.find((x) => x.id == id);
