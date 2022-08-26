@@ -280,8 +280,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         }
       });
   }
-  
-    for (let i = 0; i < Acc.length; i++) {
+
+  for (let i = 0; i < Acc.length; i++) {
     document
       .getElementById("EquipAccessories" + i)
       .addEventListener("mouseover", function (e) {

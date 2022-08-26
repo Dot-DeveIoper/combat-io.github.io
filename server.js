@@ -406,7 +406,7 @@
     },
     {
       name: "Booster Hat",
-      id: 2,
+      owned: false,
       gold: 1000,
       ruby: 0,
     },
@@ -451,7 +451,7 @@
     },
     {
       name: "God Wings",
-      id: 2,
+      owned: false,
       gold: 20000,
       ruby: 0,
     },
