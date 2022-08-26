@@ -435,6 +435,51 @@
       ruby: 0,
     },
   ];
+  
+    var Accs = [
+    {
+      name: "No Hat",
+      owned: true,
+      gold: 0,
+      ruby: 0,
+    },
+    {
+      name: "Barbarian Hat",
+      owned: false,
+      gold: 0,
+      ruby: 0,
+    },
+    {
+      name: "Booster Hat",
+      id: 2,
+      gold: 1000,
+      ruby: 0,
+    },
+    {
+      name: "Soldier Hat",
+      owned: false,
+      gold: 4000,
+      ruby: 0,
+    },
+    {
+      name: "Fish Hat",
+      owned: false,
+      gold: 2500,
+      ruby: 0,
+    },
+    {
+      name: "Tank Gear",
+      owned: false,
+      gold: 15000,
+      ruby: 0,
+    },
+    {
+      name: "Spike Gear",
+      owned: false,
+      gold: 15000,
+      ruby: 0,
+    },
+  ];
 
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
