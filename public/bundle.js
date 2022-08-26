@@ -670,7 +670,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -70,
       scale: 140,
     },
-];
+  ];
   var hats = [
     {
       id: 0,
@@ -1171,6 +1171,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       );
     }
   }
+
   function drawWeapon(player, x, y, rot, wep, sid) {
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
@@ -1185,7 +1186,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
     ctx.drawImage(acc.img, acc.xOffset, acc.yOffset, acc.scale, acc.scale);
     ctx.restore();
-    
+
     var skin = skins.find((x) => x.id == player.skin);
     ctx.save();
     ctx.translate(x, y);
@@ -1226,6 +1227,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ctx.restore();
     }
   }
+
   window.requestAnimFrame =
     window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -1371,16 +1373,17 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.players = players;
     players.forEach((player) => {
       window.playerDefine = player;
-      if (player.sid != myPlayer.sid) {
-        var rel = relative({
-          x: player.x,
-          y: player.y,
-        });
-        var x = rel.x;
-        var y = rel.y;
-        drawPlayer(x, y, player);
-        drawPlayerText(x, y, player);
-        /*if(myPlayer.health < 100){
+      if (player.acc !== 2) {
+        if (player.sid != myPlayer.sid) {
+          var rel = relative({
+            x: player.x,
+            y: player.y,
+          });
+          var x = rel.x;
+          var y = rel.y;
+          drawPlayer(x, y, player);
+          drawPlayerText(x, y, player);
+          /*if(myPlayer.health < 100){
             ctx.fillStyle = "#fff";
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
@@ -1388,9 +1391,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             ctx.strokeText(`${myPlayer.health}`, myPlayer.x + 70, myPlayer.y);
             ctx.fillText(`${myPlayer.health}`, myPlayer.x + 70, myPlayer.y);
         }*/
-      } else {
-        drawPlayer(canvas.width / 2, canvas.height / 2, player);
-        drawPlayerText(canvas.width / 2, canvas.height / 2, player);
+        } else {
+          drawPlayer(canvas.width / 2, canvas.height / 2, player);
+          drawPlayerText(canvas.width / 2, canvas.height / 2, player);
+        }
       }
     });
     lastMove = move;
@@ -1440,8 +1444,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         });
         var x = rel.x;
         var y = rel.y;
+        if (player.acc === 2) {
+          drawPlayer(x, y, player);
+          drawPlayerText(x, y, player);
+        }
         drawPlayerText(x, y, player);
       } else {
+        if (player.acc === 2) {
+          drawPlayer(canvas.width / 2, canvas.height / 2, player);
+          drawPlayerText(canvas.width / 2, canvas.height / 2, player);
+        }
         drawPlayerText(canvas.width / 2, canvas.height / 2, player);
         if (player.health < 100) {
           ctx.fillStyle = "#8c0404";

@@ -677,14 +677,14 @@
 
         if (
           player.y > mapSize - desertHeight - riverHeight &&
-          player.y < mapSize - desertHeight
+          player.y < mapSize - desertHeight && player.acc 
         ) {
           player.xVel += player.hat == 4 ? 0.2 : 0.5;
           playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
         }
         if (
           mapSize - player.y - snowHeight &&
-          player.y < snowHeight - 2000 - 3000
+          player.y < snowHeight - 2000 - 3000 && player.acc !== 2
         ) {
           playerSpeed *= 0.5;
         }
@@ -878,7 +878,7 @@
                 if (
                   enemy.sid != player.sid &&
                   reaching(player, enemy, weapon.range) &&
-                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov)
+                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
                 ) {
                   var knockDir = Math.atan2(
                     enemy.y - player.y,
