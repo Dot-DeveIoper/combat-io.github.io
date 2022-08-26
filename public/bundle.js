@@ -24,7 +24,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let leaderboardScores = document.querySelector(".leaderboardScores");
   let ageLevelItems = document.querySelector("#ageLevelItems");
   let itemDetailsContainer = document.querySelector(".itemDetailsContainer");
-  let weaponDetailsContainer = document.querySelector(".weaponNameContainer");
+  let hatNameContainer = document.querySelector(".hatNameContainer");
   var YTofDay = document.getElementById("YTofDay");
   var Youtubers = [
     {
@@ -204,31 +204,21 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   hatMenu();
   
   for (let i = 0; i < Hats.length; i++) {
-    document.getElementById("h-item-" + i).style.display = "none";
-    document
-      .getElementById("EquipGear" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
-        }
-      });
      document
       .getElementById("EquipGear" + i)
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
-          itemDetailsContainer.style.display = "block";
-          document.getElementById("itemNameDetails").innerHTML = Hats[i].name;
-          document.getElementById("itemDetails").innerHTML = Hats[i].info;
-          document.getElementById("Stone").innerHTML = "";
-          document.getElementById("Wood").innerHTML = "";
-          document.getElementById("Food").innerHTML = "";
+          hatNameContainer.style.display = "block";
+          document.getElementById("hatNameDetails").innerHTML = Hats[i].name;
+          document.getElementById("hatDetails").innerHTML = Hats[i].info;
         }
       });
+
       document
       .getElementById("EquipGear" + i)
       .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
-          itemDetailsContainer.style.display = "none";
+          hatNameContainer.style.display = "none";
         }
       });
   }

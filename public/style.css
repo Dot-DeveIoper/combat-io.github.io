@@ -1906,7 +1906,7 @@ label.checkbox span {
   user-select: none;
 }
 
-.weaponNameContainer {
+.hatNameContainer {
   display: none;
   position: absolute;
   top: 20px;
@@ -1926,7 +1926,7 @@ label.checkbox span {
   user-select: none;
   pointer-events: none;
 }
-.weaponNameDetails {
+.hatNameDetails {
   display: inline-block;
   /* position: relative; */
   float: left;
@@ -1939,7 +1939,7 @@ label.checkbox span {
   text-decoration: none;
   user-select: none;
 }
-.weaponDetails {
+.hatDetails {
   display: inline-block;
   /* position: relative; */
   float: left;
