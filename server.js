@@ -460,8 +460,9 @@
   var players = [];
   var ids = 0;
 
-  function sendHatData(player, hat) {
+  function sendHatData(player, hat, acc) {
     player.hat = hat || 0;
+    player.acc = acc || 0;
   }
 
   function respawn(player, name, skin) {
@@ -1048,8 +1049,10 @@
             socket.close(1012, "Buffer missing");
           }
           var hat;
+          var acc;
           try {
             hat = msg[1][0].hat || 0;
+            acc = msg[1][0].acc || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
@@ -1061,9 +1064,9 @@
             socket.player.resources.gold -= Hats[hat].gold;
             socket.player.resources.ruby -= Hats[hat].ruby;
             Hats[hat].owned = true;
-            sendHatData(socket.player, hat);
+            sendHatData(socket.player, hat, acc);
           } else if (Hats[hat].owned) {
-            sendHatData(socket.player, hat);
+            sendHatData(socket.player, hat, acc);
           }
           break;
         case "33":

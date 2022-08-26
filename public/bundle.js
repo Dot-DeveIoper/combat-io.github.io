@@ -164,13 +164,54 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var Accessories = [
     {
       name: "Shadow Wings",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_11.png?v=1661095515533",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
       id: 1,
       info: "Move Faster",
       price: "",
       clicked: false,
     },
   ];
+
+  function accessoriesMenu(player) {
+    for (let i = 0; i < Accessories.length; i++) {
+      var AccItems = document.getElementById("AccessoriesGear" + [i]);
+      AccItems.innerHTML = `
+        <div class="itemsInfo1">
+          <img src="${Accessories[i].src}" alt="" class="itemImg" />
+          <span class="itemName">${Accessories[i].name}</span>
+          <br><span class="itemInfo">${Accessories[i].info}</span>
+        </div>
+        <div class="itemsInfo2">
+          <span class="itemPrice">${Accessories[i].price}</span>
+          <a id="EquipAccessories${[i]}" class="equipItem">Equip</a>
+        </div>
+    `;
+      Accessories[i].clicked = false;
+      var AccessoriesHat = document.getElementById("AccessoriesGear" + [i]);
+      AccessoriesHat.onclick = function () {
+        Accessories[i].clicked = !Accessories[i].clicked;
+        send([
+          "Hd",
+          [
+            {
+              acc: Accessories[i].clicked ? Accessories[i].id : 0,
+            },
+          ],
+        ]);
+        if (Accessories[i].clicked === false) {
+          for (let i = 0; i < Accessories.length; i++) {
+            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+          }
+        } else {
+          for (let i = 0; i < Accessories.length; i++) {
+            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+          }
+          document.getElementById("EquipAccessories" + i).innerHTML = "Unequip";
+        }
+      };
+    }
+  }
+  accessoriesMenu();
 
   function hatMenu(player) {
     for (let i = 0; i < Hats.length; i++) {
@@ -1944,15 +1985,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         },
       ],
     ]);
-    // fetch(`https://ipapi.co/json`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.timezone != k1) {
-    //       send(["vx", ["Using VPN."]]);
-    //     }
-    //   })
-    //   .catch((err) => alert(err),
-    //     send(["vx", ["Server error."]]));
+fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
+.then((response) => response.json())
+.then((data) => {
+if (data.time_zone.name != k1) {
+send(["vx", ["Using VPN."]]);
+}
+})
+.catch((err) => send(["vx", ["Server error."]]));
 
     fetch(
       `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
