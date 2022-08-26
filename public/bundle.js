@@ -174,7 +174,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       name: "God Wings",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       id: 2,
-      info: "Move Faster",
+      info: "Fly Over The Sunrise",
       price: "20000",
       clicked: false,
     },
@@ -667,8 +667,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
       img: new Image(),
       xOffset: -75,
-      yOffset: -50,
-      scale: 100,
+      yOffset: -75,
+      scale: 140,
     },
 ];
   var hats = [
