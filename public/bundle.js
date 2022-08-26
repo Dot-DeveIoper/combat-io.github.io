@@ -1273,20 +1273,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     });
     lastMove = move;
 
-    // trees, stones etc
-    treesCache.forEach((object) => {
-      var rel = relative({
-        x: object.x,
-        y: object.y,
-      });
-      drawTree(
-        rel.x + object.xWiggle - 10,
-        rel.y + object.yWiggle - 10,
-        object.dir,
-        object.id
-      );
-    });
-
     // animals
     animalsCache.forEach((animal) => {
       var rel = relative({
@@ -1310,6 +1296,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       );
     });
 
+        // trees, stones etc
+    treesCache.forEach((object) => {
+      var rel = relative({
+        x: object.x,
+        y: object.y,
+      });
+      drawTree(
+        rel.x + object.xWiggle - 10,
+        rel.y + object.yWiggle - 10,
+        object.dir,
+        object.id
+      );
+    });
+    
     players.forEach((player) => {
       if (player.sid != myPlayer.sid) {
         var rel = relative({
