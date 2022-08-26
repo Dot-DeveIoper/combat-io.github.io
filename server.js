@@ -677,7 +677,7 @@
 
         if (
           player.y > mapSize - desertHeight - riverHeight &&
-          player.y < mapSize - desertHeight && player.acc 
+          player.y < mapSize - desertHeight && player.acc !== 2
         ) {
           player.xVel += player.hat == 4 ? 0.2 : 0.5;
           playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
@@ -742,7 +742,7 @@
             if (
               player2.spawned &&
               collides(player, player2) &&
-              player.sid != player2.sid
+              player.sid != player2.sid && player2.acc != 2 && player.acc != 2
             ) {
               var pushDir = Math.atan2(
                 player.y - player2.y,
@@ -969,7 +969,7 @@
               objNear.forEach((obj) => {
                 if (
                   reaching(player, obj, weapon.range + 10) &&
-                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov)
+                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
                 ) {
                   obj.health -=
                     player.hat == 5 ? weapon.damage + 25 : weapon.damage; // for tankgear
