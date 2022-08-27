@@ -294,7 +294,7 @@
 
   var defaultReload = 500;
   var weapons = [
-   {
+    {
       id: 0,
       isWeapon: true,
       name: "Tool Hammer",
@@ -674,14 +674,16 @@
 
         if (
           player.y > mapSize - desertHeight - riverHeight &&
-          player.y < mapSize - desertHeight && player.acc !== 2
+          player.y < mapSize - desertHeight &&
+          player.acc !== 2
         ) {
           player.xVel += player.hat == 4 ? 0.2 : 0.5;
           playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
         }
         if (
           mapSize - player.y - snowHeight &&
-          player.y < snowHeight - 2000 - 3000 && player.acc !== 2
+          player.y < snowHeight - 2000 - 3000 &&
+          player.acc !== 2
         ) {
           playerSpeed *= 0.5;
         }
@@ -739,7 +741,9 @@
             if (
               player2.spawned &&
               collides(player, player2) &&
-              player.sid != player2.sid && player2.acc != 2 && player.acc != 2
+              player.sid != player2.sid &&
+              player2.acc != 2 &&
+              player.acc != 2
             ) {
               var pushDir = Math.atan2(
                 player.y - player2.y,
@@ -875,7 +879,14 @@
                 if (
                   enemy.sid != player.sid &&
                   reaching(player, enemy, weapon.range) &&
-                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2 && enemy.acc !== 2
+                  isfacing(
+                    player,
+                    enemy,
+                    radToDeg(player.aimdir),
+                    weapon.fov
+                  ) &&
+                  player.acc !== 2 &&
+                  enemy.acc !== 2
                 ) {
                   var knockDir = Math.atan2(
                     enemy.y - player.y,
@@ -924,7 +935,8 @@
                     tree,
                     weapon.range + (tree.id == 2 ? 40 : 65)
                   ) &&
-                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
+                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) &&
+                  player.acc !== 2
                 ) {
                   player.resources[
                     tree.id == 0
@@ -966,7 +978,8 @@
               objNear.forEach((obj) => {
                 if (
                   reaching(player, obj, weapon.range + 10) &&
-                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
+                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) &&
+                  player.acc !== 2
                 ) {
                   obj.health -=
                     player.hat == 5 ? weapon.damage + 25 : weapon.damage; // for tankgear
@@ -1163,7 +1176,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-            sendWepData(socket.player, wep);
+          sendWepData(socket.player, wep);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
@@ -1371,9 +1384,15 @@
                 socket.player.weapons.forEach((w) => {
                   playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
-                socket.player.weapon = playerWeaponObjects.filter(
-                  (x) => x && x.isWeapon
-                )[0].id;
+                if (socket.player.upgrade === 1) {
+                  socket.player.weapon = playerWeaponObjects.filter(
+                    (x) => x && x.isWeapon
+                  )[7].id;
+                } else {
+                  socket.player.weapon = playerWeaponObjects.filter(
+                    (x) => x && x.isWeapon
+                  )[0].id;
+                }
               }
               if (obj.placeable) {
                 socket.player.resources.food -= reqFood;
@@ -1397,9 +1416,15 @@
                 socket.player.weapons.forEach((w) => {
                   playerWeaponObjects.push(weapons.find((x) => x.id == w));
                 });
-                socket.player.weapon = playerWeaponObjects.filter(
-                  (x) => x && x.isWeapon
-                )[0].id;
+                if (socket.player.upgrade === 1) {
+                  socket.player.weapon = playerWeaponObjects.filter(
+                    (x) => x && x.isWeapon
+                  )[7].id;
+                } else {
+                  socket.player.weapon = playerWeaponObjects.filter(
+                    (x) => x && x.isWeapon
+                  )[0].id;
+                }
               }
             }
           }
@@ -1410,10 +1435,11 @@
             if (socket.player.weapon == id) {
               socket.player.weapon = 0;
             } else {
-              if (socket.player.upgrade === 1) {
+              if (id === 0 && socket.player.upgrade === 1) {
+                socket.player.weapon = 7;
+              } else {
                 socket.player.weapon = id;
               }
-              socket.player.weapon = id;
             }
           }
           break;
