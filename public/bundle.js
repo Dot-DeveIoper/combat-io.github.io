@@ -1791,7 +1791,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         });
     }
 
-    if (myPlayer.age >= 2 && !run) {
+    if (myPlayer.age === 2 && !run) {
       upgradeMenu();
     }
   }
