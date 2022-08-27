@@ -293,28 +293,6 @@
   console.log(animalsCache);
 
   var defaultReload = 500;
-  var weps = [
-    {
-      id: 0,
-      isWeapon: true,
-      name: "Tool Hammer",
-      reload: 450,
-      damage: 25,
-      range: 95,
-      fov: 160,
-      gather: 1,
-    },
-    {
-      id: 1,
-      isWeapon: true,
-      name: "Short Sword",
-      reload: 300,
-      damage: 35,
-      range: 110,
-      fov: 160,
-      gather: 1,
-    },
-  ];
   var weapons = [
     {
       id: 0,
@@ -323,6 +301,16 @@
       reload: 450,
       damage: 25,
       range: 95,
+      fov: 160,
+      gather: 1,
+    },
+    {
+      id: 12,
+      isWeapon: true,
+      name: "Short Sword",
+      reload: 300,
+      damage: 35,
+      range: 110,
       fov: 160,
       gather: 1,
     },
@@ -1172,7 +1160,7 @@
           }
           var wep;
           try {
-            wep = msg[1][0].wep || 0;
+            socket.player.weapon = msg[1][0].wep || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }

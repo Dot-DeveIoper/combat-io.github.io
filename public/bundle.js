@@ -570,13 +570,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         }
       });
     document
-      .getElementById("h-weap-" + i)
-      .addEventListener("click", function (e) {
-        if (e.isTrusted) {
-          send(["s", [inventory[i + 1]]]);
-        }
-      });
-    document
       .getElementById("h-item-" + i)
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
@@ -939,6 +932,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var weapons = [
     {
       id: 0,
+      name: "Tool Hammer",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
+      scale: 100,
+      img: new Image(),
+      xOffset: -20,
+      yOffset: -30,
+    },
+    {
+      id: 12,
+      name: "Short Sword",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
+      scale: 110,
+      img: new Image(),
+      xOffset: -17,
+      yOffset: -35,
+    },
+    {
+      id: 1,
       name: "Orange",
       food: true,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358",
@@ -949,7 +960,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       angleOffset: -toRad(40),
     },
     {
-      id: 1,
+      id: 2,
       name: "Spike",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 110,
@@ -958,7 +969,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -55,
     },
     {
-      id: 2,
+      id: 3,
       name: "Wall",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
       scale: 110,
@@ -967,7 +978,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -55,
     },
     {
-      id: 3,
+      id: 4,
       name: "Booster",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
@@ -976,7 +987,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
     },
     {
-      id: 4,
+      id: 5,
       name: "Trap",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
       scale: 80,
@@ -985,33 +996,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
     },
     {
-      id: 5,
+      id: 6,
       name: "TeleportPad",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
       scale: 80,
       img: new Image(),
       xOffset: 20,
       yOffset: -40,
-    },
-  ];
-  var weaps = [
-    {
-      id: 0,
-      name: "Tool Hammer",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
-      scale: 100,
-      img: new Image(),
-      xOffset: -20,
-      yOffset: -30,
-    },
-    {
-      id: 1,
-      name: "Short Sword",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
-      scale: 100,
-      img: new Image(),
-      xOffset: -20,
-      yOffset: -30,
     },
   ];
 
@@ -1099,9 +1090,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     w.img.src = w.src;
   });
   accs.forEach((w) => {
-    w.img.src = w.src;
-  });
-  weaps.forEach((w) => {
     w.img.src = w.src;
   });
 
@@ -1242,7 +1230,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weaps[0], player.sid);
+      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
     } else {
       drawWeapon(
         player,
@@ -1267,13 +1255,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
-    ctx.restore();
-    
-    var weapons = weaps.find((x) => x.id == player.wep);
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rot - toRad(swingAngle[sid]) + (weapons.angleOffset || 0));
-    ctx.drawImage(weapons.img, weapons.xOffset, weapons.yOffset, weapons.scale, weapons.scale);
     ctx.restore();
 
     var acc = accs.find((x) => x.id == player.acc);
@@ -1791,12 +1772,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           "Ug",
           [
             {
-              wep: Weps[i].id,
+              wep: 12,
             },
           ],
         ]);
-        if (Weps[i].clicked !== false) {
-          Weps[i].clicked = true;
+        if (Weps[i].clicked == false) {
+          upgradeOption.style.display = "block";
+        } else {
           upgradeOption.style.display = "none";
         }
       };
@@ -1971,11 +1953,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           var sn;
           inventory.forEach((item) => {
             var itm = weapons.find((x) => x.id == item);
-            var Weapon = weaps.find((x) => x.id == item);
             if (itm && itm.food) {
               sn = itm.id;
               if (myPlayer.weapon == sn) {
-                send(["s", [inventory[0]]]);
+                send(["s", [inventory[1]]]);
               } else {
                 send(["s", [sn + 1]]);
               }
@@ -1985,47 +1966,47 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           break;
         case keycodes.HOTBAR_1:
           if (chatbox.style.display === "none") {
-            send(["s", [weaps[0]]]);
+            send(["s", [inventory[1]]]);
           }
           break;
         case keycodes.HOTBAR_2:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[1]]]);
+            send(["s", [inventory[2]]]);
           }
           break;
         case keycodes.HOTBAR_3:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[2]]]);
+            send(["s", [inventory[3]]]);
           }
           break;
         case keycodes.HOTBAR_4:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[3]]]);
+            send(["s", [inventory[4]]]);
           }
           break;
         case keycodes.HOTBAR_5:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[4]]]);
+            send(["s", [inventory[5]]]);
           }
           break;
         case keycodes.HOTBAR_6:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[5]]]);
+            send(["s", [inventory[6]]]);
           }
           break;
         case keycodes.HOTBAR_7:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[6]]]);
+            send(["s", [inventory[7]]]);
           }
           break;
         case keycodes.HOTBAR_8:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[7]]]);
+            send(["s", [inventory[8]]]);
           }
           break;
         case keycodes.HOTBAR_9:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[8]]]);
+            send(["s", [inventory[9]]]);
           }
           break;
         case 82:
