@@ -1773,7 +1773,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ageCounter.innerHTML = myPlayer.age;
 
     function upgradeMenu() {
-      ageLevelItems.style.display = "block";
+      // ageLevelItems.style.display = "block";
       document
         .getElementById("age-item-0")
         .addEventListener("click", function (e) {
