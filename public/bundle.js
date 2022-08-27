@@ -28,6 +28,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var YTofDay = document.getElementById("YTofDay");
   var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
   var upgradeOption = document.getElementById("ageLevelItems");
+  let run = false;
 
   var Youtubers = [
     {
@@ -1771,12 +1772,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     ageCounter.innerHTML = myPlayer.age;
 
-    let run = false;
-
     function upgradeMenu() {
       ageLevelItems.style.display = "block";
-        var upgradeChoice = document.getElementById("age-item-0");
-        upgradeChoice.onclick = function () {
+      document
+        .getElementById("age-item-0")
+        .addEventListener("click", function (e) {
           send([
             "Ug",
             [
@@ -1785,18 +1785,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
               },
             ],
           ]);
-            ageLevelItems.style.display = "none";
-            document.getElementById("h-item-0").style.backgroundImage =
-              "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
-          }
-      }
+          ageLevelItems.style.display = "none";
+          document.getElementById("h-item-0").style.backgroundImage =
+            "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
+        });
     }
 
     if (myPlayer.age >= 2 && !run) {
       upgradeMenu();
     }
   }
-
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
