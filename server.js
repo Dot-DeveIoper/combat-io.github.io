@@ -1174,6 +1174,7 @@
           if (socket.player.age >= 2) {
             try {
               socket.player.weapon = msg[1][0].wep || 0;
+              socket.player.upgradeWep = msg[1][0].wep || 0;
             } catch (err) {
               socket.close(1012, "Buffer missing");
             }
