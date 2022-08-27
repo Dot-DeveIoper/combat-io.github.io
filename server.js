@@ -1171,12 +1171,14 @@
             socket.close(1012, "Buffer missing");
           }
           var wep;
-          try {
-            socket.player.weapon = msg[1][0].wep || 0;
-          } catch (err) {
-            socket.close(1012, "Buffer missing");
+          if (socket.player.age === 2) {
+            try {
+              socket.player.weapon = msg[1][0].wep || 0;
+            } catch (err) {
+              socket.close(1012, "Buffer missing");
+            }
+            sendWepData(socket.player, wep);
           }
-          sendWepData(socket.player, wep);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
@@ -1380,18 +1382,17 @@
                   100,
                   socket.player.health + obj.heal
                 );
-                var playerWeaponObjects = [];
-                socket.player.weapons.forEach((w) => {
-                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
-                });
+                // var playerWeaponObjects = [];
+                // socket.player.weapons.forEach((w) => {
+                //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
+                // });
+                // socket.player.weapon = playerWeaponObjects.filter(
+                //   (x) => x && x.isWeapon
+                // )[0].id;
                 if (socket.player.upgrade === 1) {
-                  socket.player.weapon = playerWeaponObjects.filter(
-                    (x) => x && x.isWeapon
-                  )[7].id;
+                  socket.player.weapon = 7;
                 } else {
-                  socket.player.weapon = playerWeaponObjects.filter(
-                    (x) => x && x.isWeapon
-                  )[0].id;
+                  socket.player.weapon = 0;
                 }
               }
               if (obj.placeable) {
@@ -1412,18 +1413,17 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 });
-                var playerWeaponObjects = [];
-                socket.player.weapons.forEach((w) => {
-                  playerWeaponObjects.push(weapons.find((x) => x.id == w));
-                });
+                // var playerWeaponObjects = [];
+                // socket.player.weapons.forEach((w) => {
+                //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
+                // });
+                // socket.player.weapon = playerWeaponObjects.filter(
+                //   (x) => x && x.isWeapon
+                // )[0].id;
                 if (socket.player.upgrade === 1) {
-                  socket.player.weapon = playerWeaponObjects.filter(
-                    (x) => x && x.isWeapon
-                  )[7].id;
+                  socket.player.weapon = 7;
                 } else {
-                  socket.player.weapon = playerWeaponObjects.filter(
-                    (x) => x && x.isWeapon
-                  )[0].id;
+                  socket.player.weapon = 0;
                 }
               }
             }

@@ -1794,7 +1794,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       };
     }
   }
-  upgradeMenu();
+  
+  if (myPlayer.age === 2) {
+    upgradeMenu();
+  }
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
