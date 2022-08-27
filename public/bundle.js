@@ -85,7 +85,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       food: 0,
     },
     {
-      id: 12,
+      id: 7,
       name: "Short Sword",
       info: "Run Into Battle With The New Short Sword!",
       stone: 0,
@@ -1782,7 +1782,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           "Ug",
           [
             {
-              wep: 12,
+              weapon: 7,
             },
           ],
         ]);
