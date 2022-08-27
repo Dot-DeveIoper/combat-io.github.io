@@ -1077,13 +1077,11 @@
           }
           var name;
           var skin;
-          var hat;
           try {
             name =
               msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
               "Combat.io";
             skin = msg[1][0].skin || 0;
-            hat = msg[1][0].hat || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
