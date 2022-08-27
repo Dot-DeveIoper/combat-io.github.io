@@ -503,7 +503,7 @@
 
   function sendWepData(player, wep) {
     player.wep = wep || 0;
-    player.upgrade = 1;
+    player.upgrade = true;
   }
 
   function sendAccData(player, acc) {
@@ -1171,7 +1171,7 @@
             socket.close(1012, "Buffer missing");
           }
           var wep;
-          if (socket.player.age === 2) {
+          if (socket.player.age >= 2) {
             try {
               socket.player.weapon = msg[1][0].wep || 0;
             } catch (err) {
@@ -1389,8 +1389,8 @@
                 // socket.player.weapon = playerWeaponObjects.filter(
                 //   (x) => x && x.isWeapon
                 // )[0].id;
-                if (socket.player.upgrade === 1) {
-                  socket.player.weapon = 7;
+                if (socket.player.upgrade) {
+                  socket.player.weapon = socket.player.upgradeWep;
                 } else {
                   socket.player.weapon = 0;
                 }
@@ -1420,8 +1420,8 @@
                 // socket.player.weapon = playerWeaponObjects.filter(
                 //   (x) => x && x.isWeapon
                 // )[0].id;
-                if (socket.player.upgrade === 1) {
-                  socket.player.weapon = 7;
+                if (socket.player.upgrade) {
+                  socket.player.weapon = socket.player.upgradeWep;
                 } else {
                   socket.player.weapon = 0;
                 }
@@ -1435,8 +1435,8 @@
             if (socket.player.weapon == id) {
               socket.player.weapon = 0;
             } else {
-              if (id === 0 && socket.player.upgrade === 1) {
-                socket.player.weapon = 7;
+              if (id === 0 && socket.player.upgrade) {
+                socket.player.weapon = socket.player.upgradeWep;
               } else {
                 socket.player.weapon = id;
               }
