@@ -26,6 +26,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let itemDetailsContainer = document.querySelector(".itemDetailsContainer");
   let hatNameContainer = document.querySelector(".hatNameContainer");
   var YTofDay = document.getElementById("YTofDay");
+  var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
+  var upgradeOption = document.getElementById("ageLevelItems");
+  
   var Youtubers = [
     {
       name: "Dot",
@@ -60,12 +63,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 0,
       name: "Tool Hammer",
       info: "Get resources and upgrade your tool.",
+      clicked: false,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
     },
     {
       id: 1,
       name: "Short Sword",
       info: "Attack Enemies With A Short Sword.",
+      clicked: false,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
     },
   ];
@@ -1710,9 +1715,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
-
-    var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
-    var upgradeOption = document.getElementById("ageLevelItems");
     if (myPlayer.resources) {
       document.getElementById("ruby").innerHTML = myPlayer.resources[
         trees[6].name
@@ -1740,8 +1742,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    ageItemSelectCounter.style.display = "none";
-    upgradeOption.style.display = "none";
     if (ageLevelBar.style.width === "100%") {
       ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
       upgradeOption.style.display = "block";
@@ -1767,14 +1767,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             },
           ],
         ]);
-        if (Weps[i].clicked === false) {
-          for (let i = 0; i < Weps.length; i++) {
-            document.getElementById("age-item-" + i).innerHTML = "Equip";
-          }
+        if (Weps[i].clicked == false) {
+          upgradeOption.style.display = "block";
         } else {
-          for (let i = 0; i < Weps.length; i++) {
-            document.getElementById("age-item-" + i).innerHTML = "Equip";
-          }
           upgradeOption.style.display = "none";
         }
       };
