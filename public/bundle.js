@@ -55,7 +55,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-
+  var weps = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      info: "Get resources and upgrade your tool.",
+      stone: 0,
+      wood: 0,
+      food: 0,
+    },
+    {
+      id: 0,
+      name: "Short Sword",
+      info: "Attack Enemies.",
+      stone: 0,
+      wood: 0,
+      food: 0,
+    },
+  ];
   var Weapons = [
     {
       id: 0,

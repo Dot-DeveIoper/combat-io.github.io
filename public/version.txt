@@ -1,3 +1,14 @@
+-Version 1.4.0-
+
+-Added Wings
+ -Shadow Wings
+ -God Wings
+
+-Added price to hats
+-Added vpn / ad block detector
+
+looking for a sponsorship ( message moofoll#3015 on discord )
+
 -Version 1.3.8-
 
 -Added Hats

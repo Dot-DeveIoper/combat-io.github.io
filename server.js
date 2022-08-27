@@ -293,6 +293,28 @@
   console.log(animalsCache);
 
   var defaultReload = 500;
+  var weps = [
+    {
+      id: 0,
+      isWeapon: true,
+      name: "Tool Hammer",
+      reload: 450,
+      damage: 25,
+      range: 95,
+      fov: 160,
+      gather: 1,
+    },
+    {
+      id: 1,
+      isWeapon: true,
+      name: "Short Sword",
+      reload: 300,
+      damage: 35,
+      range: 110,
+      fov: 160,
+      gather: 1,
+    },
+  ];
   var weapons = [
     {
       id: 0,
@@ -487,8 +509,12 @@
   var players = [];
   var ids = 0;
 
-  function sendHatData(player, hat) {
-    player.hat = hat || 0;
+  function sendHatData(player, wep) {
+    player.wep = wep || 0;
+  }
+
+  function sendWepData(player, hat) {
+    player.wep = hat || 0;
   }
 
   function sendAccData(player, acc) {
@@ -1009,6 +1035,7 @@
       skin: 0,
       hat: 0,
       acc: 0,
+      wep: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
@@ -1138,6 +1165,18 @@
           } else if (Accs[acc].owned) {
             sendAccData(socket.player, acc);
           }
+          break;
+        case "Ug":
+          if (!msg[1][0]) {
+            socket.close(1012, "Buffer missing");
+          }
+          var wep;
+          try {
+            wep = msg[1][0].wep || 0;
+          } catch (err) {
+            socket.close(1012, "Buffer missing");
+          }
+            sendWepData(socket.player, wep);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
