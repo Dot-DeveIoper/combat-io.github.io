@@ -28,7 +28,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var YTofDay = document.getElementById("YTofDay");
   var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
   var upgradeOption = document.getElementById("ageLevelItems");
-  
+
   var Youtubers = [
     {
       name: "Dot",
@@ -48,8 +48,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
     {
       name: "X-Jorge Pet",
-      link: "https://www.youtube.com/channel/UCndcue_WhfwrDy3uzUTnMNQ"
-    }
+      link: "https://www.youtube.com/channel/UCndcue_WhfwrDy3uzUTnMNQ",
+    },
   ];
   var creator =
     Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
@@ -74,7 +74,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
     },
   ];
-  
+
   var Weapons = [
     {
       id: 0,
@@ -198,7 +198,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       info: "Deals damage to enemies",
       price: "10000",
       clicked: false,
-    }
+    },
   ];
   var Acc = [
     {
@@ -793,8 +793,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       img: new Image(),
       xOffset: -40,
       yOffset: -40,
-      scale: 80,
-    }
+      scale: 150,
+    },
   ];
 
   var skins = [
@@ -860,7 +860,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       img: new Image(),
       xOffset: -35,
       yOffset: -35,
-      scale: 70,
+      scale: 150,
     },
   ];
 
@@ -1076,10 +1076,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: 0,
     },
   ];
-  
-    const shadow = new Image();
-    shadow.src = 'https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_26_0vw_Kleki.png?v=1661555316804';
-  
+
+  const shadow = new Image();
+  shadow.src =
+    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_26_0vw_Kleki.png?v=1661555316804";
+
   weapons.forEach((w) => {
     w.img.src = w.src;
   });
@@ -1253,12 +1254,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawWeapon(player, x, y, rot, wep, sid) {
-//       ctx.save();
-//       ctx.translate(x / 100, y / 100);
-//       ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0) * Math.PI/180);
-//       ctx.drawImage(shadow, -20, -20, 196, 215);
-//       ctx.restore();
-    
+    //       ctx.save();
+    //       ctx.translate(x / 100, y / 100);
+    //       ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0) * Math.PI/180);
+    //       ctx.drawImage(shadow, -20, -20, 196, 215);
+    //       ctx.restore();
+
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
@@ -1769,35 +1770,39 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ageLevelBar.style.width = myPlayer.xp + "%";
     }
     ageCounter.innerHTML = myPlayer.age;
-  }
-  function upgradeMenu() {
-    var upgradeOption = document.getElementById("ageLevelItems");
-    for (let i = 0; i < Weps.length; i++) {
-      Weps[i].clicked = false;
-      var upgradeChoice = document.getElementById("age-item-0");
-      upgradeChoice.onclick = function () {
-        Weps[i].clicked = !Weps[i].clicked;
-        send([
-          "Ug",
-          [
-            {
-              wep: 7,
-            },
-          ],
-        ]);
-        if (Weps[i].clicked == false) {
-          upgradeOption.style.display = "block";
-        } else {
-          upgradeOption.style.display = "none";
-          document.getElementById("h-item-0").style.backgroundImage = "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
-        }
-      };
+
+    let run = false;
+
+    function upgradeMenu() {
+      for (let i = 0; i < Weps.length; i++) {
+        Weps[i].clicked = false;
+        var upgradeChoice = document.getElementById("age-item-0");
+        upgradeChoice.onclick = function () {
+          Weps[i].clicked = !Weps[i].clicked;
+          send([
+            "Ug",
+            [
+              {
+                wep: 7,
+              },
+            ],
+          ]);
+          if (Weps[i].clicked === false) {
+            ageLevelItems.style.display = "block";
+          } else {
+            ageLevelItems.style.display = "none";
+            document.getElementById("h-item-0").style.backgroundImage =
+              "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
+          }
+        };
+      }
+    }
+
+    if (myPlayer.age === 2 && !run) {
+      upgradeMenu();
     }
   }
-  
-  if (myPlayer.age === 2) {
-    upgradeMenu();
-  }
+
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
@@ -2217,7 +2222,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ageBar.style.display = "inline-block";
       resourcesAndMap.style.display = "inline-block";
       leaderboardScores.style.display = "block";
-      ageLevelItems.style.display = "block";
       SpawnedOnce = 1;
       send([
         "j",
