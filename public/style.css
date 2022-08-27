@@ -951,7 +951,8 @@ select:focus {
 .successContainer {
   display: inline-block;
   position: absolute;
-  top: 50px;
+  top: 100px;
+  /* top: 50px; */
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #549ff6;
@@ -973,7 +974,8 @@ select:focus {
 .warningContainer {
   display: inline-block;
   position: absolute;
-  top: 50px;
+  top: 100px;
+  /* top: 50px; */
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f8ab49;
@@ -995,7 +997,8 @@ select:focus {
 .errorContainer {
   display: inline-block;
   position: absolute;
-  top: 50px;
+  top: 100px;
+  /* top: 50px; */
   left: 50%;
   transform: translate(-50%, -50%);
   animation: 0.3s popup;
@@ -1070,7 +1073,8 @@ select:focus {
     opacity: 0.9;
   }
   100% {
-    top: 50px;
+    top: 100px;
+    /* top: 50px; */
     opacity: 1;
   }
 }
