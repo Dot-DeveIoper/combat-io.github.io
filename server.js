@@ -305,16 +305,6 @@
       gather: 1,
     },
     {
-      id: 7,
-      isWeapon: true,
-      name: "Short Sword",
-      reload: 300,
-      damage: 35,
-      range: 110,
-      fov: 160,
-      gather: 1,
-    },
-    {
       id: 1,
       isWeapon: false,
       name: "Orange",
@@ -398,6 +388,16 @@
       velocity: -2,
       health: 50,
       maxHealth: 200,
+    },
+        {
+      id: 7,
+      isWeapon: true,
+      name: "Short Sword",
+      reload: 300,
+      damage: 35,
+      range: 110,
+      fov: 160,
+      gather: 1,
     },
   ];
 
@@ -502,8 +502,7 @@
   }
 
   function sendWepData(player, wep) {
-    player.weapon = wep || 0;
-    player.upgrade = 1;
+    player.wep = wep || 0;
   }
 
   function sendAccData(player, acc) {
@@ -523,7 +522,7 @@
     player.x = randomInt(0, mapSize);
     player.y = randomInt(0, mapSize);
     player.health = 100;
-    player.weapons = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    player.weapons = [0, 1, 2, 3, 4, 5, 6, 7];
     if (player.admin) {
       player.resources = {
         food: 1000000,
@@ -674,16 +673,14 @@
 
         if (
           player.y > mapSize - desertHeight - riverHeight &&
-          player.y < mapSize - desertHeight &&
-          player.acc !== 2
+          player.y < mapSize - desertHeight && player.acc !== 2
         ) {
           player.xVel += player.hat == 4 ? 0.2 : 0.5;
           playerSpeed *= player.hat == 4 ? 0.6 : 0.3;
         }
         if (
           mapSize - player.y - snowHeight &&
-          player.y < snowHeight - 2000 - 3000 &&
-          player.acc !== 2
+          player.y < snowHeight - 2000 - 3000 && player.acc !== 2
         ) {
           playerSpeed *= 0.5;
         }
@@ -741,9 +738,7 @@
             if (
               player2.spawned &&
               collides(player, player2) &&
-              player.sid != player2.sid &&
-              player2.acc != 2 &&
-              player.acc != 2
+              player.sid != player2.sid && player2.acc != 2 && player.acc != 2
             ) {
               var pushDir = Math.atan2(
                 player.y - player2.y,
@@ -879,14 +874,7 @@
                 if (
                   enemy.sid != player.sid &&
                   reaching(player, enemy, weapon.range) &&
-                  isfacing(
-                    player,
-                    enemy,
-                    radToDeg(player.aimdir),
-                    weapon.fov
-                  ) &&
-                  player.acc !== 2 &&
-                  enemy.acc !== 2
+                  isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2 && enemy.acc !== 2
                 ) {
                   var knockDir = Math.atan2(
                     enemy.y - player.y,
@@ -935,8 +923,7 @@
                     tree,
                     weapon.range + (tree.id == 2 ? 40 : 65)
                   ) &&
-                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) &&
-                  player.acc !== 2
+                  isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
                 ) {
                   player.resources[
                     tree.id == 0
@@ -978,8 +965,7 @@
               objNear.forEach((obj) => {
                 if (
                   reaching(player, obj, weapon.range + 10) &&
-                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) &&
-                  player.acc !== 2
+                  isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2
                 ) {
                   obj.health -=
                     player.hat == 5 ? weapon.damage + 25 : weapon.damage; // for tankgear
@@ -1037,6 +1023,7 @@
       skin: 0,
       hat: 0,
       acc: 0,
+      wep: 0,
       sid: null,
       xVel: 0,
       yVel: 0,
@@ -1046,7 +1033,7 @@
       reloaded: true,
       weapon: 0,
       health: 100,
-      weapons: [0, 1, 2, 3, 4, 5, 6, 7],
+      weapons: [0, 1, 2, 3, 4, 5, 6],
       xp: 0,
       age: 0,
       resources: {
@@ -1175,7 +1162,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          sendWepData(socket.player, wep);
+            sendWepData(socket.player, wep);
           break;
         case "33":
           if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
@@ -1422,7 +1409,7 @@
             if (socket.player.weapon == id) {
               socket.player.weapon = 0;
             } else {
-                socket.player.weapon = 7;
+              socket.player.weapon = id;
             }
           }
           break;
