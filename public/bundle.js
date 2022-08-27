@@ -931,15 +931,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var weapons = [
     {
-      id: 0,
-      name: "Tool Hammer",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
-      scale: 100,
-      img: new Image(),
-      xOffset: -20,
-      yOffset: -30,
-    },
-    {
       id: 1,
       name: "Orange",
       food: true,
@@ -994,6 +985,26 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       img: new Image(),
       xOffset: 20,
       yOffset: -40,
+    },
+  ];
+  var weaps = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
+      scale: 100,
+      img: new Image(),
+      xOffset: -20,
+      yOffset: -30,
+    },
+    {
+      id: 1,
+      name: "Short Sword",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
+      scale: 100,
+      img: new Image(),
+      xOffset: -20,
+      yOffset: -30,
     },
   ];
 
@@ -1081,6 +1092,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     w.img.src = w.src;
   });
   accs.forEach((w) => {
+    w.img.src = w.src;
+  });
+  weaps.forEach((w) => {
     w.img.src = w.src;
   });
 
@@ -1246,6 +1260,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + (wep.angleOffset || 0));
     ctx.drawImage(wep.img, wep.xOffset, wep.yOffset, wep.scale, wep.scale);
+    ctx.restore();
+    
+    var weapons = weaps.find((x) => x.id == player.wep);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + (weapons.angleOffset || 0));
+    ctx.drawImage(weapons.img, weapons.xOffset, weapons.yOffset, weapons.scale, weapons.scale);
     ctx.restore();
 
     var acc = accs.find((x) => x.id == player.acc);
@@ -1767,9 +1788,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             },
           ],
         ]);
-        if (Weps[i].clicked == false) {
-          upgradeOption.style.display = "block";
-        } else {
+        if (Weps[i].clicked !== false) {
+          Weps[i].clicked = true;
           upgradeOption.style.display = "none";
         }
       };
