@@ -1774,6 +1774,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     function upgradeMenu() {
       // ageLevelItems.style.display = "block";
+      run = true;
       document
         .getElementById("age-item-0")
         .addEventListener("click", function (e) {
