@@ -570,6 +570,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         }
       });
     document
+      .getElementById("h-weap-" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          send(["s", [inventory[i + 1]]]);
+        }
+      });
+    document
       .getElementById("h-item-" + i)
       .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
@@ -931,7 +938,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var weapons = [
     {
-      id: 1,
+      id: 0,
       name: "Orange",
       food: true,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358",
@@ -942,7 +949,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       angleOffset: -toRad(40),
     },
     {
-      id: 2,
+      id: 1,
       name: "Spike",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
       scale: 110,
@@ -951,7 +958,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -55,
     },
     {
-      id: 3,
+      id: 2,
       name: "Wall",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447",
       scale: 110,
@@ -960,7 +967,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -55,
     },
     {
-      id: 4,
+      id: 3,
       name: "Booster",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508",
       scale: 80,
@@ -969,7 +976,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
     },
     {
-      id: 5,
+      id: 4,
       name: "Trap",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254",
       scale: 80,
@@ -978,7 +985,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
     },
     {
-      id: 6,
+      id: 5,
       name: "TeleportPad",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708",
       scale: 80,
@@ -1235,7 +1242,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   function drawPlayer(x, y, player) {
     if (player.sid != myPlayer.sid) {
-      drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid);
+      drawWeapon(player, x, y, player.aimdir, weaps[0], player.sid);
     } else {
       drawWeapon(
         player,
@@ -1964,10 +1971,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           var sn;
           inventory.forEach((item) => {
             var itm = weapons.find((x) => x.id == item);
+            var Weapon = weaps.find((x) => x.id == item);
             if (itm && itm.food) {
               sn = itm.id;
               if (myPlayer.weapon == sn) {
-                send(["s", [inventory[1]]]);
+                send(["s", [inventory[0]]]);
               } else {
                 send(["s", [sn + 1]]);
               }
@@ -1977,47 +1985,47 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           break;
         case keycodes.HOTBAR_1:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[1]]]);
+            send(["s", [weaps[0]]]);
           }
           break;
         case keycodes.HOTBAR_2:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[2]]]);
+            send(["s", [inventory[1]]]);
           }
           break;
         case keycodes.HOTBAR_3:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[3]]]);
+            send(["s", [inventory[2]]]);
           }
           break;
         case keycodes.HOTBAR_4:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[4]]]);
+            send(["s", [inventory[3]]]);
           }
           break;
         case keycodes.HOTBAR_5:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[5]]]);
+            send(["s", [inventory[4]]]);
           }
           break;
         case keycodes.HOTBAR_6:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[6]]]);
+            send(["s", [inventory[5]]]);
           }
           break;
         case keycodes.HOTBAR_7:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[7]]]);
+            send(["s", [inventory[6]]]);
           }
           break;
         case keycodes.HOTBAR_8:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[8]]]);
+            send(["s", [inventory[7]]]);
           }
           break;
         case keycodes.HOTBAR_9:
           if (chatbox.style.display === "none") {
-            send(["s", [inventory[9]]]);
+            send(["s", [inventory[8]]]);
           }
           break;
         case 82:
