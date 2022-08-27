@@ -1433,13 +1433,17 @@
         case "s":
           var id = msg[1][0] - 1;
           if (socket.player.weapons.indexOf(id) != -1) {
-            if (socket.player.weapon == id) {
-              socket.player.weapon = 0;
-            } else {
-              if (id === 0 && socket.player.upgrade) {
+            if (socket.player.weapon === id) {
+              if (socket.player.upgrade && id === 0) {
                 socket.player.weapon = socket.player.upgradeWep;
               } else {
-                socket.player.weapon = id;
+                socket.player.weapon = 0;
+              }
+            } else {
+              if (socket.player.upgrade && id === 0) {
+                socket.player.weapon = socket.player.upgradeWep;
+              } else {
+                socket.player.weapon = 0;
               }
             }
           }
