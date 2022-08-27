@@ -819,7 +819,7 @@ select:focus {
   display: inline-block;
   padding: 10px;
   width: 245px;
-  margin-top: 25%;
+  margin-top: 25px;
   /* margin-top: 25px; */
   background-color: #329e78;
   color: #ffffff;
@@ -868,7 +868,7 @@ select:focus {
   display: inline-block;
   padding: 10px;
   width: 245px;
-  margin-top: 25%;
+  margin-top: 25px;
   /* margin-top: 25px; */
   background-color: #ff9900;
   color: #ffffff;
@@ -951,8 +951,7 @@ select:focus {
 .successContainer {
   display: inline-block;
   position: absolute;
-  top: 100px;
-  /* top: 50px; */
+  top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #549ff6;
@@ -974,8 +973,7 @@ select:focus {
 .warningContainer {
   display: inline-block;
   position: absolute;
-  top: 100px;
-  /* top: 50px; */
+  top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f8ab49;
@@ -997,8 +995,7 @@ select:focus {
 .errorContainer {
   display: inline-block;
   position: absolute;
-  top: 100px;
-  /* top: 50px; */
+  top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: 0.3s popup;
@@ -1073,8 +1070,7 @@ select:focus {
     opacity: 0.9;
   }
   100% {
-    top: 100px;
-    /* top: 50px; */
+    top: 50px;
     opacity: 1;
   }
 }
@@ -2403,6 +2399,55 @@ label.checkbox span {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
+}
+
+.hatNameContainer {
+  display: none;
+  /* display: inline-block; */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  width: 200px;
+  /* width: 200px; */
+  height: auto;
+  /* padding: 10px; */
+  padding-top: 0;
+  /* padding-top: -5px; */
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+.hatNameDetails {
+  display: inline-block;
+  /* position: relative; */
+  float: left;
+  clear: left;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  /* font-size: 1.5rem; */
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+}
+.hatDetails {
+  display: inline-block;
+  /* position: relative; */
+  float: left;
+  clear: left;
+  word-break: break-word;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  /* font-size: 1rem; */
+  font-weight: 400;
+  text-decoration: none;
   user-select: none;
 }
 

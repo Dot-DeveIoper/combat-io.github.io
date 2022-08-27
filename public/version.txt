@@ -1,8 +1,8 @@
 -Version 1.4.0-
 
 -Added Wings
- -Shadow Wings
- -God Wings
+-Shadow Wings
+-God Wings
 
 -Added price to hats
 -Added vpn / ad block detector
