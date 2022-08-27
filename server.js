@@ -503,6 +503,7 @@
 
   function sendWepData(player, wep) {
     player.wep = wep || 0;
+    player.upgrade = 1;
   }
 
   function sendAccData(player, acc) {

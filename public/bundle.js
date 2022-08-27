@@ -1761,7 +1761,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     if (ageLevelBar.style.width === "100%") {
-      ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
       upgradeOption.style.display = "block";
       ageLevelBar.style.width = "0%";
       myPlayer.xp = 0;
@@ -1770,6 +1769,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     ageCounter.innerHTML = myPlayer.age;
   }
+  let upgrades = 0;
   function upgradeMenu() {
     var upgradeOption = document.getElementById("ageLevelItems");
     for (let i = 0; i < Weps.length; i++) {
@@ -1777,6 +1777,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       var upgradeChoice = document.getElementById("age-item-0");
       upgradeChoice.onclick = function () {
         Weps[i].clicked = !Weps[i].clicked;
+        upgrades = 0;
         send([
           "Ug",
           [
@@ -1787,6 +1788,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         ]);
         if (Weps[i].clicked == false) {
           upgradeOption.style.display = "block";
+          upgrades++;
         } else {
           upgradeOption.style.display = "none";
           document.getElementById("h-item-0").style.backgroundImage = "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
