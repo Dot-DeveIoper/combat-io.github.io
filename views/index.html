@@ -27,6 +27,13 @@
 <body>
   <canvas id="gameCanvas"></canvas>
 
+  <div class="errorContainer" id="close">
+    <span class="errorText">Error: This account is unavailable</span>
+    <i class="close" id="closeIcon">
+      &times;
+    </i>
+  </div>
+
   <div class="leaderboardScores" id="leaderboardDisplay">
     <div id="mainSections">
       <a id="chatBtn">
@@ -384,6 +391,41 @@
                 <a href="http://iogames.space" target="_blank" class="menuLink">More Games</a>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="accountContainer">
+          <div class="accountSectionContainer" id="accountSectionContainer">
+            <div class="accountSectionBtn1" id="loginSection">
+              <a class="accountSectionTitle">
+                Login
+              </a>
+            </div>
+            <div class="accountSectionBtn2" id="registerSection">
+              <a class="accountSectionTitle">
+                Register
+              </a>
+            </div>
+          </div>
+          <div id="loginCard">
+            <label class="textLabel" for="username"><b>Enter Username:</b></label>
+            <input class="inputLabel1" type="text" placeholder="" name="username" required />
+            <br class="hiddenFromMobile"><br class="hiddenFromMobile"><label class="textLabel" for="psw"><b>Enter Password:</b></label>
+            <input class="inputLabel1" type="password" placeholder="" name="psw" required />
+            <br><button class="buttonLabel1" type="submit">Login</button>
+            <br><br><div class="checkboxLabel">
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span class="indicator"></span>
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <div id="registerCard">
+            <label class="textLabel" for="username"><b>Enter Username:</b></label>
+            <input class="inputLabel2" type="text" placeholder="" name="username" required />
+            <br class="hiddenFromMobile"><br class="hiddenFromMobile"><label class="textLabel" for="psw"><b>Enter Password:</b></label>
+            <input class="inputLabel2" type="password" placeholder="" name="psw" required />
+            <br><button class="buttonLabel2" type="submit">Register</button>
           </div>
         </div>
       </div>
