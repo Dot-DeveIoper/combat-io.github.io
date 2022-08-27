@@ -947,6 +947,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       img: new Image(),
       xOffset: -17,
       yOffset: -35,
+      clicked: false,
     },
     {
       id: 1,
@@ -1761,11 +1762,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     ageCounter.innerHTML = myPlayer.age;
   }
-  function upgradeMenu(player) {
+  function upgradeMenu() {
     var upgradeOption = document.getElementById("ageLevelItems");
     for (let i = 0; i < Weps.length; i++) {
       Weps[i].clicked = false;
-      var upgradeChoice = document.getElementById("age-item-" + [i]);
+      var upgradeChoice = document.getElementById("age-item-0");
       upgradeChoice.onclick = function () {
         Weps[i].clicked = !Weps[i].clicked;
         send([
@@ -1780,17 +1781,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           upgradeOption.style.display = "block";
         } else {
           upgradeOption.style.display = "none";
+          document.getElementById("h-item-0").style.backgroundImage = "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
         }
       };
     }
   }
   upgradeMenu();
   function connect() {
-    if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {
-      ws = new WebSocket("wss://sandbox-combat-io.glitch.me/websocket");
-    } else {
-      ws = new WebSocket("wss://combat-io.glitch.me/websocket");
-    }
+    ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
         ? (document.getElementById("nameInput").value = [])
