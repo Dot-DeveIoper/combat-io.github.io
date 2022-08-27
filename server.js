@@ -305,6 +305,16 @@
       gather: 1,
     },
     {
+      id: 12,
+      isWeapon: true,
+      name: "Short Sword",
+      reload: 300,
+      damage: 35,
+      range: 110,
+      fov: 160,
+      gather: 1,
+    },
+    {
       id: 1,
       isWeapon: false,
       name: "Orange",
@@ -388,16 +398,6 @@
       velocity: -2,
       health: 50,
       maxHealth: 200,
-    },
-    {
-      id: 7,
-      isWeapon: true,
-      name: "Short Sword",
-      reload: 300,
-      damage: 35,
-      range: 110,
-      fov: 160,
-      gather: 1,
     },
   ];
 
