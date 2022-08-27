@@ -121,7 +121,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
       id: 1,
       info: "Free hat",
-      price: "",
+      price: "0",
       clicked: false,
     },
     {
@@ -164,6 +164,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       price: "10000",
       clicked: false,
     },
+    {
+      name: "X-jorgepet cap",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
+      id: 7,
+      info: "Subscribe to X-jorgepet!",
+      price: "0",
+      clicked: false,
+    }
   ];
   var Acc = [
     {
@@ -752,6 +760,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
       scale: 80,
     },
+    {
+      id: 7,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    }
   ];
 
   var skins = [
@@ -1141,7 +1157,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${
+      `${player.admin ? "</DEV>" : ""}${player.mod ? "</MOD>" : ""}${
         player.artist ? "</Artist>" : ""
       } ${clan ? "[" + clan + "]" : ""} ${player.name}`,
       x - 7,

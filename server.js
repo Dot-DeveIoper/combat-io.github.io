@@ -434,6 +434,12 @@
       gold: 15000,
       ruby: 0,
     },
+    {
+      name: "X-jorgepet cap",
+      owned: false,
+      gold: 0,
+      ruby: 0,
+    },
   ];
 
   var Accs = [
