@@ -1157,16 +1157,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       : "#fff";
     ctx.strokeStyle = "#000";
     ctx.strokeText(
-      `${player.admin ? "</DEV>" : ""}${player.mod ? "</MOD>" : ""}${
-        player.artist ? "</Artist>" : ""
-      } ${clan ? "[" + clan + "]" : ""} ${player.name}`,
+      `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
+        player.artist ? "</Artist> " : ""
+      }${clan ? "[" + clan + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
-      `${player.admin ? "</DEV>" : ""} ${player.mod ? "</MOD>" : ""} ${
-        player.artist ? "</Artist>" : ""
-      } ${clan ? "[" + clan + "]" : ""} ${player.name}`,
+      `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
+        player.artist ? "</Artist> " : ""
+      }${clan ? "[" + clan + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
