@@ -389,7 +389,7 @@
       health: 50,
       maxHealth: 200,
     },
-        {
+    {
       id: 7,
       isWeapon: true,
       name: "Short Sword",

@@ -1003,7 +1003,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       xOffset: 20,
       yOffset: -40,
     },
-        {
+    {
       id: 7,
       name: "Short Sword",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
