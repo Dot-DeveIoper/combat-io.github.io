@@ -1437,13 +1437,13 @@
               if (socket.player.upgrade && id === 0) {
                 socket.player.weapon = socket.player.upgradeWep;
               } else {
-                socket.player.weapon = 0;
+                socket.player.weapon = id;
               }
             } else {
               if (socket.player.upgrade && id === 0) {
                 socket.player.weapon = socket.player.upgradeWep;
               } else {
-                socket.player.weapon = 0;
+                socket.player.weapon = id;
               }
             }
           }
