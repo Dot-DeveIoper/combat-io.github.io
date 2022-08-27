@@ -60,17 +60,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 0,
       name: "Tool Hammer",
       info: "Get resources and upgrade your tool.",
-      stone: 0,
-      wood: 0,
-      food: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
     },
     {
       id: 1,
       name: "Short Sword",
       info: "Attack Enemies With A Short Sword.",
-      stone: 0,
-      wood: 0,
-      food: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
     },
   ];
   
@@ -1714,6 +1710,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     var resourcesOffset = 45;
     var resourcesWidth = 100;
     var resourcesHeight = 40;
+
+    var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
+    var upgradeOption = document.getElementById("ageLevelItems");
     if (myPlayer.resources) {
       document.getElementById("ruby").innerHTML = myPlayer.resources[
         trees[6].name
@@ -1741,8 +1740,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
-    var upgradeOption = document.getElementById("interface");
     ageItemSelectCounter.style.display = "none";
     upgradeOption.style.display = "none";
     if (ageLevelBar.style.width === "100%") {
@@ -1756,22 +1753,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ageCounter.innerHTML = myPlayer.age;
   }
   function upgradeMenu(player) {
-    for (let i = 0; i < Acc.length; i++) {
-      var AccItems = document.getElementById("AccessoriesGear" + [i]);
-      AccItems.innerHTML = `
-        <div class="itemsInfo1">
-          <img src="${Acc[i].src}" alt="" class="itemImg" />
-          <span class="itemName">${Acc[i].name}</span>
-          <br><span class="itemInfo">${Acc[i].info}</span>
-        </div>
-        <div class="itemsInfo2">
-          <span class="itemPrice">${Acc[i].price}</span>
-          <a id="EquipAccessories${[i]}" class="equipItem">Equip</a>
-        </div>
-    `;
-      Acc[i].clicked = false;
-      var AccessoriesHat = document.getElementById("AccessoriesGear" + [i]);
-      AccessoriesHat.onclick = function () {
+    var upgradeOption = document.getElementById("ageLevelItems");
+    for (let i = 0; i < Weps.length; i++) {
+      Weps[i].clicked = false;
+      var upgradeChoice = document.getElementById("age-item-" + [i]);
+      upgradeChoice.onclick = function () {
+        Weps[i].clicked = !Weps[i].clicked;
         send([
           "Ug",
           [
@@ -1780,15 +1767,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             },
           ],
         ]);
-        if (Acc[i].clicked === false) {
+        if (Weps[i].clicked === false) {
           for (let i = 0; i < Weps.length; i++) {
-            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+            document.getElementById("age-item-" + i).innerHTML = "Equip";
           }
         } else {
           for (let i = 0; i < Weps.length; i++) {
-            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+            document.getElementById("age-item-" + i).innerHTML = "Equip";
           }
-          document.getElementById("EquipAccessories" + i).innerHTML = "Unequip";
+          upgradeOption.style.display = "none";
         }
       };
     }
