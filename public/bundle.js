@@ -30,6 +30,67 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var upgradeOption = document.getElementById("ageLevelItems");
   let run = false;
 
+  let loginDiv = document.getElementById("loginCard");
+  let registerDiv = document.getElementById("registerCard");
+  let loginToggle = document.getElementById("toggleLogin");
+  let loginText = document.querySelector("#toggleLogin");
+
+  let loginSection = document.getElementById("loginSection");
+  let registerSection = document.getElementById("registerSection");
+  let accountSectionContainer = document.getElementById("accountSectionContainer");
+
+  loginSection.onclick = function (e) {
+    if (loginDiv.style.display === "none") {
+      loginDiv.style.display = "inline-block";
+      registerDiv.style.display = "none";
+      accountSectionContainer.style.display = "flex";
+    }
+  };
+  registerSection.onclick = function (e) {
+    if (registerDiv.style.display === "none") {
+      registerDiv.style.display = "inline-block";
+      loginDiv.style.display = "none";
+      accountSectionContainer.style.display = "flex";
+    }
+  };
+
+  let closeIcon = document.getElementById("closeIcon");
+
+  closeIcon.onclick = function (e) {
+    document.getElementById("close").style.opacity = 1;
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.9;
+    }, 210);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.8;
+    }, 220);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.7;
+    }, 230);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.6;
+    }, 240);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.5;
+    }, 250);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.4;
+    }, 260);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.3;
+    }, 270);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.2;
+    }, 280);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0.1;
+    }, 290);
+    setTimeout(() => {
+      document.getElementById("close").style.opacity = 0;
+      document.getElementById("close").style.display = "none";
+    }, 300);
+  }
+
   var Youtubers = [
     {
       name: "Dot",
@@ -350,6 +411,23 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         settingsDiv.style.display = "none";
         settingsToggle.style.zIndex = "1";
         settingsText.innerHTML = "Open Settings";
+      }
+    }
+  };
+
+  loginToggle.onclick = function (e) {
+    if (e.isTrusted) {
+      if (loginText.innerHTML === "Open Login Form") {
+        loginDiv.style.display = "inline-block";
+        loginText.innerHTML = "Close Login Form";
+        registerDiv.style.display = "none";
+        accountSectionContainer.style.display = "flex";
+      } else {
+        loginDiv.style.display = "none";
+        loginToggle.style.zIndex = "1";
+        loginText.innerHTML = "Open Login Form";
+        registerDiv.style.display = "none";
+        accountSectionContainer.style.display = "none";
       }
     }
   };
