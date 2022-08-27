@@ -55,7 +55,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-  var weps = [
+  var Weps = [
     {
       id: 0,
       name: "Tool Hammer",
@@ -65,14 +65,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       food: 0,
     },
     {
-      id: 0,
+      id: 1,
       name: "Short Sword",
-      info: "Attack Enemies.",
+      info: "Attack Enemies With A Short Sword.",
       stone: 0,
       wood: 0,
       food: 0,
     },
   ];
+  
   var Weapons = [
     {
       id: 0,
@@ -1740,7 +1741,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+    var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
+    var upgradeOption = document.getElementById("interface");
+    ageItemSelectCounter.style.display = "none";
+    upgradeOption.style.display = "none";
     if (ageLevelBar.style.width === "100%") {
+      ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
+      upgradeOption.style.display = "block";
       ageLevelBar.style.width = "0%";
       myPlayer.xp = 0;
     } else {
@@ -1748,6 +1755,45 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     ageCounter.innerHTML = myPlayer.age;
   }
+  function upgradeMenu(player) {
+    for (let i = 0; i < Acc.length; i++) {
+      var AccItems = document.getElementById("AccessoriesGear" + [i]);
+      AccItems.innerHTML = `
+        <div class="itemsInfo1">
+          <img src="${Acc[i].src}" alt="" class="itemImg" />
+          <span class="itemName">${Acc[i].name}</span>
+          <br><span class="itemInfo">${Acc[i].info}</span>
+        </div>
+        <div class="itemsInfo2">
+          <span class="itemPrice">${Acc[i].price}</span>
+          <a id="EquipAccessories${[i]}" class="equipItem">Equip</a>
+        </div>
+    `;
+      Acc[i].clicked = false;
+      var AccessoriesHat = document.getElementById("AccessoriesGear" + [i]);
+      AccessoriesHat.onclick = function () {
+        send([
+          "Ug",
+          [
+            {
+              wep: Weps[i].id,
+            },
+          ],
+        ]);
+        if (Acc[i].clicked === false) {
+          for (let i = 0; i < Weps.length; i++) {
+            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+          }
+        } else {
+          for (let i = 0; i < Weps.length; i++) {
+            document.getElementById("EquipAccessories" + i).innerHTML = "Equip";
+          }
+          document.getElementById("EquipAccessories" + i).innerHTML = "Unequip";
+        }
+      };
+    }
+  }
+  upgradeMenu();
   function connect() {
     if (window.location.href.includes("https://sandbox-combat-io.glitch.me")) {
       ws = new WebSocket("wss://sandbox-combat-io.glitch.me/websocket");
