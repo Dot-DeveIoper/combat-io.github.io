@@ -294,23 +294,13 @@
 
   var defaultReload = 500;
   var weapons = [
-    {
+   {
       id: 0,
       isWeapon: true,
       name: "Tool Hammer",
       reload: 450,
       damage: 25,
       range: 95,
-      fov: 160,
-      gather: 1,
-    },
-    {
-      id: 12,
-      isWeapon: true,
-      name: "Short Sword",
-      reload: 300,
-      damage: 35,
-      range: 110,
       fov: 160,
       gather: 1,
     },
@@ -398,6 +388,16 @@
       velocity: -2,
       health: 50,
       maxHealth: 200,
+    },
+    {
+      id: 7,
+      isWeapon: true,
+      name: "Short Sword",
+      reload: 300,
+      damage: 35,
+      range: 110,
+      fov: 160,
+      gather: 1,
     },
   ];
 
@@ -503,6 +503,7 @@
 
   function sendWepData(player, wep) {
     player.wep = wep || 0;
+    player.upgrade = 1;
   }
 
   function sendAccData(player, acc) {
@@ -1409,6 +1410,9 @@
             if (socket.player.weapon == id) {
               socket.player.weapon = 0;
             } else {
+              if (socket.player.upgrade === 1) {
+                socket.player.weapon = id;
+              }
               socket.player.weapon = id;
             }
           }

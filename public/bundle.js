@@ -85,14 +85,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       food: 0,
     },
     {
-      id: 12,
-      name: "Short Sword",
-      info: "Run Into Battle With The New Short Sword!",
-      stone: 0,
-      wood: 0,
-      food: 0,
-    },
-    {
       id: 1,
       name: "Orange",
       info: "Heals +20 health.",
@@ -138,6 +130,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       info: "Teleports you to random location on map.",
       stone: 50,
       wood: 50,
+      food: 0,
+    },
+    {
+      id: 7,
+      name: "Short Sword",
+      info: "Run Into Battle With The New Short Sword!",
+      stone: 0,
+      wood: 0,
       food: 0,
     },
   ];
@@ -948,16 +948,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -30,
     },
     {
-      id: 12,
-      name: "Short Sword",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
-      scale: 110,
-      img: new Image(),
-      xOffset: -17,
-      yOffset: -35,
-      clicked: false,
-    },
-    {
       id: 1,
       name: "Orange",
       food: true,
@@ -1012,6 +1002,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       img: new Image(),
       xOffset: 20,
       yOffset: -40,
+    },
+    {
+      id: 7,
+      name: "Short Sword",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892",
+      scale: 110,
+      img: new Image(),
+      xOffset: -17,
+      yOffset: -35,
+      clicked: false,
     },
   ];
 
@@ -1781,7 +1781,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           "Ug",
           [
             {
-              wep: 12,
+              wep: 7,
             },
           ],
         ]);
