@@ -85,6 +85,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       food: 0,
     },
     {
+      id: 12,
+      name: "Short Sword",
+      info: "Run Into Battle With The New Short Sword!",
+      stone: 0,
+      wood: 0,
+      food: 0,
+    },
+    {
       id: 1,
       name: "Orange",
       info: "Heals +20 health.",
@@ -136,11 +144,19 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var Hats = [
     {
+      name: "X-jorgepet cap",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
+      id: 7,
+      info: "Subscribe to X-jorgepet!",
+      price: "",
+      clicked: false,
+    },
+    {
       name: "Barbarian Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
       id: 1,
       info: "Free hat",
-      price: "0",
+      price: "",
       clicked: false,
     },
     {
@@ -181,14 +197,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 6,
       info: "Deals damage to enemies",
       price: "10000",
-      clicked: false,
-    },
-    {
-      name: "X-jorgepet cap",
-      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
-      id: 7,
-      info: "Subscribe to X-jorgepet!",
-      price: "0",
       clicked: false,
     }
   ];

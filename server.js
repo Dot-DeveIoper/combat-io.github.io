@@ -497,12 +497,12 @@
   var players = [];
   var ids = 0;
 
-  function sendHatData(player, wep) {
-    player.wep = wep || 0;
+  function sendHatData(player, hat) {
+    player.hat = hat || 0;
   }
 
-  function sendWepData(player, hat) {
-    player.wep = hat || 0;
+  function sendWepData(player, wep) {
+    player.wep = wep || 0;
   }
 
   function sendAccData(player, acc) {
