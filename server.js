@@ -441,8 +441,10 @@
   }
 
   function sendWepData(player, wep) {
-    player.wep = wep || 0;
-    player.upgrade = true;
+    if (player.age <= 2) {
+      player.wep = wep || 0;
+      player.upgrade = true;
+    }
   }
 
   function sendAccData(player, acc) {
