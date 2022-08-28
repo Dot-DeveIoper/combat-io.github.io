@@ -1397,7 +1397,7 @@
                   socket.player.weapon = 0;
                 }
               }
-              if (obj.placeable) {
+              if (obj.placeable && socket.player.acc != 2) {
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
