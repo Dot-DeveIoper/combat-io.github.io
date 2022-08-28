@@ -37,7 +37,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   let loginSection = document.getElementById("loginSection");
   let registerSection = document.getElementById("registerSection");
-  let accountSectionContainer = document.getElementById("accountSectionContainer");
+  let accountSectionContainer = document.getElementById(
+    "accountSectionContainer"
+  );
 
   loginSection.onclick = function (e) {
     if (loginDiv.style.display === "none") {
@@ -89,7 +91,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("close").style.opacity = 0;
       document.getElementById("close").style.display = "none";
     }, 300);
-  }
+  };
 
   var Youtubers = [
     {
@@ -1144,6 +1146,17 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
+  var Shadow = [
+    {
+      id: 0,
+      name: "shadow",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_26_0vw_Kleki.png?v=1661555316804",
+      scale: 80,
+      img: new Image(),
+      xOffset: -50,
+      yOffset: -50,
+    },
+  ];
   var animals = [
     {
       id: 0,
@@ -1155,10 +1168,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: 0,
     },
   ];
-
-  const shadow = new Image();
-  shadow.src =
-    "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/2022_08_26_0vw_Kleki.png?v=1661555316804";
 
   weapons.forEach((w) => {
     w.img.src = w.src;
@@ -1333,11 +1342,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawWeapon(player, x, y, rot, wep, sid) {
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-          ctx.drawImage(shadow, 0, 0, 100, 100);
-          ctx.restore();
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
+    ctx.drawImage(Shadow.img[0], Shadow.xOffset[0], Shadow.yOffset[0], Shadow.scale[0], Shadow.scale[0]);
+    ctx.restore();
 
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
