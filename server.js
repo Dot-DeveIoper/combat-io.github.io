@@ -401,78 +401,6 @@
     },
   ];
 
-  var Hats = [
-    {
-      name: "No Hat",
-      owned: true,
-      gold: 0,
-      ruby: 0,
-    },
-    {
-      name: "Barbarian Hat",
-      owned: false,
-      gold: 0,
-      ruby: 0,
-    },
-    {
-      name: "Booster Hat",
-      owned: false,
-      gold: 1000,
-      ruby: 0,
-    },
-    {
-      name: "Soldier Hat",
-      owned: false,
-      gold: 4000,
-      ruby: 0,
-    },
-    {
-      name: "Fish Hat",
-      owned: false,
-      gold: 2500,
-      ruby: 0,
-    },
-    {
-      name: "Tank Gear",
-      owned: false,
-      gold: 15000,
-      ruby: 0,
-    },
-    {
-      name: "Spike Gear",
-      owned: false,
-      gold: 15000,
-      ruby: 0,
-    },
-    {
-      name: "X-jorgepet cap",
-      owned: false,
-      gold: 0,
-      ruby: 0,
-    },
-  ];
-
-  var Accs = [
-    {
-      name: "No Acc",
-      owned: true,
-      gold: 0,
-      ruby: 0,
-    },
-    {
-      name: "Shadow Wings",
-      owned: false,
-      gold: 0,
-      ruby: 0,
-    },
-    {
-      name: "God Wings",
-      owned: false,
-      gold: 20000,
-      ruby: 0,
-    },
-  ];
-
   app.get("/", (req, res) => {
     console.log("New User Appeared!");
     ip = req.headers["x-forwarded-for"].split(",").shift();
@@ -498,16 +426,18 @@
   var ids = 0;
 
   function sendHatData(player, hat) {
-            if (player.resources.gold >= Hats[hat].gold &&
-            player.resources.ruby >= Hats[hat].ruby &&
-            !Hats[hat].owned
-          ) {
-            player.resources.gold -= Hats[hat].gold;
-            player.resources.ruby -= Hats[hat].ruby;
-            Hats[hat].owned = true;
-          } else if (Hats[hat].owned) {
-    player.hat = hat || 0;
-          }
+    if (
+      player.resources.gold >= player.hats[hat].gold &&
+      player.resources.ruby >= player.hats[hat].ruby &&
+      !player.hats[hat].owned
+    ) {
+      player.resources.gold -= player.hats[hat].gold;
+      player.resources.ruby -= player.hats[hat].ruby;
+      player.hats[hat].owned = true;
+      player.hat = hat || 0;
+    } else if (player.hats[hat].owned) {
+      player.hat = hat || 0;
+    }
   }
 
   function sendWepData(player, wep) {
@@ -516,7 +446,18 @@
   }
 
   function sendAccData(player, acc) {
-    player.acc = acc || 0;
+    if (
+      player.resources.gold >= player.accs[acc].gold &&
+      player.resources.ruby >= player.accs[acc].ruby &&
+      !player.accs[acc].owned
+    ) {
+      player.resources.gold -= player.accs[acc].gold;
+      player.resources.ruby -= player.accs[acc].ruby;
+      player.accs[acc].owned = true;
+      player.acc = acc || 0;
+    } else if (player.accs[acc].owned) {
+      player.acc = acc || 0;
+    }
   }
 
   function respawn(player, name, skin) {
@@ -533,6 +474,77 @@
     player.y = randomInt(0, mapSize);
     player.health = 100;
     player.weapons = [0, 1, 2, 3, 4, 5, 6, 7];
+    player.hats = [
+      {
+        name: "No Hat",
+        owned: true,
+        gold: 0,
+        ruby: 0,
+      },
+      {
+        name: "Barbarian Hat",
+        owned: false,
+        gold: 0,
+        ruby: 0,
+      },
+      {
+        name: "Booster Hat",
+        owned: false,
+        gold: 1000,
+        ruby: 0,
+      },
+      {
+        name: "Soldier Hat",
+        owned: false,
+        gold: 4000,
+        ruby: 0,
+      },
+      {
+        name: "Fish Hat",
+        owned: false,
+        gold: 2500,
+        ruby: 0,
+      },
+      {
+        name: "Tank Gear",
+        owned: false,
+        gold: 15000,
+        ruby: 0,
+      },
+      {
+        name: "Spike Gear",
+        owned: false,
+        gold: 15000,
+        ruby: 0,
+      },
+      {
+        name: "X-jorgepet cap",
+        owned: false,
+        gold: 0,
+        ruby: 0,
+      },
+    ];
+
+    player.accs = [
+      {
+        name: "No Acc",
+        owned: true,
+        gold: 0,
+        ruby: 0,
+      },
+      {
+        name: "Shadow Wings",
+        owned: false,
+        gold: 0,
+        ruby: 0,
+      },
+      {
+        name: "God Wings",
+        owned: false,
+        gold: 20000,
+        ruby: 0,
+      },
+    ];
     if (player.admin) {
       player.resources = {
         food: 1000000,
@@ -1139,7 +1151,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-                      sendHatData(socket.player, hat);
+          sendHatData(socket.player, hat);
           break;
         case "Ac":
           if (!msg[1][0]) {
@@ -1151,18 +1163,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          if (
-            socket.player.resources.gold >= Accs[acc].gold &&
-            socket.player.resources.ruby >= Accs[acc].ruby &&
-            !Accs[acc].owned
-          ) {
-            socket.player.resources.gold -= Accs[acc].gold;
-            socket.player.resources.ruby -= Accs[acc].ruby;
-            Accs[acc].owned = true;
-            sendAccData(socket.player, acc);
-          } else if (Accs[acc].owned) {
-            sendAccData(socket.player, acc);
-          }
+          sendAccData(socket.player, acc);
           break;
         case "Ug":
           if (!msg[1][0]) {
