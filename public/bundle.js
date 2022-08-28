@@ -1095,8 +1095,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       src: "https://cdn.discordapp.com/attachments/999568631656624198/1013590046345019472/Short_Sword_1.png",
       scale: 145,
       img: new Image(),
-      xOffset: -45,
-      yOffset: -30,
+      xOffset: -47,
+      yOffset: -35,
       clicked: false,
     },
   ];

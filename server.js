@@ -82,80 +82,7 @@
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
-  for (let j = 0; j < 8; j++) {
-    for (let i = 0; i < mapSize / 50; i++) {
-      var randomx = randomInt(0, mapSize);
-      var randomy = randomInt(0, mapSize);
-      //map is 6:1 ratio
-      if (randomy <= 0 || randomy >= 0) {
-        // remove from whole map
-        if (j == 6) continue;
-      }
-      if (randomy < 1000) {
-        // remove from snow biome
-        if (j == 0 || j == 2 || j == 5 || j == 7) continue;
-      }
-      if (randomy < 7000) {
-        // remove from snow biome grass and snow
-        if (j == 7) continue;
-      }
-      if (randomy > 1000) {
-        // remove from snow biome down
-        if (j == 3 || j == 1) continue;
-      }
-      //remove for river
-      if (
-        randomy > mapSize - desertHeight - riverHeight - 100 &&
-        randomy < mapSize - desertHeight + 100
-      ) {
-        if (j == 2 || j == 0 || j == 3 || j == 1 || j == 5 || j == 7) continue;
-      }
-      //remove form above river
-      if (randomy > mapSize - desertHeight - 100) {
-        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
-      }
-      //remove from dessert
-      if (
-        randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 &&
-        randomy < mapSize - desertHeight - riverHeight + 100
-      ) {
-        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
-      }
-      var object = {
-        x: randomx,
-        y: randomy,
-        dir: Math.random(),
-        id: j,
-        xWiggle: 0,
-        yWiggle: 0,
-      };
-      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0)
-        continue;
-      treesCache.push(object);
-    }
-  }
-
-  treesCache.push({
-    x: 4884,
-    y: 9556,
-    dir: Math.random(),
-    id: 3,
-    xWiggle: 0,
-    yWiggle: 0,
-  });
-
-  animalsCache.push({
-    id: 0,
-    speed: 3,
-    x: 5000,
-    y: 5000,
-    dir: 0,
-    health: 100,
-    xVel: 0,
-    yVel: 0,
-  });
-
-  for (let k = 0; k < 18; k++) {
+    for (let k = 0; k < 18; k++) {
     var object = {
       x: h(k),
       y: m(k),
@@ -270,6 +197,79 @@
   }
   //Make moofie cage lol
   treesCache.push(object);
+  
+  for (let j = 0; j < 8; j++) {
+    for (let i = 0; i < mapSize / 50; i++) {
+      var randomx = randomInt(0, mapSize);
+      var randomy = randomInt(0, mapSize);
+      //map is 6:1 ratio
+      if (randomy <= 0 || randomy >= 0) {
+        // remove from whole map
+        if (j == 6) continue;
+      }
+      if (randomy < 1000) {
+        // remove from snow biome
+        if (j == 0 || j == 2 || j == 5 || j == 7) continue;
+      }
+      if (randomy < 7000) {
+        // remove from snow biome grass and snow
+        if (j == 7) continue;
+      }
+      if (randomy > 1000) {
+        // remove from snow biome down
+        if (j == 3 || j == 1) continue;
+      }
+      //remove for river
+      if (
+        randomy > mapSize - desertHeight - riverHeight - 100 &&
+        randomy < mapSize - desertHeight + 100
+      ) {
+        if (j == 2 || j == 0 || j == 3 || j == 1 || j == 5 || j == 7) continue;
+      }
+      //remove form above river
+      if (randomy > mapSize - desertHeight - 100) {
+        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
+      }
+      //remove from dessert
+      if (
+        randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 &&
+        randomy < mapSize - desertHeight - riverHeight + 100
+      ) {
+        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
+      }
+      var object = {
+        x: randomx,
+        y: randomy,
+        dir: Math.random(),
+        id: j,
+        xWiggle: 0,
+        yWiggle: 0,
+      };
+      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0)
+        continue;
+      treesCache.push(object);
+    }
+  }
+
+  treesCache.push({
+    x: 4884,
+    y: 9556,
+    dir: Math.random(),
+    id: 3,
+    xWiggle: 0,
+    yWiggle: 0,
+  });
+
+  animalsCache.push({
+    id: 0,
+    speed: 3,
+    x: 5000,
+    y: 5000,
+    dir: 0,
+    health: 100,
+    xVel: 0,
+    yVel: 0,
+  });
 
   var animals = [
     {
@@ -400,7 +400,7 @@
       id: 7,
       isWeapon: true,
       name: "Short Sword",
-      reload: 300,
+      reload: 400,
       damage: 35,
       range: 110,
       fov: 160,
