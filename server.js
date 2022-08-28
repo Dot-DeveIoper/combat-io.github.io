@@ -1424,13 +1424,32 @@
                   socket.player.weapon = 0;
                 }
               }
+function test(x, y, x2, y2) {
+                                let xTouching = false;
+let yTouching = false;
+    for (let i = x; i <= 5 + x; i++) {
+    if (i === x2) {
+       xTouching = true; 
+     }
+} 
+        for (let i = y; i <= 5 + y; i++) {
+    if (i === y2) {
+       yTouching = true; 
+     }
+} 
+    if(yTouching || xTouching) {
+        return true;    
+    } else {
+        return false;
+    }
+} 
               if (obj.placeable && socket.player.acc != 2) {
+              if (test(objCache[0].x, objCache[0].y, socket.player.x + Math.cos(socket.player.aimdir) * 65, socket.player.y + Math.cos(socket.player.aimdir) * 65))
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
                 socket.player.resources.ruby -= reqRuby;
                 socket.player.resources.gold -= reqGold;
-
                 objCache.push({
                   id: socket.player.weapon,
                   x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
@@ -1441,7 +1460,7 @@
                   maxHealth: obj.maxHealth,
                   xWiggle: 0,
                   yWiggle: 0,
-                });
+                })    }
                 if (socket.player.upgrade) {
                   socket.player.weapon = socket.player.upgradeWep;
                 } else {

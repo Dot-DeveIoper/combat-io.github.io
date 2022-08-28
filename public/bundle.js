@@ -1092,7 +1092,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     {
       id: 7,
       name: "Short Sword",
-      src: "https://cdn.discordapp.com/attachments/999568631656624198/1013590046345019472/Short_Sword_1.png",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761",
       scale: 145,
       img: new Image(),
       xOffset: -47,
