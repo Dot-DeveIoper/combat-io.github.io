@@ -1252,7 +1252,7 @@
               let siid = msg[1][0]
                 .replace("/ban sid: ", "")
                 .replaceAll(/\s/g, "");
-              if (!siid.isNaN()) {
+              if (!isNaN(siid)) {
                 var playerInfo = [];
                 leaderboard.forEach((player) => {
                   playerInfo.push({
