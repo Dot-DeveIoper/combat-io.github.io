@@ -5,8 +5,7 @@
 // SAVE OF "bundle.js" EDIT THIS THEN USE "https://obfuscator.io/", THEN MOVE TO MAIN "bundle.js"
 // USE "Domain Lock" AND SET TO "https://combat-io.glitch.me" SAVE "Identifier Names Generator" AS "Mangled-shuffled".
 //?
-// Requiring fs module in which
-// writeFile function is defined.
+
 const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 (function (e) {

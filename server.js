@@ -993,7 +993,7 @@
                         ? "ruby"
                         : "gold"
                       : tree.id == 6
-                      ? "ruby" 
+                      ? "ruby"
                       : tree.id == 7
                       ? "food"
                       : 0
@@ -1248,25 +1248,29 @@
             msg[1][0].includes("/ban") &&
             (socket.player.admin || socket.player.mod)
           ) {
-            let siid = msg[1][0].replace("/ban ", "").replaceAll(/\s/g, "");
-            var playerInfo = [];
-            leaderboard.forEach((player) => {
-              playerInfo.push({
-                sid: player.sid,
-                ip: player.ip,
-                name: player.name,
-              });
-            });
             try {
-              let players = playerInfo.find(({ sid }) => sid === ~~siid);
-              fetch("https://combat-io.glitch.me/bannedIPs.txt")
-                .then((res) => res.text())
-                .then((data) => {
-                  var datax = data + "\n" + players.ip + ",";
-                  fs.writeFile("./public/bannedIPs.txt", datax, (err) => {
-                    if (err) throw err;
+              let siid = msg[1][0]
+                .replace("/ban sid: ", "")
+                .replaceAll(/\s/g, "");
+              if (!siid.isNaN()) {
+                var playerInfo = [];
+                leaderboard.forEach((player) => {
+                  playerInfo.push({
+                    sid: player.sid,
+                    ip: player.ip,
+                    name: player.name,
                   });
                 });
+                let players = playerInfo.find(({ sid }) => sid === ~~siid);
+                fetch("https://combat-io.glitch.me/bannedIPs.txt")
+                  .then((res) => res.text())
+                  .then((data) => {
+                    var datax = data + "\n" + players.ip + ",";
+                    fs.writeFile("./public/bannedIPs.txt", datax, (err) => {
+                      if (err) throw err;
+                    });
+                  });
+              }
             } catch (error) {
               socket.player.chat = "SID not valid.".slice(0, 30);
               socket.player.lastChatTimestamp = Date.now();
