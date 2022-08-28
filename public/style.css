@@ -817,6 +817,7 @@ select:focus {
 }
 .buttonLabel1 {
   display: inline-block;
+  cursor: pointer;
   padding: 10px;
   width: 245px;
   margin-top: 25px;
@@ -866,6 +867,7 @@ select:focus {
 }
 .buttonLabel2 {
   display: inline-block;
+  cursor: pointer;
   padding: 10px;
   width: 245px;
   margin-top: 25px;
@@ -2366,6 +2368,7 @@ body > #mainMenu {
 
 /* checkbox styles */
 label.checkbox {
+  cursor: pointer;
   margin-right: 1rem;
   padding-left: 1.75rem;
   position: relative;
