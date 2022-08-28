@@ -1270,6 +1270,8 @@
                       if (err) throw err;
                     });
                   });
+              } else {
+                throw new Error("");
               }
             } catch (error) {
               socket.player.chat = "SID not valid.".slice(0, 30);
@@ -1285,17 +1287,25 @@
             msg[1][0].includes("/unban") &&
             (socket.player.admin || socket.player.mod)
           ) {
-            let IP = msg[1][0].replace("/unban ", "").replaceAll(/\s/g, "");
-            console.log(IP);
-            fetch("https://combat-io.glitch.me/bannedIPs.txt")
-              .then((res) => res.text())
-              .then((data) => {
-                var datax = data.replace("\n" + IP + ",", "");
-                fs.writeFile("./public/bannedIPs.txt", datax, (err) => {
-                  if (err) throw err;
+            try {
+              let IP = msg[1][0].replace("/unban ", "").replaceAll(/\s/g, "");
+              fetch("https://combat-io.glitch.me/bannedIPs.txt")
+                .then((res) => res.text())
+                .then((data) => {
+                  var datax = data.replace("\n" + IP + ",", "");
+                  fs.writeFile("./public/bannedIPs.txt", datax, (err) => {
+                    if (err) throw err;
+                  });
                 });
-              });
-            return false;
+              return false;
+            } catch (error) {
+              socket.player.chat = "IP not valid.".slice(0, 30);
+              socket.player.lastChatTimestamp = Date.now();
+              setTimeout(() => {
+                socket.player.chat = null;
+              }, 3000);
+              return false;
+            }
           }
           if (
             msg[1][0].includes("/tp") &&
@@ -1408,13 +1418,6 @@
                   100,
                   socket.player.health + obj.heal
                 );
-                // var playerWeaponObjects = [];
-                // socket.player.weapons.forEach((w) => {
-                //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
-                // });
-                // socket.player.weapon = playerWeaponObjects.filter(
-                //   (x) => x && x.isWeapon
-                // )[0].id;
                 if (socket.player.upgrade) {
                   socket.player.weapon = socket.player.upgradeWep;
                 } else {
@@ -1439,13 +1442,6 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 });
-                // var playerWeaponObjects = [];
-                // socket.player.weapons.forEach((w) => {
-                //   playerWeaponObjects.push(weapons.find((x) => x.id == w));
-                // });
-                // socket.player.weapon = playerWeaponObjects.filter(
-                //   (x) => x && x.isWeapon
-                // )[0].id;
                 if (socket.player.upgrade) {
                   socket.player.weapon = socket.player.upgradeWep;
                 } else {
