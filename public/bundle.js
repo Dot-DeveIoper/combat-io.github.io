@@ -88,7 +88,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("close").style.opacity = 0;
       document.getElementById("close").style.display = "none";
     }, 300);
-  }
+  };
 
   var Youtubers = [
     {
