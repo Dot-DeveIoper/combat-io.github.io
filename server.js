@@ -82,7 +82,7 @@
   var animalsCache = [];
   var treesCache = [];
   var objCache = [];
-  for (let j = 0; j < 7; j++) {
+  for (let j = 0; j < 8; j++) {
     for (let i = 0; i < mapSize / 50; i++) {
       var randomx = randomInt(0, mapSize);
       var randomy = randomInt(0, mapSize);
@@ -93,7 +93,7 @@
       }
       if (randomy < 1000) {
         // remove from snow biome
-        if (j == 0 || j == 2 || j == 5) continue;
+        if (j == 0 || j == 2 || j == 5 || j == 7) continue;
       }
       if (randomy > 1000) {
         // remove from snow biome down
@@ -103,16 +103,17 @@
         randomy > mapSize - desertHeight - riverHeight - 100 &&
         randomy < mapSize - desertHeight + 100
       ) {
-        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 1 || j == 7) continue;
       }
+      //remove form river
       if (randomy > mapSize - desertHeight - 100) {
-        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
       }
       if (
         randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 &&
         randomy < mapSize - desertHeight - riverHeight + 100
       ) {
-        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1 || j == 7) continue;
       }
       var object = {
         x: randomx,
@@ -556,6 +557,7 @@
         ruby: 1000000,
         food2: 0,
         wood2: 0,
+        cacti: 0,
       };
     } else {
       player.resources = {
@@ -566,6 +568,7 @@
         ruby: 0,
         food2: 0,
         wood2: 0,
+        cacti: 0,
       };
     }
   }
@@ -977,8 +980,10 @@
                         ? "ruby"
                         : "gold"
                       : tree.id == 6
-                      ? "ruby"
-                      : test
+                      ? "ruby" 
+                      : tree.id == 7
+                      ? "food"
+                      : 0
                   ] += weapon.gather;
                   if (player.xp >= 100) {
                     player.xp = 0;
@@ -1079,8 +1084,9 @@
         stone: 100,
         gold: 100,
         ruby: 100,
-        food2: 100,
-        wood2: 100,
+        food2: 0,
+        wood2: 0,
+        cacti: 0,
       },
     };
 
@@ -1365,6 +1371,7 @@
             var reqGold = obj.cost.gold || 0;
             var reqFood2 = obj.cost.food || 0;
             var reqWood2 = obj.cost.wood || 0;
+            var reqCacti = obj.cost.cacti || 0;
 
             var haveFood = socket.player.resources.food >= reqFood;
             var haveWood = socket.player.resources.wood >= reqWood;
