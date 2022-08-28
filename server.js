@@ -765,8 +765,8 @@
               player2.spawned &&
               collides(player, player2) &&
               player.sid != player2.sid &&
-              player2.acc != 2 &&
-              player.acc != 2
+              player2.acc === 2 &&
+              player.acc === 2
             ) {
               var pushDir = Math.atan2(
                 player.y - player2.y,
