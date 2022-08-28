@@ -27,7 +27,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let hatNameContainer = document.querySelector(".hatNameContainer");
   var YTofDay = document.getElementById("YTofDay");
   var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
-  var upgradeOption = document.getElementById("ageLevelItems");
   let run = false;
 
   let loginDiv = document.getElementById("loginCard");
@@ -1842,7 +1841,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     if (ageLevelBar.style.width === "100%") {
       ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
-      upgradeOption.style.display = "block";
       ageLevelBar.style.width = "0%";
       myPlayer.xp = 0;
     } else {
@@ -1851,7 +1849,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ageCounter.innerHTML = myPlayer.age;
 
     function upgradeMenu() {
-      // ageLevelItems.style.display = "block";
+      ageLevelItems.style.display = "block";
       run = true;
       document
         .getElementById("age-item-0")

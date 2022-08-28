@@ -498,7 +498,16 @@
   var ids = 0;
 
   function sendHatData(player, hat) {
+            if (player.resources.gold >= Hats[hat].gold &&
+            player.resources.ruby >= Hats[hat].ruby &&
+            !Hats[hat].owned
+          ) {
+            player.resources.gold -= Hats[hat].gold;
+            player.resources.ruby -= Hats[hat].ruby;
+            Hats[hat].owned = true;
+          } else if (Hats[hat].owned) {
     player.hat = hat || 0;
+          }
   }
 
   function sendWepData(player, wep) {
@@ -1130,18 +1139,7 @@
           } catch (err) {
             socket.close(1012, "Buffer missing");
           }
-          if (
-            socket.player.resources.gold >= Hats[hat].gold &&
-            socket.player.resources.ruby >= Hats[hat].ruby &&
-            !Hats[hat].owned
-          ) {
-            socket.player.resources.gold -= Hats[hat].gold;
-            socket.player.resources.ruby -= Hats[hat].ruby;
-            Hats[hat].owned = true;
-            sendHatData(socket.player, hat);
-          } else if (Hats[hat].owned) {
-            sendHatData(socket.player, hat);
-          }
+                      sendHatData(socket.player, hat);
           break;
         case "Ac":
           if (!msg[1][0]) {
