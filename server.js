@@ -866,7 +866,7 @@
                 var pushVelX = Math.cos(pushDir) * 1;
                 var pushVelY = Math.sin(pushDir) * 1;
               }
-              if (aObj.teleport) {
+              if (aObj.teleport && player.acc != 2) {
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
