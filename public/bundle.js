@@ -1345,7 +1345,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot - toRad(swingAngle[sid]) + 0);
-    ctx.drawImage(Shadow.img[0], Shadow.xOffset[0], Shadow.yOffset[0], Shadow.scale[0], Shadow.scale[0]);
+    ctx.drawImage(Shadow[0].img, Shadow[0].xOffset, Shadow[0].yOffset, Shadow[0].scale, Shadow[0].scale);
     ctx.restore();
 
     wep = weapons.find((x) => x.id == player.weapon);
