@@ -813,15 +813,20 @@
                 : tree.id == 5
                 ? 85
                 : tree.id == 7
-                ? 50
+                ? 52
                 : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
               var pushVelX = Math.cos(pushDir) * 2;
               var pushVelY = Math.sin(pushDir) * 2;
-              if (player.acc !== 2) {
+              if (player.acc !== 2 && tree.id != 7) {
                 player.xVel += pushVelX;
                 player.yVel += pushVelY;
+              }
+              if (tree.id === 7 && player.acc !== 2) {
+                player.health -= player.hat === 3 ? 18 - 5 : 18;
+                player.xVel = Math.cos(pushDir) * 20 || 1;
+                player.yVel = Math.sin(pushDir) * 20 || 1;
               }
             }
           });

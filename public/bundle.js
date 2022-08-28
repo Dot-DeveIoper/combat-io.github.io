@@ -1018,8 +1018,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       id: 7,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cacti.png?v=1661709952106",
       img: new Image(),
-      xOffset: -50,
-      yOffset: -50,
+      xOffset: -43,
+      yOffset: -43,
       scale: 100,
     },
   ];
