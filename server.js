@@ -95,25 +95,31 @@
         // remove from snow biome
         if (j == 0 || j == 2 || j == 5 || j == 7) continue;
       }
+      if (randomy < 7000) {
+        // remove from snow biome grass and snow
+        if (j == 7) continue;
+      }
       if (randomy > 1000) {
         // remove from snow biome down
         if (j == 3 || j == 1) continue;
       }
+      //remove for river
       if (
         randomy > mapSize - desertHeight - riverHeight - 100 &&
         randomy < mapSize - desertHeight + 100
       ) {
-        if (j == 2 || j == 0 || j == 3 || j == 1 || j == 7) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 1 || j == 5 || j == 7) continue;
       }
-      //remove form river
+      //remove form above river
       if (randomy > mapSize - desertHeight - 100) {
-        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
       }
+      //remove from dessert
       if (
         randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 &&
         randomy < mapSize - desertHeight - riverHeight + 100
       ) {
-        if (j == 2 || j == 0 || j == 3 || j == 5 || j == 1 || j == 7) continue;
+        if (j == 2 || j == 0 || j == 3 || j == 1) continue;
       }
       var object = {
         x: randomx,
@@ -806,6 +812,8 @@
                 ? 90
                 : tree.id == 5
                 ? 85
+                : tree.id == 7
+                ? 50
                 : 0) //obj hit boxes
             ) {
               var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
