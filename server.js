@@ -432,7 +432,17 @@
         xTouching = true;
       }
     }
+    for (let i = x; i >= 10000 + x; i--) {
+      if (i === x2) {
+        xTouching = true;
+      }
+    }
     for (let i = y; i <= 10000 + y; i++) {
+      if (i === y2) {
+        yTouching = true;
+      }
+    }
+    for (let i = y; i >= 10000 + y; i--) {
       if (i === y2) {
         yTouching = true;
       }
@@ -1439,15 +1449,12 @@
               if (obj.placeable && socket.player.acc != 2) {
                 if (
                   test(
-                    objCache[0].x, // where is the function placed look up
+                    objCache[0].x,
                     objCache[0].y,
                     socket.player.x + Math.cos(socket.player.aimdir) * 65,
                     socket.player.y + Math.cos(socket.player.aimdir) * 65
-                  ) //this is were it compares x, y values, its not working oh okay
-                ) { //stop me testing --___-
-                  //insted of objCache[0] can u make a loop for all of them?
-                  //then get it to compare x and y properly ?  hmm
-                  console.log("FUCK, obj y:" + objCache[0].y + "new obj y: " + socket.player.y + Math.cos(socket.player.aimdir) * 65)
+                  ) 
+                ) {
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
                   socket.player.resources.stone -= reqStone;
