@@ -425,24 +425,29 @@
   var ids = 0;
   
   function test(x, y, x2, y2) {
+    x = Math.round(x);
+    y = Math.round(y);
+    x2 = Math.round(x2);
+    y2 = Math.round(y2);
+    
     let xTouching;
     let yTouching;
-    for (let i = x; i <= 10000 + x; i++) {
+    for (let i = x; i <= 50 + x; i++) {
       if (i === x2) {
         xTouching = true;
       }
     }
-    for (let i = x; i >= 10000 + x; i--) {
+    for (let i = x; i >= 50 + x; i--) {
       if (i === x2) {
         xTouching = true;
       }
     }
-    for (let i = y; i <= 10000 + y; i++) {
+    for (let i = y; i <= 50 + y; i++) {
       if (i === y2) {
         yTouching = true;
       }
     }
-    for (let i = y; i >= 10000 + y; i--) {
+    for (let i = y; i >= 50 + y; i--) {
       if (i === y2) {
         yTouching = true;
       }
