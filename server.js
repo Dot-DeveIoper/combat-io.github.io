@@ -432,22 +432,22 @@
     
     let xTouching;
     let yTouching;
-    for (let i = x; i <= 50 + x; i++) {
+    for (let i = x; i >= x + 50; i++) {
       if (i === x2) {
         xTouching = true;
       }
     }
-    for (let i = x; i >= -50 - x; i--) {
+    for (let i = x; i >= x - 50; i--) {
       if (i === x2) {
         xTouching = true;
       }
     }
-    for (let i = y; i <= 50 + y; i++) {
+    for (let i = y; i >= y + 50; i++) {
       if (i === y2) {
         yTouching = true;
       }
     }
-    for (let i = y; i >= -50 - y; i--) {
+    for (let i = y; i >= y - 50; i--) {
       if (i === y2) {
         yTouching = true;
       }
