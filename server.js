@@ -437,21 +437,6 @@
         xTouching = true;
       }
     }
-    for (let i = x; i >= x - 50; i--) {
-      if (i === x2) {
-        xTouching = true;
-      }
-    }
-    for (let i = y; i >= y + 50; i++) {
-      if (i === y2) {
-        yTouching = true;
-      }
-    }
-    for (let i = y; i >= y - 50; i--) {
-      if (i === y2) {
-        yTouching = true;
-      }
-    }
     if (yTouching || xTouching) {
       return false;
     } else {
