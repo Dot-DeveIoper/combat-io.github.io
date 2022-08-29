@@ -51,26 +51,6 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function test(x, y, x2, y2) {
-    let xTouching = false;
-    let yTouching = false;
-    for (let i = x; i < 51 + x; i++) {
-      if (i === x2) {
-        xTouching = true;
-      }
-    }
-    for (let i = y; i < 51 + y; i++) {
-      if (i === y2) {
-        yTouching = true;
-      }
-    }
-    if (yTouching || xTouching) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   Array.prototype.removeItem = function (value) {
     var index = this.indexOf(value);
     if (index > -1) {
@@ -443,6 +423,26 @@
 
   var players = [];
   var ids = 0;
+  
+  function test(x, y, x2, y2) {
+    let xTouching;
+    let yTouching;
+    for (let i = x; i <= 10000 + x; i++) {
+      if (i === x2) {
+        xTouching = true;
+      }
+    }
+    for (let i = y; i <= 10000 + y; i++) {
+      if (i === y2) {
+        yTouching = true;
+      }
+    }
+    if (yTouching || xTouching) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   function sendHatData(player, hat) {
     if (
@@ -1436,34 +1436,18 @@
                   socket.player.weapon = 0;
                 }
               }
-              function test(x, y, x2, y2) { //so here is the hit box func \/
-              let xTouching;
-              let yTouching;
-                for (let i = x; i <= 1000 + x; i++) {
-                  if (i === x2) {
-                    xTouching = true;
-                  }
-                }
-                for (let i = y; i <= 1000 + y; i++) {
-                  if (i === y2) {
-                    yTouching = true;
-                  }
-                }
-                if (yTouching || xTouching) {
-                  return false;
-                } else {
-                  return true;
-                }
-              }
               if (obj.placeable && socket.player.acc != 2) {
                 if (
                   test(
-                    objCache[0].x,
+                    objCache[0].x, // where is the function placed look up
                     objCache[0].y,
                     socket.player.x + Math.cos(socket.player.aimdir) * 65,
                     socket.player.y + Math.cos(socket.player.aimdir) * 65
-                  ) //this is were i
-                ) {
+                  ) //this is were it compares x, y values, its not working oh okay
+                ) { //stop me testing --___-
+                  //insted of objCache[0] can u make a loop for all of them?
+                  //then get it to compare x and y properly ?  hmm
+                  console.log("FUCK, obj y:" + objCache[0].y + "new obj y: " + socket.player.y + Math.cos(socket.player.aimdir) * 65)
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
                   socket.player.resources.stone -= reqStone;
