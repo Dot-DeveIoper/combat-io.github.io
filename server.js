@@ -424,21 +424,21 @@
   var players = [];
   var ids = 0;
   
- function test(x, y, x2, y2) {
-    x = Math.round(x);
-    y = Math.round(y);
-    x2 = Math.round(x2);
-    y2 = Math.round(y2);
+//  function test(x, y, x2, y2) {
+//     x = Math.round(x);
+//     y = Math.round(y);
+//     x2 = Math.round(x2);
+//     y2 = Math.round(y2);
     
-    let xTouching;
-    let yTouching;
-    for (i = x; i <=)
-    if (yTouching || xTouching) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+//     let xTouching;
+//     let yTouching;
+//     // for (i = x; i <=  )
+//     if (yTouching || xTouching) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
 
   function sendHatData(player, hat) {
     if (
@@ -1434,12 +1434,12 @@
               }
               if (obj.placeable && socket.player.acc != 2) {
                 if (
-                  test(
+                  // test(
                     objCache[0].x,
                     objCache[0].y,
                     socket.player.x + Math.cos(socket.player.aimdir) * 65,
                     socket.player.y + Math.cos(socket.player.aimdir) * 65
-                  ) 
+                  // ) 
                 ) {
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
