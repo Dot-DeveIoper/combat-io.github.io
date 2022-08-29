@@ -424,7 +424,7 @@
   var players = [];
   var ids = 0;
   
-  function test(x, y, x2, y2) {
+ function test(x, y, x2, y2) {
     x = Math.round(x);
     y = Math.round(y);
     x2 = Math.round(x2);
@@ -437,7 +437,7 @@
         xTouching = true;
       }
     }
-    for (let i = x; i >= 50 + x; i--) {
+    for (let i = x; i >= -50 - x; i--) {
       if (i === x2) {
         xTouching = true;
       }
@@ -447,7 +447,7 @@
         yTouching = true;
       }
     }
-    for (let i = y; i >= 50 + y; i--) {
+    for (let i = y; i >= -50 - y; i--) {
       if (i === y2) {
         yTouching = true;
       }
