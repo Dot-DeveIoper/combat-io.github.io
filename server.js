@@ -81,8 +81,20 @@
 
   var animalsCache = [];
   var treesCache = [];
-  var objCache = [{id: 0, x: 5000, y: 5000,}];
-    for (let k = 0; k < 18; k++) {
+  var objCache = [
+    {
+      id: 0,
+      x: 5000,
+      y: 5000,
+      dir: 0,
+      oid: 1000000,
+      health: 1000,
+      maxHealth: 1000,
+      xWiggle: 0,
+      yWiggle: 0,
+    },
+  ];
+  for (let k = 0; k < 18; k++) {
     var object = {
       x: h(k),
       y: m(k),
@@ -197,7 +209,7 @@
   }
   //Make moofie cage lol
   treesCache.push(object);
-  
+
   for (let j = 0; j < 8; j++) {
     for (let i = 0; i < mapSize / 50; i++) {
       var randomx = randomInt(0, mapSize);
@@ -1424,43 +1436,51 @@
                   socket.player.weapon = 0;
                 }
               }
+                              let xTouching = false;
+                let yTouching = false;
               function test(x, y, x2, y2) {
-                                let xTouching = false;
-let yTouching = false;
-    for (let i = x; i <= 5 + x; i++) {
-    if (i === x2) {
-       xTouching = true; 
-     }
-} 
-        for (let i = y; i <= 5 + y; i++) {
-    if (i === y2) {
-       yTouching = true; 
-     }
-} 
-    if(yTouching || xTouching) {
-        return true;    
-    } else {
-        return false;
-    }
-} 
+                for (let i = x; i <= 50 + x; i++) {
+                  if (i === x2) {
+                    xTouching = true;
+                  }
+                }
+                for (let i = y; i <= 50 + y; i++) {
+                  if (i === y2) {
+                    yTouching = true;
+                  }
+                }
+                if (yTouching || xTouching) {
+                  return false;
+                } else {
+                  return true;
+                }
+              }
               if (obj.placeable && socket.player.acc != 2) {
-              if (test(objCache[0].x, objCache[0].y, socket.player.x + Math.cos(socket.player.aimdir) * 65, socket.player.y + Math.cos(socket.player.aimdir) * 65)) {
-                socket.player.resources.food -= reqFood;
-                socket.player.resources.wood -= reqWood;
-                socket.player.resources.stone -= reqStone;
-                socket.player.resources.ruby -= reqRuby;
-                socket.player.resources.gold -= reqGold;
-                objCache.push({
-                  id: socket.player.weapon,
-                  x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
-                  y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
-                  dir: 0,
-                  oid: socket.player.sid,
-                  health: obj.health,
-                  maxHealth: obj.maxHealth,
-                  xWiggle: 0,
-                  yWiggle: 0,
-                })    }
+                if (
+                  test(
+                    objCache[0].x,
+                    objCache[0].y,
+                    socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                    socket.player.y + Math.cos(socket.player.aimdir) * 65
+                  )
+                ) {
+                  socket.player.resources.food -= reqFood;
+                  socket.player.resources.wood -= reqWood;
+                  socket.player.resources.stone -= reqStone;
+                  socket.player.resources.ruby -= reqRuby;
+                  socket.player.resources.gold -= reqGold;
+                  objCache.push({
+                    id: socket.player.weapon,
+                    x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                    y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                    dir: 0,
+                    oid: socket.player.sid,
+                    health: obj.health,
+                    maxHealth: obj.maxHealth,
+                    xWiggle: 0,
+                    yWiggle: 0,
+                  });
+                }
                 if (socket.player.upgrade) {
                   socket.player.weapon = socket.player.upgradeWep;
                 } else {
