@@ -1424,7 +1424,7 @@
                   socket.player.weapon = 0;
                 }
               }
-function test(x, y, x2, y2) {
+              function test(x, y, x2, y2) {
                                 let xTouching = false;
 let yTouching = false;
     for (let i = x; i <= 5 + x; i++) {
@@ -1444,7 +1444,7 @@ let yTouching = false;
     }
 } 
               if (obj.placeable && socket.player.acc != 2) {
-              if (test(objCache[0].x, objCache[0].y, socket.player.x + Math.cos(socket.player.aimdir) * 65, socket.player.y + Math.cos(socket.player.aimdir) * 65))
+              if (test(objCache[0].x, objCache[0].y, socket.player.x + Math.cos(socket.player.aimdir) * 65, socket.player.y + Math.cos(socket.player.aimdir) * 65)) {
                 socket.player.resources.food -= reqFood;
                 socket.player.resources.wood -= reqWood;
                 socket.player.resources.stone -= reqStone;
