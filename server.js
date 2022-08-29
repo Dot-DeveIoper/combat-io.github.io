@@ -432,11 +432,7 @@
     
     let xTouching;
     let yTouching;
-    for (let i = x; i >= x + 50; i++) {
-      if (i === x2) {
-        xTouching = true;
-      }
-    }
+    for (i = x; i <=)
     if (yTouching || xTouching) {
       return false;
     } else {
