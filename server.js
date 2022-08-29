@@ -83,13 +83,13 @@
   var treesCache = [];
   var objCache = [
     {
-      id: 0,
+      id: 6,
       x: 5000,
       y: 5000,
       dir: 0,
-      oid: 1000000,
-      health: 1000,
-      maxHealth: 1000,
+      oid: 100,
+      health: 500,
+      maxHealth: 500,
       xWiggle: 0,
       yWiggle: 0,
     },
@@ -1436,15 +1436,15 @@
                   socket.player.weapon = 0;
                 }
               }
-                              let xTouching = false;
-                let yTouching = false;
-              function test(x, y, x2, y2) {
-                for (let i = x; i <= 50 + x; i++) {
+              function test(x, y, x2, y2) { //so here is the hit box func \/
+              let xTouching;
+              let yTouching;
+                for (let i = x; i <= 1000 + x; i++) {
                   if (i === x2) {
                     xTouching = true;
                   }
                 }
-                for (let i = y; i <= 50 + y; i++) {
+                for (let i = y; i <= 1000 + y; i++) {
                   if (i === y2) {
                     yTouching = true;
                   }
@@ -1462,7 +1462,7 @@
                     objCache[0].y,
                     socket.player.x + Math.cos(socket.player.aimdir) * 65,
                     socket.player.y + Math.cos(socket.player.aimdir) * 65
-                  )
+                  ) //this is were i
                 ) {
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
