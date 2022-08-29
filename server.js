@@ -423,15 +423,14 @@
 
   var players = [];
   var ids = 0;
-  
- function test(x, y, d) {
+
+  function test(x, y, d) {
     x = Math.round(x);
     y = Math.round(y);
-    // x2 = Math.round(x2);
-    // y2 = Math.round(y2);
-    let diff = x - y
-    if (diff < 0) diff = diff * -1
-    return diff <= d
+
+    let diff = x - y;
+    if (diff < 0) diff = diff * -1;
+    return diff <= d;
   }
 
   function sendHatData(player, hat) {
@@ -1427,25 +1426,32 @@
                 }
               }
               if (obj.placeable && socket.player.acc != 2) {
-                console.log(                  test(
-                    objCache[0].x,
-                    // objCache[0].y,
-                    // socket.player.x + Math.cos(socket.player.aimdir) * 65,
-                    socket.player.x + Math.cos(socket.player.aimdir) * 65, 
-                    1
-                  ) )
                 console.log(
-                                    objCache[0].x,
-                    // objCache[0].y,
-                    // socket.player.x + Math.cos(socket.player.aimdir) * 65,
-                    socket.player.x + Math.cos(socket.player.aimdir) * 65, )
-                if (
                   test(
                     objCache[0].x,
                     // objCache[0].y,
                     // socket.player.x + Math.cos(socket.player.aimdir) * 65,
-                    socket.player.x + Math.cos(socket.player.aimdir) * 65, 1
-                  ) 
+                    socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                    1
+                  )
+                );
+                console.log(
+                  objCache[0].x,
+                  // objCache[0].y,
+                  // socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                  socket.player.x + Math.cos(socket.player.aimdir) * 65
+                );
+                if (
+                  objCache.filter(
+                    (x) =>
+                      x &&
+                      dist(
+                        objCache[x].y,
+                        // objCache[0].x,
+                        socket.player.y + Math.cos(socket.player.aimdir) * 65
+                        // socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                      ) < 100
+                  )
                 ) {
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
