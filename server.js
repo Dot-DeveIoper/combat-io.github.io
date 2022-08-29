@@ -81,7 +81,7 @@
 
   var animalsCache = [];
   var treesCache = [];
-  var objCache = [];
+  var objCache = [{id: 0, x: 5000, y: 5000,}];
     for (let k = 0; k < 18; k++) {
     var object = {
       x: h(k),
