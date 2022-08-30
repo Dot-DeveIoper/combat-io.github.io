@@ -1371,9 +1371,16 @@
           });
           break;
         case "joinClan":
-          socket.player.clanName = msg[1][0];
+          if (socket.player.clanName === clans[~~msg[1][0]].clanName) {
+            socket.player.clanName = "";
+          } else {
+            socket.player.clanName = clans[~~msg[1][0]].clanName;
+            if (clans[msg[1][0]].owner === socket.player.name) {
+              
+            }
+          }
           break;
-        case "c":
+        case "c": 
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
@@ -1384,7 +1391,7 @@
               socket.player.y > mapSize - desertHeight - riverHeight &&
               socket.player.y < mapSize - desertHeight &&
               !obj.placeInRiver
-            )
+            ) 
               return;
 
             var reqFood = obj.cost.food || 0;

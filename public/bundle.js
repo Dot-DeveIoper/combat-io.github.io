@@ -514,25 +514,25 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   setInterval(() => {
-    window.console = {
-      log: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      info: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      warn: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      error: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-    };
-    if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      send(["vx", ["unfair advantage"]]);
-    }
-    document.getElementById("teamContainer").innerHTML = "";
-    if (clans.length >! 0) {
+    // window.console = {
+    //   log: function (e) {
+    //     send(["vx", ["unfair advantage"]]);
+    //   },
+    //   info: function (e) {
+    //     send(["vx", ["unfair advantage"]]);
+    //   },
+    //   warn: function (e) {
+    //     send(["vx", ["unfair advantage"]]);
+    //   },
+    //   error: function (e) {
+    //     send(["vx", ["unfair advantage"]]);
+    //   },
+    // };
+    // if (!isFuncNative(WebSocket.prototype.send) && ws) {
+    //   send(["vx", ["unfair advantage"]]);
+    // }
+    document.getElementById("teamContainer").innerHTML = "";console.log(clans.length);
+    if (clans.length !== 0) {
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"
