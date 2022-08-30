@@ -1364,35 +1364,35 @@
           socket.close(1012, msg);
           break;
         case "clan":
-            for (let i = 0; i < clans.length; i++) {
-              console.log()
+          for (let i = 0; i < clans.length; i++) {
+            if (clans[i].clanName !== msg[1][0]) {
+              continue;
             }
+          }
           socket.player.clanName = msg[1][0];
           for (let i = 0; i < clans.length; i++) {
-            if (socket.player.name === clans[i].owner) {
+            if (socket.player.sid === clans[i].owner) {
               delete clans[i];
               return true;
             }
           }
           clans.push({
-            owner: socket.player.name,
+            owner: socket.player.sid,
             clanName: msg[1][0],
           });
           break;
         case "joinClan":
           if (socket.player.clanName === clans[~~msg[1][0]].clanName) {
             socket.player.clanName = "";
-            if (clans[~~msg[1][0]].owner === socket.player.name) {
+            if (clans[~~msg[1][0]].owner === socket.player.sid) {
               delete clans[~~msg[1][0]];
             }
-          } else {
-            socket.player.clanName = clans[~~msg[1][0]].clanName;
-            for (let i = 0; i < clans.length; i++) {
-              if (clans[~~i].owner === socket.player.name) {
-                delete clans[~~i];
-              }
-            }
+            return false;
           }
+          socket.player.clanName = clans[~~msg[1][0]].clanName;
+          // for (let i = 0; i < clans.length; i++) {
+          //   console.log(clans[i]);
+          // }
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
