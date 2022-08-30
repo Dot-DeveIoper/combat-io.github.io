@@ -1379,7 +1379,7 @@
             socket.player.attacking = msg[1][0] == true ? true : false;
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
-            if (!obj) return;
+            if (!obj) return; 
             if (
               socket.player.y > mapSize - desertHeight - riverHeight &&
               socket.player.y < mapSize - desertHeight &&

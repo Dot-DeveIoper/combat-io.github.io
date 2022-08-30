@@ -1921,7 +1921,7 @@ body > #mainMenu {
   margin-bottom: 55px;
 }
 .teamsText {
-  display: none;
+  display: block;
   /* display: block; */
   /* position: relative; */
   float: left;

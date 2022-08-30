@@ -532,7 +532,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       send(["vx", ["unfair advantage"]]);
     }
     document.getElementById("teamContainer").innerHTML = "";
-    if (clans) {
+    if (clans.length >! 0) {
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"
@@ -540,7 +540,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       }
     } else {
       document.getElementById("teamContainer").innerHTML +=
-        "<div class='teamsText' id=''> There are no clans yet! </div>";
+        `<div class="teamsText" id=""> There are no clans yet! </div>`;
     }
     for (let i = 0; i < clans.length; i++) {
       document
