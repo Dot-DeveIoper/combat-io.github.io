@@ -600,7 +600,7 @@
           });
         });
         client.send(encode(["b", [formattedLeaderboard]]));
-        client.send(encode(["clan", [clans]]));
+        if (clans) {client.send(encode(["clan", [clans]]))}
       }
     });
   }, 1000);

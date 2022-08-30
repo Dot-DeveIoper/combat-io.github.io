@@ -1757,7 +1757,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("players").innerHTML +=
         "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
-    clans.forEach(function (i) {document.getElementById("teamContainer").innerHTML += `<br><br> <div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a class="joinTeamBtn">Join</a> </div>`; })
+    for (let i = 0; i <= clans.length; i ++) {document.getElementById("teamContainer").innerHTML = `<br><br> <div class="teamInfo"> <div class="teamName"> ${i.clanName} </div> <a class="joinTeamBtn">Join</a> </div>`; }
    
     // minimap
     // minimap
@@ -1969,6 +1969,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             break;
           case "clan":
             clans = msg[1][0];
+            // console.log(clans);
             break;
           case "x":
             objCache = msg[1][0];
