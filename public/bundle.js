@@ -531,6 +531,18 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
       send(["vx", ["unfair advantage"]]);
     }
+    document.getElementById("teamContainer").innerHTML = "";
+    if (clans) {
+      for (let i = 0; i < clans.length; i++) {
+        document.getElementById(
+          "teamContainer"
+        ).innerHTML += `<div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a clan="${i}" id="joinTeamBtn" class="joinTeamBtn">Join</a> </div><br><br>`;
+           document
+        .getElementById("joinTeamBtn")
+        .addEventListener("click", function (e) {
+          send(["joinClan", [e.clan]]);
+        }); };
+    }
   }, 1000);
 
   function m() {
@@ -1758,15 +1770,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
 
-    document.getElementById("teamContainer").innerHTML = "";
-    if (clans) {
-      for (let i = 0; i < clans.length; i++) {
-        document.getElementById(
-          "teamContainer"
-        ).innerHTML += `<div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a id="joinTeamBtn" class="joinTeamBtn">Join</a> </div><br><br>`;
-      }
-    }
-
     // minimap
     // minimap
     var minimapOffset = 20;
@@ -1881,11 +1884,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let clanInput = document.getElementById("clanInput");
   createClan.addEventListener("click", () => {
     send(["clan", [clanInput.value]]);
-    clanInput.value = "";
-  });
-  document.getElementById("joinTeamBtn").addEventListener("click", () => {
-    // alert(this.id);
-    send(["joinClan", [this.id]]);
     clanInput.value = "";
   });
   function connect() {
