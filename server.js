@@ -1426,8 +1426,8 @@
                   yWiggle: 0,
                 };
                 if (
-                  objCache.some((obj) => {
-                    return (o) => dist(objects, o.x);
+                  Object.values(objCache).every((item) => {
+                    return dist(objects, item.x) < 200;
                   })
                 ) {
                   console.log(objCache)
