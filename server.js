@@ -1375,8 +1375,8 @@
             socket.player.clanName = "";
           } else {
             socket.player.clanName = clans[~~msg[1][0]].clanName;
-            if (clans[msg[1][0]].owner === socket.player.name) {
-              
+            if (clans[~~msg[1][0]].owner === socket.player.name) {
+              clans[~~msg[1][0]] = '';
             }
           }
           break;
