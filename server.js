@@ -1425,11 +1425,13 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 };
-                if (
-                  Object.values(objCache).every((item) => {
-                    return dist(objects, item.x) < 200;
-                  })
-                ) {
+                if ((function () {for (var i = 0; i < objCache.length(); i++) {
+                  if ((dist(objects, objCache[i]) < 200).length > 0) {
+                    return false;
+                  } else {
+                    return true;
+                  }
+                }})) {
                   console.log(objCache)
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
