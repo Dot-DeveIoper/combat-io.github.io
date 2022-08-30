@@ -455,7 +455,7 @@
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
     player.skin = skin || 0;
-    player.clan = false;
+    player.clanName = "";
     player.name = name;
     player.ip = ip;
     player.sid = player.sid || ++ids;
@@ -605,7 +605,7 @@
           formattedClans.push({
             name: player.name,
             sid: player.sid,
-            // clan: player.clan,
+            clanName: player.clanName
           });
         });
         client.send(encode(["clan", [formattedClans]]));
@@ -1068,7 +1068,7 @@
       noHurtTime: 0,
       skin: 0,
       hat: 0,
-      clan: false,
+      clanName: "",
       acc: 0,
       wep: 0,
       sid: null,
@@ -1369,6 +1369,13 @@
           var msg = msg[1][0];
           socket.close(1012, msg);
           break;
+        case "clan": 
+          socket.player.clanName = msg[1][0];
+          clans.push({
+            clanName: socket.player.clanName,
+            Members: socket.player.name
+          });
+        break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {

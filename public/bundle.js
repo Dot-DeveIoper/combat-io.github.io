@@ -35,7 +35,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   let loginSection = document.getElementById("loginSection");
   let registerSection = document.getElementById("registerSection");
-  let accountSectionContainer = document.getElementById("accountSectionContainer");
+  let accountSectionContainer = document.getElementById(
+    "accountSectionContainer"
+  );
 
   loginSection.onclick = function (e) {
     if (loginDiv.style.display === "none") {
@@ -1255,12 +1257,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       send(["33", [null]]);
     }
   }
-  const createClan = document.getElementById("createClanSection");
-  const clanInput = document.getElementById("clanInput");
-  var clan = false;
-  createClan.addEventListener("click", () => {
-    clan = clanInput.value;
-  });
 
   function drawPlayerText(x, y, player) {
     localStorage.name = player.name;
@@ -1280,14 +1276,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.strokeText(
       `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
         player.artist ? "</Artist> " : ""
-      }${clan ? "[" + clan + "] " : ""}${player.name}`,
+      }${player.clanName ? "[" + player.clanName + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
       `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
         player.artist ? "</Artist> " : ""
-      }${clan ? "[" + clan + "] " : ""}${player.name}`,
+      }${player.clanName ? "[" + player.clanName + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
@@ -1337,7 +1333,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawWeapon(player, x, y, rot, wep, sid) {
-
     wep = weapons.find((x) => x.id == player.weapon);
     ctx.save();
     ctx.translate(x, y);
@@ -1872,6 +1867,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       upgradeMenu();
     }
   }
+  const createClan = document.getElementById("createClanSection");
+  let clanInput = document.getElementById("clanInput");
+  createClan.addEventListener("click", () => {
+    send(["clan", [clanInput.value]]);
+    clanInput.value = "";
+  });
+
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
