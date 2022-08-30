@@ -237,7 +237,7 @@
         xWiggle: 0,
         yWiggle: 0,
       };
-      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0)
+      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0) 
         continue;
       treesCache.push(object);
     }
@@ -1425,13 +1425,10 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 };
-                if ((function () {for (var i = 0; i < Object.keys(objCache).length; i++) {
-                  if ((dist(objects, objCache[i]) < 200).length > 0) {
-                    return false;
-                  } else {
-                    return true;
-                  }
-                }})) {
+                  for (let j = 0; j < 8; j++) {
+    for (let i = 0; i < mapSize / 50; i++) {
+      if (objCache.filter((x) => x && dist(objects, x) < 200).length > 0) 
+        continue;
                   console.log(objCache)
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
@@ -1455,7 +1452,7 @@
                 } else {
                   socket.player.weapon = 0;
                 }
-              }
+              }}
             }
           }
           break;
