@@ -600,7 +600,9 @@
           });
         });
         client.send(encode(["b", [formattedLeaderboard]]));
-        if (clans) {client.send(encode(["clan", [clans]]))}
+        if (clans) {
+          client.send(encode(["clan", [clans]]));
+        }
       }
     });
   }, 1000);
@@ -1361,13 +1363,16 @@
           var msg = msg[1][0];
           socket.close(1012, msg);
           break;
-        case "clan": 
+        case "clan":
           socket.player.clanName = msg[1][0];
           clans.push({
             owner: socket.player.name,
             clanName: msg[1][0],
           });
-        break;
+          break;
+        case "joinClan":
+          socket.player.clanName = msg[1][0];
+          break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {

@@ -536,12 +536,18 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"
-        ).innerHTML += `<div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a clan="${i}" id="joinTeamBtn" class="joinTeamBtn">Join</a> </div><br><br>`;
-           document
-        .getElementById("joinTeamBtn")
+        ).innerHTML += `<div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a clan="${i}" id="joinClan${i}" class="joinTeamBtn">Join</a> </div><br><br>`;
+      }
+    } else {
+      document.getElementById("teamContainer").innerHTML +=
+        "<div class='teamsText' id=''> There are no clans yet! </div>";
+    }
+    for (let i = 0; i < clans.length; i++) {
+      document
+        .getElementById("joinClan" + i)
         .addEventListener("click", function (e) {
           send(["joinClan", [e.clan]]);
-        }); };
+        });
     }
   }, 1000);
 
