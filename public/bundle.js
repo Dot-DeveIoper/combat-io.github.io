@@ -531,8 +531,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     // if (!isFuncNative(WebSocket.prototype.send) && ws) {
     //   send(["vx", ["unfair advantage"]]);
     // }
-    document.getElementById("teamContainer").innerHTML = "";console.log(clans.length);
-    if (clans.length !== 0) {
+    console.log(clans.length);
+    document.getElementById("teamContainer").innerHTML = "";
+    if (clans.length != 0) {
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"

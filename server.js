@@ -1364,7 +1364,16 @@
           socket.close(1012, msg);
           break;
         case "clan":
-          socket.player.clanName = msg[1][0];
+          for (let i = 0; i < clans.length; i++) {
+            if (msg[1][0] !== clans[i].name) {
+              
+            }
+          }          socket.player.clanName = msg[1][0];
+          for (let i = 0; i < clans.length; i++) {
+            if (socket.player.name === clans[i].owner) {
+              delete clans[i];
+            }
+          }
           clans.push({
             owner: socket.player.name,
             clanName: msg[1][0],
@@ -1373,25 +1382,30 @@
         case "joinClan":
           if (socket.player.clanName === clans[~~msg[1][0]].clanName) {
             socket.player.clanName = "";
+            if (clans[~~msg[1][0]].owner === socket.player.name) {
+              delete clans[~~msg[1][0]];
+            }
           } else {
             socket.player.clanName = clans[~~msg[1][0]].clanName;
-            if (clans[~~msg[1][0]].owner === socket.player.name) {
-              delete clans[~~msg[1][0]]
+            for (let i = 0; i < clans.length; i++) {
+              if (clans[~~i].owner === socket.player.name) {
+                delete clans[~~i];
+              }
             }
           }
           break;
-        case "c": 
+        case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
           } else if ((msg[1][0] == true ? true : false) == true) {
             var obj = weapons.find((x) => x.id == socket.player.weapon);
-            if (!obj) return; 
+            if (!obj) return;
             if (
               socket.player.y > mapSize - desertHeight - riverHeight &&
               socket.player.y < mapSize - desertHeight &&
               !obj.placeInRiver
-            ) 
+            )
               return;
 
             var reqFood = obj.cost.food || 0;
