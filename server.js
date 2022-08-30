@@ -1364,8 +1364,8 @@
         case "clan": 
           socket.player.clanName = msg[1][0];
           clans.push({
+            owner: socket.player.name,
             clanName: msg[1][0],
-            Members: socket.player.name
           });
         break;
         case "c":
@@ -1496,7 +1496,7 @@
         });
     }, 10000);
     socket.on("close", () => {
-      players.removeItem(players.find((x) => x.sid == socket.player.sid));
+      players.removeItem(players.find((x) => x.sid == socket.player.sid, x.sid.pop()));
     });
   });
 
