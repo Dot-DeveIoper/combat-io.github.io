@@ -1425,15 +1425,12 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 };
-                console.log(
-                       objCache.some((obj) => {
-          return dist(objects, obj.x) > 200
-        })
-                )
                 if (
-        objCache.some((obj) => {
-          return o => dist(objects, o.x)
-        }) ) {
+                  objCache.some((obj) => {
+                    return (o) => dist(objects, o.x);
+                  })
+                ) {
+                  console.log(objCache)
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
                   socket.player.resources.stone -= reqStone;
