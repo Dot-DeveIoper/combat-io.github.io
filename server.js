@@ -23,6 +23,7 @@
     return radians * (180 / pi);
   }
   var leaderboard = [];
+  var clans = [];
 
   var mapSize = 10000;
   var desertHeight = 1000;
@@ -61,19 +62,7 @@
 
   var animalsCache = [];
   var treesCache = [];
-  var objCache = [
-    {
-      id: 6,
-      x: 5000,
-      y: 5000,
-      dir: 0,
-      oid: 100,
-      health: 500,
-      maxHealth: 500,
-      xWiggle: 0,
-      yWiggle: 0,
-    },
-  ];
+  var objCache = [];
   for (let k = 0; k < 18; k++) {
     var object = {
       x: h(k),
@@ -237,7 +226,7 @@
         xWiggle: 0,
         yWiggle: 0,
       };
-      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0) 
+      if (treesCache.filter((x) => x && dist(object, x) < 200).length > 0)
         continue;
       treesCache.push(object);
     }
@@ -466,6 +455,7 @@
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
     player.skin = skin || 0;
+    player.clan = false;
     player.name = name;
     player.ip = ip;
     player.sid = player.sid || ++ids;
@@ -1069,6 +1059,7 @@
       noHurtTime: 0,
       skin: 0,
       hat: 0,
+      clan: false,
       acc: 0,
       wep: 0,
       sid: null,
@@ -1425,11 +1416,12 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 };
-                  for (let j = 0; j < 8; j++) {
-    for (let i = 0; i < mapSize / 50; i++) {
-      if (objCache.filter((x) => x && dist(objects, x) < 200).length > 0) 
-        continue;
-                  console.log(objCache)
+                for (let i = 0; i < 1; i++) {
+                  if (
+                    objCache.filter((x) => x && dist(objects, x) < 60).length >
+                    0
+                  )
+                    continue;
                   socket.player.resources.food -= reqFood;
                   socket.player.resources.wood -= reqWood;
                   socket.player.resources.stone -= reqStone;
@@ -1446,13 +1438,13 @@
                     xWiggle: 0,
                     yWiggle: 0,
                   });
+                  if (socket.player.upgrade) {
+                    socket.player.weapon = socket.player.upgradeWep;
+                  } else {
+                    socket.player.weapon = 0;
+                  }
                 }
-                if (socket.player.upgrade) {
-                  socket.player.weapon = socket.player.upgradeWep;
-                } else {
-                  socket.player.weapon = 0;
-                }
-              }}
+              }
             }
           }
           break;
