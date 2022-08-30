@@ -2242,13 +2242,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     //   })
     //   .catch((err) => send(["vx", ["Server error."]]));
 
-    fetch(
-      `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
-    ).catch((err) => {
-      if (err.toString().includes("TypeError: Failed to fetch")) {
-        send(["vx", ["Using ad block."]]);
-      }
-    });
+    // fetch(
+    //   `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
+    // ).catch((err) => {
+    //   if (err.toString().includes("TypeError: Failed to fetch")) {
+    //     send(["vx", ["Using ad block."]]);
+    //   }
+    // });
 
     if (SpawnedOnce == 1) {
       if (soundOn) {
