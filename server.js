@@ -1425,7 +1425,7 @@
                   xWiggle: 0,
                   yWiggle: 0,
                 };
-                if ((function () {for (var i = 0; i < objCache.length(); i++) {
+                if ((function () {for (var i = 0; i < Object.keys(objCache).length; i++) {
                   if ((dist(objects, objCache[i]) < 200).length > 0) {
                     return false;
                   } else {
