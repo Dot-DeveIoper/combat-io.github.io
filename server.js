@@ -601,7 +601,7 @@
         });
         client.send(encode(["b", [formattedLeaderboard]]));
         if (clans) {
-          client.send(encode(["clan", [clans]]));
+          client.send(encode(["clanz", [clans]]));
         }
       }
     });
@@ -1365,22 +1365,14 @@
           break;
         case "clan":
           for (let i = 0; i < clans.length; i++) {
-            if (clans[i].clanName !== msg[1][0]) {
-              continue;
-            }
+            console.log(clans);
           }
           socket.player.clanName = msg[1][0];
-          for (let i = 0; i < clans.length; i++) {
-            if (socket.player.sid === clans[i].owner) {
-              delete clans[i];
-              return true;
-            }
-          }
           clans.push({
             owner: socket.player.sid,
             clanName: msg[1][0],
           });
-          break;
+          break; 
         case "joinClan":
           if (socket.player.clanName === clans[~~msg[1][0]].clanName) {
             socket.player.clanName = "";

@@ -514,24 +514,23 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   setInterval(() => {
-    // window.console = {
-    //   log: function (e) {
-    //     send(["vx", ["unfair advantage"]]);
-    //   },
-    //   info: function (e) {
-    //     send(["vx", ["unfair advantage"]]);
-    //   },
-    //   warn: function (e) {
-    //     send(["vx", ["unfair advantage"]]);
-    //   },
-    //   error: function (e) {
-    //     send(["vx", ["unfair advantage"]]);
-    //   },
-    // };
-    // if (!isFuncNative(WebSocket.prototype.send) && ws) {
-    //   send(["vx", ["unfair advantage"]]);
-    // }
-    console.log(clans.length);
+    window.console = {
+      log: function (e) {
+        send(["vx", ["unfair advantage"]]);
+      },
+      info: function (e) {
+        send(["vx", ["unfair advantage"]]);
+      },
+      warn: function (e) {
+        send(["vx", ["unfair advantage"]]);
+      },
+      error: function (e) {
+        send(["vx", ["unfair advantage"]]);
+      },
+    };
+    if (!isFuncNative(WebSocket.prototype.send) && ws) {
+      send(["vx", ["unfair advantage"]]);
+    }
     document.getElementById("teamContainer").innerHTML = "";
     if (clans.length != 0) {
       for (let i = 0; i < clans.length; i++) {
@@ -1984,7 +1983,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           case "b":
             leaderboard = msg[1][0];
             break;
-          case "clan":
+          case "clanz":
             clans = msg[1][0];
             // console.log(clans);
             break;
