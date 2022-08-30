@@ -771,6 +771,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   var animalsCache = [];
 
   var leaderboard = [];
+  var clans = [];
 
   var mapSize = 10000;
   var desertHeight = 1000;
@@ -1756,7 +1757,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("players").innerHTML +=
         "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
-
+    clans.forEach(function (i) {document.getElementById("teamContainer").innerHTML += `<br><br> <div class="teamInfo"> <div class="teamName"> ${clans[i].clanName} </div> <a class="joinTeamBtn">Join</a> </div>`; })
+   
     // minimap
     // minimap
     var minimapOffset = 20;
@@ -1964,6 +1966,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             break;
           case "b":
             leaderboard = msg[1][0];
+            break;
+          case "clan":
+            clans = msg[1][0];
             break;
           case "x":
             objCache = msg[1][0];

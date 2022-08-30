@@ -600,15 +600,7 @@
           });
         });
         client.send(encode(["b", [formattedLeaderboard]]));
-        var formattedClans = [];
-        clans.forEach((player) => {
-          formattedClans.push({
-            name: player.name,
-            sid: player.sid,
-            clanName: player.clanName
-          });
-        });
-        client.send(encode(["clan", [formattedClans]]));
+        client.send(encode(["clan", [clans]]));
       }
     });
   }, 1000);
@@ -1372,7 +1364,7 @@
         case "clan": 
           socket.player.clanName = msg[1][0];
           clans.push({
-            clanName: socket.player.clanName,
+            clanName: msg[1][0],
             Members: socket.player.name
           });
         break;
