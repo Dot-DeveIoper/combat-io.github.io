@@ -1757,7 +1757,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("players").innerHTML +=
         "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
-    for (let i = 0; i <= clans.length; i ++) {document.getElementById("teamContainer").innerHTML = `<br><br> <div class="teamInfo"> <div class="teamName"> ${i.clanName} </div> <a class="joinTeamBtn">Join</a> </div>`; }
+    for (let i = 0; i <= clans.length; i ++ ) {document.getElementById("teamContainer").innerHTML += `<br><br> <div class="teamInfo"> <div class="teamName"> ${i.clanName} </div> <a class="joinTeamBtn">Join</a> </div>`; }
    
     // minimap
     // minimap
