@@ -1496,7 +1496,7 @@
         });
     }, 10000);
     socket.on("close", () => {
-      players.removeItem(players.find((x) => x.sid == socket.player.sid, x.sid.pop()));
+      players.removeItem(players.find((x) => x.sid == socket.player.sid));
     });
   });
 
