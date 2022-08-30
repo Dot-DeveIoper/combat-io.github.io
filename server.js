@@ -1364,14 +1364,14 @@
           socket.close(1012, msg);
           break;
         case "clan":
-          for (let i = 0; i < clans.length; i++) {
-            if (msg[1][0] !== clans[i].name) {
-              
+            for (let i = 0; i < clans.length; i++) {
+              console.log()
             }
-          }          socket.player.clanName = msg[1][0];
+          socket.player.clanName = msg[1][0];
           for (let i = 0; i < clans.length; i++) {
             if (socket.player.name === clans[i].owner) {
               delete clans[i];
+              return true;
             }
           }
           clans.push({
