@@ -600,6 +600,15 @@
           });
         });
         client.send(encode(["b", [formattedLeaderboard]]));
+        var formattedClans = [];
+        clans.forEach((player) => {
+          formattedClans.push({
+            name: player.name,
+            sid: player.sid,
+            // clan: player.clan,
+          });
+        });
+        client.send(encode(["clan", [formattedClans]]));
       }
     });
   }, 1000);

@@ -1255,6 +1255,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       send(["33", [null]]);
     }
   }
+  const createClan = document.getElementById("createClanSection");
+  const clanInput = document.getElementById("clanInput");
+  var clan = false;
+  createClan.addEventListener("click", () => {
+    clan = clanInput.value;
+  });
 
   function drawPlayerText(x, y, player) {
     localStorage.name = player.name;
@@ -1274,14 +1280,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.strokeText(
       `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
         player.artist ? "</Artist> " : ""
-      }${player.clan ? "[" + player.clan + "] " : ""}${player.name}`,
+      }${clan ? "[" + clan + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     );
     ctx.fillText(
       `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
         player.artist ? "</Artist> " : ""
-      }${player.clan ? "[" + player.clan + "] " : ""}${player.name}`,
+      }${clan ? "[" + clan + "] " : ""}${player.name}`,
       x - 7,
       y - 50
     ); // og 50 ids: {${player.sid}}
