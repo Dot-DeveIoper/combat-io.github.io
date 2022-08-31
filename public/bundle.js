@@ -1294,9 +1294,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.strokeText(w, x - 7, y - 50);
     ctx.fillText(w, x - 7, y - 50);
   }
-  crown.src = "https://vignette.wikia.nocookie.net/moom/images/2/2f/Leader_Medal.png/revision/latest?cb=20171105003720";
+  crown.src = "https://www.freeiconspng.com/uploads/queen-crown-icon-5.png";
    player.isLeader 
-    && ctx.drawImage(crown, x - 100, y - 80, 40, 40);
+    && ctx.drawImage(crown, x - 80, y - 100, 40, 40);
 
     if (player.chat) {
       ctx.textAlign = "center";
