@@ -1371,6 +1371,7 @@
           }
           socket.player.clanName = msg[1][0];
           clans.push({
+            id: clans.length,
             owner: socket.player.sid,
             clanName: msg[1][0],
           });
@@ -1380,9 +1381,7 @@
           if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
             if (clans[x].owner === socket.player.sid) {
-              setTimeout(() => {
-              clans[x] = {};
-              }, 1000);
+              clans[x].filter(a => a.id === i);
             }
             return false;
           }
