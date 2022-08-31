@@ -1369,74 +1369,73 @@
           socket.close(1012, msg);
           break;
         case "createClan":
-          var found = false;
-          var found2 = false;
-          var lol;
-          for (var i = 0; i < clans.length; i++) {
-            if (clans[i].clanName == msg[1][0]) {
-              found = true;
-              break;
-            }
-          }
-          if (!found && socket.player.isLeader != true) {
-            clans.push({
-              id: clans.length,
-              owner: socket.player.sid,
-              clanName: msg[1][0],
-              members: socket.player.name,
-            });
-            socket.player.clanName = msg[1][0];
-            socket.player.isLeader = true;
-            socket.player.isMember = false;
-            socket.send(encode(["clanTrue", []]));
+          try {
+            var found = false;
+            var found2 = false;
+            var lol;
             for (var i = 0; i < clans.length; i++) {
               if (clans[i].clanName == msg[1][0]) {
-                found2 = true;
-                lol = i;
+                found = true;
                 break;
               }
             }
-            if (found2) {
-              socket.send(encode(["clanMem", [clans[lol].members]]));
+            if (!found && socket.player.isLeader != true) {
+              clans.push({
+                id: clans.length,
+                owner: socket.player.sid,
+                clanName: msg[1][0],
+                members: socket.player.name,
+              });
+              socket.player.clanName = msg[1][0];
+              socket.player.isLeader = true;
+              socket.player.isMember = false;
+              socket.send(encode(["clanTrue", []]));
+              for (var i = 0; i < clans.length; i++) {
+                if (clans[i].clanName == msg[1][0]) {
+                  found2 = true;
+                  lol = i;
+                  break;
+                }
+              }
+              if (found2) {
+                socket.send(encode(["clanMem", [clans[lol].members]]));
+              }
             }
-          }
+          } catch (err) {}
           break;
         case "leaveClan":
-          if (socket.player.clanName === null) return false;
-          let clanI = ~~msg[1][0];
-          if (socket.player.clanName === clans[clanI].clanName) {
-            socket.player.clanName = null;
-            socket.player.isLeader = false;
-            socket.player.isMember = false;
-            if (clans[clanI].owner === socket.player.sid) {
-              let index = clans.map((item) => item.id).indexOf(clanI);
-              if (index > -1) {
-                clans.splice(index, 1);
+          try {
+            if (socket.player.clanName === null) return false;
+            let clanI = ~~msg[1][0];
+            if (socket.player.clanName === clans[clanI].clanName) {
+              socket.player.clanName = null;
+              socket.player.isLeader = false;
+              socket.player.isMember = false;
+              if (clans[clanI].owner === socket.player.sid) {
+                let index = clans.map((item) => item.id).indexOf(clanI);
+                if (index > -1) {
+                  clans.splice(index, 1);
+                }
               }
+              return false;
             }
-            return false;
-          }
+          } catch (err) {}
           break;
         case "joinClan":
-          if (socket.player.clanName === null) return false;
-          let x = ~~msg[1][0];
-          if (socket.player.clanName === clans[x].clanName) {
-            socket.player.clanName = null;
-            socket.player.isLeader = false;
-            if (clans[x].owner === socket.player.sid) {
-              let index = clans.map((item) => item.id).indexOf(x);
-              if (index > -1) {
-                clans.splice(index, 1);
-              }
+          try {
+            if (clans) {
+              let x = ~~msg[1][0];
+              socket.send(encode(["clanTrue", []]));
+              socket.send(
+                encode([
+                  "clanMem",
+                  [clans[x].members + " " + socket.player.name],
+                ])
+              );
+              socket.player.clanName = clans[x].clanName;
+              socket.player.isMember = true;
             }
-            return false;
-          }
-          socket.send(encode(["clanTrue", []]));
-          socket.send(
-            encode(["clanMem", [clans[x].members + " " + socket.player.name]])
-          );
-          socket.player.clanName = clans[x].clanName;
-          socket.player.isMember = true;
+          } catch (err) {}
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);
