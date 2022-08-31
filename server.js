@@ -1407,7 +1407,6 @@
           try {
             if (socket.player.clanName === null) return false;
             let clanI = ~~msg[1][0];
-            if (socket.player.clanName === clans[clanI].clanName) {
               socket.player.clanName = null;
               socket.player.isLeader = false;
               socket.player.isMember = false;
@@ -1416,7 +1415,6 @@
                 if (index > -1) {
                   clans.splice(index, 1);
                 }
-              }
               return false;
             }
           } catch (err) {}
