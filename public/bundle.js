@@ -1279,43 +1279,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   function drawPlayerText(x, y, player) {
+    var roleName = (player.admin ? "</DEV> " : player.mod ? "</MOD> " : player.artist ? "</Artist> " : "");
+    var roleColor = (player.admin ? "#30d1a1" : player.mod? "#FF0000" : player.artist ? "#F99843" : "#fff");
+    var w = (roleName) + (player.clanName ? "[" + player.clanName + "] " : "") + (player.name || "");
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
+  if ("" != w) {
     ctx.textAlign = "center";
     ctx.font = "24px Hammersmith One";
     ctx.lineJoin = "round";
     ctx.lineWidth = 10;
-    ctx.fillStyle = player.admin
-      ? "#30d1a1"
-      : player.mod
-      ? "#FF0000"
-      : player.artist
-      ? "#F99843"
-      : "#fff";
+    ctx.fillStyle = roleColor
     ctx.strokeStyle = "#000";
-    ctx.strokeText(
-      `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
-        player.artist ? "</Artist> " : ""
-      }${player.clanName ? "[" + player.clanName + "] " : ""}${player.name}`,
-      x - 7,
-      y - 50
-    );
-    ctx.fillText(
-      `${player.admin ? "</DEV> " : ""}${player.mod ? "</MOD> " : ""}${
-        player.artist ? "</Artist> " : ""
-      }${player.clanName ? "[" + player.clanName + "] " : ""}${player.name}`,
-      x - 7,
-      y - 50
-    ); // og 50 ids: {${player.sid}}
-    crown.src = "https://vignette.wikia.nocookie.net/moom/images/2/2f/Leader_Medal.png/revision/latest?cb=20171105003720";
-
-   player.isLeader && ctx.drawImage(
-      crown,
-      x - 70,
-      y,
-     40,
-     40
-    ); // og 50 ids: {${player.sid}}
+    ctx.strokeText(w, x - 7, y - 50);
+    ctx.fillText(w, x - 7, y - 50);
+  }
+  crown.src = "https://vignette.wikia.nocookie.net/moom/images/2/2f/Leader_Medal.png/revision/latest?cb=20171105003720";
+   player.isLeader 
+    && ctx.drawImage(crown, x - 100, y - 80, 40, 40);
 
     if (player.chat) {
       ctx.textAlign = "center";
