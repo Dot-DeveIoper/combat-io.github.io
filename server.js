@@ -1365,8 +1365,8 @@
           break;
         case "clan":
           for (let i = 0; i < clans.length; i++) {
-            if (!clans[i].clanName.includes(msg[1][0])) {
-              continue;
+           if (clans[i].owner === socket.player.sid) {
+             clans = clans.splice(clans.indexOf(clans[i]), 1, )
             }
           }
           socket.player.clanName = msg[1][0];
@@ -1381,7 +1381,7 @@
           if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
             if (clans[x].owner === socket.player.sid) {
-              clans[x].filter(a => a.id === i);
+             clans = clans.splice(clans.indexOf(clans[x]), 1, )
             }
             return false;
           }
