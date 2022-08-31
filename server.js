@@ -1392,6 +1392,7 @@
         case "joinClan":
           let x = ~~msg[1][0];
           if (socket.player.clanName == clans[x].clanName) {
+            socket.player.isLeader = false;
             socket.player.clanName = "";
             if (clans[x].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(x);
