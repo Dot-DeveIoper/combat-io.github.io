@@ -428,6 +428,9 @@
     }
   }
 
+  function sendClanData(player, clan) {
+    player.clanName = clan || null;
+  }
   function sendWepData(player, wep) {
     if (player.age <= 2) {
       player.wep = wep || 0;
@@ -1063,7 +1066,6 @@
       skin: 0,
       hat: 0,
       clanName: "",
-      isLeader: false,
       acc: 0,
       wep: 0,
       sid: null,
@@ -1172,21 +1174,6 @@
             socket.close(1012, "Buffer missing");
           }
           sendAccData(socket.player, acc);
-          break;
-        case "Ug": // on upgrade
-          if (!msg[1][0]) {
-            socket.close(1012, "Buffer missing");
-          }
-          var wep;
-          if (socket.player.age >= 2) {
-            try {
-              socket.player.weapon = msg[1][0].wep || 0;
-              socket.player.upgradeWep = msg[1][0].wep || 0;
-            } catch (err) {
-              socket.close(1012, "Buffer missing");
-            }
-            sendWepData(socket.player, wep);
-          }
           break;
         case "Ug": // on upgrade
           if (!msg[1][0]) {
@@ -1397,6 +1384,7 @@
                   clanName: msg[1][0],
                 });
                 socket.player.clanName = msg[1][0];
+                sendClanData(socket.player, msg[1][0])
               }
             }
           }
