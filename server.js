@@ -1365,7 +1365,9 @@
           break;
         case "clan":
           for (let i = 0; i < clans.length; i++) {
-            console.log(clans);
+            if (!clans[i].clanName.includes(msg[1][0])) {
+              continue;
+            }
           }
           socket.player.clanName = msg[1][0];
           clans.push({
@@ -1374,14 +1376,19 @@
           });
           break; 
         case "joinClan":
-          if (socket.player.clanName === clans[~~msg[1][0]].clanName) {
+          let x = ~~msg[1][0];
+          if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
-            if (clans[~~msg[1][0]].owner === socket.player.sid) {
-              delete clans[~~msg[1][0]];
+            if (clans[x].owner === socket.player.sid) {
+                            console.log(clans)
+              console.log(clans[x])
+              setTimeout(() => {
+              clans[x].pop();
+              }, 1000);
             }
             return false;
           }
-          socket.player.clanName = clans[~~msg[1][0]].clanName;
+          socket.player.clanName = clans[x].clanName;
           // for (let i = 0; i < clans.length; i++) {
           //   console.log(clans[i]);
           // }
