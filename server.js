@@ -1368,8 +1368,7 @@
           socket.close(1012, msg);
           break;
         case "clan":
-          let ok = false;
-        if(socket.player.isLeader !== true) {
+        if(socket.player.isLeader != true) {
             clans.push({
               id: clans.length,
               owner: socket.player.sid,
@@ -1384,9 +1383,9 @@
             clans.push({
               id: clans.length,
               owner: socket.player.sid,
-              clanName: msg[1][0],
+              clanName: null,
             });
-            sendClanData(socket.player, msg[1][0])
+            sendClanData(socket.player, null)
             socket.player.isLeader = false;
         }
           break;
