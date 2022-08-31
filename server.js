@@ -1369,6 +1369,13 @@
           socket.close(1012, msg);
           break;
         case "clan":
+var found = false;
+for(var i = 0; i < clans.length; i++) {
+    if (clans[i].clanName == msg[1][0]) {
+        found = true;
+        break;
+    }
+} if (found === true) {
         if(socket.player.isLeader != true) {
             clans.push({
               id: clans.length,
@@ -1378,7 +1385,7 @@
             sendClanData(socket.player, msg[1][0])
             socket.player.isLeader = true;
             socket.player.isMember = false;
-        }
+        }}
           break;
         case "unclan":
           if(socket.player.clanName == null) return false;
