@@ -549,7 +549,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       for (let i = 0; i < clansMem.length; i++) {
         document.getElementById(
           "membersSection"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[i]} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[i].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
       }
     } else {
       document.getElementById(
