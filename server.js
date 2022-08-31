@@ -1381,7 +1381,6 @@
               id: clans.length,
               owner: socket.player.sid,
               clanName: msg[1][0],
-              members: '',
             });
             sendClanData(socket.player, msg[1][0]);
             socket.player.isLeader = true;
@@ -1426,7 +1425,9 @@
             let player = client.player;
             if (player) {
               client.send(encode(["clanTrue", []]));
-              client.send(encode(["clanMem", [clans[x].members.push({name: socket.player.name,}]));
+              console.log(clans[x])
+              clans[x].push({members:{name: socket.player.name,}})
+              client.send(encode(["clanMem", [clans]]));
             }
           }); 
           console.log(clans[x]);
