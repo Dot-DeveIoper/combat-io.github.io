@@ -1380,10 +1380,8 @@
           if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
             if (clans[x].owner === socket.player.sid) {
-                            console.log(clans)
-              console.log(clans[x])
               setTimeout(() => {
-              clans[x].pop();
+              clans[x] = {};
               }, 1000);
             }
             return false;
