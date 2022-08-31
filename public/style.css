@@ -407,6 +407,48 @@ body {
   display: block;
 }
 
+.deathContainer {
+  display: flex;
+  /* position: absolute; */
+  justify-content: center;
+  align-items: center;
+  animation: 2.5s death;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 1rem; */
+  z-index: 1000;
+}
+.deathText {
+  display: grid;
+  place-items: center;
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100px;
+  color: #ffffff;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@keyframes death {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  .deathText {
+    font-size: 1.6rem;
+  }
+}
+
 .menuCard {
   vertical-align: top;
   text-align: left;

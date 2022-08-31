@@ -92,6 +92,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }, 300);
   };
 
+  let randomDeathText = ["You died",
+    "Game over",
+    "You lost",
+    "Try again"];
+  let deathText = randomDeathText[Math.floor(Math.random() * randomDeathText.length)];
+  document.getElementById("randomDeathText").innerHTML = deathText;
+
   var Youtubers = [
     {
       name: "Dot",
@@ -546,7 +553,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
-     let hi = clansMem.split(',')[0];
+      alert(clansMem)
+     let hi = clansMem.split(' ');
       for (let i = 0; i < hi.length; i++) {
 document.getElementById(
           "membersSection"
