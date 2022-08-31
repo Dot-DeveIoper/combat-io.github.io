@@ -544,16 +544,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         "teamContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
-    document.getElementById("memberContainer").innerHTML = "";
+    document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
       for (let i = 0; i < clansMem.length; i++) {
         document.getElementById(
-          "memberContainer"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem.members} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+          "membersSection"
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[i]} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
       }
     } else {
       document.getElementById(
-        "memberContainer"
+        "membersSection"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     for (let i = 0; i < clans.length; i++) {

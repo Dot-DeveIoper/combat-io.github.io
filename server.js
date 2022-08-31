@@ -1388,9 +1388,7 @@
             socket.player.isMember = false;
             wsServer.clients.forEach((client) => {
               let player = client.player;
-              if (player) {
                 client.send(encode(["clanTrue", []]));
-              }
             });
           }
           break;
@@ -1428,7 +1426,8 @@
             let player = client.player;
             if (player) {
               client.send(encode(["clanTrue", []]));
-              client.send(encode(["clanMem", [clans[x].members += ',' + socket.player.name]]));
+              client.send(encode(["clanMem", [clans[x].members += '{' + socket.player.name + '},']]));
+              console.log(clans[x].members += '{' + socket.player.name + '}');
             }
           });
           clans[x].members += ',' + socket.player.name;
