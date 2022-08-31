@@ -1367,6 +1367,7 @@
           for (let i = 0; i < clans.length; i++) {
            if (clans[i].owner === socket.player.sid) {
              clans = clans.splice(clans.indexOf(clans[i]), 1, )
+             continue;
             }
           }
           socket.player.clanName = msg[1][0];
