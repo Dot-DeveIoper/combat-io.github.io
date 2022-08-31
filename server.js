@@ -1364,18 +1364,19 @@
           socket.close(1012, msg);
           break;
         case "clan":
-          for (let i = 0; i < 1; i++) {
-            if (
-              clans.filter((owner) => owner && owner !== socket.player.sid)
-                .length > 0
-            )
-              continue;
-            socket.player.clanName = msg[1][0];
-            clans.push({
-              id: clans.length,
-              owner: socket.player.sid,
-              clanName: msg[1][0],
-            });
+          if (clans.length > 0) {
+          for (let i = 0; i < clans.length + 1; i++) {
+            if (clans[i].owner !== socket.player.sid) {
+              clans.push({
+                id: clans.length,
+                owner: socket.player.sid,
+                clanName: msg[1][0],
+              });
+              socket.player.clanName = msg[1][0];
+            }
+          }
+          } else {
+            
           }
           break;
         case "joinClan":
