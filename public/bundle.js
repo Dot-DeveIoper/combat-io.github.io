@@ -553,7 +553,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
-     let hi = [clansMem.split(' ').filter(w => w !== '')];
+     let hi = clansMem.split(' ').filter(w => w !== '');
       for (let i = 0; i < hi.length; i++) {
 document.getElementById(
           "membersSection"

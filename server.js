@@ -1370,11 +1370,30 @@
           break;
         case "createClan":
           var found = false;
+          var found2 = false;
+          var lol;
           for (var i = 0; i < clans.length; i++) {
             if (clans[i].clanName == msg[1][0]) {
               found = true;
               break;
             }
+          }
+                    for (var i = 0; i < clans.length; i++) {
+            if (clans[i].clanName == msg[1][0]) {
+              found2 = true;
+              lol = i;
+              break;
+            }
+          }
+          if (found2) {
+                        wsServer.clients.forEach((client) => {
+              let player = client.player;
+              if (player) {
+                client.send(
+                  encode(["clanMem", [clans[lol].members + " " + socket.player.name]])
+                );
+              }
+            });
           }
           if (!found && socket.player.isLeader != true) {
             clans.push({
@@ -1388,7 +1407,7 @@
             socket.player.isMember = false;
             wsServer.clients.forEach((client) => {
               let player = client.player;
-                client.send(encode(["clanTrue", []]));
+              client.send(encode(["clanTrue", []]));
             });
           }
           break;
@@ -1399,6 +1418,15 @@
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
+            clans[clanI].members = (clans[clanI].members).replace(socket.player.name, "")
+            wsServer.clients.forEach((client) => {
+              let player = client.player;
+              if (player) {
+                client.send(
+                  encode(["clanMem", [clans[x].members + " " + socket.player.name]])
+                );
+              }
+            });
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
@@ -1426,8 +1454,12 @@
             let player = client.player;
             if (player) {
               client.send(encode(["clanTrue", []]));
-              client.send(encode(["clanMem", [clans[x].members + ' ' + socket.player.name]]));
-              console.log(clans[x].members + socket.player.name + ' ')
+              client.send(
+                encode([
+                  "clanMem",
+                  [clans[x].members + " " + socket.player.name],
+                ])
+              );
             }
           });
           socket.player.clanName = clans[x].clanName;
