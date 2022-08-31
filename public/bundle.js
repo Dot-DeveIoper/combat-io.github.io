@@ -546,12 +546,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
-      for (let i = 0; i < clansMem.length; i++) {
-        document.getElementById(
+     let hi = clansMem.split(',')[0];
+      for (let i = 0; i < hi.length; i++) {
+document.getElementById(
           "membersSection"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[i].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
-      }
-    } else {
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[i]} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+    } } else {
       document.getElementById(
         "membersSection"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
