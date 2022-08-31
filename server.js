@@ -1364,26 +1364,32 @@
           socket.close(1012, msg);
           break;
         case "clan":
-          if (clans.length > 0) {
-          for (let i = 0; i < clans.length + 1; i++) {
-            if (clans[i].owner !== socket.player.sid) {
-              clans.push({
-                id: clans.length,
-                owner: socket.player.sid,
-                clanName: msg[1][0],
-              });
-              socket.player.clanName = msg[1][0];
-            }
-          }
+          if (!clans.length > 0) {
+            clans.push({
+              id: clans.length,
+              owner: socket.player.sid,
+              clanName: msg[1][0],
+            });
+            socket.player.clanName = msg[1][0];
           } else {
-            
+            for (let i = 0; i < clans.length; i++) {
+              if (msg[1][0] === clans[i].clanName) {
+              } else {
+                clans.push({
+                  id: clans.length,
+                  owner: socket.player.sid,
+                  clanName: msg[1][0],
+                });
+                socket.player.clanName = msg[1][0];
+              }
+            }
           }
           break;
         case "joinClan":
           let x = ~~msg[1][0];
           if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
-            if (clans[x].owner === socket.player.sid) {
+            if (clans[x].owner !== socket.player.sid) {
               clans = clans.splice(clans.indexOf(clans[x]), 1);
             }
             return false;
