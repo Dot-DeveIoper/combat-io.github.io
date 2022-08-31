@@ -20,6 +20,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   let resourcesAndMap = document.getElementById("resourcesAndMap");
 
+  let crown = new Image();
   let leaderboardScores = document.querySelector(".leaderboardScores");
   let ageLevelItems = document.querySelector("#ageLevelItems");
   let itemDetailsContainer = document.querySelector(".itemDetailsContainer");
@@ -1305,6 +1306,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       }${player.clanName ? "[" + player.clanName + "] " : ""}${player.name}`,
       x - 7,
       y - 50
+    ); // og 50 ids: {${player.sid}}
+    crown.src = "https://vignette.wikia.nocookie.net/moom/images/2/2f/Leader_Medal.png/revision/latest?cb=20171105003720";
+
+   player.isLeader && ctx.drawImage(
+      crown,
+      x - 70,
+      y,
+     40,
+     40
     ); // og 50 ids: {${player.sid}}
 
     if (player.chat) {
