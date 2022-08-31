@@ -1373,15 +1373,17 @@
             socket.player.clanName = msg[1][0];
           } else {
             for (let i = 0; i < clans.length; i++) {
-              if (msg[1][0] === clans[i].clanName) {
+              if (socket.player.sid !== clans[i].owner) {
+                return true;
               } else {
-                clans.push({
-                  id: clans.length,
-                  owner: socket.player.sid,
-                  clanName: msg[1][0],
-                });
-                socket.player.clanName = msg[1][0];
+                return false;
               }
+            clans.push({
+              id: clans.length,
+              owner: socket.player.sid,
+              clanName: msg[1][0],
+            });
+            socket.player.clanName = msg[1][0];
             }
           }
           break;
@@ -1389,8 +1391,8 @@
           let x = ~~msg[1][0];
           if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = "";
-            if (clans[x].owner !== socket.player.sid) {
-              clans = clans.splice(clans.indexOf(clans[x]), 1);
+            if (clans[x].owner === socket.player.sid) {
+             clans = clans.splice(clans.indexOf(clans[x]), 1, )
             }
             return false;
           }
