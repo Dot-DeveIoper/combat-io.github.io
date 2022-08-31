@@ -1063,6 +1063,7 @@
       skin: 0,
       hat: 0,
       clanName: "",
+      isLeader: false,
       acc: 0,
       wep: 0,
       sid: null,
@@ -1148,7 +1149,7 @@
           socket.send(encode(["1", [socket.player.sid]]));
           socket.send(encode(["w", [socket.player.weapons]]));
           break;
-        case "Hd":
+        case "Hd": // hat equip
           if (!msg[1][0]) {
             socket.close(1012, "Buffer missing");
           }
@@ -1160,7 +1161,7 @@
           }
           sendHatData(socket.player, hat);
           break;
-        case "Ac":
+        case "Ac": // acc equip
           if (!msg[1][0]) {
             socket.close(1012, "Buffer missing");
           }
@@ -1172,7 +1173,22 @@
           }
           sendAccData(socket.player, acc);
           break;
-        case "Ug":
+        case "Ug": // on upgrade
+          if (!msg[1][0]) {
+            socket.close(1012, "Buffer missing");
+          }
+          var wep;
+          if (socket.player.age >= 2) {
+            try {
+              socket.player.weapon = msg[1][0].wep || 0;
+              socket.player.upgradeWep = msg[1][0].wep || 0;
+            } catch (err) {
+              socket.close(1012, "Buffer missing");
+            }
+            sendWepData(socket.player, wep);
+          }
+          break;
+        case "Ug": // on upgrade
           if (!msg[1][0]) {
             socket.close(1012, "Buffer missing");
           }
@@ -1199,11 +1215,11 @@
             socket.player.health = 100;
           }
           break;
-        case "2":
+        case "2": // aim
           if (typeof msg[1][0] !== "number") break;
           socket.player.aimdir = msg[1][0];
           break;
-        case "ch":
+        case "ch": // chat
           if (msg[1][0] == "/" + process.env.ADMINPASS) {
             socket.player.admin = true;
             socket.player.health = 100;
