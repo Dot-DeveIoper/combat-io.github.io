@@ -1887,10 +1887,14 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   }
   const createClan = document.getElementById("createClanSection");
+  const leaveClan = document.getElementById("leaveClanSection");
   let clanInput = document.getElementById("clanInput");
   createClan.addEventListener("click", () => {
     send(["clan", [clanInput.value]]);
     clanInput.value = "";
+  });
+  leaveClan.addEventListener("click", () => {
+    send(["unclan", [null]]);
   });
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");

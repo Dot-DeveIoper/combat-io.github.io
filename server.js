@@ -1381,15 +1381,20 @@
         }
           break;
         case "unclan":
-        if(socket.player.isLeader == true) {
-            clans.push({
-              id: clans.length,
-              owner: socket.player.sid,
-              clanName: null,
-            });
-            sendClanData(socket.player, null)
+          if(socket.player.clanName == null) return false;
+          let clanI = ~~msg[1][0];
+          if (socket.player.clanName == clans[clanI].clanName) {
+            socket.player.clanName = null;
             socket.player.isLeader = false;
-        }
+            socket.player.isMember = false;
+            if (clans[clanI].owner === socket.player.sid) {
+              let index = clans.map((item) => item.id).indexOf(clanI);
+              if (index > -1) {
+                clans.splice(index, 1);
+              }
+            }
+            return false;
+          }
           break;
         case "joinClan":
           if(socket.player.clanName == null) return false;
@@ -1406,6 +1411,7 @@
             return false;
           }
           socket.player.clanName = clans[x].clanName;
+          socket.player.isMember = true;
           // for (let i = 0; i < clans.length; i++) {
           //   console.log(clans[i]);
           // }
