@@ -1066,6 +1066,7 @@
       skin: 0,
       hat: 0,
       clanName: "",
+      isLeader: null,
       acc: 0,
       wep: 0,
       sid: null,
@@ -1368,26 +1369,26 @@
           break;
         case "clan":
           let ok = false;
-          if (!clans.length < 0) {
+        if(socket.player.isLeader !== true) {
             clans.push({
               id: clans.length,
               owner: socket.player.sid,
               clanName: msg[1][0],
             });
-            socket.player.clanName = msg[1][0];
-          } else {
-            for (let i = 0; i < clans.length; i++) {
-              if (socket.player.sid !== clans[i].owner) {
-                clans.push({
-                  id: clans.length,
-                  owner: socket.player.sid,
-                  clanName: msg[1][0],
-                });
-                socket.player.clanName = msg[1][0];
-                sendClanData(socket.player, msg[1][0])
-              }
-            }
-          }
+            sendClanData(socket.player, msg[1][0])
+            socket.player.isLeader = true;
+        }
+          break;
+        case "unclan":
+        if(socket.player.isLeader == true) {
+            clans.push({
+              id: clans.length,
+              owner: socket.player.sid,
+              clanName: msg[1][0],
+            });
+            sendClanData(socket.player, msg[1][0])
+            socket.player.isLeader = false;
+        }
           break;
         case "joinClan":
           let x = ~~msg[1][0];
