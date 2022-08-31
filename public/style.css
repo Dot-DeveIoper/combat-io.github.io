@@ -2010,6 +2010,104 @@ body > #mainMenu {
   color: #ebebeb;
 }
 
+.memberSection {
+  display: none;
+  /* display: inline-block; */
+  max-width: 400px;
+  width: 400px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.memberContainer {
+  display: block;
+  /* display: flex; */
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  word-break: break-all;
+  inline-size: 350px;
+}
+.membersInfo {
+  display: block;
+  /* text-align: center */
+  max-width: 400px;
+  width: 100%;
+  inline-size: 100%;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+.membersInfo:first-child {
+  margin-top: 5px;
+}
+.membersInfo:last-child {
+  margin-bottom: 55px;
+}
+.membersText {
+  display: none;
+  /* display: block; */
+  /* position: relative; */
+  float: left;
+  margin-top: 7px;
+  width: 100%;
+  inline-size: 100%;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+}
+.memberName {
+  display: inline-block;
+  /* position: relative; */
+  float: left;
+  clear: left;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+}
+.kickMemberBtn {
+  display: inline-block;
+  /* box-sizing: border-box; */
+  /* position: relative; */
+  float: right;
+  clear: right;
+  margin-top: 5px;
+  margin-right: -29px;
+  background-color: #77c44c;
+  color: #ffffff;
+  border: 0;
+  border-top: 2px solid #23b200;
+  border-bottom: 2px solid #1d9300;
+  border-left: 2px solid #23b200;
+  border-right: 2px solid #23b200;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  /* width: 100%; */
+  /* width: 6px; */
+  /* padding: 3px 6px; */
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+.kickMemberBtn:hover {}
+
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
   .itemShopSection {
@@ -2046,6 +2144,16 @@ body > #mainMenu {
   }
   .teamSectionContainer {
     max-width: 325px;
+  }
+  .memberSection {
+    width: 325px;
+  }
+  .memberContainer {
+    max-width: 325px;
+    inline-size: 305px;
+  }
+  .kickMemberBtn {
+    margin-right: 0;
   }
 }
 
