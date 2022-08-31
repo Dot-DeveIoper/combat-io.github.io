@@ -1385,7 +1385,7 @@
               clanName: msg[1][0],
               members: socket.player.name,
             });
-            sendClanData(socket.player, msg[1][0]);
+            socket.player.clanName = msg[1][0];
             socket.player.isLeader = true;
             socket.player.isMember = false;
             socket.send(encode(["clanTrue", []]));
@@ -1397,28 +1397,17 @@
               }
             }
             if (found2) {
-              socket.send(
-                encode([
-                  "clanMem",
-                  [clans[lol].members],
-                ])
-              );
+              socket.send(encode(["clanMem", [clans[lol].members]]));
             }
           }
           break;
         case "leaveClan":
-          if (socket.player.clanName == null) return false;
+          if (socket.player.clanName === null) return false;
           let clanI = ~~msg[1][0];
-          if (socket.player.clanName == clans[clanI].clanName) {
+          if (socket.player.clanName === clans[clanI].clanName) {
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
-            let g = clans[clanI].members;
-            console.log(clans[clanI].members)
-            clans[clanI].members = g.replace(
-              socket.player.name,
-              ""
-            );
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
@@ -1429,9 +1418,9 @@
           }
           break;
         case "joinClan":
-          if (socket.player.clanName == null) return false;
+          if (socket.player.clanName === null) return false;
           let x = ~~msg[1][0];
-          if (socket.player.clanName == clans[x].clanName) {
+          if (socket.player.clanName === clans[x].clanName) {
             socket.player.clanName = null;
             socket.player.isLeader = false;
             if (clans[x].owner === socket.player.sid) {
@@ -1442,18 +1431,10 @@
             }
             return false;
           }
-          wsServer.clients.forEach((client) => {
-            let player = client.player;
-            if (player) {
-              client.send(encode(["clanTrue", []]));
-              client.send(
-                encode([
-                  "clanMem",
-                  [clans[x].members + " " + socket.player.name],
-                ])
-              );
-            }
-          });
+          socket.send(encode(["clanTrue", []]));
+          socket.send(
+            encode(["clanMem", [clans[x].members + " " + socket.player.name]])
+          );
           socket.player.clanName = clans[x].clanName;
           socket.player.isMember = true;
           break;
