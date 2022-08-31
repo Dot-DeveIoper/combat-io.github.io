@@ -1375,18 +1375,15 @@
           } else {
             for (let i = 0; i < clans.length; i++) {
               if (socket.player.sid !== clans[i].owner) {
-                ok = true;
-              } else { ok = false;}}
-            setTimeout(() => {
-            if (!ok) {
-              clans.push({
-                id: clans.length,
-                owner: socket.player.sid,
-                clanName: msg[1][0],
-              });
-              socket.player.clanName = msg[1][0];
+                clans.push({
+                  id: clans.length,
+                  owner: socket.player.sid,
+                  clanName: msg[1][0],
+                });
+                socket.player.clanName = msg[1][0];
               }
-          },500); ok }
+            }
+          }
           break;
         case "joinClan":
           let x = ~~msg[1][0];
