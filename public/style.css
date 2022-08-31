@@ -408,8 +408,9 @@ body {
 }
 
 .deathContainer {
-  display: flex;
-  /* position: absolute; */
+  display: none;
+  /* display: flex; */
+  position: absolute;
   justify-content: center;
   align-items: center;
   animation: 2.5s death;
@@ -417,7 +418,9 @@ body {
   width: 100%;
   height: 100%;
   /* padding: 1rem; */
-  z-index: 1000;
+  z-index: 100000;
+  user-select: none;
+  pointer-events: none;
 }
 .deathText {
   display: grid;
