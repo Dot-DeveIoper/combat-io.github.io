@@ -1067,6 +1067,7 @@
       hat: 0,
       clanName: "",
       isLeader: null,
+      isMember: null,
       acc: 0,
       wep: 0,
       sid: null,
@@ -1376,6 +1377,7 @@
             });
             sendClanData(socket.player, msg[1][0])
             socket.player.isLeader = true;
+            socket.player.isMember = false;
         }
           break;
         case "unclan":
@@ -1390,10 +1392,11 @@
         }
           break;
         case "joinClan":
+          if(socket.player.clanName == null) return false;
           let x = ~~msg[1][0];
           if (socket.player.clanName == clans[x].clanName) {
+            socket.player.clanName = null;
             socket.player.isLeader = false;
-            socket.player.clanName = "";
             if (clans[x].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(x);
               if (index > -1) {
