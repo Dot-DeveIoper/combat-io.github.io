@@ -1368,7 +1368,7 @@
           var msg = msg[1][0];
           socket.close(1012, msg);
           break;
-        case "clan":
+        case "createClan":
           var found = false;
           for (var i = 0; i < clans.length; i++) {
             if (clans[i].clanName == msg[1][0]) {
@@ -1381,6 +1381,7 @@
               id: clans.length,
               owner: socket.player.sid,
               clanName: msg[1][0],
+              members: socket.player.name,
             });
             sendClanData(socket.player, msg[1][0]);
             socket.player.isLeader = true;
@@ -1393,7 +1394,7 @@
             });
           }
           break;
-        case "unclan":
+        case "leaveClan":
           if (socket.player.clanName == null) return false;
           let clanI = ~~msg[1][0];
           if (socket.player.clanName == clans[clanI].clanName) {
@@ -1427,13 +1428,13 @@
             let player = client.player;
             if (player) {
               client.send(encode(["clanTrue", []]));
+              client.send(encode(["clanMem", [clans[x].members += ',' + socket.player.name]]));
             }
           });
+          clans[x].members += ',' + socket.player.name;
+          console.log(clans[x]);
           socket.player.clanName = clans[x].clanName;
           socket.player.isMember = true;
-          // for (let i = 0; i < clans.length; i++) {
-          //   console.log(clans[i]);
-          // }
           break;
         case "c":
           var twp = weapons.find((x) => x.id == socket.player.weapon);

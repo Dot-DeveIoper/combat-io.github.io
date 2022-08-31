@@ -544,6 +544,18 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         "teamContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
+    document.getElementById("memberContainer").innerHTML = "";
+    if (clansMem.length != 0) {
+      for (let i = 0; i < clansMem.length; i++) {
+        document.getElementById(
+          "memberContainer"
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem.members} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+      }
+    } else {
+      document.getElementById(
+        "memberContainer"
+      ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
+    }
     for (let i = 0; i < clans.length; i++) {
       document
         .getElementById("joinClan" + i)
@@ -810,6 +822,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var leaderboard = [];
   var clans = [];
+  var clansMem = [];
 
   var mapSize = 10000;
   var desertHeight = 1000;
@@ -1914,11 +1927,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const leaveClan = document.getElementById("leaveClanSection");
   let clanInput = document.getElementById("clanInput");
   createClan.addEventListener("click", () => {
-    send(["clan", [clanInput.value]]);
+    send(["createClan", [clanInput.value]]);
     clanInput.value = "";
   });
   leaveClan.addEventListener("click", () => {
-    send(["unclan", [null]]);
+    send(["leaveClan", [null]]);
   });
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
@@ -2013,6 +2026,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             break;
           case "clanz":
             clans = msg[1][0];
+            // console.log(clans);
+            break;
+          case "clanMem":
+            clansMem = msg[1][0];
             // console.log(clans);
             break;
           case "clanTrue":
