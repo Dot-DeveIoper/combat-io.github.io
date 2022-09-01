@@ -1388,14 +1388,16 @@
               });
               members.push({
                 id: clans.length,
-                clanMembers: [{
-                  name: socket.player.name,
-                }]
+                clanMembers: [
+                  {
+                    name: socket.player.name,
+                  },
+                ],
               });
               socket.player.clanName = msg[1][0];
               socket.player.isLeader = true;
               socket.player.isMember = false;
-              socket.player.clanID = clans.length;
+              socket.player.clanID = clans.length - 1 || 0;
               socket.send(encode(["clanTrue", []]));
               for (var i = 0; i < clans.length; i++) {
                 if (clans[i].clanName == msg[1][0]) {
@@ -1414,34 +1416,29 @@
           try {
             if (socket.player.clanName === null) return false;
             let clanI = ~~msg[1][0];
-              socket.player.clanName = null;
-              socket.player.isLeader = false;
-              socket.player.isMember = false;
-              socket.player.clanID = null;
-              if (clans[clanI].owner === socket.player.sid) {
-                let index = clans.map((item) => item.id).indexOf(clanI);
-                if (index > -1) {
-                  clans.splice(index, 1);
-                }
+            socket.player.clanName = null;
+            socket.player.isLeader = false;
+            socket.player.isMember = false;
+            socket.player.clanID = null;
+            if (clans[clanI].owner === socket.player.sid) {
+              let index = clans.map((item) => item.id).indexOf(clanI);
+              if (index > -1) {
+                clans.splice(index, 1);
+              }
               return false;
             }
           } catch (err) {}
           break;
         case "joinClan":
-          try { 
+          try {
             if (clans) {
               let x = ~~msg[1][0];
               socket.send(encode(["clanTrue", []]));
-              members[x].clanMembers.push({ 
+              members[x].clanMembers.push({
                 name: socket.player.name,
               });
               console.log(members[x]);
-              socket.send(
-                encode([
-                  "clanMem",
-                  [members],
-                ])
-              );
+              socket.send(encode(["clanMem", [members]]));
               socket.player.clanName = clans[x].clanName;
               socket.player.isMember = true;
               socket.player.clanID = x;

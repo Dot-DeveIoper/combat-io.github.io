@@ -27,7 +27,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let hatNameContainer = document.querySelector(".hatNameContainer");
   var YTofDay = document.getElementById("YTofDay");
   var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
-  let clanID = false;
 
   let loginDiv = document.getElementById("loginCard");
   let registerDiv = document.getElementById("registerCard");
@@ -554,10 +553,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
       for (let i = 0; i < clansMem.length; i++) {
+        if (clansMem[myPlayer.clanID]) {
 document.getElementById(
           "membersSection"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[Player.clanID].clanMembers[i].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
-    }} else {
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[myPlayer.clanID].clanMembers[i].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+    }}} else {
       document.getElementById(
         "membersSection"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
@@ -567,7 +567,6 @@ document.getElementById(
         .getElementById("joinClan" + i)
         .addEventListener("click", function (e) {
           send(["joinClan", [e.clan]]);
-          clanID = e;
         });
     }
   }, 1000);
