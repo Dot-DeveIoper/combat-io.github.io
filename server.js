@@ -24,6 +24,7 @@
   }
   var leaderboard = [];
   var clans = [];
+  var members = [];
 
   var mapSize = 10000;
   var desertHeight = 1000;
@@ -1384,7 +1385,12 @@
                 id: clans.length,
                 owner: socket.player.sid,
                 clanName: msg[1][0],
-                members: socket.player.name,
+              });
+              members.push({
+                id: clans.length,
+                member: [{
+                  member: 
+                }]
               });
               socket.player.clanName = msg[1][0];
               socket.player.isLeader = true;
@@ -1398,7 +1404,7 @@
                 }
               }
               if (found2) {
-                socket.send(encode(["clanMem", [clans[lol].members]]));
+                socket.send(encode(["clanMem", [members[lol]]]));
               }
             }
           } catch (err) {}
@@ -1424,10 +1430,15 @@
             if (clans) {
               let x = ~~msg[1][0];
               socket.send(encode(["clanTrue", []]));
+              for (let i = 0; i > 7; i++) {
+                if (!members[x].member + i) {
+                  members[x].member = socket.player.sid;
+                }
+              }
               socket.send(
                 encode([
                   "clanMem",
-                  [clans[x].members + " " + socket.player.name],
+                  [members[x]],
                 ])
               );
               socket.player.clanName = clans[x].clanName;
