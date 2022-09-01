@@ -607,6 +607,9 @@
         if (clans) {
           client.send(encode(["clanz", [clans]]));
         }
+        if (members) {
+          client.send(encode(["clanMem", [members]]));
+        }
       }
     });
   }, 1000);
@@ -1372,8 +1375,6 @@
         case "createClan":
           try {
             var found = false;
-            var found2 = false;
-            var lol;
             for (var i = 0; i < clans.length; i++) {
               if (clans[i].clanName == msg[1][0]) {
                 found = true;
@@ -1399,16 +1400,6 @@
               socket.player.isMember = false;
               socket.player.clanID = clans.length - 1 || 0;
               socket.send(encode(["clanTrue", []]));
-              for (var i = 0; i < clans.length; i++) {
-                if (clans[i].clanName == msg[1][0]) {
-                  found2 = true;
-                  lol = i;
-                  break;
-                }
-              }
-              if (found2) {
-                socket.send(encode(["clanMem", [members]]));
-              }
             }
           } catch (err) {}
           break;
@@ -1437,8 +1428,6 @@
               members[x].clanMembers.push({
                 name: socket.player.name,
               });
-              console.log(members[x]);
-              socket.send(encode(["clanMem", [members]]));
               socket.player.clanName = clans[x].clanName;
               socket.player.isMember = true;
               socket.player.clanID = x;
@@ -1574,6 +1563,14 @@
     }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
+      for (let i = 0; i < members.length; i++) {
+        if (clans[i].owner === socket.player.sid) {
+          let index = members[i].map((item) => item.id).indexOf(i);
+          if (index > -1) {
+            clans.splice(index, 1);
+          }
+        }
+      }
     });
   });
 
