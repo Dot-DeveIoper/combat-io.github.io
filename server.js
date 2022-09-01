@@ -16,7 +16,7 @@
 
   app.use(express.static("public"));
 
-  var users = [];
+  var users = []; 
 
   function radToDeg(radians) {
     var pi = Math.PI;
@@ -1540,16 +1540,16 @@
               if (socket.player.upgrade && id === 0) {
                 socket.player.weapon = socket.player.upgradeWep;
               } else {
-                socket.player.weapon = id;
+                socket.player.weapon = id; 
               }
             } else {
               if (socket.player.upgrade && id === 0) {
                 socket.player.weapon = socket.player.upgradeWep;
               } else {
                 socket.player.weapon = id;
-              }
+              } 
             }
-          }
+          } 
           break;
         default:
           socket.close(1012, "Buffer missing");
