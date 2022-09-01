@@ -1564,12 +1564,13 @@
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
       for (let i = 0; i < members.length; i++) {
-        if (clans[i].owner === socket.player.sid) {
-          let index = members[i].map((item) => item.id).indexOf(i);
-          if (index > -1) {
-            clans.splice(index, 1);
-          }
-        }
+            if (clans[i].owner === socket.player.sid) {
+              let index = clans.map((item) => item.id).indexOf(i);
+              if (index > -1) {
+                clans.splice(index, 1);
+              }
+              return false;
+            }
       }
     });
   });
