@@ -1388,7 +1388,7 @@
               });
               members.push({
                 id: clans.length,
-                members: [{
+                clanMembers: [{
                   name: socket.player.name,
                 }]
               });
@@ -1404,7 +1404,7 @@
                 }
               }
               if (found2) {
-                socket.send(encode(["clanMem", [members]]));
+                socket.send(encode(["clanMem", members]));
               }
             }
           } catch (err) {}
@@ -1426,18 +1426,18 @@
           } catch (err) {}
           break;
         case "joinClan":
-          try {
+          try { 
             if (clans) {
               let x = ~~msg[1][0];
               socket.send(encode(["clanTrue", []]));
-              members[x].members.push({
+              members[x].clanMembers.push({
                 name: socket.player.name,
               });
               console.log(members[x]);
               socket.send(
                 encode([
                   "clanMem",
-                  [members[x]],
+                  members,
                 ])
               );
               socket.player.clanName = clans[x].clanName;

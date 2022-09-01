@@ -551,12 +551,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         "teamContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
+    // alert(members[0].members[0].name);
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
       
 document.getElementById(
           "membersSection"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${members[0].members[0].name[0]} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${members[0].clanMembers[0].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
     } else {
       document.getElementById(
         "membersSection"
