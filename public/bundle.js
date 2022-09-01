@@ -27,7 +27,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let hatNameContainer = document.querySelector(".hatNameContainer");
   var YTofDay = document.getElementById("YTofDay");
   var ageItemSelectCounter = document.getElementById("ageItemSelectCounter");
-  let run = false;
+  let clanID = false;
 
   let loginDiv = document.getElementById("loginCard");
   let registerDiv = document.getElementById("registerCard");
@@ -522,23 +522,23 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   setInterval(() => {
-    window.console = {
-      log: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      info: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      warn: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-      error: function (e) {
-        send(["vx", ["unfair advantage"]]);
-      },
-    };
-    if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      send(["vx", ["unfair advantage"]]);
-    }
+  //   window.console = {
+  //     log: function (e) {
+  //       send(["vx", ["unfair advantage"]]);
+  //     },
+  //     info: function (e) {
+  //       send(["vx", ["unfair advantage"]]);
+  //     },
+  //     warn: function (e) {
+  //       send(["vx", ["unfair advantage"]]);
+  //     },
+  //     error: function (e) {
+  //       send(["vx", ["unfair advantage"]]);
+  //     },
+  //   };
+  //   if (!isFuncNative(WebSocket.prototype.send) && ws) {
+  //     send(["vx", ["unfair advantage"]]);
+  //   }
     document.getElementById("teamContainer").innerHTML = "";
     if (clans.length != 0) {
       for (let i = 0; i < clans.length; i++) {
@@ -551,14 +551,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         "teamContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
-    // alert(members[0].members[0].name);
     document.getElementById("membersSection").innerHTML = "";
     if (clansMem.length != 0) {
-      
+      for (let i = 0; i < clansMem.length; i++) {
 document.getElementById(
           "membersSection"
-        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${members[0].clanMembers[0].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
-    } else {
+        ).innerHTML += `<div class="membersInfo"> <div class="memberName"> ${clansMem[Player.clanID].clanMembers[i].name} </div> <a class="kickMemberBtn">Kick</a> </div> <br><br>`;
+    }} else {
       document.getElementById(
         "membersSection"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
@@ -568,6 +567,7 @@ document.getElementById(
         .getElementById("joinClan" + i)
         .addEventListener("click", function (e) {
           send(["joinClan", [e.clan]]);
+          clanID = e;
         });
     }
   }, 1000);
@@ -2037,7 +2037,6 @@ document.getElementById(
             break;
           case "clanMem":
             clansMem = msg[1][0];
-            // console.log(clans);
             break;
           case "clanTrue":
             teams.style.display = "none";
