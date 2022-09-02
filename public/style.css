@@ -1630,8 +1630,11 @@ body > #mainMenu {
   }
 }
 
-/* ::-webkit-scrollbar {
-  width: 4px;
+::-webkit-scrollbar {
+  display: none;
+  visibility: hidden;
+  width: 0;
+  /* width: 4px; */
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -1641,7 +1644,7 @@ body > #mainMenu {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555555;
-} */
+}
 
 #mainSections {
   display: block;
