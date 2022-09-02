@@ -55,7 +55,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   };
 
   let closeIcon = document.getElementById("closeIcon");
-
+  let clans = [];
+  let clansMem = [];
+  
   closeIcon.onclick = function (e) {
     document.getElementById("close").style.opacity = 1;
     setTimeout(() => {
@@ -91,11 +93,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }, 300);
   };
 
-  let randomDeathText = ["You died",
-    "Game over",
-    "You lost",
-    "Try again"];
-  let deathText = randomDeathText[Math.floor(Math.random() * randomDeathText.length)];
+  let randomDeathText = ["You died", "Game over", "You lost", "Try again"];
+  let deathText =
+    randomDeathText[Math.floor(Math.random() * randomDeathText.length)];
   document.getElementById("randomDeathText").innerHTML = deathText;
 
   var Youtubers = [
@@ -539,7 +539,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       send(["vx", ["unfair advantage"]]);
     }
     document.getElementById("teamContainer").innerHTML = "";
-    if (clans.length != 0) {
+    if (clans && clans.length != 0) {
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"
@@ -551,26 +551,30 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     document.getElementById("memberContainer").innerHTML = "";
-    if (clansMem.length != 0) {
-      for (let i = 0; i < clansMem.length; i++) {
-        if (clansMem[myPlayer.clanID]) {
-document.getElementById(
+    if (clansMem.length !== 0 && clans) {
+      for (let i = 0; i < clansMem[myPlayer.clanID].clanMembers.length; i++) {
+        document.getElementById(
           "memberContainer"
-        ).innerHTML += `<div class="membersInfo"><div class="memberName">${clansMem[myPlayer.clanID].clanMembers[i].name}</div> <a class="kickMemberBtn">Kick</a></div><br><br>`;
-    }}} else {
+        ).innerHTML += `<div class="membersInfo"><div class="memberName">${
+          clansMem[myPlayer.clanID].clanMembers[i].name
+        }</div> <a class="kickMemberBtn">Kick</a></div><br><br>`;
+      }
+    } else {
       document.getElementById(
         "memberContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
-    for (let i = 0; i < clans.length; i++) {
-      document
-        .getElementById("joinClan" + i)
-        .addEventListener("click", function (e) {
-          send(["joinClan", [e.clan]]);
-        });
-    }
   }, 1000);
+      if (clans.length != 0) {
 
+  for (let i = 0; i < clans.length; i++) {
+    document
+      .getElementById("joinClan" + i)
+      .addEventListener("click", function (e) {
+        send(["joinClan", [e.clan]]);
+      });
+  }
+      }
   function m() {
     var t;
     window.onload = z;
@@ -827,8 +831,6 @@ document.getElementById(
   var animalsCache = [];
 
   var leaderboard = [];
-  var clans = [];
-  var clansMem = [];
 
   var mapSize = 10000;
   var desertHeight = 1000;

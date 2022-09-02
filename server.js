@@ -1373,14 +1373,6 @@
           socket.close(1012, msg);
           break;
         case "createClan":
-            var found = false;
-            for (var i = 0; i < clans.length; i++) {
-              if (clans[i].clanName == msg[1][0]) {
-                found = true;
-                break;
-              }
-            }
-            if (!found && socket.player.isLeader != true) {
               clans.push({
                 owner: socket.player.sid,
                 clanName: msg[1][0],
@@ -1392,14 +1384,13 @@
                     name: socket.player.name,
                     sid: socket.player.sid,
                   },
-                ],
+                ], 
               });
-              socket.player.clanID = clans.length - 1;
+              socket.player.clanID = clans.length;
               socket.player.clanName = msg[1][0];
               socket.player.isLeader = true;
               socket.player.isMember = false;
               socket.send(encode(["clanTrue", []]));
-            }
           break;
         case "leaveClan":
             if (socket.player.clanName === null) return false;
@@ -1426,7 +1417,7 @@
               socket.player.isMember = true;
               socket.player.clanID = x;
           break;
-        case "c":
+        case "c": 
           var twp = weapons.find((x) => x.id == socket.player.weapon);
           if (twp && twp.isWeapon) {
             socket.player.attacking = msg[1][0] == true ? true : false;
