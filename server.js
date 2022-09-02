@@ -1396,10 +1396,10 @@
                   },
                 ],
               });
+              socket.player.clanID = clans.length;
               socket.player.clanName = msg[1][0];
               socket.player.isLeader = true;
               socket.player.isMember = false;
-              socket.player.clanID = clans.length - 1 || 0;
               socket.send(encode(["clanTrue", []]));
             }
           } catch (err) {}
@@ -1411,11 +1411,11 @@
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
-            socket.player.clanID = null;
-            for (let i = 0; i < members[clanI].clanMembers; i++) {
-              if (members[clanI].clanMembers.sid === socket.player.sid) {
-                  clans.splice(members[clanI].clanMembers.clanMembers[i, 1);
-              }
+                          socket.player.clanID = clans.length;
+
+            let index = members[clanI].clanMembers.map((item) => item.sid).indexOf(socket.player.sid);
+            if (index > -1) {
+              members.splice(index, 1);
             }
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
@@ -1433,6 +1433,7 @@
               socket.send(encode(["clanTrue", []]));
               members[x].clanMembers.push({
                 name: socket.player.name,
+                sid: socket.player.sid,
               });
               socket.player.clanName = clans[x].clanName;
               socket.player.isMember = true;

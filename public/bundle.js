@@ -1937,7 +1937,7 @@ document.getElementById(
     clanInput.value = "";
   });
   leaveClan.addEventListener("click", () => {
-    send(["leaveClan", [null]]);
+    send(["leaveClan", []]);
   });
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
@@ -2032,7 +2032,6 @@ document.getElementById(
             break;
           case "clanz":
             clans = msg[1][0];
-            // console.log(clans);
             break;
           case "clanMem":
             clansMem = msg[1][0];
