@@ -1630,7 +1630,7 @@ body > #mainMenu {
   }
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
