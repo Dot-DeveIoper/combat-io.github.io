@@ -1937,7 +1937,7 @@ document.getElementById(
     clanInput.value = "";
   });
   leaveClan.addEventListener("click", () => {
-    send(["leaveClan", []]);
+    send(["leaveClan", [myPlayer.clanID]]);
   });
   function connect() {
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
