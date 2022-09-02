@@ -1392,6 +1392,7 @@
                 clanMembers: [
                   {
                     name: socket.player.name,
+                    sid: socket.player.sid,
                   },
                 ],
               });
@@ -1411,6 +1412,11 @@
             socket.player.isLeader = false;
             socket.player.isMember = false;
             socket.player.clanID = null;
+            for (let i = 0; i < members[clanI].clanMembers; i++) {
+              if (members[clanI].clanMembers.sid === socket.player.sid) {
+                  clans.splice(members[clanI].clanMembers.clanMembers[i, 1);
+              }
+            }
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
@@ -1430,7 +1436,6 @@
               });
               socket.player.clanName = clans[x].clanName;
               socket.player.isMember = true;
-              socket.player.clanID = x;
             }
           } catch (err) {}
           break;
@@ -1564,13 +1569,13 @@
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
       for (let i = 0; i < members.length; i++) {
-            if (clans[i].owner === socket.player.sid) {
-              let index = clans.map((item) => item.id).indexOf(i);
-              if (index > -1) {
-                clans.splice(index, 1);
-              }
-              return false;
-            }
+        if (clans[i].owner === socket.player.sid) {
+          let index = clans.map((item) => item.id).indexOf(i);
+          if (index > -1) {
+            clans.splice(index, 1);
+          }
+          return false;
+        }
       }
     });
   });
