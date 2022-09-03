@@ -1068,12 +1068,13 @@ select:focus {
   /* top: 13.46%; */
   /* top: 5.2499px; */
   right: 5px;
-  transform: translate(0%, -16.5%);
+  transform: translate(0%, -15.5%);
+  /* transform: translate(0%, -16.5%); */
   background-color: #39393999;
   /* padding-top: -6px;
   padding-bottom: -6px; */
   padding-left: 8px;
-  padding-right: 8px;
+  padding-right: 9px;
   color: #ffffff;
   border-radius: 4px;
   font-family: sans-serif;
