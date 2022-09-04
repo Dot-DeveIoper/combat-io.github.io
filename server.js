@@ -765,7 +765,7 @@
             if (
               player2.spawned &&
               collides(player, player2) &&
-              player.sid != player2.sid &&
+              player.sid != player2.sid && 
               ((player2.acc === 2 && player.acc === 2) ||
                 (player2.acc != 2 && player.acc != 2))
             ) {
@@ -915,11 +915,11 @@
                     enemy,
                     radToDeg(player.aimdir),
                     weapon.fov
-                  ) &&
+                  ) && enemy.clanID != player.clanID &&
                   ((enemy.acc === 2 && player.acc === 2) ||
                     (enemy.acc != 2 && player.acc != 2))
                 ) {
-                  var knockDir = Math.atan2(
+                  var knockDir = Math.atan2( 
                     enemy.y - player.y,
                     enemy.x - player.x
                   );
@@ -1392,6 +1392,7 @@
                 clanMembers: [
                   {
                     name: socket.player.name,
+                    sid: socket.player.sid,
                   },
                 ],
               });
@@ -1427,6 +1428,7 @@
               socket.send(encode(["clanTrue", []]));
               members[x].clanMembers.push({
                 name: socket.player.name,
+                sid: socket.player.sid,
               });
               socket.player.clanName = clans[x].clanName;
               socket.player.isMember = true;
