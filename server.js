@@ -458,6 +458,9 @@
   }
 
   function respawn(player, name, skin) {
+    let clanx = function () {if (player.clanID !== "") {
+      return player.sid || ++ids
+    }};
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
@@ -466,7 +469,7 @@
     player.name = name;
     player.ip = ip;
     player.sid = player.sid || ++ids;
-    player.clanID = player.sid || ++ids;
+    player.clanID = clanx;
     player.spawned = true;
     player.age = 1;
     player.x = randomInt(0, mapSize);
