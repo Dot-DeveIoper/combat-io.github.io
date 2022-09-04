@@ -1518,7 +1518,7 @@ body > #mainMenu {
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
