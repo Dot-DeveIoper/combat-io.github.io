@@ -29,15 +29,25 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #77c44c;
+  font-family: "Hammersmith One", sans-serif;
+  width: 100vh;
+  height: 100%;
+}
+
+.backgroundImg {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   /* background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") 25% 25% no-repeat; */
   background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: "Hammersmith One", sans-serif;
-  width: 100vh;
-  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: -9999999999;
 }
 
 #gameCanvas {
