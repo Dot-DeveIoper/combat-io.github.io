@@ -316,6 +316,7 @@
       velocity: 20,
       health: 300,
       oid: 0,
+      clanID: -1,
       maxHealth: 300,
     },
     {
@@ -882,7 +883,7 @@
                 aObj.damage &&
                 player.noHurtTime == 0 &&
                 obj.oid !== player.sid &&
-                player.acc !== 2
+                player.acc !== 2 && obj.clanID === player.clanID
               ) {
                 player.health -=
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
@@ -1509,6 +1510,7 @@
                     y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
                     dir: 0,
                     oid: socket.player.sid,
+                    clanID: socket.player.clanID,
                     health: obj.health,
                     maxHealth: obj.maxHealth,
                     xWiggle: 0,
