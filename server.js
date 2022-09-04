@@ -874,7 +874,7 @@
                 var pushVelX = 0;
                 var pushVelY = 0;
               }
-              if (aObj.id === 2 && obj.oid === player.sid) {
+              if (aObj.id === 2 && obj.oid == player.sid && obj.clanID == player.clanID) {
                 var pushVelX = Math.cos(pushDir) * 1;
                 var pushVelY = Math.sin(pushDir) * 1;
               }
@@ -885,12 +885,14 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                (obj.oid !== player.sid || aObj.clanID !== player.clanID) &&
+                obj.oid !== player.sid && aObj.clanID !== player.clanID &&
                 player.acc !== 2
               ) {
                 player.health -= 
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
+                                player.xVel += pushVelX;
+                player.yVel += pushVelY;
               }
               if (player.acc !== 2) {
                 player.xVel += pushVelX;
