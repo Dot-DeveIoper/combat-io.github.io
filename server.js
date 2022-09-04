@@ -864,7 +864,7 @@
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
               }
-              if (aObj.id === 5 && obj.oid != player.sid) {
+              if (aObj.id === 5 && obj.oid != player.sid && obj.clanID !== player.clanID) {
                 var pushVelX = Math.cos(pushDir) * -2;
                 var pushVelY = Math.sin(pushDir) * -2;
               } else if (aObj.id === 5) {
@@ -882,8 +882,8 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                obj.oid !== player.sid &&
-                player.acc !== 2 && obj.clanID === player.clanID
+                (obj.oid !== player.sid || aObj.clanID !== player.clanID) &&
+                player.acc !== 2
               ) {
                 player.health -=
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
@@ -1412,7 +1412,7 @@
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
-            socket.player.clanID = null;
+            socket.player.clanID = -1;
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
