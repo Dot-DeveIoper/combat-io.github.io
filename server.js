@@ -282,6 +282,7 @@
   console.log(animalsCache);
 
   var defaultReload = 500;
+  var iids = 0;
   var weapons = [
     {
       id: 0,
@@ -316,7 +317,7 @@
       velocity: 20,
       health: 300,
       oid: 0,
-      clanID: 0,
+      clanID: ++ids,
       maxHealth: 300,
     },
     {
@@ -360,7 +361,7 @@
       },
       damage: 0,
       oid: 0,
-      clanID: 0,
+      clanID: ++ids,
       velocity: -2,
       health: 200,
       maxHealth: 200,
@@ -866,7 +867,7 @@
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
               }
-              if (aObj.id === 5 && obj.oid != player.sid && obj.clanID !== player.clanID) {
+              if (aObj.id === 5 && obj.oid != player.sid && obj.clanID != player.clanID) {
                 var pushVelX = Math.cos(pushDir) * -2;
                 var pushVelY = Math.sin(pushDir) * -2;
               } else if (aObj.id === 5) {

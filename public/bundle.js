@@ -1323,7 +1323,7 @@ document.getElementById(
       ? "</MOD> "
       : player.artist
       ? "</Artist> "
-      : "";
+      : " ";
     var roleColor = player.admin
       ? "#30d1a1"
       : player.mod
