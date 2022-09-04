@@ -316,7 +316,7 @@
       velocity: 20,
       health: 300,
       oid: 0,
-      clanID: -1,
+      clanID: 0,
       maxHealth: 300,
     },
     {
@@ -359,6 +359,8 @@
         stone: 5,
       },
       damage: 0,
+      oid: 0,
+      clanID: 0,
       velocity: -2,
       health: 200,
       maxHealth: 200,
@@ -885,7 +887,7 @@
                 (obj.oid !== player.sid || aObj.clanID !== player.clanID) &&
                 player.acc !== 2
               ) {
-                player.health -=
+                player.health -= 
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
               }
