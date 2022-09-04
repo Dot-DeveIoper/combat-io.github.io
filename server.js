@@ -458,7 +458,7 @@
   }
 
   function respawn(player, name, skin) {
-    let clanx = function () {if (player.clanID !== "") {
+    function i() {if (player.clanID !== "") {
       return player.sid || ++ids
     }};
     player.PlayerOldX = player.x;
@@ -469,7 +469,7 @@
     player.name = name;
     player.ip = ip;
     player.sid = player.sid || ++ids;
-    player.clanID = clanx;
+    player.clanID = i();
     player.spawned = true;
     player.age = 1;
     player.x = randomInt(0, mapSize);
@@ -1420,7 +1420,7 @@
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
-            socket.player.clanID = socket.player.sid;
+            socket.player.clanID = "";
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
