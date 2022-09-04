@@ -24,11 +24,12 @@
 }
 
 body {
+  /* display: block; */
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #77c44c;
-
+  background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") 25% 25% no-repeat;
   font-family: "Hammersmith One", sans-serif;
   width: 100vh;
   height: 100%;
@@ -1514,11 +1515,14 @@ body > #mainMenu {
   height: 66px;
   margin-left: 2px;
   margin-right: 2px;
-  /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   border-radius: 20px;
+  /* -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; */
+  /* border-radius: 5px; */
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
