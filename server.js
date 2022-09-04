@@ -25,6 +25,7 @@
   var leaderboard = [];
   var clans = [];
   var members = [];
+  var ids = 0;
 
   var mapSize = 10000;
   var desertHeight = 1000;
@@ -415,7 +416,6 @@
   });
 
   var players = [];
-  var ids = 0;
 
   function sendHatData(player, hat) {
     if (
@@ -458,18 +458,14 @@
   }
 
   function respawn(player, name, skin) {
-    function i() {if (player.clanID !== "") {
-      return player.sid || ++ids
-    }};
     player.PlayerOldX = player.x;
     player.PlayerOldY = player.y;
     player.noHurtTime = 200;
     player.skin = skin || 0;
-    player.clanName = "";
+    player.clanName = player.clanName;
     player.name = name;
     player.ip = ip;
     player.sid = player.sid || ++ids;
-    player.clanID = i();
     player.spawned = true;
     player.age = 1;
     player.x = randomInt(0, mapSize);
@@ -772,7 +768,7 @@
             if (
               player2.spawned &&
               collides(player, player2) &&
-              player.sid != player2.sid && 
+              player.sid != player2.sid &&
               ((player2.acc === 2 && player.acc === 2) ||
                 (player2.acc != 2 && player.acc != 2))
             ) {
@@ -870,14 +866,21 @@
                 var pushVelX = Math.cos(pushDir) + 0;
                 var pushVelY = Math.sin(pushDir) + -5;
               }
-              if (aObj.id === 5 && obj.oid != player.sid && obj.clanID !== player.clanID) {
+              if (
+                aObj.id === 5 &&
+                obj.oid != player.sid &&
+                obj.clanID !== player.clanID
+              ) {
                 var pushVelX = Math.cos(pushDir) * -2;
                 var pushVelY = Math.sin(pushDir) * -2;
               } else if (aObj.id === 5) {
                 var pushVelX = 0;
                 var pushVelY = 0;
               }
-              if (aObj.id === 2 && obj.oid == player.sid || aObj.clanID == player.clanID) {
+              if (
+                (aObj.id === 2 && obj.oid == player.sid) ||
+                aObj.clanID == player.clanID
+              ) {
                 var pushVelX = Math.cos(pushDir) * 1;
                 var pushVelY = Math.sin(pushDir) * 1;
               }
@@ -888,19 +891,20 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                obj.oid !== player.sid && obj.clanID !== player.clanID &&
+                obj.oid !== player.sid &&
+                obj.clanID !== player.clanID &&
                 player.acc !== 2
               ) {
-                player.health -= 
+                player.health -=
                   player.hat === 3 ? aObj.damage - 5 : aObj.damage;
                 //player.noHurtTime += .2;
-                                player.xVel += pushVelX;
-                player.yVel += pushVelY;
               }
               if (player.acc !== 2) {
                 player.xVel += pushVelX;
                 player.yVel += pushVelY;
               }
+              player.xVel += pushVelX;
+              player.yVel += pushVelY;
             }
           });
         }
@@ -924,11 +928,12 @@
                     enemy,
                     radToDeg(player.aimdir),
                     weapon.fov
-                  ) && enemy.clanID !== player.clanID &&
+                  ) &&
+                  enemy.clanID !== player.clanID &&
                   ((enemy.acc === 2 && player.acc === 2) ||
                     (enemy.acc != 2 && player.acc != 2))
                 ) {
-                  var knockDir = Math.atan2( 
+                  var knockDir = Math.atan2(
                     enemy.y - player.y,
                     enemy.x - player.x
                   );
@@ -1083,6 +1088,7 @@
       isMember: null,
       acc: 0,
       wep: 0,
+      clanID: ids++,
       sid: null,
       xVel: 0,
       yVel: 0,
@@ -1420,7 +1426,7 @@
             socket.player.clanName = null;
             socket.player.isLeader = false;
             socket.player.isMember = false;
-            socket.player.clanID = "";
+            socket.player.clanID = socket.player.sid;
             if (clans[clanI].owner === socket.player.sid) {
               let index = clans.map((item) => item.id).indexOf(clanI);
               if (index > -1) {
@@ -1576,13 +1582,13 @@
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
       for (let i = 0; i < members.length; i++) {
-            if (clans[i].owner === socket.player.sid) {
-              let index = clans.map((item) => item.id).indexOf(i);
-              if (index > -1) {
-                clans.splice(index, 1);
-              }
-              return false;
-            }
+        if (clans[i].owner === socket.player.sid) {
+          let index = clans.map((item) => item.id).indexOf(i);
+          if (index > -1) {
+            clans.splice(index, 1);
+          }
+          return false;
+        }
       }
     });
   });
