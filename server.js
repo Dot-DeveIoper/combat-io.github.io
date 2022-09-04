@@ -863,26 +863,26 @@
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
               var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               if (aObj.id === 4) {
-                var pushVelX = Math.cos(pushDir) + 0;
-                var pushVelY = Math.sin(pushDir) + -5;
+                pushVelX = Math.cos(pushDir) + 0;
+                pushVelY = Math.sin(pushDir) + -5;
               }
               if (
                 aObj.id === 5 &&
                 obj.oid != player.sid &&
                 obj.clanID !== player.clanID
               ) {
-                var pushVelX = Math.cos(pushDir) * -2;
-                var pushVelY = Math.sin(pushDir) * -2;
-              } else if (aObj.id === 5) {
-                var pushVelX = 0;
-                var pushVelY = 0;
+                pushVelX = Math.cos(pushDir) * -2;
+                pushVelY = Math.sin(pushDir) * -2;
+              } else if (obj.id === 5) {
+                pushVelX = 0;
+                pushVelY = 0;
               }
               if (
                 (aObj.id === 2 && obj.oid == player.sid) ||
                 aObj.clanID == player.clanID
               ) {
-                var pushVelX = Math.cos(pushDir) * 1;
-                var pushVelY = Math.sin(pushDir) * 1;
+                pushVelX = Math.cos(pushDir) * 1;
+                pushVelY = Math.sin(pushDir) * 1;
               }
               if (aObj.teleport && player.acc != 2) {
                 player.x = randomInt(0, mapSize);
@@ -903,8 +903,6 @@
                 player.xVel += pushVelX;
                 player.yVel += pushVelY;
               }
-              player.xVel += pushVelX;
-              player.yVel += pushVelY;
             }
           });
         }
