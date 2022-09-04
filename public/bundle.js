@@ -90,7 +90,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("close").style.display = "none";
     }, 300);
   };
-
+  
+  run = false;
   let randomDeathText = ["You died",
     "Game over",
     "You lost",
@@ -1907,7 +1908,6 @@ document.getElementById(
 
     function upgradeMenu() {
       ageLevelItems.style.display = "block";
-      run = true;
       document
         .getElementById("age-item-0")
         .addEventListener("click", function (e) {
@@ -1921,12 +1921,13 @@ document.getElementById(
           ]);
           ageLevelItems.style.display = "none";
           document.getElementById("h-item-0").style.backgroundImage =
-            "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/short_sword?v=1661580370892')";
+            "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761')";
         });
     }
 
     if (myPlayer.age === 2 && !run) {
       upgradeMenu();
+      run = true;
     }
   }
   const createClan = document.getElementById("createClanSection");

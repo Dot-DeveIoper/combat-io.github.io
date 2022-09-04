@@ -2641,7 +2641,7 @@ label.checkbox span {
   left: 20px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 20px;
   width: 200px;
   /* width: 200px; */
   height: auto;
