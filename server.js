@@ -874,7 +874,7 @@
                 var pushVelX = 0;
                 var pushVelY = 0;
               }
-              if (aObj.id === 2 && (obj.oid == player.sid || aObj.clanID == player.clanID)) {
+              if (aObj.id === 2 && obj.oid == player.sid || aObj.clanID == player.clanID) {
                 var pushVelX = Math.cos(pushDir) * 1;
                 var pushVelY = Math.sin(pushDir) * 1;
               }
@@ -885,7 +885,7 @@
               if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
-                (obj.oid !== player.sid || aObj.clanID !== player.clanID) &&
+                obj.oid !== player.sid && obj.clanID !== player.clanID &&
                 player.acc !== 2
               ) {
                 player.health -= 
