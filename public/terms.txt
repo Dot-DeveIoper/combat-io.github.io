@@ -23,7 +23,7 @@
 
     > This website uses cookies (or similar components) to monitor browsing preferences.
       If you do allow cookies to be used, personal information may be stored by third parties.
-      Chux.io / AFK does not store personal data in their database from players.
+      ComBat.io / AFK does not store personal data in their database from players.
       The registration of an account does not require a user to enter any personal data and we highly recommend not using names that
       reflect any personal information.
     > By using this website, you understand that it features user created content such as Text, Images and Scripts.
@@ -65,7 +65,7 @@
 
   == WHAT INFORMATION IS COLLECTED ==
 
-  - Chux.io / AFK Ltd. do not collect personal data
+  - ComBat.io / AFK Ltd. do not collect personal data
     of the users. When you register with MooMoo.io do not use a name,
     that contains personal information. You cannot enter personal
     information like e-mail, address, phone-numbers etc. on MooMoo.io.
@@ -96,7 +96,7 @@
   - Yes. Cookies (or future replacements) are used to save certain information: settings, account info.
 
   == PURCHASES ==
-  - AFK condition for in game  purchases for Chux.io (webgame)
+  - AFK condition for in game  purchases for ComBat.io (webgame)
     Any purchase of in game features are limited to be used within the game they have been purchased for.
     All purchases are final when the transaction is finalized and non-refundable. Prices for purchases include
     value added tax, if applicable and are in US Dollars.
