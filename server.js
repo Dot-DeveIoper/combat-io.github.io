@@ -16,6 +16,14 @@
 
   app.use(express.static("public"));
 
+  app.use("/Play", function (e, t) {
+    t.sendFile("/app/views/index.html");
+  });
+
+  app.use((req, res) => {
+    res.status(404).redirect("/Play");
+  });
+
   var users = [];
 
   function radToDeg(radians) {
@@ -888,7 +896,7 @@
                 player.x = randomInt(0, mapSize);
                 player.y = randomInt(0, mapSize);
               }
-              if ( 
+              if (
                 aObj.damage &&
                 player.noHurtTime == 0 &&
                 obj.oid !== player.sid &&
