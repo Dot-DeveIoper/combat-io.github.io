@@ -277,7 +277,7 @@ body {
 
 /* #YTofDayContainer {
   /* display: inline-block; /
-  border-radius: 4px;
+  border-radius: 5px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -307,7 +307,7 @@ body {
   position: absolute;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
+  border-radius: 5px;
   text-align: left;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -356,7 +356,7 @@ body {
 }
 
 /* #linksContainer1 {
-  border-radius: 4px;
+  border-radius: 5px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -367,7 +367,7 @@ body {
 
 #linksContainer2 {
   /* display: inline-block; */
-  border-radius: 4px;
+  border-radius: 5px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -478,7 +478,7 @@ body {
   width: 300px;
   padding: 18px;
   background-color: #ffffff;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
 
   color: #666666;
@@ -541,7 +541,7 @@ body {
   color: #ffffff;
   border: 0;
   border-bottom: 2px solid #c4c4c4;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 0.6rem;
   font-weight: 400;
   /* width: 100%; */
@@ -756,7 +756,7 @@ select:focus {
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .accountSectionBtn1:hover {
   background-color: #2c8a68;
@@ -772,7 +772,7 @@ select:focus {
   padding: 10px;
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .accountSectionBtn2:hover {
   background-color: #e98c02;
@@ -802,7 +802,7 @@ select:focus {
   background-color: #ffffff;
   color: #666666;
   border-bottom: 6px solid #c0c1c2;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow-y: scroll;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
@@ -825,7 +825,7 @@ select:focus {
   background-color: #ffffff;
   color: #666666;
   border-bottom: 6px solid #c0c1c2;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow-y: scroll;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
@@ -889,7 +889,7 @@ select:focus {
   font-size: 1.1rem;
   font-weight: 600;
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
   user-select: none;
 }
 .buttonLabel1:hover {
@@ -939,7 +939,7 @@ select:focus {
   font-size: 1.1rem;
   font-weight: 600;
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
   user-select: none;
 }
 .buttonLabel2:hover {
@@ -1023,7 +1023,7 @@ select:focus {
   padding-right: 40px;
   /* padding: 10px; */
   border: 2px solid #3580e0;
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 1000;
 }
 .successText {
@@ -1045,7 +1045,7 @@ select:focus {
   padding-right: 40px;
   /* padding: 10px; */
   border: 2px solid #f49900;
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 1000;
 }
 .warningText {
@@ -1068,7 +1068,7 @@ select:focus {
   padding-right: 40px;
   /* padding: 10px; */
   border: 2px solid #e03535;
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 1000;
 }
 .errorText {
@@ -1092,7 +1092,7 @@ select:focus {
   padding-left: 8px;
   padding-right: 9px;
   color: #ffffff;
-  border-radius: 4px;
+  border-radius: 5px;
   font-family: sans-serif;
   font-style: normal;
   font-size: 1.5rem;
@@ -1183,15 +1183,15 @@ select:focus {
 	color: #4A4A4A;
 	background-color: #e5e3e3;
 	width: 100%;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px; */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; */
 
   box-sizing: border-box;
   background-color: #e0e0e0;
   color: #373839;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   text-align: center;
   font-size: 1.5rem;
   /* font-size: 1rem; */
@@ -1217,9 +1217,9 @@ select:focus {
 	color: #fff;
 	background-color: #7ee559;
 	width: 100%;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 	cursor: pointer; */
 
   display: inline-block;
@@ -1228,7 +1228,7 @@ select:focus {
   background-color: #48e346;
   color: #ffffff;
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1.5rem;
   /* font-size: 1rem; */
   font-weight: 600;
@@ -1250,7 +1250,7 @@ select:focus {
   background-color: #99e51f;
   color: #ffffff;
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1rem;
   /* font-size: 1.5rem; /
   font-weight: 600;
@@ -1275,7 +1275,7 @@ select:focus {
   background-color: #e5391f;
   color: #ffffff;
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1rem;
   /* font-size: 1.5rem; /
   font-weight: 600;
@@ -1335,9 +1335,9 @@ body > #mainMenu {
   font-family: "Hammersmith One", sans-serif;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   pointer-events: all;
   border: 0;
 }
@@ -1347,9 +1347,9 @@ body > #mainMenu {
   font-size: 20px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   pointer-events: all;
   border: 0;
 } */
@@ -1449,7 +1449,7 @@ body > #mainMenu {
   height: 14px;
   max-height: 14px;
   min-height: 14px;
-  border-radius: 4px;
+  border-radius: 5px;
   user-select: none;
 }
 .ageLevelBar {
@@ -1531,12 +1531,12 @@ body > #mainMenu {
   margin-left: 2px;
   margin-right: 2px;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  /* -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; */
   /* border-radius: 5px; */
   cursor: pointer;
   pointer-events: all;
@@ -1595,9 +1595,9 @@ body > #mainMenu {
   margin-right: 2px;
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
@@ -1690,9 +1690,9 @@ body > #mainMenu {
   margin-right: 2px; */
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
@@ -1716,9 +1716,9 @@ body > #mainMenu {
   margin-right: 2px; */
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
@@ -1742,9 +1742,9 @@ body > #mainMenu {
   margin-right: 2px; */
   /* border-radius: 5px; */
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
   pointer-events: all;
   background-size: 50px 50px;
@@ -1785,7 +1785,7 @@ body > #mainMenu {
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .sectionBtn2 {
   display: inline-block;
@@ -1797,7 +1797,7 @@ body > #mainMenu {
   padding: 10px;
   /* margin-left: 5.5px;
   margin-right: 5.5px; */
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .sectionTitle {
   color: #ffffff;
@@ -1813,7 +1813,7 @@ body > #mainMenu {
   width: 400px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -1825,7 +1825,7 @@ body > #mainMenu {
   width: 400px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -1920,7 +1920,7 @@ body > #mainMenu {
   border-bottom: 2px solid #1d9300;
   border-left: 2px solid #23b200;
   border-right: 2px solid #23b200;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 0.8rem;
   font-weight: 600;
   /* width: 100%; */
@@ -1954,7 +1954,7 @@ body > #mainMenu {
   width: 400px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -2029,7 +2029,7 @@ body > #mainMenu {
   border-bottom: 2px solid #1d9300;
   border-left: 2px solid #23b200;
   border-right: 2px solid #23b200;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 0.8rem;
   font-weight: 600;
   /* width: 100%; */
@@ -2065,9 +2065,9 @@ body > #mainMenu {
   font-weight: 500;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   pointer-events: all;
   border: 0;
 }
@@ -2085,7 +2085,7 @@ body > #mainMenu {
   width: 400px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -2160,7 +2160,7 @@ body > #mainMenu {
   border-bottom: 2px solid #1d9300;
   border-left: 2px solid #23b200;
   border-right: 2px solid #23b200;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 0.8rem;
   font-weight: 600;
   /* width: 100%; */
@@ -2245,7 +2245,7 @@ body > #mainMenu {
   height: auto;
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   z-index: 3;
   pointer-events: none;
   user-select: none;
@@ -2305,7 +2305,7 @@ body > #mainMenu {
   display: inline-block;
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 5px;
   width: auto;
   max-width: 250px;
@@ -2343,7 +2343,7 @@ body > #mainMenu {
   height: 200px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   bottom: 20px;
   left: 20px;
   z-index: 3;
@@ -2373,7 +2373,7 @@ body > #mainMenu {
   display: inline-block;
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 5px;
   width: auto;
   max-width: 250px;
@@ -2419,7 +2419,7 @@ body > #mainMenu {
   display: inline-block;
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   width: 200px;
   height: 200px;
   /* width: 150px;
@@ -2592,7 +2592,7 @@ label.checkbox span {
   left: 20px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
+  border-radius: 5px;
   width: 200px;
   /* width: 200px; */
   height: auto;
@@ -2641,7 +2641,7 @@ label.checkbox span {
   left: 20px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  border-radius: 5px;
   width: 200px;
   /* width: 200px; */
   height: auto;
@@ -2718,7 +2718,7 @@ label.checkbox span {
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
   /* background-color: rgba(0, 0, 0, 0.25); */
-  border-radius: 4px;
+  border-radius: 5px;
   color: #ffffff;
   width: 200px;
   height: auto;
