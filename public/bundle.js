@@ -547,6 +547,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     document.getElementById("memberContainer").innerHTML = "";
+    document.getElementById("kills").innerHTML = myPlayer.kills;
     if (clansMem.length != 0) {
       for (let i = 0; i < clansMem.length; i++) {
         if (clansMem[myPlayer.clanID]) {

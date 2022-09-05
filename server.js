@@ -473,6 +473,7 @@
     player.clanName = player.clanName;
     player.name = name;
     player.ip = ip;
+    player.kills = 0,
     player.sid = player.sid || ++ids;
     player.spawned = true;
     player.age = 1;
@@ -954,6 +955,8 @@
                           ? weapon.damage - 10
                           : weapon.damage - 15
                         : 0;
+                  } else {
+                    player.kills = player.kills++;
                   }
                   client.send(
                     encode([
@@ -1096,6 +1099,7 @@
       wep: 0,
       clanID: ids++,
       sid: null,
+      kills: 0,
       xVel: 0,
       yVel: 0,
       movedir: null,
