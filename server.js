@@ -955,8 +955,6 @@
                           ? weapon.damage - 10
                           : weapon.damage - 15
                         : 0;
-                  } else {
-                    player.kills = player.kills++;
                   }
                   client.send(
                     encode([
