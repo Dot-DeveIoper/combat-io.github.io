@@ -364,9 +364,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   hatMenu();
 
   for (let i = 0; i < Hats.length; i++) {
-    document
-    .getElementById("EquipGear" + i)
-    .addEventListener("mouseover", function (e) {
+    document.getElementById("EquipGear" + i).addEventListener("mouseover", function (e) {
       if (e.isTrusted) {
         hatNameContainer.style.display = "block";
         document.getElementById("hatNameDetails").innerHTML = Hats[i].name;
@@ -374,9 +372,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       }
     });
 
-    document
-    .getElementById("EquipGear" + i)
-    .addEventListener("mouseout",
+    document.getElementById("EquipGear" + i).addEventListener("mouseout",
       function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
@@ -385,9 +381,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   for (let i = 0; i < Acc.length; i++) {
-    document
-    .getElementById("EquipAccessories" + i)
-    .addEventListener("mouseover", function (e) {
+    document.getElementById("EquipAccessories" + i).addEventListener("mouseover", function (e) {
       if (e.isTrusted) {
         hatNameContainer.style.display = "block";
         document.getElementById("hatNameDetails").innerHTML = Acc[i].name;
@@ -395,9 +389,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       }
     });
 
-    document
-    .getElementById("EquipAccessories" + i)
-    .addEventListener("mouseout",
+    document.getElementById("EquipAccessories" + i).addEventListener("mouseout",
       function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
@@ -560,9 +552,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     for (let i = 0; i < clans.length; i++) {
-      document
-      .getElementById("joinClan" + i)
-      .addEventListener("click", function (e) {
+      document.getElementById("joinClan" + i).addEventListener("click", function (e) {
         send(["joinClan", [e.clan]]);
       });
     }
@@ -682,6 +672,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   chatbox.style.display = "none";
   let ctx = canvas.getContext("2d");
   let mainMenu = document.getElementById("mainMenu");
+  let backgroundImg = document.getElementById("backgroundImg");
   let ageBar = document.getElementById("ageBar");
   let ageLevelBar = document.getElementById("ageLevelBar");
   let ageCounter = document.getElementById("ageCounter");
@@ -689,16 +680,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
-    document
-    .getElementById("h-item-" + i)
-    .addEventListener("click", function (e) {
+    document.getElementById("h-item-" + i).addEventListener("click", function (e) {
       if (e.isTrusted) {
         send(["s", [inventory[i + 1]]]);
       }
     });
-    document
-    .getElementById("h-item-" + i)
-    .addEventListener("mouseover",
+    document.getElementById("h-item-" + i).addEventListener("mouseover",
       function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "block";
@@ -716,9 +703,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           Weapons[i].food === 0 ? "none": "block";
         }
       });
-    document
-    .getElementById("h-item-" + i)
-    .addEventListener("mouseout",
+    document.getElementById("h-item-" + i).addEventListener("mouseout",
       function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "none";
@@ -2378,6 +2363,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           10);
       }
       mainMenu.style.display = "none";
+      backgroundImg.style.display = "none";
       age = 1;
       ageBar.style.display = "inline-block";
       resourcesAndMap.style.display = "inline-block";
