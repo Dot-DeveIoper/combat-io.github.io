@@ -529,6 +529,12 @@
         gold: 0,
         ruby: 0,
       },
+      {
+        name: "CB Hat",
+        owned: false,
+        gold: 0,
+        ruby: 0,
+      },
     ];
 
     player.accs = [
