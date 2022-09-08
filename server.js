@@ -530,7 +530,7 @@
         ruby: 0,
       },
       {
-        name: "CB Hat",
+        name: "CrashBreaker Hat",
         owned: false,
         gold: 0,
         ruby: 0,
@@ -711,6 +711,7 @@
         if (player.acc == 2) {
           playerSpeed += 0.4;
         }
+        
         // player velocity
 
         if (

@@ -92,22 +92,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   };
 
   run = false;
-  let randomDeathText = ["You died",
-    "Game over",
-    "You lost",
-    "Try again"];
-  let deathText = randomDeathText[Math.floor(Math.random() * randomDeathText.length)];
+  let randomDeathText = ["You died", "Game over", "You lost", "Try again"];
+  let deathText =
+    randomDeathText[Math.floor(Math.random() * randomDeathText.length)];
   document.getElementById("randomDeathText").innerHTML = deathText;
 
-  var Youtubers = [{
-    },
+  var Youtubers = [
     {
       name: "CrashBreaker",
       link: "https://www.youtube.com/c/CrashBreaker",
-      ]
-    name: "Dot",
-    link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
-  },
+    },
+    {
+      name: "Dot",
+      link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
+    },
     {
       name: "x_X NOOB X_x",
       link: "https://www.youtube.com/c/xXNOOBXx",
@@ -123,23 +121,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     {
       name: "X-Jorge Pet",
       link: "https://www.youtube.com/channel/UCndcue_WhfwrDy3uzUTnMNQ",
-    
-    }]
-      
+    },
+  ];
+
   var creator =
-  Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
+    Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
   function RandomYT() {
     YTofDay.href = creator.link + "?sub_confirmation=1";
     YTofDay.innerHTML = `<i class='material-icons' style='vertical-align: top;'>&#xE064;</i> ${creator.name}`;
   }
   RandomYT();
-  var Weps = [{
-    id: 0,
-    name: "Tool Hammer",
-    info: "Get resources and upgrade your tool.",
-    clicked: false,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
-  },
+  var Weps = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      info: "Get resources and upgrade your tool.",
+      clicked: false,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
+    },
     {
       id: 1,
       name: "Short Sword",
@@ -149,14 +148,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var Weapons = [{
-    id: 0,
-    name: "Tool Hammer",
-    info: "Get resources and upgrade your tool.",
-    stone: 0,
-    wood: 0,
-    food: 0,
-  },
+  var Weapons = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      info: "Get resources and upgrade your tool.",
+      stone: 0,
+      wood: 0,
+      food: 0,
+    },
     {
       id: 1,
       name: "Orange",
@@ -215,14 +215,23 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var Hats = [{
-    name: "X-jorgepet cap",
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
-    id: 7,
-    info: "Subscribe to X-jorgepet!",
-    price: "",
-    clicked: false,
-  },
+  var Hats = [
+    {
+      name: "X-jorgepet cap",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/xjorgepet.png?v=1661560063042",
+      id: 7,
+      info: "Subscribe to X-jorgepet!",
+      price: "",
+      clicked: false,
+    },
+    {
+      name: "CrashBreaker hat",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/cb%20hat.png?v=1662612419428",
+      id: 8,
+      info: "Subscribe to CrashBreaker!",
+      price: "",
+      clicked: false,
+    },
     {
       name: "Barbarian Hat",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
@@ -272,14 +281,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       clicked: false,
     },
   ];
-  var Acc = [{
-    name: "Shadow Wings",
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
-    id: 1,
-    info: "Move Faster",
-    price: "",
-    clicked: false,
-  },
+  var Acc = [
+    {
+      name: "Shadow Wings",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
+      id: 1,
+      info: "Move Faster",
+      price: "",
+      clicked: false,
+    },
     {
       name: "God Wings",
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_2?v=1661538178387",
@@ -309,9 +319,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         Acc[i].clicked = !Acc[i].clicked;
         send([
           "Ac",
-          [{
-            acc: Acc[i].clicked ? Acc[i].id: 0,
-          },
+          [
+            {
+              acc: Acc[i].clicked ? Acc[i].id : 0,
+            },
           ],
         ]);
         if (Acc[i].clicked === false) {
@@ -349,9 +360,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         Hats[i].clicked = !Hats[i].clicked;
         send([
           "Hd",
-          [{
-            hat: Hats[i].clicked ? Hats[i].id: 0,
-          },
+          [
+            {
+              hat: Hats[i].clicked ? Hats[i].id : 0,
+            },
           ],
         ]);
         if (Hats[i].clicked === false) {
@@ -370,16 +382,19 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   hatMenu();
 
   for (let i = 0; i < Hats.length; i++) {
-    document.getElementById("EquipGear" + i).addEventListener("mouseover", function (e) {
-      if (e.isTrusted) {
-        hatNameContainer.style.display = "block";
-        document.getElementById("hatNameDetails").innerHTML = Hats[i].name;
-        document.getElementById("hatDetails").innerHTML = Hats[i].info;
-      }
-    });
+    document
+      .getElementById("EquipGear" + i)
+      .addEventListener("mouseover", function (e) {
+        if (e.isTrusted) {
+          hatNameContainer.style.display = "block";
+          document.getElementById("hatNameDetails").innerHTML = Hats[i].name;
+          document.getElementById("hatDetails").innerHTML = Hats[i].info;
+        }
+      });
 
-    document.getElementById("EquipGear" + i).addEventListener("mouseout",
-      function (e) {
+    document
+      .getElementById("EquipGear" + i)
+      .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
         }
@@ -387,16 +402,19 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   for (let i = 0; i < Acc.length; i++) {
-    document.getElementById("EquipAccessories" + i).addEventListener("mouseover", function (e) {
-      if (e.isTrusted) {
-        hatNameContainer.style.display = "block";
-        document.getElementById("hatNameDetails").innerHTML = Acc[i].name;
-        document.getElementById("hatDetails").innerHTML = Acc[i].info;
-      }
-    });
+    document
+      .getElementById("EquipAccessories" + i)
+      .addEventListener("mouseover", function (e) {
+        if (e.isTrusted) {
+          hatNameContainer.style.display = "block";
+          document.getElementById("hatNameDetails").innerHTML = Acc[i].name;
+          document.getElementById("hatDetails").innerHTML = Acc[i].info;
+        }
+      });
 
-    document.getElementById("EquipAccessories" + i).addEventListener("mouseout",
-      function (e) {
+    document
+      .getElementById("EquipAccessories" + i)
+      .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
         }
@@ -551,19 +569,24 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (clansMem[myPlayer.clanID]) {
           document.getElementById(
             "memberContainer"
-          ).innerHTML += `<div class="membersInfo"><div class="memberName">${clansMem[myPlayer.clanID].clanMembers[i].name}</div> <a class="kickMemberBtn">Kick</a></div><br><br>`;
-        }}} else {
+          ).innerHTML += `<div class="membersInfo"><div class="memberName">${
+            clansMem[myPlayer.clanID].clanMembers[i].name
+          }</div> <a class="kickMemberBtn">Kick</a></div><br><br>`;
+        }
+      }
+    } else {
       document.getElementById(
         "memberContainer"
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     for (let i = 0; i < clans.length; i++) {
-      document.getElementById("joinClan" + i).addEventListener("click", function (e) {
-        send(["joinClan", [e.clan]]);
-      });
+      document
+        .getElementById("joinClan" + i)
+        .addEventListener("click", function (e) {
+          send(["joinClan", [e.clan]]);
+        });
     }
-  },
-    1000);
+  }, 1000);
 
   function m() {
     var t;
@@ -574,9 +597,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     window.ontouchmove = z;
     window.onclick = z;
     window.onkeydown = z;
-    window.addEventListener("scroll",
-      z,
-      true);
+    window.addEventListener("scroll", z, true);
     function q() {
       if (document.getElementById("mainMenu").style.display === "none") {
         send(["vx", ["Idle too long."]]);
@@ -590,7 +611,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   m();
   let waveSize = 0,
-  waveGrow = true;
+    waveGrow = true;
 
   function Wave() {
     if (waveGrow) {
@@ -624,13 +645,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
         click = false;
       }
     });
-    document.addEventListener("keydown",
-      function (e) {
-        if (click) {
-          audio1.play();
-          click = false;
-        }
-      });
+    document.addEventListener("keydown", function (e) {
+      if (click) {
+        audio1.play();
+        click = false;
+      }
+    });
   } else {
     sound.checked = true;
   }
@@ -661,14 +681,13 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
           if (audio1.volume > 1) {
             clearInterval(fadeInAudio);
           }
-        },
-          10);
+        }, 10);
       }
     }
     document.getElementById("loadingText").style.display = "block";
     document.getElementById("loadingText").innerHTML =
-    msg +
-    "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
+      msg +
+      "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
   }
   var nausea = false;
   var attacking = false;
@@ -686,31 +705,35 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
-    document.getElementById("h-item-" + i).addEventListener("click", function (e) {
-      if (e.isTrusted) {
-        send(["s", [inventory[i + 1]]]);
-      }
-    });
-    document.getElementById("h-item-" + i).addEventListener("mouseover",
-      function (e) {
+    document
+      .getElementById("h-item-" + i)
+      .addEventListener("click", function (e) {
+        if (e.isTrusted) {
+          send(["s", [inventory[i + 1]]]);
+        }
+      });
+    document
+      .getElementById("h-item-" + i)
+      .addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "block";
           document.getElementById("itemNameDetails").innerHTML =
-          Weapons[i].name;
+            Weapons[i].name;
           document.getElementById("itemDetails").innerHTML = Weapons[i].info;
           document.getElementById("Stone").innerHTML = Weapons[i].stone;
           document.getElementById("Wood").innerHTML = Weapons[i].wood;
           document.getElementById("Food").innerHTML = Weapons[i].food;
           document.getElementById("stoneReqDisplay").style.display =
-          Weapons[i].stone === 0 ? "none": "block";
+            Weapons[i].stone === 0 ? "none" : "block";
           document.getElementById("woodReqDisplay").style.display =
-          Weapons[i].wood === 0 ? "none": "block";
+            Weapons[i].wood === 0 ? "none" : "block";
           document.getElementById("foodReqDisplay").style.display =
-          Weapons[i].food === 0 ? "none": "block";
+            Weapons[i].food === 0 ? "none" : "block";
         }
       });
-    document.getElementById("h-item-" + i).addEventListener("mouseout",
-      function (e) {
+    document
+      .getElementById("h-item-" + i)
+      .addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "none";
         }
@@ -836,14 +859,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var texts = [];
 
-  var accs = [{
-    id: 0,
-    src: "",
-    img: new Image(),
-    xOffset: -40,
-    yOffset: -40,
-    scale: 80,
-  },
+  var accs = [
+    {
+      id: 0,
+      src: "",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
     {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/wings_1?v=1661534786091",
@@ -861,14 +885,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       scale: 140,
     },
   ];
-  var hats = [{
-    id: 0,
-    src: "",
-    img: new Image(),
-    xOffset: -40,
-    yOffset: -40,
-    scale: 80,
-  },
+  var hats = [
+    {
+      id: 0,
+      src: "",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+    },
     {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hat_1?v=1660911224026",
@@ -927,14 +952,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var skins = [{
-    id: 0,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
-    img: new Image(),
-    xOffset: -35,
-    yOffset: -35,
-    scale: 70,
-  },
+  var skins = [
+    {
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin2.png?v=99999999999999",
+      img: new Image(),
+      xOffset: -35,
+      yOffset: -35,
+      scale: 70,
+    },
     {
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Skin1.png?v=99999999999999",
@@ -993,16 +1019,17 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var trees = [{
-    name: "wood",
-    id: 0,
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978",
-    //tree
-    img: new Image(),
-    xOffset: -158,
-    yOffset: -160,
-    scale: 350,
-  },
+  var trees = [
+    {
+      name: "wood",
+      id: 0,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978",
+      //tree
+      img: new Image(),
+      xOffset: -158,
+      yOffset: -160,
+      scale: 350,
+    },
     {
       name: "wood2",
       id: 1,
@@ -1074,15 +1101,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var weapons = [{
-    id: 0,
-    name: "Tool Hammer",
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
-    scale: 110,
-    img: new Image(),
-    xOffset: -25,
-    yOffset: -35,
-  },
+  var weapons = [
+    {
+      id: 0,
+      name: "Tool Hammer",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Hammer_Tool.png?v=1661566949950",
+      scale: 110,
+      img: new Image(),
+      xOffset: -25,
+      yOffset: -35,
+    },
     {
       id: 1,
       name: "Orange",
@@ -1151,15 +1179,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var objects = [{
-    id: 2,
-    name: "Spike",
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
-    scale: 110,
-    img: new Image(),
-    xOffset: -50,
-    yOffset: -50,
-  },
+  var objects = [
+    {
+      id: 2,
+      name: "Spike",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547",
+      scale: 110,
+      img: new Image(),
+      xOffset: -50,
+      yOffset: -50,
+    },
     {
       id: 3,
       name: "Wall",
@@ -1200,15 +1229,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     },
   ];
 
-  var animals = [{
-    id: 0,
-    name: "Cow",
-    src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1661107702198",
-    scale: 150,
-    img: new Image(),
-    xOffset: 0,
-    yOffset: 0,
-  },
+  var animals = [
+    {
+      id: 0,
+      name: "Cow",
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Cow.png?v=1661107702198",
+      scale: 150,
+      img: new Image(),
+      xOffset: 0,
+      yOffset: 0,
+    },
   ];
 
   weapons.forEach((w) => {
@@ -1244,8 +1274,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     setInterval(() => {
       localStorage.name = document.querySelector("#nameInput").value;
     }, 50);
-  },
-    1000);
+  }, 1000);
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -1307,17 +1336,23 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   function drawPlayerText(x, y, player) {
     var roleName = player.admin
-    ? "</DEV> ": player.mod
-    ? "</MOD> ": player.artist
-    ? "</Artist> ": " ";
+      ? "</DEV> "
+      : player.mod
+      ? "</MOD> "
+      : player.artist
+      ? "</Artist> "
+      : " ";
     var roleColor = player.admin
-    ? "#30d1a1": player.mod
-    ? "#FF0000": player.artist
-    ? "#F99843": "#fff";
+      ? "#30d1a1"
+      : player.mod
+      ? "#FF0000"
+      : player.artist
+      ? "#F99843"
+      : "#fff";
     var w =
-    roleName +
-    (player.clanName ? "[" + player.clanName + "] ": "") +
-    (player.name || "");
+      roleName +
+      (player.clanName ? "[" + player.clanName + "] " : "") +
+      (player.name || "");
     localStorage.name = player.name;
     var lastColor = ctx.fillStyle;
     if ("" != w) {
@@ -1346,7 +1381,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     fillRectCentered(x, y + 60, 100, 10, "#000");
     var lastStyle = ctx.fillStyle;
-    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07": "#da4607";
+    ctx.fillStyle = player.sid == myPlayer.sid ? "#11da07" : "#da4607";
     ctx.fillRect(x - 48, y + 61, 96 * (player.health / 100), 8);
     ctx.fillStyle = lastStyle;
   }
@@ -1434,12 +1469,12 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
   window.requestAnimFrame =
-  window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  function (e) {
-    window.setTimeout(e, 1000 / 60);
-  };
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (e) {
+      window.setTimeout(e, 1000 / 60);
+    };
 
   function update() {
     var moveX = 0;
@@ -1498,11 +1533,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.fillRect(
       0,
       mapSize -
-      myPlayer.y +
-      canvas.height / 2 -
-      desertHeight -
-      riverHeight -
-      beachHeight,
+        myPlayer.y +
+        canvas.height / 2 -
+        desertHeight -
+        riverHeight -
+        beachHeight,
       canvas.width,
       beachHeight
     );
@@ -1514,11 +1549,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ctx.fillRect(
       0,
       mapSize -
-      myPlayer.y +
-      canvas.height / 2 -
-      desertHeight -
-      riverHeight -
-      waveSize / 2,
+        myPlayer.y +
+        canvas.height / 2 -
+        desertHeight -
+        riverHeight -
+        waveSize / 2,
       canvas.width,
       riverHeight + waveSize
     );
@@ -1682,15 +1717,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
     // top border
-    ctx.fillRect(0,
-      0,
-      canvas.width,
-      canvas.height / 2 - myPlayer.y);
+    ctx.fillRect(0, 0, canvas.width, canvas.height / 2 - myPlayer.y);
     // left border
-    ctx.fillRect(0,
-      0,
-      canvas.width / 2 - myPlayer.x,
-      canvas.height);
+    ctx.fillRect(0, 0, canvas.width / 2 - myPlayer.x, canvas.height);
     // right border
     ctx.fillRect(
       mapSize - myPlayer.x + canvas.width / 2,
@@ -1720,10 +1749,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       return m(leaderboard[num].gold, 1);
     }
     function m(num, s) {
-      var f = [{
-        value: 1,
-        symbol: "",
-      },
+      var f = [
+        {
+          value: 1,
+          symbol: "",
+        },
         {
           value: 1e3,
           symbol: "k",
@@ -1749,53 +1779,53 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     if (leaderboard[0]) {
       document.getElementById("players").innerHTML =
-      "<div style='float: left;'>" +
-      leaderboard[0].name +
-      [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[0].sid: ""] +
-      "</div><div style='float: right; color: gold;'>" +
-      gold(0) +
-      "</div>" +
-      "<br>";
+        "<div style='float: left;'>" +
+        leaderboard[0].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[0].sid : ""] +
+        "</div><div style='float: right; color: gold;'>" +
+        gold(0) +
+        "</div>" +
+        "<br>";
     }
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
-      "<div style='float: left;'>" +
-      leaderboard[1].name +
-      [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[1].sid: ""] +
-      "</div><div style='float: right; color: gold;'>" +
-      gold(1) +
-      "</div>" +
-      "<br>";
+        "<div style='float: left;'>" +
+        leaderboard[1].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[1].sid : ""] +
+        "</div><div style='float: right; color: gold;'>" +
+        gold(1) +
+        "</div>" +
+        "<br>";
     }
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
-      "<div style='float: left;'>" +
-      leaderboard[2].name +
-      [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[2].sid: ""] +
-      "</div><div style='float: right; color: gold;'>" +
-      gold(2) +
-      "</div>" +
-      "<br>";
+        "<div style='float: left;'>" +
+        leaderboard[2].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[2].sid : ""] +
+        "</div><div style='float: right; color: gold;'>" +
+        gold(2) +
+        "</div>" +
+        "<br>";
     }
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
-      "<div style='float: left;'>" +
-      leaderboard[3].name +
-      [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[3].sid: ""] +
-      "</div><div style='float: right; color: gold;'>" +
-      gold(3) +
-      "</div>" +
-      "<br>";
+        "<div style='float: left;'>" +
+        leaderboard[3].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[3].sid : ""] +
+        "</div><div style='float: right; color: gold;'>" +
+        gold(3) +
+        "</div>" +
+        "<br>";
     }
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
-      "<div style='float: left;'>" +
-      leaderboard[4].name +
-      [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[4].sid: ""] +
-      "</div><div style='float: right; color: gold;'>" +
-      gold(4) +
-      "</div>" +
-      "<br>";
+        "<div style='float: left;'>" +
+        leaderboard[4].name +
+        [myPlayer.admin || myPlayer.mod ? " : " + leaderboard[4].sid : ""] +
+        "</div><div style='float: right; color: gold;'>" +
+        gold(4) +
+        "</div>" +
+        "<br>";
     }
     if (leaderboard[5]) {
       let i = 0;
@@ -1804,7 +1834,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       });
       i = i - 5;
       document.getElementById("players").innerHTML +=
-      "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
+        "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
     }
 
     // minimap
@@ -1861,28 +1891,28 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       document.getElementById("ruby").innerHTML = myPlayer.resources[
         trees[6].name
       ]
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("gold").innerHTML = myPlayer.resources[
         trees[5].name
       ]
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("stone").innerHTML = myPlayer.resources[
         trees[4].name
       ]
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("bush").innerHTML = myPlayer.resources[
         trees[2].name
       ]
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("tree").innerHTML = myPlayer.resources[
         trees[0].name
       ]
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     if (ageLevelBar.style.width === "100%") {
       ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
@@ -1896,19 +1926,20 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     function upgradeMenu() {
       ageLevelItems.style.display = "block";
       document
-      .getElementById("age-item-0")
-      .addEventListener("click", function (e) {
-        send([
-          "Ug",
-          [{
-            wep: 7,
-          },
-          ],
-        ]);
-        ageLevelItems.style.display = "none";
-        document.getElementById("h-item-0").style.backgroundImage =
-        "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761')";
-      });
+        .getElementById("age-item-0")
+        .addEventListener("click", function (e) {
+          send([
+            "Ug",
+            [
+              {
+                wep: 7,
+              },
+            ],
+          ]);
+          ageLevelItems.style.display = "none";
+          document.getElementById("h-item-0").style.backgroundImage =
+            "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761')";
+        });
     }
 
     if (myPlayer.age === 2 && !run) {
@@ -1930,7 +1961,8 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     ws = new WebSocket("wss://combat-io.glitch.me/websocket");
     setTimeout(() => {
       document.getElementById("nameInput").value = "undefined"
-      ? (document.getElementById("nameInput").value = []): (document.getElementById("nameInput").value = localStorage.name);
+        ? (document.getElementById("nameInput").value = [])
+        : (document.getElementById("nameInput").value = localStorage.name);
     }, 500);
     ws.addEventListener("open", function () {
       document.getElementById("menuCardHolder").style.display = "block";
@@ -1957,88 +1989,86 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             msg[1][0].forEach((w) => {
               if (w != 7) {
                 document.getElementById("h-item-" + w).style.display =
-                "inline-block";
+                  "inline-block";
               }
             });
-            case "33":
-              players = msg[1][0];
-              players.forEach((p) => {
-                if (!swingAngle[p.sid]) {
-                  swingAngle[p.sid] = 0;
-                }
-                if (p.sid == myPlayer.sid) {
-                  myPlayer = p;
-                  window.me = myPlayer;
-                }
-              });
-              break;
-            case "p":
-              ping = Date.now() - lastping;
-              break;
-            case "7":
-              var sid = msg[1][0];
-              var angle = 120;
-              var multi = 1;
-              var add = 1;
+          case "33":
+            players = msg[1][0];
+            players.forEach((p) => {
+              if (!swingAngle[p.sid]) {
+                swingAngle[p.sid] = 0;
+              }
+              if (p.sid == myPlayer.sid) {
+                myPlayer = p;
+                window.me = myPlayer;
+              }
+            });
+            break;
+          case "p":
+            ping = Date.now() - lastping;
+            break;
+          case "7":
+            var sid = msg[1][0];
+            var angle = 120;
+            var multi = 1;
+            var add = 1;
+            for (let i = 0; i < angle; i++) {
+              setTimeout(() => {
+                swingAngle[sid] += add;
+              }, i * multi);
+            }
+            setTimeout(() => {
               for (let i = 0; i < angle; i++) {
                 setTimeout(() => {
-                  swingAngle[sid] += add;
+                  swingAngle[sid] -= add;
                 }, i * multi);
               }
-              setTimeout(() => {
-                for (let i = 0; i < angle; i++) {
-                  setTimeout(() => {
-                    swingAngle[sid] -= add;
-                  }, i * multi);
-                }
-              },
-                angle * multi + 40);
-              break;
-            case "d":
-              mainMenu.style.display = "block";
-              if (soundOn) {
-                if (AudioOn === "true") {
-                  audio1.play();
-                  const fadeInAudio = setInterval(() => {
-                    if (audio1.volume < 1) {
-                      audio1.volume += 0.01111111111111111111111111111111111111;
-                    }
+            }, angle * multi + 40);
+            break;
+          case "d":
+            mainMenu.style.display = "block";
+            if (soundOn) {
+              if (AudioOn === "true") {
+                audio1.play();
+                const fadeInAudio = setInterval(() => {
+                  if (audio1.volume < 1) {
+                    audio1.volume += 0.01111111111111111111111111111111111111;
+                  }
 
-                    if (audio1.volume > 1) {
-                      clearInterval(fadeInAudio);
-                    }
-                  },
-                    10);
-                }
+                  if (audio1.volume > 1) {
+                    clearInterval(fadeInAudio);
+                  }
+                }, 10);
               }
-              break;
-            case "o":
-              treesCache = msg[1][0];
-              break;
-            case "b":
-              leaderboard = msg[1][0];
-              break;
-            case "clanz":
-              clans = msg[1][0];
-              // console.log(clans);
-              break;
-            case "clanMem":
-              clansMem = msg[1][0];
-              break;
-            case "clanTrue":
-              teams.style.display = "none";
-              teamsInput.style.display = "none";
-              teamsSection.style.display = "none";
-              members.style.display = "inline-block";
-              membersSection.style.display = "inline-block";
-              leaveClanSection.style.display = "inline-block";
-              break;
-            case "x":
-              objCache = msg[1][0];
-              break;
-            case "a":
-              animalsCache = msg[1][0];
-              break;
+            }
+            break;
+          case "o":
+            treesCache = msg[1][0];
+            break;
+          case "b":
+            leaderboard = msg[1][0];
+            break;
+          case "clanz":
+            clans = msg[1][0];
+            // console.log(clans);
+            break;
+          case "clanMem":
+            clansMem = msg[1][0];
+            break;
+          case "clanTrue":
+            teams.style.display = "none";
+            teamsInput.style.display = "none";
+            teamsSection.style.display = "none";
+            members.style.display = "inline-block";
+            membersSection.style.display = "inline-block";
+            leaveClanSection.style.display = "inline-block";
+            break;
+          case "x":
+            objCache = msg[1][0];
+            break;
+          case "a":
+            animalsCache = msg[1][0];
+            break;
         }
       });
     });
@@ -2054,240 +2084,230 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     }
   });
 
-  canvas.addEventListener("mouseup",
-    function (e) {
-      if (e.isTrusted && !autohitting) {
-        attacking = false;
-        send(["c", [0]]);
+  canvas.addEventListener("mouseup", function (e) {
+    if (e.isTrusted && !autohitting) {
+      attacking = false;
+      send(["c", [0]]);
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohitting == true) {
+        AutoHit = false;
+        autohittingwason = true;
       }
-    });
-  document.addEventListener("keydown",
-    function (e) {
-      if (
-        e.keyCode == 32 &&
-        document.activeElement.id.toLowerCase() !== "chatbox"
-      ) {
-        if (autohitting == true) {
-          AutoHit = false;
-          autohittingwason = true;
-        }
-        e.isTrusted && (!0, send(["c", [1]]));
-      }
-    });
-  document.addEventListener("keyup",
-    function (e) {
-      if (
-        e.keyCode == 32 &&
-        document.activeElement.id.toLowerCase() !== "chatbox"
-      ) {
-        if (autohittingwason == true)
-          return (autohittingwason = false),
-        (AutoHit = true);
-        e.isTrusted && (!1, send(["c", [0]]));
-      }
-    });
-  document.addEventListener("keydown",
-    function (e) {
-      if (e.isTrusted) {
-        switch (e.code) {
-          case keycodes.AUTO_HIT:
-            if (chatbox.style.display === "none") {
-              AutoHit = !AutoHit;
-              if (AutoHit) {
-                autohitting = true;
-                e.isTrusted && (!0, send(["c", [1]]));
-              } else if (!AutoHit) {
-                autohitting = false;
-                e.isTrusted && (!1, send(["c", [0]]));
+      e.isTrusted && (!0, send(["c", [1]]));
+    }
+  });
+  document.addEventListener("keyup", function (e) {
+    if (
+      e.keyCode == 32 &&
+      document.activeElement.id.toLowerCase() !== "chatbox"
+    ) {
+      if (autohittingwason == true)
+        return (autohittingwason = false), (AutoHit = true);
+      e.isTrusted && (!1, send(["c", [0]]));
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.isTrusted) {
+      switch (e.code) {
+        case keycodes.AUTO_HIT:
+          if (chatbox.style.display === "none") {
+            AutoHit = !AutoHit;
+            if (AutoHit) {
+              autohitting = true;
+              e.isTrusted && (!0, send(["c", [1]]));
+            } else if (!AutoHit) {
+              autohitting = false;
+              e.isTrusted && (!1, send(["c", [0]]));
+            }
+          }
+          break;
+        case keycodes.LOCK_DIR:
+          if (chatbox.style.display === "none") {
+            lockDir = !lockDir;
+          }
+          break;
+        case keycodes.QUICK_FOOD:
+          var sn;
+          inventory.forEach((item) => {
+            var itm = weapons.find((x) => x.id == item);
+            if (itm && itm.food) {
+              sn = itm.id;
+              if (myPlayer.weapon == sn) {
+                send(["s", [inventory[1]]]);
+              } else {
+                send(["s", [sn + 1]]);
               }
+              return;
             }
-            break;
-          case keycodes.LOCK_DIR:
-            if (chatbox.style.display === "none") {
-              lockDir = !lockDir;
+          });
+          break;
+        case keycodes.HOTBAR_1:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[1]]]);
+          }
+          break;
+        case keycodes.HOTBAR_2:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[2]]]);
+          }
+          break;
+        case keycodes.HOTBAR_3:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[3]]]);
+          }
+          break;
+        case keycodes.HOTBAR_4:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[4]]]);
+          }
+          break;
+        case keycodes.HOTBAR_5:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[5]]]);
+          }
+          break;
+        case keycodes.HOTBAR_6:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[6]]]);
+          }
+          break;
+        case keycodes.HOTBAR_7:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[7]]]);
+          }
+          break;
+        case keycodes.HOTBAR_8:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[8]]]);
+          }
+          break;
+        case keycodes.HOTBAR_9:
+          if (chatbox.style.display === "none") {
+            send(["s", [inventory[9]]]);
+          }
+          break;
+        case 82:
+          // nausea = !nausea;
+          break;
+        case keycodes.MOVE_UP:
+          moveUp = 1;
+          break;
+        case keycodes.MOVE_DOWN:
+          moveDown = 1;
+          break;
+        case keycodes.MOVE_LEFT:
+          moveLeft = 1;
+          break;
+        case keycodes.MOVE_RIGHT:
+          moveRight = 1;
+          break;
+        case keycodes.MOVE_UP2:
+          moveUp = 1;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 1;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 1;
+          break;
+        case keycodes.MOVE_RIGHT2:
+          moveRight = 1;
+          break;
+        case keycodes.CHAT:
+          if (chatbox.style.display === "none") {
+            chatbox.style.display = "block";
+            chatbox.focus();
+          } else {
+            chatbox.style.display = "none";
+            if (chatbox.value) {
+              send(["ch", [chatbox.value]]);
+              chatbox.value = "";
             }
-            break;
-          case keycodes.QUICK_FOOD:
-            var sn;
-            inventory.forEach((item) => {
-              var itm = weapons.find((x) => x.id == item);
-              if (itm && itm.food) {
-                sn = itm.id;
-                if (myPlayer.weapon == sn) {
-                  send(["s", [inventory[1]]]);
-                } else {
-                  send(["s", [sn + 1]]);
-                }
-                return;
-              }
-            });
-            break;
-          case keycodes.HOTBAR_1:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[1]]]);
-            }
-            break;
-          case keycodes.HOTBAR_2:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[2]]]);
-            }
-            break;
-          case keycodes.HOTBAR_3:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[3]]]);
-            }
-            break;
-          case keycodes.HOTBAR_4:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[4]]]);
-            }
-            break;
-          case keycodes.HOTBAR_5:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[5]]]);
-            }
-            break;
-          case keycodes.HOTBAR_6:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[6]]]);
-            }
-            break;
-          case keycodes.HOTBAR_7:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[7]]]);
-            }
-            break;
-          case keycodes.HOTBAR_8:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[8]]]);
-            }
-            break;
-          case keycodes.HOTBAR_9:
-            if (chatbox.style.display === "none") {
-              send(["s", [inventory[9]]]);
-            }
-            break;
-          case 82:
-            // nausea = !nausea;
-            break;
-          case keycodes.MOVE_UP:
-            moveUp = 1;
-            break;
-          case keycodes.MOVE_DOWN:
-            moveDown = 1;
-            break;
-          case keycodes.MOVE_LEFT:
-            moveLeft = 1;
-            break;
-          case keycodes.MOVE_RIGHT:
-            moveRight = 1;
-            break;
-          case keycodes.MOVE_UP2:
-            moveUp = 1;
-            break;
-          case keycodes.MOVE_DOWN2:
-            moveDown = 1;
-            break;
-          case keycodes.MOVE_LEFT2:
-            moveLeft = 1;
-            break;
-          case keycodes.MOVE_RIGHT2:
-            moveRight = 1;
-            break;
-          case keycodes.CHAT:
-            if (chatbox.style.display === "none") {
-              chatbox.style.display = "block";
-              chatbox.focus();
-            } else {
-              chatbox.style.display = "none";
-              if (chatbox.value) {
-                send(["ch", [chatbox.value]]);
-                chatbox.value = "";
-              }
-            }
-            break;
-          case keycodes.BASE:
-            if (chatbox.style.display === "none") {
-              baseLocX = myPlayer.x * (200 / mapSize);
-              baseLocY = myPlayer.y * (200 / mapSize);
-              Base = 1;
-            }
-            break;
-        }
+          }
+          break;
+        case keycodes.BASE:
+          if (chatbox.style.display === "none") {
+            baseLocX = myPlayer.x * (200 / mapSize);
+            baseLocY = myPlayer.y * (200 / mapSize);
+            Base = 1;
+          }
+          break;
       }
-    });
-  document.addEventListener("keyup",
-    function (e) {
-      if (e.isTrusted) {
-        switch (e.code) {
-          case keycodes.MOVE_UP:
-            moveUp = 0;
-            break;
-          case keycodes.MOVE_DOWN:
-            moveDown = 0;
-            break;
-          case keycodes.MOVE_LEFT:
-            moveLeft = 0;
-            break;
-          case keycodes.MOVE_RIGHT:
-            moveRight = 0;
-            break;
-          case keycodes.MOVE_UP2:
-            moveUp = 0;
-            break;
-          case keycodes.MOVE_DOWN2:
-            moveDown = 0;
-            break;
-          case keycodes.MOVE_LEFT2:
-            moveLeft = 0;
-            break;
-          case keycodes.MOVE_RIGHT2:
-            moveRight = 0;
-            break;
-        }
+    }
+  });
+  document.addEventListener("keyup", function (e) {
+    if (e.isTrusted) {
+      switch (e.code) {
+        case keycodes.MOVE_UP:
+          moveUp = 0;
+          break;
+        case keycodes.MOVE_DOWN:
+          moveDown = 0;
+          break;
+        case keycodes.MOVE_LEFT:
+          moveLeft = 0;
+          break;
+        case keycodes.MOVE_RIGHT:
+          moveRight = 0;
+          break;
+        case keycodes.MOVE_UP2:
+          moveUp = 0;
+          break;
+        case keycodes.MOVE_DOWN2:
+          moveDown = 0;
+          break;
+        case keycodes.MOVE_LEFT2:
+          moveLeft = 0;
+          break;
+        case keycodes.MOVE_RIGHT2:
+          moveRight = 0;
+          break;
       }
-    });
+    }
+  });
 
-  window.addEventListener("resize",
-    function (e) {
-      if (e.isTrusted) {
-        resizeCanvas();
-      }
-    });
+  window.addEventListener("resize", function (e) {
+    if (e.isTrusted) {
+      resizeCanvas();
+    }
+  });
 
-  canvas.addEventListener("mousemove",
-    function (e) {
-      if (e.isTrusted && !lockDir) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        aim = Math.atan2(
-          e.clientY - canvas.height / 2,
-          e.clientX - canvas.width / 2
-        );
-      }
-    });
+  canvas.addEventListener("mousemove", function (e) {
+    if (e.isTrusted && !lockDir) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      aim = Math.atan2(
+        e.clientY - canvas.height / 2,
+        e.clientX - canvas.width / 2
+      );
+    }
+  });
 
-  canvas.addEventListener("contextmenu",
-    function (e) {
-      if (e.isTrusted) {
-        e.preventDefault();
-      }
-    });
+  canvas.addEventListener("contextmenu", function (e) {
+    if (e.isTrusted) {
+      e.preventDefault();
+    }
+  });
 
-  sound.addEventListener("click",
-    function (e) {
-      if (sound.checked) {
-        soundOn = false;
-        localStorage.setItem("AudioOn", "false");
-        AudioOn = localStorage.getItem("AudioOn");
-        audio1.pause();
-      } else {
-        soundOn = true;
-        localStorage.setItem("AudioOn", "true");
-        AudioOn = localStorage.getItem("AudioOn");
-        audio1.play();
-      }
-    });
+  sound.addEventListener("click", function (e) {
+    if (sound.checked) {
+      soundOn = false;
+      localStorage.setItem("AudioOn", "false");
+      AudioOn = localStorage.getItem("AudioOn");
+      audio1.pause();
+    } else {
+      soundOn = true;
+      localStorage.setItem("AudioOn", "true");
+      AudioOn = localStorage.getItem("AudioOn");
+      audio1.play();
+    }
+  });
 
   var SkinColor = localStorage.getItem("Skin") || 0;
   for (let i = 1; i < 9; i++) {
@@ -2302,57 +2322,56 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   window.selectSkinColor = function (e) {
     SkinColor = e;
   };
-  enterGame.addEventListener("click",
-    function (e) {
-      send([
-        "j",
-        [{
+  enterGame.addEventListener("click", function (e) {
+    send([
+      "j",
+      [
+        {
           name: document.getElementById("nameInput").value,
           skin: SkinColor,
         },
-        ],
-      ]);
-      // fetch(
-      //   `https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`
-      // )
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     if (data.time_zone.name != k1) {
-      //       send(["vx", ["Using VPN."]]);
-      //     }
-      //   })
-      //   .catch((err) => send(["vx", ["Server error."]]));
+      ],
+    ]);
+    // fetch(
+    //   `https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.time_zone.name != k1) {
+    //       send(["vx", ["Using VPN."]]);
+    //     }
+    //   })
+    //   .catch((err) => send(["vx", ["Server error."]]));
 
-      // fetch(
-      //   `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
-      // ).catch((err) => {
-      //   if (err.toString().includes("TypeError: Failed to fetch")) {
-      //     send(["vx", ["Using ad block."]]);
-      //   }
-      // });
+    // fetch(
+    //   `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
+    // ).catch((err) => {
+    //   if (err.toString().includes("TypeError: Failed to fetch")) {
+    //     send(["vx", ["Using ad block."]]);
+    //   }
+    // });
 
-      if (SpawnedOnce == 1) {
-        if (soundOn) {
-          if (AudioOn === "true") {
-            var fadeOutAudio = setInterval(() => {
-              if (audio1.volume >= 0.009) {
-                audio1.volume -= 0.01111111111111111111111111111111111111;
-              }
+    if (SpawnedOnce == 1) {
+      if (soundOn) {
+        if (AudioOn === "true") {
+          var fadeOutAudio = setInterval(() => {
+            if (audio1.volume >= 0.009) {
+              audio1.volume -= 0.01111111111111111111111111111111111111;
+            }
 
-              if (audio1.volume <= 0.1) {
-                audio1.pause();
-                clearInterval(fadeOutAudio);
-              }
-            },
-              10);
-          }
+            if (audio1.volume <= 0.1) {
+              audio1.pause();
+              clearInterval(fadeOutAudio);
+            }
+          }, 10);
         }
-        var minimapOffset = 20;
-        var minimapSize = 200;
-        deathLocX = myPlayer.x * (minimapSize / mapSize);
-        deathLocY = myPlayer.y * (minimapSize / mapSize);
       }
-    });
+      var minimapOffset = 20;
+      var minimapSize = 200;
+      deathLocX = myPlayer.x * (minimapSize / mapSize);
+      deathLocY = myPlayer.y * (minimapSize / mapSize);
+    }
+  });
   enterGame.addEventListener("click", function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
       if (soundOn) {
@@ -2365,8 +2384,7 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
             audio1.pause();
             clearInterval(fadeOutAudio);
           }
-        },
-          10);
+        }, 10);
       }
       mainMenu.style.display = "none";
       backgroundImg.style.display = "none";
@@ -2377,16 +2395,16 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       SpawnedOnce = 1;
       send([
         "j",
-        [{
-          name: document.getElementById("nameInput").value,
-          skin: SkinColor,
-        },
+        [
+          {
+            name: document.getElementById("nameInput").value,
+            skin: SkinColor,
+          },
         ],
       ]);
       setInterval(() => {
         window.requestAnimFrame(update);
-      },
-        1);
+      }, 1);
       riverBubbles = [];
       for (let j = 0; j < 30; j++) {
         setTimeout(() => {
