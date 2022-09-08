@@ -950,6 +950,15 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
       yOffset: -40,
       scale: 80,
     },
+    {
+      id: 8,
+      src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/cb%20hat.png?v=1662612419428",
+      img: new Image(),
+      xOffset: -40,
+      yOffset: -40,
+      scale: 80,
+      
+    },
   ];
 
   var skins = [
