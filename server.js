@@ -473,8 +473,7 @@
     player.clanName = player.clanName;
     player.name = name;
     player.ip = ip;
-    player.kills = 0,
-    player.sid = player.sid || ++ids;
+    (player.kills = 0), (player.sid = player.sid || ++ids);
     player.spawned = true;
     player.age = 1;
     player.x = randomInt(0, mapSize);
@@ -816,7 +815,7 @@
                 ? 90
                 : tree.id == 5
                 ? 85
-                : tree.id == 7 //not here  
+                : tree.id == 7 //not here
                 ? 52
                 : 0) //obj hit boxes
             ) {
@@ -871,7 +870,6 @@
               var aObj = weapons.find((x) => x.id == obj.id);
               var pushVelX = Math.con(pushDir) * aObj.velocity || 1;
               var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
-            
               if (aObj.id === 4) {
                 pushVelX = Math.cos(pushDir) + 0;
                 pushVelY = Math.sin(pushDir) + -5;
