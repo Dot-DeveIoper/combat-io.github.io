@@ -871,9 +871,9 @@
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
               var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               if (aObj.id === 4) {
-                pushVelX = Math.cos(pushDir) + 0;
+                pushVelX = Math.cos(pushDir) + radToDeg(player.aimdir);
                 pushVelY = Math.sin(pushDir) + -5;
-              } // here it is make this face player and you will be set
+              } // pushDir is returning 0
               if (
                 aObj.id === 5 &&
                 obj.oid != player.sid &&
