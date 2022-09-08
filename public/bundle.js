@@ -100,6 +100,11 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
   document.getElementById("randomDeathText").innerHTML = deathText;
 
   var Youtubers = [{
+    },
+    {
+      name: "CrashBreaker",
+      link: "https://www.youtube.com/c/CrashBreaker",
+      ]
     name: "Dot",
     link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
   },
@@ -118,8 +123,9 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     {
       name: "X-Jorge Pet",
       link: "https://www.youtube.com/channel/UCndcue_WhfwrDy3uzUTnMNQ",
-    },
-  ];
+    
+    }]
+      
   var creator =
   Youtubers[Math.floor(Math.random() * (Youtubers.length - 1 - 0 + 1)) + 0];
   function RandomYT() {
