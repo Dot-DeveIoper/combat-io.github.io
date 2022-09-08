@@ -816,7 +816,7 @@
                 ? 90
                 : tree.id == 5
                 ? 85
-                : tree.id == 7
+                : tree.id == 7 //not here  
                 ? 52
                 : 0) //obj hit boxes
             ) {
@@ -873,8 +873,8 @@
               var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
               if (aObj.id === 4) {
                 pushVelX = Math.cos(pushDir) + 0;
-                pushVelY = Math.sin(pushDir) + -5;
-              }
+                pushVelY = Math.sin(pushDir) + -10;
+              } // here it is make this face player and you will be set
               if (
                 aObj.id === 5 &&
                 obj.oid != player.sid &&
