@@ -871,9 +871,10 @@
               var aObj = weapons.find((x) => x.id == obj.id);
               var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
               var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
+              
               if (aObj.id === 4) {
                 pushVelX = Math.cos(pushDir) + 0;
-                pushVelY = Math.sin(pushDir) + -10;
+                pushVelY = Math.sin(pushDir) + -5;
               } // here it is make this face player and you will be set
               if (
                 aObj.id === 5 &&
