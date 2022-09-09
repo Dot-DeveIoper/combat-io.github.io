@@ -32,7 +32,6 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-
   
   app.use("/Privacy", function (e, t) {
     t.sendFile("/app/public/privacy.txt");
@@ -44,17 +43,6 @@
 
   app.use("/Version", function (e, t) {
     t.sendFile("/app/public/version.txt");
-  });
-  app.use("/app/public/index.html", function (e, t) {
-    t.redirect("/Play");
-  });
-  
-  app.use("/Error", function (e, t) {
-    t.sendFile("/app/views/error.html");
-  });
-
-  app.use(function (e, t) {
-    t.status(404).redirect("/Error");
   });
 
   var users = [];
