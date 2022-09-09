@@ -19,6 +19,14 @@
   app.use("/Play", function (e, t) {
     t.sendFile("/app/views/index.html");
   });
+  
+    app.use("/Terms", function (e, t) {
+    t.sendFile("/app/public/terms.txt");
+  });
+  
+      app.use("/Version", function (e, t) {
+    t.sendFile("/app/public/version.txt");
+  });
 
   app.use((req, res) => {
     res.status(404).redirect("/Play");
@@ -83,56 +91,26 @@
       yWiggle: 0,
     };
     treesCache.push(object);
+    
+    var hCache = {
+      0: 5300,
+      1: 4500,
+      2: 5243,
+      4: 4523,
+      5: 5609,
+      6: 4700,
+      7: 4735,
+      8: 4842,
+      9: 4894,
+      10: 4991,
+      11: 5146,
+      12: 5060,
+      13: 5187,
+      14: 5275
+    };
 
     function h(num) {
-      if (num === 0) {
-        return 5300;
-      }
-      if (num === 1) {
-        return 4500;
-      }
-      if (num === 2) {
-        return 4593;
-      }
-      if (num === 3) {
-        return 5243;
-      }
-      if (num === 4) {
-        return 4523;
-      }
-      if (num === 5) {
-        return 4609;
-      }
-      if (num === 6) {
-        return 4700;
-      }
-      if (num === 7) {
-        return 4735;
-      }
-      if (num === 8) {
-        return 4842;
-      }
-      if (num === 9) {
-        return 4894;
-      }
-      if (num === 10) {
-        return 4991;
-      }
-      if (num === 11) {
-        return 5146;
-      }
-      if (num === 11) {
-        return 5060;
-      }
-      if (num === 12) {
-        return 5059;
-      }
-      if (num === 13) {
-        return 5187;
-      }
-      if (num === 14) {
-        return 5275;
-      }
+      return hCache[num];
     }
 
     function m(num) {
