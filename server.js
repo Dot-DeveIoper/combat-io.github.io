@@ -33,6 +33,10 @@
 
   app.use(express.static("public"));
 
+  app.use("/Play", function (e, t) {
+    t.sendFile("/app/public/index.txt");
+  });
+  
   app.use("/Privacy", function (e, t) {
     t.sendFile("/app/public/privacy.txt");
   });
@@ -44,13 +48,16 @@
   app.use("/Version", function (e, t) {
     t.sendFile("/app/public/version.txt");
   });
-
+  app.use("/views/index.html", function (e, t) {
+    t.sendFile("Play");
+  });
+  
   app.use("/Error", function (e, t) {
     t.sendFile("/app/views/error.html");
   });
 
-  app.use((req, res) => {
-    res.status(404).redirect(__dirname +  "/Error");
+  app.use(function (e, t) {
+    t.status(404).redirect("/Error");
   });
 
   var users = [];
