@@ -6,6 +6,23 @@
   const fs = require("fs");
   const fetch = require("node-fetch");
   const { encode, decode } = require("@msgpack/msgpack");
+  
+  const hCache = {
+      0: 5300,
+      1: 4500,
+      2: 5243,
+      4: 4523,
+      5: 5609,
+      6: 4700,
+      7: 4735,
+      8: 4842,
+      9: 4894,
+      10: 4991,
+      11: 5146,
+      12: 5060,
+      13: 5187,
+      14: 5275
+  };
 
   app.use(
     bodyParser.urlencoded({
@@ -15,9 +32,14 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-
+  app.use("/", function (e, t) {
+    t.sendFile("/app/views/index.html");
+  });  
   app.use("/Play", function (e, t) {
     t.sendFile("/app/views/index.html");
+  });
+      app.use("/Privacy", function (e, t) {
+    t.sendFile("/app/public/privacy.txt");
   });
   
     app.use("/Terms", function (e, t) {
@@ -91,23 +113,6 @@
       yWiggle: 0,
     };
     treesCache.push(object);
-    
-    var hCache = {
-      0: 5300,
-      1: 4500,
-      2: 5243,
-      4: 4523,
-      5: 5609,
-      6: 4700,
-      7: 4735,
-      8: 4842,
-      9: 4894,
-      10: 4991,
-      11: 5146,
-      12: 5060,
-      13: 5187,
-      14: 5275
-    };
 
     function h(num) {
       return hCache[num];
