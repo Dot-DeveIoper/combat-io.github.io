@@ -6,22 +6,22 @@
   const fs = require("fs");
   const fetch = require("node-fetch");
   const { encode, decode } = require("@msgpack/msgpack");
-  
+
   const hCache = {
-      0: 5300,
-      1: 4500,
-      2: 5243,
-      4: 4523,
-      5: 5609,
-      6: 4700,
-      7: 4735,
-      8: 4842,
-      9: 4894,
-      10: 4991,
-      11: 5146,
-      12: 5060,
-      13: 5187,
-      14: 5275
+    0: 5300,
+    1: 4500,
+    2: 5243,
+    4: 4523,
+    5: 5609,
+    6: 4700,
+    7: 4735,
+    8: 4842,
+    9: 4894,
+    10: 4991,
+    11: 5146,
+    12: 5060,
+    13: 5187,
+    14: 5275,
   };
 
   app.use(
@@ -32,26 +32,25 @@
   app.use(bodyParser.json());
 
   app.use(express.static("public"));
-  app.use("/", function (e, t) {
-    t.sendFile("/app/views/index.html");
-  });  
-  app.use("/Play", function (e, t) {
-    t.sendFile("/app/views/index.html");
-  });
-      app.use("/Privacy", function (e, t) {
+
+  app.use("/Privacy", function (e, t) {
     t.sendFile("/app/public/privacy.txt");
   });
-  
-    app.use("/Terms", function (e, t) {
+
+  app.use("/Terms", function (e, t) {
     t.sendFile("/app/public/terms.txt");
   });
-  
-      app.use("/Version", function (e, t) {
+
+  app.use("/Version", function (e, t) {
     t.sendFile("/app/public/version.txt");
   });
 
+  app.use("/Error", function (e, t) {
+    t.sendFile("/app/views/error.html");
+  });
+
   app.use((req, res) => {
-    res.status(404).redirect("/Play");
+    res.status(404).redirect(__dirname +  "/Error");
   });
 
   var users = [];
@@ -694,7 +693,7 @@
         if (player.acc == 2) {
           playerSpeed += 0.4;
         }
-        
+
         // player velocity
 
         if (
