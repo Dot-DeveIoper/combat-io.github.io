@@ -99,10 +99,6 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var Youtubers = [
     {
-      name: "CrashBreaker",
-      link: "https://www.youtube.com/c/CrashBreaker",
-    },
-    {
       name: "Dot",
       link: "https://www.youtube.com/channel/UC6vAe7y3rucPrqTyQYwtl2Q",
     },
@@ -113,6 +109,10 @@ const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
     {
       name: "AFK",
       link: "https://www.youtube.com/channel/UCWMmS0ewX0fRJZUwonryI9g",
+    },
+    {
+      name: "CrashBreaker",
+      link: "https://www.youtube.com/c/CrashBreaker",
     },
     {
       name: "Assasin_blaze?",
