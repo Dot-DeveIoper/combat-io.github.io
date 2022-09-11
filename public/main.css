@@ -1,0 +1,168 @@
+/* this file is loaded by error.html and styles the page */
+
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+  /* display: block; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* background-color: #77c44c; */
+  font-family: "Arvo", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+.backgroundImg {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") 25% 25% no-repeat; */
+  background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  user-select: none;
+  pointer-events: none;
+  z-index: -9999999999;
+}
+
+.errorPageContainer {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.notFound {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  white-space: nowrap;
+}
+.headerText {
+  text-align: center;
+  color: #363a3b;
+  font-size: 6.5rem;
+  /* font-size: 3.5rem; */
+  font-weight: 600;
+  /* margin-top: 50px; */
+  /* vertical-align: middle; */
+  user-select: none;
+}
+.img {
+  width: 140px;
+  height: 140px;
+  /* width: 70px;
+  height: 70px; */
+  vertical-align: bottom;
+  user-select: none;
+}
+.text {
+  text-align: center;
+  color: #f3f3f3;
+  /* color: #4b4e4f; */
+  font-size: 1.05rem;
+  font-weight: 500;
+  user-select: none;
+}
+.link {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  background-color: #93ee1c;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 10px;
+  /* width: 170px; */
+  border: 2px solid transparent;
+  border-color: #7ed808;
+  border-radius: 5px;
+  text-decoration: none;
+  user-select: none;
+  transition: all 0.3s;
+}
+.link:hover {
+  background-color: #7ed808;
+  transition: all 0.3s;
+}
+/* .link:focus {
+  box-shadow: 0 0 0 4px #7ed80899;
+  transition: all 0.3s;
+} */
+.link .arrow {
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s;
+}
+.link .arrow::after {
+  content: " ➜";
+  /* display: inline-block; */
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.link:hover .arrow {
+  padding-right: 20px;
+  transition: all 0.3s;
+}
+.link:hover .arrow::after {
+  opacity: 1;
+  right: 0;
+  transition: all 0.3s;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-30 {
+  font-size: 30px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
