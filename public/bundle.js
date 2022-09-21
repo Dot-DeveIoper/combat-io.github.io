@@ -8,6 +8,42 @@
 
 const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+const togglePassword1 = document.querySelector(".togglePassword1");
+const password1 = document.querySelector(".password1");
+
+const togglePassword2 = document.querySelector(".togglePassword2");
+const password2 = document.querySelector(".password2");
+
+togglePassword1.addEventListener("click", function () {
+  // toggle the type attribute
+  const type = password1.getAttribute("type") === "password" ? "text": "password";
+  password1.setAttribute("type", type);
+
+  // toggle the icon
+  this.classList.toggle("bi-eye");
+});
+
+togglePassword2.addEventListener("click", function () {
+  // toggle the type attribute
+  const type = password2.getAttribute("type") === "password" ? "text": "password";
+  password2.setAttribute("type", type);
+
+  // toggle the icon
+  this.classList.toggle("bi-eye");
+});
+
+// prevent form1 from submit
+const form1 = document.querySelector(".form1");
+form1.addEventListener('submit', function (e) {
+  e.preventDefault();
+});
+
+// prevent form2 from submit
+const form2 = document.querySelector(".form2");
+form2.addEventListener('submit', function (e) {
+  e.preventDefault();
+});
+
 (function (e) {
   let audio1 = new Audio(
     `https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818`

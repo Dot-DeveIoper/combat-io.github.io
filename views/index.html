@@ -55,6 +55,7 @@
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet"
   />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 <body>
   <canvas id="gameCanvas"></canvas>
@@ -583,62 +584,68 @@
             </div>
           </div>
           <div id="loginCard">
-            <label class="textLabel" for="username"
-              ><b>Enter Username:</b></label
-            >
-            <input
-            class="inputLabel1"
-            type="text"
-            placeholder=""
-            name="username"
-            required
-            />
-            <br class="hiddenFromMobile" /><br
-            class="hiddenFromMobile"
-            /><label class="textLabel" for="psw"
-              ><b>Enter Password:</b></label
-            >
-            <input
-            class="inputLabel1"
-            type="password"
-            placeholder=""
-            name="psw"
-            required
-            />
-            <br /><button class="buttonLabel1" type="submit">Login</button>
-            <br /><br />
-            <div class="checkboxLabel">
-              <label class="checkbox">
-                <input type="checkbox" />
-                <span class="indicator"></span>
-                Remember Me
-              </label>
-            </div>
+            <form method="post" action="/" class="form1">
+              <label class="textLabel" for="username"
+                ><b>Enter Username:</b></label
+              >
+              <input
+              class="inputLabel1"
+              type="text"
+              placeholder=""
+              name="username"
+              required
+              />
+              <br class="hiddenFromMobile" /><br
+              class="hiddenFromMobile"
+              /><label class="textLabel" for="psw"
+                ><b>Enter Password:</b></label
+              >
+              <input
+              class="inputLabel1 password1"
+              type="password"
+              placeholder=""
+              name="psw"
+              required
+              />
+              <i class="bi bi-eye-slash togglePassword1"></i>
+              <br /><button class="buttonLabel1" type="submit">Login</button>
+              <br /><br />
+              <div class="checkboxLabel">
+                <label class="checkbox">
+                  <input type="checkbox" />
+                  <span class="indicator"></span>
+                  Remember Me
+                </label>
+              </div>
+            </form>
           </div>
           <div id="registerCard">
-            <label class="textLabel" for="username"
-              ><b>Enter Username:</b></label
-            >
-            <input
-            class="inputLabel2"
-            type="text"
-            placeholder=""
-            name="username"
-            required
-            />
-            <br class="hiddenFromMobile" /><br
-            class="hiddenFromMobile"
-            /><label class="textLabel" for="psw"
-              ><b>Enter Password:</b></label
-            >
-            <input
-            class="inputLabel2"
-            type="password"
-            placeholder=""
-            name="psw"
-            required
-            />
-            <br /><button class="buttonLabel2" type="submit">Register</button>
+            <form method="post" action="/" class="form2">
+              <label class="textLabel" for="username"
+                ><b>Enter Username:</b></label
+              >
+              <input
+              class="inputLabel2"
+              type="text"
+              placeholder=""
+              name="username"
+              required
+              />
+              <br class="hiddenFromMobile" /><br
+              class="hiddenFromMobile"
+              /><label class="textLabel" for="psw"
+                ><b>Enter Password:</b></label
+              >
+              <input
+              class="inputLabel2 password2"
+              type="password"
+              placeholder=""
+              name="psw"
+              required
+              />
+              <i class="bi bi-eye-slash togglePassword2"></i>
+              <br /><button class="buttonLabel2" type="submit">Register</button>
+            </form>
           </div>
         </div>
       </div>

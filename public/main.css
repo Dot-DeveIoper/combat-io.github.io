@@ -188,6 +188,7 @@ body {
     display: block;
     position: absolute;
     background-color: #333333;
+    /* border-bottom: 2px solid #4286F4; */
     clear: both;
     width: 100%;
     height: inherit;

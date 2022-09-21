@@ -11,13 +11,13 @@ navbar.onclick = function (e) {
     // icon.style.fontWeight = "800";
     topMenu.style.maxHeight = "262px";
     // topMenu.style.maxHeight = "295px";
-  } else if (document.getElementById("icon").innerHTML === "close") {
+  } else if (document.getElementById("icon").innerHTML === "close" && topMenu.style.maxHeight === "262px") {
     document.getElementById("icon").innerHTML = "menu";
     icon.style.marginTop = "11px";
     // icon.style.marginLeft = "-0.5px";
     icon.style.fontSize = "2.5rem";
     topMenu.style.maxHeight = "64px";
-  } else if (document.getElementById("icon").innerHTML === "menu") {
+  } else if (document.getElementById("icon").innerHTML === "menu" && topMenu.style.maxHeight === "64px") {
     document.getElementById("icon").innerHTML = "close";
     icon.style.marginTop = "11.5px";
     // icon.style.marginLeft = "-1.2px";
