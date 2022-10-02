@@ -138,7 +138,8 @@
 
   <div class="centeredBottom">
     <div class="bottomPage">
-      <a class="link" onclick="history.go(-1); return false;">
+      <!-- onclick="history.go(-1); return false;" -->
+      <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://combat-io.glitch.me/'; }" id="backButton">
         <div class="">
           Go back to game <span class="arrow material-icons md-24"></span>
         </div>
