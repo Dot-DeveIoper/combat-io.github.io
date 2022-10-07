@@ -11,16 +11,14 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "ws": "^7.4.5",
-    "@msgpack/msgpack": "^2.7.2",
-    "node-fetch": "^2.6.1",
+    "express": "^4.18.1",
+    "ws": "^8.9.0",
+    "@msgpack/msgpack": "^2.8.0",
+    "node-fetch": "^3.2.10",
     "fs": "^0.0.2",
-    "body-parser": "^1.19.0",
-    "sqlite3": "^5.0.2",
-    "cookie-parser": "^1.4.5",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "body-parser": "^1.20.1",
+    "sqlite3": "^5.1.2",
+    "cookie-parser": "^1.4.6"
   },
   "engines": {
     "node": "16.x"
