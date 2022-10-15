@@ -5,56 +5,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-  name="viewport"
-  content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-  />
+  <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#1d9300" />
-  <meta
-  name="keywords"
-  content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival"
-  />
-  <meta
-  name="description"
-  content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboard!"
-  />
+  <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" />
+  <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboard!" />
   <!-- <meta name="robots" content="index, follow"> -->
   <!-- <meta name="googlebot" content="index, follow"> -->
   <!-- <meta name="revisit-after" content="14 days"> -->
   <title>ComBat.io - The new .IO Game!</title>
-  <meta
-  property="og:image"
-  content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707"
-  />
-  <link
-  id="favicon"
-  rel="icon"
-  href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646"
-  type="image/x-icon"
-  />
+  <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" />
+  <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
-  <script
-    src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"
-    defer
-    ></script>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  <link
-  rel="stylesheet"
-  href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css"
-  />
+  <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-  href="https://fonts.googleapis.com/css2?family=Hammersmith+One"
-  rel="stylesheet"
-  />
-  <link
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 <body>
@@ -64,7 +32,7 @@
 
   <div class="errorContainer" id="close">
     <span class="errorText">Error: This account is not available</span>
-    <i class="close" id="closeIcon"> &times; </i>
+    <i class="close" id="closeIcon">&times;</i>
   </div>
 
   <div class="deathContainer">
@@ -94,14 +62,10 @@
     </div>
     <!-- KILLS COUNTER -->
     <div class="killDisplay" id="">
-      <!-- <br> -->
+      <!-- <br /> -->
       <div class="playersKilled">
-        <span class="killCounter" id="kills"> 0 </span>
-        <img
-        src="https://media.discordapp.net/attachments/833392447161237504/1002007556555808808/1658967594806.webp"
-        alt=""
-        class="skullImg"
-        />
+        <span class="killCounter" id="kills">0</span>
+        <img src="https://media.discordapp.net/attachments/833392447161237504/1002007556555808808/1658967594806.webp" alt="" class="skullImg" />
       </div>
     </div>
     <div class="playerContainter">
@@ -109,10 +73,10 @@
         Player Name
       </div>
       <a id="playerAcceptBtn">
-        <span class="acceptIcon material-icons md-30"> &#xE5CA; </span>
+        <span class="acceptIcon material-icons md-30">&#xE5CA;</span>
       </a>
       <a id="playerDeclineBtn">
-        <span class="declineIcon material-icons md-30"> &#xE5CD; </span>
+        <span class="declineIcon material-icons md-30">&#xE5CD;</span>
       </a>
     </div>
   </div>
@@ -120,10 +84,10 @@
   <div class="itemShopContainer" id="toggleShop">
     <div class="sectionContainer">
       <div class="sectionBtn1" id="itemsSection">
-        <a class="sectionTitle"> Hats </a>
+        <a class="sectionTitle">Hats</a>
       </div>
       <div class="sectionBtn2" id="powerupsSection">
-        <a class="sectionTitle"> Accessories </a>
+        <a class="sectionTitle">Accessories</a>
       </div>
     </div>
     <div class="itemShopSection" id="itemsShop">
@@ -178,15 +142,9 @@
       </div>
     </div>
     <div class="teamSectionContainer">
-      <input
-      class="sectionInput"
-      id="clanInput"
-      type="text"
-      maxlength="7"
-      placeholder="Clan Name"
-      />
+      <input class="sectionInput" id="clanInput" type="text" maxlength="7" placeholder="Clan Name" />
       <div class="sectionBtn2" id="createClanSection">
-        <a class="sectionTitle"> Create </a>
+        <a class="sectionTitle">Create</a>
       </div>
     </div>
     <div class="memberSection" id="membersSection">
@@ -201,10 +159,10 @@
     </div>
     <div class="teamSectionContainer">
       <div class="sectionBtn1" id="viewClanChatSection">
-        <a class="sectionTitle"> View Chat Log </a>
+        <a class="sectionTitle">View Chat Log</a>
       </div>
       <div class="sectionBtn2" id="leaveClanSection">
-        <a class="sectionTitle"> Leave </a>
+        <a class="sectionTitle">Leave</a>
       </div>
     </div>
   </div>
@@ -213,52 +171,32 @@
   <div class="resourcesAndMapDisplay" id="resourcesAndMap">
     <br />
     <div class="resources">
-      <span class="resourcesCounter" id="ruby"> 0 </span>
-      <img
-      src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539"
-      alt=""
-      class="resourcesImg"
-      />
+      <span class="resourcesCounter" id="ruby">0</span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/RUBY.png?v=1658978333539" alt="" class="resourcesImg" />
     </div>
 
     <br />
     <div class="resources">
-      <span class="resourcesCounter" id="gold"> 0 </span>
-      <img
-      src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405"
-      alt=""
-      class="resourcesImg"
-      />
+      <span class="resourcesCounter" id="gold">0</span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Gold.png?v=1658847400405" alt="" class="resourcesImg" />
     </div>
 
     <br />
     <div class="resources">
-      <span class="resourcesCounter" id="stone"> 0 </span>
-      <img
-      src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574"
-      alt=""
-      class="resourcesImg"
-      />
+      <span class="resourcesCounter" id="stone">0</span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Stone.png?v=1658803298574" alt="" class="resourcesImg" />
     </div>
 
     <br />
     <div class="resources">
-      <span class="resourcesCounter" id="tree"> 0 </span>
-      <img
-      src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978"
-      alt=""
-      class="resourcesImg"
-      />
+      <span class="resourcesCounter" id="tree">0</span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Tree.png?v=1657488613978" alt="" class="resourcesImg" />
     </div>
 
     <br />
     <div class="resources">
-      <span class="resourcesCounter" id="bush"> 0 </span>
-      <img
-      src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614"
-      alt=""
-      class="resourcesImg"
-      />
+      <span class="resourcesCounter" id="bush">0</span>
+      <img src="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Bush.png?v=1657678351614" alt="" class="resourcesImg" />
     </div>
 
     <br />
@@ -296,13 +234,7 @@
 
   <div id="interface">
     <div id="ageLevelItems">
-      <div
-        id="age-item-0"
-        class="ageLevelItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761');
-        "
-        ></div>
+      <div id="age-item-0" class="ageLevelItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761');"></div>
       <div class="ageItemSelectText">
         Select Items
         <div class="ageItemSelectCounter" id="ageItemSelectCounter">
@@ -322,66 +254,19 @@
       </div>
     </div>
     <div id="hotbar">
-      <div
-        id="h-item-0"
-        class="hotbarItem"
-        style="
-        background-image: url('https://media.discordapp.net/attachments/974248776082542602/979260357040279562/unknown.png?width=500&height=500');
-        "
-        ></div>
-      <div
-        id="h-item-1"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358');
-        "
-        ></div>
-      <div
-        id="h-item-2"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547');
-        "
-        ></div>
-      <div
-        id="h-item-3"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447');
-        "
-        ></div>
-      <div
-        id="h-item-4"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508');
-        "
-        ></div>
-      <div
-        id="h-item-5"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254');
-        "
-        ></div>
-      <div
-        id="h-item-6"
-        class="hotbarItem"
-        style="
-        background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708');
-        "
-        ></div>
+      <div id="h-item-0" class="hotbarItem" style="background-image: url('https://media.discordapp.net/attachments/974248776082542602/979260357040279562/unknown.png?width=500&height=500');"></div>
+      <div id="h-item-1" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Orange.png?v=1657474721358');"></div>
+      <div id="h-item-2" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Spike.png?v=1660858039547');"></div>
+      <div id="h-item-3" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/WoodWall.png?v=1660858007447');"></div>
+      <div id="h-item-4" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/BoostPad.png?v=1660927567508');"></div>
+      <div id="h-item-5" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/PitTrap.png?v=1660869010254');"></div>
+      <div id="h-item-6" class="hotbarItem" style="background-image: url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/TeleportPad.gif?v=1661022375708');"></div>
       <div id="h-item-7" class="hotbarItem"></div>
       <div id="h-item-8" class="hotbarItem"></div>
       <div id="h-item-9" class="hotbarItem"></div>
       <div id="h-item-10" class="hotbarItem"></div>
     </div>
-    <input
-    id="chatbox"
-    type="text"
-    maxlength="30"
-    placeholder="Enter Message"
-    />
+    <input id="chatbox" type="text" maxlength="30" placeholder="Enter Message" />
   </div>
   <!-- <div id="mainMenu" style="display: none;"> -->
   <!-- <div id="container"> -->
@@ -391,7 +276,7 @@
   <!-- </div> -->
   <!-- </div> -->
   <!-- <div id="game"> -->
-  <!-- <br>-->
+  <!-- <br /> -->
   <!-- <input type="text" id="nameInput" placeholder="Enter Your Name" maxlength="15" /> -->
   <!-- <button id="enterGame">Play Game</button> -->
   <!-- </div> -->
@@ -419,28 +304,13 @@
         <!-- </div> -->
         <div style="display: inline-block">
           <div class="menuCard" id="setupCard">
-            <input
-            type="text"
-            id="nameInput"
-            placeholder="Enter Name"
-            maxlength="15"
-            />
+            <input type="text" id="nameInput" placeholder="Enter Name" maxlength="15" />
             <div id="enterGame" class="menuButton">
               <span>Enter Game</span>
             </div>
             <div id="mobileDownloadButtonContainer">
-              <a
-                class="downloadBadge"
-                href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&amp;mt=8"
-                target="_blank"
-                ><img src="./img/badges/ios.svg"
-                /></a>
-              <a
-                class="downloadBadge"
-                href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile"
-                target="_blank"
-                ><img src="./img/badges/android.png"
-                /></a>
+              <a class="downloadBadge" href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&amp;mt=8" target="_blank"><img src="./img/badges/ios.svg" /></a>
+              <a class="downloadBadge" href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile" target="_blank"><img src="./img/badges/android.png" /></a>
             </div>
           </div>
           <div id="promoImgHolder" class="menuCard">
@@ -453,12 +323,7 @@
               Gamemodes
             </div>
             <div class="gamemodes">
-              <a
-                href="https://combat-io.glitch.me/"
-                class="gamemodesLink"
-                id="normalMode"
-                >Normal</a
-              >
+              <a href="https://combat-io.glitch.me/" class="gamemodesLink" id="normalMode">Normal</a>
               <span class="separator-dot"></span>
               <a href="#" class="gamemodesLink" id="sandboxMode">Sandbox</a>
               <span class="separator-dot"></span>
@@ -495,46 +360,14 @@
               Select Skin
             </div>
             <div class="skins-list" style="text-align: left">
-              <div
-                class="skin color-tan"
-                onclick="selectSkinColor(0)"
-                id="skin1"
-                ></div>
-              <div
-                class="skin color-brown"
-                onclick="selectSkinColor(1)"
-                id="skin2"
-                ></div>
-              <div
-                class="skin color-white"
-                onclick="selectSkinColor(2)"
-                id="skin3"
-                ></div>
-              <div
-                class="skin color-black"
-                onclick="selectSkinColor(3)"
-                id="skin4"
-                ></div>
-              <div
-                class="skin color-carnation-pink"
-                onclick="selectSkinColor(4)"
-                id="skin5"
-                ></div>
-              <div
-                class="skin color-emerald-green"
-                onclick="selectSkinColor(5)"
-                id="skin6"
-                ></div>
-              <div
-                class="skin color-witch-haze"
-                onclick="selectSkinColor(6)"
-                id="skin7"
-                ></div>
-              <div
-                class="skin color-malibu"
-                onclick="selectSkinColor(7)"
-                id="skin8"
-                ></div>
+              <div class="skin color-tan" onclick="selectSkinColor(0)" id="skin1"></div>
+              <div class="skin color-brown" onclick="selectSkinColor(1)" id="skin2"></div>
+              <div class="skin color-white" onclick="selectSkinColor(2)" id="skin3"></div>
+              <div class="skin color-black" onclick="selectSkinColor(3)" id="skin4"></div>
+              <div class="skin color-carnation-pink" onclick="selectSkinColor(4)" id="skin5"></div>
+              <div class="skin color-emerald-green" onclick="selectSkinColor(5)" id="skin6"></div>
+              <div class="skin color-witch-haze" onclick="selectSkinColor(6)" id="skin7"></div>
+              <div class="skin color-malibu" onclick="selectSkinColor(7)" id="skin8"></div>
             </div>
             <div class="menuHeader">
               Audio &amp; Utilities
@@ -545,7 +378,7 @@
                 <span class="indicator"></span>
                 Mute Music
               </label>
-              <!-- <br> --><label class="checkbox">
+              <!-- <br /> --><label class="checkbox">
                 <input type="checkbox" id="" />
                 <span class="indicator"></span>
                 Show Ping
@@ -558,18 +391,11 @@
               <div class="menuText">
                 <a href="/Version" target="_blank" class="menuLink">1.1.4</a>
                 <span class="vertical-line"></span>
-                <a
-                  href="https://discord.gg/BhUj2KThXJ"
-                  target="_blank"
-                  class="discordLink"
-                  >Discord</a
-                >
+                <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discordLink">Discord</a>
                 <span class="vertical-line"></span>
                 <a href="/Terms" target="_blank" class="menuLink">Terms</a>
                 <span class="vertical-line"></span>
-                <a href="/Privacy" target="_blank" class="menuLink"
-                  >Privacy</a
-                >
+                <a href="/Privacy" target="_blank" class="menuLink">Privacy</a>
               </div>
             </div>
           </div>
@@ -577,36 +403,21 @@
         <div class="accountContainer">
           <div class="accountSectionContainer" id="accountSectionContainer">
             <div class="accountSectionBtn1" id="loginSection">
-              <a class="accountSectionTitle"> Login </a>
+              <a class="accountSectionTitle">Login</a>
             </div>
             <div class="accountSectionBtn2" id="registerSection">
-              <a class="accountSectionTitle"> Register </a>
+              <a class="accountSectionTitle">Register</a>
             </div>
           </div>
           <div id="loginCard">
-            <form method="post" action="/" class="form1">
-              <label class="textLabel" for="username"
-                ><b>Enter Username:</b></label
-              >
-              <input
-              class="inputLabel1"
-              type="text"
-              placeholder=""
-              name="username"
-              required
-              />
+            <form action="/" method="post" class="form1">
+              <label class="textLabel" for="username"><b>Enter Username:</b></label>
+              <input class="inputLabel1" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
               class="hiddenFromMobile"
               /><label class="textLabel" for="psw"
-                ><b>Enter Password:</b></label
-              >
-              <input
-              class="inputLabel1 password1"
-              type="password"
-              placeholder=""
-              name="psw"
-              required
-              />
+                ><b>Enter Password:</b></label>
+              <input class="inputLabel1 password1" type="password" placeholder="" name="psw" autocomplete="current-password" required />
               <i class="bi bi-eye-slash togglePassword1"></i>
               <br /><button class="buttonLabel1" type="submit">Login</button>
               <br /><br />
@@ -620,29 +431,14 @@
             </form>
           </div>
           <div id="registerCard">
-            <form method="post" action="/" class="form2">
-              <label class="textLabel" for="username"
-                ><b>Enter Username:</b></label
-              >
-              <input
-              class="inputLabel2"
-              type="text"
-              placeholder=""
-              name="username"
-              required
-              />
+            <form action="/" method="post" class="form2">
+              <label class="textLabel" for="username"><b>Enter Username:</b></label>
+              <input class="inputLabel2" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
               class="hiddenFromMobile"
               /><label class="textLabel" for="psw"
-                ><b>Enter Password:</b></label
-              >
-              <input
-              class="inputLabel2 password2"
-              type="password"
-              placeholder=""
-              name="psw"
-              required
-              />
+                ><b>Enter Password:</b></label>
+              <input class="inputLabel2 password2" type="password" placeholder="" name="psw" required />
               <i class="bi bi-eye-slash togglePassword2"></i>
               <br /><button class="buttonLabel2" type="submit">Register</button>
             </form>
@@ -662,18 +458,13 @@
     </div>
     <div>
       <div id="YTofDayContainer">
-        <a id="YTofDay" target="blank_"> Error. </a>
+        <a id="YTofDay" target="blank_">Error.</a>
       </div>
       <!-- LINKS CONTAINERS -->
       <div id="linksContainer2" style="background-color: rgba(0, 0, 0, 0.25)">
         <a href="/Version" target="_blank" class="menuLink">1.1.4</a>
         <span class="vertical-line"></span>
-        <a
-          href="https://discord.gg/BhUj2KThXJ"
-          target="_blank"
-          class="discordLink"
-          >Discord</a
-        >
+        <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discordLink">Discord</a>
         <span class="vertical-line"></span>
         <a href="/Terms" target="_blank" class="menuLink">Terms</a>
         <span class="vertical-line"></span>

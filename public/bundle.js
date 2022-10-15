@@ -71,9 +71,7 @@ form2.addEventListener('submit', function (e) {
 
   let loginSection = document.getElementById("loginSection");
   let registerSection = document.getElementById("registerSection");
-  let accountSectionContainer = document.getElementById(
-    "accountSectionContainer"
-  );
+  let accountSectionContainer = document.getElementById("accountSectionContainer");
 
   loginSection.onclick = function (e) {
     if (loginDiv.style.display === "none") {
@@ -342,7 +340,7 @@ form2.addEventListener('submit', function (e) {
       <div class="itemsInfo1">
       <img src="${Acc[i].src}" alt="" class="itemImg" />
       <span class="itemName">${Acc[i].name}</span>
-      <br><span class="itemInfo">${Acc[i].info}</span>
+      <br /><span class="itemInfo">${Acc[i].info}</span>
       </div>
       <div class="itemsInfo2">
       <span class="itemPrice">${Acc[i].price}</span>
@@ -383,7 +381,7 @@ form2.addEventListener('submit', function (e) {
       <div class="itemsInfo1">
       <img src="${Hats[i].src}" alt="" class="itemImg" />
       <span class="itemName">${Hats[i].name}</span>
-      <br><span class="itemInfo">${Hats[i].info}</span>
+      <br /><span class="itemInfo">${Hats[i].info}</span>
       </div>
       <div class="itemsInfo2">
       <span class="itemPrice">${Hats[i].price}</span>
@@ -418,9 +416,7 @@ form2.addEventListener('submit', function (e) {
   hatMenu();
 
   for (let i = 0; i < Hats.length; i++) {
-    document
-      .getElementById("EquipGear" + i)
-      .addEventListener("mouseover", function (e) {
+    document.getElementById("EquipGear" + i).addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "block";
           document.getElementById("hatNameDetails").innerHTML = Hats[i].name;
@@ -428,9 +424,7 @@ form2.addEventListener('submit', function (e) {
         }
       });
 
-    document
-      .getElementById("EquipGear" + i)
-      .addEventListener("mouseout", function (e) {
+    document.getElementById("EquipGear" + i).addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
         }
@@ -438,9 +432,7 @@ form2.addEventListener('submit', function (e) {
   }
 
   for (let i = 0; i < Acc.length; i++) {
-    document
-      .getElementById("EquipAccessories" + i)
-      .addEventListener("mouseover", function (e) {
+    document.getElementById("EquipAccessories" + i).addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "block";
           document.getElementById("hatNameDetails").innerHTML = Acc[i].name;
@@ -448,9 +440,7 @@ form2.addEventListener('submit', function (e) {
         }
       });
 
-    document
-      .getElementById("EquipAccessories" + i)
-      .addEventListener("mouseout", function (e) {
+    document.getElementById("EquipAccessories" + i).addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           hatNameContainer.style.display = "none";
         }
@@ -571,27 +561,27 @@ form2.addEventListener('submit', function (e) {
   setInterval(() => {
     window.console = {
       log: function (e) {
-        send(["vx", ["unfair advantage"]]);
+        send(["vx", ["Unfair advantage"]]);
       },
       info: function (e) {
-        send(["vx", ["unfair advantage"]]);
+        send(["vx", ["Unfair advantage"]]);
       },
       warn: function (e) {
-        send(["vx", ["unfair advantage"]]);
+        send(["vx", ["Unfair advantage"]]);
       },
       error: function (e) {
-        send(["vx", ["unfair advantage"]]);
+        send(["vx", ["Unfair advantage"]]);
       },
     };
     if (!isFuncNative(WebSocket.prototype.send) && ws) {
-      send(["vx", ["unfair advantage"]]);
+      send(["vx", ["Unfair advantage"]]);
     }
     document.getElementById("teamContainer").innerHTML = "";
     if (clans.length != 0) {
       for (let i = 0; i < clans.length; i++) {
         document.getElementById(
           "teamContainer"
-        ).innerHTML += `<div class="teamInfo"><div class="teamName">${clans[i].clanName}</div> <a clan="${i}" id="joinClan${i}" class="joinTeamBtn">Join</a></div><br><br>`;
+        ).innerHTML += `<div class="teamInfo"><div class="teamName">${clans[i].clanName}</div> <a clan="${i}" id="joinClan${i}" class="joinTeamBtn">Join</a></div><br /><br />`;
       }
     } else {
       document.getElementById(
@@ -607,7 +597,7 @@ form2.addEventListener('submit', function (e) {
             "memberContainer"
           ).innerHTML += `<div class="membersInfo"><div class="memberName">${
             clansMem[myPlayer.clanID].clanMembers[i].name
-          }</div> <a class="kickMemberBtn">Kick</a></div><br><br>`;
+          }</div> <a class="kickMemberBtn">Kick</a></div><br /><br />`;
         }
       }
     } else {
@@ -616,9 +606,7 @@ form2.addEventListener('submit', function (e) {
       ).innerHTML += `<div class="teamsText" id="">There are no clans yet!</div>`;
     }
     for (let i = 0; i < clans.length; i++) {
-      document
-        .getElementById("joinClan" + i)
-        .addEventListener("click", function (e) {
+      document.getElementById("joinClan" + i).addEventListener("click", function (e) {
           send(["joinClan", [e.clan]]);
         });
     }
@@ -721,9 +709,7 @@ form2.addEventListener('submit', function (e) {
       }
     }
     document.getElementById("loadingText").style.display = "block";
-    document.getElementById("loadingText").innerHTML =
-      msg +
-      "<a href='javascript:window.location.href=window.location.href' class='reload'>reload</a>";
+    document.getElementById("loadingText").innerHTML = msg + "<a href='javascript:window.location.href=window.location.href' class='reload'>Reload</a>";
   }
   var nausea = false;
   var attacking = false;
@@ -741,35 +727,25 @@ form2.addEventListener('submit', function (e) {
 
   for (let i = 0; i < 11; i++) {
     document.getElementById("h-item-" + i).style.display = "none";
-    document
-      .getElementById("h-item-" + i)
-      .addEventListener("click", function (e) {
+    document.getElementById("h-item-" + i).addEventListener("click", function (e) {
         if (e.isTrusted) {
           send(["s", [inventory[i + 1]]]);
         }
       });
-    document
-      .getElementById("h-item-" + i)
-      .addEventListener("mouseover", function (e) {
+    document.getElementById("h-item-" + i).addEventListener("mouseover", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "block";
-          document.getElementById("itemNameDetails").innerHTML =
-            Weapons[i].name;
+          document.getElementById("itemNameDetails").innerHTML = Weapons[i].name;
           document.getElementById("itemDetails").innerHTML = Weapons[i].info;
           document.getElementById("Stone").innerHTML = Weapons[i].stone;
           document.getElementById("Wood").innerHTML = Weapons[i].wood;
           document.getElementById("Food").innerHTML = Weapons[i].food;
-          document.getElementById("stoneReqDisplay").style.display =
-            Weapons[i].stone === 0 ? "none" : "block";
-          document.getElementById("woodReqDisplay").style.display =
-            Weapons[i].wood === 0 ? "none" : "block";
-          document.getElementById("foodReqDisplay").style.display =
-            Weapons[i].food === 0 ? "none" : "block";
+          document.getElementById("stoneReqDisplay").style.display = Weapons[i].stone === 0 ? "none" : "block";
+          document.getElementById("woodReqDisplay").style.display = Weapons[i].wood === 0 ? "none" : "block";
+          document.getElementById("foodReqDisplay").style.display = Weapons[i].food === 0 ? "none" : "block";
         }
       });
-    document
-      .getElementById("h-item-" + i)
-      .addEventListener("mouseout", function (e) {
+    document.getElementById("h-item-" + i).addEventListener("mouseout", function (e) {
         if (e.isTrusted) {
           itemDetailsContainer.style.display = "none";
         }
@@ -1079,7 +1055,7 @@ form2.addEventListener('submit', function (e) {
       name: "wood2",
       id: 1,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowTree.png?v=1657490800792",
-      //Snow tree
+      //snow tree
       img: new Image(),
       xOffset: -158,
       yOffset: -160,
@@ -1099,7 +1075,7 @@ form2.addEventListener('submit', function (e) {
       name: "food2",
       id: 3,
       src: "https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/SnowBush.png?v=1657732632884",
-      //snow Bush
+      //snow bush
       img: new Image(),
       xOffset: -60,
       yOffset: -63,
@@ -1312,7 +1288,7 @@ form2.addEventListener('submit', function (e) {
   ageBar.style.display = "none";
   document.getElementById("loadingText").style.display = "block";
 
-  // update the nameInput
+  // Updates nameInput
   setTimeout(() => {
     if (!["ComBat.io", undefined].includes(localStorage.name))
       document.querySelector("#nameInput").value = localStorage.name;
@@ -1436,7 +1412,7 @@ form2.addEventListener('submit', function (e) {
     if (img) {
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(rot); // need to make the "rot" be the same angle of player, this would prob be done in server.js tho
+      ctx.rotate(rot); // Need to make the "rot" be the same angle of player, this would probably be done in server.js tho
       ctx.drawImage(img, ob.xOffset, ob.yOffset, ob.scale, ob.scale);
       ctx.restore();
     }
@@ -1549,7 +1525,7 @@ form2.addEventListener('submit', function (e) {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = prevStyle;
     }
-    // molten biome Og color : c34d32
+    // old molten biome color: #c34d32
     // sand biome 2
     var lastStyle1 = ctx.fillStyle;
     ctx.fillStyle = "#d9a652"; //"#c3ab32";
@@ -1561,7 +1537,7 @@ form2.addEventListener('submit', function (e) {
     );
     ctx.fillStyle = lastStyle1;
 
-    /// snow
+    // snow
     var lastStyle3 = ctx.fillStyle;
     ctx.fillStyle = "#e6e6e6"; //"#f5f5f5";
     ctx.fillRect(
@@ -1620,7 +1596,7 @@ form2.addEventListener('submit', function (e) {
       ctx.globalAlpha = lastGlobalAlpha;
     });
 
-    ctx.strokeStyle = "rgb(0, 0, 0, 0.1)"; //"rgb(105,105,105, 0.2)";
+    ctx.strokeStyle = "rgb(0, 0, 0, 0.1)"; //"rgb(105, 105, 105, 0.2)";
 
     for (var x = canvas.width / 2 - myPlayer.x - 1000; x < mapSize; x += 50) {
       ctx.moveTo(x, 0);
@@ -1830,7 +1806,7 @@ form2.addEventListener('submit', function (e) {
         "</div><div style='float: right; color: gold;'>" +
         gold(0) +
         "</div>" +
-        "<br>";
+        "<br />";
     }
     if (leaderboard[1]) {
       document.getElementById("players").innerHTML +=
@@ -1840,7 +1816,7 @@ form2.addEventListener('submit', function (e) {
         "</div><div style='float: right; color: gold;'>" +
         gold(1) +
         "</div>" +
-        "<br>";
+        "<br />";
     }
     if (leaderboard[2]) {
       document.getElementById("players").innerHTML +=
@@ -1850,7 +1826,7 @@ form2.addEventListener('submit', function (e) {
         "</div><div style='float: right; color: gold;'>" +
         gold(2) +
         "</div>" +
-        "<br>";
+        "<br />";
     }
     if (leaderboard[3]) {
       document.getElementById("players").innerHTML +=
@@ -1860,7 +1836,7 @@ form2.addEventListener('submit', function (e) {
         "</div><div style='float: right; color: gold;'>" +
         gold(3) +
         "</div>" +
-        "<br>";
+        "<br />";
     }
     if (leaderboard[4]) {
       document.getElementById("players").innerHTML +=
@@ -1870,7 +1846,7 @@ form2.addEventListener('submit', function (e) {
         "</div><div style='float: right; color: gold;'>" +
         gold(4) +
         "</div>" +
-        "<br>";
+        "<br />";
     }
     if (leaderboard[5]) {
       let i = 0;
@@ -1879,7 +1855,7 @@ form2.addEventListener('submit', function (e) {
       });
       i = i - 5;
       document.getElementById("players").innerHTML +=
-        "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br>";
+        "<div style='float: left;'>" + "And " + ~~i + " more..." + "</div><br />";
     }
 
     // minimap
@@ -1935,29 +1911,19 @@ form2.addEventListener('submit', function (e) {
     if (myPlayer.resources) {
       document.getElementById("ruby").innerHTML = myPlayer.resources[
         trees[6].name
-      ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      ].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("gold").innerHTML = myPlayer.resources[
         trees[5].name
-      ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      ].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("stone").innerHTML = myPlayer.resources[
         trees[4].name
-      ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      ].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("bush").innerHTML = myPlayer.resources[
         trees[2].name
-      ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      ].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       document.getElementById("tree").innerHTML = myPlayer.resources[
         trees[0].name
-      ]
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      ].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     if (ageLevelBar.style.width === "100%") {
       ageItemSelectCounter.innerHTML = `(${myPlayer.age})`;
@@ -1970,9 +1936,7 @@ form2.addEventListener('submit', function (e) {
 
     function upgradeMenu() {
       ageLevelItems.style.display = "block";
-      document
-        .getElementById("age-item-0")
-        .addEventListener("click", function (e) {
+      document.getElementById("age-item-0").addEventListener("click", function (e) {
           send([
             "Ug",
             [
@@ -1982,8 +1946,7 @@ form2.addEventListener('submit', function (e) {
             ],
           ]);
           ageLevelItems.style.display = "none";
-          document.getElementById("h-item-0").style.backgroundImage =
-            "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761')";
+          document.getElementById("h-item-0").style.backgroundImage = "url('https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Short_Sword_2%5B1%5D.png?v=1661730319761')";
         });
     }
 
@@ -2033,8 +1996,7 @@ form2.addEventListener('submit', function (e) {
             inventory = msg[1][0];
             msg[1][0].forEach((w) => {
               if (w != 7) {
-                document.getElementById("h-item-" + w).style.display =
-                  "inline-block";
+                document.getElementById("h-item-" + w).style.display = "inline-block";
               }
             });
           case "33":
@@ -2392,7 +2354,7 @@ form2.addEventListener('submit', function (e) {
     //   `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
     // ).catch((err) => {
     //   if (err.toString().includes("TypeError: Failed to fetch")) {
-    //     send(["vx", ["Using ad block."]]);
+    //     send(["vx", ["Using ad blocker."]]);
     //   }
     // });
 
