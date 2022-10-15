@@ -1,4 +1,4 @@
-/* this file is loaded by index.html and styles the page */
+/* This file is loaded by index.html and styles the page */
 
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One");
 
@@ -852,7 +852,7 @@ select:focus {
 .togglePassword1 {
   display: inline-block;
   position: absolute;
-  bottom: 150px;
+  bottom: 196px;
   right: 35px;
   cursor: pointer;
   user-select: none;
@@ -909,7 +909,7 @@ select:focus {
 .togglePassword2 {
   display: inline-block;
   position: absolute;
-  bottom: 120px;
+  bottom: 196px;
   right: 35px;
   cursor: pointer;
   user-select: none;
@@ -974,6 +974,12 @@ select:focus {
     width: 100%;
     /* width: 245px; */
   }
+  .togglePassword1 {
+    display: inline-block;
+    position: absolute;
+    bottom: 150px;
+    right: 35px;
+  }
   .buttonLabel1 {
     width: 245px;
     margin-top: 5px;
@@ -981,6 +987,12 @@ select:focus {
   .inputLabel2 {
     width: 100%;
     /* width: 245px; */
+  }
+  .togglePassword2 {
+    display: inline-block;
+    position: absolute;
+    bottom: 120px;
+    right: 35px;
   }
   .buttonLabel2 {
     width: 245px;
