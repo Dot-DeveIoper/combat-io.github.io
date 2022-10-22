@@ -37,8 +37,8 @@
     t.sendFile("/app/public/privacy.txt");
   });
   
-  app.use("/leaderboard", function (e, t) {
-    t.sendFile("/app/views/leaderboard.html");
+  app.use("/leaderboards", function (e, t) {
+    t.sendFile("/app/views/leaderboards.html");
   });
   
   app.use("/Terms", function (e, t) {
@@ -55,7 +55,7 @@
     var pi = Math.PI;
     return radians * (180 / pi);
   }
-  var leaderboard = [];
+  var leaderboards = [];
   var clans = [];
   var members = [];
   var ids = 0;
@@ -591,7 +591,7 @@
       let player = client.player;
       if (player) {
         var formattedLeaderboard = [];
-        leaderboard.forEach((player) => {
+        leaderboards.forEach((player) => {
           formattedLeaderboard.push({
             name: player.name,
             sid: player.sid,
@@ -1061,7 +1061,7 @@
         }
       }
     });
-    leaderboard = players
+    leaderboards = players
       .sort((a, b) => b.resources.gold - a.resources.gold)
       .filter((x) => x.spawned)
       .slice(0, 10);
@@ -1256,7 +1256,7 @@
                 .replaceAll(/\s/g, "");
               if (!isNaN(siid)) {
                 var playerInfo = [];
-                leaderboard.forEach((player) => {
+                leaderboards.forEach((player) => {
                   playerInfo.push({
                     sid: player.sid,
                     ip: player.ip,
@@ -1318,7 +1318,7 @@
                 .replace("/tp sid:", "")
                 .replaceAll(/\s/g, "");
               var playerInfo = [];
-              leaderboard.forEach((player) => {
+              leaderboards.forEach((player) => {
                 playerInfo.push({
                   sid: player.sid,
                   x: player.x,
