@@ -36,7 +36,11 @@
   app.use("/Privacy", function (e, t) {
     t.sendFile("/app/public/privacy.txt");
   });
-
+  
+  app.use("/leaderboard", function (e, t) {
+    t.sendFile("/app/views/leaderboard.html");
+  });
+  
   app.use("/Terms", function (e, t) {
     t.sendFile("/app/public/terms.txt");
   });
