@@ -1577,20 +1577,21 @@
     }, 10000);
             fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                f = Object.assign(u, [{
+                    p = JSON.stringify(u.filter(t => t.PlayerName != socket.player.name)) + "," || ''.slice(1, -1),
+                    f = Object.assign({}, [{
                       PlayerName: socket.player.name,
                       PlayerGold: socket.player.resources.gold,
                     }]);
-                fetch("https://combat-io.glitch.me/" + process.env.H).then((t) => t.text()).then((h) => {
+                console.log(p);
+                fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
                     let k = JSON.stringify(f),
-                        o = JSON.stringify(JSON.parse(`[${(u.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
-                            console.log(o);
-                  // fs.writeFile("." + process.env.H, o, (k) => {
-                    //     if (k) throw k;
-                    // });
-            }).catch(function(s) {
-                console.warn("Error: ", s);
-            });
+                        o = JSON.stringify(JSON.parse(`[${(p.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
+                    fs.writeFile("." + process.env.H, o, (k) => {
+                        if (k) throw k;
+                    });
+                }).catch(function(h) {
+                    console.warn("Error: ", h);
+                });
         });
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
