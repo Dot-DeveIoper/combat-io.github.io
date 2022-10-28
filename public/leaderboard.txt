@@ -1,8 +1,11 @@
 
   {
-    "ip": "0",
-    "visits": 1,
-    "date": "10/9/2022, 9:53:57 AM",
-    "location": "United States",
-    "vpn": false
+    "PlayerName": "0",
+    "PlayerGold": "0"
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
   },
