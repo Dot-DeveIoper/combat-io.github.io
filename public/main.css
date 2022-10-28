@@ -412,8 +412,6 @@ body {
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-}
-.leaderboardsPage {
   counter-reset: rank;
 }
 .leaderboardsPage i {
