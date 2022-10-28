@@ -1577,17 +1577,17 @@
     }, 10000);
             fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                hasid = Object.assign({}, {
+                f = Object.assign(u, [{
                       PlayerName: socket.player.name,
                       PlayerGold: socket.player.resources.gold,
-                    });
-                console.log(h, hasid)
+                    }]);
                 fetch("https://combat-io.glitch.me/" + process.env.H).then((t) => t.text()).then((h) => {
-                    let k = JSON.stringify(u),
+                    let k = JSON.stringify(f),
                         o = JSON.stringify(JSON.parse(`[${(u.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
-                    fs.writeFile("." + process.env.H, o, (k) => {
-                        if (k) throw k;
-                    });
+                            console.log(o);
+                  // fs.writeFile("." + process.env.H, o, (k) => {
+                    //     if (k) throw k;
+                    // });
             }).catch(function(s) {
                 console.warn("Error: ", s);
             });
