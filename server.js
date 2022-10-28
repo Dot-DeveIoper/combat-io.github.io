@@ -1570,6 +1570,7 @@
             }
           }
         });
+      console.log(`Name: ${socket.player.name} Gold: ${socket.player.gold}`);
     }, 10000);
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
