@@ -1,7 +1,63 @@
 
   {
-    "PlayerName": "0",
-    "PlayerGold": "0"
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
   },
   {
     "PlayerGold": 100
