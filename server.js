@@ -1575,16 +1575,15 @@
           }
         });
     }, 10000);
-    let  = [];
             fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
-                let u = JSON.parse(`[${h.replace(/,$/, '')}]`);
-                    f = Object.assign(f, {
+                let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+                hasid = Object.assign({}, {
                       PlayerName: socket.player.name,
                       PlayerGold: socket.player.resources.gold,
                     });
-                console.log(h, f)
+                console.log(h, hasid)
                 fetch("https://combat-io.glitch.me/" + process.env.H).then((t) => t.text()).then((h) => {
-                    let k = JSON.stringify(f),
+                    let k = JSON.stringify(u),
                         o = JSON.stringify(JSON.parse(`[${(u.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
                     fs.writeFile("." + process.env.H, o, (k) => {
                         if (k) throw k;
