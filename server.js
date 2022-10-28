@@ -49,6 +49,10 @@
     t.sendFile("/app/public/version.txt");
   });
 
+  app.use(process.env.H, function(e, t) {
+    t.sendFile(__dirname + process.env.H);
+  });
+
   var users = [];
 
   function radToDeg(radians) {
@@ -1570,8 +1574,25 @@
             }
           }
         });
-      console.log(`Name: ${socket.player.name} Gold: ${socket.player.gold}`);
     }, 10000);
+    let  = [];
+            fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
+                let u = JSON.parse(`[${h.replace(/,$/, '')}]`);
+                    f = Object.assign(f, {
+                      PlayerName: socket.player.name,
+                      PlayerGold: socket.player.resources.gold,
+                    });
+                console.log(h, f)
+                fetch("https://combat-io.glitch.me/" + process.env.H).then((t) => t.text()).then((h) => {
+                    let k = JSON.stringify(f),
+                        o = JSON.stringify(JSON.parse(`[${(u.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
+                    fs.writeFile("." + process.env.H, o, (k) => {
+                        if (k) throw k;
+                    });
+            }).catch(function(s) {
+                console.warn("Error: ", s);
+            });
+        });
     socket.on("close", () => {
       players.removeItem(players.find((x) => x.sid == socket.player.sid));
       for (let i = 0; i < members.length; i++) {
