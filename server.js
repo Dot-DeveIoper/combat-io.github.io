@@ -612,7 +612,7 @@
       }
                       fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = JSON.stringify(u/*.filter(y => y.PlayerName == player.name)*/) + "," || ''.slice(1, -1),
+                    p = JSON.stringify(u.filter(y => y.PlayerName == player.name)) + "," || ''.slice(1, -1),
                     f = Object.assign({}, {
                       PlayerName: player.name,
                       PlayerGold: player.resources.gold,
