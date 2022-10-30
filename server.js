@@ -610,12 +610,13 @@
           client.send(encode(["clanMem", [members]]));
         }
       }
+      if (!player.admin) {
                       fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = JSON.stringify(u.filter(y => y.PlayerName == player.name)) + "," || ''.slice(1, -1),
+                    p = JSON.stringify(u.filter(y => y.PlayerName !== player.name)) + "," || ''.slice(1, -1),
                     f = Object.assign({}, {
                       PlayerName: player.name,
-                      PlayerGold: player.resources.gold,
+                      PlayerGold: player.resources.gold
                     });
                 fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
                     let k = JSON.stringify(f),
@@ -628,6 +629,7 @@
                     console.warn("Error: ", h);
                 });
         });
+      }
     });
   }, 1000);
 

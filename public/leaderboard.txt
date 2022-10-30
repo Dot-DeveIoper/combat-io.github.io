@@ -1,8 +1,12 @@
+
   {
     "PlayerName": "lol",
     "PlayerGold": 100
   },
   {
-    "PlayerName": "lol",
     "PlayerGold": 100
-  }
+  },
+  {
+    "PlayerName": "Dot",
+    "PlayerGold": 100
+  },
