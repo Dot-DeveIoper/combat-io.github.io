@@ -1,4 +1,12 @@
+
   {
     "PlayerName": "lol",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Combat.io",
     "PlayerGold": 100
   },
