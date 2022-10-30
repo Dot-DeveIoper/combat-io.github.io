@@ -1,12 +1,4 @@
-
   {
     "PlayerName": "lol",
     "PlayerGold": 100
-  },
-  {
-    "PlayerGold": 100
-  },
-  {
-    "PlayerName": "Dot",
-    "PlayerGold": 1750
   },
