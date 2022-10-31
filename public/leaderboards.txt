@@ -43,3 +43,11 @@
     "PlayerName": "KROKODIL",
     "PlayerGold": 178
   },
+  {
+    "PlayerName": "DEVKROKODIL",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "loljorge",
+    "PlayerGold": 752
+  },
