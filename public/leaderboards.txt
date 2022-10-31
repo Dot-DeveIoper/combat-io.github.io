@@ -1,28 +1,9 @@
 
   {
-    "PlayerName": "lol",
-    "PlayerGold": 100
-  },
-  {
-    "PlayerName": "ok",
-    "PlayerGold": 285
-  },
-  {
-    "PlayerName": "Markmywordsss",
-    "PlayerGold": 100
-  },
-  {
-    "PlayerName": "Combatio",
-    "PlayerGold": 100
-  },
-  {
-    "PlayerName": "anthony",
-    "PlayerGold": 100
-  },
-  {
-    "PlayerGold": 100
+    "PlayerName": "1",
+    "PlayerGold": 0
   },
   {
     "PlayerName": "Dot",
-    "PlayerGold": 112
+    "PlayerGold": 103
   },
