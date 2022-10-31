@@ -59,3 +59,7 @@
     "PlayerName": "anthony",
     "PlayerGold": 101
   },
+  {
+    "PlayerName": "Combat.io",
+    "PlayerGold": 100
+  },
