@@ -10,3 +10,7 @@
   {
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "ok",
+    "PlayerGold": 285
+  },
