@@ -12,9 +12,9 @@
     "PlayerGold": 285
   },
   {
+    "PlayerName": "Markmywordsss",
     "PlayerGold": 100
   },
   {
-    "PlayerName": "Markmywordsss",
     "PlayerGold": 100
   },
