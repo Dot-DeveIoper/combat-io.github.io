@@ -1,0 +1,8 @@
+  {
+    "username": "$%^&*!@",
+    "password": "#$%!^@",
+    "password2": "#$%!^@",
+    "verified": "",
+    "url": "create",
+    "ip": ""
+  },
