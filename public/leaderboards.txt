@@ -1,40 +1,45 @@
-{
-  "PlayerName": "Dot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Lot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Bot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Hot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Not",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Got",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Fot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Zot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Mot",
-  "PlayerGold": 0
-},
-{
-  "PlayerName": "Wot",
-  "PlayerGold": 0
-},
+
+  {
+    "PlayerName": "Lot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Bot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Hot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Not",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Got",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Fot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Zot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Mot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Wot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Dot",
+    "PlayerGold": 314
+  },
+  {
+    "PlayerName": "KROKODIL",
+    "PlayerGold": 178
+  },
