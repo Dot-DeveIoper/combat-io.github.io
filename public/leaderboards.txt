@@ -67,3 +67,7 @@
     "PlayerName": "FurriFunniAlex",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "jfeoraifoaihfn",
+    "PlayerGold": 100
+  },
