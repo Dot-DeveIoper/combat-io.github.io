@@ -38,7 +38,15 @@
   });
   
   app.use("/leaderboards", function (e, t) {
-    t.sendFile("/app/views/leaderboards.html");
+    fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
+              let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+                  x = u.sort(function(a, b) { return a.Variable1 < b.Variable1 ? 1 : -1; }).slice(0, 10);
+              fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
+                t.send(x);
+              }).catch(function(h) {
+                  console.warn("Error: ", h);
+              });
+          });
   });
   
   app.use("/Terms", function (e, t) {
