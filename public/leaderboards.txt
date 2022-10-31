@@ -16,5 +16,13 @@
     "PlayerGold": 100
   },
   {
+    "PlayerName": "Combatio",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "anthony",
     "PlayerGold": 100
   },
