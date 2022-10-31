@@ -4,9 +4,9 @@
     "PlayerGold": 100
   },
   {
-    "PlayerGold": 100
-  },
-  {
     "PlayerName": "Dot",
     "PlayerGold": 746
+  },
+  {
+    "PlayerGold": 100
   },
