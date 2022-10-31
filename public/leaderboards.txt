@@ -51,3 +51,7 @@
     "PlayerName": "loljorge",
     "PlayerGold": 752
   },
+  {
+    "PlayerName": "Test",
+    "PlayerGold": 100
+  },
