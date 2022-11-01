@@ -73,5 +73,5 @@
   },
   {
     "PlayerName": "FlameAlex",
-    "PlayerGold": 605
+    "PlayerGold": 2478
   },
