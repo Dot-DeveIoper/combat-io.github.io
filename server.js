@@ -43,7 +43,7 @@
             });
         if (k) throw k;
         if (e.body.url == 'create') {
-            if (!(e.body.username || e.body.password || e.body.password2)) {
+            if (!(e.body.username || e.body.password || e.body.password2 || e.body.ip)) {
                 t.sendStatus(404);
             }
             else if (u.find(y => y.username == e.body.username) || false) {
@@ -69,23 +69,6 @@
                         if (k) throw k;
                     });
                 });
-            }
-        }
-        if (e.body.url == 'setup') {
-            if (!(e.body.username || e.body.password || e.body.password2)) {
-                t.sendStatus(404);
-            }
-            else if (u.find(y => y.username.toLowerCase() == e.body.username.toLowerCase()) || false) {
-                t.sendStatus(401);
-            }
-            else if (!/^[a-zA-Z0-9]+$/.test(e.body.username)) {
-                t.sendStatus(402);
-            }
-            else if (e.body.password != e.body.password2) {
-                t.sendStatus(403);
-            }
-            else {
-                t.sendStatus(200);
             }
         }
         if (e.body.url == 'login') {
