@@ -937,7 +937,7 @@ select:focus {
 .togglePassword1 {
   display: inline-block;
   position: absolute;
-  bottom: 196px;
+  bottom: 200px;
   right: 35px;
   cursor: pointer;
   user-select: none;
@@ -994,7 +994,7 @@ select:focus {
 .togglePassword2 {
   display: inline-block;
   position: absolute;
-  bottom: 196px;
+  bottom: 200px;
   right: 35px;
   cursor: pointer;
   user-select: none;
@@ -1015,6 +1015,63 @@ select:focus {
   user-select: none;
 }
 .buttonLabel2:hover {
+  background-color: #e98c02;
+}
+.inputLabel3 {
+  display: block;
+  justify-content: center;
+  float: left;
+  clear: left;
+  background-color: transparent;
+  color: #747474;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ff9900;
+  caret-color: #ff9900;
+  width: 100%;
+  /* width: 245px; */
+  user-select: text;
+}
+.inputLabel3:focus {
+  outline: none;
+  border-bottom: 1.5px solid #e98c02;
+}
+.inputLabel3::placeholder {
+  color: #c0c1c2;
+  position: absolute;
+  float: left;
+  /* left: 0; */
+  left: -50px;
+  /* top: -1.5em; */
+  opacity: 1;
+  z-index: 2;
+}
+.togglePassword3 {
+  display: inline-block;
+  position: absolute;
+  bottom: 146px;
+  right: 35px;
+  cursor: pointer;
+  user-select: none;
+}
+.buttonLabel3 {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  width: 245px;
+  margin-top: 25px;
+  background-color: #ff9900;
+  color: #ffffff;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5px;
+  user-select: none;
+}
+.buttonLabel3:hover {
   background-color: #e98c02;
 }
 .checkboxLabel {
@@ -1048,7 +1105,7 @@ select:focus {
   #registerCard {
     display: none;
     width: 300px;
-    height: 220px;
+    height: 250px;
     max-height: 250px;
   }
   /* .textLabel {
@@ -1076,10 +1133,24 @@ select:focus {
   .togglePassword2 {
     display: inline-block;
     position: absolute;
-    bottom: 120px;
+    bottom: 150px;
     right: 35px;
   }
   .buttonLabel2 {
+    width: 245px;
+    margin-top: 5px;
+  }
+  .inputLabel3 {
+    width: 100%;
+    /* width: 245px; */
+  }
+  .togglePassword3 {
+    display: inline-block;
+    position: absolute;
+    bottom: 96px;
+    right: 35px;
+  }
+  .buttonLabel3 {
     width: 245px;
     margin-top: 5px;
   }
