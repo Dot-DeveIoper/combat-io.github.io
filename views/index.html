@@ -489,6 +489,7 @@
   <script src="/bundle.js"></script>
   <script>
     function H() {
+            try {
          document.getElementById("loading").innerHTML = "<span style='color:white;'>Loading...</span>";
          let r = {
            "username": document.forms.form2.username.value,
@@ -504,7 +505,7 @@
            method: "post",
            body: JSON.stringify(r)
          }).then((e) => {
-           if (e.status == 200) {
+            if (e.status == 200)
              document.getElementById("loading2").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
              setTimeout(() => {
                window.location.href = "./login";
@@ -524,12 +525,12 @@
              } else {
                document.getElementById("loading").innerHTML = "Network error...";
              }
-           return false;
-         }).catch((error) => {
-            console.error(error);
+         }).catch((err) => {
+            alert(err);
          });
          return false;
        }
+      
   </script>
 </body>
 </html>
