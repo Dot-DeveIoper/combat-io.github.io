@@ -435,7 +435,7 @@
             </form>
           </div>
           <div id="registerCard">
-            <form action="/" method="post" class="form2">
+            <form onsubmit="return H();" method="post" class="form2">
               <label class="textLabel" for="username"><b>Enter Username:</b></label>
               <input class="inputLabel2" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
@@ -448,8 +448,9 @@
               class="hiddenFromMobile"
               /><label class="textLabel" for="psw"
                 ><b>Confirm Password:</b></label>
-              <input class="inputLabel3 password3" type="password" placeholder="" name="psw" required />
+              <input class="inputLabel3 password3" type="password" placeholder="" name="psw2" required />
               <i class="bi bi-eye-slash togglePassword3"></i>
+              <span id="loading"></span>
               <br /><button class="buttonLabel2" type="submit">Register</button>
             </form>
           </div>
