@@ -83,3 +83,7 @@
     "PlayerName": "Markmywordsss",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "Combatio",
+    "PlayerGold": 102
+  },
