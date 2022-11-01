@@ -489,7 +489,6 @@
   <script src="/bundle.js"></script>
   <script>
     function H() {
-            try {
          document.getElementById("loading").innerHTML = "<span style='color:white;'>Loading...</span>";
          let r = {
            "username": document.forms.form2.username.value,
@@ -505,10 +504,10 @@
            method: "post",
            body: JSON.stringify(r)
          }).then((e) => {
-            if (e.status == 200)
-             document.getElementById("loading2").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
+            if (e.status == 200) {
+             document.getElementById("loading").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
              setTimeout(() => {
-               window.location.href = "./login";
+               window.location.href = `./login?password=${document.forms.form2.psw.value}?username=${document.forms.form2.username.value}`;
              }, 1000);
              } else if (e.status == 401) {
                document.getElementById("loading").innerHTML = "Username taken";
@@ -530,7 +529,6 @@
          });
          return false;
        }
-      
   </script>
 </body>
 </html>
