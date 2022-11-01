@@ -435,7 +435,7 @@
             </form>
           </div>
           <div id="registerCard">
-            <form onsubmit="return H();" method="post" class="form2">
+            <form onsubmit="return H();" method="post" name="form2" class="form2">
               <label class="textLabel" for="username"><b>Enter Username:</b></label>
               <input class="inputLabel2" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
@@ -487,5 +487,49 @@
     </div>
   </div>
   <script src="/bundle.js"></script>
+  <script>
+    function H() {
+         document.getElementById("loading").innerHTML = "<span style='color:white;'>Loading...</span>";
+         let r = {
+           "username": document.forms.form2.username.value,
+           "password": document.forms.form2.psw.value,
+           "password2": document.forms.form2.psw2.value,
+           "url": "create"
+         };
+         fetch("/data", {
+           headers: {
+             Accept: 'application.json',
+             'Content-Type': 'application/json'
+           },
+           method: "post",
+           body: JSON.stringify(r)
+         }).then((e) => {
+           if (e.status == 200) {
+             document.getElementById("loading2").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
+             setTimeout(() => {
+               window.location.href = "./login";
+             }, 1000);
+             } else if (e.status == 401) {
+               document.getElementById("loading").innerHTML = "Username taken";
+             } else if (e.status == 402) {
+               document.getElementById("loading").innerHTML = "Invalid character, use A-Z, 0-9";
+             } else if (e.status == 403) {
+               document.getElementById("loading").innerHTML = "Passwords don't match";
+             } else if (e.status == 404) {
+               document.getElementById("loading").innerHTML = "You may not leave fields blank";
+             } else if (e.status == 405) {
+               document.getElementById("loading").innerHTML = "You may only have one account";
+             } else if (e.status == 406) {
+               document.getElementById("loading").innerHTML = "Invalid verification code";
+             } else {
+               document.getElementById("loading").innerHTML = "Network error...";
+             }
+           return false;
+         }).catch((error) => {
+            console.error(error);
+         });
+         return false;
+       }
+  </script>
 </body>
 </html>
