@@ -91,12 +91,26 @@ form2.addEventListener('submit', function (e) {
       registerDiv.style.display = "none";
       accountSectionContainer.style.display = "flex";
     }
+    if (loginSection.style.backgroundColor === "#329e78") {
+      loginSection.style.backgroundColor = "#2c8a68";
+      registerSection.style.backgroundColor = "#ff9900";
+    } else {
+      loginSection.style.backgroundColor = "#2c8a68";
+      registerSection.style.backgroundColor = "#ff9900";
+    }
   };
   registerSection.onclick = function (e) {
     if (registerDiv.style.display === "none") {
       registerDiv.style.display = "inline-block";
       loginDiv.style.display = "none";
       accountSectionContainer.style.display = "flex";
+    }
+    if (registerSection.style.backgroundColor === "#ff9900") {
+      registerSection.style.backgroundColor = "#e98c02";
+      loginSection.style.backgroundColor = "#329e78";
+    } else {
+      registerSection.style.backgroundColor = "#e98c02";
+      loginSection.style.backgroundColor = "#329e78";
     }
   };
 
