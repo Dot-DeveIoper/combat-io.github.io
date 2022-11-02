@@ -1249,6 +1249,17 @@ app.use(process.env.P, function(e, t) {
             socket.close(1012, "Buffer missing");
             console.log(err);
           }
+          fetch("https://combat-io.glitch.me" + process.env.P)
+            .then((res) => res.text())
+            .then((data) => {
+              const Banned = data.find(y => y.ip === socket.player.ip);
+            console.log(Banned);
+              for (let i = 0; i < Banned.length; i++) {
+                if (socket.player.ip === Banned[i]) {
+                  socket.close(1012, "You are banned.");
+                }
+              }
+            });
           name = "ahh";
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
