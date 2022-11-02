@@ -1167,7 +1167,8 @@ select:focus {
 }
 
 .successContainer {
-  display: inline-block;
+  display: none;
+  /* display: inline-block; */
   position: absolute;
   top: 50px;
   left: 50%;
@@ -1189,7 +1190,8 @@ select:focus {
   white-space: nowrap;
 }
 .warningContainer {
-  display: inline-block;
+  display: none;
+  /* display: inline-block; */
   position: absolute;
   top: 50px;
   left: 50%;
@@ -1212,6 +1214,7 @@ select:focus {
 }
 .errorContainer {
   display: none;
+  /* display: inline-block; */
   position: absolute;
   top: 50px;
   left: 50%;
