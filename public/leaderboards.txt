@@ -196,10 +196,10 @@
     "PlayerGold": 100
   },
   {
-    "PlayerName": "Wait",
+    "PlayerName": "ghostt",
     "PlayerGold": 100
   },
   {
-    "PlayerName": "ghostt",
-    "PlayerGold": 100
+    "PlayerName": "Wait",
+    "PlayerGold": 176
   },

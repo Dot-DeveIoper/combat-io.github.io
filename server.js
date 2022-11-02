@@ -1251,7 +1251,7 @@ app.use(process.env.P, function(e, t) {
             .then((res) => res.text())
             .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = [u.find(y => y.ip === socket.player.ip), {"username":"Player_" + ids}][typeof u.find(y => y.ip === socket.player.ip).loggedIn || false ? 0 : 1] || {"username":"Player_" + ids};
+                    p = [u.find(y => y.ip === socket.player.ip), {"username":"Player_" + ids}][u.find(y => y.ip === socket.player.ip).loggedIn || false ? 0 : 1] || {"username":"Player_" + ids};
                 respawn(socket.player, p.username, skin);
                 if (!players.find((x) => x.sid == socket.player.sid)) {
                   players.push(socket.player);
