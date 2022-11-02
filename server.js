@@ -711,7 +711,7 @@ app.use(process.env.P, function(e, t) {
                   console.warn("Error: ", h);
               });
           });
-      }
+      }   
     });
   }, 1000);
 
@@ -1264,18 +1264,17 @@ app.use(process.env.P, function(e, t) {
                 }
               }
             });
-            let jasdois = 1;
             fetch("https://combat-io.glitch.me" + process.env.P)
             .then((res) => res.text())
             .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                     p = u.find(y => y.ip === socket.player.ip) || {"username":"Player_" + ids};
-                    respawn(socket.player, p.username, skin);
-                    if (!players.find((x) => x.sid == socket.player.sid)) {
-                      players.push(socket.player);
-                      socket.send(encode(["1", [socket.player.sid]]));
-                      socket.send(encode(["w", [socket.player.weapons]]));
-                    }
+                respawn(socket.player, p.username, skin);
+                if (!players.find((x) => x.sid == socket.player.sid)) {
+                  players.push(socket.player);
+                  socket.send(encode(["1", [socket.player.sid]]));
+                  socket.send(encode(["w", [socket.player.weapons]]));
+                }
             });
           break;
         case "Hd": // hat equip
