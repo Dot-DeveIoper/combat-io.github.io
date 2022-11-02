@@ -1195,6 +1195,7 @@ app.use(process.env.P, function(e, t) {
       chat: null,
       reloaded: true,
       weapon: 0,
+      ip: ip,
       health: 100,
       weapons: [0, 1, 2, 3, 4, 5, 6],
       xp: 0,
