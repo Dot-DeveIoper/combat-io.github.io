@@ -187,3 +187,15 @@
     },
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "Player_7",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_9",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Wait",
+    "PlayerGold": 100
+  },
