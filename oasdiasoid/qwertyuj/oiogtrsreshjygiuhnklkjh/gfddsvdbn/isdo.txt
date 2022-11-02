@@ -4,11 +4,12 @@
     "password2": "#$%!^@",
     "url": "create",
     "ip": ""
-  },
+  }
   {
     "username":"Dot",
-    "password":"hi",
-    "password2":"hi",
+    "password":"60simple",
+    "password2":"60simple",
     "url":"create",
-    "ip":"50.169.20.86"
+    "ip":"100.16.168.92",
+    "loggedIn":true
   },
