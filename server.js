@@ -1242,18 +1242,16 @@ app.use(process.env.P, function(e, t) {
           }
           var skin;
           var name2;
+          var name;
           try {
-          // fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
-          //   let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-          //       o = socket.player.ip;
-          //       return "hi" + u.find(y => y.ip == o).username.toString() || "Player_" + socket.player.sid.toString();
-          //   });
-            let name = (function() {fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
+          fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
             let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                 o = socket.player.ip;
-                return "hi" + u.find(y => y.ip == o).username.toString() || "Player_" + socket.player.sid.toString();
-            })}).replace(/[^a-z0-9]/gi, "").slice(0, 15);
+                console.log(u);
+                name = u.find(y => y.ip == o).username || "Player_" + socket.player.sid;
+            });
             skin = msg[1][0].skin || 0;
+            console.log(name);//.replace(/[^a-z0-9]/gi, "").slice(0, 15));
           } catch (err) {
             socket.close(1012, "Buffer missing");
             console.log(err);
