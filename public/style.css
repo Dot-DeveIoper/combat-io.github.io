@@ -1211,7 +1211,7 @@ select:focus {
   white-space: nowrap;
 }
 .errorContainer {
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 50px;
   left: 50%;

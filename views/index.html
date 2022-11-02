@@ -32,7 +32,7 @@
   <div class="backgroundImg" id="backgroundImg"></div>
 
   <div class="errorContainer" id="close">
-    <span class="errorText">Error: This account is not available</span>
+    <span id="errorText" class="errorText">Error: This account is not available</span>
     <i class="close" id="closeIcon">&times;</i>
   </div>
 
@@ -505,25 +505,26 @@
            body: JSON.stringify(r)
          }).then((e) => {
             if (e.status == 200) {
-             document.getElementById("loading").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
+             document.getElementById("errorText").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
              setTimeout(() => {
                window.location.href = `./login?password=${document.forms.form2.psw.value}?username=${document.forms.form2.username.value}`;
              }, 1000);
              } else if (e.status == 401) {
-               document.getElementById("loading").innerHTML = "Username taken";
+               document.getElementById("errorText").innerHTML = "Username taken";
              } else if (e.status == 402) {
-               document.getElementById("loading").innerHTML = "Invalid character, use A-Z, 0-9";
+               document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9";
              } else if (e.status == 403) {
-               document.getElementById("loading").innerHTML = "Passwords don't match";
+               document.getElementById("errorText").innerHTML = "Passwords don't match";
              } else if (e.status == 404) {
-               document.getElementById("loading").innerHTML = "You may not leave fields blank";
+               document.getElementById("errorText").innerHTML = "You may not leave fields blank";
              } else if (e.status == 405) {
-               document.getElementById("loading").innerHTML = "You may only have one account";
+               document.getElementById("errorText").innerHTML = "You may only have one account";
              } else if (e.status == 406) {
-               document.getElementById("loading").innerHTML = "Invalid verification code";
+               document.getElementById("errorText").innerHTML = "Invalid verification code";
              } else {
-               document.getElementById("loading").innerHTML = "Network error...";
+               document.getElementById("errorText").innerHTML = "Network error...";
              }
+             document.getElementById("close").style.display = "inline-block";
          }).catch((err) => {
             alert(err);
          });
