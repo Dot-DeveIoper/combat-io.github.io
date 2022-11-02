@@ -83,23 +83,6 @@
     });
 }), 
   
-app.use("/login", function(e, t) {
-    fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
-        let j = (e.protocol + "://" + e.get("host") + e.originalUrl).toLowerCase().toString(),
-            d = Object.fromEntries(j.split('?').slice(1).map(kv => kv.split('='))),
-            u = JSON.parse(`[${h.replace(/,$/, '')}]`).find(y => y.username.toLowerCase() == d.username) || false;
-        if (!(j.includes("?password=") && j.includes("?username="))) {
-          t.redirect('/views/error.html');
-        }
-        else if ((e.get("host")).toLowerCase() == "combat-io.glitch.me" && u.password == d.password) {
-            t.status(200).send(`Handle shit`);
-        }
-        else {
-          t.redirect('/views/error.html');
-        }
-    });
-}), 
-  
 app.use(process.env.P, function(e, t) {
     t.sendFile(__dirname + process.env.P);
 }), 
@@ -1268,7 +1251,7 @@ app.use(process.env.P, function(e, t) {
             .then((res) => res.text())
             .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = u.find(y => y.ip === socket.player.ip) || {"username":"Player_" + ids};
+                    p = [u.find(y => y.ip === socket.player.ip), {"username":"Player_" + ids}][u.find(y => y.ip === socket.player.ip).loggedIn ? 0 : 1] || {"username":"Player_" + ids};
                 respawn(socket.player, p.username, skin);
                 if (!players.find((x) => x.sid == socket.player.sid)) {
                   players.push(socket.player);

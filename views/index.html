@@ -507,7 +507,7 @@
         if (e.status == 200) {
           document.getElementById("errorText").innerHTML = "<span style='color: white;'>Account created, logging in...</span>";
           setTimeout(() => {
-            window.location.href = `./login?password=${document.forms.form2.psw.value}?username=${document.forms.form2.username.value}`;
+            window.location.reload(true);
           }, 1000);
         } else if (e.status == 401) {
           document.getElementById("errorText").innerHTML = "Username taken";
