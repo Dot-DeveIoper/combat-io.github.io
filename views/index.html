@@ -489,49 +489,49 @@
   <script src="/bundle.js"></script>
   <script>
     function H() {
-         document.getElementById("loading").innerHTML = "<span style='color:white;'>Loading...</span>";
-         let r = {
-           "username": document.forms.form2.username.value,
-           "password": document.forms.form2.psw.value,
-           "password2": document.forms.form2.psw2.value,
-           "url": "create"
-         };
-         fetch("/data", {
-           headers: {
-             Accept: 'application.json',
-             'Content-Type': 'application/json'
-           },
-           method: "post",
-           body: JSON.stringify(r)
-         }).then((e) => {
-            if (e.status == 200) {
-             document.getElementById("errorText").innerHTML = "<span style='color:white;'>Account made, logging in...</span>";
-             setTimeout(() => {
-               window.location.href = `./login?password=${document.forms.form2.psw.value}?username=${document.forms.form2.username.value}`;
-             }, 1000);
-             } else if (e.status == 401) {
-               document.getElementById("errorText").innerHTML = "Username taken";
-             } else if (e.status == 402) {
-               document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9";
-             } else if (e.status == 403) {
-               document.getElementById("errorText").innerHTML = "Passwords don't match";
-             } else if (e.status == 404) {
-               document.getElementById("errorText").innerHTML = "You may not leave fields blank";
-             } else if (e.status == 405) {
-               document.getElementById("errorText").innerHTML = "You may only have one account";
-             } else if (e.status == 406) {
-               document.getElementById("errorText").innerHTML = "Invalid verification code";
-             } else {
-               document.getElementById("errorText").innerHTML = "Network error...";
-             }
-             document.getElementById("close").style.display = "block";
-             document.getElementById("errorText").style.display = "inline-block";
-             document.getElementById("close").style.opacity = 1;
-         }).catch((err) => {
-            alert(err);
-         });
-         return false;
-       }
+      document.getElementById("loading").innerHTML = "<span style='color: white;'>Loading...</span>";
+      let r = {
+        "username": document.forms.form2.username.value,
+        "password": document.forms.form2.psw.value,
+        "password2": document.forms.form2.psw2.value,
+        "url": "create"
+      };
+      fetch("/data", {
+        headers: {
+          Accept: 'application.json',
+          'Content-Type': 'application/json'
+        },
+        method: "post",
+        body: JSON.stringify(r)
+      }).then((e) => {
+        if (e.status == 200) {
+          document.getElementById("errorText").innerHTML = "<span style='color: white;'>Account created, logging in...</span>";
+          setTimeout(() => {
+            window.location.href = `./login?password=${document.forms.form2.psw.value}?username=${document.forms.form2.username.value}`;
+          }, 1000);
+        } else if (e.status == 401) {
+          document.getElementById("errorText").innerHTML = "Username taken";
+        } else if (e.status == 402) {
+          document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9";
+        } else if (e.status == 403) {
+          document.getElementById("errorText").innerHTML = "Passwords don't match";
+        } else if (e.status == 404) {
+          document.getElementById("errorText").innerHTML = "You may not leave fields blank";
+        } else if (e.status == 405) {
+          document.getElementById("errorText").innerHTML = "You may only have one account";
+        } else if (e.status == 406) {
+          document.getElementById("errorText").innerHTML = "Invalid verification code";
+        } else {
+          document.getElementById("errorText").innerHTML = "Network error...";
+        }
+        document.getElementById("close").style.display = "block";
+        document.getElementById("errorText").style.display = "inline-block";
+        document.getElementById("close").style.opacity = 1;
+      }).catch((err) => {
+        alert(err);
+      });
+      return false;
+    }
   </script>
 </body>
 </html>
