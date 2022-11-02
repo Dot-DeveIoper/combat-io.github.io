@@ -115,3 +115,11 @@
     "PlayerName": "hi",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "hiundefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "hihi",
+    "PlayerGold": 100
+  },

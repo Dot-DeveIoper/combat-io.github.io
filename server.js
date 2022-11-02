@@ -1239,17 +1239,19 @@ app.use(process.env.P, function(e, t) {
           if (!msg[1][0]) {
             socket.close(1012, "Buffer missing");
           }
-          var name;
           var skin;
           var name2;
           try {
-          fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
+          // fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
+          //   let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+          //       o = socket.player.ip;
+          //       return "hi" + u.find(y => y.ip == o).username.toString() || "Player_" + socket.player.sid.toString();
+          //   });
+            let name = (function() {fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
             let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                 o = socket.player.ip;
-                name2 = u.find(y => y.ip == o).username.toString() || "Player_" + socket.player.sid.toString();
-                console.log(name2);
-            });
-            name = name2;//.replace(/[^a-z0-9]/gi, "").slice(0, 15);
+                return "hi" + u.find(y => y.ip == o).username.toString() || "Player_" + socket.player.sid.toString();
+            })}).replace(/[^a-z0-9]/gi, "").slice(0, 15);
             skin = msg[1][0].skin || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
