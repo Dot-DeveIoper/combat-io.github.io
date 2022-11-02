@@ -123,3 +123,7 @@
     "PlayerName": "hihi",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "ahh",
+    "PlayerGold": 100
+  },

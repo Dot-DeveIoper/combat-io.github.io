@@ -12,11 +12,3 @@
     "url":"create",
     "ip":"50.169.20.86"
   },
-  {
-    "username":"asw",
-    "password":"asw",
-    "password2":"asw",
-    "url":"create",
-    "ip":"204.83.240.107",
-    "loggedIn":true
-  },

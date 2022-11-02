@@ -1244,18 +1244,12 @@ app.use(process.env.P, function(e, t) {
           var name2;
           var name;
           try {
-          fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
-            let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                o = socket.player.ip;
-                console.log(u);
-                name = u.find(y => y.ip == o).username || "Player_" + socket.player.sid;
-            });
             skin = msg[1][0].skin || 0;
-            console.log(name);//.replace(/[^a-z0-9]/gi, "").slice(0, 15));
           } catch (err) {
             socket.close(1012, "Buffer missing");
             console.log(err);
           }
+          name = "ahh";
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
