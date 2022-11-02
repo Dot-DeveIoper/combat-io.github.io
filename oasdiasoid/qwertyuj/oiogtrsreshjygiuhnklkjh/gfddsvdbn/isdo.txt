@@ -6,14 +6,6 @@
     "ip": ""
   },
   {
-    "username":"Dot",
-    "password":"60simple",
-    "password2":"60simple",
-    "url":"create",
-    "ip":"100.16.168.92",
-    "loggedIn": true
-  },
-  {
     "username":"Wait",
     "password":"Ok",
     "password2":"Ok",

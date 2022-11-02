@@ -505,23 +505,32 @@
         body: JSON.stringify(r)
       }).then((e) => {
         if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "<span style='color: white;'>Account created, logging in...</span>";
+          document.getElementById("errorText").style.backgroundColor = "black";
+          document.getElementById("errorText").innerHTML = "Account created, logging in...";
           setTimeout(() => {
-            window.location.reload(true);
+              document.getElementById("errorText").style.backgroundColor = "black";
+              document.getElementById("errorText").innerHTML = "Logged in! Hit play!";
           }, 1000);
         } else if (e.status == 401) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "Username taken";
         } else if (e.status == 402) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9";
         } else if (e.status == 403) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "Passwords don't match";
         } else if (e.status == 404) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "You may not leave fields blank";
         } else if (e.status == 405) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "You may only have one account";
         } else if (e.status == 406) {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "Invalid verification code";
         } else {
+          document.getElementById("errorText").style.backgroundColor = "#f65454";
           document.getElementById("errorText").innerHTML = "Network error...";
         }
         document.getElementById("close").style.display = "block";
