@@ -40,6 +40,7 @@
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
                 ip: y,
+                loggedIn: true,
             });
         if (k) throw k;
         if (e.body.url == 'create') {
