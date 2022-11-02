@@ -91,3 +91,23 @@
     "PlayerName": "Dot",
     "PlayerGold": 441
   },
+  {
+    "PlayerName": "red",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_undefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Playerundefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_4",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_6",
+    "PlayerGold": 100
+  },

@@ -1241,10 +1241,15 @@ app.use(process.env.P, function(e, t) {
           }
           var name;
           var skin;
+          let x = false;
           try {
-            name =
-              msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
-              "Combat.io";
+          fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
+            let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+                o = socket.player.ip;
+                x = u.find(y => y.ip == o) || false;
+            });
+            name = x.username.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
+              "Player_" + socket.player.sid;
             skin = msg[1][0].skin || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
