@@ -524,7 +524,9 @@
              } else {
                document.getElementById("errorText").innerHTML = "Network error...";
              }
-             document.getElementById("close").style.display = "inline-block";
+             document.getElementById("close").style.display = "block";
+             document.getElementById("errorText").style.display = "inline-block";
+             document.getElementById("close").style.opacity = 1;
          }).catch((err) => {
             alert(err);
          });
