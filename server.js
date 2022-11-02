@@ -1241,7 +1241,6 @@ app.use(process.env.P, function(e, t) {
             socket.close(1012, "Buffer missing");
           }
           var skin;
-          var name2;
           var name;
           try {
             skin = msg[1][0].skin || 0;
@@ -1249,17 +1248,6 @@ app.use(process.env.P, function(e, t) {
             socket.close(1012, "Buffer missing");
             console.log(err);
           }
-          fetch("https://combat-io.glitch.me" + process.env.P)
-            .then((res) => res.text())
-            .then((data) => {
-              const Banned = data.find(y => y.ip === socket.player.ip);
-            console.log(Banned);
-              for (let i = 0; i < Banned.length; i++) {
-                if (socket.player.ip === Banned[i]) {
-                  socket.close(1012, "You are banned.");
-                }
-              }
-            });
           name = "ahh";
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
@@ -1276,7 +1264,14 @@ app.use(process.env.P, function(e, t) {
                 }
               }
             });
-          respawn(socket.player, name, skin);
+                    fetch("https://combat-io.glitch.me" + process.env.P)
+            .then((res) => res.text())
+            .then((h) => {
+                  let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+                  p = u.find(y => y.ip === socket.player.ip).ip || 'errro';
+                    respawn(socket.player, p, skin);
+            console.log(p);
+            });
           if (!players.find((x) => x.sid == socket.player.sid))
             players.push(socket.player);
           socket.send(encode(["1", [socket.player.sid]]));

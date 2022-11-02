@@ -127,3 +127,11 @@
     "PlayerName": "ahh",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "undefined,",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "errro",
+    "PlayerGold": 100
+  },
