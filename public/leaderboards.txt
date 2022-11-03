@@ -203,3 +203,7 @@
     "PlayerName": "Wait",
     "PlayerGold": 176
   },
+  {
+    "PlayerName": "Y",
+    "PlayerGold": 100
+  },
