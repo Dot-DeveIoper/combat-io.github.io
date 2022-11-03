@@ -6,26 +6,10 @@
     "ip": ""
   },
   {
-    "username":"Wait",
-    "password":"Ok",
-    "password2":"Ok",
-    "url":"create",
-    "ip":"67.225.88.51",
-    "loggedIn":true
-  },
-  {
     "username":"ghostt",
     "password":"sabubaisgood",
     "password2":"sabubaisgood",
     "url":"create",
     "ip":"97.90.154.124",
-    "loggedIn":true
-  },
-  {
-    "username":"Dot",
-    "password":"60simple",
-    "password2":"60simple",
-    "url":"create",
-    "ip":"100.16.168.92",
     "loggedIn":true
   },
