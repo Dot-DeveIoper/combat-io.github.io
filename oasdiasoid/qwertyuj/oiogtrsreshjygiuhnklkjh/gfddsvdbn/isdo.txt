@@ -6,10 +6,9 @@
     "ip": ""
   },
   {
-    "username":"ghostt",
-    "password":"sabubaisgood",
-    "password2":"sabubaisgood",
-    "url":"create",
-    "ip":"97.90.154.124",
-    "loggedIn":true
+    "username": "$%^&*!@",
+    "password": "#$%!^@",
+    "password2": "#$%!^@",
+    "url": "create",
+    "ip": ""
   },
