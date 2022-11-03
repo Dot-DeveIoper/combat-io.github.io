@@ -85,14 +85,16 @@ form2.addEventListener('submit', function (e) {
   let registerSection = document.getElementById("registerSection");
   let accountSectionContainer = document.getElementById("accountSectionContainer");
 
+  loginSection.style.backgroundColor = "#2c8a68";
+
   loginSection.onclick = function (e) {
     if (loginDiv.style.display === "none") {
       loginDiv.style.display = "inline-block";
       registerDiv.style.display = "none";
       accountSectionContainer.style.display = "flex";
     }
-    if (loginSection.style.backgroundColor === "#329e78") {
-      loginSection.style.backgroundColor = "#2c8a68";
+    if (loginSection.style.backgroundColor === "#2c8a68") {
+      loginSection.style.backgroundColor = "#329e78";
       registerSection.style.backgroundColor = "#ff9900";
     } else {
       loginSection.style.backgroundColor = "#2c8a68";
@@ -492,12 +494,16 @@ form2.addEventListener('submit', function (e) {
         loginDiv.style.display = "inline-block";
         loginText.innerHTML = "Close Login Form";
         registerDiv.style.display = "none";
+        loginSection.style.backgroundColor = "#2c8a68";
+        registerSection.style.backgroundColor = "#ff9900";
         accountSectionContainer.style.display = "flex";
       } else {
         loginDiv.style.display = "none";
         loginToggle.style.zIndex = "1";
         loginText.innerHTML = "Open Login Form";
         registerDiv.style.display = "none";
+        loginSection.style.backgroundColor = "#2c8a68";
+        registerSection.style.backgroundColor = "#ff9900";
         accountSectionContainer.style.display = "none";
       }
     }
