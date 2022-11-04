@@ -1249,7 +1249,7 @@ app.use(process.env.P, function(e, t) {
             });
             fetch("https://combat-io.glitch.me" + process.env.P)
             .then((res) => res.text())
-            .then((h) => {
+            .then((h) => { //msg[1][0].name
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                     p = {"username":"Player_" + ids};
                 try {
