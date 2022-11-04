@@ -1163,14 +1163,6 @@ form2.addEventListener("submit", (function (e) {
     ageBar.style.display = "none";
     document.getElementById("loadingText")
         .style.display = "block";
-    setTimeout((() => {
-        if (!["ComBat.io", undefined].includes(localStorage.name)) document.querySelector("#nameInput")
-            .value = localStorage.name;
-        setInterval((() => {
-            localStorage.name = document.querySelector("#nameInput")
-                .value
-        }), 50)
-    }), 1e3);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     Array.prototype.removeItem = function (value) {
@@ -2042,13 +2034,13 @@ form2.addEventListener("submit", (function (e) {
             leaderboardScores.style.display = "block";
             SpawnedOnce = 1;
             send(["j", [{
-                name: document.getElementById("nameInput")
-                    .value,
-                skin: SkinColor
+              name: localStorage.getItem("username"),
+              password: localStorage.getItem("password"),
+              skin: SkinColor
             }]]);
             setInterval((() => {
                 window.requestAnimFrame(update)
-            }), 1);
+            }), 1000);
             riverBubbles = [];
             for (let j = 0; j < 30; j++) {
                 setTimeout((() => {
@@ -2073,7 +2065,7 @@ form2.addEventListener("submit", (function (e) {
                         bubble.y = randomInt(50, riverHeight - 50)
                     }
                 }))
-            }), 50)
+            }), 50);
         }
     }));
     connect()
