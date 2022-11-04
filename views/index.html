@@ -421,7 +421,7 @@
               class="hiddenFromMobile"
               /><label class="textLabel" for="psw"
                 ><b>Enter Password:</b></label>
-              <input class="inputLabel1 password1" type="password" placeholder="" name="psw" autocomplete="current-password" required />
+              <input class="inputLabel1 password1" type="password" placeholder="" name="psw" required />
               <i class="bi bi-eye-slash togglePassword1"></i>
               <br /><button class="buttonLabel1" type="submit">Login</button>
               <br /><br />
@@ -446,7 +446,7 @@
               <i class="bi bi-eye-slash togglePassword2"></i>
               <br class="hiddenFromMobile" /><br
               class="hiddenFromMobile"
-              /><label class="textLabel" for="psw"
+              /><label class="textLabel" for="psw2"
                 ><b>Confirm Password:</b></label>
               <input class="inputLabel3 password3" type="password" placeholder="" name="psw2" required />
               <i class="bi bi-eye-slash togglePassword3"></i>
@@ -580,8 +580,6 @@
         "username": document.forms.form2.username.value,
         "password": document.forms.form2.psw.value,
         "password2": document.forms.form2.psw2.value,
-        "username": localStorage.getItem("username"),
-        "password": localStorage.getItem("password"),
         "url": "create"
       };
       fetch("/data", {

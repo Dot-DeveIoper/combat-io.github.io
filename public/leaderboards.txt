@@ -267,3 +267,7 @@
     "PlayerName": "Dott",
     "PlayerGold": 100
   },
+  {
+    "PlayerName": "asd",
+    "PlayerGold": 100
+  },
