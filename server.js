@@ -39,7 +39,6 @@
             y = e.headers["x-forwarded-for"].split(",").shift(),
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
-                ip: y,
                 loggedIn: true,
             });
         if (k) throw k;
@@ -73,13 +72,12 @@
             }
         }
         if (e.body.url == 'login') {
-            if (x.username === e.body.username || x.password === e.body.password) {
-                t.sendStatus(401);
-            }
-            else {
+            if (e.body.username === x.username && e.body.password === x.password) {
                 t.sendStatus(200);
             }
-          console.log(x);
+            else {
+              t.sendStatus(401);
+            }
         }
     });
 }), 
