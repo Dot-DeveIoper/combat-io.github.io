@@ -1,17 +1,234 @@
 
   {
-    "PlayerName": "lol",
+    "PlayerName": "Lot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Bot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Hot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Not",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Got",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Fot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Zot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Mot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Wot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "KROKODIL",
+    "PlayerGold": 178
+  },
+  {
+    "PlayerName": "DEVKROKODIL",
     "PlayerGold": 100
   },
   {
-    "PlayerName": "ok",
-    "PlayerGold": 285
+    "PlayerName": "loljorge",
+    "PlayerGold": 752
+  },
+  {
+    "PlayerName": "Test",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "anthony",
+    "PlayerGold": 101
+  },
+  {
+    "PlayerName": "Combat.io",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "FurriFunniAlex",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "jfeoraifoaihfn",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "FlameAlex",
+    "PlayerGold": 2478
+  },
+  {
+    "PlayerName": "hmmm",
+    "PlayerGold": 2006
   },
   {
     "PlayerName": "Markmywordsss",
     "PlayerGold": 100
   },
   {
+    "PlayerName": "Combatio",
+    "PlayerGold": 102
+  },
+  {
+    "PlayerName": "ee",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "red",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_undefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Playerundefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_4",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_6",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "hi",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "hiundefined",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "hihi",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "ahh",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "undefined,",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "errro",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_2",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": {
+      "username": "Player_2"
+    },
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_7",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_9",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "ghostt",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Wait",
+    "PlayerGold": 176
+  },
+  {
+    "PlayerName": "Y",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_8",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_10",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_12",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_11",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_13",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_15",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Player_1",
     "PlayerGold": 100
   },
   {
