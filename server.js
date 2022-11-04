@@ -45,13 +45,13 @@
             if (!(e.body.username || e.body.password || e.body.password2)) {
                 t.sendStatus(404);
             }
-            else if (u.find(y => y.username == e.body.username) || false) {
+            else if (u.find(y => y.username === e.body.username) || false) {
                 t.sendStatus(401);
             }
             else if (!/^[a-zA-Z0-9]+$/.test(e.body.username)) {
                 t.sendStatus(402);
             }
-            else if (e.body.password != e.body.password2) {
+            else if (e.body.password !== e.body.password2) {
                 t.sendStatus(403);
             }
             else if (e.body.username.length > 15) {
