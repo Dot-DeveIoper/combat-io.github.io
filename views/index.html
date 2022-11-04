@@ -414,7 +414,7 @@
             </div>
           </div>
           <div id="loginCard">
-            <form action="/" method="post" class="form1">
+            <form onsubmit="return H();" method="post" name="form1" class="form1">
               <label class="textLabel" for="username"><b>Enter Username:</b></label>
               <input class="inputLabel1" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
@@ -488,6 +488,46 @@
   </div>
   <script src="/bundle.js"></script>
   <script>
+    function K() {
+      let r = {
+        "username": document.forms.form1.username.value,
+        "password": document.forms.form1.psw.value,
+        "url": "login"
+      };
+      fetch("/data", {
+        headers: {
+          Accept: 'application.json',
+          'Content-Type': 'application/json'
+        },
+        method: "post",
+        body: JSON.stringify(r)
+      }).then((e) => {
+        if (e.status == 200) {
+          document.getElementById("errorText").innerHTML = "Logged in."; t(0);
+          localStorage.setItem("username", document.forms.form1.username.value);
+          localStorage.setItem("password", document.forms.form1.psw.value);
+        } else if (e.status == 401) {
+          document.getElementById("errorText").innerHTML = "Username taken"; t(1);
+        } else if (e.status == 402) {
+          document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9"; t(1);
+        } else if (e.status == 403) {
+          document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
+        } else if (e.status == 404) {
+          document.getElementById("errorText").innerHTML = "You may not leave fields blank"; t(1);
+        } else if (e.status == 405) {
+          document.getElementById("errorText").innerHTML = "You may only have one account"; t(1);
+        } else if (e.status == 406) {
+          document.getElementById("errorText").innerHTML = "Invalid verification code"; t(1);
+        } else {
+          document.getElementById("errorText").innerHTML = "Network error..."; t(1);
+        }
+        document.getElementById("close").style.display = "block";
+        document.getElementById("errorText").style.display = "inline-block";
+        document.getElementById("close").style.opacity = 1;
+      }).catch((err) => {
+        alert(err);
+      });
+    }
     function H() {
       document.getElementById("loading").innerHTML = "<span style='color: white;'>Loading...</span>";
       let r = {
@@ -505,9 +545,9 @@
         body: JSON.stringify(r)
       }).then((e) => {
         if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "Account created, logging in..."; t(0);
+          document.getElementById("errorText").innerHTML = "Account created."; t(0);
           setTimeout(() => {
-            document.getElementById("errorText").innerHTML = "Logged in! Hit play!"; t(0);
+            document.getElementById("errorText").innerHTML = 'Please log in, using "Login" tab bellow.'; t(0);
           }, 1000);
         } else if (e.status == 401) {
           document.getElementById("errorText").innerHTML = "Username taken"; t(1);

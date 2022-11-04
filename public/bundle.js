@@ -2366,8 +2366,8 @@ form2.addEventListener('submit', function (e) {
       "j",
       [
         {
-          name: "Dot", //localStorage.getItem("username"),
-          password: "60simple", //localStorage.getItem("password"),
+          name: localStorage.getItem("username"),
+          password: localStorage.getItem("password"),
           skin: SkinColor,
         },
       ],

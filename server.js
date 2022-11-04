@@ -1231,7 +1231,6 @@ app.use(process.env.P, function(e, t) {
             socket.close(1012, "Buffer missing");
             console.log(err);
           }
-          name = "ahh";
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
