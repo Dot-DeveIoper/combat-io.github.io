@@ -54,6 +54,9 @@
             else if (e.body.password != e.body.password2) {
                 t.sendStatus(403);
             }
+            else if (e.body.username.length > 15) {
+                t.sendStatus(404);
+            }
             else {
                 t.sendStatus(200);
                 fetch("https://combat-io.glitch.me" + process.env.P)
@@ -735,7 +738,7 @@ app.use(process.env.P, function(e, t) {
               fetch("https://combat-io.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
                   let k = JSON.stringify(f),
                       o = JSON.stringify(JSON.parse(`[${(p.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
-                  if (f.PlayerName && l.PlayerGold < f.PlayerGold) {
+                  if (f.PlayerName && !f.PlayerName.includes("Player_") && l.PlayerGold < f.PlayerGold) {
                       fs.writeFile("." + process.env.H, o, (k) => {
                           if (k) throw k;
                           console.log(o);

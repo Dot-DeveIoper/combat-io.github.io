@@ -232,10 +232,6 @@
     "PlayerGold": 100
   },
   {
-    "PlayerName": "Dot",
-    "PlayerGold": 100
-  },
-  {
     "PlayerName": "Player_3",
     "PlayerGold": 100
   },
@@ -262,4 +258,8 @@
   {
     "PlayerName": "Player_19",
     "PlayerGold": 100
+  },
+  {
+    "PlayerName": "Dot",
+    "PlayerGold": 327
   },

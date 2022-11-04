@@ -602,11 +602,7 @@
         } else if (e.status == 403) {
           document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
         } else if (e.status == 404) {
-          document.getElementById("errorText").innerHTML = "You may not leave fields blank"; t(1);
-        } else if (e.status == 405) {
-          document.getElementById("errorText").innerHTML = "You may only have one account"; t(1);
-        } else if (e.status == 406) {
-          document.getElementById("errorText").innerHTML = "Invalid verification code"; t(1);
+          document.getElementById("errorText").innerHTML = "You may not have more then 15 characters."; t(1);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
