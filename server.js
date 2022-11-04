@@ -73,12 +73,13 @@
             }
         }
         if (e.body.url == 'login') {
-            if (x.username != e.body.username || x.password != e.body.password) {
+            if (x.username === e.body.username || x.password === e.body.password) {
                 t.sendStatus(401);
             }
             else {
-                t.sendStatus(469);
+                t.sendStatus(200);
             }
+          console.log(x);
         }
     });
 }), 
