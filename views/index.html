@@ -32,7 +32,7 @@
   <div class="backgroundImg" id="backgroundImg"></div>
 
   <div class="errorContainer" id="close">
-    <span id="errorText" class="errorText">Error: This account is not available</span>
+    <span class="errorText">Error: This account is not available</span>
     <i class="close" id="closeIcon">&times;</i>
   </div>
 
@@ -305,7 +305,7 @@
         <!-- </div> -->
         <div style="display: inline-block">
           <div class="menuCard" id="setupCard">
-            <input type="text" id="nameInput" placeholder="Username" maxlength="15" style="cursor: not-allowed;" disabled="disabled" />
+            <input type="text" id="nameInput" placeholder="Enter Name" maxlength="15" />
             <div id="enterGame" class="menuButton">
               <span>Enter Game</span>
             </div>
@@ -435,7 +435,7 @@
             </form>
           </div>
           <div id="registerCard">
-            <form onsubmit="return H();" method="post" name="form2" class="form2">
+            <form action="/" method="post" class="form2">
               <label class="textLabel" for="username"><b>Enter Username:</b></label>
               <input class="inputLabel2" type="text" placeholder="" name="username" required />
               <br class="hiddenFromMobile" /><br
@@ -444,13 +444,6 @@
                 ><b>Enter Password:</b></label>
               <input class="inputLabel2 password2" type="password" placeholder="" name="psw" required />
               <i class="bi bi-eye-slash togglePassword2"></i>
-              <br class="hiddenFromMobile" /><br
-              class="hiddenFromMobile"
-              /><label class="textLabel" for="psw"
-                ><b>Confirm Password:</b></label>
-              <input class="inputLabel3 password3" type="password" placeholder="" name="psw2" required />
-              <i class="bi bi-eye-slash togglePassword3"></i>
-              <span id="loading"></span>
               <br /><button class="buttonLabel2" type="submit">Register</button>
             </form>
           </div>
@@ -487,60 +480,5 @@
     </div>
   </div>
   <script src="/bundle.js"></script>
-  <script>
-    function H() {
-      document.getElementById("loading").innerHTML = "<span style='color: white;'>Loading...</span>";
-      let r = {
-        "username": document.forms.form2.username.value,
-        "password": document.forms.form2.psw.value,
-        "password2": document.forms.form2.psw2.value,
-        "url": "create"
-      };
-      fetch("/data", {
-        headers: {
-          Accept: 'application.json',
-          'Content-Type': 'application/json'
-        },
-        method: "post",
-        body: JSON.stringify(r)
-      }).then((e) => {
-        if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "Account created, logging in..."; t(0);
-          setTimeout(() => {
-            document.getElementById("errorText").innerHTML = "Logged in! Hit play!"; t(0);
-          }, 1000);
-        } else if (e.status == 401) {
-          document.getElementById("errorText").innerHTML = "Username taken"; t(1);
-        } else if (e.status == 402) {
-          document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9"; t(1);
-        } else if (e.status == 403) {
-          document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
-        } else if (e.status == 404) {
-          document.getElementById("errorText").innerHTML = "You may not leave fields blank"; t(1);
-        } else if (e.status == 405) {
-          document.getElementById("errorText").innerHTML = "You may only have one account"; t(1);
-        } else if (e.status == 406) {
-          document.getElementById("errorText").innerHTML = "Invalid verification code"; t(1);
-        } else {
-          document.getElementById("errorText").innerHTML = "Network error..."; t(1);
-        }
-        document.getElementById("close").style.display = "block";
-        document.getElementById("errorText").style.display = "inline-block";
-        document.getElementById("close").style.opacity = 1;
-      }).catch((err) => {
-        alert(err);
-      });
-      return false;
-    }
-    function t(num) {
-      if (num === 1) {
-        document.getElementById("close").style.backgroundColor = "#f65454";
-        document.getElementById("close").style.borderColor = "#e03535";
-      } else {
-        document.getElementById("close").style.backgroundColor = "black";
-        document.getElementById("close").style.borderColor = "lightgreen";
-      }
-    }
-  </script>
 </body>
 </html>

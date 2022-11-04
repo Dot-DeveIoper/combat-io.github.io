@@ -33,74 +33,12 @@
 
   app.use(express.static("public"));
   
-  app.post("/data", (e, t) => {
-    fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
-        let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-            y = e.headers["x-forwarded-for"].split(",").shift(),
-            x = u.find(y => y.username == e.body.username) || false,
-            f = Object.assign(e.body, {
-                ip: y,
-                loggedIn: true,
-            });
-        if (k) throw k;
-        if (e.body.url == 'create') {
-            if (!(e.body.username || e.body.password || e.body.password2 || e.body.ip)) {
-                t.sendStatus(404);
-            }
-            else if (u.find(y => y.username == e.body.username) || false) {
-                t.sendStatus(401);
-            }
-            else if (u.find(y => y.ip == e.body.ip) || false) {
-                t.sendStatus(405);
-            }
-            else if (!/^[a-zA-Z0-9]+$/.test(e.body.username)) {
-                t.sendStatus(402);
-            }
-            else if (e.body.password != e.body.password2) {
-                t.sendStatus(403);
-            }
-            else {
-                t.sendStatus(200);
-                fetch("https://combat-io.glitch.me" + process.env.P)
-                  .then((t) => t.text())
-                  .then((h) => {
-                      let k = JSON.stringify(f),
-                        o = h + k.replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
-                    fs.writeFile("." + process.env.P, o, (k) => {
-                        if (k) throw k;
-                    });
-                });
-            }
-        }
-        if (e.body.url == 'login') {
-            if (x.username != e.body.username || x.password != e.body.password) {
-                t.sendStatus(401);
-            }
-            else {
-                t.sendStatus(469);
-            }
-        }
-    });
-}), 
-  
-app.use(process.env.P, function(e, t) {
-    t.sendFile(__dirname + process.env.P);
-}), 
-    
   app.use("/Privacy", function (e, t) {
     t.sendFile("/app/public/privacy.txt");
   });
   
   app.use("/leaderboards", function (e, t) {
-    fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
-              let u = JSON.parse(`[${h.replace(/,$/, '')}]`), 
-                  x = u.sort(function(a, b) { return a.PlayerGold < b.PlayerGold ? 1 : -1; } || "---").slice(0, 10);
-              fetch("https://combat-io.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
-                t.status(200).send(`<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> <!-- <meta name="robots" content="index, follow"> --> <!-- <meta name="googlebot" content="index, follow"> --> <!-- <meta name="revisit-after" content="14 days"> --> <title>ComBat.io - The new .IO Game!</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> <!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --> <!-- <span class="icon" id="icon">≡</span> --> <!-- <span class="icon" id="icon">☓</span> --> </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://combat-io.glitch.me/')"><span class="mainText">Combat.io</span></a> <!-- <a class="nextLine"></a> --> <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${x[0].PlayerName || "---"}</span> <span>${x[0].PlayerGold || "---"}</span> </div> <div class="playerScore2"> <i class="second"></i> <span>${x[1].PlayerName || "---"}</span> <span>${x[1].PlayerGold || "---"}</span> </div> <div class="playerScore1"> <i class="third"></i> <span>${x[2].PlayerName || "---"}</span> <span>${x[2].PlayerGold || "---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[3].PlayerName || "---"}</span> <span>${x[3].PlayerGold || "---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[4].PlayerName || "---"}</span> <span>${x[4].PlayerGold || "---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[5].PlayerName || "---"}</span> <span>${x[5].PlayerGold || "---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[6].PlayerName || "---"}</span> <span>${x[6].PlayerGold || "---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[7].PlayerName || "---"}</span> <span>${x[7].PlayerGold || "---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[8].PlayerName || "---"}</span> <span>${x[8].PlayerGold || "---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[9].PlayerName || "---"}</span> <span>${x[9].PlayerGold || "---"}</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> <!-- onclick="history.go(-1); return false;" --> <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://combat-io.glitch.me/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"></script> </body> </html>`);
-              }).catch(function(h) {
-                  console.warn("Error: ", h);
-              });
-          });
+    t.sendFile("/app/views/leaderboards.html");
   });
   
   app.use("/Terms", function (e, t) {
@@ -673,28 +611,25 @@ app.use(process.env.P, function(e, t) {
         }
       }
       if (!player.admin) {
-          fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
-              let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                  p = JSON.stringify(u.filter(y => y.PlayerName !== player.name)) + "," || ''.slice(1, -1),
-                  f = Object.assign({}, {
+                      fs.readFile('.' + process.env.H, 'utf-8', (k, h) => {
+                let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
+                    p = JSON.stringify(u.filter(y => y.PlayerName !== player.name)) + "," || ''.slice(1, -1),
+                    f = Object.assign({}, {
                       PlayerName: player.name,
                       PlayerGold: player.resources.gold
-                  }),
-                  l = u.find(y => y.PlayerName == player.name) || {"PlayerGold": "0"};
-              fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
-                  let k = JSON.stringify(f),
-                      o = JSON.stringify(JSON.parse(`[${(p.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
-                  if (f.PlayerName && l.PlayerGold < f.PlayerGold) {
-                      fs.writeFile("." + process.env.H, o, (k) => {
-                          if (k) throw k;
-                          console.log(o);
-                      });
-                  }
-              }).catch(function(h) {
-                  console.warn("Error: ", h);
-              });
-          });
-      }   
+                    });
+                fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
+                    let k = JSON.stringify(f),
+                        o = JSON.stringify(JSON.parse(`[${(p.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
+                    fs.writeFile("." + process.env.H, o, (k) => {
+                        if (k) throw k;
+                        console.log(o);
+                    });
+                }).catch(function(h) {
+                    console.warn("Error: ", h);
+                });
+        });
+      }
     });
   }, 1000);
 
@@ -1178,7 +1113,6 @@ app.use(process.env.P, function(e, t) {
       chat: null,
       reloaded: true,
       weapon: 0,
-      ip: ip,
       health: 100,
       weapons: [0, 1, 2, 3, 4, 5, 6],
       xp: 0,
@@ -1223,15 +1157,16 @@ app.use(process.env.P, function(e, t) {
           if (!msg[1][0]) {
             socket.close(1012, "Buffer missing");
           }
-          var skin;
           var name;
+          var skin;
           try {
+            name =
+              msg[1][0].name.replace(/[^a-z0-9]/gi, "").slice(0, 15) ||
+              "Combat.io";
             skin = msg[1][0].skin || 0;
           } catch (err) {
             socket.close(1012, "Buffer missing");
-            console.log(err);
           }
-          name = "ahh";
           fetch("https://combat-io.glitch.me/bannedIPs.txt")
             .then((res) => res.text())
             .then((data) => {
@@ -1247,26 +1182,11 @@ app.use(process.env.P, function(e, t) {
                 }
               }
             });
-            fetch("https://combat-io.glitch.me" + process.env.P)
-            .then((res) => res.text())
-            .then((h) => {
-                let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = {"username":"Player_" + ids};
-                try {
-                  let f = u.find(y => y.username === msg[1][0].name);
-                  if (f.loggedIn === true && f.username === msg[1][0].name && f.password === msg[1][0].password) {
-                    p = f;
-                  }
-                } catch(e) {
-                  console.warn(e);
-                }
-                respawn(socket.player, p.username, skin);
-                if (!players.find((x) => x.sid == socket.player.sid)) {
-                    players.push(socket.player);
-                    socket.send(encode(["1", [socket.player.sid]]));
-                    socket.send(encode(["w", [socket.player.weapons]]));
-                }
-            });
+          respawn(socket.player, name, skin);
+          if (!players.find((x) => x.sid == socket.player.sid))
+            players.push(socket.player);
+          socket.send(encode(["1", [socket.player.sid]]));
+          socket.send(encode(["w", [socket.player.weapons]]));
           break;
         case "Hd": // hat equip
           if (!msg[1][0]) {

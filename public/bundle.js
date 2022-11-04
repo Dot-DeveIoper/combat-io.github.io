@@ -14,9 +14,6 @@ const password1 = document.querySelector(".password1");
 const togglePassword2 = document.querySelector(".togglePassword2");
 const password2 = document.querySelector(".password2");
 
-const togglePassword3 = document.querySelector(".togglePassword3");
-const password3 = document.querySelector(".password3");
-
 togglePassword1.addEventListener("click", function () {
   // toggle the type attribute
   const type = password1.getAttribute("type") === "password" ? "text": "password";
@@ -30,15 +27,6 @@ togglePassword2.addEventListener("click", function () {
   // toggle the type attribute
   const type = password2.getAttribute("type") === "password" ? "text": "password";
   password2.setAttribute("type", type);
-
-  // toggle the icon
-  this.classList.toggle("bi-eye");
-});
-
-togglePassword3.addEventListener("click", function () {
-  // toggle the type attribute
-  const type = password3.getAttribute("type") === "password" ? "text": "password";
-  password3.setAttribute("type", type);
 
   // toggle the icon
   this.classList.toggle("bi-eye");
@@ -85,20 +73,11 @@ form2.addEventListener('submit', function (e) {
   let registerSection = document.getElementById("registerSection");
   let accountSectionContainer = document.getElementById("accountSectionContainer");
 
-  loginSection.style.backgroundColor = "#2c8a68";
-
   loginSection.onclick = function (e) {
     if (loginDiv.style.display === "none") {
       loginDiv.style.display = "inline-block";
       registerDiv.style.display = "none";
       accountSectionContainer.style.display = "flex";
-    }
-    if (loginSection.style.backgroundColor === "#2c8a68") {
-      loginSection.style.backgroundColor = "#329e78";
-      registerSection.style.backgroundColor = "#ff9900";
-    } else {
-      loginSection.style.backgroundColor = "#2c8a68";
-      registerSection.style.backgroundColor = "#ff9900";
     }
   };
   registerSection.onclick = function (e) {
@@ -106,13 +85,6 @@ form2.addEventListener('submit', function (e) {
       registerDiv.style.display = "inline-block";
       loginDiv.style.display = "none";
       accountSectionContainer.style.display = "flex";
-    }
-    if (registerSection.style.backgroundColor === "#ff9900") {
-      registerSection.style.backgroundColor = "#e98c02";
-      loginSection.style.backgroundColor = "#329e78";
-    } else {
-      registerSection.style.backgroundColor = "#e98c02";
-      loginSection.style.backgroundColor = "#329e78";
     }
   };
 
@@ -494,16 +466,12 @@ form2.addEventListener('submit', function (e) {
         loginDiv.style.display = "inline-block";
         loginText.innerHTML = "Close Login Form";
         registerDiv.style.display = "none";
-        loginSection.style.backgroundColor = "#2c8a68";
-        registerSection.style.backgroundColor = "#ff9900";
         accountSectionContainer.style.display = "flex";
       } else {
         loginDiv.style.display = "none";
         loginToggle.style.zIndex = "1";
         loginText.innerHTML = "Open Login Form";
         registerDiv.style.display = "none";
-        loginSection.style.backgroundColor = "#2c8a68";
-        registerSection.style.backgroundColor = "#ff9900";
         accountSectionContainer.style.display = "none";
       }
     }
@@ -2366,8 +2334,7 @@ form2.addEventListener('submit', function (e) {
       "j",
       [
         {
-          name: "Dot", //localStorage.getItem("username"),
-          password: "60simple", //localStorage.getItem("password"),
+          name: document.getElementById("nameInput").value,
           skin: SkinColor,
         },
       ],
