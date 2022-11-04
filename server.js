@@ -40,6 +40,7 @@
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
                 loggedIn: false,
+                isAccount: true
             });
         if (k) throw k;
         if (e.body.url == 'create') {
@@ -79,12 +80,12 @@
                   .then((h) => {
                       let v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
                           z = u.find(y => y.username === e.body.username && y.password === e.body.password);
-                          z.loggedIn = false;
+                          z.loggedIn = true;
                           v.push(z);
-                      let o = JSON.stringify(v).replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
-                    // fs.writeFile("." + process.env.P, o, (k) => {
-                    //     if (k) throw k;
-                    // });
+                      let o = JSON.stringify(v).replace(/]/g, '').replace(/\[/g, '').replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
+                    fs.writeFile("." + process.env.P, o, (k) => {
+                        if (k) throw k;
+                    });
                    console.log(o);
                 });
             }

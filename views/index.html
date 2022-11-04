@@ -507,7 +507,7 @@
         } else if (e.status == 200) {
           localStorage.setItem("username", document.forms.form1.username.value);
           localStorage.setItem("password", document.forms.form1.psw.value);
-          document.getElementById("errorText").innerHTML = "Logged in."; t(0);
+          document.getElementById("errorText").innerHTML = "Logged in, Enter game."; t(0);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
@@ -519,7 +519,7 @@
       });
     }
     function H() {
-      document.getElementById("loading").innerHTML = "<span style='color: white;'>Loading...</span>";
+      document.getElementById("loading").innerHTML = "Loading...";
       let r = {
         "username": document.forms.form2.username.value,
         "password": document.forms.form2.psw.value,
