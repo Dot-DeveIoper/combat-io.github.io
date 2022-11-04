@@ -93,6 +93,26 @@
               t.sendStatus(401);
             }
         }
+        if (e.body.url == 'logout') {
+            if (e.body.username === x.username && e.body.password === x.password) {
+                t.sendStatus(200);
+              fetch("https://combat-io.glitch.me" + process.env.P)
+                  .then((t) => t.text())
+                  .then((h) => {
+                      let v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
+                          z = u.find(y => y.username === e.body.username && y.password === e.body.password);
+                          z.loggedIn = false;
+                          v.push(z);
+                      let o = JSON.stringify(v).replace(/]/g, '').replace(/\[/g, '').replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
+                    fs.writeFile("." + process.env.P, o, (k) => {
+                        if (k) throw k;
+                    });
+                });
+            }
+            else {
+              t.sendStatus(401);
+            }
+        }
     });
 }), 
   
