@@ -129,6 +129,8 @@
                         if (k) throw k;
                     });
                 });
+            } else if (e.body.verification.toLowerCase() === "yes") {
+              t.sendStatus(402);
             }
             else {
               t.sendStatus(401);
