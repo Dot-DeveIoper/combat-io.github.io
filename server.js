@@ -1249,7 +1249,7 @@ app.use(process.env.P, function(e, t) {
             });
             fetch("https://combat-io.glitch.me" + process.env.P)
             .then((res) => res.text())
-            .then((h) => { //msg[1][0].name
+            .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                     p = {"username":"Player_" + ids};
                 try {
@@ -1260,7 +1260,7 @@ app.use(process.env.P, function(e, t) {
                 } catch(e) {
                   console.warn(e);
                 }
-                  respawn(socket.player, p.username, skin);
+                respawn(socket.player, p.username, skin);
                 if (!players.find((x) => x.sid == socket.player.sid)) {
                     players.push(socket.player);
                     socket.send(encode(["1", [socket.player.sid]]));
