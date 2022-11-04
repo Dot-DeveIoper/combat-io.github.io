@@ -1,0 +1,77 @@
+
+  {
+    "PlayerName": "Lot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Bot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Hot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Not",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Got",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Fot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Zot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Mot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "Wot",
+    "PlayerGold": 0
+  },
+  {
+    "PlayerName": "KROKODIL",
+    "PlayerGold": 178
+  },
+  {
+    "PlayerName": "DEVKROKODIL",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "loljorge",
+    "PlayerGold": 752
+  },
+  {
+    "PlayerName": "Test",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "anthony",
+    "PlayerGold": 101
+  },
+  {
+    "PlayerName": "Combat.io",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "FurriFunniAlex",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "jfeoraifoaihfn",
+    "PlayerGold": 100
+  },
+  {
+    "PlayerName": "FlameAlex",
+    "PlayerGold": 2478
+  },
+  {
+    "PlayerName": "hmmm",
+    "PlayerGold": 2006
+  },
