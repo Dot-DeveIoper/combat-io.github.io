@@ -40,6 +40,7 @@
                 });
             if (k) throw k;
             if (e.body.url == "create") {
+              try {
                 if (!(e.body.username || e.body.password || e.body.password2)) {
                     t.sendStatus(404)
                 } else if (u.find((y => y.username === e.body.username)) || false) {
@@ -60,8 +61,13 @@
                         }))
                     }))
                 }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
             }
             if (e.body.url == "login") {
+              try {
                 if (e.body.username === x.username && e.body.password === x.password) {
                     t.sendStatus(200);
                     fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
@@ -78,8 +84,13 @@
                 } else {
                     t.sendStatus(401)
                 }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
             }
             if (e.body.url == "logout") {
+              try {
                 let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
                     z = u.find((y => y.username === e.body.username && y.password === e.body.password));
                 if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
@@ -99,8 +110,13 @@
                 } else {
                     t.sendStatus(401)
                 }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
             }
             if (e.body.url == "delete") {
+            try {
                 let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
                     z = u.find((y => y.username === e.body.username && y.password === e.body.password));
                 if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
@@ -117,6 +133,10 @@
                 } else {
                     t.sendStatus(401)
                 }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
             }
         }))
     })), 

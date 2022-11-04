@@ -508,6 +508,8 @@
           localStorage.setItem("username", document.forms.form1.username.value);
           localStorage.setItem("password", document.forms.form1.psw.value);
           document.getElementById("errorText").innerHTML = "Logged in, Enter game."; t(0);
+        } else if (e.status == 505) {
+          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
@@ -539,6 +541,8 @@
           document.getElementById("errorText").innerHTML = "Please verify that you would like to delete."; t(1);
         } else if (e.status == 200) {
           document.getElementById("errorText").innerHTML = "Account deleted."; t(0);
+        } else if (e.status == 505) {
+          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
@@ -567,6 +571,10 @@
           document.getElementById("errorText").innerHTML = "Can not log you out because you are not logged in."; t(1);
         } else if (e.status == 200) {
           document.getElementById("errorText").innerHTML = "Logged out"; t(0);
+          localStorage.setItem("username", "Combat.io");
+          localStorage.setItem("password", "");
+        } else if (e.status == 505) {
+          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
@@ -606,6 +614,8 @@
           document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
         } else if (e.status == 404) {
           document.getElementById("errorText").innerHTML = "You may not have more then 15 characters."; t(1);
+        } else if (e.status == 505) {
+          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
           document.getElementById("errorText").innerHTML = "Network error..."; t(1);
         }
