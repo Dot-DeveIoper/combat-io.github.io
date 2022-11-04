@@ -39,7 +39,7 @@
             y = e.headers["x-forwarded-for"].split(",").shift(),
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
-                loggedIn: true,
+                loggedIn: false,
             });
         if (k) throw k;
         if (e.body.url == 'create') {
@@ -74,6 +74,18 @@
         if (e.body.url == 'login') {
             if (e.body.username === x.username && e.body.password === x.password) {
                 t.sendStatus(200);
+              fetch("https://combat-io.glitch.me" + process.env.P)
+                  .then((t) => t.text())
+                  .then((h) => {
+                      let k = JSON.stringify(f),
+                          v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
+                          z = u.find(y => y.username !== e.body.username && y.password !== e.body.password),
+                          o = k.replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
+                    // fs.writeFile("." + process.env.P, o, (k) => {
+                    //     if (k) throw k;
+                    // });
+                console.log(v);
+                });
             }
             else {
               t.sendStatus(401);
