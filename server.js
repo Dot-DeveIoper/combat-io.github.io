@@ -39,7 +39,9 @@
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
                 loggedIn: false,
-            });
+            }),
+            v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
+            z = u.find(y => y.username === e.body.username && y.password === e.body.password);
         if (k) throw k;
         if (e.body.url == 'create') {
             if (!(e.body.username || e.body.password || e.body.password2)) {
@@ -56,6 +58,9 @@
             }
             else if (e.body.username.length > 15) {
                 t.sendStatus(404);
+            } 
+            else if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
+                
             }
             else {
                 t.sendStatus(200);

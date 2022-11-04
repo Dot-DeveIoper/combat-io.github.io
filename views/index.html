@@ -580,6 +580,8 @@
         "username": document.forms.form2.username.value,
         "password": document.forms.form2.psw.value,
         "password2": document.forms.form2.psw2.value,
+        "username": localStorage.getItem("username"),
+        "password": localStorage.getItem("password"),
         "url": "create"
       };
       fetch("/data", {
