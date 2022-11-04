@@ -1251,17 +1251,19 @@ app.use(process.env.P, function(e, t) {
             .then((res) => res.text())
             .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-                    p = {"username":"Player_" + ids}; //u.find(y => y.ip === socket.player.ip);
-              try {
-                if (p = u.find(y => y.ip === socket.player.ip).loggedIn === true) {
-                  
+                    p = {"username":"Player_" + ids};
+                try {
+                  if (u.find(y => y.ip === socket.player.ip).loggedIn === true) {
+                    p = u.find(y => y.ip === socket.player.ip);
+                  }
+                } catch(e) {
+                  console.warn(e);
                 }
-              }
-                respawn(socket.player, p.username, skin);
+                  respawn(socket.player, p.username, skin);
                 if (!players.find((x) => x.sid == socket.player.sid)) {
-                  players.push(socket.player);
-                  socket.send(encode(["1", [socket.player.sid]]));
-                  socket.send(encode(["w", [socket.player.weapons]]));
+                    players.push(socket.player);
+                    socket.send(encode(["1", [socket.player.sid]]));
+                    socket.send(encode(["w", [socket.player.weapons]]));
                 }
             });
           break;
