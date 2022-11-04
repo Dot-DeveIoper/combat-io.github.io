@@ -12,5 +12,5 @@
     "password":"60simple",
     "password2":"60simple",
     "url":"create",
-    "loggedIn":true
+    "loggedIn":false
   },
