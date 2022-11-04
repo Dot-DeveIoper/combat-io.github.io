@@ -79,12 +79,13 @@
                   .then((h) => {
                       let k = JSON.stringify(f),
                           v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
-                          z = u.find(y => y.username !== e.body.username && y.password !== e.body.password),
+                          z = u.find(y => y.username === e.body.username && y.password === e.body.password),
                           o = k.replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
+                          z.loggedIn = false;
                     // fs.writeFile("." + process.env.P, o, (k) => {
                     //     if (k) throw k;
                     // });
-                console.log(v);
+                console.log(z);
                 });
             }
             else {
