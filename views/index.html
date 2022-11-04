@@ -488,7 +488,7 @@
   </div>
   <script src="/bundle.js"></script>
   <script>
-    function K() {
+    function K() { //login to account
       let r = {
         "username": document.forms.form1.username.value,
         "password": document.forms.form1.psw.value,
@@ -518,10 +518,11 @@
         alert(err);
       });
     }
-    function J() {
+    function J() { //delete an account
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
+        "vari": document.forms.form1.psw.value,
         "url": "delete"
       };
       fetch("/data", {
@@ -546,7 +547,7 @@
         alert(err);
       });
     }
-    function F() {
+    function F() { //log out of an account
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
@@ -574,7 +575,7 @@
         alert(err);
       });
     }
-    function H() {
+    function H() { //make a NEW account
       document.getElementById("loading").innerHTML = "Loading...";
       let r = {
         "username": document.forms.form2.username.value,
