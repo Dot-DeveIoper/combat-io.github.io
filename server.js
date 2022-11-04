@@ -30,6 +30,7 @@
     }));
     app.use(bodyParser.json());
     app.use(express.static("public"));
+  
     app.post("/data", ((e, t) => {
         fs.readFile("." + process.env.P, "utf-8", ((k, h) => {
             let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
@@ -118,11 +119,16 @@
                 }
             }
         }))
-    })), app.use(process.env.P, (function(e, t) {
+    })), 
+      
+    app.use(process.env.P, (function(e, t) {
         t.sendFile(__dirname + process.env.P)
-    })), app.use("/Privacy", (function(e, t) {
+    })), 
+      
+    app.use("/Privacy", (function(e, t) {
         t.sendFile("/app/public/privacy.txt")
-    }));
+    })),
+      
     app.use("/leaderboards", (function(e, t) {
         fs.readFile("." + process.env.H, "utf-8", ((k, h) => {
             let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
@@ -135,13 +141,16 @@
                 console.warn("Error: ", h)
             }))
         }))
-    }));
+    })),
+      
     app.use("/Terms", (function(e, t) {
         t.sendFile("/app/public/terms.txt")
-    }));
+    })),
+      
     app.use("/Version", (function(e, t) {
         t.sendFile("/app/public/version.txt")
-    }));
+    })),
+      
     app.use(process.env.H, (function(e, t) {
         t.sendFile(__dirname + process.env.H)
     }));
