@@ -36,22 +36,17 @@
   app.post("/data", (e, t) => {
     fs.readFile('.' + process.env.P, 'utf-8', (k, h) => {
         let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
-            y = e.headers["x-forwarded-for"].split(",").shift(),
             x = u.find(y => y.username == e.body.username) || false,
             f = Object.assign(e.body, {
                 loggedIn: false,
-                isAccount: true
             });
         if (k) throw k;
         if (e.body.url == 'create') {
-            if (!(e.body.username || e.body.password || e.body.password2 || e.body.ip)) {
+            if (!(e.body.username || e.body.password || e.body.password2)) {
                 t.sendStatus(404);
             }
             else if (u.find(y => y.username == e.body.username) || false) {
                 t.sendStatus(401);
-            }
-            else if (u.find(y => y.ip == e.body.ip) || false) {
-                t.sendStatus(405);
             }
             else if (!/^[a-zA-Z0-9]+$/.test(e.body.username)) {
                 t.sendStatus(402);
@@ -87,6 +82,26 @@
                         if (k) throw k;
                     });
                    console.log(o);
+                });
+            }
+            else {
+              t.sendStatus(401);
+            }
+        }
+        if (e.body.url == 'logout') {
+            if (e.body.username === x.username && e.body.password === x.password) {
+                t.sendStatus(200);
+              fetch("https://combat-io.glitch.me" + process.env.P)
+                  .then((t) => t.text())
+                  .then((h) => {
+                      let v = u.filter(y => y.username !== e.body.username && y.password !== e.body.password),
+                          z = u.find(y => y.username === e.body.username && y.password === e.body.password);
+                          z.loggedIn = false;
+                          v.push(z);
+                      let o = JSON.stringify(v).replace(/]/g, '').replace(/\[/g, '').replace(/",/g, '",\n').replace(/\n"/g, '\n    "').replace(/^{/, "\n  {\n    ").replace(/}$/, "\n  }") + ",";
+                    fs.writeFile("." + process.env.P, o, (k) => {
+                        if (k) throw k;
+                    });
                 });
             }
             else {
