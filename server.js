@@ -1253,8 +1253,9 @@ app.use(process.env.P, function(e, t) {
                 let u = JSON.parse(`[${h.replace(/,$/, '')}]`),
                     p = {"username":"Player_" + ids};
                 try {
-                  if (u.find(y => y.ip === socket.player.ip).loggedIn === true) {
-                    p = u.find(y => y.ip === socket.player.ip);
+                  let f = u.find(y => y.username === msg[1][0].name);
+                  if (f.loggedIn === true && f.username === msg[1][0].name && f.password === msg[1][0].password) {
+                    p = f;
                   }
                 } catch(e) {
                   console.warn(e);
