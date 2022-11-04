@@ -732,7 +732,7 @@ app.use(process.env.P, function(e, t) {
                       PlayerGold: player.resources.gold
                   }),
                   l = u.find(y => y.PlayerName == player.name) || {"PlayerGold": "0"};
-              fetch("https://efficient-ethereal-spaghetti.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
+              fetch("https://combat-io.glitch.me" + process.env.H).then((t) => t.text()).then((h) => {
                   let k = JSON.stringify(f),
                       o = JSON.stringify(JSON.parse(`[${(p.slice(1, -1) + "," + k).replace(/\]/, '')}]`), null, 2).slice(1, -1).replace(/\n$/, '').replace(/\n,$/, ',') + ",";
                   if (f.PlayerName && l.PlayerGold < f.PlayerGold) {
