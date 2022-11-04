@@ -3,12 +3,14 @@
     "password": "#$%!^@",
     "password2": "#$%!^@",
     "url": "create",
-    "ip": ""
+    "ip": "",
+    "loggedIn": false
   },
   {
     "username": "$%^&*!@",
     "password": "#$%!^@",
     "password2": "#$%!^@",
     "url": "create",
-    "ip": ""
+    "ip": "0",
+    "loggedIn": false
   },
