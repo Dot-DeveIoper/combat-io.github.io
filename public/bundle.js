@@ -1163,9 +1163,9 @@ form2.addEventListener("submit", (function (e) {
     ageBar.style.display = "none";
     document.getElementById("loadingText")
         .style.display = "block";
-    setTimeout((() => {
+    setInterval((() => {
       document.querySelector("#nameInput").value = localStorage.getItem("name") || "Player_0";
-    }), 1e3);
+    }), 100);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     Array.prototype.removeItem = function (value) {

@@ -506,6 +506,7 @@
           document.getElementById("errorText").innerHTML = "Password or username incorrect."; t(1);
         } else if (e.status == 200) {
           localStorage.setItem("username", document.forms.form1.username.value);
+          localStorage.setItem("name", document.forms.form1.username.value);
           localStorage.setItem("password", document.forms.form1.psw.value);
           document.getElementById("errorText").innerHTML = "Logged in, Enter game."; t(0);
         } else if (e.status == 505) {
@@ -541,6 +542,9 @@
           document.getElementById("errorText").innerHTML = "Please verify that you would like to delete."; t(1);
         } else if (e.status == 200) {
           document.getElementById("errorText").innerHTML = "Account deleted."; t(0);
+          localStorage.setItem("username", "");
+          localStorage.setItem("name", "");
+          localStorage.setItem("password", "");
         } else if (e.status == 505) {
           document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
