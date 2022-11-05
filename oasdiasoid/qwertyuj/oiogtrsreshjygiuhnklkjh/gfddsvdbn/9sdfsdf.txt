@@ -76,10 +76,10 @@
     "PlayerGold": 2006
   },
   {
-    "PlayerName": "Dot",
+    "PlayerName": "asd",
     "PlayerGold": 100
   },
   {
-    "PlayerName": "asd",
-    "PlayerGold": 100
+    "PlayerName": "Dot",
+    "PlayerGold": 101
   },

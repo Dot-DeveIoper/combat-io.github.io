@@ -525,7 +525,7 @@
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
-        "verification": function () {try{return document.forms.form3.verify.value} catch {return "h"}},
+        "verification": (function () {try{return document.forms.form3.verify.value} catch {return "h"}})(),
         "url": "delete"
       };
       fetch("/data", {
