@@ -2044,6 +2044,9 @@ closeModal.onclick = function (e) {
   window.selectSkinColor = function (e) {
     SkinColor = e
   };
+  setInterval(() => {
+    let h = 1; 
+  }, 1000);
   enterGame.addEventListener("click", (function (e) {
     send(["j", [{
       name: localStorage.getItem("username"),
