@@ -488,7 +488,8 @@
   </div>
   <script src="/bundle.js"></script>
   <script>
-    function K() { //login to account
+    function K() {
+      //login to account
       let r = {
         "username": document.forms.form1.username.value,
         "password": document.forms.form1.psw.value,
@@ -521,76 +522,86 @@
         alert(err);
       });
     }
-    function J() { //delete an account
+    function J() {
+      //delete an account
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
-        "verification": (function () {try{return document.forms.form3.verify.value} catch {return "h"}})(),
+        "verification": (function () {
+          try {
+            return document.forms.form3.verify.value
+          } catch {
+            return "h"
+          }})(),
         "url": "delete"
       };
-      fetch("/data", {
-        headers: {
-          Accept: 'application.json',
-          'Content-Type': 'application/json'
-        },
-        method: "post",
-        body: JSON.stringify(r)
-      }).then((e) => { 
-        if (e.status == 401) {
-          document.getElementById("errorText").innerHTML = "Can not delete account because you are not logged in."; t(1);
-        } else if (e.status == 402) {
-          document.getElementById("errorText").innerHTML = "Please verify that you would like to delete."; t(1);
-        } else if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "Account deleted."; t(0);
-          localStorage.setItem("username", "");
-          localStorage.setItem("name", "");
-          localStorage.setItem("password", "");
-        } else if (e.status == 505) {
-          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
-        } else {
-          document.getElementById("errorText").innerHTML = "Network error..."; t(1);
-        }
-        document.getElementById("close").style.display = "block";
-        document.getElementById("errorText").style.display = "inline-block";
-        document.getElementById("close").style.opacity = 1;
-      }).catch((err) => {
-        alert(err);
-      });
+      fetch("/data",
+        {
+          headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json'
+          },
+          method: "post",
+          body: JSON.stringify(r)
+        }).then((e) => {
+          if (e.status == 401) {
+            document.getElementById("errorText").innerHTML = "Can not delete account because you are not logged in."; t(1);
+          } else if (e.status == 402) {
+            document.getElementById("errorText").innerHTML = "Please verify that you would like to delete."; t(1);
+          } else if (e.status == 200) {
+            document.getElementById("errorText").innerHTML = "Account deleted."; t(0);
+            localStorage.setItem("username", "");
+            localStorage.setItem("name", "");
+            localStorage.setItem("password", "");
+          } else if (e.status == 505) {
+            document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
+          } else {
+            document.getElementById("errorText").innerHTML = "Network error..."; t(1);
+          }
+          document.getElementById("close").style.display = "block";
+          document.getElementById("errorText").style.display = "inline-block";
+          document.getElementById("close").style.opacity = 1;
+        }).catch((err) => {
+          alert(err);
+        });
     }
-    function F() { //log out of an account
+    function F() {
+      //log out of an account
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
         "url": "logout"
       };
-      fetch("/data", {
-        headers: {
-          Accept: 'application.json',
-          'Content-Type': 'application/json'
-        },
-        method: "post",
-        body: JSON.stringify(r)
-      }).then((e) => {
-        if (e.status == 401) {
-          document.getElementById("errorText").innerHTML = "Can not log you out because you are not logged in."; t(1);
-        } else if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "Logged out"; t(0);
-          localStorage.setItem("username", "");
-          localStorage.setItem("name", "");
-          localStorage.setItem("password", "");
-        } else if (e.status == 505) {
-          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
-        } else {
-          document.getElementById("errorText").innerHTML = "Network error..."; t(1);
-        }
-        document.getElementById("close").style.display = "block";
-        document.getElementById("errorText").style.display = "inline-block";
-        document.getElementById("close").style.opacity = 1;
-      }).catch((err) => {
-        alert(err);
-      });
+      fetch("/data",
+        {
+          headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json'
+          },
+          method: "post",
+          body: JSON.stringify(r)
+        }).then((e) => {
+          if (e.status == 401) {
+            document.getElementById("errorText").innerHTML = "Can not log you out because you are not logged in."; t(1);
+          } else if (e.status == 200) {
+            document.getElementById("errorText").innerHTML = "Logged out"; t(0);
+            localStorage.setItem("username", "");
+            localStorage.setItem("name", "");
+            localStorage.setItem("password", "");
+          } else if (e.status == 505) {
+            document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
+          } else {
+            document.getElementById("errorText").innerHTML = "Network error..."; t(1);
+          }
+          document.getElementById("close").style.display = "block";
+          document.getElementById("errorText").style.display = "inline-block";
+          document.getElementById("close").style.opacity = 1;
+        }).catch((err) => {
+          alert(err);
+        });
     }
-    function H() { //make a NEW account
+    function H() {
+      //make a NEW account
       document.getElementById("loading").innerHTML = "Loading...";
       let r = {
         "username": document.forms.form2.username.value,
@@ -598,38 +609,39 @@
         "password2": document.forms.form2.psw2.value,
         "url": "create"
       };
-      fetch("/data", {
-        headers: {
-          Accept: 'application.json',
-          'Content-Type': 'application/json'
-        },
-        method: "post",
-        body: JSON.stringify(r)
-      }).then((e) => {
-        if (e.status == 200) {
-          document.getElementById("errorText").innerHTML = "Account created."; t(0);
-          setTimeout(() => {
-            document.getElementById("errorText").innerHTML = 'Please log in, using "Login" tab below.'; t(0);
-          }, 1000);
-        } else if (e.status == 401) {
-          document.getElementById("errorText").innerHTML = "Username taken"; t(1);
-        } else if (e.status == 402) {
-          document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9"; t(1);
-        } else if (e.status == 403) {
-          document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
-        } else if (e.status == 404) {
-          document.getElementById("errorText").innerHTML = "You may not have more then 15 characters."; t(1);
-        } else if (e.status == 505) {
-          document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
-        } else {
-          document.getElementById("errorText").innerHTML = "Network error..."; t(1);
-        }
-        document.getElementById("close").style.display = "block";
-        document.getElementById("errorText").style.display = "inline-block";
-        document.getElementById("close").style.opacity = 1;
-      }).catch((err) => {
-        alert(err);
-      });
+      fetch("/data",
+        {
+          headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json'
+          },
+          method: "post",
+          body: JSON.stringify(r)
+        }).then((e) => {
+          if (e.status == 200) {
+            document.getElementById("errorText").innerHTML = "Account created."; t(0);
+            setTimeout(() => {
+              document.getElementById("errorText").innerHTML = 'Please log in, using "Login" tab below.'; t(0);
+            }, 1000);
+          } else if (e.status == 401) {
+            document.getElementById("errorText").innerHTML = "Username taken"; t(1);
+          } else if (e.status == 402) {
+            document.getElementById("errorText").innerHTML = "Invalid character, use A-Z, 0-9"; t(1);
+          } else if (e.status == 403) {
+            document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
+          } else if (e.status == 404) {
+            document.getElementById("errorText").innerHTML = "You may not have more then 15 characters."; t(1);
+          } else if (e.status == 505) {
+            document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
+          } else {
+            document.getElementById("errorText").innerHTML = "Network error..."; t(1);
+          }
+          document.getElementById("close").style.display = "block";
+          document.getElementById("errorText").style.display = "inline-block";
+          document.getElementById("close").style.opacity = 1;
+        }).catch((err) => {
+          alert(err);
+        });
       return false;
     }
     function t(num) {

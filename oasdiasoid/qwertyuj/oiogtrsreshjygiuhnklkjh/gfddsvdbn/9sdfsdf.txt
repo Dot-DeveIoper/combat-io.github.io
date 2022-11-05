@@ -83,3 +83,7 @@
     "PlayerName": "Dot",
     "PlayerGold": 101
   },
+  {
+    "PlayerName": "CombatIo",
+    "PlayerGold": 284
+  },
