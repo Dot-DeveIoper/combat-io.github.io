@@ -1163,14 +1163,9 @@ form2.addEventListener("submit", (function (e) {
     ageBar.style.display = "none";
     document.getElementById("loadingText")
         .style.display = "block";
-    // setTimeout((() => {
-    //     if (!["ComBat.io", undefined].includes(localStorage.username)) document.querySelector("#nameInput")
-    //         .value = localStorage.username;
-    //     setInterval((() => {
-    //         localStorage.username = document.querySelector("#nameInput")
-    //             .value
-    //     }), 50)
-    // }), 1e3);
+    setTimeout((() => {
+      document.querySelector("#nameInput").value = localStorage.getItem("name") || "Player_0";
+    }), 1e3);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     Array.prototype.removeItem = function (value) {
