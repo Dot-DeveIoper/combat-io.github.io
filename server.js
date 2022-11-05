@@ -1,1 +1,1450 @@
-(function(Z,j){var a3=l,g=Z();while(!![]){try{var O=-parseInt(a3(0x1b1))/0x1*(-parseInt(a3(0x178))/0x2)+parseInt(a3(0x177))/0x3+-parseInt(a3(0x133))/0x4*(-parseInt(a3(0x185))/0x5)+parseInt(a3(0x167))/0x6*(-parseInt(a3(0x1de))/0x7)+-parseInt(a3(0x183))/0x8+parseInt(a3(0x1bf))/0x9*(-parseInt(a3(0x126))/0xa)+parseInt(a3(0x1d7))/0xb*(parseInt(a3(0x1a2))/0xc);if(O===j)break;else g['push'](g['shift']());}catch(J){g['push'](g['shift']());}}}(x,0xdf273));var X=(function(){var Z=!![];return function(j,g){var O=Z?function(){var a4=l;if(g){var J=g[a4(0x164)](j,arguments);return g=null,J;}}:function(){};return Z=![],O;};}()),p=X(this,function(){var a5=l;return p['toString']()[a5(0x189)](a5(0x1af))['toString']()['constructor'](p)['search']('(((.+)+)+)+$');});p();var s=(function(){var Z=!![];return function(j,g){var O=Z?function(){if(g){var J=g['apply'](j,arguments);return g=null,J;}}:function(){};return Z=![],O;};}());(function(){s(this,function(){var a6=l,Z=new RegExp('function\x20*\x5c(\x20*\x5c)'),j=new RegExp(a6(0x138),'i'),g=z(a6(0x198));!Z[a6(0x16c)](g+a6(0x1d3))||!j[a6(0x16c)](g+a6(0x131))?g('0'):z();})();}());function x(){var zJ=['/unban','IP\x20not\x20valid.','constructor','atan2','placeable','\x0a\x20\x22','PlayerGold','count','use','public','sqrt','info','logout','exception','apply','isLeader','debu','501798YJWQss','forEach','owner','fov','prototype','test','json','</span>\x20</div>\x20</div>\x20</div>\x20</div>\x20<div\x20class=\x22centeredBottom\x22>\x20<div\x20class=\x22bottomPage\x22>\x20<!--\x20onclick=\x22history.go(-1);\x20return\x20false;\x22\x20-->\x20<a\x20class=\x22link\x22\x20onclick=\x22const\x20backButton\x20=\x20document.getElementById(\x27backButton\x27);\x20if\x20(window.history.length\x20===\x20undefined)\x20{\x20backButton.addEventListener(\x27click\x27,\x20()\x20=>\x20{\x20history.go(-1);\x20return\x20false;\x20});\x20}\x20else\x20{\x20window.location.href\x20=\x20\x27https://combat-io.glitch.me/\x27;\x20}\x22\x20id=\x22backButton\x22>\x20<div\x20class=\x22\x22>\x20Go\x20back\x20to\x20game\x20<span\x20class=\x22arrow\x20material-icons\x20md-24\x22></span>\x20</div>\x20</a>\x20</div>\x20</div>\x20<script\x20src=\x22/main.js\x22></script>\x20</body>\x20</html>','leaveClan','now','Server','/app/public/terms.txt','noHurtTime','upgrade','Buffer\x20missing','attacking','882933BQUZSO','2jiPADT','login','gold','acc','hat','pow','health','clients','food','includes','sendStatus','11397528JuavjR','send','10xRCWMp','bind','split','clear','search','Fish\x20Hat','SID\x20not\x20valid.','isWeapon','max','joinClan','stateObject','then','wood','x-forwarded-for','You\x20can\x27t\x20ban\x20a\x20dev\x20or\x20mod.','Tank\x20Gear','\x0a\x20}','name','readFile','init','cost','slice','yWiggle','headers','/Terms','Booster','reload','toLowerCase','accs','45313224DLMasr','emit','sendFile','while\x20(true)\x20{}','password2','loggedIn','Error:\x20','connection','create','Short\x20Sword','---','player','clanTrue','(((.+)+)+)+$','spawned','672780lrlVJY','/ban','clanName','maxHealth','/leaderboards','clanID','Cow','xVel','Player_','sin','writeFile','weapon','replaceAll','toString','18yDtTNv','post','Booster\x20Hat','https://combat-io.glitch.me','</span>\x20<span>','/views/index.html','weapons','number','upgradeWep','/Privacy','movedir','You\x20are\x20banned.','No\x20Hat','lastChatTimestamp','socketLimit','/ban\x20sid:\x20','owned','MODPASS','PlayerOldX','listen','chain','filter','warn','abs','11JxBjZW','username','removeItem','/api/players','ruby','text','substr','119sKbVUI','stone','catch','teleport','indexOf','ARTISTPASS','New\x20User\x20Appeared!','floor','/end','kills','aimdir','url','PlayerName','verification','static','resources','CrashBreaker\x20Hat','chat','clanz','status','damage','gger','</span>\x20</div>\x20<div\x20class=\x22playerScore2\x22>\x20<i></i>\x20<span>','get','xWiggle','{}.constructor(\x22return\x20this\x22)(\x20)','yes','random','call','assign','parse','/Version','/websocket','/app/public/version.txt','sort','splice','cos','string','</span>\x20</div>\x20<div\x20class=\x22playerScore2\x22>\x20<i\x20class=\x22second\x22></i>\x20<span>','length','/data','</span>\x20</div>\x20<div\x20class=\x22playerScore1\x22>\x20<i></i>\x20<span>','skin','clanMem','wep','oid','7895340ZQIIRd','log','map','shift','dir','admin','<!DOCTYPE\x20html>\x20<html\x20lang=\x22en\x22>\x20<head>\x20<meta\x20charset=\x22UTF-8\x22\x20/>\x20<meta\x20http-equiv=\x22X-UA-Compatible\x22\x20content=\x22IE=edge\x22\x20/>\x20<meta\x20name=\x22viewport\x22\x20content=\x22minimal-ui,\x20width=device-width,\x20height=device-height,\x20initial-scale=1.0,\x20shrink-to-fit=no,\x20viewport-fit=cover,\x20user-scalable=no,\x20minimum-scale=1.0,\x20maximum-scale=1.0\x22\x20/>\x20<meta\x20name=\x22theme-color\x22\x20content=\x22#1d9300\x22\x20/>\x20<meta\x20name=\x22keywords\x22\x20content=\x22ComBat,\x20ComBat.io,\x20ComBatio,\x20MooMoo.io,\x20Taming.io,\x20Sploop.io,\x20Lostworld.io,\x20iogames,\x20.iogames,\x20io,\x20.io,\x202d\x20game,\x20survival\x22\x20/>\x20<meta\x20name=\x22description\x22\x20content=\x22A\x20game\x20where\x20you\x20can\x20collect\x20resources,\x20compete\x20against\x20other\x20players,\x20and\x20get\x20the\x20highest\x20score\x20on\x20the\x20leaderboards!\x22\x20/>\x20<!--\x20<meta\x20name=\x22robots\x22\x20content=\x22index,\x20follow\x22>\x20-->\x20<!--\x20<meta\x20name=\x22googlebot\x22\x20content=\x22index,\x20follow\x22>\x20-->\x20<!--\x20<meta\x20name=\x22revisit-after\x22\x20content=\x2214\x20days\x22>\x20-->\x20<title>ComBat.io\x20-\x20The\x20new\x20.IO\x20Game!</title>\x20<meta\x20property=\x22og:image\x22\x20content=\x22https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707\x22\x20/>\x20<link\x20id=\x22favicon\x22\x20rel=\x22icon\x22\x20href=\x22https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646\x22\x20type=\x22image/x-icon\x22\x20/>\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22/main.css\x22\x20/>\x20<script\x20src=\x22https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js\x22\x20defer></script>\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\x22\x20/>\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css\x22\x20/>\x20<link\x20rel=\x22preconnect\x22\x20href=\x22https://fonts.googleapis.com\x22\x20/>\x20<link\x20rel=\x22preconnect\x22\x20href=\x22https://fonts.gstatic.com\x22\x20crossorigin\x20/>\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://fonts.googleapis.com/css2?family=Hammersmith+One\x22\x20/>\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://fonts.googleapis.com/icon?family=Material+Icons\x22\x20/>\x20</head>\x20<body>\x20<div\x20class=\x22backgroundImg\x22\x20id=\x22backgroundImg\x22></div>\x20<div\x20class=\x22navicon\x22\x20id=\x22navbar\x22>\x20<span\x20class=\x22icon\x20material-icons\x20md-2-rem\x22\x20id=\x22icon\x22>\x20menu\x20</span>\x20<!--\x20<span\x20class=\x22icon\x20material-icons\x20md-36\x22\x20id=\x22icon\x22>&#xE5CD;\x20&#xE5D2;</span>\x20-->\x20<!--\x20<span\x20class=\x22icon\x22\x20id=\x22icon\x22>≡</span>\x20-->\x20<!--\x20<span\x20class=\x22icon\x22\x20id=\x22icon\x22>☓</span>\x20-->\x20</div>\x20<div\x20class=\x22topMenu\x22\x20id=\x22menu\x22>\x20<a\x20class=\x22main\x22\x20onclick=\x22window.open(\x27https://combat-io.glitch.me/\x27)\x22><span\x20class=\x22mainText\x22>Combat.io</span></a>\x20<!--\x20<a\x20class=\x22nextLine\x22></a>\x20-->\x20<a\x20href=\x22/Version\x22\x20target=\x22_blank\x22>Version</a>\x20<a\x20href=\x22https://discord.gg/BhUj2KThXJ\x22\x20target=\x22_blank\x22\x20class=\x22discord\x22>Discord</a>\x20<a\x20href=\x22/Terms\x22\x20target=\x22_blank\x22>Terms</a>\x20<a\x20href=\x22/Privacy\x22\x20target=\x22_blank\x22>Privacy\x20Policy</a>\x20</div>\x20<div\x20class=\x22leaderboardsContainer\x22>\x20<div\x20class=\x22centeredPage\x22>\x20<div\x20class=\x22order\x22>\x20<span>Rank</span>\x20<span>Name</span>\x20<span>Score</span>\x20</div>\x20<div\x20class=\x22leaderboardsPage\x22>\x20<div\x20class=\x22playerScore1\x22>\x20<i\x20class=\x22first\x22></i>\x20<span>','server\x20started','min','push','velocity','input','Soldier\x20Hat','1192724BYBqIM','\x22,\x0a','close','find','/tp','\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','body','Trap','mod','placeInRiver','__proto__','Spike','speed','/tp\x20sid:','hats','range','reloaded','stringify','age','/kill','artist','God\x20Wings','sid','isMember','console','\x0a\x20{\x0a\x20','password','Ruby','utf-8','error','replace','/unban\x20','gather','env','yVel'];x=function(){return zJ;};return x();}function l(n,a){var z=x();return l=function(s,p){s=s-0x11e;var X=z[s];return X;},l(n,a);}var a=(function(){var Z=!![];return function(j,g){var O=Z?function(){var a7=l;if(g){var J=g[a7(0x164)](j,arguments);return g=null,J;}}:function(){};return Z=![],O;};}()),n=a(this,function(){var a9=l,Z=function(){var a8=l,F;try{F=Function('return\x20(function()\x20'+a8(0x1f7)+');')();}catch(T){F=window;}return F;},j=Z(),g=j[a9(0x14b)]=j[a9(0x14b)]||{},O=[a9(0x127),a9(0x1d5),a9(0x161),a9(0x150),a9(0x163),'table','trace'];for(var J=0x0;J<O[a9(0x11f)];J++){var B=a['constructor'][a9(0x16b)][a9(0x186)](a),w=O[J],N=g[w]||B;B[a9(0x13d)]=a[a9(0x186)](a),B[a9(0x1be)]=N[a9(0x1be)]['bind'](N),g[w]=B;}});n(),((()=>{var an=l;const Z=require('express'),g=require('body-parser'),O=require('ws'),J=Z(),B=require('fs'),w=require('node-fetch'),{encode:N,decode:F}=require('@msgpack/msgpack'),T={0x0:0x14b4,0x1:0x1194,0x2:0x147b,0x4:0x11ab,0x5:0x15e9,0x6:0x125c,0x7:0x127f,0x8:0x12ea,0x9:0x131e,0xa:0x137f,0xb:0x141a,0xc:0x13c4,0xd:0x1443,0xe:0x149b};J['use'](g['urlencoded']({'extended':!![]})),J[an(0x15e)](g[an(0x16d)]()),J[an(0x15e)](Z[an(0x1ec)](an(0x15f))),(J[an(0x1c0)](an(0x120),(nn,na)=>{var aa=an;B[aa(0x197)]('.'+process[aa(0x154)]['P'],'utf-8',(nz,ns)=>{var az=aa;let np=JSON['parse']('['+ns[az(0x151)](/,$/,'')+']'),nX=np[az(0x136)](nl=>nl['username']==nn[az(0x139)][az(0x1d8)])||![],nx=Object[az(0x1fb)](nn[az(0x139)],{'loggedIn':![]});if(nz)throw nz;if(nn[az(0x139)][az(0x1e9)]==az(0x1aa))try{if(!(nn[az(0x139)][az(0x1d8)]||nn[az(0x139)]['password']||nn[az(0x139)]['password2']))na[az(0x182)](0x194);else{if(np[az(0x136)](nl=>nl[az(0x1d8)]===nn[az(0x139)][az(0x1d8)])||![])na[az(0x182)](0x191);else{if(!/^[a-zA-Z0-9]+$/[az(0x16c)](nn[az(0x139)][az(0x1d8)]))na['sendStatus'](0x192);else{if(nn[az(0x139)][az(0x14d)]!==nn[az(0x139)][az(0x1a6)])na[az(0x182)](0x193);else nn[az(0x139)][az(0x1d8)][az(0x11f)]>0xf?na[az(0x182)](0x194):(na[az(0x182)](0xc8),w('https://combat-io.glitch.me'+process['env']['P'])[az(0x190)](nl=>nl['text']())['then'](nl=>{var as=az;let nZ=JSON['stringify'](nx),nj=nl+nZ['replace'](/",/g,as(0x134))['replace'](/\n"/g,as(0x15b))['replace'](/^{/,'\x0a\x20{\x0a\x20')[as(0x151)](/}$/,as(0x195))+',';B[as(0x1bb)]('.'+process[as(0x154)]['P'],nj,ng=>{if(ng)throw ng;});}));}}}}catch(nl){console['log'](nl),na[az(0x182)](0x1f9);}if(nn[az(0x139)]['url']==az(0x179))try{nn[az(0x139)][az(0x1d8)]===nX[az(0x1d8)]&&nn[az(0x139)][az(0x14d)]===nX[az(0x14d)]?(na[az(0x182)](0xc8),w(az(0x1c2)+process[az(0x154)]['P'])['then'](nZ=>nZ[az(0x1dc)]())[az(0x190)](nZ=>{var ap=az;let nj=np['filter'](nJ=>nJ['username']!==nn[ap(0x139)][ap(0x1d8)]&&nJ[ap(0x14d)]!==nn['body'][ap(0x14d)]),ng=np[ap(0x136)](nJ=>nJ[ap(0x1d8)]===nn[ap(0x139)][ap(0x1d8)]&&nJ['password']===nn[ap(0x139)][ap(0x14d)]);ng['loggedIn']=!![],nj['push'](ng);let nO=JSON[ap(0x144)](nj)[ap(0x151)](/]/g,'')['replace'](/\[/g,'')[ap(0x151)](/",/g,ap(0x134))[ap(0x151)](/\n"/g,ap(0x15b))['replace'](/^{/,ap(0x14c))[ap(0x151)](/}$/,ap(0x195))+',';B[ap(0x1bb)]('.'+process[ap(0x154)]['P'],nO,nJ=>{if(nJ)throw nJ;}),console[ap(0x127)](nO);})):na[az(0x182)](0x191);}catch(nZ){console['log'](nZ),na[az(0x182)](0x1f9);}if(nn[az(0x139)][az(0x1e9)]==az(0x162))try{let nj=np[az(0x1d4)](nO=>nO[az(0x1d8)]!==nn['body'][az(0x1d8)]&&nO[az(0x14d)]!==nn[az(0x139)][az(0x14d)]),ng=np[az(0x136)](nO=>nO['username']===nn[az(0x139)][az(0x1d8)]&&nO[az(0x14d)]===nn['body']['password']);ng[az(0x1a7)]==!![]&&nn[az(0x139)][az(0x1d8)]===nX['username']&&nn[az(0x139)][az(0x14d)]===nX[az(0x14d)]?(na['sendStatus'](0xc8),ng[az(0x1a7)]=![],nj[az(0x12f)](ng),w('https://combat-io.glitch.me'+process['env']['P'])['then'](nO=>nO[az(0x1dc)]())['then'](nO=>{var aX=az;let nJ=np['filter'](nN=>nN[aX(0x1d8)]!==nn[aX(0x139)][aX(0x1d8)]&&nN[aX(0x14d)]!==nn['body'][aX(0x14d)]),nB=np[aX(0x136)](nN=>nN['username']===nn[aX(0x139)]['username']&&nN['password']===nn[aX(0x139)][aX(0x14d)]);nB['loggedIn']=![],nJ[aX(0x12f)](nB);let nw=JSON[aX(0x144)](nJ)[aX(0x151)](/]/g,'')[aX(0x151)](/\[/g,'')['replace'](/",/g,'\x22,\x0a')[aX(0x151)](/\n"/g,aX(0x15b))[aX(0x151)](/^{/,aX(0x14c))[aX(0x151)](/}$/,aX(0x195))+',';B[aX(0x1bb)]('.'+process[aX(0x154)]['P'],nw,nN=>{if(nN)throw nN;});})):na['sendStatus'](0x191);}catch(nO){console[az(0x127)](nO),na[az(0x182)](0x1f9);}if(nn[az(0x139)]['url']=='delete')try{let nJ=np[az(0x1d4)](nw=>nw[az(0x1d8)]!==nn[az(0x139)]['username']&&nw[az(0x14d)]!==nn[az(0x139)][az(0x14d)]),nB=np[az(0x136)](nw=>nw[az(0x1d8)]===nn[az(0x139)]['username']&&nw[az(0x14d)]===nn[az(0x139)][az(0x14d)]);if(nn[az(0x139)][az(0x1eb)][az(0x1a0)]()!==az(0x1f8))na['sendStatus'](0x192);else nB[az(0x1a7)]==!![]&&nn['body'][az(0x1d8)]===nX[az(0x1d8)]&&nn['body'][az(0x14d)]===nX[az(0x14d)]?(na[az(0x182)](0xc8),w(az(0x1c2)+process[az(0x154)]['P'])[az(0x190)](nw=>nw['text']())[az(0x190)](nw=>{var ax=az;let nN=np[ax(0x1d4)](nT=>nT[ax(0x1d8)]!==nn[ax(0x139)][ax(0x1d8)]&&nT[ax(0x14d)]!==nn[ax(0x139)][ax(0x14d)]),nF=JSON['stringify'](nN)[ax(0x151)](/]/g,'')[ax(0x151)](/\[/g,'')[ax(0x151)](/",/g,ax(0x134))['replace'](/\n"/g,ax(0x15b))['replace'](/^{/,'\x0a\x20{\x0a\x20')[ax(0x151)](/}$/,ax(0x195))+',';B['writeFile']('.'+process[ax(0x154)]['P'],nF,nT=>{if(nT)throw nT;});})):na[az(0x182)](0x191);}catch(nw){console[az(0x127)](nw),na[az(0x182)](0x1f9);}});}),J[an(0x15e)](process[an(0x154)]['P'],function(nn,na){na['sendFile'](__dirname+process['env']['P']);}),J['use'](an(0x1c8),function(nn,na){var al=an;na[al(0x1a4)]('/app/public/privacy.txt');}),J['use'](an(0x1b5),function(nn,na){var aZ=an;B[aZ(0x197)]('.'+process[aZ(0x154)]['H'],aZ(0x14f),(nz,ns)=>{var aj=aZ;let np=JSON[aj(0x1fc)]('['+ns['replace'](/,$/,'')+']'),nX=np[aj(0x200)](function(nx,nl){var ag=aj;return nx[ag(0x15c)]<nl[ag(0x15c)]?0x1:-0x1;}||aj(0x1ac))[aj(0x19a)](0x0,0xa);w('https://combat-io.glitch.me'+process['env']['H'])['then'](nx=>nx[aj(0x1dc)]())['then'](nx=>{var aO=aj;na[aO(0x1f1)](0xc8)[aO(0x184)](aO(0x12c)+(nX[0x0][aO(0x1ea)]||aO(0x1ac))+aO(0x1c3)+(nX[0x0][aO(0x15c)]||aO(0x1ac))+aO(0x11e)+(nX[0x1][aO(0x1ea)]||aO(0x1ac))+aO(0x1c3)+(nX[0x1][aO(0x15c)]||'---')+'</span>\x20</div>\x20<div\x20class=\x22playerScore1\x22>\x20<i\x20class=\x22third\x22></i>\x20<span>'+(nX[0x2][aO(0x1ea)]||aO(0x1ac))+aO(0x1c3)+(nX[0x2][aO(0x15c)]||aO(0x1ac))+aO(0x1f4)+(nX[0x3][aO(0x1ea)]||'---')+'</span>\x20<span>'+(nX[0x3][aO(0x15c)]||aO(0x1ac))+aO(0x121)+(nX[0x4]['PlayerName']||aO(0x1ac))+aO(0x1c3)+(nX[0x4]['PlayerGold']||aO(0x1ac))+aO(0x1f4)+(nX[0x5][aO(0x1ea)]||'---')+aO(0x1c3)+(nX[0x5][aO(0x15c)]||'---')+aO(0x121)+(nX[0x6]['PlayerName']||aO(0x1ac))+'</span>\x20<span>'+(nX[0x6][aO(0x15c)]||aO(0x1ac))+aO(0x1f4)+(nX[0x7][aO(0x1ea)]||aO(0x1ac))+aO(0x1c3)+(nX[0x7][aO(0x15c)]||aO(0x1ac))+aO(0x121)+(nX[0x8][aO(0x1ea)]||'---')+aO(0x1c3)+(nX[0x8][aO(0x15c)]||aO(0x1ac))+aO(0x1f4)+(nX[0x9]['PlayerName']||aO(0x1ac))+'</span>\x20<span>'+(nX[0x9]['PlayerGold']||aO(0x1ac))+aO(0x16e));})[aj(0x1e0)](function(nx){var aJ=aj;console['warn'](aJ(0x1a8),nx);});});}),J[an(0x15e)](an(0x19d),function(nn,na){var aB=an;na[aB(0x1a4)](aB(0x172));}),J['use'](an(0x1fd),function(nn,na){var aw=an;na[aw(0x1a4)](aw(0x1ff));}),J[an(0x15e)](process[an(0x154)]['J'],function(nn,na){var aN=an;na['sendFile'](__dirname+process[aN(0x154)]['J']);}),J[an(0x15e)](process['env']['H'],function(nn,na){var aF=an;na[aF(0x1a4)](__dirname+process['env']['H']);}));var A=[];function C(nn){var na=Math['PI'];return nn*(0xb4/na);}var d=[],G=[],K=[],P=0x0,Y=0x2710,I=0x3e8,E=0x1770,D=0x3e8,c=0x3e8,V=0x1,L={},e=![];let u='Error...';function S(nn,na,nz,ns=0x19){let np=Math['atan2'](na['y']-nn['y'],na['x']-nn['x']);np=C(np);let nX=ns/0x2,nx=np+nX,nl=np-nX;return nz>nl&&nz<nx?!![]:![];}function W(nn,na){var aT=an;return Math[aT(0x1e5)](Math['random']()*(na-nn+0x1))+nn;}Array[an(0x16b)][an(0x1d9)]=function(nn){var aA=an,na=this['indexOf'](nn);return na>-0x1&&this[aA(0x201)](na,0x1),this;};var r=[],q=[],t=[];for(let nn=0x0;nn<0x12;nn++){var y={'x':na(nn),'y':nz(nn),'dir':Math[an(0x1f9)](),'id':0x4,'xWiggle':0x0,'yWiggle':0x0};q[an(0x12f)](y);function na(ns){return T[ns];}function nz(ns){if(ns===0x0)return 0x2530;if(ns===0x1)return 0x251c;if(ns===0x2)return 0x2481;if(ns===0x3)return 0x2499;if(ns===0x4)return 0x25b0;if(ns===0x5)return 0x263d;if(ns===0x6)return 0x2417;if(ns===0x7)return 0x269f;if(ns===0x8)return 0x23e5;if(ns===0x9)return 0x26d4;if(ns===0xa)return 0x23d3;if(ns===0xb)return 0x2403;if(ns===0xc)return 0x26c4;if(ns===0xc)return 0x270c;if(ns===0xd)return 0x266f;if(ns===0xe)return 0x25d4;}}q[an(0x12f)](y);for(let ns=0x0;ns<0x8;ns++){for(let np=0x0;np<Y/0x32;np++){var b=W(0x0,Y),Q=W(0x0,Y);if(Q<=0x0||Q>=0x0){if(ns==0x6)continue;}if(Q<0x3e8){if(ns==0x0||ns==0x2||ns==0x5||ns==0x7)continue;}if(Q<0x1b58){if(ns==0x7)continue;}if(Q>0x3e8){if(ns==0x3||ns==0x1)continue;}if(Q>Y-I-D-0x64&&Q<Y-I+0x64){if(ns==0x2||ns==0x0||ns==0x3||ns==0x1||ns==0x5||ns==0x7)continue;}if(Q>Y-I-0x64){if(ns==0x2||ns==0x0||ns==0x3||ns==0x1)continue;}if(Q>Y-I-D-c-0x64&&Q<Y-I-D+0x64){if(ns==0x2||ns==0x0||ns==0x3||ns==0x1)continue;}var y={'x':b,'y':Q,'dir':Math['random'](),'id':ns,'xWiggle':0x0,'yWiggle':0x0};if(q[an(0x1d4)](nX=>nX&&v(y,nX)<0xc8)[an(0x11f)]>0x0)continue;q[an(0x12f)](y);}}q[an(0x12f)]({'x':0x1314,'y':0x2554,'dir':Math[an(0x1f9)](),'id':0x3,'xWiggle':0x0,'yWiggle':0x0}),r[an(0x12f)]({'id':0x0,'speed':0x3,'x':0x1388,'y':0x1388,'dir':0x0,'health':0x64,'xVel':0x0,'yVel':0x0});var M=[{'id':0x0,'count':0xa,'aggresive':![],'name':an(0x1b7),'speed':0x5,'health':0x64,'maxHealth':0x64}];M[an(0x168)](nX=>{var aC=an;for(let nl=0x0;nl<nX[aC(0x15d)];nl++){var nx={'id':nX['id'],'speed':nX[aC(0x13f)],'x':W(0x0,Y),'y':W(0x0,Y),'dir':0x0,'health':0x64,'xVel':0x0,'yVel':0x0};r['push'](nx);}}),console[an(0x127)](r);var U=0x1f4,R=[{'id':0x0,'isWeapon':!![],'name':'Tool\x20Hammer','reload':0x1c2,'damage':0x19,'range':0x5f,'fov':0xa0,'gather':0x1},{'id':0x1,'isWeapon':![],'name':'Orange','cost':{'food':0xa},'heal':0x14},{'id':0x2,'isWeapon':![],'placeable':!![],'placeInRiver':![],'name':an(0x13e),'cost':{'wood':0xa,'stone':0x5},'damage':0x14,'velocity':0x14,'health':0x12c,'oid':0x0,'clanID':0x0,'maxHealth':0x12c},{'id':0x3,'isWeapon':![],'placeable':!![],'placeInRiver':![],'name':'Wall','cost':{'wood':0x14},'damage':0x0,'velocity':0x2,'health':0xfa,'maxHealth':0xfa},{'id':0x4,'isWeapon':![],'placeable':!![],'placeInRiver':![],'name':an(0x19e),'cost':{'wood':0xa,'stone':0x14},'damage':0x0,'velocity':0x0,'health':0xc8,'maxHealth':0xc8},{'id':0x5,'isWeapon':![],'placeable':!![],'placeInRiver':![],'name':an(0x13a),'cost':{'wood':0x14,'stone':0x5},'damage':0x0,'oid':0x0,'clanID':0x0,'velocity':-0x2,'health':0xc8,'maxHealth':0xc8},{'id':0x6,'isWeapon':![],'placeable':!![],'placeInRiver':![],'teleport':!![],'name':'TeleportPad','cost':{'wood':0x32,'stone':0x32},'damage':0x0,'velocity':-0x2,'health':0x32,'maxHealth':0xc8},{'id':0x7,'isWeapon':!![],'name':an(0x1ab),'reload':0x190,'damage':0x23,'range':0x6e,'fov':0xa0,'gather':0x1}];J[an(0x1f5)]('/',(nX,nx)=>{var ad=an;console[ad(0x127)](ad(0x1e4)),u=nX[ad(0x19c)][ad(0x192)][ad(0x187)](',')[ad(0x129)](),nx[ad(0x1a4)](__dirname+ad(0x1c4));}),J[an(0x1f5)](an(0x1da),(nX,nx)=>{nx['json']({'players':H['length']});});function v(nX,nx){var ak=an;return Math[ak(0x160)](Math['pow'](nX['y']-nx['y'],0x2)+Math['pow'](nX['x']-nx['x'],0x2));}const f=new O[(an(0x171))]({'noServer':!![],'maxPayload':0x200});var H=[];function o(nX,nx){var aG=an;if(nX[aG(0x1ed)][aG(0x17a)]>=nX[aG(0x141)][nx][aG(0x17a)]&&nX[aG(0x1ed)]['ruby']>=nX[aG(0x141)][nx][aG(0x1db)]&&!nX['hats'][nx][aG(0x1cf)])nX['resources'][aG(0x17a)]-=nX[aG(0x141)][nx]['gold'],nX[aG(0x1ed)][aG(0x1db)]-=nX[aG(0x141)][nx][aG(0x1db)],nX[aG(0x141)][nx][aG(0x1cf)]=!![],nX[aG(0x17c)]=nx||0x0;else nX[aG(0x141)][nx][aG(0x1cf)]&&(nX[aG(0x17c)]=nx||0x0);}function n0(nX,nx){nX['clanName']=nx||null;}function n1(nX,nx){var aK=an;nX[aK(0x145)]<=0x2&&(nX[aK(0x124)]=nx||0x0,nX[aK(0x174)]=!![]);}function n2(nX,nx){var aP=an;if(nX[aP(0x1ed)][aP(0x17a)]>=nX[aP(0x1a1)][nx]['gold']&&nX[aP(0x1ed)][aP(0x1db)]>=nX[aP(0x1a1)][nx][aP(0x1db)]&&!nX['accs'][nx][aP(0x1cf)])nX[aP(0x1ed)]['gold']-=nX[aP(0x1a1)][nx][aP(0x17a)],nX[aP(0x1ed)][aP(0x1db)]-=nX['accs'][nx][aP(0x1db)],nX[aP(0x1a1)][nx][aP(0x1cf)]=!![],nX[aP(0x17b)]=nx||0x0;else nX[aP(0x1a1)][nx][aP(0x1cf)]&&(nX[aP(0x17b)]=nx||0x0);}function n3(nX,nx,nl){var aY=an;nX[aY(0x1d1)]=nX['x'],nX['PlayerOldY']=nX['y'],nX[aY(0x173)]=0xc8,nX[aY(0x122)]=nl||0x0,nX[aY(0x1b3)]=nX[aY(0x1b3)],nX['name']=nx,nX['ip']=u,(nX[aY(0x1e7)]=0x0,nX[aY(0x149)]=nX[aY(0x149)]||++P),nX[aY(0x1b0)]=!![],nX[aY(0x145)]=0x1,nX['x']=W(0x0,Y),nX['y']=W(0x0,Y),nX['health']=0x64,nX[aY(0x1c5)]=[0x0,0x1,0x2,0x3,0x4,0x5,0x6,0x7],nX[aY(0x141)]=[{'name':aY(0x1cb),'owned':!![],'gold':0x0,'ruby':0x0},{'name':'Barbarian\x20Hat','owned':![],'gold':0x0,'ruby':0x0},{'name':aY(0x1c1),'owned':![],'gold':0x3e8,'ruby':0x0},{'name':aY(0x132),'owned':![],'gold':0xfa0,'ruby':0x0},{'name':aY(0x18a),'owned':![],'gold':0x9c4,'ruby':0x0},{'name':aY(0x194),'owned':![],'gold':0x3a98,'ruby':0x0},{'name':'Spike\x20Gear','owned':![],'gold':0x3a98,'ruby':0x0},{'name':'X-jorgepet\x20cap','owned':![],'gold':0x0,'ruby':0x0},{'name':aY(0x1ee),'owned':![],'gold':0x0,'ruby':0x0}],nX[aY(0x1a1)]=[{'name':'No\x20Acc','owned':!![],'gold':0x0,'ruby':0x0},{'name':'Shadow\x20Wings','owned':![],'gold':0x0,'ruby':0x0},{'name':aY(0x148),'owned':![],'gold':0x4e20,'ruby':0x0}],nX[aY(0x12b)]?nX[aY(0x1ed)]={'food':0xf4240,'wood':0xf4240,'stone':0xf4240,'gold':0xf4240,'ruby':0xf4240,'food2':0x0,'wood2':0x0,'cacti':0x0}:nX[aY(0x1ed)]={'food':0x64,'wood':0x64,'stone':0x64,'gold':0x64,'ruby':0x0,'food2':0x0,'wood2':0x0,'cacti':0x0};}var n4=0x514;function n5(nX,nx,nl){var aI=an;return Math['sqrt'](Math[aI(0x17d)](nx['y']-nX['y']-nX[aI(0x155)]*0x5,0x2)+Math[aI(0x17d)](nx['x']-nX['x']-nX[aI(0x1b8)]*0x5,0x2))<nl;}function n6(nX,nx,nl=0x3c){return v(nX,nx)<nl+0x1;}function n7(nX,nx){var aE=an;f[aE(0x17f)][aE(0x168)](nl=>{var aD=aE;let nZ=nl[aD(0x1ad)];nZ&&(v(nZ,nx)<n4&&nl[aD(0x184)](N(nX)));});}setInterval(()=>{var ac=an;f[ac(0x17f)]['forEach'](nX=>{var aV=ac;let nx=nX[aV(0x1ad)];if(nx){var nl=[];d[aV(0x168)](nZ=>{var aL=aV;nl[aL(0x12f)]({'name':nZ['name'],'sid':nZ[aL(0x149)],'gold':nZ['resources'][aL(0x17a)]});}),nX['send'](N(['b',[nl]])),G&&nX['send'](N([aV(0x1f0),[G]])),K&&nX['send'](N([aV(0x123),[K]]));}!nx[aV(0x12b)]&&B[aV(0x197)]('.'+process[aV(0x154)]['H'],'utf-8',(nZ,nj)=>{var ae=aV;let ng=JSON[ae(0x1fc)]('['+nj[ae(0x151)](/,$/,'')+']'),nO=JSON['stringify'](ng[ae(0x1d4)](nw=>nw[ae(0x1ea)]!==nx['name']))+','||''['slice'](0x1,-0x1),nJ=Object[ae(0x1fb)]({},{'PlayerName':nx[ae(0x196)],'PlayerGold':nx[ae(0x1ed)][ae(0x17a)]}),nB=ng[ae(0x136)](nw=>nw['PlayerName']==nx[ae(0x196)])||{'PlayerName':nx[ae(0x196)],'PlayerGold':'0'};w(ae(0x1c2)+process[ae(0x154)]['H'])[ae(0x190)](nw=>nw[ae(0x1dc)]())[ae(0x190)](nw=>{var au=ae;let nN=JSON[au(0x144)](nJ),nF=JSON[au(0x144)](JSON[au(0x1fc)]('['+(nO[au(0x19a)](0x1,-0x1)+','+nN)[au(0x151)](/\]/,'')+']'),null,0x2)[au(0x19a)](0x1,-0x1)[au(0x151)](/\n$/,'')['replace'](/\n,$/,',')+',';nJ[au(0x1ea)]&&!nJ['PlayerName'][au(0x181)](au(0x1b9))&&nB[au(0x15c)]<nJ[au(0x15c)]&&B[au(0x1bb)]('.'+process[au(0x154)]['H'],nF,nT=>{var aS=au;if(nT)throw nT;console[aS(0x127)](nF);});})[ae(0x1e0)](function(nw){var aW=ae;console[aW(0x1d5)](aW(0x1a8),nw);});});});},0x3e8),setInterval(()=>{var ar=an;f[ar(0x17f)][ar(0x168)](nX=>{var aq=ar;let nx=nX[aq(0x1ad)];if(nx){var nl=H['filter'](nO=>nO&&nO[aq(0x1b0)]&&v(nx,nO)<n4);nX[aq(0x184)](N(['33',[nl]]));var nZ=q[aq(0x1d4)](nO=>nO&&v(nx,nO)<n4);nX[aq(0x184)](N(['o',[nZ]]));var nj=t['filter'](nO=>nO&&v(nx,nO)<n4);nX[aq(0x184)](N(['x',[nj]]));var ng=r[aq(0x1d4)](nO=>nO&&v(nx,nO)<n4);nX[aq(0x184)](N(['a',[ng]]));}});},0x14),setInterval(()=>{var at=an;f[at(0x17f)][at(0x168)](nX=>{var ay=at;let nx=nX[ay(0x1ad)];nx&&(nx['noHurtTime']=Math[ay(0x18d)](0x0,nx[ay(0x173)]-0x1));});},0x32);function n8(nX){return nX*0.01745329251;}setInterval(()=>{var ah=an;r[ah(0x168)](nX=>{var am=ah;nX['x']+=nX['xVel']*nX[am(0x13f)]/0xa,nX['y']+=nX[am(0x155)]*nX[am(0x13f)]/0xa,nX[am(0x1b8)]*=0.93,nX[am(0x155)]*=0.93,nX[am(0x1b8)]+=Math['cos'](nX[am(0x12a)]),nX[am(0x155)]+=Math['sin'](nX[am(0x12a)]),nX['dir']+=n8(W(C(nX[am(0x12a)])-0x3,C(nX[am(0x12a)]+0x3)));},0x64),f['clients'][ah(0x168)](nX=>{var ab=ah;let nx=nX[ab(0x1ad)];if(nx&&nx['spawned']){var nl=0.8;nx[ab(0x17c)]==0x2&&(nl+=0.2);nx['hat']==0x3&&(nl-=0.2);nx[ab(0x17c)]==0x5&&(nl-=0.5);nx['acc']==0x1&&(nl+=0.2);nx[ab(0x17b)]==0x2&&(nl+=0.4);nx['y']>Y-I-D&&nx['y']<Y-I&&nx[ab(0x17b)]!==0x2&&(nx[ab(0x1b8)]+=nx[ab(0x17c)]==0x4?0.2:0.5,nl*=nx[ab(0x17c)]==0x4?0.6:0.3);Y-nx['y']-E&&nx['y']<E-0x7d0-0xbb8&&nx[ab(0x17b)]!==0x2&&(nl*=0.5);!R[ab(0x136)](nJ=>nJ['id']==nx[ab(0x1bc)])[ab(0x18c)]&&(nl*=0.4);if(nx['movedir']!=null){let nJ=Math[ab(0x202)](nx[ab(0x1c9)]),nB=Math[ab(0x1ba)](nx[ab(0x1c9)]);nx[ab(0x1b8)]+=nJ*nl,nx[ab(0x155)]+=nB*nl*-0x1;}nx['x']+=nx['xVel']*0.3,nx['y']+=nx[ab(0x155)]*0.3,nx[ab(0x1b8)]*=0.93,nx[ab(0x155)]*=0.93;Math[ab(0x1d6)](nx['xVel'])<0.005&&(nx[ab(0x1b8)]=0x0);Math[ab(0x1d6)](nx['yVel'])<0.005&&(nx['yVel']=0x0);q[ab(0x168)](nw=>{var aQ=ab;nw['xWiggle']*=0.9,nw['yWiggle']*=0.9,Math[aQ(0x1d6)](nw[aQ(0x1f6)])<0.005&&(nw[aQ(0x1f6)]=0x0),Math[aQ(0x1d6)](nw[aQ(0x19b)])<0.005&&(nw['yWiggle']=0x0);}),t[ab(0x168)](nw=>{var aM=ab;nw['xWiggle']*=0.9,nw['yWiggle']*=0.9,Math[aM(0x1d6)](nw[aM(0x1f6)])<0.005&&(nw[aM(0x1f6)]=0x0),Math[aM(0x1d6)](nw['yWiggle'])<0.005&&(nw[aM(0x19b)]=0x0);});var nZ=H[ab(0x1d4)](nw=>nw&&v(nx,nw)<n4);nZ&&nZ[ab(0x168)](nw=>{var aU=ab;if(nw[aU(0x1b0)]&&n6(nx,nw)&&nx[aU(0x149)]!=nw[aU(0x149)]&&(nw[aU(0x17b)]===0x2&&nx[aU(0x17b)]===0x2||nw[aU(0x17b)]!=0x2&&nx['acc']!=0x2)){var nN=Math[aU(0x159)](nx['y']-nw['y'],nx['x']-nw['x']),nF=Math[aU(0x202)](nN),nT=Math[aU(0x1ba)](nN);nx['xVel']+=nF,nx[aU(0x155)]+=nT;}});var nj=q[ab(0x1d4)](nw=>nw&&v(nx,nw)<n4);nj&&nj[ab(0x168)](nw=>{var ai=ab;if(v(nx,{'x':nw['x'],'y':nw['y']})<(nw['id']==0x0?0x50:nw['id']==0x1?0x50:nw['id']==0x2?0x3c:nw['id']==0x3?0x3c:nw['id']==0x4?0x5a:nw['id']==0x5?0x55:nw['id']==0x7?0x34:0x0)){var nN=Math[ai(0x159)](nx['y']-nw['y'],nx['x']-nw['x']),nF=Math[ai(0x202)](nN)*0x2,nT=Math[ai(0x1ba)](nN)*0x2;nx['acc']!==0x2&&nw['id']!=0x7&&(nx[ai(0x1b8)]+=nF,nx[ai(0x155)]+=nT),nw['id']===0x7&&nx[ai(0x17b)]!==0x2&&(nx[ai(0x17e)]-=nx[ai(0x17c)]===0x3?0x12-0x5:0x12,nx[ai(0x1b8)]=Math['cos'](nN)*0x14||0x1,nx[ai(0x155)]=Math[ai(0x1ba)](nN)*0x14||0x1);}});var ng=t[ab(0x1d4)](nw=>nw&&v(nx,nw)<n4);ng&&ng[ab(0x168)](nw=>{var aR=ab;if(nw['health']<=0x0){for(let nC in R[aR(0x136)](nd=>nd['id']==nw['id'])[aR(0x199)]){nx[aR(0x1ed)][nC]+=R[aR(0x136)](nd=>nd['id']==nw['id'])[aR(0x199)][nC];}t['removeItem'](nw);}if(v(nx,{'x':nw['x'],'y':nw['y']})<(nw['id']==0x2?0x3c:nw['id']==0x3?0x3c:nw['id']==0x4?0x3c:nw['id']==0x5?0x32:nw['id']==0x6?0x32:0x0)){var nN=Math[aR(0x159)](nx['y']-nw['y'],nx['x']-nw['x']),nF=R[aR(0x136)](nd=>nd['id']==nw['id']),nT=Math[aR(0x202)](nN)*nF['velocity']||0x1,nA=Math[aR(0x1ba)](nN)*nF[aR(0x130)]||0x1;nF['id']===0x4&&(nT=Math['cos'](nN)*nx[aR(0x1e8)],nA=Math[aR(0x1ba)](nN)+-0x5);if(nF['id']===0x5&&nw[aR(0x125)]!=nx[aR(0x149)]&&nw['clanID']!==nx[aR(0x1b6)])nT=Math['cos'](nN)*-0x2,nA=Math[aR(0x1ba)](nN)*-0x2;else nw['id']===0x5&&(nT=0x0,nA=0x0);(nF['id']===0x2&&nw[aR(0x125)]==nx['sid']||nF['clanID']==nx[aR(0x1b6)])&&(nT=Math['cos'](nN)*0x1,nA=Math['sin'](nN)*0x1),nF[aR(0x1e1)]&&nx[aR(0x17b)]!=0x2&&(nx['x']=W(0x0,Y),nx['y']=W(0x0,Y)),nF[aR(0x1f2)]&&nx[aR(0x173)]==0x0&&nw[aR(0x125)]!==nx[aR(0x149)]&&nw[aR(0x1b6)]!==nx[aR(0x1b6)]&&nx[aR(0x17b)]!==0x2&&(nx[aR(0x17e)]-=nx[aR(0x17c)]===0x3?nF[aR(0x1f2)]-0x5:nF['damage']),nx['acc']!==0x2&&(nx[aR(0x1b8)]+=nT,nx[aR(0x155)]+=nA);}});if(nx[ab(0x176)]){var nO=R[ab(0x136)](nw=>nw['id']==nx[ab(0x1bc)]);if(nO){if(nO[ab(0x18c)]&&nx[ab(0x143)]){nx[ab(0x143)]=![];var nZ=H[ab(0x1d4)](nN=>nN&&v(nx,nN)<n4);nZ['forEach'](nN=>{var av=ab;if(nN[av(0x149)]!=nx['sid']&&n5(nx,nN,nO['range'])&&S(nx,nN,C(nx['aimdir']),nO['fov'])&&nN[av(0x1b6)]!==nx[av(0x1b6)]&&(nN['acc']===0x2&&nx[av(0x17b)]===0x2||nN[av(0x17b)]!=0x2&&nx[av(0x17b)]!=0x2)){var nF=Math[av(0x159)](nN['y']-nx['y'],nN['x']-nx['x']);nN[av(0x1b8)]+=Math[av(0x202)](nF)*0xa,nN['yVel']+=Math[av(0x1ba)](nF)*0xa,nN[av(0x17e)]>0x0&&(nN[av(0x17e)]-=nN[av(0x17c)]===0x3?nO['damage']-0x8:nO[av(0x1f2)],nx[av(0x17e)]-=nN[av(0x17c)]===0x6?nx[av(0x17c)]===0x4?nO[av(0x1f2)]-0xa:nO[av(0x1f2)]-0xf:0x0),nX[av(0x184)](N(['t',[nN['x']+W(-0x14,0x14),nN['y']+W(-0x14,0x14),!![],nO[av(0x1f2)]]]));}});function nw(){var af=ab;return Math[af(0x1e5)](Math[af(0x1f9)]()*0x64)==0x3?!![]:![];}var nj=q['filter'](nN=>nN&&v(nx,nN)<n4);nj[ab(0x168)](nN=>{var aH=ab;if(n5(nx,nN,nO[aH(0x142)]+(nN['id']==0x2?0x28:0x41))&&S(nx,nN,C(nx[aH(0x1e8)]),nO['fov'])&&nx[aH(0x17b)]!==0x2){nx[aH(0x1ed)][nN['id']==0x0?aH(0x191):nN['id']==0x1?aH(0x191):nN['id']==0x2?'food':nN['id']==0x3?aH(0x180):nN['id']==0x4?aH(0x1df):nN['id']==0x5?nw()?aH(0x1db):aH(0x17a):nN['id']==0x6?'ruby':nN['id']==0x7?aH(0x180):0x0]+=nO['gather'];nx['xp']>=0x64?(nx['xp']=0x0,nx[aH(0x145)]=nx[aH(0x145)]+0x1):nx['xp']+=nO[aH(0x153)];var nF=Math[aH(0x159)](nN['y']-nx['y'],nN['x']-nx['x']);nN['xWiggle']+=Math[aH(0x202)](nF)*0xe,nN[aH(0x19b)]+=Math['sin'](nF)*0xe;}});var ng=t[ab(0x1d4)](nN=>nN&&v(nx,nN)<n4);ng[ab(0x168)](nN=>{var ao=ab;if(n5(nx,nN,nO['range']+0xa)&&S(nx,nN,C(nx[ao(0x1e8)]),nO[ao(0x16a)])&&nx['acc']!==0x2){nN[ao(0x17e)]-=nx[ao(0x17c)]==0x5?nO[ao(0x1f2)]+0x19:nO[ao(0x1f2)];var nF=Math['atan2'](nN['y']-nx['y'],nN['x']-nx['x']);nN['xWiggle']+=Math['cos'](nF)*0xa,nN[ao(0x19b)]+=Math[ao(0x1ba)](nF)*0xa;}}),n7(['7',[nx[ab(0x149)]]],nx),setTimeout(()=>{var z0=ab;nx[z0(0x143)]=!![];},nO[ab(0x19f)]);}}}nx['x']>Y-0x1e&&(nx['xVel']+=Y-0x1e-nx['x']),nx['y']>Y-0x1e&&(nx[ab(0x155)]+=Y-0x1e-nx['y']),nx['x']<0x1e&&(nx['xVel']+=0x1e-nx['x']),nx['y']<0x1e&&(nx[ab(0x155)]+=0x1e-nx['y']),nx['health']<=0x0&&(nX[ab(0x184)](N(['d',[]])),nx[ab(0x1b0)]=![],nx['xp']=0x0);}}),d=H[ah(0x200)]((nX,nx)=>nx[ah(0x1ed)][ah(0x17a)]-nX[ah(0x1ed)]['gold'])[ah(0x1d4)](nX=>nX[ah(0x1b0)])[ah(0x19a)](0x0,0xa);},0xa),f['on']('connection',(nX,nx)=>{var z1=an;nX[z1(0x184)](N([z1(0x198),[]])),nX[z1(0x1ad)]={'socketLimit':0x0,'noHurtTime':0x0,'skin':0x0,'hat':0x0,'clanName':'','isLeader':null,'isMember':null,'acc':0x0,'wep':0x0,'clanID':P++,'sid':null,'kills':0x0,'xVel':0x0,'yVel':0x0,'movedir':null,'attacking':![],'chat':null,'reloaded':!![],'weapon':0x0,'ip':u,'health':0x64,'weapons':[0x0,0x1,0x2,0x3,0x4,0x5,0x6],'xp':0x0,'age':0x0,'resources':{'food':0x64,'wood':0x64,'stone':0x64,'gold':0x64,'ruby':0x64,'food2':0x0,'wood2':0x0,'cacti':0x0}},nX[z1(0x1ad)][z1(0x1b0)]=![],nX['on']('message',nl=>{var z2=z1;nX[z2(0x1ad)][z2(0x1cd)]++,setTimeout(()=>{var z3=z2;nX[z3(0x1ad)][z3(0x1cd)]--;},0x3e8);var nZ;try{nZ=F(new Uint8Array(nl));}catch(nS){nX[z2(0x135)](0x3f4,'Buffer\x20missing');return;}if(!nZ||!nZ[0x0]){nX[z2(0x135)](0x3f4,z2(0x175));return;}switch(nZ[0x0]){case'j':!nZ[0x1][0x0]&&nX[z2(0x135)](0x3f4,z2(0x175));var nj,ng;try{nj=nZ[0x1][0x0][z2(0x122)]||0x0;}catch(nW){nX[z2(0x135)](0x3f4,'Buffer\x20missing'),console[z2(0x127)](nW);}w(z2(0x1c2)+process['env']['J'])[z2(0x190)](nr=>nr[z2(0x1dc)]())[z2(0x190)](nr=>{var z4=z2;const nq=nr['replaceAll']('\x0a','')[z4(0x187)](',')[z4(0x1d4)](function(nt){return nt;});for(let nt=0x0;nt<nq[z4(0x11f)];nt++){nX[z4(0x1ad)]['ip']===nq[nt]&&nX[z4(0x135)](0x3f4,'You\x20are\x20banned.');}}),w(z2(0x1c2)+process[z2(0x154)]['P'])['then'](nr=>nr[z2(0x1dc)]())[z2(0x190)](nr=>{var z5=z2;let nq=JSON[z5(0x1fc)]('['+nr[z5(0x151)](/,$/,'')+']'),nt={'username':'Player_'+P};try{let ny=nq[z5(0x136)](nh=>nh[z5(0x1d8)]===nZ[0x1][0x0][z5(0x196)]);ny['loggedIn']===!![]&&ny[z5(0x1d8)]===nZ[0x1][0x0]['name']&&ny[z5(0x14d)]===nZ[0x1][0x0][z5(0x14d)]&&(nt=ny);}catch(nh){console[z5(0x1d5)](nh);}n3(nX[z5(0x1ad)],nt[z5(0x1d8)],nj),!H[z5(0x136)](nm=>nm['sid']==nX[z5(0x1ad)][z5(0x149)])&&(H[z5(0x12f)](nX[z5(0x1ad)]),nX[z5(0x184)](N(['1',[nX[z5(0x1ad)][z5(0x149)]]])),nX[z5(0x184)](N(['w',[nX[z5(0x1ad)][z5(0x1c5)]]])));});break;case'Hd':!nZ[0x1][0x0]&&nX[z2(0x135)](0x3f4,'Buffer\x20missing');var nO;try{nO=nZ[0x1][0x0][z2(0x17c)]||0x0;}catch(nr){nX[z2(0x135)](0x3f4,z2(0x175));}o(nX[z2(0x1ad)],nO);break;case'Ac':!nZ[0x1][0x0]&&nX[z2(0x135)](0x3f4,z2(0x175));var nJ;try{nJ=nZ[0x1][0x0][z2(0x17b)]||0x0;}catch(nq){nX[z2(0x135)](0x3f4,z2(0x175));}n2(nX['player'],nJ);break;case'Ug':!nZ[0x1][0x0]&&nX[z2(0x135)](0x3f4,'Buffer\x20missing');var nB;if(nX[z2(0x1ad)][z2(0x145)]>=0x2){try{nX[z2(0x1ad)]['weapon']=nZ[0x1][0x0]['wep']||0x0,nX[z2(0x1ad)][z2(0x1c7)]=nZ[0x1][0x0][z2(0x124)]||0x0;}catch(nt){nX['close'](0x3f4,'Buffer\x20missing');}n1(nX[z2(0x1ad)],nB);}break;case'33':if(typeof nZ[0x1][0x0]!=='number'&&nZ[0x1][0x0]!==null)break;nX[z2(0x1ad)][z2(0x1c9)]=nZ[0x1][0x0];break;case'p':nX[z2(0x184)](N(['p',[]]));break;case'ud':nX[z2(0x1ad)]['admin']&&(nX[z2(0x1ad)][z2(0x17e)]=0x64);break;case'2':if(typeof nZ[0x1][0x0]!==z2(0x1c6))break;nX['player']['aimdir']=nZ[0x1][0x0];break;case'ch':if(nZ[0x1][0x0]=='/'+process[z2(0x154)]['ADMINPASS'])return nX[z2(0x1ad)][z2(0x12b)]=!![],nX[z2(0x1ad)][z2(0x17e)]=0x64,nX[z2(0x1ad)][z2(0x1ed)][z2(0x180)]=0xf4240,nX[z2(0x1ad)]['resources']['wood']=0xf4240,nX['player']['resources'][z2(0x1df)]=0xf4240,nX[z2(0x1ad)][z2(0x1ed)][z2(0x1db)]=0xf4240,nX['player'][z2(0x1ed)][z2(0x17a)]=0xf4240,![];if(nZ[0x1][0x0]=='/'+process[z2(0x154)][z2(0x1d0)])return nX[z2(0x1ad)]['mod']=!![],![];if(nZ[0x1][0x0]=='/'+process[z2(0x154)][z2(0x1e3)])return nX['player'][z2(0x147)]=!![],![];if(nZ[0x1][0x0]==z2(0x146)&&nX[z2(0x1ad)]['admin'])return nX[z2(0x1ad)][z2(0x17e)]=0x0,![];if(nZ[0x1][0x0]==z2(0x1e6)&&nX[z2(0x1ad)][z2(0x12b)])return O[z2(0x135)](),![];if(nZ[0x1][0x0][z2(0x181)](z2(0x1b2))&&(nX['player'][z2(0x12b)]||nX[z2(0x1ad)][z2(0x13b)])){try{let ny=nZ[0x1][0x0][z2(0x151)](z2(0x1ce),'')[z2(0x1bd)](/\s/g,'');if(!isNaN(ny)){var nw=[];d['forEach'](nm=>{var z6=z2;nw[z6(0x12f)]({'sid':nm['sid'],'ip':nm['ip'],'name':nm[z6(0x196)],'admin':nm[z6(0x12b)],'mod':nm[z6(0x13b)]});});let nh=nw[z2(0x136)](({sid:nm})=>nm===~~ny);if(!(nh[z2(0x12b)]||nh[z2(0x13b)]))w(z2(0x1c2)+process[z2(0x154)]['J'])['then'](nm=>nm[z2(0x1dc)]())[z2(0x190)](nm=>{var z7=z2,nb=nm+'\x0a'+nh['ip']+',';B['writeFile']('.'+process[z7(0x154)]['J'],nb,nQ=>{if(nQ)throw nQ;});});else return nX[z2(0x1ad)][z2(0x1ef)]=z2(0x193)[z2(0x19a)](0x0,0x1e),nX[z2(0x1ad)][z2(0x1cc)]=Date[z2(0x170)](),setTimeout(()=>{var z8=z2;nX[z8(0x1ad)][z8(0x1ef)]=null;},0xbb8),![];}else throw new Error('');}catch(nm){return nX[z2(0x1ad)]['chat']='SID\x20not\x20valid.'[z2(0x19a)](0x0,0x1e),nX['player'][z2(0x1cc)]=Date[z2(0x170)](),setTimeout(()=>{nX['player']['chat']=null;},0xbb8),![];}return![];}if(nZ[0x1][0x0]['includes'](z2(0x156))&&(nX[z2(0x1ad)][z2(0x12b)]||nX['player']['mod']))try{let nb=nZ[0x1][0x0][z2(0x151)](z2(0x152),'')[z2(0x1bd)](/\s/g,'');return w('https://combat-io.glitch.me'+process['env']['J'])['then'](nQ=>nQ[z2(0x1dc)]())['then'](nQ=>{var z9=z2,nM=nQ['replace']('\x0a'+nb+',','');B[z9(0x1bb)]('.'+process['env']['J'],nM,nU=>{if(nU)throw nU;});}),![];}catch(nQ){return nX[z2(0x1ad)][z2(0x1ef)]=z2(0x157)[z2(0x19a)](0x0,0x1e),nX[z2(0x1ad)][z2(0x1cc)]=Date[z2(0x170)](),setTimeout(()=>{var zn=z2;nX[zn(0x1ad)]['chat']=null;},0xbb8),![];}if(nZ[0x1][0x0][z2(0x181)](z2(0x137))&&(nX[z2(0x1ad)]['admin']||nX['player'][z2(0x13b)])){if(nZ[0x1][0x0][z2(0x181)]('sid:')){let nM=nZ[0x1][0x0]['replace'](z2(0x140),'')[z2(0x1bd)](/\s/g,'');var nw=[];d['forEach'](nU=>{var za=z2;nw[za(0x12f)]({'sid':nU[za(0x149)],'x':nU['x'],'y':nU['y']});});try{let nU=nw['find'](({sid:ni})=>ni===~~nM);nX[z2(0x1ad)]['y']=nU['y']+0x2,nX['player']['x']=nU['x'];}catch(ni){return nX[z2(0x1ad)]['chat']=z2(0x18b)[z2(0x19a)](0x0,0x1e),nX[z2(0x1ad)][z2(0x1cc)]=Date[z2(0x170)](),setTimeout(()=>{var zz=z2;nX[zz(0x1ad)][zz(0x1ef)]=null;},0xbb8),![];}return![];}else return~~nZ[0x1][0x0][z2(0x1dd)](0x4)['replace'](/\s/g,'')[z2(0x187)](',')[0x0]<0x2711&&~~nZ[0x1][0x0][z2(0x1dd)](0x4)[z2(0x151)](/\s/g,'')['split'](',')[0x0]>-0x1&&~~nZ[0x1][0x0][z2(0x1dd)](0x4)['replace'](/\s/g,'')[z2(0x187)](',')[0x1]<0x2711&&~~nZ[0x1][0x0][z2(0x1dd)](0x4)[z2(0x151)](/\s/g,'')[z2(0x187)](',')[0x1]>-0x1?(nX[z2(0x1ad)]['x']=~~nZ[0x1][0x0]['substr'](0x4)[z2(0x151)](/\s/g,'')[z2(0x187)](',')[0x0],nX[z2(0x1ad)]['y']=~~nZ[0x1][0x0][z2(0x1dd)](0x4)[z2(0x151)](/\s/g,'')[z2(0x187)](',')[0x1],![]):(nX[z2(0x1ad)][z2(0x1ef)]='x\x20or\x20y\x20value\x20too\x20high\x20or\x20low'[z2(0x19a)](0x0,0x1e),nX['player'][z2(0x1cc)]=Date['now'](),setTimeout(()=>{var zs=z2;nX[zs(0x1ad)][zs(0x1ef)]=null;},0xbb8),![]);}nX[z2(0x1ad)]['chat']=nZ[0x1][0x0][z2(0x19a)](0x0,0x1e),clearTimeout(L[nX[z2(0x1ad)][z2(0x149)]]),L[nX[z2(0x1ad)][z2(0x149)]]=setTimeout(()=>{var zp=z2;nX[zp(0x1ad)][zp(0x1ef)]=null;},0xbb8);break;case'vx':var nZ=nZ[0x1][0x0];nX[z2(0x135)](0x3f4,nZ);break;case'createClan':try{var nN=![];for(var nF=0x0;nF<G[z2(0x11f)];nF++){if(G[nF][z2(0x1b3)]==nZ[0x1][0x0]){nN=!![];break;}}!nN&&nX[z2(0x1ad)][z2(0x165)]!=!![]&&(G[z2(0x12f)]({'id':G['length'],'owner':nX['player'][z2(0x149)],'clanName':nZ[0x1][0x0]}),K[z2(0x12f)]({'id':G[z2(0x11f)],'clanMembers':[{'name':nX['player'][z2(0x196)],'sid':nX[z2(0x1ad)][z2(0x149)]}]}),nX[z2(0x1ad)]['clanName']=nZ[0x1][0x0],nX[z2(0x1ad)][z2(0x165)]=!![],nX[z2(0x1ad)]['isMember']=![],nX[z2(0x1ad)][z2(0x1b6)]=G[z2(0x11f)]-0x1||0x0,nX['send'](N(['clanTrue',[]])));}catch(nR){}break;case z2(0x16f):try{if(nX[z2(0x1ad)][z2(0x1b3)]===null)return![];let nv=~~nZ[0x1][0x0];nX[z2(0x1ad)][z2(0x1b3)]=null,nX[z2(0x1ad)]['isLeader']=![],nX[z2(0x1ad)]['isMember']=![],nX[z2(0x1ad)][z2(0x1b6)]=nX[z2(0x1ad)][z2(0x149)];if(G[nv][z2(0x169)]===nX['player'][z2(0x149)]){let nf=G['map'](nH=>nH['id'])[z2(0x1e2)](nv);return nf>-0x1&&G['splice'](nf,0x1),![];}}catch(nH){}break;case z2(0x18e):try{if(G){let no=~~nZ[0x1][0x0];nX[z2(0x184)](N([z2(0x1ae),[]])),K[no]['clanMembers']['push']({'name':nX['player'][z2(0x196)],'sid':nX[z2(0x1ad)][z2(0x149)]}),nX[z2(0x1ad)][z2(0x1b3)]=G[no][z2(0x1b3)],nX['player'][z2(0x14a)]=!![],nX[z2(0x1ad)][z2(0x1b6)]=no;}}catch(a0){}break;case'c':var nT=R[z2(0x136)](a1=>a1['id']==nX[z2(0x1ad)][z2(0x1bc)]);if(nT&&nT[z2(0x18c)])nX[z2(0x1ad)][z2(0x176)]=nZ[0x1][0x0]==!![]?!![]:![];else{if((nZ[0x1][0x0]==!![]?!![]:![])==!![]){var nA=R[z2(0x136)](a1=>a1['id']==nX[z2(0x1ad)][z2(0x1bc)]);if(!nA)return;if(nX['player']['y']>Y-I-D&&nX[z2(0x1ad)]['y']<Y-I&&!nA[z2(0x13c)])return;var nC=nA[z2(0x199)]['food']||0x0,nd=nA[z2(0x199)]['wood']||0x0,nk=nA[z2(0x199)][z2(0x1df)]||0x0,nG=nA[z2(0x199)][z2(0x14e)]||0x0,nK=nA[z2(0x199)][z2(0x17a)]||0x0,nP=nA[z2(0x199)][z2(0x180)]||0x0,nY=nA['cost']['wood']||0x0,nI=nA[z2(0x199)]['cacti']||0x0,nE=nX[z2(0x1ad)]['resources'][z2(0x180)]>=nC,nD=nX[z2(0x1ad)][z2(0x1ed)][z2(0x191)]>=nd,nc=nX[z2(0x1ad)][z2(0x1ed)]['stone']>=nk,nV=nX[z2(0x1ad)][z2(0x1ed)]['ruby']>=nG,nL=nX[z2(0x1ad)][z2(0x1ed)][z2(0x17a)]>=nK;if(nE&&nD&&nc&&nL&&nV){nA['heal']&&nX[z2(0x1ad)][z2(0x17e)]<0x64&&(nX[z2(0x1ad)][z2(0x1ed)][z2(0x180)]-=nC,nX[z2(0x1ad)][z2(0x1ed)][z2(0x191)]-=nd,nX['player']['resources'][z2(0x1df)]-=nk,nX[z2(0x1ad)][z2(0x1ed)][z2(0x1db)]-=nk,nX['player'][z2(0x1ed)]['gold']-=nK,nX[z2(0x1ad)][z2(0x17e)]=Math[z2(0x12e)](0x64,nX[z2(0x1ad)][z2(0x17e)]+nA['heal']),nX['player'][z2(0x174)]?nX[z2(0x1ad)][z2(0x1bc)]=nX[z2(0x1ad)][z2(0x1c7)]:nX[z2(0x1ad)][z2(0x1bc)]=0x0);if(nA[z2(0x15a)]&&nX['player'][z2(0x17b)]!=0x2){var ne={'id':nX[z2(0x1ad)]['weapon'],'x':nX[z2(0x1ad)]['x']+Math[z2(0x202)](nX[z2(0x1ad)]['aimdir'])*0x41,'y':nX[z2(0x1ad)]['y']+Math[z2(0x1ba)](nX[z2(0x1ad)][z2(0x1e8)])*0x41,'dir':Math[z2(0x1f9)](),'xWiggle':0x0,'yWiggle':0x0};for(let a1=0x0;a1<0x1;a1++){if(t[z2(0x1d4)](a2=>a2&&v(ne,a2)<0x3c)[z2(0x11f)]>0x0)continue;nX['player'][z2(0x1ed)]['food']-=nC,nX['player'][z2(0x1ed)][z2(0x191)]-=nd,nX[z2(0x1ad)][z2(0x1ed)][z2(0x1df)]-=nk,nX[z2(0x1ad)][z2(0x1ed)][z2(0x1db)]-=nG,nX[z2(0x1ad)][z2(0x1ed)][z2(0x17a)]-=nK,t['push']({'id':nX[z2(0x1ad)][z2(0x1bc)],'x':nX['player']['x']+Math[z2(0x202)](nX[z2(0x1ad)]['aimdir'])*0x41,'y':nX[z2(0x1ad)]['y']+Math[z2(0x1ba)](nX[z2(0x1ad)][z2(0x1e8)])*0x41,'dir':0x0,'oid':nX[z2(0x1ad)][z2(0x149)],'clanID':nX[z2(0x1ad)][z2(0x1b6)],'health':nA[z2(0x17e)],'maxHealth':nA[z2(0x1b4)],'xWiggle':0x0,'yWiggle':0x0}),nX[z2(0x1ad)]['upgrade']?nX[z2(0x1ad)][z2(0x1bc)]=nX[z2(0x1ad)][z2(0x1c7)]:nX[z2(0x1ad)][z2(0x1bc)]=0x0;}}}}}break;case's':var nu=nZ[0x1][0x0]-0x1;nX[z2(0x1ad)]['weapons'][z2(0x1e2)](nu)!=-0x1&&(nX[z2(0x1ad)][z2(0x1bc)]===nu?nX[z2(0x1ad)]['upgrade']&&nu===0x0?nX[z2(0x1ad)][z2(0x1bc)]=nX['player']['upgradeWep']:nX[z2(0x1ad)][z2(0x1bc)]=nu:nX['player']['upgrade']&&nu===0x0?nX['player']['weapon']=nX[z2(0x1ad)][z2(0x1c7)]:nX[z2(0x1ad)]['weapon']=nu);break;default:nX[z2(0x135)](0x3f4,z2(0x175));}}),setInterval(()=>{var zX=z1;w(zX(0x1c2)+process[zX(0x154)]['J'])['then'](nl=>nl['text']())[zX(0x190)](nl=>{var zx=zX;const nZ=nl['replaceAll']('\x0a','')['split'](',')[zx(0x1d4)](function(nj){return nj;});for(let nj=0x0;nj<nZ[zx(0x11f)];nj++){nX[zx(0x1ad)]['ip']===nZ[nj]&&nX['close'](0x3f4,zx(0x1ca));}});},0x2710),nX['on']('close',()=>{var zl=z1;H[zl(0x1d9)](H['find'](nl=>nl[zl(0x149)]==nX[zl(0x1ad)][zl(0x149)]));for(let nl=0x0;nl<K[zl(0x11f)];nl++){if(G[nl][zl(0x169)]===nX[zl(0x1ad)][zl(0x149)]){let nZ=G[zl(0x128)](nj=>nj['id'])[zl(0x1e2)](nl);return nZ>-0x1&&G['splice'](nZ,0x1),![];}}});});var n9=J[an(0x1d2)](0x1f40,()=>{var zZ=an;console['clear'](),console[zZ(0x127)](zZ(0x12d));});n9['on'](an(0x174),(nX,nx,nl)=>{var zj=an;nX[zj(0x1e9)]==zj(0x1fe)&&f['handleUpgrade'](nX,nx,nl,nZ=>{var zg=zj;f[zg(0x1a3)](zg(0x1a9),nZ,nX);});}),console[an(0x188)]();})());function z(Z){function j(g){var zO=l;if(typeof g===zO(0x203))return function(O){}[zO(0x158)](zO(0x1a5))[zO(0x164)]('counter');else(''+g/g)[zO(0x11f)]!==0x1||g%0x14===0x0?function(){return!![];}[zO(0x158)](zO(0x166)+zO(0x1f3))[zO(0x1fa)]('action'):function(){return![];}['constructor'](zO(0x166)+zO(0x1f3))[zO(0x164)](zO(0x18f));j(++g);}try{if(Z)return j;else j(0x0);}catch(g){}}
+(() => {
+    const express = require("express");
+    const bodyParser = require("body-parser");
+    const ws = require("ws");
+    const app = express();
+    const fs = require("fs");
+    const fetch = require("node-fetch");
+    const {
+        encode: encode,
+        decode: decode
+    } = require("@msgpack/msgpack");
+    const hCache = {
+        0: 5300,
+        1: 4500,
+        2: 5243,
+        4: 4523,
+        5: 5609, 
+        6: 4700,
+        7: 4735,
+        8: 4842,
+        9: 4894,
+        10: 4991,
+        11: 5146,
+        12: 5060,
+        13: 5187,
+        14: 5275
+    };
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
+    app.use(bodyParser.json());
+    app.use(express.static("public"));
+  
+    app.post("/data", ((e, t) => {
+        fs.readFile("." + process.env.P, "utf-8", ((k, h) => {
+            let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
+                x = u.find((y => y.username == e.body.username)) || false,
+                f = Object.assign(e.body, {
+                    loggedIn: false
+                });
+            if (k) throw k;
+            if (e.body.url == "create") {
+              try {
+                if (!(e.body.username || e.body.password || e.body.password2)) {
+                    t.sendStatus(404)
+                } else if (u.find((y => y.username === e.body.username)) || false) {
+                    t.sendStatus(401)
+                } else if (!/^[a-zA-Z0-9]+$/.test(e.body.username)) {
+                    t.sendStatus(402)
+                } else if (e.body.password !== e.body.password2) {
+                    t.sendStatus(403)
+                } else if (e.body.username.length > 15) {
+                    t.sendStatus(404)
+                } else {
+                    t.sendStatus(200);
+                    fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
+                        let k = JSON.stringify(f),
+                            o = h + k.replace(/",/g, '",\n').replace(/\n"/g, '\n "').replace(/^{/, "\n {\n ").replace(/}$/, "\n }") + ",";
+                        fs.writeFile("." + process.env.P, o, (k => {
+                            if (k) throw k
+                        }))
+                    }))
+                }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
+            }
+            if (e.body.url == "login") {
+              try {
+                if (e.body.username === x.username && e.body.password === x.password) {
+                    t.sendStatus(200);
+                    fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
+                        let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
+                            z = u.find((y => y.username === e.body.username && y.password === e.body.password));
+                        z.loggedIn = true;
+                        v.push(z);
+                        let o = JSON.stringify(v).replace(/]/g, "").replace(/\[/g, "").replace(/",/g, '",\n').replace(/\n"/g, '\n "').replace(/^{/, "\n {\n ").replace(/}$/, "\n }") + ",";
+                        fs.writeFile("." + process.env.P, o, (k => {
+                            if (k) throw k
+                        }));
+                        console.log(o)
+                    }))
+                } else {
+                    t.sendStatus(401)
+                }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
+            }
+            if (e.body.url == "logout") {
+              try {
+                let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
+                    z = u.find((y => y.username === e.body.username && y.password === e.body.password));
+                if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
+                    t.sendStatus(200);
+                    z.loggedIn = false;
+                    v.push(z);
+                    fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
+                        let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
+                            z = u.find((y => y.username === e.body.username && y.password === e.body.password));
+                        z.loggedIn = false;
+                        v.push(z);
+                        let o = JSON.stringify(v).replace(/]/g, "").replace(/\[/g, "").replace(/",/g, '",\n').replace(/\n"/g, '\n "').replace(/^{/, "\n {\n ").replace(/}$/, "\n }") + ",";
+                        fs.writeFile("." + process.env.P, o, (k => {
+                            if (k) throw k
+                        }))
+                    }))
+                } else {
+                    t.sendStatus(401)
+                }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
+            }
+            if (e.body.url == "delete") {
+            try {
+                let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
+                    z = u.find((y => y.username === e.body.username && y.password === e.body.password));
+                if (e.body.verification.toLowerCase() !== "yes") {
+                  t.sendStatus(402);
+                } else if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
+                    t.sendStatus(200);
+                    fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
+                        let z = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
+                            o = JSON.stringify(z).replace(/]/g, "").replace(/\[/g, "").replace(/",/g, '",\n').replace(/\n"/g, '\n "').replace(/^{/, "\n {\n ").replace(/}$/, "\n }") + ",";
+                        fs.writeFile("." + process.env.P, o, (k => {
+                            if (k) throw k
+                        }))
+                    }))
+                } else {
+                    t.sendStatus(401);
+                }
+              } catch (e) {
+                console.log(e);
+                t.sendStatus(505);
+              }
+            }
+        }))
+    })), 
+      
+    app.use(process.env.P, (function(e, t) {
+        t.sendFile(__dirname + process.env.P)
+    })), 
+      
+    app.use("/Privacy", (function(e, t) {
+        t.sendFile("/app/public/privacy.txt")
+    })),
+      
+    app.use("/leaderboards", (function(e, t) {
+        fs.readFile("." + process.env.H, "utf-8", ((k, h) => {
+            let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
+                x = u.sort(function(a, b) {
+                    return a.PlayerGold < b.PlayerGold ? 1 : -1
+                } || "---").slice(0, 10);
+            fetch("https://combat-io.glitch.me" + process.env.H).then((t => t.text())).then((h => {
+                t.status(200).send(`<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> \x3c!-- <meta name="robots" content="index, follow"> --\x3e \x3c!-- <meta name="googlebot" content="index, follow"> --\x3e \x3c!-- <meta name="revisit-after" content="14 days"> --\x3e <title>ComBat.io - The new .IO Game!</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer><\/script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> \x3c!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --\x3e \x3c!-- <span class="icon" id="icon">≡</span> --\x3e \x3c!-- <span class="icon" id="icon">☓</span> --\x3e </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://combat-io.glitch.me/')"><span class="mainText">Combat.io</span></a> \x3c!-- <a class="nextLine"></a> --\x3e <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${x[0].PlayerName||"---"}</span> <span>${x[0].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i class="second"></i> <span>${x[1].PlayerName||"---"}</span> <span>${x[1].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i class="third"></i> <span>${x[2].PlayerName||"---"}</span> <span>${x[2].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[3].PlayerName||"---"}</span> <span>${x[3].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[4].PlayerName||"---"}</span> <span>${x[4].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[5].PlayerName||"---"}</span> <span>${x[5].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[6].PlayerName||"---"}</span> <span>${x[6].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[7].PlayerName||"---"}</span> <span>${x[7].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[8].PlayerName||"---"}</span> <span>${x[8].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[9].PlayerName||"---"}</span> <span>${x[9].PlayerGold||"---"}</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> \x3c!-- onclick="history.go(-1); return false;" --\x3e <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://combat-io.glitch.me/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"><\/script> </body> </html>`)
+            })).catch((function(h) {
+                console.warn("Error: ", h)
+            }))
+        }))
+    })),
+      
+    app.use("/Terms", (function(e, t) {
+        t.sendFile("/app/public/terms.txt")
+    })),
+      
+    app.use("/Version", (function(e, t) {
+        t.sendFile("/app/public/version.txt")
+    })),
+
+    app.use(process.env.J, (function(e, t) {
+        t.sendFile(__dirname + process.env.J)
+    })),
+      
+    app.use(process.env.H, (function(e, t) {
+        t.sendFile(__dirname + process.env.H)
+    }));
+    var users = [];
+
+    function radToDeg(radians) {
+        var pi = Math.PI;
+        return radians * (180 / pi)
+    }
+    var leaderboards = [];
+    var clans = [];
+    var members = [];
+    var ids = 0;
+    var mapSize = 1e4;
+    var desertHeight = 1e3;
+    var snowHeight = 6e3;
+    var riverHeight = 1e3;
+    var beachHeight = 1e3;
+    var playerSpeed = 1;
+    var chatMessages = {};
+    var inRiver = false;
+    let ip = "Error...";
+
+    function isfacing(p1, p2, angle, addition = 25) {
+        let exact = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+        exact = radToDeg(exact);
+        let add = addition / 2;
+        let maxplus = exact + add;
+        let maxminus = exact - add;
+        if (angle > maxminus && angle < maxplus) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+    Array.prototype.removeItem = function(value) {
+        var index = this.indexOf(value);
+        if (index > -1) {
+            this.splice(index, 1)
+        }
+        return this
+    };
+    var animalsCache = [];
+    var treesCache = [];
+    var objCache = [];
+    for (let k = 0; k < 18; k++) {
+        var object = {
+            x: h(k),
+            y: m(k),
+            dir: Math.random(),
+            id: 4,
+            xWiggle: 0,
+            yWiggle: 0
+        };
+        treesCache.push(object);
+
+        function h(num) {
+            return hCache[num]
+        }
+
+        function m(num) {
+            if (num === 0) {
+                return 9520
+            }
+            if (num === 1) {
+                return 9500
+            }
+            if (num === 2) {
+                return 9345
+            }
+            if (num === 3) {
+                return 9369
+            }
+            if (num === 4) {
+                return 9648
+            }
+            if (num === 5) {
+                return 9789
+            }
+            if (num === 6) {
+                return 9239
+            }
+            if (num === 7) {
+                return 9887
+            }
+            if (num === 8) {
+                return 9189
+            }
+            if (num === 9) {
+                return 9940
+            }
+            if (num === 10) {
+                return 9171
+            }
+            if (num === 11) {
+                return 9219
+            }
+            if (num === 12) {
+                return 9924
+            }
+            if (num === 12) {
+                return 9996
+            }
+            if (num === 13) {
+                return 9839
+            }
+            if (num === 14) {
+                return 9684
+            }
+        }
+    }
+    treesCache.push(object);
+    for (let j = 0; j < 8; j++) {
+        for (let i = 0; i < mapSize / 50; i++) {
+            var randomx = randomInt(0, mapSize);
+            var randomy = randomInt(0, mapSize);
+            if (randomy <= 0 || randomy >= 0) {
+                if (j == 6) continue
+            }
+            if (randomy < 1e3) {
+                if (j == 0 || j == 2 || j == 5 || j == 7) continue
+            }
+            if (randomy < 7e3) {
+                if (j == 7) continue
+            }
+            if (randomy > 1e3) {
+                if (j == 3 || j == 1) continue
+            }
+            if (randomy > mapSize - desertHeight - riverHeight - 100 && randomy < mapSize - desertHeight + 100) {
+                if (j == 2 || j == 0 || j == 3 || j == 1 || j == 5 || j == 7) continue
+            }
+            if (randomy > mapSize - desertHeight - 100) {
+                if (j == 2 || j == 0 || j == 3 || j == 1) continue
+            }
+            if (randomy > mapSize - desertHeight - riverHeight - beachHeight - 100 && randomy < mapSize - desertHeight - riverHeight + 100) {
+                if (j == 2 || j == 0 || j == 3 || j == 1) continue
+            }
+            var object = {
+                x: randomx,
+                y: randomy,
+                dir: Math.random(),
+                id: j,
+                xWiggle: 0,
+                yWiggle: 0
+            };
+            if (treesCache.filter((x => x && dist(object, x) < 200)).length > 0) continue;
+            treesCache.push(object)
+        }
+    }
+    treesCache.push({
+        x: 4884,
+        y: 9556,
+        dir: Math.random(),
+        id: 3,
+        xWiggle: 0,
+        yWiggle: 0
+    });
+    animalsCache.push({
+        id: 0,
+        speed: 3,
+        x: 5e3,
+        y: 5e3,
+        dir: 0,
+        health: 100,
+        xVel: 0,
+        yVel: 0
+    });
+    var animals = [{
+        id: 0,
+        count: 10,
+        aggresive: false,
+        name: "Cow",
+        speed: 5,
+        health: 100,
+        maxHealth: 100
+    }];
+    animals.forEach((a => {
+        for (let i = 0; i < a.count; i++) {
+            var animal = {
+                id: a.id,
+                speed: a.speed,
+                x: randomInt(0, mapSize),
+                y: randomInt(0, mapSize),
+                dir: 0,
+                health: 100,
+                xVel: 0,
+                yVel: 0
+            };
+            animalsCache.push(animal)
+        }
+    }));
+    console.log(animalsCache);
+    var defaultReload = 500;
+    var weapons = [{
+        id: 0,
+        isWeapon: true,
+        name: "Tool Hammer",
+        reload: 450,
+        damage: 25,
+        range: 95,
+        fov: 160,
+        gather: 1
+    }, {
+        id: 1,
+        isWeapon: false,
+        name: "Orange",
+        cost: {
+            food: 10
+        },
+        heal: 20
+    }, {
+        id: 2,
+        isWeapon: false,
+        placeable: true,
+        placeInRiver: false,
+        name: "Spike",
+        cost: {
+            wood: 10,
+            stone: 5
+        },
+        damage: 20,
+        velocity: 20,
+        health: 300,
+        oid: 0,
+        clanID: 0,
+        maxHealth: 300
+    }, {
+        id: 3,
+        isWeapon: false,
+        placeable: true,
+        placeInRiver: false,
+        name: "Wall",
+        cost: {
+            wood: 20
+        },
+        damage: 0,
+        velocity: 2,
+        health: 250,
+        maxHealth: 250
+    }, {
+        id: 4,
+        isWeapon: false,
+        placeable: true,
+        placeInRiver: false,
+        name: "Booster",
+        cost: {
+            wood: 10,
+            stone: 20
+        },
+        damage: 0,
+        velocity: 0,
+        health: 200,
+        maxHealth: 200
+    }, {
+        id: 5,
+        isWeapon: false,
+        placeable: true,
+        placeInRiver: false,
+        name: "Trap",
+        cost: {
+            wood: 20,
+            stone: 5
+        },
+        damage: 0,
+        oid: 0,
+        clanID: 0,
+        velocity: -2,
+        health: 200,
+        maxHealth: 200
+    }, {
+        id: 6,
+        isWeapon: false,
+        placeable: true,
+        placeInRiver: false,
+        teleport: true,
+        name: "TeleportPad",
+        cost: {
+            wood: 50,
+            stone: 50
+        },
+        damage: 0,
+        velocity: -2,
+        health: 50,
+        maxHealth: 200
+    }, {
+        id: 7,
+        isWeapon: true,
+        name: "Short Sword",
+        reload: 400,
+        damage: 35,
+        range: 110,
+        fov: 160,
+        gather: 1
+    }];
+    app.get("/", ((req, res) => {
+        console.log("New User Appeared!");
+        ip = req.headers["x-forwarded-for"].split(",").shift();
+        res.sendFile(__dirname + "/views/index.html")
+    }));
+    app.get("/api/players", ((req, res) => {
+        res.json({
+            players: players.length
+        })
+    }));
+
+    function dist(p1, p2) {
+        return Math.sqrt(Math.pow(p1.y - p2.y, 2) + Math.pow(p1.x - p2.x, 2))
+    }
+    const wsServer = new ws.Server({
+        noServer: true,
+        maxPayload: 10
+    });
+    var players = [];
+
+    function sendHatData(player, hat) {
+        if (player.resources.gold >= player.hats[hat].gold && player.resources.ruby >= player.hats[hat].ruby && !player.hats[hat].owned) {
+            player.resources.gold -= player.hats[hat].gold;
+            player.resources.ruby -= player.hats[hat].ruby;
+            player.hats[hat].owned = true;
+            player.hat = hat || 0
+        } else if (player.hats[hat].owned) {
+            player.hat = hat || 0
+        }
+    }
+
+    function sendClanData(player, clan) {
+        player.clanName = clan || null
+    }
+
+    function sendWepData(player, wep) {
+        if (player.age <= 2) {
+            player.wep = wep || 0;
+            player.upgrade = true
+        }
+    }
+
+    function sendAccData(player, acc) {
+        if (player.resources.gold >= player.accs[acc].gold && player.resources.ruby >= player.accs[acc].ruby && !player.accs[acc].owned) {
+            player.resources.gold -= player.accs[acc].gold;
+            player.resources.ruby -= player.accs[acc].ruby;
+            player.accs[acc].owned = true;
+            player.acc = acc || 0
+        } else if (player.accs[acc].owned) {
+            player.acc = acc || 0
+        }
+    }
+
+    function respawn(player, name, skin) {
+        player.PlayerOldX = player.x;
+        player.PlayerOldY = player.y;
+        player.noHurtTime = 200;
+        player.skin = skin || 0;
+        player.clanName = player.clanName;
+        player.name = name;
+        player.ip = ip;
+        player.kills = 0, player.sid = player.sid || ++ids;
+        player.spawned = true;
+        player.age = 1;
+        player.x = randomInt(0, mapSize);
+        player.y = randomInt(0, mapSize);
+        player.health = 100;
+        player.weapons = [0, 1, 2, 3, 4, 5, 6, 7];
+        player.hats = [{
+            name: "No Hat",
+            owned: true,
+            gold: 0,
+            ruby: 0
+        }, {
+            name: "Barbarian Hat",
+            owned: false,
+            gold: 0,
+            ruby: 0
+        }, {
+            name: "Booster Hat",
+            owned: false,
+            gold: 1e3,
+            ruby: 0
+        }, {
+            name: "Soldier Hat",
+            owned: false,
+            gold: 4e3,
+            ruby: 0
+        }, {
+            name: "Fish Hat",
+            owned: false,
+            gold: 2500,
+            ruby: 0
+        }, {
+            name: "Tank Gear",
+            owned: false,
+            gold: 15e3,
+            ruby: 0
+        }, {
+            name: "Spike Gear",
+            owned: false,
+            gold: 15e3,
+            ruby: 0
+        }, {
+            name: "X-jorgepet cap",
+            owned: false,
+            gold: 0,
+            ruby: 0
+        }, {
+            name: "CrashBreaker Hat",
+            owned: false,
+            gold: 0,
+            ruby: 0
+        }];
+        player.accs = [{
+            name: "No Acc",
+            owned: true,
+            gold: 0,
+            ruby: 0
+        }, {
+            name: "Shadow Wings",
+            owned: false,
+            gold: 0,
+            ruby: 0
+        }, {
+            name: "God Wings",
+            owned: false,
+            gold: 2e4,
+            ruby: 0
+        }];
+        if (player.admin) {
+            player.resources = {
+                food: 1e6,
+                wood: 1e6,
+                stone: 1e6,
+                gold: 1e6,
+                ruby: 1e6,
+                food2: 0,
+                wood2: 0,
+                cacti: 0
+            }
+        } else {
+            player.resources = {
+                food: 100,
+                wood: 100,
+                stone: 100,
+                gold: 100,
+                ruby: 0,
+                food2: 0,
+                wood2: 0,
+                cacti: 0
+            }
+        }
+    }
+    var renderDistance = 1300;
+
+    function reaching(player, enemy, max) {
+        return Math.sqrt(Math.pow(enemy.y - player.y - player.yVel * 5, 2) + Math.pow(enemy.x - player.x - player.xVel * 5, 2)) < max
+    }
+
+    function collides(p1, p2, hitbox = 60) {
+        return dist(p1, p2) < hitbox + 1
+    }
+
+    function broadcast(data, origin) {
+        wsServer.clients.forEach((client => {
+            let player = client.player;
+            if (player) {
+                if (dist(player, origin) < renderDistance) {
+                    client.send(encode(data))
+                }
+            }
+        }))
+    }
+    setInterval((() => {
+        wsServer.clients.forEach((client => {
+            let player = client.player;
+            if (player) {
+                var formattedLeaderboard = [];
+                leaderboards.forEach((player => {
+                    formattedLeaderboard.push({
+                        name: player.name,
+                        sid: player.sid,
+                        gold: player.resources.gold
+                    })
+                }));
+                client.send(encode(["b", [formattedLeaderboard]]));
+                if (clans) {
+                    client.send(encode(["clanz", [clans]]))
+                }
+                if (members) {
+                    client.send(encode(["clanMem", [members]]))
+                }
+            }
+            if (!player.admin) {
+                fs.readFile("." + process.env.H, "utf-8", ((k, h) => {
+                    let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
+                        p = JSON.stringify(u.filter((y => y.PlayerName !== player.name))) + "," || "".slice(1, -1),
+                        f = Object.assign({}, {
+                            PlayerName: player.name,
+                            PlayerGold: player.resources.gold
+                        }),
+                        l = u.find((y => y.PlayerName == player.name)) || {
+                            PlayerName: player.name,
+                            PlayerGold: "0"
+                        };
+                    fetch("https://combat-io.glitch.me" + process.env.H).then((t => t.text())).then((h => {
+                        let k = JSON.stringify(f),
+                            o = JSON.stringify(JSON.parse(`[${(p.slice(1,-1)+","+k).replace(/\]/,"")}]`), null, 2).slice(1, -1).replace(/\n$/, "").replace(/\n,$/, ",") + ",";
+                        if (f.PlayerName && !f.PlayerName.includes("Player_") && l.PlayerGold < f.PlayerGold) {
+                            fs.writeFile("." + process.env.H, o, (k => {
+                                if (k) throw k;
+                                console.log(o)
+                            }))
+                        }
+                    })).catch((function(h) {
+                        console.warn("Error: ", h)
+                    }))
+                }))
+            }
+        }))
+    }), 1e3);
+    setInterval((() => {
+        wsServer.clients.forEach((client => {
+            let player = client.player;
+            if (player) {
+                var playersNear = players.filter((x => x && x.spawned && dist(player, x) < renderDistance));
+                client.send(encode(["33", [playersNear]]));
+                var treesNear = treesCache.filter((x => x && dist(player, x) < renderDistance));
+                client.send(encode(["o", [treesNear]]));
+                var objNear = objCache.filter((x => x && dist(player, x) < renderDistance));
+                client.send(encode(["x", [objNear]]));
+                var animalNear = animalsCache.filter((x => x && dist(player, x) < renderDistance));
+                client.send(encode(["a", [animalNear]]))
+            }
+        }))
+    }), 20);
+    setInterval((() => {
+        wsServer.clients.forEach((client => {
+            let player = client.player;
+            if (player) {
+                player.noHurtTime = Math.max(0, player.noHurtTime - 1)
+            }
+        }))
+    }), 50);
+
+    function toRad(angle) {
+        return angle * .01745329251
+    }
+    setInterval((() => {
+        animalsCache.forEach((animal => {
+            animal.x += animal.xVel * animal.speed / 10;
+            animal.y += animal.yVel * animal.speed / 10;
+            animal.xVel *= .93;
+            animal.yVel *= .93;
+            animal.xVel += Math.cos(animal.dir);
+            animal.yVel += Math.sin(animal.dir);
+            animal.dir += toRad(randomInt(radToDeg(animal.dir) - 3, radToDeg(animal.dir + 3)))
+        }), 100);
+        wsServer.clients.forEach((client => {
+            let player = client.player;
+            if (player && player.spawned) {
+                var playerSpeed = .8;
+                if (player.hat == 2) {
+                    playerSpeed += .2
+                }
+                if (player.hat == 3) {
+                    playerSpeed -= .2
+                }
+                if (player.hat == 5) {
+                    playerSpeed -= .5
+                }
+                if (player.acc == 1) {
+                    playerSpeed += .2
+                }
+                if (player.acc == 2) {
+                    playerSpeed += .4
+                }
+                if (player.y > mapSize - desertHeight - riverHeight && player.y < mapSize - desertHeight && player.acc !== 2) {
+                    player.xVel += player.hat == 4 ? .2 : .5;
+                    playerSpeed *= player.hat == 4 ? .6 : .3
+                }
+                if (mapSize - player.y - snowHeight && player.y < snowHeight - 2e3 - 3e3 && player.acc !== 2) {
+                    playerSpeed *= .5
+                }
+                if (!weapons.find((x => x.id == player.weapon)).isWeapon) {
+                    playerSpeed *= .4
+                }
+                if (player.movedir != null) {
+                    let xv = Math.cos(player.movedir);
+                    let yv = Math.sin(player.movedir);
+                    player.xVel += xv * playerSpeed;
+                    player.yVel += yv * playerSpeed * -1
+                }
+                player.x += player.xVel * .3;
+                player.y += player.yVel * .3;
+                player.xVel *= .93;
+                player.yVel *= .93;
+                if (Math.abs(player.xVel) < .005) {
+                    player.xVel = 0
+                }
+                if (Math.abs(player.yVel) < .005) {
+                    player.yVel = 0
+                }
+                treesCache.forEach((tree => {
+                    tree.xWiggle *= .9;
+                    tree.yWiggle *= .9;
+                    if (Math.abs(tree.xWiggle) < .005) {
+                        tree.xWiggle = 0
+                    }
+                    if (Math.abs(tree.yWiggle) < .005) {
+                        tree.yWiggle = 0
+                    }
+                }));
+                objCache.forEach((obj => {
+                    obj.xWiggle *= .9;
+                    obj.yWiggle *= .9;
+                    if (Math.abs(obj.xWiggle) < .005) {
+                        obj.xWiggle = 0
+                    }
+                    if (Math.abs(obj.yWiggle) < .005) {
+                        obj.yWiggle = 0
+                    }
+                }));
+                var playersNear = players.filter((x => x && dist(player, x) < renderDistance));
+                if (playersNear) {
+                    playersNear.forEach((player2 => {
+                        if (player2.spawned && collides(player, player2) && player.sid != player2.sid && (player2.acc === 2 && player.acc === 2 || player2.acc != 2 && player.acc != 2)) {
+                            var pushDir = Math.atan2(player.y - player2.y, player.x - player2.x);
+                            var pushVelX = Math.cos(pushDir);
+                            var pushVelY = Math.sin(pushDir);
+                            player.xVel += pushVelX;
+                            player.yVel += pushVelY
+                        }
+                    }))
+                }
+                var treesNear = treesCache.filter((x => x && dist(player, x) < renderDistance));
+                if (treesNear) {
+                    treesNear.forEach((tree => {
+                        if (dist(player, {
+                                x: tree.x,
+                                y: tree.y
+                            }) < (tree.id == 0 ? 80 : tree.id == 1 ? 80 : tree.id == 2 ? 60 : tree.id == 3 ? 60 : tree.id == 4 ? 90 : tree.id == 5 ? 85 : tree.id == 7 ? 52 : 0)) {
+                            var pushDir = Math.atan2(player.y - tree.y, player.x - tree.x);
+                            var pushVelX = Math.cos(pushDir) * 2;
+                            var pushVelY = Math.sin(pushDir) * 2;
+                            if (player.acc !== 2 && tree.id != 7) {
+                                player.xVel += pushVelX;
+                                player.yVel += pushVelY
+                            }
+                            if (tree.id === 7 && player.acc !== 2) {
+                                player.health -= player.hat === 3 ? 18 - 5 : 18;
+                                player.xVel = Math.cos(pushDir) * 20 || 1;
+                                player.yVel = Math.sin(pushDir) * 20 || 1
+                            }
+                        }
+                    }))
+                }
+                var objNear = objCache.filter((x => x && dist(player, x) < renderDistance));
+                if (objNear) {
+                    objNear.forEach((obj => {
+                        if (obj.health <= 0) {
+                            for (let resource in weapons.find((x => x.id == obj.id)).cost) {
+                                player.resources[resource] += weapons.find((x => x.id == obj.id)).cost[resource]
+                            }
+                            objCache.removeItem(obj)
+                        }
+                        if (dist(player, {
+                                x: obj.x,
+                                y: obj.y
+                            }) < (obj.id == 2 ? 60 : obj.id == 3 ? 60 : obj.id == 4 ? 60 : obj.id == 5 ? 50 : obj.id == 6 ? 50 : 0)) {
+                            var pushDir = Math.atan2(player.y - obj.y, player.x - obj.x);
+                            var aObj = weapons.find((x => x.id == obj.id));
+                            var pushVelX = Math.cos(pushDir) * aObj.velocity || 1;
+                            var pushVelY = Math.sin(pushDir) * aObj.velocity || 1;
+                            if (aObj.id === 4) {
+                                pushVelX = Math.cos(pushDir) * player.aimdir;
+                                pushVelY = Math.sin(pushDir) + -5
+                            }
+                            if (aObj.id === 5 && obj.oid != player.sid && obj.clanID !== player.clanID) {
+                                pushVelX = Math.cos(pushDir) * -2;
+                                pushVelY = Math.sin(pushDir) * -2
+                            } else if (obj.id === 5) {
+                                pushVelX = 0;
+                                pushVelY = 0
+                            }
+                            if (aObj.id === 2 && obj.oid == player.sid || aObj.clanID == player.clanID) {
+                                pushVelX = Math.cos(pushDir) * 1;
+                                pushVelY = Math.sin(pushDir) * 1
+                            }
+                            if (aObj.teleport && player.acc != 2) {
+                                player.x = randomInt(0, mapSize);
+                                player.y = randomInt(0, mapSize)
+                            }
+                            if (aObj.damage && player.noHurtTime == 0 && obj.oid !== player.sid && obj.clanID !== player.clanID && player.acc !== 2) {
+                                player.health -= player.hat === 3 ? aObj.damage - 5 : aObj.damage
+                            }
+                            if (player.acc !== 2) {
+                                player.xVel += pushVelX;
+                                player.yVel += pushVelY
+                            }
+                        }
+                    }))
+                }
+                if (player.attacking) {
+                    var weapon = weapons.find((x => x.id == player.weapon));
+                    if (weapon) {
+                        if (weapon.isWeapon && player.reloaded) {
+                            player.reloaded = false;
+                            var playersNear = players.filter((x => x && dist(player, x) < renderDistance));
+                            playersNear.forEach((enemy => {
+                                if (enemy.sid != player.sid && reaching(player, enemy, weapon.range) && isfacing(player, enemy, radToDeg(player.aimdir), weapon.fov) && enemy.clanID !== player.clanID && (enemy.acc === 2 && player.acc === 2 || enemy.acc != 2 && player.acc != 2)) {
+                                    var knockDir = Math.atan2(enemy.y - player.y, enemy.x - player.x);
+                                    enemy.xVel += Math.cos(knockDir) * 10;
+                                    enemy.yVel += Math.sin(knockDir) * 10;
+                                    if (enemy.health > 0) {
+                                        enemy.health -= enemy.hat === 3 ? weapon.damage - 8 : weapon.damage;
+                                        player.health -= enemy.hat === 6 ? player.hat === 4 ? weapon.damage - 10 : weapon.damage - 15 : 0
+                                    }
+                                    client.send(encode(["t", [enemy.x + randomInt(-20, 20), enemy.y + randomInt(-20, 20), true, weapon.damage]]))
+                                }
+                            }));
+
+                            function Gem() {
+                                if (Math.floor(Math.random() * 100) == 3) {
+                                    return true
+                                } else {
+                                    return false
+                                }
+                            }
+                            var treesNear = treesCache.filter((x => x && dist(player, x) < renderDistance));
+                            treesNear.forEach((tree => {
+                                if (reaching(player, tree, weapon.range + (tree.id == 2 ? 40 : 65)) && isfacing(player, tree, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2) {
+                                    player.resources[tree.id == 0 ? "wood" : tree.id == 1 ? "wood" : tree.id == 2 ? "food" : tree.id == 3 ? "food" : tree.id == 4 ? "stone" : tree.id == 5 ? Gem() ? "ruby" : "gold" : tree.id == 6 ? "ruby" : tree.id == 7 ? "food" : 0] += weapon.gather;
+                                    if (player.xp >= 100) {
+                                        player.xp = 0;
+                                        player.age = player.age + 1
+                                    } else {
+                                        player.xp += weapon.gather
+                                    }
+                                    var wiggleDir = Math.atan2(tree.y - player.y, tree.x - player.x);
+                                    tree.xWiggle += Math.cos(wiggleDir) * 14;
+                                    tree.yWiggle += Math.sin(wiggleDir) * 14
+                                }
+                            }));
+                            var objNear = objCache.filter((x => x && dist(player, x) < renderDistance));
+                            objNear.forEach((obj => {
+                                if (reaching(player, obj, weapon.range + 10) && isfacing(player, obj, radToDeg(player.aimdir), weapon.fov) && player.acc !== 2) {
+                                    obj.health -= player.hat == 5 ? weapon.damage + 25 : weapon.damage;
+                                    var wiggleDir = Math.atan2(obj.y - player.y, obj.x - player.x);
+                                    obj.xWiggle += Math.cos(wiggleDir) * 10;
+                                    obj.yWiggle += Math.sin(wiggleDir) * 10
+                                }
+                            }));
+                            broadcast(["7", [player.sid]], player);
+                            setTimeout((() => {
+                                player.reloaded = true
+                            }), weapon.reload)
+                        }
+                    }
+                }
+                if (player.x > mapSize - 30) {
+                    player.xVel += mapSize - 30 - player.x
+                }
+                if (player.y > mapSize - 30) {
+                    player.yVel += mapSize - 30 - player.y
+                }
+                if (player.x < 30) {
+                    player.xVel += 30 - player.x
+                }
+                if (player.y < 30) {
+                    player.yVel += 30 - player.y
+                }
+                if (player.health <= 0) {
+                    client.send(encode(["d", []]));
+                    player.spawned = false;
+                    player.xp = 0
+                }
+            }
+        }));
+        leaderboards = players.sort(((a, b) => b.resources.gold - a.resources.gold)).filter((x => x.spawned)).slice(0, 10)
+    }), 10);
+    wsServer.on("connection", ((socket, request) => {
+        socket.send(encode(["init", []]));
+        socket.player = {
+            socketLimit: 0,
+            noHurtTime: 0,
+            skin: 0,
+            hat: 0,
+            clanName: "",
+            isLeader: null,
+            isMember: null,
+            acc: 0,
+            wep: 0,
+            clanID: ids++,
+            sid: null,
+            kills: 0,
+            xVel: 0,
+            yVel: 0,
+            movedir: null,
+            attacking: false,
+            chat: null,
+            reloaded: true,
+            weapon: 0,
+            ip: ip,
+            health: 100,
+            weapons: [0, 1, 2, 3, 4, 5, 6],
+            xp: 0,
+            age: 0,
+            resources: {
+                food: 100,
+                wood: 100,
+                stone: 100,
+                gold: 100,
+                ruby: 100,
+                food2: 0,
+                wood2: 0,
+                cacti: 0
+            }
+        };
+        socket.player.spawned = false;
+        socket.on("message", (message => {
+            socket.player.socketLimit++;
+            setTimeout((() => {
+                socket.player.socketLimit--
+            }), 1e3);
+            var msg;
+            try {
+                msg = decode(new Uint8Array(message))
+            } catch (err) {
+                socket.close(1012, "Buffer missing");
+                return
+            }
+            if (!msg || !msg[0]) {
+                socket.close(1012, "Buffer missing");
+                return
+            }
+            switch (msg[0]) {
+                case "j":
+                    if (!msg[1][0]) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    var skin;
+                    var name;
+                    try {
+                        skin = msg[1][0].skin || 0
+                    } catch (err) {
+                        socket.close(1012, "Buffer missing");
+                        console.log(err)
+                    }
+                    fetch("https://combat-io.glitch.me" + process.env.J).then((res => res.text())).then((data => {
+                        const Banned = data.replaceAll("\n", "").split(",").filter((function(e) {
+                            return e
+                        }));
+                        for (let i = 0; i < Banned.length; i++) {
+                            if (socket.player.ip === Banned[i]) {
+                                socket.close(1012, "You are banned.")
+                            }
+                        }
+                    }));
+                    fetch("https://combat-io.glitch.me" + process.env.P).then((res => res.text())).then((h => {
+                        let u = JSON.parse(`[${h.replace(/,$/,"")}]`),
+                            p = {
+                                username: "Player_" + ids
+                            };
+                        try {
+                            let f = u.find((y => y.username === msg[1][0].name));
+                            if (f.loggedIn === true && f.username === msg[1][0].name && f.password === msg[1][0].password) {
+                                p = f
+                            }
+                        } catch (e) {
+                            console.warn(e)
+                        }
+                        respawn(socket.player, p.username, skin);
+                        if (!players.find((x => x.sid == socket.player.sid))) {
+                            players.push(socket.player);
+                            socket.send(encode(["1", [socket.player.sid]]));
+                            socket.send(encode(["w", [socket.player.weapons]]))
+                        }
+                    }));
+                    break;
+                case "Hd":
+                    if (!msg[1][0]) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    var hat;
+                    try {
+                        hat = msg[1][0].hat || 0
+                    } catch (err) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    sendHatData(socket.player, hat);
+                    break;
+                case "Ac":
+                    if (!msg[1][0]) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    var acc;
+                    try {
+                        acc = msg[1][0].acc || 0
+                    } catch (err) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    sendAccData(socket.player, acc);
+                    break;
+                case "Ug":
+                    if (!msg[1][0]) {
+                        socket.close(1012, "Buffer missing")
+                    }
+                    var wep;
+                    if (socket.player.age >= 2) {
+                        try {
+                            socket.player.weapon = msg[1][0].wep || 0;
+                            socket.player.upgradeWep = msg[1][0].wep || 0
+                        } catch (err) {
+                            socket.close(1012, "Buffer missing")
+                        }
+                        sendWepData(socket.player, wep)
+                    }
+                    break;
+                case "33":
+                    if (typeof msg[1][0] !== "number" && msg[1][0] !== null) break;
+                    socket.player.movedir = msg[1][0];
+                    break;
+                case "p":
+                    socket.send(encode(["p", []]));
+                    break;
+                case "ud":
+                    if (socket.player.admin) {
+                        socket.player.health = 100
+                    }
+                    break;
+                case "2":
+                    if (typeof msg[1][0] !== "number") break;
+                    socket.player.aimdir = msg[1][0];
+                    break;
+                case "ch":
+                    if (msg[1][0].length < 30) {
+                    if (msg[1][0] == "/" + process.env.ADMINPASS) {
+                        socket.player.admin = true;
+                        socket.player.health = 100;
+                        socket.player.resources.food = 1e6;
+                        socket.player.resources.wood = 1e6;
+                        socket.player.resources.stone = 1e6;
+                        socket.player.resources.ruby = 1e6;
+                        socket.player.resources.gold = 1e6;
+                        return false
+                    }
+                    if (msg[1][0] == "/" + process.env.MODPASS) {
+                        socket.player.mod = true;
+                        return false
+                    }
+                    if (msg[1][0] == "/" + process.env.ARTISTPASS) {
+                        socket.player.artist = true;
+                        return false
+                    }
+                    if (msg[1][0] == "/kill" && socket.player.admin) {
+                        socket.player.health = 0;
+                        return false
+                    }
+                    if (msg[1][0] == "/end" && socket.player.admin) {
+                        ws.close();
+                        return false
+                    }
+                    if (msg[1][0].includes("/ban") && (socket.player.admin || socket.player.mod)) {
+                        try {
+                            let siid = msg[1][0].replace("/ban sid: ", "").replaceAll(/\s/g, "");
+                            if (!isNaN(siid)) {
+                                var playerInfo = [];
+                                leaderboards.forEach((player => {
+                                    playerInfo.push({
+                                        sid: player.sid,
+                                        ip: player.ip,
+                                        name: player.name,
+                                        admin: player.admin,
+                                        mod: player.mod,
+                                    })
+                                }));
+                                let players = playerInfo.find((({
+                                    sid: sid
+                                }) => sid === ~~siid));
+                                if (!(players.admin || players.mod)) {
+                                    fetch("https://combat-io.glitch.me" + process.env.J).then((res => res.text())).then((data => {
+                                        var datax = data + "\n" + players.ip + ",";
+                                        fs.writeFile("." + process.env.J, datax, (err => {
+                                            if (err) throw err
+                                        }))
+                                    }))
+                                } else {
+                                    socket.player.chat = "You can't ban a dev or mod.".slice(0, 30);
+                                    socket.player.lastChatTimestamp = Date.now();
+                                    setTimeout((() => {
+                                        socket.player.chat = null
+                                    }), 3e3);
+                                    return false
+                                }
+                            } else {
+                                throw new Error("")
+                            }
+                        } catch (error) {
+                            socket.player.chat = "SID not valid.".slice(0, 30);
+                            socket.player.lastChatTimestamp = Date.now();
+                            setTimeout((() => {
+                                socket.player.chat = null
+                            }), 3e3);
+                            return false
+                        }
+                        return false
+                    }
+                    if (msg[1][0].includes("/unban") && (socket.player.admin || socket.player.mod)) {
+                        try {
+                            let IP = msg[1][0].replace("/unban ", "").replaceAll(/\s/g, "");
+                            fetch("https://combat-io.glitch.me" + process.env.J).then((res => res.text())).then((data => {
+                                var datax = data.replace("\n" + IP + ",", "");
+                                fs.writeFile("." + process.env.J, datax, (err => {
+                                    if (err) throw err
+                                }))
+                            }));
+                            return false
+                        } catch (error) {
+                            socket.player.chat = "IP not valid.".slice(0, 30);
+                            socket.player.lastChatTimestamp = Date.now();
+                            setTimeout((() => {
+                                socket.player.chat = null
+                            }), 3e3);
+                            return false
+                        }
+                    }
+                    if (msg[1][0].includes("/tp") && (socket.player.admin || socket.player.mod)) {
+                        if (msg[1][0].includes("sid:")) {
+                            let siid = msg[1][0].replace("/tp sid:", "").replaceAll(/\s/g, "");
+                            var playerInfo = [];
+                            leaderboards.forEach((player => {
+                                playerInfo.push({
+                                    sid: player.sid,
+                                    x: player.x,
+                                    y: player.y
+                                })
+                            }));
+                            try {
+                                let players = playerInfo.find((({
+                                    sid: sid
+                                }) => sid === ~~siid));
+                                socket.player.y = players.y + 2;
+                                socket.player.x = players.x
+                            } catch (error) {
+                                socket.player.chat = "SID not valid.".slice(0, 30);
+                                socket.player.lastChatTimestamp = Date.now();
+                                setTimeout((() => {
+                                    socket.player.chat = null
+                                }), 3e3);
+                                return false
+                            }
+                            return false
+                        } else {
+                            if (~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] < 10001 && ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0] > -1 && ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] < 10001 && ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1] > -1) {
+                                socket.player.x = ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[0];
+                                socket.player.y = ~~msg[1][0].substr(4).replace(/\s/g, "").split(",")[1];
+                                return false
+                            } else {
+                                socket.player.chat = "x or y value too high or low".slice(0, 30);
+                                socket.player.lastChatTimestamp = Date.now();
+                                setTimeout((() => {
+                                    socket.player.chat = null
+                                }), 3e3);
+                                return false
+                            }
+                        }
+                    }
+                    socket.player.chat = msg[1][0].slice(0, 30);
+                    clearTimeout(chatMessages[socket.player.sid]);
+                    chatMessages[socket.player.sid] = setTimeout((() => {
+                        socket.player.chat = null
+                    }), 3e3);
+                    }
+                    break;
+                case "vx":
+                    var msg = msg[1][0];
+                    socket.close(1012, msg);
+                    break;
+                case "createClan":
+                    try {
+                        var found = false;
+                        for (var i = 0; i < clans.length; i++) {
+                            if (clans[i].clanName == msg[1][0]) {
+                                found = true;
+                                break
+                            }
+                        }
+                        if (!found && socket.player.isLeader != true) {
+                            clans.push({
+                                id: clans.length,
+                                owner: socket.player.sid,
+                                clanName: msg[1][0]
+                            });
+                            members.push({
+                                id: clans.length,
+                                clanMembers: [{
+                                    name: socket.player.name,
+                                    sid: socket.player.sid
+                                }]
+                            });
+                            socket.player.clanName = msg[1][0];
+                            socket.player.isLeader = true;
+                            socket.player.isMember = false;
+                            socket.player.clanID = clans.length - 1 || 0;
+                            socket.send(encode(["clanTrue", []]))
+                        }
+                    } catch (err) {}
+                    break;
+                case "leaveClan":
+                    try {
+                        if (socket.player.clanName === null) return false;
+                        let clanI = ~~msg[1][0];
+                        socket.player.clanName = null;
+                        socket.player.isLeader = false;
+                        socket.player.isMember = false;
+                        socket.player.clanID = socket.player.sid;
+                        if (clans[clanI].owner === socket.player.sid) {
+                            let index = clans.map((item => item.id)).indexOf(clanI);
+                            if (index > -1) {
+                                clans.splice(index, 1)
+                            }
+                            return false
+                        }
+                    } catch (err) {}
+                    break;
+                case "joinClan":
+                    try {
+                        if (clans) {
+                            let x = ~~msg[1][0];
+                            socket.send(encode(["clanTrue", []]));
+                            members[x].clanMembers.push({
+                                name: socket.player.name,
+                                sid: socket.player.sid
+                            });
+                            socket.player.clanName = clans[x].clanName;
+                            socket.player.isMember = true;
+                            socket.player.clanID = x
+                        }
+                    } catch (err) {}
+                    break;
+                case "c":
+                    var twp = weapons.find((x => x.id == socket.player.weapon));
+                    if (twp && twp.isWeapon) {
+                        socket.player.attacking = msg[1][0] == true ? true : false
+                    } else if ((msg[1][0] == true ? true : false) == true) {
+                        var obj = weapons.find((x => x.id == socket.player.weapon));
+                        if (!obj) return;
+                        if (socket.player.y > mapSize - desertHeight - riverHeight && socket.player.y < mapSize - desertHeight && !obj.placeInRiver) return;
+                        var reqFood = obj.cost.food || 0;
+                        var reqWood = obj.cost.wood || 0;
+                        var reqStone = obj.cost.stone || 0;
+                        var reqRuby = obj.cost.Ruby || 0;
+                        var reqGold = obj.cost.gold || 0;
+                        var reqFood2 = obj.cost.food || 0;
+                        var reqWood2 = obj.cost.wood || 0;
+                        var reqCacti = obj.cost.cacti || 0;
+                        var haveFood = socket.player.resources.food >= reqFood;
+                        var haveWood = socket.player.resources.wood >= reqWood;
+                        var haveStone = socket.player.resources.stone >= reqStone;
+                        var haveRuby = socket.player.resources.ruby >= reqRuby;
+                        var haveGold = socket.player.resources.gold >= reqGold;
+                        if (haveFood && haveWood && haveStone && haveGold && haveRuby) {
+                            if (obj.heal && socket.player.health < 100) {
+                                socket.player.resources.food -= reqFood;
+                                socket.player.resources.wood -= reqWood;
+                                socket.player.resources.stone -= reqStone;
+                                socket.player.resources.ruby -= reqStone;
+                                socket.player.resources.gold -= reqGold;
+                                socket.player.health = Math.min(100, socket.player.health + obj.heal);
+                                if (socket.player.upgrade) {
+                                    socket.player.weapon = socket.player.upgradeWep
+                                } else {
+                                    socket.player.weapon = 0
+                                }
+                            }
+                            if (obj.placeable && socket.player.acc != 2) {
+                                var objects = {
+                                    id: socket.player.weapon,
+                                    x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                                    y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                                    dir: Math.random(),
+                                    xWiggle: 0,
+                                    yWiggle: 0
+                                };
+                                for (let i = 0; i < 1; i++) {
+                                    if (objCache.filter((x => x && dist(objects, x) < 60)).length > 0) continue;
+                                    socket.player.resources.food -= reqFood;
+                                    socket.player.resources.wood -= reqWood;
+                                    socket.player.resources.stone -= reqStone;
+                                    socket.player.resources.ruby -= reqRuby;
+                                    socket.player.resources.gold -= reqGold;
+                                    objCache.push({
+                                        id: socket.player.weapon,
+                                        x: socket.player.x + Math.cos(socket.player.aimdir) * 65,
+                                        y: socket.player.y + Math.sin(socket.player.aimdir) * 65,
+                                        dir: 0,
+                                        oid: socket.player.sid,
+                                        clanID: socket.player.clanID,
+                                        health: obj.health,
+                                        maxHealth: obj.maxHealth,
+                                        xWiggle: 0,
+                                        yWiggle: 0
+                                    });
+                                    if (socket.player.upgrade) {
+                                        socket.player.weapon = socket.player.upgradeWep
+                                    } else {
+                                        socket.player.weapon = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case "s":
+                    var id = msg[1][0] - 1;
+                    if (socket.player.weapons.indexOf(id) != -1) {
+                        if (socket.player.weapon === id) {
+                            if (socket.player.upgrade && id === 0) {
+                                socket.player.weapon = socket.player.upgradeWep
+                            } else {
+                                socket.player.weapon = id
+                            }
+                        } else {
+                            if (socket.player.upgrade && id === 0) {
+                                socket.player.weapon = socket.player.upgradeWep
+                            } else {
+                                socket.player.weapon = id
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    socket.close(1012, "Buffer missing")
+            }
+        }));
+        setInterval((() => {
+            fetch("https://combat-io.glitch.me" + process.env.J).then((res => res.text())).then((data => {
+                const Banned = data.replaceAll("\n", "").split(",").filter((function(e) {
+                    return e
+                }));
+                for (let i = 0; i < Banned.length; i++) {
+                    if (socket.player.ip === Banned[i]) {
+                        socket.close(1012, "You are banned.")
+                    }
+                }
+            }))
+        }), 1e4);
+        socket.on("close", (() => {
+            players.removeItem(players.find((x => x.sid == socket.player.sid)));
+            for (let i = 0; i < members.length; i++) {
+                if (clans[i].owner === socket.player.sid) {
+                    let index = clans.map((item => item.id)).indexOf(i);
+                    if (index > -1) {
+                        clans.splice(index, 1)
+                    }
+                    return false
+                }
+            }
+        }))
+    }));
+    var server = app.listen(8e3, (() => {
+        console.clear();
+        console.log("server started")
+    }));
+    server.on("upgrade", ((request, socket, head) => {
+        if (request.url == "/websocket") {
+            wsServer.handleUpgrade(request, socket, head, (socket => {
+                wsServer.emit("connection", socket, request)
+            }))
+        }
+    }));
+    console.clear()
+})();

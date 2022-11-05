@@ -80,10 +80,10 @@
     "PlayerGold": 100
   },
   {
-    "PlayerName": "Dot",
-    "PlayerGold": 101
-  },
-  {
     "PlayerName": "CombatIo",
     "PlayerGold": 284
+  },
+  {
+    "PlayerName": "Dot",
+    "PlayerGold": 118
   },
