@@ -489,9 +489,10 @@
     }
     const wsServer = new ws.Server({
         noServer: true,
-        maxPayload: 10
+        maxPayload: 10000000
     });
     var players = [];
+    wsServer.on('error', console.error);
 
     function sendHatData(player, hat) {
         if (player.resources.gold >= player.hats[hat].gold && player.resources.ruby >= player.hats[hat].ruby && !player.hats[hat].owned) {
@@ -995,6 +996,7 @@
         };
         socket.player.spawned = false;
         socket.on("message", (message => {
+          if (message.length < 1000) {
             socket.player.socketLimit++;
             setTimeout((() => {
                 socket.player.socketLimit--
@@ -1409,6 +1411,7 @@
                 default:
                     socket.close(1012, "Buffer missing")
             }
+          }
         }));
         setInterval((() => {
             fetch("https://combat-io.glitch.me" + process.env.J).then((res => res.text())).then((data => {
