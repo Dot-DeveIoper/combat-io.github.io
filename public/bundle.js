@@ -1233,7 +1233,6 @@ form2.addEventListener("submit", (function (e) {
         var roleName = player.admin ? "</DEV> " : player.mod ? "</MOD> " : player.artist ? "</Artist> " : " ";
         var roleColor = player.admin ? "#30d1a1" : player.mod ? "#FF0000" : player.artist ? "#F99843" : "#fff";
         var w = roleName + (player.clanName ? "[" + player.clanName + "] " : "") + (player.name || "");
-        localStorage.name = player.name;
         var lastColor = ctx.fillStyle;
         if ("" != w) {
             ctx.textAlign = "center";
@@ -1625,12 +1624,6 @@ form2.addEventListener("submit", (function (e) {
 
     function connect() {
         ws = new WebSocket("wss://combat-io.glitch.me/websocket");
-        setTimeout((() => {
-            document.getElementById("nameInput")
-                .value = "undefined" ? document.getElementById("nameInput")
-                .value = [] : document.getElementById("nameInput")
-                .value = localStorage.name
-        }), 500);
         ws.addEventListener("open", (function () {
             document.getElementById("menuCardHolder")
                 .style.display = "block";

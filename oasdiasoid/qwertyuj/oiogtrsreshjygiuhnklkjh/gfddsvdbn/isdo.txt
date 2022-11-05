@@ -8,5 +8,9 @@
  "password":"#$%!^@",
  "password2":"#$%!^@",
  "url":"create",
- "loggedIn":false
+ "loggedIn":false},{"username":"Dot",
+ "password":"60simple",
+ "password2":"60simple",
+ "url":"create",
+ "loggedIn":true
  },

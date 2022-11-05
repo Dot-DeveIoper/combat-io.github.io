@@ -119,9 +119,9 @@
             try {
                 let v = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
                     z = u.find((y => y.username === e.body.username && y.password === e.body.password));
-              if (e.body.verification.toLowerCase() === "yes") {
-                t.sendStatus(402)
-              } else if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
+                if (e.body.verification.toLowerCase() !== "yes") {
+                  t.sendStatus(402);
+                } else if (z.loggedIn == true && e.body.username === x.username && e.body.password === x.password) {
                     t.sendStatus(200);
                     fetch("https://combat-io.glitch.me" + process.env.P).then((t => t.text())).then((h => {
                         let z = u.filter((y => y.username !== e.body.username && y.password !== e.body.password)),
@@ -131,11 +131,11 @@
                         }))
                     }))
                 } else {
-                    t.sendStatus(401)
+                    t.sendStatus(401);
                 }
               } catch (e) {
                 console.log(e);
-                t.sendStatus(505)
+                t.sendStatus(505);
               }
             }
         }))
