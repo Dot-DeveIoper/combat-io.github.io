@@ -89,5 +89,5 @@
   },
   {
     "PlayerName": "a",
-    "PlayerGold": 100
+    "PlayerGold": 821
   },
