@@ -525,7 +525,7 @@
       let r = {
         "username": localStorage.getItem("username"),
         "password": localStorage.getItem("password"),
-        "verification": document.forms.form3.verify.value,
+        "verification": function () {try{return document.forms.form3.verify.value} catch {return "h"}},
         "url": "delete"
       };
       fetch("/data", {
@@ -535,7 +535,7 @@
         },
         method: "post",
         body: JSON.stringify(r)
-      }).then((e) => {
+      }).then((e) => { 
         if (e.status == 401) {
           document.getElementById("errorText").innerHTML = "Can not delete account because you are not logged in."; t(1);
         } else if (e.status == 402) {
