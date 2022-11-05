@@ -1,6 +1,7 @@
 /* This file is loaded by index.html and styles the page */
 
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One");
+/* @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One"); */
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Arvo&family=Rubik:wght@400;700&display=swap&family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -33,6 +34,7 @@ body {
   background-color: #77c44c;
   font-family: "Hammersmith One", sans-serif;
   width: 100vh;
+  /* Switching this to 100vw will make the game crash */
   height: 100%;
 }
 
@@ -1352,7 +1354,7 @@ select:focus {
   background-color: #dadada;
 }
 
-.menuButton {
+/* .menuButton {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
@@ -1366,12 +1368,35 @@ select:focus {
   font-weight: 600;
   width: 100%;
   padding: 6px;
+  /* margin-bottom: 16px; /
+  cursor: pointer;
+  user-select: none;
+} */
+/* .menuButton:hover {
+  background-color: #32db2e;
+  /* background-color: #6fc94e; /
+} */
+
+.menuButton {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #48e346;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+  width: 100%;
+  padding: 10px;
+  /* padding: 6px; */
+  margin-bottom: 16px;
   cursor: pointer;
   user-select: none;
 }
 .menuButton:hover {
   background-color: #32db2e;
-  /* background-color: #6fc94e; */
 }
 
 /* .loginBtn {
@@ -1399,7 +1424,27 @@ select:focus {
   background-color: #89d213;
   /* background-color: #88cb1e; /
 } */
-/* .logoutBtn {
+.accBtn {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #99e51f;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+  width: 100%;
+  padding: 10px;
+  /* padding: 6px; */
+  cursor: pointer;
+  user-select: none;
+}
+.accBtn:hover {
+  background-color: #89d213;
+}
+/* .logOutBtn {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
@@ -1407,7 +1452,7 @@ select:focus {
   color: #ffffff;
   border: 0;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   /* font-size: 1.5rem; /
   font-weight: 600;
   width: 100%;
@@ -1416,8 +1461,321 @@ select:focus {
   cursor: pointer;
   user-select: none;
 } */
-/* .logoutBtn:hover {
+/* .logOutBtn:hover {
   background-color: #d4280e;
+} */
+
+.accountSettingsModal {
+  display: none;
+  /* display: flex; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 0.3s modal;
+  /* justify-content: center;
+  align-items: center; */
+  font-family: "Rubik", sans-serif;
+  background-color: #ffffff;
+  border: 4px solid #dbdbdb;
+  width: 95%;
+  height: 95%;
+  border-radius: 8px;
+  overflow: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  z-index: 800;
+  user-select: none;
+}
+.accountModalCloseIcon {
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  transform: translate(0%, -15.5%);
+  background-color: #39393999;
+  padding-left: 8px;
+  padding-right: 9px;
+  color: #ffffff;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+/* .accountSettingsContainer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+} */
+.accountIdText {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: #747474;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.accountProfile {
+  display: grid;
+  position: absolute;
+  top: 25px;
+  place-items: center;
+  width: 100%;
+  /* text-align: center; */
+}
+.accountProfile img {
+  background-color: #b6b6b6;
+  border-radius: 50%;
+  width: 86px;
+  height: 86px;
+  padding: 4px;
+}
+.accountProfile .accountUsernameText {
+  display: block;
+  margin-top: 5px;
+  color: #747474;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.accountProfile .accountInfoContainer {
+  display: grid;
+  /* position: absolute; */
+  place-items: center;
+  width: 100%;
+}
+.accountInfo {
+  margin-top: 15px;
+}
+.accountInfo div {
+  display: block;
+  margin-bottom: 5px;
+  color: #2b2b2b;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-break: strict;
+  white-space: normal;
+}
+.playerRank span {
+  content: "";
+  background-color: #7b7b7b;
+  /* border-radius: 25px; */
+  border-radius: 4px;
+  /* padding: 4px 12px; */
+  padding: 4px 8px;
+}
+.playerRank span::after {
+  content: ".";
+}
+.first {
+  display: inline-block;
+  position: relative;
+  color: #ffd500 !important;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px;
+  width: auto;
+  /* width: 32%; */
+  height: 100%;
+}
+.second {
+  display: inline-block;
+  position: relative;
+  color: #c6800a !important;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px;
+  width: auto;
+  /* width: 32%; */
+  height: 100%;
+}
+.third {
+  display: inline-block;
+  position: relative;
+  color: #bac4c7 !important;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px;
+  width: auto;
+  /* width: 32%; */
+  height: 100%;
+}
+.accountProfile .dangerZoneContainer {
+  display: grid;
+  /* position: absolute;
+  bottom: 35px; */
+  place-items: center;
+}
+.dangerZone {
+  content: "";
+  /* display: inline-block;
+  position: absolute; */
+  /* bottom: 100px; */
+  text-align: center;
+  font-size: 1rem;
+  color: #cc0000;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.dangerZone::before {
+  /* content: "— — — — — — Danger Zone"; */
+  content: "— — — — — — " attr(info-text);
+}
+.dangerZone::after {
+  /* content: " — — — — — —"; */
+  content: " — — — — — —";
+}
+.dangerZoneContainer .logOutBtn {
+  display: inline-block;
+  /* position: absolute;
+  left: 50%;
+  transform: translate(-0%, 0%); */
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #ff601f;
+  color: #ffffff;
+  border: 0;
+  /* border-radius: 0 5px 5px 0; */
+  border-radius: 0 5px 0 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  /* width: 80%; */
+  /* width: 40%; */
+  width: 60%;
+  /* margin-right: 5px; */
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.logOutBtn:hover {
+  background-color: #f55614;
+}
+.dangerZoneContainer .deleteAccountBtn {
+  display: inline-block;
+  /* position: absolute;
+  right: 50%;
+  transform: translate(0%, 0%); */
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  background-color: #e5391f;
+  color: #ffffff;
+  border: 0;
+  /* border-radius: 5px 0 0 5px; */
+  border-radius: 0 5px 0 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  /* width: 80%; */
+  /* width: 40%; */
+  width: 60%;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.deleteAccountBtn:hover {
+  background-color: #d4280e;
+}
+.forgetPassword {
+  color: #306df0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.forgetPassword:hover {
+  color: #1952cc;
+}
+@keyframes modal {
+  0% {
+    /* display: none; */
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    /* display: flex; */
+    top: 50%;
+    opacity: 1;
+  }
+}
+.fade {
+  animation: 0.3s fade;
+}
+@keyframes fade {
+  0% {
+    /* display: flex; */
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+/* MOBILE VIEW */
+/* @media only screen and (max-width: 768px) {
+  .accountSettingsModal {}
 } */
 
 #mainMenu {
