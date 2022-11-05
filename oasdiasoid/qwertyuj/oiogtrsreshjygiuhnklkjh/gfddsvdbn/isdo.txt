@@ -16,5 +16,9 @@
  "password":"60simple",
  "password2":"60simple",
  "url":"create",
+ "loggedIn":true},{"username":"a",
+ "password":"123123!123123!",
+ "password2":"123123!123123!",
+ "url":"create",
  "loggedIn":true
  },

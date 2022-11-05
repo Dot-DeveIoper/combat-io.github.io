@@ -489,7 +489,7 @@
     }
     const wsServer = new ws.Server({
         noServer: true,
-        maxPayload: 10000000
+        maxPayload: 10000
     });
     var players = [];
     wsServer.on('error', console.error);
