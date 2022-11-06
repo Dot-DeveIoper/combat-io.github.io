@@ -48,7 +48,9 @@ body {
   width: 100vw;
   height: 100vh;
   /* background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") 25% 25% no-repeat; */
-  background: #77c44c url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png") no-repeat center center fixed;
+  background: #77c44c
+    url("https://media.discordapp.net/attachments/991218633076383744/1016003021320245328/2022_09_04_0io_Kleki.png")
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,7 +78,7 @@ body {
 }
 .navicon:hover {
   /* appearance: none; */
-  box-shadow: 0 0 0 4px #4286F4;
+  box-shadow: 0 0 0 4px #4286f4;
   border-radius: 5px;
   transform: scale(0.9);
   transition: all 0.3s;
@@ -155,7 +157,7 @@ body {
   z-index: 1000;
 }
 .topMenu a:hover {
-  background-color: #312F2F;
+  background-color: #312f2f;
   color: #ffffff;
 }
 .topMenu a:last-child {
@@ -174,12 +176,13 @@ body {
   color: #000000;
   width: 0.02px;
 }
-.mainText {}
+.mainText {
+}
 .topMenu .discord {
-  color: #5865F2;
+  color: #5865f2;
 }
 .topMenu .discord:hover {
-  color: #5865F2;
+  color: #5865f2;
 }
 
 /* MOBILE VIEW */
@@ -462,7 +465,8 @@ body {
   border-radius: 5px;
   transition: all 0.3s;
 } */
-.leaderboards {}
+.leaderboards {
+}
 .playerScore1 {
   background-color: #333333;
   width: 580px;
@@ -484,7 +488,9 @@ body {
 /* .playerScore1 span:first-child {
   color: #ffd500;
 } */
-.playerScore1 span, p, i {
+.playerScore1 span,
+p,
+i {
   display: inline-block;
   position: relative;
   color: #ffffff;
@@ -518,7 +524,9 @@ body {
   background-color: #22222299;
   transition: all 0.3s;
 }
-.playerScore2 span, p, i {
+.playerScore2 span,
+p,
+i {
   display: inline-block;
   position: relative;
   color: #ffffff;

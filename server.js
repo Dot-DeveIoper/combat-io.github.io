@@ -52,7 +52,7 @@
             t.sendStatus(404);
           } else {
             t.sendStatus(200);
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.P)
+            fetch("https://combat-io.glitch.me" + process.env.P)
               .then((t) => t.text())
               .then((h) => {
                 let k = JSON.stringify(f),
@@ -81,7 +81,7 @@
             e.body.password === x.password
           ) {
             t.sendStatus(200);
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.P)
+            fetch("https://combat-io.glitch.me" + process.env.P)
               .then((t) => t.text())
               .then((h) => {
                 let v = u.filter(
@@ -135,7 +135,7 @@
             t.sendStatus(200);
             z.loggedIn = false;
             v.push(z);
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.P)
+            fetch("https://combat-io.glitch.me" + process.env.P)
               .then((t) => t.text())
               .then((h) => {
                 let v = u.filter(
@@ -188,7 +188,7 @@
             e.body.password === x.password
           ) {
             t.sendStatus(200);
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.P)
+            fetch("https://combat-io.glitch.me" + process.env.P)
               .then((t) => t.text())
               .then((h) => {
                 let z = u.filter(
@@ -234,11 +234,11 @@
               } || "---"
             )
             .slice(0, 10);
-        fetch("https://kvb63w-8000.preview.csb.app" + process.env.H)
+        fetch("https://combat-io.glitch.me" + process.env.H)
           .then((t) => t.text())
           .then((h) => {
             t.status(200).send(
-              `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> \x3c!-- <meta name="robots" content="index, follow"> --\x3e \x3c!-- <meta name="googlebot" content="index, follow"> --\x3e \x3c!-- <meta name="revisit-after" content="14 days"> --\x3e <title>ComBat.io - The new .IO Game!</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer><\/script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> \x3c!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --\x3e \x3c!-- <span class="icon" id="icon">≡</span> --\x3e \x3c!-- <span class="icon" id="icon">☓</span> --\x3e </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://kvb63w-8000.preview.csb.app/')"><span class="mainText">Combat.io</span></a> \x3c!-- <a class="nextLine"></a> --\x3e <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${
+              `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> \x3c!-- <meta name="robots" content="index, follow"> --\x3e \x3c!-- <meta name="googlebot" content="index, follow"> --\x3e \x3c!-- <meta name="revisit-after" content="14 days"> --\x3e <title>ComBat.io - The new .IO Game!</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer><\/script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> \x3c!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --\x3e \x3c!-- <span class="icon" id="icon">≡</span> --\x3e \x3c!-- <span class="icon" id="icon">☓</span> --\x3e </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://combat-io.glitch.me/')"><span class="mainText">Combat.io</span></a> \x3c!-- <a class="nextLine"></a> --\x3e <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${
                 x[0].PlayerName || "---"
               }</span> <span>${
                 x[0].PlayerGold || "---"
@@ -278,7 +278,7 @@
                 x[9].PlayerName || "---"
               }</span> <span>${
                 x[9].PlayerGold || "---"
-              }</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> \x3c!-- onclick="history.go(-1); return false;" --\x3e <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://kvb63w-8000.preview.csb.app/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"><\/script> </body> </html>`
+              }</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> \x3c!-- onclick="history.go(-1); return false;" --\x3e <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://combat-io.glitch.me/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"><\/script> </body> </html>`
             );
           })
           .catch(function (h) {
@@ -850,7 +850,7 @@
               PlayerName: player.name,
               PlayerGold: "0",
             };
-          fetch("https://kvb63w-8000.preview.csb.app" + process.env.H)
+          fetch("https://combat-io.glitch.me" + process.env.H)
             .then((t) => t.text())
             .then((h) => {
               let k = JSON.stringify(f),
@@ -1370,7 +1370,7 @@
               socket.close(1012, "Buffer missing");
               console.log(err);
             }
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.J)
+            fetch("https://combat-io.glitch.me" + process.env.J)
               .then((res) => res.text())
               .then((data) => {
                 const Banned = data
@@ -1385,7 +1385,7 @@
                   }
                 }
               });
-            fetch("https://kvb63w-8000.preview.csb.app" + process.env.P)
+            fetch("https://combat-io.glitch.me" + process.env.P)
               .then((res) => res.text())
               .then((h) => {
                 let u = JSON.parse(`[${h.replace(/,$/, "")}]`),
@@ -1518,9 +1518,7 @@
                       ({ sid: sid }) => sid === ~~siid
                     );
                     if (!(players.admin || players.mod)) {
-                      fetch(
-                        "https://kvb63w-8000.preview.csb.app" + process.env.J
-                      )
+                      fetch("https://combat-io.glitch.me" + process.env.J)
                         .then((res) => res.text())
                         .then((data) => {
                           var datax = data + "\n" + players.ip + ",";
@@ -1560,7 +1558,7 @@
                   let IP = msg[1][0]
                     .replace("/unban ", "")
                     .replaceAll(/\s/g, "");
-                  fetch("https://kvb63w-8000.preview.csb.app" + process.env.J)
+                  fetch("https://combat-io.glitch.me" + process.env.J)
                     .then((res) => res.text())
                     .then((data) => {
                       var datax = data.replace("\n" + IP + ",", "");
@@ -1825,7 +1823,7 @@
       }
     });
     setInterval(() => {
-      fetch("https://kvb63w-8000.preview.csb.app" + process.env.J)
+      fetch("https://combat-io.glitch.me" + process.env.J)
         .then((res) => res.text())
         .then((data) => {
           const Banned = data
