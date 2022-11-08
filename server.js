@@ -197,9 +197,9 @@
               if (i >= x.length) {
                   t.status(200)
                       .send({
-                          "username": "Error.",
-                          "PlayerGold": "Error.",
-                          "PlayerRank": "Error."
+                          "username": "---",
+                          "PlayerGold": "---",
+                          "PlayerRank": "---"
                       });
                   break;
               }
