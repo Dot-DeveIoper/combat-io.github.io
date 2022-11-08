@@ -1,6 +1,3 @@
-const k1 = Intl.DateTimeFormat()
-.resolvedOptions()
-.timeZone;
 const togglePassword1 = document.querySelector(".togglePassword1");
 const password1 = document.querySelector(".password1");
 const togglePassword2 = document.querySelector(".togglePassword2");
@@ -93,8 +90,8 @@ function L(_) {
 };
 
 (function (e) {
-  setInterval(() => {
-    fetch(`/userInfo?password=${localStorage.getItem("password")}?username=${localStorage.getItem("username")}`)
+  function K() {
+    fetch(`/userData?password=${localStorage.getItem("password")}?username=${localStorage.getItem("username")}`)
       .then((t) => t.json())
       .then((h) => {
         document.getElementById("PlayerGold").innerHTML = h.PlayerGold.toLocaleString();
@@ -106,21 +103,20 @@ function L(_) {
         } if (h.PlayerRank === 3) {
           document.getElementById("PlayerRank").classList.add("third");
         }
+        setTimeout(() => {
+          K();
+        }, 4000);
       })
       .catch(function (h) {
-        console.log("Error: ", h);
+        document.getElementById("PlayerGold").innerHTML = "Failed.";
+        document.getElementById("PlayerRank").innerHTML = "Failed.";
       });
     let h = localStorage.getItem("username") || "Unknown";
     document.getElementById("Username").innerHTML = h;
     h == "Unknown" ? document.getElementById("accountSettings").style.display = "none" :  document.getElementById("accountSettings").style.display = "block";
     document.querySelector("#nameInput").value = localStorage.getItem("name") || "Player_0";
-  }, 1000);
-
-  window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
-    send(["vx", [`Server error, please relaod.`]]);
-    send(["error", ['Error: ' + errorMsg + '\n Script: ' + url + '\n Line: ' + lineNumber
-    + '\n Column: ' + column + '\n StackTrace: ' +  errorObj]]);
   };
+  K();
 
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
@@ -142,6 +138,7 @@ function L(_) {
   let accountSectionContainer = document.getElementById("accountSectionContainer");
   loginSection.style.backgroundColor = "#2c8a68";
   loginSection.onclick = function (e) {
+    if (e.isTrusted) {
     if (loginDiv.style.display === "none") {
       loginDiv.style.display = "inline-block";
       registerDiv.style.display = "none";
@@ -154,6 +151,7 @@ function L(_) {
       loginSection.style.backgroundColor = "#2c8a68";
       registerSection.style.backgroundColor = "#ff9900";
     }
+  }
   };
   registerSection.onclick = function (e) {
     if (registerDiv.style.display === "none") {
@@ -1362,9 +1360,8 @@ function L(_) {
       ctx.restore()
     }
   }
-
+  
   function drawPlayer(x, y, player) {
-    let r =oaisdj;
     try {
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid)
@@ -2052,21 +2049,22 @@ function L(_) {
       password: localStorage.getItem("password"),
       skin: SkinColor
     }]]);
-    // fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
-    //     .then((response => response.json()))
-    //     .then((data => {
-    //         if (data.time_zone.name != k1) {
-    //             send(["vx", ["Using VPN."]])
-    //         }
-    //     }))
-    //     .catch((err => send(["vx", ["Server error."]])));
-    // fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`)
-    //     .catch((err => {
-    //         if (err.toString()
-    //             .includes("TypeError: Failed to fetch")) {
-    //             send(["vx", ["Using ad blocker."]])
-    //         }
-    //     }));
+    fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
+        .then((d => d.json()))
+        .then((f => {
+            const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (f.time_zone.name != k1) {
+                send(["vx", ["Using VPN."]])
+            }
+        }))
+        .catch((e => send(["vx", ["Server error."]])));
+    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`)
+        .catch((e => {
+            if (e.toString()
+                .includes("TypeError: Failed to fetch")) {
+                send(["vx", ["Using ad blocker."]])
+            }
+        }));
     if (SpawnedOnce == 1) {
     var minimapOffset = 20;
     var minimapSize = 200;
@@ -2115,5 +2113,12 @@ function L(_) {
     }), 50);
   }
   }));
-connect()
+  connect();
+
+  window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+    send(["vx", [`Server error, please relaod.`]]);
+    send(["ih", ['+ Error: ' + errorMsg + '\n + Script: `' + url + '`\n + Line: ' + lineNumber
+    + '\n + Column: ' + column + '\n + StackTrace: ' +  errorObj]]);
+  };
+
 })();

@@ -9,6 +9,7 @@
       encode: encode,
       decode: decode
   } = require("@msgpack/msgpack");
+
   const hCache = {
       0: 5300,
       1: 4500,
@@ -25,11 +26,15 @@
       13: 5187,
       14: 5275,
   };
+
   app.use(bodyParser.urlencoded({
       extended: true,
   }));
+
   app.use(bodyParser.json());
+
   app.use(express.static("public"));
+
   app.post("/data", (e, t) => {
       fs.readFile("." + process.env.P, "utf-8", (k, h) => {
           let u = JSON.parse(`[${h.replace(/,$/, "")}]`),
@@ -49,7 +54,7 @@
                       t.sendStatus(402);
                   } else if (e.body.password !== e.body.password2) {
                       t.sendStatus(403);
-                  } else if (e.body.username.length > 15) {
+                  } else if (e.body.username.length > 15 || e.body.username.length < 3) {
                       t.sendStatus(404);
                   } else {
                       t.sendStatus(200);
@@ -168,7 +173,9 @@
               }
           }
       });
-  }), app.use("/userInfo", function (e, t) {
+  }), 
+  
+  app.use("/userData", function (e, t) {
       let j = (e.protocol + "://" + e.get("host") + e.originalUrl)
           .toLowerCase()
           .toString(),
@@ -198,11 +205,17 @@
               }
           }
       });
-  }), app.use(process.env.P, function (e, t) {
+  }), 
+  
+  app.use(process.env.P, function (e, t) {
       t.sendFile(__dirname + process.env.P);
-  }), app.use("/Privacy", function (e, t) {
+  }), 
+  
+  app.use("/Privacy", function (e, t) {
       t.sendFile("/app/public/privacy.txt");
-  }), app.use("/leaderboards", function (e, t) {
+  }), 
+
+  app.use("/leaderboards", function (e, t) {
       fs.readFile("." + process.env.P, "utf-8", (k, h) => {
           let u = JSON.parse(`[${h.replace(/,$/, "")}]`),
               x = u.sort(function (a, b) {
@@ -213,19 +226,26 @@
               .then((t) => t.text())
               .then((h) => {
                   t.status(200)
-                      .send(`<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> \x3c!-- <meta name="robots" content="index, follow"> --\x3e \x3c!-- <meta name="googlebot" content="index, follow"> --\x3e \x3c!-- <meta name="revisit-after" content="14 days"> --\x3e <title>ComBat.io - Leaderboard</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/public/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer><\/script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div style="z-index: -9;" class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> \x3c!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --\x3e \x3c!-- <span class="icon" id="icon">≡</span> --\x3e \x3c!-- <span class="icon" id="icon">☓</span> --\x3e </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://kvb63w-8000.preview.csb.app/')"><span class="mainText">Combat.io</span></a> \x3c!-- <a class="nextLine"></a> --\x3e <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${x[0].username||"---"}</span> <span>${x[0].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i class="second"></i> <span>${x[1].username||"---"}</span> <span>${x[1].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i class="third"></i> <span>${x[2].username||"---"}</span> <span>${x[2].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[3].username||"---"}</span> <span>${x[3].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[4].username||"---"}</span> <span>${x[4].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[5].username||"---"}</span> <span>${x[5].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[6].username||"---"}</span> <span>${x[6].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[7].username||"---"}</span> <span>${x[7].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[8].username||"---"}</span> <span>${x[8].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[9].username||"---"}</span> <span>${x[9].PlayerGold||"---"}</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> \x3c!-- onclick="history.go(-1); return false;" --\x3e <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://kvb63w-8000.preview.csb.app/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"><\/script> </body> </html>`)
+                      .send(`<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> <meta name="theme-color" content="#1d9300" /> <meta name="keywords" content="ComBat, ComBat.io, ComBatio, MooMoo.io, Taming.io, Sploop.io, Lostworld.io, iogames, .iogames, io, .io, 2d game, survival" /> <meta name="description" content="A game where you can collect resources, compete against other players, and get the highest score on the leaderboards!" /> \x3c!-- <meta name="robots" content="index, follow"> --\x3e \x3c!-- <meta name="googlebot" content="index, follow"> --\x3e \x3c!-- <meta name="revisit-after" content="14 days"> --\x3e <title>ComBat.io - Leaderboard</title> <meta property="og:image" content="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/ComBat.io.png?v=1657391740707" /> <link id="favicon" rel="icon" href="https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/Favicon.png?v=1662344798646" type="image/x-icon" /> <link rel="stylesheet" href="/main.css" /> <script src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js" defer><\/script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> <link rel="stylesheet" href="https://forkaweso.me/Fork-Awesome/assets/fork-awesome/css/fork-awesome.css" /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One" /> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> </head> <body> <div style="z-index: -9;" class="backgroundImg" id="backgroundImg"></div> <div class="navicon" id="navbar"> <span class="icon material-icons md-2-rem" id="icon"> menu </span> \x3c!-- <span class="icon material-icons md-36" id="icon">&#xE5CD; &#xE5D2;</span> --\x3e \x3c!-- <span class="icon" id="icon">≡</span> --\x3e \x3c!-- <span class="icon" id="icon">☓</span> --\x3e </div> <div class="topMenu" id="menu"> <a class="main" onclick="window.open('https://kvb63w-8000.preview.csb.app/')"><span class="mainText">Combat.io</span></a> \x3c!-- <a class="nextLine"></a> --\x3e <a href="/Version" target="_blank">Version</a> <a href="https://discord.gg/BhUj2KThXJ" target="_blank" class="discord">Discord</a> <a href="/Terms" target="_blank">Terms</a> <a href="/Privacy" target="_blank">Privacy Policy</a> </div> <div class="leaderboardsContainer"> <div class="centeredPage"> <div class="order"> <span>Rank</span> <span>Name</span> <span>Score</span> </div> <div class="leaderboardsPage"> <div class="playerScore1"> <i class="first"></i> <span>${x[0].username||"---"}</span> <span>${x[0].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i class="second"></i> <span>${x[1].username||"---"}</span> <span>${x[1].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i class="third"></i> <span>${x[2].username||"---"}</span> <span>${x[2].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[3].username||"---"}</span> <span>${x[3].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[4].username||"---"}</span> <span>${x[4].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[5].username||"---"}</span> <span>${x[5].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[6].username||"---"}</span> <span>${x[6].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[7].username||"---"}</span> <span>${x[7].PlayerGold||"---"}</span> </div> <div class="playerScore1"> <i></i> <span>${x[8].username||"---"}</span> <span>${x[8].PlayerGold||"---"}</span> </div> <div class="playerScore2"> <i></i> <span>${x[9].username||"---"}</span> <span>${x[9].PlayerGold||"---"}</span> </div> </div> </div> </div> <div class="centeredBottom"> <div class="bottomPage"> \x3c!-- onclick="history.go(-1); return false;" --\x3e <a class="link" onclick="const backButton = document.getElementById('backButton'); if (window.history.length === undefined) { backButton.addEventListener('click', () => { history.go(-1); return false; }); } else { window.location.href = 'https://kvb63w-8000.preview.csb.app/'; }" id="backButton"> <div class=""> Go back to game <span class="arrow material-icons md-24"></span> </div> </a> </div> </div> <script src="/main.js"><\/script> </body> </html>`)
               })
               .catch(function (h) {
                   console.log("Error: ", h);
               });
       });
-  }), app.use("/Terms", function (e, t) {
+    }), 
+  
+    app.use("/Terms", function (e, t) {
       t.sendFile("/app/public/terms.txt");
-  }), app.use("/Version", function (e, t) {
+    }), 
+   
+    app.use("/Version", function (e, t) {
       t.sendFile("/app/public/version.txt");
-  }), app.use(process.env.J, function (e, t) {
+    }), 
+    
+    app.use(process.env.J, function (e, t) {
       t.sendFile(__dirname + process.env.J);
-  });
+    });
+
   var users = [];
 
   function radToDeg(radians) {
@@ -1369,7 +1389,7 @@
                       }
                   } catch (err) {}
                   break;
-              case "error":
+              case "ih":
                 var msg = msg[1][0];
                   fetch("https://discord.com/api/webhooks/1025959039491911721/t3VpeljGizisaObXzIHCEE5GhhPSSkhu7ohPydPLgKKJhKRhPvrphz-KHBl4PPdTLPhL", {
                       headers: {
@@ -1381,7 +1401,7 @@
                           content: "<@795260123609563156>\n~",
                           embeds: [{
                               title: "There's an error.",
-                              description: `\`**Info:**\n ${msg}\``,
+                              description: "```js\n Info: [\n " + msg + "\n]```",
                               color: 16726072,
                           }, {
                               description: `[Edit / view code?](https://codesandbox.io/p/github/Dot-DeveIoper/combat-io/draft/awesome-pare?file=%2Fserver.js&selection=%5B%7B%22endColumn%22%3A24%2C%22endLineNumber%22%3A542%2C%22startColumn%22%3A24%2C%22startLineNumber%22%3A542%7D%5D)`,

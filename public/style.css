@@ -1357,7 +1357,7 @@ select:focus {
   height: auto;
 }
 
-#nameInput {
+.nameInput {
   box-sizing: border-box;
   background-color: #e0e0e0;
   color: #373839;
@@ -1370,10 +1370,10 @@ select:focus {
   font-weight: 600;
   width: 100%;
   padding: 6px;
-  margin-bottom: 16px;
   outline: none;
   caret-color: #48e346;
   user-select: text;
+  margin-bottom: 5px;
 }
 #nameInput:hover {
   background-color: #dadada;
@@ -1392,103 +1392,13 @@ select:focus {
   font-weight: 600;
   width: 100%;
   padding: 10px;
-  /* padding: 6px; */
-  /* margin-bottom: 16px; */
-  cursor: pointer;
-  user-select: none;
-}
-.menuButton:hover {
-  background-color: #32db2e;
-}
-
-.menuButton {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #48e346;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  /* font-size: 1.5rem; */
-  font-weight: 600;
-  width: 100%;
-  padding: 10px;
-  /* padding: 6px; */
-  /* margin-bottom: 16px; */
-  cursor: pointer;
-  user-select: none;
-}
-.menuButton:hover {
-  background-color: #32db2e;
-}
-
-/* .loginBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #99e51f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1rem;
-  /* font-size: 1.5rem; /
-  font-weight: 600;
-  width: 48%;
-  padding: 10px;
-  /* padding: 6px; /
   margin-top: 10px;
-  /* margin-top: 16px; /
-  margin-bottom: 10px;
-  /* margin-bottom: 16px; /
-  cursor: pointer;
-  user-select: none;
-} */
-/* .loginBtn:hover {
-  background-color: #89d213;
-  /* background-color: #88cb1e; /
-} */
-.accBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #99e51f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  /* font-size: 1.5rem; */
-  font-weight: 600;
-  width: 100%;
-  margin-top: 16px;
-  padding: 10px;
-  /* padding: 6px; */
   cursor: pointer;
   user-select: none;
 }
-.accBtn:hover {
-  background-color: #89d213;
+.menuButton:hover {
+  filter: brightness(0.9);
 }
-/* .logOutBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #e5391f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  /* font-size: 1.5rem; /
-  font-weight: 600;
-  width: 100%;
-  padding: 10px;
-  /* padding: 6px; /
-  cursor: pointer;
-  user-select: none;
-} */
-/* .logOutBtn:hover {
-  background-color: #d4280e;
-} */
 
 .accountSettingsModal {
   display: none;
@@ -1503,8 +1413,9 @@ select:focus {
   font-family: "Rubik", sans-serif;
   background-color: #ffffff;
   border: 8px solid #dbdbdb;
-  width: 95%;
-  height: 95%;
+  width: 55%;
+  height: 85%;
+  border-radius: 8px;
   border-radius: 16px;
   overflow: scroll;
   overflow-x: hidden;
@@ -1589,6 +1500,7 @@ select:focus {
   word-break: break-word;
   line-break: strict;
   white-space: normal;
+  font-size: 25px;
 }
 .playerRank span {
   content: "";
@@ -1596,7 +1508,7 @@ select:focus {
   /* border-radius: 25px; */
   border-radius: 8px;
   /* padding: 4px 12px; */
-  padding: 8px 16px;
+  padding: 5px 13px;
 }
 .playerRank span::after {
   content: ".";
@@ -1669,43 +1581,15 @@ select:focus {
   border: 5px solid #3fd7ff;
   /* border-radius: 0 5px 5px 0; */
   border-radius: 0 10px 0 10px;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.3rem;
   /* width: 80%; */
   /* width: 40%; */
   width: 100%;
-  padding: 20px;
+  padding: 8px;
 }
 .changeAccountUsername:focus, .accountPasswordInput:focus, .changeAccountPassword:focus {
   outline: none;
   border: 5px solid #0cbdec;
-}
-.submitChangesBtn {
-  display: grid;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  place-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: #1680f0;
-  color: #ffffff;
-  border: 0;
-  /* border-radius: 0 5px 5px 0; */
-  border-radius: 0 10px 0 10px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 20px;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s;
-}
-.submitChangesBtn:hover {
-  background-color: #106cce;
-}
-.submitChangesBtn:focus {
-  box-shadow: 0 0 0 5px #106cce99;
-  transition: all 0.3s;
 }
 .confirmationPopUp {
   display: none;
@@ -1765,6 +1649,7 @@ select:focus {
   /* position: absolute;
   bottom: 35px; */
   place-items: center;
+  padding-bottom: 20px;
 }
 .accountZone {
   content: "";
@@ -1772,7 +1657,7 @@ select:focus {
   position: absolute; */
   /* bottom: 100px; */
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #2bdbff;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -1791,7 +1676,7 @@ select:focus {
   position: absolute; */
   /* bottom: 100px; */
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #cc0000;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -1998,8 +1883,8 @@ select:focus {
     /* text-align: center; */
   }
   .accountProfile img {
-    width: 86px;
-    height: 86px;
+    width: 76px;
+    height: 76px;
     padding: 4px;
   }
   .accountProfile .accountUsernameText {
@@ -2059,28 +1944,6 @@ select:focus {
   .changeAccountUsername:focus, .accountPasswordInput:focus, .changeAccountPassword:focus {
     outline: none;
     border: 2.5px solid #0cbdec;
-  }
-  .submitChangesBtn {
-    transform: translate(-50%, 0%);
-    place-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: #1680f0;
-    color: #ffffff;
-    border: 0;
-    /* border-radius: 0 5px 5px 0; */
-    border-radius: 0 5px 0 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 10px;
-    transition: all 0.3s;
-  }
-  .submitChangesBtn:hover {
-    background-color: #106cce;
-  }
-  .submitChangesBtn:focus {
-    box-shadow: 0 0 0 2.5px #106cce99;
-    transition: all 0.3s;
   }
   /* .accountProfile .dangerZoneContainer {} */
   .accountZone {

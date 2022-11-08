@@ -54,12 +54,17 @@
 
         <div class="accountZoneContainer" >
           <br class="accountZone" info-text1="Customize Your Account" />
-              <label class="customizeUsername" >Change Username: 
-              <input type="text" placeholder="Type Your New Username" class="changeAccountUsername" name="usernameInput"/>
-              <button onclick="L(0)" type="submit" value="Submit" class="submitChangesBtn" >Submit</button>
-            </label>
-            <label class="customizePassword" >Change Password: <input type="password" placeholder="Type Your New Password" class="changeAccountPassword"  required />
-              <button onclick="L(1)" type="submit" value="Submit" class="submitChangesBtn" >Submit</button>
+          <label class="customizeUsername"> <div style="font-weight: bold;margin-bottom: 8px;" class="menuHeader">Change Username</div>
+                <input class="nameInput" type="text" placeholder="New Username" maxlength="15" required/>
+                <div onclick="L(0);" style="width: 45%;margin-bottom: 30px;background: #48e346;" class="menuButton">
+                  <span>Confirm</span>
+                </div>            
+              </label>
+              <label class="customizeUsername"> <div style="font-weight: bold;margin-bottom: 8px;" class="menuHeader">Change password</div>
+                <input class="nameInput" type="text" placeholder="New Password" maxlength="15" required/>
+                <div onclick="L(1);" style="width: 45%;background: #48e346;" class="menuButton">
+                <span>Confirm</span>
+              </div>
             </label>
             <div class="confirmationPopUp" id="confirmPopUp">
               <!-- <div class=".confirmationPopUpContainer" id=""> -->
@@ -75,18 +80,15 @@
 
         <div class="dangerZoneContainer" >
           <br class="dangerZone" info-text2="Danger Zone" />
-          <div onclick="F();"  class="logOutBtn">
+          <div onclick="F();" style="width: 60%; background: #ff601f;" class="menuButton">
             <span>Log Out</span>
           </div>
-          <div onclick="L()" class="deleteAccountBtn">
+          <div onclick="L();" style="width: 60%; background: #e5391f;" class="menuButton">
             <span>Delete Account</span>
           </div>
           <!-- <a  class="forgetPassword"><span>Forget Password</span></a> -->
         </div>
       </div>
-      <!-- <div  class="logOutBtn"> -->
-      <!-- <span>Log Out</span> -->
-      <!-- </div> -->
     </div>
     <i class="accountModalCloseIcon" id="modalCloseIcon">&times;</i>
   </div>
@@ -365,11 +367,11 @@
         <!-- </div> -->
         <div style="display: inline-block">
           <div class="menuCard" id="setupCard">
-            <input type="text" id="nameInput" placeholder="Username" maxlength="15" style="cursor: not-allowed;" disabled="disabled" />
+            <input type="text" id="nameInput" class="nameInput" placeholder="Username" maxlength="15" style="cursor: not-allowed;" disabled="disabled" />
             <div id="enterGame" class="menuButton">
               <span>Enter Game</span>
             </div>
-            <div id="accountSettings" class="accBtn">
+            <div id="accountSettings" style="background:#99e51f;" class="menuButton">
               <span id="accountSettingsText">Open Account Settings</span>
             </div>
           </div>
