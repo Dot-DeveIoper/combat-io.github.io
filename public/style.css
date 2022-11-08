@@ -51,7 +51,7 @@ body {
   background-size: cover;
   user-select: none;
   pointer-events: none;
-  z-index: -9999999999;
+  z-index: 9;
 }
 
 #gameCanvas {
@@ -690,6 +690,14 @@ select:focus {
     font-size: 4.5rem;
   }
 }
+@media only screen and (max-width: 320px) {
+  #gameName {
+    text-shadow:
+    0 1px 0 #c0c1c2,
+    0 2px 0 #c0c1c2;
+    font-size: 3.5rem;
+  }
+}
 
 #guideCard {
   max-height: 250px;
@@ -781,7 +789,22 @@ select:focus {
     z-index: 1;
   }
 }
-@media only screen and (min-width: 768px) {
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+  #rightCardHolder {
+    display: none;
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}
+@media only screen and (min-width: 1024px) {
   #rightCardHolder {
     display: inline-block !important;
     vertical-align: top;
@@ -1174,6 +1197,7 @@ select:focus {
   position: absolute;
   top: 50px;
   left: 50%;
+  animation: 0.3s popup;
   transform: translate(-50%, -50%);
   background-color: #549ff6;
   padding-block: 10px;
@@ -1197,6 +1221,7 @@ select:focus {
   position: absolute;
   top: 50px;
   left: 50%;
+  animation: 0.3s popup;
   transform: translate(-50%, -50%);
   background-color: #f8ab49;
   padding-block: 10px;
@@ -1332,7 +1357,7 @@ select:focus {
   height: auto;
 }
 
-#nameInput {
+.nameInput {
   box-sizing: border-box;
   background-color: #e0e0e0;
   color: #373839;
@@ -1345,37 +1370,14 @@ select:focus {
   font-weight: 600;
   width: 100%;
   padding: 6px;
-  margin-bottom: 16px;
   outline: none;
   caret-color: #48e346;
   user-select: text;
+  margin-bottom: 5px;
 }
 #nameInput:hover {
   background-color: #dadada;
 }
-
-/* .menuButton {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #48e346;
-  color: #ffffff;
-  border: 0;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 100%;
-  padding: 6px;
-  /* margin-bottom: 16px; /
-  cursor: pointer;
-  user-select: none;
-} */
-/* .menuButton:hover {
-  background-color: #32db2e;
-  /* background-color: #6fc94e; /
-} */
 
 .menuButton {
   display: inline-block;
@@ -1390,80 +1392,13 @@ select:focus {
   font-weight: 600;
   width: 100%;
   padding: 10px;
-  /* padding: 6px; */
-  margin-bottom: 16px;
+  margin-top: 10px;
   cursor: pointer;
   user-select: none;
 }
 .menuButton:hover {
-  background-color: #32db2e;
+  filter: brightness(0.9);
 }
-
-/* .loginBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #99e51f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1rem;
-  /* font-size: 1.5rem; /
-  font-weight: 600;
-  width: 48%;
-  padding: 10px;
-  /* padding: 6px; /
-  margin-top: 10px;
-  /* margin-top: 16px; /
-  margin-bottom: 10px;
-  /* margin-bottom: 16px; /
-  cursor: pointer;
-  user-select: none;
-} */
-/* .loginBtn:hover {
-  background-color: #89d213;
-  /* background-color: #88cb1e; /
-} */
-.accBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #99e51f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  /* font-size: 1.5rem; */
-  font-weight: 600;
-  width: 100%;
-  padding: 10px;
-  /* padding: 6px; */
-  cursor: pointer;
-  user-select: none;
-}
-.accBtn:hover {
-  background-color: #89d213;
-}
-/* .logOutBtn {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #e5391f;
-  color: #ffffff;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  /* font-size: 1.5rem; /
-  font-weight: 600;
-  width: 100%;
-  padding: 10px;
-  /* padding: 6px; /
-  cursor: pointer;
-  user-select: none;
-} */
-/* .logOutBtn:hover {
-  background-color: #d4280e;
-} */
 
 .accountSettingsModal {
   display: none;
@@ -1477,10 +1412,11 @@ select:focus {
   align-items: center; */
   font-family: "Rubik", sans-serif;
   background-color: #ffffff;
-  border: 4px solid #dbdbdb;
-  width: 95%;
-  height: 95%;
+  border: 8px solid #dbdbdb;
+  width: 55%;
+  height: 85%;
   border-radius: 8px;
+  border-radius: 16px;
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -1490,17 +1426,17 @@ select:focus {
 .accountModalCloseIcon {
   display: inline-block;
   position: absolute;
-  top: 16px;
-  right: 12px;
-  transform: translate(0%, -15.5%);
+  top: 38px;
+  right: 24px;
+  transform: translate(0%, -31%);
   background-color: #39393999;
-  padding-left: 8px;
-  padding-right: 9px;
+  padding-left: 16px;
+  padding-right: 18px;
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: sans-serif;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
@@ -1514,16 +1450,19 @@ select:focus {
 .accountIdText {
   display: inline-block;
   position: absolute;
-  top: 10px;
-  left: 12px;
+  top: 20px;
+  left: 24px;
   color: #747474;
-  font-size: 0.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 .accountProfile {
   display: grid;
   position: absolute;
-  top: 25px;
+  /* top: 50%; */
+  top: 50px;
+  /* transform: translate(-0%, -50%); */
+  transform: translate(-0%, -0%);
   place-items: center;
   width: 100%;
   /* text-align: center; */
@@ -1531,15 +1470,15 @@ select:focus {
 .accountProfile img {
   background-color: #b6b6b6;
   border-radius: 50%;
-  width: 86px;
-  height: 86px;
-  padding: 4px;
+  width: 172px;
+  height: 172px;
+  padding: 8px;
 }
 .accountProfile .accountUsernameText {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   color: #747474;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 500;
 }
 .accountProfile .accountInfoContainer {
@@ -1549,25 +1488,27 @@ select:focus {
   width: 100%;
 }
 .accountInfo {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 .accountInfo div {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #2b2b2b;
   text-align: center;
+  font-size: 2rem;
   overflow-wrap: break-word;
   word-break: break-word;
   line-break: strict;
   white-space: normal;
+  font-size: 25px;
 }
 .playerRank span {
   content: "";
   background-color: #7b7b7b;
   /* border-radius: 25px; */
-  border-radius: 4px;
+  border-radius: 8px;
   /* padding: 4px 12px; */
-  padding: 4px 8px;
+  padding: 5px 13px;
 }
 .playerRank span::after {
   content: ".";
@@ -1576,10 +1517,10 @@ select:focus {
   display: inline-block;
   position: relative;
   color: #ffd500 !important;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
-  margin-top: 5px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 20px;
   width: auto;
   /* width: 32%; */
   height: 100%;
@@ -1588,10 +1529,10 @@ select:focus {
   display: inline-block;
   position: relative;
   color: #c6800a !important;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
-  margin-top: 5px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 20px;
   width: auto;
   /* width: 32%; */
   height: 100%;
@@ -1600,19 +1541,134 @@ select:focus {
   display: inline-block;
   position: relative;
   color: #bac4c7 !important;
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
-  margin-top: 5px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 20px;
   width: auto;
   /* width: 32%; */
   height: 100%;
+}
+.accountProfile .accountZoneContainer {
+  display: grid;
+  /* position: absolute;
+  bottom: 35px; */
+  place-items: center;
+}
+.accountZoneContainer label {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+}
+.customizeUsername {
+  display: block;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+  color: #444444;
+}
+.customizePassword {
+  display: block;
+  margin-bottom: 10px;
+  color: #444444;
+}
+.changeAccountUsername, .accountPasswordInput, .changeAccountPassword {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background-color: #e1e1e199;
+  color: #232323;
+  border: 5px solid #3fd7ff;
+  /* border-radius: 0 5px 5px 0; */
+  border-radius: 0 10px 0 10px;
+  font-size: 1.3rem;
+  /* width: 80%; */
+  /* width: 40%; */
+  width: 100%;
+  padding: 8px;
+}
+.changeAccountUsername:focus, .accountPasswordInput:focus, .changeAccountPassword:focus {
+  outline: none;
+  border: 5px solid #0cbdec;
+}
+.confirmationPopUp {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 15px 10px;
+  /* padding: 10px 40px 10px 10px; */
+  background-color: #222222;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+/* .confirmationPopUpContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #222222;
+} */
+.confirmationPopUp/*.confirmationPopUpContainer*/ .accountPasswordInput, .accountPasswordInput::placeholder {
+  color: #ffffff !important;
+}
+.confirmationText {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+.confirmationPopUpCloseIcon {
+  display: inline-block;
+  position: absolute;
+  /* top: 13.46%; */
+  /* top: 5.2499px; */
+  top: 10px;
+  /* right: 5px; */
+  right: -35px;
+  transform: translate(0%, -20%);
+  background-color: #39393999;
+  padding-left: 8px;
+  padding-right: 9px;
+  color: #ffffff;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
 }
 .accountProfile .dangerZoneContainer {
   display: grid;
   /* position: absolute;
   bottom: 35px; */
   place-items: center;
+  padding-bottom: 20px;
+}
+.accountZone {
+  content: "";
+  /* display: inline-block;
+  position: absolute; */
+  /* bottom: 100px; */
+  text-align: center;
+  font-size: 1.4rem;
+  color: #2bdbff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.accountZone::before {
+  /* content: "— — — — Customize Your Account"; */
+  content: "— — — — " attr(info-text1);
+}
+.accountZone::after {
+  /* content: " — — — —"; */
+  content: " — — — —";
 }
 .dangerZone {
   content: "";
@@ -1620,14 +1676,14 @@ select:focus {
   position: absolute; */
   /* bottom: 100px; */
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #cc0000;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .dangerZone::before {
   /* content: "— — — — — — Danger Zone"; */
-  content: "— — — — — — " attr(info-text);
+  content: "— — — — — — " attr(info-text2);
 }
 .dangerZone::after {
   /* content: " — — — — — —"; */
@@ -1640,54 +1696,76 @@ select:focus {
   transform: translate(-0%, 0%); */
   text-align: center;
   box-sizing: border-box;
+  /* background-color: transparent; */
   background-color: #ff601f;
+  /* color: #323232; */
   color: #ffffff;
+  /* border: 5px solid #ff601f; */
   border: 0;
   /* border-radius: 0 5px 5px 0; */
-  border-radius: 0 5px 0 5px;
-  font-size: 0.8rem;
+  border-radius: 0 10px 0 10px;
+  font-size: 1.6rem;
   font-weight: 600;
   /* width: 80%; */
   /* width: 40%; */
   width: 60%;
   /* margin-right: 5px; */
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s;
 }
 .logOutBtn:hover {
   background-color: #f55614;
 }
+.logOutBtn:active {
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+/* .logOutBtn:focus {
+  box-shadow: 0 0 0 5px #f5561499;
+} */
 .dangerZoneContainer .deleteAccountBtn {
   display: inline-block;
   /* position: absolute;
   right: 50%;
   transform: translate(0%, 0%); */
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   box-sizing: border-box;
+  /* background-color: transparent; */
   background-color: #e5391f;
+  /* color: #323232; */
   color: #ffffff;
+  /* border: 5px solid #e5391f; */
   border: 0;
   /* border-radius: 5px 0 0 5px; */
-  border-radius: 0 5px 0 5px;
-  font-size: 0.8rem;
+  border-radius: 0 10px 0 10px;
+  font-size: 1.6rem;
   font-weight: 600;
   /* width: 80%; */
   /* width: 40%; */
   width: 60%;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s;
 }
 .deleteAccountBtn:hover {
   background-color: #d4280e;
 }
+.deleteAccountBtn:active {
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+/* .deleteAccountBtn:focus {
+  box-shadow: 0 0 0 5px #d4280e99;
+} */
 .forgetPassword {
   color: #306df0;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
 }
 .forgetPassword:hover {
@@ -1774,9 +1852,185 @@ select:focus {
 }
 
 /* MOBILE VIEW */
-/* @media only screen and (max-width: 768px) {
-  .accountSettingsModal {}
-} */
+@media only screen and (max-width: 768px) {
+  .accountSettingsModal {
+    border: 4px solid #dbdbdb;
+    width: 95%;
+    height: 95%;
+    border-radius: 8px;
+  }
+  .accountModalCloseIcon {
+    top: 16px;
+    right: 12px;
+    transform: translate(0%, -15.5%);
+    padding-left: 8px;
+    padding-right: 9px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+  }
+  .accountIdText {
+    top: 10px;
+    left: 12px;
+    font-size: 0.8rem;
+  }
+  .accountProfile {
+    display: grid;
+    position: absolute;
+    top: 25px;
+    transform: translate(-0%, -0%);
+    place-items: center;
+    width: 100%;
+    /* text-align: center; */
+  }
+  .accountProfile img {
+    width: 76px;
+    height: 76px;
+    padding: 4px;
+  }
+  .accountProfile .accountUsernameText {
+    margin-top: 5px;
+    font-size: 1.5rem;
+  }
+  /* .accountProfile .accountInfoContainer {} */
+  .accountInfo {
+    margin-top: 15px;
+  }
+  .accountInfo div {
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  .playerRank span {
+    border-radius: 4px;
+    /* padding: 4px 12px; */
+    padding: 4px 8px;
+  }
+  .first {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 10px;
+  }
+  .second {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 10px;
+  }
+  .third {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 10px;
+  }
+  /* .accountProfile .accountZoneContainer {} */
+  .accountZoneContainer label {
+    font-size: 1rem;
+  }
+  .customizeUsername {
+    /* margin-top: 5px; */
+    margin-bottom: 5px;
+  }
+  .customizePassword {
+    margin-bottom: 5px;
+  }
+  .changeAccountUsername, .accountPasswordInput, .changeAccountPassword {
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    background-color: #e1e1e199;
+    color: #232323;
+    border: 2.5px solid #3fd7ff;
+    /* border-radius: 0 5px 5px 0; */
+    border-radius: 0 5px 0 5px;
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+  .changeAccountUsername:focus, .accountPasswordInput:focus, .changeAccountPassword:focus {
+    outline: none;
+    border: 2.5px solid #0cbdec;
+  }
+  /* .accountProfile .dangerZoneContainer {} */
+  .accountZone {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .accountZone::before {
+    /* content: "— — — — Customize Your Account"; */
+    content: "— — — — " attr(info-text1);
+  }
+  .accountZone::after {
+    /* content: " — — — —"; */
+    content: " — — — —";
+  }
+  .dangerZone {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .dangerZone::before {
+    /* content: "— — — — — — Danger Zone"; */
+    content: "— — — — — — " attr(info-text2);
+  }
+  .dangerZone::after {
+    /* content: " — — — — — —"; */
+    content: " — — — — — —";
+  }
+  .dangerZoneContainer .logOutBtn {
+    box-sizing: border-box;
+    background-color: #ff601f;
+    color: #ffffff;
+    border: 0;
+    /* border-radius: 0 5px 5px 0; */
+    border-radius: 0 5px 0 5px;
+    font-size: 0.8rem;
+    /* width: 80%; */
+    /* width: 40%; */
+    width: 60%;
+    /* margin-right: 5px; */
+    padding: 10px;
+    transition: all 0.3s;
+  }
+  .logOutBtn:hover {
+    background-color: #f55614;
+  }
+  .logOutBtn:active {
+    transform: scale(0.95);
+    transition: all 0.3s;
+  }
+  /* .logOutBtn:focus {
+    box-shadow: 0 0 0 2.5px #f5561499;
+  } */
+  .dangerZoneContainer .deleteAccountBtn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    background-color: #e5391f;
+    color: #ffffff;
+    border: 0;
+    /* border-radius: 5px 0 0 5px; */
+    border-radius: 0 5px 0 5px;
+    font-size: 0.8rem;
+    /* width: 80%; */
+    /* width: 40%; */
+    width: 60%;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+  .deleteAccountBtn:hover {
+    background-color: #d4280e;
+  }
+  .deleteAccountBtn:active {
+    transform: scale(0.95);
+    transition: all 0.3s;
+  }
+  /* .deleteAccountBtn:focus {
+    box-shadow: 0 0 0 2.5px #d4280e99;
+  } */
+  .forgetPassword {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .forgetPassword:hover {
+    color: #1952cc;
+  }
+}
 
 #mainMenu {
   /* width: 100%;
@@ -2911,7 +3165,8 @@ body > #mainMenu {
 }
 
 .playerContainter {
-  display: block;
+  display: none;
+  /* display: block; */
   position: absolute;
   white-space: nowrap;
   /* width: 100%; */

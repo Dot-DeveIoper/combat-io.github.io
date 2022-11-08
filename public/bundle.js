@@ -1,6 +1,3 @@
-const k1 = Intl.DateTimeFormat()
-.resolvedOptions()
-.timeZone;
 const togglePassword1 = document.querySelector(".togglePassword1");
 const password1 = document.querySelector(".password1");
 const togglePassword2 = document.querySelector(".togglePassword2");
@@ -40,11 +37,11 @@ let accSettings = document.getElementById("accountSettings");
 let accSettingsText = document.getElementById("accountSettingsText");
 let accSettingsDiv = document.getElementById("accountSettingsDiv");
 
-// document.getElementById("accountSettingsDiv").style.display = "none";
+document.getElementById("accountSettingsDiv").style.display = "none";
 document.querySelector(".accountSettingsModal").style.display = "none";
 
 accSettings.onclick = function (e) {
-  if (accModal.style.display === "none") {
+  if (accModal.style.display === "none" && accSettingsText.innerHTML === "Open Account Settings") {
     // accSettingsDiv.style.display = "flex";
     accModal.style.display = "flex";
     accModal.classList.remove("fade");
@@ -57,13 +54,70 @@ let accModal = document.querySelector(".accountSettingsModal");
 closeModal.onclick = function (e) {
   accModal.classList.add("fade");
   setTimeout(() => {
-    document.querySelector(".account-settings-modal").style.display = "none";
+    document.getElementById("accountSettingsDiv").style.display = "none";
+    // document.querySelector(".account-settings-modal").style.display = "none";
+    // document.querySelector(".accountSettingsModal").style.opacity = 0;
   }, 300);
 };
 
+let closePopUp = document.getElementById("popUpCloseIcon");
+let confirmPopUp = document.querySelector(".confirmationPopUp");
+
+closePopUp.onclick = function (e) {
+  confirmPopUp.classList.add("fade");
+  setTimeout(() => {
+    document.getElementById("confirmPopUp").style.display = "none";
+  }, 300);
+  setTimeout(() => {
+    confirmPopUp.classList.remove("fade");
+  }, 400);
+};
+
+function L(_) {
+  if (_ === 0) {
+    document.getElementById("confirmPopUp").style.display = "block";
+    document.getElementById("confirmationText").innerHTML = "Verify username change."
+    document.getElementById("accountPasswordInput").placeholder = "Enter current password to verify."
+  } else if (_ === 1) {
+    document.getElementById("confirmPopUp").style.display = "block";
+    document.getElementById("confirmationText").innerHTML = "Verify password change."
+    document.getElementById("accountPasswordInput").placeholder = "Enter current password to verify."
+  } else {
+    document.getElementById("confirmPopUp").style.display = "block";
+    document.getElementById("confirmationText").innerHTML = "Verify account delete."
+    document.getElementById("accountPasswordInput").placeholder = "Enter \"Yes\" to verify."
+  }
+};
+
 (function (e) {
-  let audio1 = new Audio(`https://cdn.glitch.global/069d62dd-5ac4-4928-9200-7250f0cc75c3/audio1.mp3?v=1657579007818`);
-  let click = true;
+  function K() {
+    fetch(`/userData?password=${localStorage.getItem("password")}?username=${localStorage.getItem("username")}`)
+      .then((t) => t.json())
+      .then((h) => {
+        document.getElementById("PlayerGold").innerHTML = h.PlayerGold.toLocaleString();
+        document.getElementById("PlayerRank").innerHTML = h.PlayerRank;
+        if (h.PlayerRank === 1) {
+          document.getElementById("PlayerRank").classList.add("first");
+        } if (h.PlayerRank === 2) {
+          document.getElementById("PlayerRank").classList.add("second");
+        } if (h.PlayerRank === 3) {
+          document.getElementById("PlayerRank").classList.add("third");
+        }
+        setTimeout(() => {
+          K();
+        }, 4000);
+      })
+      .catch(function (h) {
+        document.getElementById("PlayerGold").innerHTML = "Failed.";
+        document.getElementById("PlayerRank").innerHTML = "Failed.";
+      });
+    let h = localStorage.getItem("username") || "Unknown";
+    document.getElementById("Username").innerHTML = h;
+    h == "Unknown" ? document.getElementById("accountSettings").style.display = "none" :  document.getElementById("accountSettings").style.display = "block";
+    document.querySelector("#nameInput").value = localStorage.getItem("name") || "Player_0";
+  };
+  K();
+
   let settingsDiv = document.getElementById("rightCardHolder");
   let settingsToggle = document.getElementById("toggleSettings");
   let settingsText = document.querySelector("#toggleSettings");
@@ -84,6 +138,7 @@ closeModal.onclick = function (e) {
   let accountSectionContainer = document.getElementById("accountSectionContainer");
   loginSection.style.backgroundColor = "#2c8a68";
   loginSection.onclick = function (e) {
+    if (e.isTrusted) {
     if (loginDiv.style.display === "none") {
       loginDiv.style.display = "inline-block";
       registerDiv.style.display = "none";
@@ -96,6 +151,7 @@ closeModal.onclick = function (e) {
       loginSection.style.backgroundColor = "#2c8a68";
       registerSection.style.backgroundColor = "#ff9900";
     }
+  }
   };
   registerSection.onclick = function (e) {
     if (registerDiv.style.display === "none") {
@@ -588,7 +644,7 @@ closeModal.onclick = function (e) {
       }))
     }
   }), 1e3);
-
+  
   function m() {
     var t;
     window.onload = z;
@@ -630,33 +686,6 @@ closeModal.onclick = function (e) {
     }
   }
   setInterval(Wave, 50);
-  let AudioOn = localStorage.getItem("AudioOn");
-  if (AudioOn === undefined) {
-    localStorage.setItem("AudioOn", "true");
-    AudioOn = localStorage.getItem("AudioOn")
-  }
-  if (AudioOn === "true") {
-    sound.checked = false;
-    document.body.addEventListener("click", (function () {
-      if (click) {
-        audio1.play();
-        click = false
-      }
-    }));
-    document.addEventListener("keydown", (function (e) {
-      if (click) {
-        audio1.play();
-        click = false
-      }
-    }))
-  } else {
-    sound.checked = true
-  }
-  audio1.addEventListener("ended", (event => {
-    if (AudioOn === "true") {
-      audio1.play()
-    }
-  }));
 
   function toRad(angle) {
     return angle * .01745329251
@@ -671,19 +700,6 @@ closeModal.onclick = function (e) {
     .style.display = "none";
     document.getElementById("mainMenu")
     .style.display = "block";
-    if (soundOn) {
-      if (AudioOn === "true") {
-        audio1.play();
-        const fadeInAudio = setInterval((() => {
-          if (audio1.volume < 1) {
-            audio1.volume += .011111111111111112
-          }
-          if (audio1.volume > 1) {
-            clearInterval(fadeInAudio)
-          }
-        }), 10)
-      }
-    }
     document.getElementById("loadingText")
     .style.display = "block";
     document.getElementById("loadingText")
@@ -1086,7 +1102,8 @@ closeModal.onclick = function (e) {
     scale: 110,
     img: new Image,
     xOffset: -25,
-    yOffset: -35
+    yOffset: -35,
+    angleOffset: 0
   },
     {
       id: 1,
@@ -1106,7 +1123,8 @@ closeModal.onclick = function (e) {
       scale: 110,
       img: new Image,
       xOffset: 0,
-      yOffset: -55
+      yOffset: -55,
+      angleOffset: 0
     },
     {
       id: 3,
@@ -1115,7 +1133,8 @@ closeModal.onclick = function (e) {
       scale: 110,
       img: new Image,
       xOffset: 0,
-      yOffset: -55
+      yOffset: -55,
+      angleOffset: 0
     },
     {
       id: 4,
@@ -1124,7 +1143,8 @@ closeModal.onclick = function (e) {
       scale: 80,
       img: new Image,
       xOffset: 20,
-      yOffset: -40
+      yOffset: -40,
+      angleOffset: 0
     },
     {
       id: 5,
@@ -1133,7 +1153,8 @@ closeModal.onclick = function (e) {
       scale: 80,
       img: new Image,
       xOffset: 20,
-      yOffset: -40
+      yOffset: -40,
+      angleOffset: 0
     },
     {
       id: 6,
@@ -1142,7 +1163,8 @@ closeModal.onclick = function (e) {
       scale: 80,
       img: new Image,
       xOffset: 20,
-      yOffset: -40
+      yOffset: -40,
+      angleOffset: 0
     },
     {
       id: 7,
@@ -1152,7 +1174,8 @@ closeModal.onclick = function (e) {
       img: new Image,
       xOffset: -47,
       yOffset: -35,
-      clicked: false
+      clicked: false,
+      angleOffset: 0
     }];
   var objects = [{
     id: 2,
@@ -1235,9 +1258,6 @@ closeModal.onclick = function (e) {
   ageBar.style.display = "none";
   document.getElementById("loadingText")
   .style.display = "block";
-  setInterval((() => {
-    document.querySelector("#nameInput").value = localStorage.getItem("name") || "Player_0";
-  }), 100);
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   Array.prototype.removeItem = function (value) {
@@ -1340,12 +1360,16 @@ closeModal.onclick = function (e) {
       ctx.restore()
     }
   }
-
+  
   function drawPlayer(x, y, player) {
+    try {
     if (player.sid != myPlayer.sid) {
       drawWeapon(player, x, y, player.aimdir, weapons[0], player.sid)
     } else {
       drawWeapon(player, x, y, Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2), weapons[0], player.sid)
+    }
+    } catch (e) {
+      return;
     }
   }
 
@@ -1396,9 +1420,7 @@ closeModal.onclick = function (e) {
       ctx.restore()
     }
   }
-  window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (e) {
-    window.setTimeout(e, 1e3 / 60)
-  };
+
 
   function update() {
     var moveX = 0;
@@ -1685,7 +1707,9 @@ closeModal.onclick = function (e) {
       upgradeMenu();
       run = true
     }
+    requestAnimationFrame(update);
   }
+  requestAnimationFrame(update);
   const createClan = document.getElementById("createClanSection");
   const leaveClan = document.getElementById("leaveClanSection");
   let clanInput = document.getElementById("clanInput");
@@ -1698,7 +1722,7 @@ closeModal.onclick = function (e) {
   }));
 
   function connect() {
-    ws = new WebSocket("wss://combat-io.glitch.me/websocket");
+    ws = new WebSocket("wss://kvb63w-8000.preview.csb.app/websocket");
     ws.addEventListener("open", (function () {
       document.getElementById("menuCardHolder")
       .style.display = "block";
@@ -1765,19 +1789,6 @@ closeModal.onclick = function (e) {
               break;
             case "d":
               mainMenu.style.display = "block";
-              if (soundOn) {
-                if (AudioOn === "true") {
-                  audio1.play();
-                  const fadeInAudio = setInterval((() => {
-                    if (audio1.volume < 1) {
-                      audio1.volume += .011111111111111112
-                    }
-                    if (audio1.volume > 1) {
-                      clearInterval(fadeInAudio)
-                    }
-                  }), 10)
-                }
-              }
               break;
             case "o":
               treesCache = msg[1][0];
@@ -2015,19 +2026,6 @@ closeModal.onclick = function (e) {
       e.preventDefault()
     }
   }));
-  sound.addEventListener("click", (function (e) {
-    if (sound.checked) {
-      soundOn = false;
-      localStorage.setItem("AudioOn", "false");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.pause()
-    } else {
-      soundOn = true;
-      localStorage.setItem("AudioOn", "true");
-      AudioOn = localStorage.getItem("AudioOn");
-      audio1.play()
-    }
-  }));
   var SkinColor = localStorage.getItem("Skin") || 0;
   for (let i = 1; i < 9; i++) {
     document.getElementById("skin" + i)
@@ -2044,44 +2042,30 @@ closeModal.onclick = function (e) {
   window.selectSkinColor = function (e) {
     SkinColor = e
   };
-  setInterval(() => {
-    let h = 1; 
-  }, 1000);
+
   enterGame.addEventListener("click", (function (e) {
     send(["j", [{
       name: localStorage.getItem("username"),
       password: localStorage.getItem("password"),
       skin: SkinColor
     }]]);
-    // fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
-    //     .then((response => response.json()))
-    //     .then((data => {
-    //         if (data.time_zone.name != k1) {
-    //             send(["vx", ["Using VPN."]])
-    //         }
-    //     }))
-    //     .catch((err => send(["vx", ["Server error."]])));
-    // fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`)
-    //     .catch((err => {
-    //         if (err.toString()
-    //             .includes("TypeError: Failed to fetch")) {
-    //             send(["vx", ["Using ad blocker."]])
-    //         }
-    //     }));
+    fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ef91cbdadca34acc993582ea15af4711`)
+        .then((d => d.json()))
+        .then((f => {
+            const k1 = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (f.time_zone.name != k1) {
+                send(["vx", ["Using VPN."]])
+            }
+        }))
+        .catch((e => send(["vx", ["Server error."]])));
+    fetch(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`)
+        .catch((e => {
+            if (e.toString()
+                .includes("TypeError: Failed to fetch")) {
+                send(["vx", ["Using ad blocker."]])
+            }
+        }));
     if (SpawnedOnce == 1) {
-      if (soundOn) {
-        if (AudioOn === "true") {
-          var fadeOutAudio = setInterval((() => {
-            if (audio1.volume >= .009) {
-              audio1.volume -= .011111111111111112
-            }
-            if (audio1.volume <= .1) {
-              audio1.pause();
-              clearInterval(fadeOutAudio)
-            }
-        }), 10)
-      }
-    }
     var minimapOffset = 20;
     var minimapSize = 200;
     deathLocX = myPlayer.x * (minimapSize / mapSize);
@@ -2090,17 +2074,6 @@ closeModal.onclick = function (e) {
   }));
   enterGame.addEventListener("click", (function (e) {
     if (e.isTrusted && ws && ws.readyState == 1) {
-      if (soundOn) {
-        var fadeOutAudio = setInterval((() => {
-          if (audio1.volume >= .009) {
-            audio1.volume -= .011111111111111112
-          }
-          if (audio1.volume <= .1) {
-            audio1.pause();
-            clearInterval(fadeOutAudio)
-          }
-        }), 10)
-      }
       mainMenu.style.display = "none";
       backgroundImg.style.display = "none";
       age = 1;
@@ -2113,9 +2086,6 @@ closeModal.onclick = function (e) {
         password: localStorage.getItem("password"),
         skin: SkinColor
       }]]);
-      setInterval((() => {
-        window.requestAnimFrame(update)
-      }), 1);
       riverBubbles = [];
       for (let j = 0; j < 30; j++) {
         setTimeout((() => {
@@ -2143,5 +2113,12 @@ closeModal.onclick = function (e) {
     }), 50);
   }
   }));
-connect()
+  connect();
+
+  window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+    send(["vx", [`Server error, please relaod.`]]);
+    send(["ih", ['+ Error: ' + errorMsg + '\n + Script: `' + url + '`\n + Line: ' + lineNumber
+    + '\n + Column: ' + column + '\n + StackTrace: ' +  errorObj]]);
+  };
+
 })();

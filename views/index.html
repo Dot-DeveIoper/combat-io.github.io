@@ -1,8 +1,6 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!--<head>--><head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="minimal-ui, width=device-width, height=device-height, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
@@ -32,43 +30,65 @@
   <div class="backgroundImg" id="backgroundImg"></div>
 
   <div class="accountSettingsModal" id="accountSettingsDiv">
-    <div class="accountSettingsContainer" id="">
-      <span class="accountIdText" id="">Account ID: 2868</span>
-      <div class="accountProfile" id="">
+    <div class="accountSettingsContainer" >
+      <div class="accountProfile" >
         <img src="https://media.discordapp.net/attachments/991433838851018782/1037562305686278155/Polish_20221101_155949848.jpg" />
-        <div class="accountUsernameText" id="">
-          Player Username
+        <div class="accountUsernameText" id="Username">
+          Unknown
         </div>
 
-        <div class="accountInfoContainer" id="">
-          <div class="accountInfo" id="">
-            <div class="playerRank" id="">
-              Rank: <span class="first"
+        <div class="accountInfoContainer" >
+          <div class="accountInfo" >
+            <div class="playerRank" >
+              Rank: <span id="PlayerRank"
                 >1</span>
             </div>
-            <div id="">
-              Gold: <span id="">1M</span>
+            <div >
+              Gold high score: <span id="PlayerGold">1M</span>
             </div>
-            <div id="">
-              Players Destroyed: <span id="">1,000</span>
+            <div >
+              Players Destroyed: <span >1,000</span>
             </div>
           </div>
         </div>
 
-        <div class="dangerZoneContainer" id="">
-          <br class="dangerZone" info-text="Danger Zone" />
-          <div id="" class="logOutBtn">
+        <div class="accountZoneContainer" >
+          <br class="accountZone" info-text1="Customize Your Account" />
+          <label class="customizeUsername"> <div style="font-weight: bold;margin-bottom: 8px;" class="menuHeader">Change Username</div>
+                <input class="nameInput" type="text" placeholder="New Username" maxlength="15" required/>
+                <div onclick="L(0);" style="width: 45%;margin-bottom: 30px;background: #48e346;" class="menuButton">
+                  <span>Confirm</span>
+                </div>            
+              </label>
+              <label class="customizeUsername"> <div style="font-weight: bold;margin-bottom: 8px;" class="menuHeader">Change password</div>
+                <input class="nameInput" type="text" placeholder="New Password" maxlength="15" required/>
+                <div onclick="L(1);" style="width: 45%;background: #48e346;" class="menuButton">
+                <span>Confirm</span>
+              </div>
+            </label>
+            <div class="confirmationPopUp" id="confirmPopUp">
+              <!-- <div class=".confirmationPopUpContainer" id=""> -->
+              <div class="confirmationText" id="confirmationText">
+                Confirm your password!
+              </div>
+              <input type="text" placeholder="Enter current password to verify." class="accountPasswordInput" id="accountPasswordInput" required />
+              <button type="submit" value="Submit" class="submitChangesBtn" id="">Submit</button>
+              <!-- </div> -->
+              <i class="confirmationPopUpCloseIcon" id="popUpCloseIcon">&times;</i>
+            </div>
+        </div>
+
+        <div class="dangerZoneContainer" >
+          <br class="dangerZone" info-text2="Danger Zone" />
+          <div onclick="F();" style="width: 60%; background: #ff601f;" class="menuButton">
             <span>Log Out</span>
           </div>
-          <div id="" class="deleteAccountBtn">
+          <div onclick="L();" style="width: 60%; background: #e5391f;" class="menuButton">
             <span>Delete Account</span>
           </div>
-          <!-- <a id="" class="forgetPassword"><span>Forget Password</span></a> -->
+          <!-- <a  class="forgetPassword"><span>Forget Password</span></a> -->
         </div>
       </div>
-      <!-- <div id="" class="logOutBtn"> -->
-      <!-- <span>Log Out</span> -->
-      <!-- </div> -->
     </div>
     <i class="accountModalCloseIcon" id="modalCloseIcon">&times;</i>
   </div>
@@ -104,7 +124,7 @@
       <div id="players"></div>
     </div>
     <!-- KILLS COUNTER -->
-    <div class="killDisplay" id="">
+    <div class="killDisplay" >
       <!-- <br /> -->
       <div class="playersKilled">
         <span class="killCounter" id="kills">0</span>
@@ -179,7 +199,7 @@
           <a class="joinTeamBtn">Join</a>
         </div>
         <br /><br />
-        <div class="teamsText" id="">
+        <div class="teamsText" >
           There are no clans yet!
         </div>
       </div>
@@ -195,7 +215,7 @@
         <div class="membersInfo">
           <!-- <a class="kickMemberBtn">Kick</a> -->
         </div>
-        <div class="membersText" id="">
+        <div class="membersText" >
           There are no members in the clan yet!
         </div>
       </div>
@@ -347,16 +367,12 @@
         <!-- </div> -->
         <div style="display: inline-block">
           <div class="menuCard" id="setupCard">
-            <input type="text" id="nameInput" placeholder="Username" maxlength="15" style="cursor: not-allowed;" disabled="disabled" />
+            <input type="text" id="nameInput" class="nameInput" placeholder="Username" maxlength="15" style="cursor: not-allowed;" disabled="disabled" />
             <div id="enterGame" class="menuButton">
               <span>Enter Game</span>
             </div>
-            <div id="accountSettings" class="accBtn">
+            <div id="accountSettings" style="background:#99e51f;" class="menuButton">
               <span id="accountSettingsText">Open Account Settings</span>
-            </div>
-            <div id="mobileDownloadButtonContainer">
-              <a class="downloadBadge" href="https://itunes.apple.com/us/app/moomoo-io-mobile/id1236581367?ls=1&amp;mt=8" target="_blank"><img src="./img/badges/ios.svg" /></a>
-              <a class="downloadBadge" href="https://play.google.com/store/apps/details?id=com.yendis.moomoo_mobile" target="_blank"><img src="./img/badges/android.png" /></a>
             </div>
           </div>
           <div id="promoImgHolder" class="menuCard">
@@ -372,7 +388,7 @@
               Gamemodes
             </div>
             <div class="gamemodes">
-              <a href="https://combat-io.glitch.me/" class="gamemodesLink" id="normalMode">Normal</a>
+              <a href="https://kvb63w-8000.preview.csb.app/" class="gamemodesLink" id="normalMode">Normal</a>
               <span class="separator-dot"></span>
               <a href="#" class="gamemodesLink" id="sandboxMode">Sandbox</a>
               <span class="separator-dot"></span>
@@ -428,7 +444,7 @@
                 Mute Music
               </label>
               <!-- <br /> --><label class="checkbox">
-                <input type="checkbox" id="" />
+                <input type="checkbox"  />
                 <span class="indicator"></span>
                 Show Ping
               </label>
@@ -513,7 +529,7 @@
       <a class="loginText" id="toggleLogin">Open Login Form</a>
     </div>
     <div class="" id="leaderboardsButton">
-      <a class="leaderboardsText" id="" href="https://combat-io.glitch.me/leaderboards">Go To Leaderboards</a>
+      <a class="leaderboardsText"  href="https://kvb63w-8000.preview.csb.app/leaderboards">Go To Leaderboards</a>
     </div>
     <div>
       <div id="YTofDayContainer">
@@ -530,7 +546,7 @@
         <a href="/Privacy" target="_blank" class="menuLink">Privacy</a>
       </div>
     </div>
-  </div>
+  </div>  
   <script src="/bundle.js"></script>
   <script>
     function K() {
@@ -554,7 +570,7 @@
           localStorage.setItem("username", document.forms.form1.username.value);
           localStorage.setItem("name", document.forms.form1.username.value);
           localStorage.setItem("password", document.forms.form1.psw.value);
-          document.getElementById("errorText").innerHTML = "Logged in, Enter game."; t(0);
+          document.getElementById("errorText").innerHTML = "Logged in, enter game."; t(0);
         } else if (e.status == 505) {
           document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
         } else {
@@ -675,7 +691,7 @@
           } else if (e.status == 403) {
             document.getElementById("errorText").innerHTML = "Passwords don't match"; t(1);
           } else if (e.status == 404) {
-            document.getElementById("errorText").innerHTML = "You may not have more then 15 characters."; t(1);
+            document.getElementById("errorText").innerHTML = "Your account may not have more than 15 characters."; t(1);
           } else if (e.status == 505) {
             document.getElementById("errorText").innerHTML = "Unknown error."; t(1);
           } else {
